@@ -1,2 +1,4 @@
 # bake_it
-  2 nd year group project
+  Make sure you create a new branch before start working.
+  Create a new branch for each work.
+  Dont start new work befor mergw your PR
