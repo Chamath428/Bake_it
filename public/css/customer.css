@@ -14,6 +14,7 @@
     background: black;
     position: relative;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .navbar{
@@ -29,6 +30,7 @@
 .nav-items{
     margin: 10px;
     list-style: none;
+    position: relative;
 }
 .nav-items a{
     text-decoration: none;
@@ -75,7 +77,7 @@
 }
 
 .toggle-btn{
-     position: absolute;
+    position: absolute;
     top: .75rem;
     right: 1%;
     display: none;
@@ -93,6 +95,8 @@
     transition: all 0.3s ease 0s;
 }
 
+
+/*Media query Start*/
 @media (max-width: 1050px){
     .toggle-btn{
         display: flex;
@@ -140,3 +144,57 @@
     
 
 }
+
+/*Media query End*/
+
+
+/*Menu Drop Down Starts*/
+
+#menu-drop{
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100px;
+    border-radius: 0px 0px 5px 5px;
+
+}
+
+.nav-items:hover #menu-drop {
+    display: block;
+}
+
+
+#menu-drop li {
+    list-style: none;
+    width: 100%;
+    padding: 7px 5px;
+}
+#menu-drop li a{
+    font-size:16px ;
+
+}
+
+/*Menu Drop Down Ends*/
+
+
+/*Outlet drop down starts*/
+#outlet-drop{
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 130px;
+    border-radius: 0px 0px 5px 5px;
+}
+#outlet-drop li{
+    list-style: none;
+    width: 100%;
+    padding: 7px 5px;
+}
+#outlet-drop li a{
+    font-size: 16px;
+}
+.nav-items:hover #outlet-drop{
+    display: block;
+}
+/*Outlet drop down ends*/
+

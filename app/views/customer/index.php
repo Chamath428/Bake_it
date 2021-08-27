@@ -11,8 +11,8 @@
 </head>
 <body>
 	<header>
+		<!-- Navigation Bar Starts -->
 		<div class="head">
-			
 			<div class="logo"><a href="#">Bake_it</a></div>
 
 			<a href="#" class="toggle-btn">
@@ -23,8 +23,23 @@
 
 			<div class="navbar">
 				<ul>
-					<li class="nav-items"><a href="#">Menu</a></li>
-					<li class="nav-items"><a href="#">Outlets</a></li>
+					<li class="nav-items"><a href="#">Menu</a>
+						<ul id="menu-drop">
+							<li class="menu-item"><a href="#">Breads</a></li>
+							<li class="menu-item"><a href="#">Pastry</a></li>
+							<li class="menu-item"><a href="#">Donuts</a></li>
+							<li class="menu-item"><a href="#">Muffins</a></li>
+							<li class="menu-item"><a href="#">Savouries</a></li>
+							<li class="menu-item"><a href="#">Cake</a></li>
+						</ul>
+					</li>
+					<li class="nav-items"><a href="#">Outlets</a>
+						<ul id="outlet-drop">
+							<li class="outley-item"><a href="">Katugasthota</a></li>
+							<li class="outley-item"><a href="">Bandaragama</a></li>
+							<li class="outley-item"><a href="">Miriswaththa</a></li>
+						</ul>
+					</li>
 					<li class="nav-items"><a href="#">About Us</a></li>
 					<li class="nav-items"><a href="#">Careers</a></li>
 					<li class="nav-items"><a href="#">Contact Us</a></li>
@@ -34,5 +49,6 @@
 			</div>
 			<div class="login-btn"><a href="#">Login</a></div>
 		</div>
+		<!-- Navigation Bar Ends -->
 	</header>
 
