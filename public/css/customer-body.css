@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
+.menu{
+	align-items: center;
+	position: relative;
+}
+
+.menu-header{
+	position: absolute;
+	text-align: center;
+	font-size: 60px;
+	font-family: 'Merienda', cursive;
+	left: 40%;
+    top: 20px
+}
+
+
+.menu-box img{
+	width: 380px;
+	border-radius: 6px;
+}
+
+.menu-box{
+	position: relative;
+	text-align: center;
+	align-items: center;
+}
+
+.menu-box .h3{
+	position: absolute;
+    top: 95%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+	color: white;
+	font-size: 85px;
+	font-family: 'Montserrat', sans-serif;
+	transition: 0.3s ease-in-out; 
+	text-align: center;
+}
+
+.menu-box:hover .h3{
+	top: 90%;
+	color: rgb(255, 138, 0);
+}
+
+.menu-box a{
+	text-decoration: none;
+}
+
+.menu-container{
+	padding: 120px;
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 380px 380px 380px;
+	grid-auto-rows: minmax(150px,auto);
+	grid-column-gap: 1px;
+	grid-row-gap: 20px;
+	justify-content: space-around;
+	/*grid-auto-rows: 480px,auto;*/
+}
+
+@media (max-width: 1050px){
+	.menu{
+		display: none;
+	}
+}
