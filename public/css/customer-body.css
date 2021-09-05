@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
 
+/*Menu Starts*/
 .menu{
 	align-items: center;
 	position: relative;
@@ -20,6 +21,7 @@
 	border-radius: 6px;
 }
 
+
 .menu-box{
 	position: relative;
 	text-align: center;
@@ -36,6 +38,10 @@
 	font-family: 'Montserrat', sans-serif;
 	transition: 0.3s ease-in-out; 
 	text-align: center;
+}
+
+.grid-item-8 .h3{
+	font-size: 60px;
 }
 
 .menu-box:hover .h3{
@@ -59,8 +65,84 @@
 	/*grid-auto-rows: 480px,auto;*/
 }
 
+
 @media (max-width: 1050px){
 	.menu{
 		display: none;
 	}
 }
+
+/*Menu Ends*/
+
+/*Footer Starts*/
+
+.footer-container{
+	background-color: #000000;
+	background-image: linear-gradient(180deg, #000000 0%, #171618 50%, #000000 100%);
+}
+
+.footer-row{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.footer-column ul li{
+	list-style: none;
+}
+
+.footer-column ul li a{
+	text-decoration: none;
+	color: white;
+	padding: 5px;
+	font-size: 20px;
+	transition: 0.3s ease-in-out; 
+}
+.footer-column ul li{
+	color: white;
+	padding: 5px;
+	font-size: 20px;
+	transition: 0.3s ease-in-out; 
+}
+
+.footer-column ul li:hover{
+	color: rgb(255, 138, 0);
+}
+
+.footer-column ul li a:hover{
+	color: rgb(255, 138, 0);
+}
+
+.social-media ul{
+	display: flex;
+}
+.fas{
+	font-size: 25px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+.fab{
+	font-size: 60px;
+	padding-left: 10px;
+	transition: 0.5s ease-in-out;
+}
+.fab:hover{
+	color: rgb(255, 138, 0);
+	transform: rotate(10deg);
+}
+
+@media(max-width: 736px){
+	.fot-first{
+		display: none;
+	}
+	.social-media{
+		display: none;
+	}
+	.footer-row{
+		justify-content: center;
+	}
+}
+
+/*Footer Ends*/
