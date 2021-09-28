@@ -1,67 +1,49 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../../../public/css/delivery1pg.css">
-        <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-     <!--top navigation-->
-       <nav>
-           <div class="topnav">
-           <ul>
-               <li><a href="#user"><i class="fas fa-user"></i></a></li>
-               <li><a href="#line" class="toggle-button">
-                <span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-               </a></li>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/index.css">
+    <script src="../../../public/js/index.js" ></script>
+    <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+  
+   <!--Top Navigation-->
+    <header>
+       <a href="#"><i class="fas fa-user"></i></a>
+       <a href="index.php" class="Bake-it">Bake_it</a>
+       <a href="#"><i class="fas fa-bell"></i><p>Notifications</p></a>   
+    </header> 
 
-               <li><a href="#" class="bakeit">Bake_it</a></li>
-               <li><a href="#"><i class="fas fa-bell"></i></a></li>
-               <li><a href="#" class="notifications">Notifications</a></li>
-
-            </ul>
-            </div>
-        </nav>
-
-    <!--left side navigation-->
-        <div class="leftside">
-           <ul>
-               <li><a href="Availability.php">Availability</a></li>
-               <li><a href="Deliveries.php">Deliveries</a></li>
-               <li><a href="Reviews.php">Reviews</a></li>
-
-           </ul>
+     <!-- side navigation-->
+     <a href="#" class="btn-open" onclick="openSideMenu()"><i class="fas fa-bars"></i></a> 
+    <div id="side-menu" class="side-nav">
+      <a href="#" class="btn-close" onclick="closeSideMenu()">&times;</a>
+      <a href="Availability.php" onclick="closeIndexBody()">Availability</a>
+      <a href="Deliveries.php">Deliveries</a>
+      <a href="Reviews.php">Reviews</a>
+    </div>
+    <!-- body description -->
+    <div id="index">
+      <div class="container1">
+        <div id="main"class="first-text">
+          <h1>Welcome!!!</h1>
+          <h3>We are happy to work with you <br>We wish you <h2>Happy Delivery Time</h2></h3>
         </div>
-        <img class="background-views1">
-        <div class="Description">
-            <h1>Hello,Nimal</h1><br>
-            <h2>We are happy to work with you <br>
-                We wish you to give best salary with more satisfaction about carrer <br>
-                Happy Delivery <br>
-           </h2>
-        </div>
-    <!--Footer-->
-    <footer>
-        <div class="Footer-column 1st">
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-            </ul>
-        </div>
-        <div class="Footer-column 2nd">
-            <ul>
-                <li><i class="fas fa-phone-square-alt"></i>+94118659322(Main Bakery)</li>
-                <li><i class="fas fa-at"></i>writetibakeit@gmail.com</li>
-                <li><i calss="fas fa-map-marker-alt"></i>NO.38/5,Baththaramulla</li>
-            </ul>
-        </div>
-        <div class="Footer-column 3rd">
-            <ul>
-                <li><i class="fab fa-facebook"></i></li>
-                <li><i class="fab fa-instagram"></i></li>
-            </ul>
-        </div>
-    </footer>
-    </body>
+        <img class="firstImage"src="../../../public/images/clipart2.png"> 
+      </div>
+      <div class="container2">
+        <img class="secondImage"src="../../../public/images/logo.png">
+        <div class="second-text">
+        <p>Be proud of being member of <h1>WK Bakers</h1> family
+        <br>Happy to work with you<br>We belive you give your best for our family
+        </p>
+        </div> 
+      </div>
+   </div>
+   <?php include('footer.php'); ?> 
+</body>
 </html>

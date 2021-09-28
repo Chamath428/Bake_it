@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+li,a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    
+}
+a:hover{
+    color: rgb(255, 138, 0);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    cursor: pointer;
+    background-color: rgba(8, 6, 6, 0.575);
+}
+.fa-user,.fa-bell,.fa-bars{
+    font-size: 40px;
+}
+.fa-bars{
+  margin-left: 9%;
+}
+.Bake-it{
+    font-family: 'Merienda', cursive;
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 500;
+}
+header p{
+    margin-right: 50%;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+    /* background-image: url("../../public/images/background1.jpg");
+    background-position: center;
+    background-size: cover; */
+    /* z-index: -1; */
+    
+}
+.btn-open{
+    display: flex;
+    margin-left: 20px;
+    color: rgb(22, 3, 3);
+    overflow: hidden;
+}
+.side-nav{
+    height:38%;
+    width:0;
+    position:fixed;
+    z-index:1;
+    margin-left: 5%;
+    top: 150px;
+    background-color:rgba(8, 6, 6, 0.575);
+    opacity:0.9;
+    overflow-x:hidden;
+    padding-top:60px;
+    transition:0.5s;
+    line-height: 1.5;
+    border-radius: 8px;
+  }
+  
+  .side-nav a{
+    padding:0px 20px 20px;
+    text-decoration:none;
+    font-size:22px;
+    color:#ccc;
+    display:block;
+    transition:0.3s;
+  }
+  
+  .side-nav a:hover{
+    color:#fff;
+  }
+  
+  .side-nav .btn-close{
+    position:absolute;
+    top:0;
+    right:22px;
+    font-size:36px;
+    margin-left:50px;
+  }
+.container1,.container2{
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  /* width: 50%;
+  flex-wrap: wrap; */
+  align-content: center;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+.first-text,.second-text{
+  padding-top: 10%;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+} 
+.firstImage,.secondImage{
+  width: 50%;
+} 
+h1{
+  font-style: italic;
+  font-weight: 200;
+  color: rgb(199, 120, 17);
+}
+
+
+  /* #main{
+    transition:margin-left 0.5s;
+    padding:20px;
+    margin-top: 140px;
+    overflow:hidden;
+    width:100%;
+    max-width: 350px;
+    text-align: center;   
+  } */
+
+
+  /* @media(max-width:568px){
+    .btn-open{display:none}
+  }
+  
+  @media(min-width:568px){
+    .open-slide{display:none}
+  }
+   */
+
