@@ -29,7 +29,7 @@
     <!-- body description -->
     <div id="index">
       <div class="container1">
-        <div id="main"class="first-text">
+        <div id="main" class="first-text">
           <h1>Welcome!!!</h1>
           <h3>We are happy to work with you <br>We wish you <h2>Happy Delivery Time</h2></h3>
         </div>

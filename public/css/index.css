@@ -18,7 +18,7 @@ header{
     align-items: center;
     padding: 20px 10%;
     cursor: pointer;
-    background-color: rgba(8, 6, 6, 0.575);
+    background-color: black;
 }
 .fa-user,.fa-bell,.fa-bars{
     font-size: 40px;
@@ -112,7 +112,18 @@ h1{
   font-weight: 200;
   color: rgb(199, 120, 17);
 }
-
+@media(max-width:480px){
+  header{
+    font-size: 10px;
+    height: 3vh;
+  }
+  .Bake-it{
+    font-size: 15px;
+  }
+  .fa-user,.fa-bell{
+    font-size: 15px;
+  }
+}
 
   /* #main{
     transition:margin-left 0.5s;

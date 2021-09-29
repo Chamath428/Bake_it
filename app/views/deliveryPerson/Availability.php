@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <link rel="stylesheet" type="text/css" href="../../../public/css/Availability.css">
-
-       <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="../../../public/css/Availability.css">
+        <script src="../../../public/js/index.js"></script>
+        <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 
     </head>
     <body>
-       
+       <section class="header">
         <?php include('header.php'); ?>
-         
-        <h2>Availability Status</h2>
-    
-        <div id="container">
-            <div class="button-container">
-                <input type="button" class="button1" onclick="alert('You are available for deliveries')" value="Available">
+       </section>
+        
+         <section  class="available-body">
+            <h2>Availability Status</h2>
+            <div class="availability-selection">
+                    <a href="#" onclick="alert1()">Available</a>
+                    <a href="#" onclick="alert2()">Not Available</a>
             </div>
-            <div class="button-container">
-                <input type="button" class="button2" onclick="alert('You are not available for deliveries')" value="Not Available">
-            </div>   
-        </div>
-        <?php include('footer.php'); ?>  
+         </section>
+    
+        <section class="footer">
+              <?php include('footer.php'); ?>   
+        </section> 
+        
     </body>
 </html>

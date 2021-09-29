@@ -7,20 +7,15 @@ function closeSideMenu(){
     document.getElementById('side-menu').style.width='0px';
     document.getElementById('main').style.marginTop='0px'; 
 }
-//  console.log("hii");
-// alert('yo');
-
-// function openOngoing(){
-//     document.getElementById('Ongoing-Deliveries').
-//         var tables =['t1','t2'];    
-//         for(var i=0;i<2;i++){
-//            document.getElementById(tables[i]).style.display = "none";    
-
-//     document.getElementById(table).style.display = "block";   
-//     }
-// }
 
 function closeIndexBody(){
     document.getElementById('index').style.display="none";
     console.log("working js");
 }
+function alert1(){
+    alert('You are available now and wait for deliveries');
+}
+function alert2(){
+    alert('You are not available for deliveries.You miss happy delivery time');
+}
+
