@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+    
+}
+ .main{
+    width: 100%;
+    height:100vh;
+   
+} 
+
+ 
+  .pending{
+    position: absolute; 
+    left: 40%;
+    top: 120px;
+    font-size: xx-large;
+    font-weight: bold;
+    
+  }
+  
+  .table{
+    width: 100%;
+    height: 64.1vh;
+  }
+.content-table{
+    
+    position: absolute;
+    width: 64%; 
+    height: 190px;
+    left: 20%;
+    top: 240px;
+     border-collapse: collapse;
+     margin: 25px, 0;
+    font-size: 21px;
+    min-width: 540px;
+     border-radius:5px 5px 0 0 ;
+    overflow:hidden ; 
+    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+
+}
+.content-table thead tr {
+    background-color:  rgb(255, 138, 0);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    height: 45px;
+
+}
+.content-table tbody tr{
+    text-align: center;
+    cursor: pointer;
+    
+}
+.content-table tbody tr:hover{
+  background-color: #ffefea;
+ height: 47px;
+ font-size: 22px;
+  
+}
+.content-table th .content-table tr{
+    padding: 12px, 15px;
+}
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+/* .content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+} */
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #e9780e;
+}
+
+ .button-complete-pending{
+    position: absolute;
+    margin:0;
+    padding: 0;
+    top:180px;
+    left: 29%;
+    width: 50%;
+    height: 50px;
+
+ }
+ .completebtn{
+    float: left;
+ } 
+ .pendingbtn{
+    float: right;
+ }
+#button{
+    padding: 0;
+    margin: 0;
+    width: 130px;
+    height:50px;  
+    background: #FFFFFF;
+    /* border: 1px solid rgba(255, 138, 0, 0.98); */
+    /* box-sizing: border-box; */
+    border-radius: 7px;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+#button:hover{
+    background:rgb(134, 127, 127);
+    color: rgb(255, 255, 255);
+}
+

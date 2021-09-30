@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+    
+}
+.daily-requirment{
+    position: absolute; 
+    left: 49%;
+    top: 130px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.content{
+    margin: 0;
+    margin-left: 14%;
+    margin-top: 6%;
+    width: 86%;
+    height: 52vh;
+    display: flex;
+   
+    
+}
+.category-list{
+
+    /* width: 30%;
+    height: 200px; */
+    display: flex;
+    flex-direction: column;
+    
+}
+.category-list button{
+    width: 330px;
+    height: 70px;
+    font-size: 23px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(257, 138, 0);
+    background-color: white;
+    margin: 5px;
+    
+}
+.category-list button:hover{
+    background:rgb(134, 127, 127);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 51, 0);
+}
+
+.category-tables{
+    /* display: none; */
+    margin-left: 38px;
+}
+#category1-table{
+    display: none;
+}
+#category2-table{
+    display: none;
+}
+#category3-table{
+    display: none;
+}
+#category4-table{
+    display: none;
+}
+#category5-table{
+    display: none;
+}
+
+.category-tables h1{
+    margin-left: 370px;
+    margin-bottom: 3px;
+}
+
+  
+.content-table{
+    
+   
+    width: 50%; 
+    height: 190px;
+    border-collapse: collapse;
+    margin: 25px, 0;
+    font-size: 21px;
+    min-width: 900px;
+    border-radius:5px 5px 0 0 ;
+    overflow:hidden ; 
+    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+
+}
+.content-table thead tr {
+    background-color:  rgb(255, 138, 0);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bold;
+    height: 40px;
+}
+.content-table tbody tr{
+    text-align: center;
+    
+}
+.content-table th .content-table tr{
+    padding: 12px, 15px;
+}
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+    cursor: pointer;
+}
+.content-table tbody tr:hover{
+  background-color: #ffefea;
+ height: 47px;
+ font-size: 22px;
+  
+}
+/* .content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+} */
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #e9780e;
+}

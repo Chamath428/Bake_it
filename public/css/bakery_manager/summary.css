@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+    
+}
+.content{
+    width: 100%;
+    height: 64vh;
+    
+}
+.summary-topic {
+    position: absolute;
+    top: 13vh;
+    left: 33%;
+    width: 60%;
+    height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    /* background-color: aqua; */
+    margin: 0px;
+    padding: 0;
+    
+}
+.get-summary-btn{
+    position: absolute;
+    top: 47vh;
+    left: 76%;
+    width: 140px;
+    height: 52px;
+    background-color: aliceblue;
+    
+}
+#button{
+    position: absolute;
+    /* left: 78%; */
+    width: 140px;
+    height:50px;  
+    background: #FFFFFF;
+    border: 1px solid rgb(255, 138, 0);
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#button:hover{
+    background:rgb(134, 127, 127);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 51, 0);
+}
+
+.drop-down-btn-div{
+    position: absolute;
+    top: 24vh;
+    width:100%; 
+    height: 160px;
+    float: left;
+    margin-bottom: 2px;
+    margin-top: 30px;
+}
+.year{
+    width:190px; 
+    height: 140px;
+    float: left;
+    margin-left: 27%;
+    margin-top: 15px;
+
+}
+.month{
+    width:190px; 
+    height: 140px;
+    float: left;
+    margin-left: 5%;
+    margin-top: 15px;
+
+}
+.Raw-Material{
+    width:190px; 
+    height: 140px;
+    float: left;
+    margin-left: 5%;
+    margin-top: 15px;
+
+}
+select{
+    width: 190px;
+    border: none;
+    border: 2px solid rgb(255, 138, 0);
+    box-shadow: 2px 1px #ff5a5a;
+    padding: 10px;
+    color:back;
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 19px;
+    border-radius: 8px;
+    
+    
+}
+label{
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 15px;
+
+}
