@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+    
+}
+ .main{
+    width: 100%;
+    height:100vh;
+   
+} 
+.header{
+  width: 100%;
+  height: 75vh;
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
+.bake_it {
+   /* position: absolute;
+    left: 44%; */
+    color: rgb(0, 0, 0);
+    position: absolute;
+    width: 160px;
+    height: 47px;
+    top: 20px; 
+    left: 44%;
+    font-family: Rancho;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 60px;
+    
+  }
+  .herf-bake-it:hover{
+    color: rgb(255, 138, 0);
+    font-size:40px ;
+
+  }
+  .bell_icon{
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    right: 10px;
+    top: 40px;
+  }
+  #bell {
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+  }
+  #bell:hover{
+    color: rgb(250, 119, 119);
+ 
+  }
+    
+  .notification_text{
+    
+    position: absolute;
+    width: 100px;
+    height: 56px;
+    right: 34px;
+    top: 80px;
+
+    font-family: Prociono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 34px;
+    color: #000000
+
+  }
+  .user_logo{
+    position: absolute;
+    width: 164px;
+    height: 56px;
+    left: 30px;
+    top: 47px;
+  }
+  #user_logo_id{
+    font-size: 60px;
+    color: rgb(0, 0, 0);
+  }
+  #user_logo_id:hover{
+      color: rgb(250, 119, 119);
+  }
+ 
+
+  .back-arrow{
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    right: 22px;
+    bottom:210px;
+ 
+  }
+  #back-hand-point{
+      font-size:xx-large;
+      color: #000000;
+
+  }
+  #back-hand-point:hover{
+      color:rgb(250, 119, 119);
+      font-size: 55px;
+  }
+ 
+  
+.order-no{
+    position: absolute;
+    left: 34%;
+    top: 15%; 
+    font-size: xx-large;
+
+}
+.details{
+    position: absolute;
+    width: 80%; 
+    height: 50vh;
+    top: 22%;
+    left: 7%;
+    background: rgba(255, 198, 131, 0.6);
+
+
+}
+  
+.content-table{
+    
+    position: absolute;
+     width: 90%; 
+    height: 100px;
+    left: 4%;
+    top: 6%;
+     border-collapse: collapse;
+    font-size: 21px;
+    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+    background: rgba(248, 175, 116, 0.6);
+    
+}
+
+ tr{
+    text-align: center;
+  
+}
+td{
+    padding:10px;
+}
+
+.content-table tbody tr td{
+    border-right: 2px solid #f77b4a;
+}
+.content-table tbody tr td:last-child{
+    border-right:none;
+}
+
+
+
+
+
+
+

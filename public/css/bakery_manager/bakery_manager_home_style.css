@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+  
+    
+}
+.header{
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  top: 0;
+  margin: 0;
+  padding: 0;
+   width: 100%;
+   height: 100px;
+  background: rgba(24, 22, 22, 0.753);
+}
+.image-div{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80vh;
+    top: 0;
+}
+.image{
+  width: 100%;
+   height: 80vh;
+   object-fit: cover; 
+   /* opacity: 0.5; */
+}
+
+
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+.bake_it {
+   /* position: absolute;
+    left: 44%; */
+    color: rgb(255, 255, 255);
+    position: absolute;
+    width: 160px;
+    height: 47px;
+    top: 20px; 
+    left: 47%;
+    font-family: Rancho;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    
+  }
+  .herf-bake-it:hover{
+    color: rgb(255, 138, 0);
+    font-size:55px ;
+
+  }
+  .bell_icon{
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    right: 10px;
+    top: 30px;
+  }
+  #bell {
+    font-size: 40px;
+    color: white;
+  }
+  #bell:hover{
+    color: rgb(255, 138, 0);
+  }
+    
+  .notification_text{
+    
+    position: absolute;
+    width: 100px;
+    height: 56px;
+    right: 39px;
+    top: 67px; 
+
+    font-family: Prociono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 34px;
+    color: #ffffff
+
+  }
+  .user_logo{
+    position: absolute;
+    width: 164px;
+    height: 56px;
+    left: 30px;
+    top: 30px;
+  }
+  #user_logo_id{
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+  }
+  #user_logo_id:hover{
+    /* color: aquamarine; */
+    color: rgb(255, 138, 0);
+   
+}
+  
+
+.bar{
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    left: 30px;
+    top: 110px;
+    cursor:pointer;
+  }
+
+  .bar1, .bar2, .bar3 {
+    width: 40px;
+    height: 5px;
+    background-color: rgb(107, 107, 107);
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 4px;
+  }
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+.sidenav {
+  
+  position: absolute;
+  width: 0px;
+  height: 540px;
+  left: 20px;
+  top: 110px;
+  z-index: 1; 
+
+  background: #000000fb;
+  border:5px #000000;
+  border-radius: 20px;
+ 
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 28px 18px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+  padding-top: 30px;
+}
+
+.sidenav a:hover {
+  color: rgb(255, 138, 0);
+  font-weight: bold;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 40px;
+  margin-left: 50px;
+}
+
+
