@@ -16,6 +16,7 @@
       /* margin-top: 10px; */
       margin-left: 15%;
       width: 75%;
+      height: 50vh;
       justify-content: space-around;     
 
 }
@@ -30,10 +31,8 @@
       text-align: center; 
       font-size: 30px;
       text-decoration: none;   
-  }
-/* .footer{
-      margin-bottom: 0%;
-}  */
+}
+
 @media(max-width:787px){
       .available-body h2,.availability-selection a{
             font-size: 30px;

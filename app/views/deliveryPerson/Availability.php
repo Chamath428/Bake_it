@@ -19,9 +19,9 @@
             </div>
          </section>
     
-        <section class="footer">
+        <div class="footer">
               <?php include('footer.php'); ?>   
-        </section> 
+        </div> 
         
     </body>
 </html>

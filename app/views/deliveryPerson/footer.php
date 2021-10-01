@@ -13,7 +13,7 @@
         <div class="container">
            <div class="row">
               <div class="footer-col">
-                  <h4 class="Bake-it">Bake_it</h4>
+                  <h4 id="Bake-it">Bake_it</h4>
                   <ul>
                       <li><a href="#">Privacy Policy</a></li>
                       <li><a href="#">Terms & Conditions</a></li>

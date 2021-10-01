@@ -24,8 +24,21 @@
 // }
 
 function openOngoing(){
-     document.getElementById('Ongoing-Deliveries').style.display ="block";
+    document.getElementById('table-caption1').style.display ="block";
+    document.getElementById('Ongoing-Deliveries').style.display ="block";
+    document.getElementById('table-caption2').style.display ="none";
+    document.getElementById('Delivery-History').style.display ="none"; 
 }
 function openHistory(){
+    document.getElementById('table-caption1').style.display ="none";
+    document.getElementById('Ongoing-Deliveries').style.display ="none";
+    document.getElementById('table-caption2').style.display ="block";
     document.getElementById('Delivery-History').style.display ="block";
 }
+//  var btn= document.getElementById('order1');
+//  btn.addEventListener('onclick', pickOrder(),{
+//     document,location,href = '<?php echo $Deliveries2.php; ?>',
+//   });
+
+
+ 

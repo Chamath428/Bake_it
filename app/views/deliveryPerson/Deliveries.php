@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="../../../public/js/deliveries.js"></script>
         <link rel="stylesheet" type="text/css" href="../../../public/css/deliveries.css">
+        <link rel="stylesheet" type="text/css" href="../../../public/css/table.css">
         <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
         
     </head>
@@ -15,78 +16,96 @@
           <?php include('header.php'); ?>
        </section>
 
-       <section id="section1">
+       <section class="delivery-body">
             <!--button-->
-            <div class="table-selection">
+            <h2>Deliveries</h2>
+            <div class="button-selection">
                 <a href="#" onclick="openOngoing()">Ongoing Deliveries</a>
                 <a href="#" onclick="openHistory()">Delivery History</a>
             </div>
             <!--table for ongoing Deliveries-->
-            <table id="Ongoing-Deliveries" onclick="showOngoing()">
-                <tr>
-                    <th>Order No</th>
-                    <th>Location</th>
-                    <th>Payment</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Kaluthara</td>
-                    <td>Rs.1500.00</td>
-                    <td class="button"><button>Pick</button></td> 
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Kaluthara</td>
-                    <td>Rs.1500.00</td>
-                    <td class="button"><button>Pick</button></td> 
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Kaluthara</td>
-                    <td>Rs.1500.00</td>
-                    <td class="button"><button>Pick</button></td> 
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Kaluthara</td>
-                    <td>Rs.1500.00</td>
-                    <td class="button"><button>Pick</button></td> 
-                </tr>
+            <h3 id="table-caption1">Ongoing Deliveries</h3>
+            <table id="Ongoing-Deliveries">
+                <thead>
+                        <tr>
+                            <th>Order No</th>
+                            <th>Location</th>
+                            <th>Payment</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td label="Order No">1</td>
+                        <td label="Location">Kaluthara</td>
+                        <td label="Payment">Rs.1500.00</td>
+                        <td class="click pick-order">
+                            <button id="order1" onclick="pickOrder()">Pick</button>
+                            <!-- <input type="button" value="Home" class="homebutton" id="btnHome" onClick="window.location = 'http://google.com'" /> --> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td label="Order No">2</td>
+                        <td label="Location">Kaluthara</td>
+                        <td label="Payment">Rs.1500.00</td>
+                        <td class="click pick-order"><button>Pick</button></td> 
+                    </tr>
+                    <tr>
+                        <td label="Order No">3</td>
+                        <td label="Location">Kaluthara</td>
+                        <td label="Payment">Rs.1500.00</td>
+                        <td class="click pick-order"><button>Pick</button></td> 
+                    </tr>
+                    <tr>
+                        <td label="Order No">4</td>
+                        <td label="Location">Kaluthara</td>
+                        <td label="Payment">Rs.1500.00</td>
+                        <td class="click pick-order"><button>Pick</button></td> 
+                    </tr>
+                </tbody>
             </table>
 
             <!--table for Delivery History-->
+            <h3 id="table-caption2">Delivery History</h3>
             <table id="Delivery-History" onclick="showHistory()">
-                <tr>
-                    <th>Order No</th>
-                    <th>Location</th>
-                    <th>Payment</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Panadura</td>
-                    <td>Rs.1450.00</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Panadura</td>
-                    <td>Rs.1450.00</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Panadura</td>
-                    <td>Rs.1450.00</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Panadura</td>
-                    <td>Rs.1450.00</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Order No</th>
+                        <th>Location</th>
+                        <th>Payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td label="Order No">1</td>
+                        <td label="Location">Panadura</td>
+                        <td label="Payment">Rs.1450.00</td>
+                        <td class="click more-details"><button>More details</button></td>
+                    </tr>
+                    <tr>
+                        <td label="Order No">2</td>
+                        <td label="Location">Panadura</td>
+                        <td label="Payment">Rs.1450.00</td>
+                        <td class="click more-details"><button>More details</button></td>
+                    </tr>
+                    <tr>
+                        <td label="Order No">3</td>
+                        <td label="Location">Panadura</td>
+                        <td label="Payment">Rs.1450.00</td>
+                        <td class="click more-details"><button>More details</button></td>
+                    </tr>
+                    <tr>
+                        <td label="Order No">4</td>
+                        <td label="Location">Panadura</td>
+                        <td label="Payment">Rs.1450.00</td>
+                        <td class="click more-details"><button>More details</button></td>
+                    </tr>
+                </tbody>
             </table>
         </section>
 
-        <section class="footer">
+        <div class="footer">
             <?php include('footer.php'); ?>  
-        </section>
+        </div>
         
     </body>
 </html>
