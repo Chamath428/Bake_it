@@ -4,10 +4,127 @@
     padding: 0%;
     box-sizing: border-box;
 }
-.header-navigation > div{
+body{
     display: grid;
-    grid-template-columns: 20%;
-    border: 2px solid blue;
-    gap: 10px;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
+header{
+    display: flex;
+    min-height: 10vh;
+    max-width: 100%; 
+    background: rgba(0, 0, 0, 0.26);
+    color: rgb(0, 0, 0);
+    gap: 15px; 
+    align-items: center;
+    justify-content: center;
+} 
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(255, 138, 0);
+}
+#header-navigation{
+    display: flex;
+    /* border: 3px dotted red; */
+    padding-left: 25%;
+    gap: 10%; 
+    align-items: center;
+}
+.header-icon{
+    display: flex;
+    /* border: 3px dotted rgb(51, 255, 0); */
+    gap: 20px;
+    font-size: 15px;
+}
+.header-name{
+    display: flex;
+    /* flex-grow: inherit; */
+    /* flex-basis: 40px; */
+    font-size: 30px;
+    font-family: 'Merienda', cursive;
+    line-height: 45px;
+    font-weight: 500;
+    /* border: 3px solid rgb(234, 3, 255);  */
+}
+.bake-it{
+    padding-left: 50%;
+    /* background-color: red; */
+}
+.header-funtions{
+    display: flex;
+    /* flex-shrink:6;
+    flex-grow: 3; */
+    /* flex: 1; */
+    gap: 15px;
+    font-size: 20px;
+    align-items: center;
+    /* background: chartreuse; */
+}
+.header-icon div{
+    display: flex;
+    /* flex-basis: 50px; */
+    align-items: flex-end;
+    font-size: 15px;
+    /* background: chartreuse; */
+} 
+#open,#close{
+    display: none;
+    /* border: 3px solid blue; */
+}
+#side-nav{
+    display: none;
+} 
+#side-nav ul li {
+    display: grid;
+    grid-gap: 20px;
+    list-style: none;
+    grid-template-columns: repeat(1, 1fr);
+} 
+#side-nav ul li a{
+    background:#ddd;
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: left;
+    color: #333;
+    font-size: 1.1rem;
+    box-shadow: 0 1px 5px rgba(165, 163, 163, 0.8);     
+   
+}
+#side-nav ul li a:hover{
+    color: rgb(255, 138, 0);
+}
+@media(max-width:600px){
+    header{
+        min-height: 5vh;
+    }
+    .nav-bars{
+        display: flex;
+        padding-left: 50%;
+    }
+    #open{
+        display: flex;
+        flex-grow: 30px;
+        flex-basis: 20px; 
+    }
+    #close{
+        flex-grow: 30px;
+        flex-basis: 20px; 
+    }
+    #header-navigation{
+        display: none;
+    }
+    .bake-it{
+        padding-right: 70%;
+        margin-left: 0%;
+        justify-content: left;
+        align-items: left;
+    }
+    
+    
+    
+}
