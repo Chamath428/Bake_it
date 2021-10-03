@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="../../../public/css/testTable.css">
-        <script src="../../../public/js/testTable.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/testTable.css">
+        <script src="../../../public/js/deliveryPerson/testTable.js"></script>
         <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 
 </head>

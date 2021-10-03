@@ -4,7 +4,10 @@
     padding: 0%;
     box-sizing: border-box;
 }
-.container1{
+.header-navigation > div{
     display: grid;
-    grid-template-columns: 33%;
+    grid-template-columns: 20%;
+    border: 2px solid blue;
+    gap: 10px;
 }
+

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../../../public/css/Availability.css">
-        <script src="../../../public/js/index.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/Availability.css">
+        <script src="../../../public/js/deliveryPerson/index.js"></script>
         <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 
     </head>
