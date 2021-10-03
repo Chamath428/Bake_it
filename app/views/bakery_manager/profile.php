@@ -39,9 +39,7 @@
                     </div>
                 </div>
                 <div class="button-class">
-                      <div class="change-name"> 
-                        <input type="button" id="button"  value="Bakery Manager">
-                      </div>
+                      <div class="bakery-name"> Bakery Manager </div>
                       <div class="reset-password">
                         <input type="button" id="button"  value="Reset Password">
                       </div>

@@ -30,6 +30,7 @@
           </div>
         </div> -->
         <section>
+              <div class="topic">Raw Materials</div>
               <div class="raw-btn">
                     <a href="Available_Materials.php"><button>Available Materials</button></a>
                     <a href="add_stock.php"><button>Add Stock</button></a>

@@ -19,7 +19,7 @@
 
         <?php require_once('header.php'); ?>
 
-      <div class="available-materials">Available Materials</div>
+      <div class="ava-mtr-topic">Available Materials</div>
       <div class="table">
          <table class="content-table">
             <thead>

@@ -9,91 +9,12 @@ body{
     height: 100vh;
     
 }
-/* 
-.header{
-  width: 100%;
-  height: 75vh;
-}
- 
-a{
-  text-decoration: none;
-  color: #000000; 
- 
-}
-.bake_it {
-    position: absolute;
-    left: 44%; 
-    color: rgb(0, 0, 0);
-    position: absolute;
-    width: 160px;
-    height: 47px;
-    top: 20px; 
-    left: 44%;
-    font-family: Rancho;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 35px;
-    line-height: 60px;
-    
-  }
-  .herf-bake-it:hover{
-    color: rgb(255, 138, 0);
-    font-size:40px ;
 
-  }
-  .bell_icon{
-    position: absolute;
-    width: 100px;
-    height: 20px;
-    right: 10px;
-    top: 40px;
-  }
-  #bell {
-    font-size: 40px;
-    color: rgb(0, 0, 0);
-  }
-  #bell:hover{
-    color: rgb(250, 119, 119);
- 
-  }
-    
-  .notification_text{
-    
-    position: absolute;
-    width: 100px;
-    height: 56px;
-    right: 34px;
-    top: 80px;
-
-    font-family: Prociono;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 34px;
-    color: #000000
-
-  }
-  #user_logo_id{
-    font-size: 60px;
-    color: rgb(0, 0, 0);
-  }
-  #user_logo_id:hover{
-      color: rgb(250, 119, 119);
-  }
-  .user_logo{
-    position: absolute;
-    width: 164px;
-    height: 56px;
-    left: 30px;
-    top: 47px;
-  }  */
-
-
-  .available-materials{
+  .ava-mtr-topic{
     position: absolute; 
-    left: 40%;
-    top: 140px;
-    font-size: xx-large;
+    left: 39%;
+    top: 100px;
+    font-size: 27px;
     font-weight: bold;
     
   }
@@ -107,9 +28,9 @@ a{
 
     position: absolute;
     width: 60%; 
-    height: 100px;
+    height: 190px;
     left: 20%;
-    top: 220px;
+    top: 170px;
      border-collapse: collapse;
      margin: 25px, 0;
     font-size: 20px;
@@ -146,21 +67,22 @@ a{
 
 .button-retrieve-save{
     position: absolute;
-    right: 9%;
-    top: 65vh;
+    right: 13%;
+    top: 57vh;
     
 
 }
 #submit{
-    width: 100px;
-    height: 44px;
+    width: 90px;
+    height: 40px;
     background: #FFFFFF;
     border: 1px solid rgba(255, 138, 0, 0.98);
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     border-radius: 20px;
     cursor: pointer;
     margin-right: 10px;
-    font-size: 17px;
+    font-size: 14px;
+    font-weight: bold;
 }
 #submit:hover{
   background:rgb(134, 127, 127);
