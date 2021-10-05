@@ -7,6 +7,7 @@ section{
 	position: relative;
 	overflow-x: hidden;
 	overflow-y: auto;
+	font-size: 1.4rem;
 }
 
 /*Desktop Cart starts*/
@@ -26,7 +27,7 @@ section{
 }
 
 .cart-containter table td button{
-	background-color: transparent;
+	/*background-color: transparent;*/
 	align-items: center;
 	border-width: 0px;
 	cursor: pointer;
@@ -37,10 +38,11 @@ section{
 	font-size: 25px;
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
+	color: rgba(212, 44, 81,0.9);
 }
 
 .cart-containter table td  button .far:hover{
-	color: rgba(212, 44, 81,0.7);
+	color: rgba(212, 44, 81,1);
 }
 
 .cart-containter table th{
@@ -116,7 +118,6 @@ section{
 .button-container button:hover{
 	background-color: rgba(255, 138, 0,0.7);
 	color: white;
-
 }
 /*button container ends*/
 
@@ -137,6 +138,10 @@ section{
 	/*margin-right: 150px;*/
 	border-top: 3px solid rgb(255, 138, 0);
 }
+.total-container table tr td:first-child{
+	font-weight: bold;
+}
+
 .total-container table td:last-child{
 	text-align: right;
 }
@@ -252,6 +257,7 @@ section{
 
 .cart-containterm table tr td:first-child{
 	text-align: left;
+	font-weight: bold;
 }
 
 .cart-containterm table tr td div{
