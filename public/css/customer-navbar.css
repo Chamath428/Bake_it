@@ -298,5 +298,10 @@ nav{
 .custom-shape-divider-top-1633458560 .shape-fill {
     fill: rgb(0, 0, 0);
 }
+@media(max-width: 720px){
+    .shape h2{
+        left: 1.5rem;
+    }
+}
 
 /*Shape Ends*/
