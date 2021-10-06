@@ -7,22 +7,23 @@
 body{
     line-height: 1.5;
 }
-.footer{
+#footerId{
     /* position: fixed;  */
     bottom: 0;
     padding: 25px 0;
     width: 100%;
     /* background-color: #000000; */
 	background-image: linear-gradient(180deg, #000000 0%, #171618 50%, #000000 100%);
+    z-index: 3;
 }
-.container{
+.footer-container{
    max-width: 1170px;
    margin: auto; 
 }
-ul{
+footer > ul{
     list-style: none;
 }
-.row{
+.footer-row{
     display: flex;
     flex-wrap: wrap;
 }
@@ -40,18 +41,10 @@ ul{
     font-weight: 500;
     position: relative;
 }
-#Bake-it{
+#footer-Bake-it{
     font-family: 'Merienda', cursive;
     line-height: 1.5;
 }
-/* .footer-col h4 a{
-    color: rgb(247, 170, 99);
-    font-family: 'Merienda', cursive;
-    margin-bottom: 30px;
-    font-weight: 500;
-    position: relative;
-    text-decoration: none;
-} */
 
 .footer-col h4::before{
    content: '';
@@ -82,7 +75,7 @@ ul{
     color: rgb(255, 138, 0);
     padding-left: 8px;
 }
-.footer-col .social-links a{
+.footer-col .footer-social-links a{
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -102,7 +95,7 @@ ul{
     display: inline-block;
 
 }
-.footer-col .social-links a:hover{
+.footer-col .footer-social-links a:hover{
     color: rgb(255, 138, 0);
     transform: rotate(10deg);
 
@@ -112,7 +105,7 @@ ul{
     background-color: transparent;
     color: white;
 }
-footer p{
+footer > p{
     font-size: 10px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
@@ -121,7 +114,7 @@ footer p{
 }
 /*responsive*/
 @media(max-width: 767px){
-    .footer{
+    #footerId{
         padding: 0%;
     }
     .footer-col{

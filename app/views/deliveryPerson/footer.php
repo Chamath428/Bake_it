@@ -9,11 +9,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
-    <footer class="footer">
-        <div class="container">
-           <div class="row">
+    <footer id="footerId">
+        <div class="footer-container">
+           <div class="footer-row">
               <div class="footer-col">
-                  <h4 id="Bake-it">Bake_it</h4>
+                  <h4 id="footer-Bake-it">Bake_it</h4>
                   <ul>
                       <li><a href="#">Privacy Policy</a></li>
                       <li><a href="#">Terms & Conditions</a></li>
@@ -37,7 +37,7 @@
               </div> 
               <div class="footer-col">
                   <h4>Follow Us</h4>
-                  <div class="social-links">
+                  <div class="footer-social-links">
                       <a href="#"><i class="fab fa-facebook"></i></a>
                       <a href="#"><i class="fab fa-instagram"></i></a>
                       <a href="#"><i class="fab fa-twitter"></i></a>
