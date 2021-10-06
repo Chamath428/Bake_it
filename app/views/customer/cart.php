@@ -115,7 +115,7 @@
 					<td>300.00 LKR</td>
 				</tr>
 			</table>
-			<a href="#"><button>Proceed to Checkout</button></a>
+			<a href="checkout.php"><button>Proceed to Checkout</button></a>
 		</div>
 	</div>
 
@@ -209,7 +209,7 @@
 					<td>300.00 LKR</td>
 				</tr>
 			</table>
-			<a href="#"><button>Proceed to Checkout</button></a>
+			<a href="checkout.php"><button>Proceed to Checkout</button></a>
 		</div>
 	</div>
  </section> 
@@ -280,7 +280,7 @@
 					<td>300.00 LKR</td>
 				</tr>
 			</table>
-			<a href="#"><button>Proceed to Checkout</button></a>
+			<a href="checkout.php"><button>Proceed to Checkout</button></a>
 		</div>
  	</div>
 
@@ -376,7 +376,7 @@
 					<td>300.00 LKR</td>
 				</tr>
 			</table>
-			<a href="#"><button>Proceed to Checkout</button></a>
+			<a href="checkout.php"><button>Proceed to Checkout</button></a>
 		</div>
  	</div>
  

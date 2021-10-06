@@ -52,7 +52,7 @@
                 <li><a href="login.php">Login</a></li>
             </ul>
             <div class="user-icons">
-                <a href=""><i class="far fa-user-circle"></i></a>
+                <a href="profile.php"><i class="far fa-user-circle"></i></a>
                 <a href=""><i class="far fa-bell"></i></a>
                 <a href="cart.php"><i class="fas fa-shopping-basket"></i></a>
             </div>
