@@ -5,7 +5,7 @@
                 <i class="icon ion-md-menu"></i>
                 <i class="icon ion-md-close"></i>
             </div>
-            <a href="index.php" class="logo">Bake_it</a>
+            <a href="<?php echo BASEURL ?>" class="logo">Bake_it</a>
             <ul class="nav-list">
                 <li><a href="index.php">Home</a></li>
                 <li><a style="cursor: pointer;">Menu</a>
@@ -31,12 +31,12 @@
                 <li><a href="">About Us</a></li>
                 <li><a href="">Careers</a></li>
                 <li><a href="">Order For an Event</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li>
             </ul>
             <div class="user-icons">
-                <a href="profile.php"><i class="far fa-user-circle"></i></a>
+                <a href="<?php echo BASEURL.'/profileController' ?>"><i class="far fa-user-circle"></i></a>
                 <a href=""><i class="far fa-bell"></i></a>
-                <a href="cart.php"><i class="fas fa-shopping-basket"></i></a>
+                <a href="<?php echo BASEURL.'/cartController' ?>"><i class="fas fa-shopping-basket"></i></a>
             </div>
         </nav>
     </div>

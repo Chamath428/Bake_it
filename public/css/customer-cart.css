@@ -24,6 +24,7 @@ section{
 	border-collapse: collapse;
 	margin: 60px auto;
 	border-spacing: 10px;
+	border: 2px solid rgba(255, 137, 0, 1.0);
 }
 
 .cart-containter table td button{
@@ -235,7 +236,7 @@ section{
 	border-collapse: collapse;
 	margin: 60px auto;
 	border-spacing: 10px;
-	border: 2px solid rgba(255, 138, 0,0.5);
+	border: 2px solid rgba(255, 138, 0,1);
 }
 
 .cart-containterm table tr{

@@ -42,7 +42,7 @@ section{
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-.profile-container .profile-buttons div button{
+/*.profile-container .profile-buttons div button{
 	padding: 1rem;
 	border-radius: 1rem;
 	cursor: pointer;
@@ -50,11 +50,23 @@ section{
 	font-size: 1.5rem;
 	border: 1px solid rgb(255, 137, 0);
 	transition: 0.3s ease-in-out;
+}*/
+.profile-container .profile-buttons div a{
+	padding: 1rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	background-color: transparent;
+	font-size: 1.5rem;
+	border: 1px solid rgb(255, 137, 0);
+	color: black;
+	transition: 0.3s ease-in-out;
+	font-weight: bold;
 }
-.profile-container .profile-buttons div button:hover{
+.profile-container .profile-buttons div a:hover{
 	color: white;
 	background-color: rgb(255, 137, 0);
 }
+
 
 @media(max-width: 1030px){
 	.profile-container .profile-buttons div{

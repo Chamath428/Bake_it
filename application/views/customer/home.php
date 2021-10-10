@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome Bake_it</title>
-    <link href="../../../public/css/customer-navbar-index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../public/css/customer-body.css">
-    <link rel="stylesheet" href="../../../public/css/customer-footer.css">
+    <link href="<?php echo BASEURL ?>/public/css/customer-navbar-index.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-body.css">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-body.css">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-footer.css">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
-    <script src="../../../public/js/navbar.js" defer></script>
+    <script src="<?php echo BASEURL ?>/public/js/navbar.js" defer></script>
 </head>
 <body>
 <!--Nav markup goes here-->
@@ -23,9 +24,9 @@
                 <i class="icon ion-md-menu"></i>
                 <i class="icon ion-md-close"></i>
             </div>
-            <a href="#" class="logo">Bake_it</a>
+            <a href="<?php BASEURL ?>" class="logo">Bake_it</a>
             <ul class="nav-list">
-                <li><a href="">Home</a></li>
+                <li><a href="<?php BASEURL ?>">Home</a></li>
                 <li><a style="cursor: pointer;">Menu</a>
                     <ul class="sub-menu">
                         <li><a href="">Burger</a></li>
@@ -45,16 +46,16 @@
                         <li><a href="">Town1</a></li>
                     </ul>
                 </li>
-                <li><a href="myorders.php">My Orders</a></li>
+                <li><a href="<?php echo BASEURL.'/myordersController' ?>">My Orders</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Careers</a></li>
                 <li><a href="">Order For an Event</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li>
             </ul>
             <div class="user-icons">
-                <a href="profile.php"><i class="far fa-user-circle"></i></a>
+                <a href="<?php echo BASEURL.'/profileController' ?>"><i class="far fa-user-circle"></i></a>
                 <a href=""><i class="far fa-bell"></i></a>
-                <a href="cart.php"><i class="fas fa-shopping-basket"></i></a>
+                <a href="<?php echo BASEURL.'/cartController' ?>"><i class="fas fa-shopping-basket"></i></a>
             </div>
         </nav>
     </div>
@@ -65,9 +66,9 @@
 <!--Hero-->
 <section class="hero">
     <div class="text">
-        <h2>Proudly serving</h2>
-        <h1>Delicious Food Daily</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <h1>Bake_it</h1>
+        <h2>Best Taste Since 1997</h2>
+        <p>We are open every day from 7.00AM to 8.00PM.</p>
         <a href="#menu" class="btn">Discover Menu</a>
     </div>
 </section>
@@ -77,56 +78,56 @@
             <div class="menu-container">
                 <div class="menu-box grid-item-1">
                     <a href="#">
-                        <img src="../../../public/images/bread.jpg">
+                        <img src="<?php echo BASEURL ?>/public/images/bread.jpg">
                         <div class="h3">BREAD</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-2">
                     <a href="#">
-                        <img src="../../../public/images/pastry.jpg">
+                        <img src="<?php echo BASEURL ?>/public/images/pastry.jpg">
                         <div class="h3">PASTRY</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-6">
                     <a href="#">
-                        <img src="../../../public/images/cake.jpg">
+                        <img src="<?php echo BASEURL ?>/images/cake.jpg">
                         <div class="h3">CAKE</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-5">
                     <a href="menuItems.php">
-                        <img src="../../../public/images/burger.jpg">
+                        <img src="<?php echo BASEURL ?>/images/burger.jpg">
                         <div class="h3">BURGER</div>    
                     </a>
                 </div>
                 <div class="menu-box grid-item-9">
                     <a href="#">
-                        <img src="../../../public/images/snacks.jpg">
+                        <img src="<?php echo BASEURL ?>/images/snacks.jpg">
                         <div class="h3">SNACKS</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-3">
                     <a href="#">
-                        <img src="../../../public/images/donuts.jpg">
+                        <img src="<?php echo BASEURL ?>/public/images/donuts.jpg">
                         <div class="h3">DONUT</div>
                     </a>
                 </div>
 
                 <div class="menu-box grid-item-4">
                     <a href="#">
-                        <img src="../../../public/images/muffins.jpg">
+                        <img src="<?php echo BASEURL ?>/public/images/muffins.jpg">
                         <div class="h3">MUFFIN</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-7">
                     <a href="#">
-                        <img src="../../../public/images/sweets.jpg">
+                        <img src="<?php echo BASEURL ?>/public/images/sweets.jpg">
                         <div class="h3">SWEETS</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-8">
                     <a href="#">
-                        <img src="../../../public/images/baverages.jpg">
+                        <img src="<?php echo BASEURL ?>/public/images/baverages.jpg">
                         <div class="h3">BAVERAGES</div>
                     </a>
                 </div>

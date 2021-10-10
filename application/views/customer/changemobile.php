@@ -1,4 +1,4 @@
-<?php $pagename="profile"; ?>
+<?php $pagename="Change Phone Number"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,34 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../../public/css/customer-navbar.css">
 	<link rel="stylesheet" href="../../../public/css/customer-footer.css">
-	<link rel="stylesheet" href="../../../public/css/customer-profile.css">
+	<link rel="stylesheet" href="../../../public/css/customer-changmobile.css">
 	<script src="../../../public/js/navbar.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
-	<title>Profile</title>
+	<title>Change Phone Number</title>
 </head>
 <body>
+
 	<header>
 		<?php require_once('navbar.php'); ?>
 	</header>
 
-	<section class="profile">
-		<div class="profile-container">
-			<div class="profile-image">
-				<a href=""><img src="../../../public/images/profile.jpg"></a>
-				<h2>Makawi Gunarathna</h2>
-			</div>
-			<div class="profile-buttons">
-				<div>
-					<button>Reset Password</button>
-					<button>Change Location</button>
-				</div>
-				<div>
-					<button>Change Email</button>
-					<button>Change Phone Number</button>
-				</div>	
-			</div>
+	<section class="change-mail">
+		<form>
+		<div class="input-container">
+			<input type="text" name="current-mobile" placeholder="Enter New Email" value="0765855999">
+			<input type="text" name="new-mobile" placeholder="Enter New Mobile">
+			<input type="submit" name="reset-password" value="Submit">
 		</div>
+		</form>
 	</section>
 
 	<?php require_once('footer.php'); ?>

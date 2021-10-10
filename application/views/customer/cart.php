@@ -4,11 +4,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../../../public/css/customer-navbar.css">
-	<link rel="stylesheet" href="../../../public/css/customer-footer.css">
-	<link rel="stylesheet" href="../../../public/css/customer-cart.css">
-	<script  src="../../../public/js/cart.js" defer></script>
-	<script src="../../../public/js/navbar.js" defer></script>
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-navbar.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-footer.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-cart.css">
+	<script  src="<?php echo BASEURL ?>/public/js/cart.js" defer></script>
+	<script src="<?php echo BASEURL ?>/public/js/navbar.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
 	<title>Cart</title>
@@ -45,10 +45,9 @@
 					</td>
 					<td>
 						<div class="product-container">
-							<img src="../../../public/images/b1.png">
+							<img src="<?php echo BASEURL ?>/public/images/b1.png">
 							<div>
 								<p>Small Burger</p>
-								<!-- <a href="#"><button>Remove</button></a> -->
 							</div>
 						</div>
 					</td>
@@ -72,10 +71,9 @@
 					</td>
 					<td>
 						<div class="product-container">
-							<img src="../../../public/images/b1.png">
+							<img src="<?php echo BASEURL ?>/public/images/b1.png">
 							<div>
 								<p>ddd Burger</p>
-								<!-- <a href="#"><button>Remove</button></a> -->
 							</div>
 						</div>
 					</td>
@@ -115,7 +113,7 @@
 					<td>300.00 LKR</td>
 				</tr>
 			</table>
-			<a href="checkout.php"><button>Proceed to Checkout</button></a>
+			<a href="<?php echo BASEURL.'/checkoutController' ?>"><button>Proceed to Checkout</button></a>
 		</div>
 	</div>
 
@@ -139,10 +137,9 @@
 					</td>
 					<td>
 						<div class="product-container">
-							<img src="../../../public/images/b1.png">
+							<img src="<?php echo BASEURL ?>/public/images/b1.png">
 							<div>
 								<p>Small Burger</p>
-								<!-- <a href="#"><button>Remove</button></a> -->
 							</div>
 						</div>
 					</td>
@@ -166,10 +163,9 @@
 					</td>
 					<td>
 						<div class="product-container">
-							<img src="../../../public/images/b1.png">
+							<img src="<?php echo BASEURL ?>/public/images/b1.png">
 							<div>
 								<p>Small Burger</p>
-								<!-- <a href="#"><button>Remove</button></a> -->
 							</div>
 						</div>
 					</td>
@@ -209,7 +205,7 @@
 					<td>300.00 LKR</td>
 				</tr>
 			</table>
-			<a href="checkout.php"><button>Proceed to Checkout</button></a>
+			<a href="<?php echo BASEURL.'/checkoutController' ?>"><button>Proceed to Checkout</button></a>
 		</div>
 	</div>
  </section> 
@@ -232,7 +228,7 @@
 					</td>
  					<td>
  						<div class="product-image">
- 							<img src="../../../public/images/b1.png" width="40px" height="40px">
+ 							<img src="<?php echo BASEURL ?>/public/images/b1.png" width="40px" height="40px">
 
  						</div>
  					</td>
@@ -280,7 +276,7 @@
 					<td>300.00 LKR</td>
 				</tr>
 			</table>
-			<a href="checkout.php"><button>Proceed to Checkout</button></a>
+			<a href=""<?php echo BASEURL.'/checkoutController' ?>"><button>Proceed to Checkout</button></a>
 		</div>
  	</div>
 
@@ -293,7 +289,7 @@
 					</td>
  					<td>
  						<div class="product-image">
- 							<img src="../../../public/images/b1.png" width="40px" height="40px">
+ 							<img src="<?php echo BASEURL ?>/public/images/b1.png" width="40px" height="40px">
 
  						</div>
  					</td>
@@ -328,7 +324,7 @@
 					</td>
  					<td>
  						<div class="product-image">
- 							<img src="../../../public/images/b1.png" width="40px" height="40px">
+ 							<img src="<?php echo BASEURL ?>/public/images/b1.png" width="40px" height="40px">
 
  						</div>
  					</td>
@@ -376,11 +372,14 @@
 					<td>300.00 LKR</td>
 				</tr>
 			</table>
-			<a href="checkout.php"><button>Proceed to Checkout</button></a>
+			<a href="<?php echo BASEURL.'/checkoutController' ?>"><button>Proceed to Checkout</button></a>
 		</div>
  	</div>
  
  </section>
+
+	<?php require_once('footer.php'); ?>
+</html>
 
 	<?php require_once('footer.php'); ?>
 </html>
