@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.delivery-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(10vh,auto);
+    border: 5px solid rgba(255, 8, 0, 0.507);
+}
+.map{
+    display: grid;  
+}
+#Location-track{
+    grid-column: 1/10;
+    grid-row: 1/10;
+    background-image: url("../../public/images/map.png");
+    background-position: center;
+    background-size: cover; 
+    z-index: -1;
+}
+
+.sub-container1{
+    display: grid;
+    grid-column: 1/5;
+    grid-template-columns: 33%;
+    grid-gap: 5fr;
+    border: 5px solid rgb(0, 119, 255);
+    background: rgb(245, 184, 184);
+    /* grid-auto-rows: minmax(50vh, auto); */
+}

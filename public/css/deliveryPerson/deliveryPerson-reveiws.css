@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+h3{
+    margin-left: 42%;
+    font-size: 40px;
+    font-weight: 900;
+}
+#reviews-table{
+    margin-left: 20%;
+}
+table tbody tr:last-of-type{
+    border-bottom: 2px solid #df7511;
+} 
+#far-star{
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+#fas-star{
+    color: rgb(255, 187, 0);
+    font-size: 15px;
+}
+@media(max-width:480px){
+    #reviews-table{
+        margin-left: 0%;
+    }
+}
