@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 .header{
     top: 0%;
@@ -12,36 +13,22 @@
     /* position: absolute; */
 }
 .delivery-body{
+    margin: 10vh 70px;
     text-decoration: none;
     color: black;
     text-align: center;
     line-height: 2.0;
-}
-.button-selection{
-    display: flex;
-    flex-direction: row;
-    margin-top: 50px;
-    justify-content: space-around;
-    height: 10%;
-}
-.button-selection a{
-    width: 25%;
-    color: black;
-    font-weight: bold;
-    font-size: 25px;
     font-family: 'Montserrat', sans-serif;
-    border: 2px solid rgb(255, 127, 127);
 }
-#table-caption2,#Delivery-History{
-    display: none;
-}
+.delivery-body h2{
+    font-size: 30px;
 
-#table-caption1{
-    /* margin-left: 42%; */
+}
+#table-caption{
     font-size: 40px;
     font-weight: 900;
 }
-#Ongoing-Deliveries{
+#Ongoing-Deliveries,#Delivery-History{
     margin-left: 25%;
 }
 table tbody tr td:last-of-type{
@@ -73,7 +60,7 @@ table tbody tr td:last-of-type{
         height: 90px;
         padding: 15px; 
     }
-    h3,#table-caption1{
+    h3,#table-caption1,#table-caption2{
         margin-top: 8%;
         padding: 8px;
         font-size: 20px;

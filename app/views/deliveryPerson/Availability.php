@@ -13,9 +13,19 @@
         
          <section  class="available-body">
             <h2>Availability Status</h2>
-            <div class="availability-selection">
-                    <a href="#" onclick="alert1()">Available</a>
-                    <a href="#" onclick="alert2()">Not Available</a>
+            <div id="availabile">
+                <p><center>Now you are available for deliveries <br>
+                   Wait for deliveries<br><br>
+                </p>
+                <a href="#" class="confirm-btn">Confirm your availability</a></center>
+                    <!-- <a href="#" onclick="alert1()">Available</a>
+                    <a href="#" onclick="alert2()">Not Available</a> -->
+            </div>
+            <div id="not-available">
+                <p>
+                    <center>You are not available for deliveries<br><br> 
+                </p>
+                <a href="#" class="confirm-btn">Confirm your availability</a></center>
             </div>
          </section>
     

@@ -3,33 +3,31 @@
     margin: 0;
     padding: 0;
 }
-.available-body h2{
+/* .available-body h2{
+      background-color: blue;
       padding-top: 50px;
       text-align: center;
       font-size: 30px;
       font-family: 'Roboto', sans-serif;
       font-weight: bold;
+} */
+#availabile,#not-available{
+      border: 2px solid rgba(255, 138, 0, 0.8);
+      box-shadow: 2px 1px rgba(255, 137, 0,1);
+      padding: 45px;
+      margin: 15% 32%;
+      width: 40%;
+      height: 35vh;
+      font-size: 20px;
 }
-.availability-selection{
-      display: flex;
-      padding:15px;
-      /* margin-top: 10px; */
-      margin-left: 15%;
-      width: 75%;
-      height: 50vh;
-      justify-content: space-around;     
-
-}
-.availability-selection a{
-      background-color: #f4f4f4;
-      border: 2px solid rgb(255, 127, 127);
-      color: black; 
+.confirm-btn{
+      border: 2px solid rgba(255, 138, 0, 0.8);
+      box-shadow: 2px 1px rgba(255, 137, 0,1);
       width: 42%; 
-      height:150px; 
+      height:150px;
+      top: 30px; 
       margin: 10px;
-      padding: 39px; 
       text-align: center; 
-      font-size: 30px;
       text-decoration: none;   
 }
 

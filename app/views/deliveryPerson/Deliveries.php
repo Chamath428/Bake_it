@@ -12,17 +12,17 @@
     </head>
 
     <body>    
-       <section class="header">
-          <?php include('header.php'); ?>
-       </section>
+       <!-- <section class="header">
+          ?php include('header.php'); ?>
+       </section> -->
 
        <section class="delivery-body">
             <!--button-->
             <h2>Deliveries</h2>
-            <div class="button-selection">
+            <!-- <div class="button-selection">
                 <a href="#" onclick="openOngoing()">Ongoing Deliveries</a>
                 <a href="#" onclick="openHistory()">Delivery History</a>
-            </div>
+            </div> -->
             <!--table for ongoing Deliveries-->
             <h3 id="table-caption1">Ongoing Deliveries</h3>
             <table id="Ongoing-Deliveries">

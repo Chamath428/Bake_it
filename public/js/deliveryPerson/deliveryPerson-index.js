@@ -13,9 +13,14 @@ function closeIndexBody(){
     console.log("working js");
 }
 function alert1(){
-    alert('You are available now and wait for deliveries');
+    alert('You are going to be available for deliveries');
+    selectElement('availabile').style.display='block';
+    // document.getElementById('body').style.display ='blur';
+    selectElement('not-availabile').style.display='none';
 }
 function alert2(){
-    alert('You are not available for deliveries.You miss happy delivery time');
+    alert('You are not available for deliveries');
+    selectElement('availabile').style.display='none';
+    selectElement('not-availabile').style.display='block';
 }
 
