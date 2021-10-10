@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/Availability.css">
-        <script src="../../../public/js/deliveryPerson/index.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveryPerson-availability.css">
+        <script src="../../../public/js/deliveryPerson/deliveryPerson-availability.js"></script>
         <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 
     </head>
     <body>
        <section class="header">
-        <?php include('header.php'); ?>
+        <?php include('headerDP.php'); ?>
        </section>
         
          <section  class="available-body">
@@ -30,7 +30,7 @@
          </section>
     
         <div class="footer">
-              <?php include('footer.php'); ?>   
+              <?php include('footerDP.php'); ?>   
         </div> 
         
     </body>

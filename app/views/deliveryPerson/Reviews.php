@@ -2,14 +2,14 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/table.css">
-        <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/Reveiws.css">
+        <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveryPerson-reveiws.css">
         <script src="../../../public/js/deliveryPerson/index.js"></script>
         <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 
     </head>
     <body>
        <section class="header">
-        <?php include('header.php'); ?>
+        <?php include('headerDP.php'); ?>
        </section>
         
          <div  class="reviews-body">
@@ -61,7 +61,7 @@
         </div>
     
         <section class="footer">
-              <?php include('footer.php'); ?>   
+              <?php include('footerDP.php'); ?>   
         </section> 
         
     </body>

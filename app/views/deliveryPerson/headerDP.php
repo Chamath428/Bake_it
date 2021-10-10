@@ -1,14 +1,20 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveryPerson-header.css">
+    <script src="../../../public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
+</head>
+
+
 <div class="container">
     <div class="navigation" id="mySidenav">
         <ul>
             <li>
-                <a href="#" class="active">
+                <a href="dashboardDP.php" class="active">
                     <span class="icon"><i class="fas fa-home"></i></span>
                     <span class="title">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="hrf">
+                <a href="availability.php" class="hrf">
                     <span class="icon"> <i class="fas fa-check-circle"></i></span>
                     <span class="title">Availability</span>
                 </a>
@@ -20,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="hrf">
+                <a href="reviews.php" class="hrf">
                     <span class="icon"><i class="fas fa-star"></i></span>
                     <span class="title">Reviews</span>
                 </a>
