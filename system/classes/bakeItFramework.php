@@ -53,51 +53,51 @@ class bakeItFramework
  
     // }
  
-//session management methods
+   //session management methods
 
-    // Set session
-  // public function setSession($sessionName, $sessionValue){
+   //Set session
+  public function setSession($sessionName, $sessionValue){
 
 
-  //     if(!empty($sessionName) && !empty($sessionValue)){
-  //        $_SESSION[$sessionName] = $sessionValue;
-  //     }
+      if(!empty($sessionName) && !empty($sessionValue)){
+         $_SESSION[$sessionName] = $sessionValue;
+      }
 
-  // }
+  }
 
-  // // Get session
-  // public function getSession($sessionName){
+  // Get session
+  public function getSession($sessionName){
 
-  //   if(!empty($sessionName)){
-  //      return $_SESSION[$sessionName];
-  //   }
+    if(!empty($sessionName)){
+       return $_SESSION[$sessionName];
+    }
 
-  // }
+  }
 
-  // // Unset session
-  // public function unsetSession($sessionName){
+  // Unset session
+  public function unsetSession($sessionName){
 
-  //    if(!empty($sessionName)){
+     if(!empty($sessionName)){
         
-  //       unset($_SESSION[$sessionName]);
+        unset($_SESSION[$sessionName]);
 
-  //    }
+     }
 
-  // }
+  }
 
-  // // Destroy sessions
-  // public function destroy(){
+  // Destroy sessions
+  public function destroy(){
 
-  //    session_destroy();
+     session_destroy();
 
-  // }
+  }
 
-  // //redirection method
-  // public function redirect($path){
+  //redirection method
+  public function redirect($path){
 
-  //  header("location:" . BASEURL . "/".$path);
+   header("location:" . BASEURL . "/".$path);
 
-  //  }
+   }
 
 }
 

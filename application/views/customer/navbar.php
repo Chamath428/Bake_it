@@ -27,7 +27,7 @@
                         <li><a href="">Town1</a></li>
                     </ul>
                 </li>
-                <li><a href="myorders.php">My Orders</a></li>
+                <li><a href="<?php echo BASEURL.'/myordersController' ?>">My Orders</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Careers</a></li>
                 <li><a href="">Order For an Event</a></li>
