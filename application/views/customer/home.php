@@ -1,4 +1,9 @@
 <!doctype html>
+<?php 
+    if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+    } 
+?>
 <html lang="en">
 
 <head>
@@ -6,13 +11,13 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome Bake_it</title>
-    <link href="<?php echo BASEURL ?>/public/css/customer-navbar-index.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-body.css">
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-body.css">
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-footer.css">
+    <link href="<?php echo BASEURL ?>/public/css/customer/customer-navbar-index.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-body.css">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-body.css">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
-    <script src="<?php echo BASEURL ?>/public/js/navbar.js" defer></script>
+    <script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
 </head>
 <body>
 <!--Nav markup goes here-->
@@ -50,7 +55,10 @@
                 <li><a href="">About Us</a></li>
                 <li><a href="">Careers</a></li>
                 <li><a href="">Order For an Event</a></li>
-                <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li>
+                <?php if (isset($_SESSION['islogged']) && $_SESSION['islogged']==1) {?>
+                <li><a href="<?php echo BASEURL.'/loginController/logout' ?>">Logout</a></li><?php } else{ ?>
+                 <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li><?php } ?>
+                
             </ul>
             <div class="user-icons">
                 <a href="<?php echo BASEURL.'/profileController' ?>"><i class="far fa-user-circle"></i></a>

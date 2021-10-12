@@ -4,11 +4,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-navbar.css">
-	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-footer.css">
-	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-cart.css">
-	<script  src="<?php echo BASEURL ?>/public/js/cart.js" defer></script>
-	<script src="<?php echo BASEURL ?>/public/js/navbar.js" defer></script>
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-cart.css">
+	<script  src="<?php echo BASEURL ?>/public/js/customer/cart.js" defer></script>
+	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
 	<title>Cart</title>

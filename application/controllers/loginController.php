@@ -22,6 +22,7 @@
 			$data['error']="";
 			$username=$_POST['username'];
 			$password=$_POST['password'];
+			$role_number=0;
 			// $remember=$_POST['remember'];
 			
 			if ($username=="") {
@@ -30,19 +31,41 @@
 			else if ($password=="") {
 				$data['error']="Please enter your password.";
 			}
-			else if (!($this->loginModel->checkUserName($username))) {
+			else{
+
+				$role_number=$this->loginModel->checkUserName($username);
+
+				if ($role_number==0) {
 				$data['error']="Wrong Email or Phone number! Please check and enter again.";
+				}
+				else if(!($this->loginModel->checkPassword($username,$password))){
+					$data['error']="Wrong Password! Please check and enter again.";
+				}
 			}
-			else if(!($this->loginModel->checkPassword($username,$password))){
-				$data['error']="Wrong Password! Please check and enter again.";
-			}
+
 			$data['username']=$username;
 			if ($data['error']=="") {
-				$customer_id=$this->loginModel->getCustomerId($username);
-				
+				// $customer_id=$this->loginModel->getCustomerId($username);
+				echo $role_number;
+				if ($role_number==1) {
+					$customer_id=$this->loginModel->getCustomerId($username);
+					$this->setSession("islogged",1);
+					$this->setSession("role_number",$role_number);
+					$this->redirect("homeController");
+				}else{
+					$staff_id=$this->loginModel->getStaffId($username);
+					$this->setSession("islogged",1);
+					$this->setSession("role_number",$role_number);
+					$this->redirect("dashboardController");
+				}
 			}else{
 				$this->view("customer/login",$data);
 			}
+		}
+
+		public function logout(){
+			session_destroy();
+			$this->redirect("homeController");
 		}
 	}
 
