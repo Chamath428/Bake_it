@@ -1,6 +1,13 @@
-.alert {
+.danger-alert {
   padding: 20px;
   background-color: #f44336;
+  color: white;
+  border-radius: 10px;
+}
+
+.confirm-alert {
+  padding: 20px;
+  background-color: #35f076;
   color: white;
   border-radius: 10px;
 }
@@ -18,4 +25,8 @@
 
 .closebtn:hover {
   color: black;
+}
+
+.confirm-alert p,.danger-alert p{
+  font-size: 1.5rem;
 }

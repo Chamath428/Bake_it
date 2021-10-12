@@ -26,8 +26,9 @@ section .content-box{
 	display: flex;
 	width: 50%;
 	height: 100%;
-	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 section .content-box .form-box{
@@ -80,9 +81,14 @@ section .content-box .form-box .remember{
 	padding-bottom: 10px;
 	font-size: 14px;
 }
-section .content-box .form-box .input-box p a{
+section .content-box .form-box .input-box p a,section .content-box .form-box .input-box a{
 	text-decoration: none;
 	color: rgb(255, 138, 0);
+	font-size: 1.5rem;
+	transition: 0.2s ease-in-out;
+}
+section .content-box .form-box .input-box p a:hover,section .content-box .form-box .input-box a:hover{
+	font-weight: bold;
 }
 
 @media(max-width: 946px){
