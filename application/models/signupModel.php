@@ -17,6 +17,7 @@
 		}
 
 		public function checkPHoneNumber($phonenumber){
+			$phonenumber=$this->db->real_escape_string($phonenumber);
 			$sql1=	"SELECT 
 						customer_id
 				 	FROM
@@ -28,7 +29,9 @@
 				return true;
 			}else return false;
 		}
+		
 		public function checkEmail($email){
+			$email=$this->db->real_escape_string($email);
 			$sql2=	"SELECT 
 						email
 				 	FROM
@@ -40,7 +43,16 @@
 				return true;
 			}else return false;
 		}
+
 		public function insertUser($userData){
+			$userData['firstname']=$this->db->real_escape_string($userData['firstname']);
+			$userData['lastname']=$this->db->real_escape_string($userData['lastname']);
+			$userData['adl1']=$this->db->real_escape_string($userData['adl1']);
+			$userData['adl2']=$this->db->real_escape_string($userData['adl2']);
+			$userData['adl3']=$this->db->real_escape_string($userData['adl3']);
+			$userData['phonenumber']=$this->db->real_escape_string($userData['phonenumber']);
+			$userData['email']=$this->db->real_escape_string($userData['email']);
+
 			$sql3="	INSERT INTO
 						customer(
 								 first_name,

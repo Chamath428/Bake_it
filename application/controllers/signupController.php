@@ -37,6 +37,9 @@
 			else if (strlen($_POST['phonenumber'])<10) {
 				$data['error']="Please enter a valid phone number.";
 			}
+			else if ($_POST['email']!="" && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+				$data['error']="Please enter a valid email address.";
+			}
 			else if($_POST['password']==""){
 				$data['error']="Password is required!";
 			}
@@ -66,6 +69,7 @@
 				$password=password_hash($_POST['password'], PASSWORD_DEFAULT);
 				$data['password']=$password;
 				$this->signupModel->insertUser($data);
+				$this->redirect("loginController/reindex");
 			}else{
 				$this->view("customer/signup",$data);
 			}

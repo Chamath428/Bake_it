@@ -31,7 +31,9 @@
                 <li><a href="">About Us</a></li>
                 <li><a href="">Careers</a></li>
                 <li><a href="">Order For an Event</a></li>
-                <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li>
+                <?php if (isset($_SESSION['islogged']) && $_SESSION['islogged']==1) {?>
+                <li><a href="<?php echo BASEURL.'/loginController/logout' ?>">Logout</a></li><?php } else{ ?>
+                 <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li><?php } ?>
             </ul>
             <div class="user-icons">
                 <a href="<?php echo BASEURL.'/profileController' ?>"><i class="far fa-user-circle"></i></a>

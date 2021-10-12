@@ -4,11 +4,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-navbar.css">
-	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-footer.css">
-	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-signup.css">
-	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer-messageboxes.css">
-	<script src="<?php echo BASEURL ?>/public/js/navbar.js" defer></script>
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-signup.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
+	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
+	<script src="<?php echo BASEURL ?>/public/js/customer/signup.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
 	<title>Sign Up for Bake_it</title>
@@ -25,13 +26,13 @@
 		</div>
 
 		<div class="content-box">
-			
+			<!-- To show errors if available -->
 			<?php if (isset($data['error'])){?>
-			<div class="alert">
+			<div class="danger-alert">
 			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-			  <?php echo $data['error']; ?>
+			  <p><?php echo $data['error']; ?></p>
 			</div>
-		<?php } ?>
+			<?php } ?>
 				
 			<div class="form-box">
 				<h2>Register</h2>
@@ -40,10 +41,12 @@
 						<input type="text" name="firstname" placeholder="First Name" required="" value="<?php if(isset($data['firstname'])){echo $data['firstname'];} ?>">
 						<input type="text" name="lastname" placeholder="Last Name" required="" value="<?php if(isset($data['lastname'])){echo $data['lastname'];} ?>">
 					</div>
+
 					<div class="input-box">
 						<input type="text" name="email" placeholder="Email" value="<?php if(isset($data['email'])){echo $data['email'];} ?>">
-						<input type="text" name="phonenumber" placeholder="Phone Number" required="" value="<?php if(isset($data['phonenumber'])){echo $data['phonenumber'];} ?>">
+						<input type="text" name="phonenumber" id="phonenumber" placeholder="Phone Number" required="" value="<?php if(isset($data['phonenumber'])){echo $data['phonenumber'];} ?>" onkeypress="javascript:return isNumber(event)">
 					</div>
+
 					<div class="input-box">
 						<input type="password" name="password" placeholder="Password" required="">
 						<input type="password" name="confirmpassword" placeholder="Confirm Password" required="">

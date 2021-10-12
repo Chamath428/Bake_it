@@ -1,72 +1,17 @@
-<div class="bar">
-  <div class="close" onclick="this.parentElement.remove()">X</div>
-  <i class="ico">&#9728;</i> Plain message
-</div>
-<div class="bar info">
-  <div class="close" onclick="this.parentElement.remove()">X</div>
-  <i class="ico">&#8505;</i> Information message
-</div>
-<div class="bar success">
-  <div class="close" onclick="this.parentElement.remove()">X</div>
-  <i class="ico">&#10004;</i> Successful message
-</div>
-<div class="bar warn">
-  <div class="close" onclick="this.parentElement.remove()">X</div>
-  <i class="ico">&#9888;</i> Warning message
-</div>
-<div class="bar error">
-  <div class="close" onclick="this.parentElement.remove()">X</div>
-  <i class="ico">&#9747;</i> Error message
-</div>
+-----User Roles-----
+0- Unregistered Customer
+1-Registered Customer
 
-//css
+-----Job roles-----
+2- Owner
+3-Bakery Manager
+4-Branch Manager
+5-Cashier
+6-Delivery Person
 
-/* THE BASE */
-.bar {
-  padding: 10px;
-  margin: 10px;
-  color: #333;
-  background: #fafafa;
-  border: 1px solid #ccc;
-}
+-----Delivery persons availability-----
+1-Available
+0-Not available
 
-/* THE VARIATIONS */
-.info {
-  color: #204a8e;
-  background: #c9ddff;
-  border: 1px solid #4c699b;
-}
-.success {
-  color: #2b7515;
-  background: #ecffd6;
-  border: 1px solid #617c42;
-}
-.warn {
-  color: #756e15;
-  background: #fffbd1;
-  border: 1px solid #87803e;
-}
-.error {
-  color: #ba3939;
-  background: #ffe0e0;
-  border: 1px solid #a33a3a;
-}
-
-/* ICONS */
-i.ico {
-  display: inline-block;
-  width: 20px;
-  text-align: center; 
-  font-style: normal;
-  font-weight: bold;
-}
-
-/* [CLOSE BUTTON] */
-.bar { position: relative; }
-div.close {
-  position: absolute;
-  top: 30%;
-  right: 10px;
-  color: #888;
-  cursor: pointer;
-}
+Hashings
+123456789 --> $2y$10$KlPRkOH7y/qVtVCOg3sy7OwgJAJkU/ORQWfylv5EWrK3Yyn4UvhIe
