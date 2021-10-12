@@ -1,95 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
-body{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
+*{
     padding: 0;
-    margin: 0%;
-    width: 100%;
-    height: 100vh;
-    
+    margin: 0;
+    box-sizing: border-box;
+
 }
- .main{
-    width: 100%;
-    height:100vh;
-   
-} 
-.header{
+body{
+  padding: 0;
+  margin: 0%;
   width: 100%;
-  height: 75vh;
-}
-
-a{
-  text-decoration: none;
-  color: #000000;
-}
-.bake_it {
-   /* position: absolute;
-    left: 44%; */
-    color: rgb(0, 0, 0);
-    position: absolute;
-    width: 160px;
-    height: 47px;
-    top: 20px; 
-    left: 44%;
-    font-family: Rancho;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 35px;
-    line-height: 60px;
-    
-  }
-  .herf-bake-it:hover{
-    color: rgb(255, 138, 0);
-    font-size:40px ;
-
-  }
-  .bell_icon{
-    position: absolute;
-    width: 100px;
-    height: 20px;
-    right: 10px;
-    top: 40px;
-  }
-  #bell {
-    font-size: 40px;
-    color: rgb(0, 0, 0);
-  }
-  #bell:hover{
-    color: rgb(250, 119, 119);
+  height: 110%;
+  font-family: 'Montserrat', sans-serif;
  
-  }
-    
-  .notification_text{
-    
-    position: absolute;
-    width: 100px;
-    height: 56px;
-    right: 34px;
-    top: 80px;
+  
+}
+.bgg{
+  font-size: 14px;
 
-    font-family: Prociono;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 34px;
-    color: #000000
+}
+.content{
+  width: 100%;
+  height: 90vh;
+}
 
-  }
-  .user_logo{
-    position: absolute;
-    width: 164px;
-    height: 56px;
-    left: 30px;
-    top: 47px;
-  }
-  #user_logo_id{
-    font-size: 60px;
-    color: rgb(0, 0, 0);
-  }
-  #user_logo_id:hover{
-      color: rgb(250, 119, 119);
-  }
  
 
   .back-arrow{
@@ -101,27 +34,28 @@ a{
  
   }
   #back-hand-point{
-      font-size:xx-large;
+      font-size:22px;
       color: #000000;
 
   }
   #back-hand-point:hover{
-      color:rgb(250, 119, 119);
+      color:rgb(255, 135,0);
       font-size: 55px;
   }
  
   
 .order-no{
     position: absolute;
-    left: 34%;
+    left: 41%;
     top: 15%; 
-    font-size: xx-large;
+    font-size: 22px;
+    font-weight: bold;
 
 }
 .details{
     position: absolute;
     width: 80%; 
-    height: 50vh;
+    height: 60vh;
     top: 22%;
     left: 7%;
     background: rgba(255, 198, 131, 0.6);
@@ -133,11 +67,10 @@ a{
     
     position: absolute;
      width: 90%; 
-    height: 100px;
+    height: 40vh;
     left: 4%;
     top: 6%;
      border-collapse: collapse;
-    font-size: 21px;
     box-shadow: 0 0 20px rgb(0, 0,0,0.15);
     background: rgba(248, 175, 116, 0.6);
     
@@ -157,6 +90,58 @@ td{
 .content-table tbody tr td:last-child{
     border-right:none;
 }
+
+
+
+.header-container{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 7vh;
+  background-color: rgb(26, 24, 24);
+  /* z-index: -1; */
+}
+
+.bakeit {
+  /* grid-column: 1 / span 1; */
+  margin-top: 1%;
+  font-family: 'Merienda', cursive;
+  font-weight:bold;
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  left: 3%;
+  transition: transform 3s;
+
+
+}
+
+.header-container .user-icon a ,.header-container .bell-icon a{
+  text-decoration: none;
+  color: white;
+}
+.header-container .user-icon a:hover ,.header-container .bell-icon a:hover{
+  color: rgb(255,138,0);
+  
+}
+.header-container .user-icon{
+  position: absolute;
+  left: 90%;
+  text-align: right;
+  margin-top: 1.5%;
+}
+.header-container .bell-icon{
+  position: absolute;
+  left: 90%;
+  text-align: left;
+  margin-left: 46px;
+  margin-top: 1.5%;
+}
+
+
+
+
 
 
 

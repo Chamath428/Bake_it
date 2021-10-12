@@ -1,54 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 body{
     padding: 0;
     margin: 0%;
-    width: 100%;
-    height: 100vh;
+    /* width: 100%; */
+    height: 110%;
+    font-family: 'Montserrat', sans-serif;
     
 }
+.bgg{
+    font-size: 14px;
+
+}
+
 .daily-requirment{
     position: absolute; 
-    left: 49%;
-    top: 130px;
-    font-size: xx-large;
+    left: 39%;
+    top: 75px;
+    font-size: 22px;
     font-weight: bold;
+    display:flex;
+    
+}
+.daily-requirment p{
+    margin-left: 10px;
+    margin-top:2px;
+    font-size: 18px;
+
 }
 .content{
     margin: 0;
-    margin-left: 14%;
-    margin-top: 6%;
-    width: 86%;
-    height: 52vh;
-    display: flex;
-   
+    margin-left: 7%;
+    margin-top: 4.5%;
+    width: 88%;
+    height: 80vh;
+    display: flex;   
     
 }
-.category-list{
-
-    /* width: 30%;
-    height: 200px; */
-    display: flex;
-    flex-direction: column;
-    
-}
-.category-list button{
-    width: 330px;
-    height: 70px;
-    font-size: 23px;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 1px solid rgb(257, 138, 0);
-    background-color: white;
-    margin: 5px;
-    
-}
-.category-list button:hover{
-    background:rgb(134, 127, 127);
-    color: rgb(255, 255, 255);
-    border-color: rgb(255, 51, 0);
+.content.active{
+    margin-left: 310px;
+    width: 79%;
 }
 
 .category-tables{
@@ -57,25 +53,10 @@ body{
 }
 #category1-table{
     display: none;
+    position: absolute;
+    left: 21%;
+    top: 38vh;
 }
-#category2-table{
-    display: none;
-}
-#category3-table{
-    display: none;
-}
-#category4-table{
-    display: none;
-}
-#category5-table{
-    display: none;
-}
-
-.category-tables h1{
-    margin-left: 370px;
-    margin-bottom: 3px;
-}
-
   
 .content-table{
     
@@ -84,7 +65,6 @@ body{
     height: 190px;
     border-collapse: collapse;
     margin: 25px, 0;
-    font-size: 21px;
     min-width: 900px;
     border-radius:5px 5px 0 0 ;
     overflow:hidden ; 
@@ -112,7 +92,7 @@ body{
 .content-table tbody tr:hover{
   background-color: #ffefea;
  height: 47px;
- font-size: 22px;
+ font-size: 15px;
   
 }
 /* .content-table tbody tr:nth-of-type(even){
@@ -120,4 +100,69 @@ body{
 } */
 .content-table tbody tr:last-of-type{
     border-bottom: 2px solid #e9780e;
+}
+
+
+.drop-down-list{
+    position: absolute;
+    top: 14vh;
+    left: 30%;
+    width:40%; 
+    height: 160px;
+    float: left;
+    margin-bottom: 2px;
+    margin-top: 30px;
+    
+}
+.branch{
+    width:170px; 
+    height: 120px;
+    float: left;
+    margin-left: 2%;
+    margin-top: 15px;
+
+}
+.category-list{
+    width:170px; 
+    height: 120px;
+    float: left;
+    margin-left: 30%;
+    margin-top: 15px;
+    
+
+}
+
+select{
+    width: 170px;
+    border: none;
+    border: 2px solid rgb(255, 138, 0);
+    box-shadow: 1px 1px #ff5a5a;
+    padding: 10px;
+    color:back;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 8px;
+    
+    
+}
+label{
+    font-weight: bold;
+    margin-left: 15px;
+
+}
+.btn button{
+    position: absolute;
+    left: 68%;
+    top: 32vh;
+    width: 70px;
+    height:27px;  
+    background: #FFFFFF;
+    border: 1px solid rgb(255, 138, 0);
+    cursor: pointer;
+    border-radius: 10px;
+}
+.btn button:hover{
+    background:rgb(134, 127, 127);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 51, 0);
 }
