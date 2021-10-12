@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+    
+} 
+.review-topic{
+  position: absolute;
+  top: 15%;
+  left: 42%;
+  font-size: 35px;
+  font-weight: bold;
+}
+.details{
+    position: absolute;
+    width: 50%; 
+    height: 54vh;
+    top: 22%;
+    left: 22%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.details span{
+  width: 100%;
+  height: 50px;
+  border: 1px solid rgb(257, 138, 0);
+  margin-bottom: 15px;
+
+  
+}
+
+
+
+
+

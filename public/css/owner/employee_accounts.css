@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+    
+}
+.emp-topic{
+    position: absolute;
+    top: 14vh;
+    left: 40%;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+
+section{
+    min-height: 35vh;
+   align-items: center;
+}
+
+.raw-btn{
+    width: 60%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    margin-left: 20%;
+    margin-right:10%;
+}
+.raw-btn a{
+    align-items: center;
+}
+.raw-btn a button{
+    /* padding: 100px 70px; */
+    width: 300px;
+    height: 200px;
+    font-size: 28px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(257, 138, 0);
+    background-color: white;
+    
+}
+.raw-btn a button:hover{
+    background:rgb(134, 127, 127);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 51, 0);
+}

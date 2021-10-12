@@ -1,26 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 body{
     padding: 0;
     margin: 0%;
     width: 100%;
-    height: 100vh;
+    height: 110%;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: #bdba04; */
     
+}
+.bgg{
+    font-size: 14px;
+
 }
 .content{
     width: 100%;
-    height: 64vh;
+    height: 80vh;
     
 }
 .summary-topic {
     position: absolute;
-    top: 13vh;
-    left: 33%;
+    top: 14vh;
+    left: 38%;
     width: 60%;
     height: 100px;
-    font-size: 27px;
+    font-size: 22px;
     font-weight: bold;
     /* background-color: aqua; */
     margin: 0px;
@@ -31,21 +41,20 @@ body{
     position: absolute;
     top: 54vh;
     left: 75%;
-    width: 140px;
-    height: 52px;
-    background-color: aliceblue;
+    width: 100px;
+    height: 34px;
+    /* background-color: aliceblue; */
     
 }
 #button{
     position: absolute;
     /* left: 78%; */
-    width: 140px;
-    height:50px;  
+    width: 110px;
+    height:33px;  
     background: #FFFFFF;
     border: 1px solid rgb(255, 138, 0);
     cursor: pointer;
     border-radius: 10px;
-    font-size: 20px;
 }
 #button:hover{
     background:rgb(134, 127, 127);
@@ -55,7 +64,7 @@ body{
 
 .drop-down-btn-div{
     position: absolute;
-    top: 24vh;
+    top: 19vh;
     width:100%; 
     height: 160px;
     float: left;
@@ -64,45 +73,43 @@ body{
     
 }
 .year{
-    width:190px; 
-    height: 140px;
+    width:170px; 
+    height: 120px;
     float: left;
     margin-left: 27%;
     margin-top: 15px;
 
 }
 .month{
-    width:190px; 
-    height: 140px;
+    width:170px; 
+    height: 120px;
     float: left;
     margin-left: 5%;
     margin-top: 15px;
 
 }
 .Raw-Material{
-    width:190px; 
-    height: 140px;
+    width:170px; 
+    height: 120px;
     float: left;
     margin-left: 5%;
     margin-top: 15px;
 
 }
 select{
-    width: 190px;
+    width: 170px;
     border: none;
-    border: 2px solid rgb(255, 138, 0);
-    box-shadow: 2px 1px #ff5a5a;
+    border: 1px solid rgb(255, 138, 0);
+    box-shadow: 1px 1px #ff5a5a;
     padding: 10px;
     color:back;
     font-weight: bold;
-    margin-top: 30px;
-    font-size: 19px;
+    margin-top: 10px;
     border-radius: 8px;
     
     
 }
 label{
-    font-size: 26px;
     font-weight: bold;
     margin-left: 15px;
 

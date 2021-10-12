@@ -1,71 +1,32 @@
-function openNav() {
-    document.getElementById("mySidenav").style.width = "230px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
+const selectElement = (element) => document.querySelector(element);
+
+selectElement('.toggle').addEventListener('click',() => {
+    selectElement('.navigation').classList.toggle('active');
+    selectElement('.content').classList.toggle('active');
+});
+
   
   var ct1 = document.getElementById("category1-table");
-  var ct2 = document.getElementById("category2-table");
-  var ct3 = document.getElementById("category3-table");
-  var ct4 = document.getElementById("category4-table");
-  var ct5 = document.getElementById("category5-table");
-
-
   function category1(){
     
     
       ct1.style.display = "block";
-      ct2.style.display = "none";
-      ct3.style.display = "none";
-      ct4.style.display = "none";
-      ct5.style.display = "none";
+    //   ct2.style.display = "none";
+    //   ct3.style.display = "none";
+    //   ct4.style.display = "none";
+    //   ct5.style.display = "none";
 
    
   }
 
-  function category2(){
-    
-   
-      ct2.style.display = "block";
-      ct1.style.display = "none";
-      ct3.style.display = "none";
-      ct4.style.display = "none";
-      ct5.style.display = "none";
 
-  }
-
-  function category3(){
-  
-    
-      ct3.style.display = "block";
-      ct2.style.display = "none";
-      ct1.style.display = "none";
-      ct4.style.display = "none";
-      ct5.style.display = "none";
-
-  }
-
-  function category4(){
-   
-    
-      ct4.style.display = "block";
-      ct2.style.display = "none";
-      ct3.style.display = "none";
-      ct1.style.display = "none";
-      ct5.style.display = "none";
- 
-  }
-  function category5(){
-    
-    
-      ct5.style.display = "block";
-      ct2.style.display = "none";
-      ct3.style.display = "none";
-      ct4.style.display = "none";
-      ct1.style.display = "none";
-
-  }
-
-  
+  window.onload = setInterval(clock,1000);
+function clock()
+{
+    var d = new Date();
+    var date = d.getDate();
+    var month = d.getMonth();
+    var monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
+    month = monthArr[month];
+    document.getElementById("demo").innerHTML=date+"/"+month;
+}

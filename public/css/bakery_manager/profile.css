@@ -1,96 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prociono&family=Rancho&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+  
+  }
+
 body{
     padding: 0;
     margin: 0%;
     width: 100%;
-    height: 100vh;
+    height: 110vh;
+    font-family: 'Montserrat', sans-serif;
     
 }
+.bgg{
+  font-size: 14px;
 
-.header{
-  width: 100%;
-  height: 80px;
-  background: rgba(49, 47, 47, 0.553);
 }
-a{
-  text-decoration: none;
-  color: #000000;
-}
-.bake_it {
-      position: absolute;
-      left: 44%; 
-      color: rgb(0, 0, 0);
-      position: absolute;
-      width: 160px;
-      height: 47px;
-      top: 20px; 
-      left: 44%;
-      font-family: Rancho;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 35px;
-      line-height: 60px;
-    
-  }
-  .herf-bake-it:hover{
-    color: rgb(255, 138, 0);
-    font-size:43px ;
-
-  }
-  .bell_icon{
-    position: absolute;
-    width: 100px;
-    height: 20px;
-    right: 4px;
-    top: 28px;
-  }
-  #bell {
-    font-size: 30px;
-    color: rgb(0, 0, 0);
-  }
-  #bell:hover{
-    color: rgb(255, 138, 0);
- 
-  }
-    
-  .notification_text{
-    
-    position: absolute;
-    width: 100px;
-    height: 56px;
-    right: 24px;
-    top: 49px;
-
-    font-family: Prociono;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 34px;
-    color: #000000;
-  }
 .middle-section{
- 
-  width: 100%;
-  height: 64vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  /* width: 100%; */
+  height: 82vh;
+  
 }
-
- 
   .profile{
     position: absolute;
-    width: 65%;
+    left: 400px;
+    width: 20%;
     height: 50vh;
-    left: 18%;
-    top: 11vh;
-    
-      
   }
   .profile-logo{
-    
-      height: 45vh;
-     text-align: center;
+
+     height: 45vh;
+     text-align:end;
+     width: 100%;
+     margin: 0;
   }
   #user-icon{
      margin-left: 4px;
@@ -101,10 +48,10 @@ a{
   }
   .button-class{
     position: absolute;
-    left: 41%;
-    top: 53vh;
+    right: 350px;
+    margin: 0;
     width: 20%;
-    height: 100px;
+    height: 390px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -113,23 +60,27 @@ a{
  .bakery-name{
    font-size: 23px;
    font-weight: bold;
-   margin-bottom: 25px
+   margin-top: 65px
  }
 #button{
-    width: 180px;
-    height:50px;  
+    width: 130px;
+    height:40px;  
     background: #FFFFFF;
-    border: 1px solid rgba(247, 93, 73, 0.98);
+    border: 1px solid rgba(255,138,0);
     cursor: pointer;
     border-radius: 10px;
-    font-size: 15px;
+    margin-top: 100px;
+   
 
 }
 
 #button:hover{
     background:rgb(134, 127, 127);
     color: rgb(255, 255, 255);
-    border: 1px solid rgba(0, 0, 0, 0.98);
+    border: 1px solid rgba(245, 28, 28, 0.98);
+}
+#user{
+  color: rgba(255,138,0);
 }
   
  
