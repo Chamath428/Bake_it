@@ -3,25 +3,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; ;
 }
 h3{
-    margin-top: 5%;
+    margin-top: 3%;
+    margin-left: 20%;
     padding: 8px;
     font-size: 20px;
-    font-family: 'Roboto', sans-serif;
     font-weight: bolder;
-    color: rgba(247, 92, 92, 0.788);
 }
 table{
     width: 60%;
     border-collapse: collapse;
-    margin-top: 1%;
-    margin-left: 36%;
+    
+    margin-left: 20%;
     margin-bottom: 5%;
 }
-table td,table th{
-    padding: 12px 15px;
-    border: 1px solid #ddd;
+table td{
+    padding: 12px 5px;
+    
+    text-align: center;
+}
+table th{
+    padding: 12px 5px;
+
 }
 table thead{
     background-color:  rgb(255, 138, 0);
@@ -29,7 +34,7 @@ table thead{
     height: 40px;
 }
 tr:nth-child(even){background-color: #f2f2f2;}
-tr:hover {background-color: #ddd;}
+tbody tr:hover {border-color: #ddd;}
 /* table tbody tr:last-of-type{
     border-bottom: 2px solid #df7511;
 }  */

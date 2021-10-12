@@ -1,8 +1,8 @@
 function leftBakeIt() {
-    if(document.getElementById("bakeId").style.marginLeft=="16%"){
+    if(document.getElementById("bakeId").style.marginLeft=="17%"){
         document.getElementById("bakeId").style.marginLeft = "0";
     }
-    else {document.getElementById("bakeId").style.marginLeft = "16%";}
+    else {document.getElementById("bakeId").style.marginLeft = "17%";}
   }
 
 const selectElement = (element) => document.querySelector(element);

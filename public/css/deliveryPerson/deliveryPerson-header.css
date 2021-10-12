@@ -148,6 +148,14 @@ a{
     margin-right: 5px;
 }
 
+#available{
+    display: none;                                   
+    position: absolute;
+    padding-left: 10%;
+    margin-left: 151px;
+    height: fit-content;
+    color: rgb(255 138 0);
+}
 /* Responsive */
 @media (max-width: 700px) {
     .header-container{

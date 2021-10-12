@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.special-notice{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.special-notice div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 1.5rem;
+    width: 86%;
+    height: 13vh;
+    border: 2px solid #ff9900;
+    box-shadow: 0 1px 5px rgb(104 104 104 / 80%);
+}
+.delivery-body h1{
+    margin-top: 20px;
+    margin-left: 20%;
+}
+
+.delivery-body .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 150px;
+    margin-left: 20%;
+}
+.delivery-body .row .col{
+    min-height: 1px;
+    padding: 1.25rem;
+    /* flex-grow: 1; */
+    margin-right: 2%;
+    width: 15%;
+    height: 15vh;
+    justify-items: center; 
+    font-size: 11px;
+    border: 2px solid rgba(255, 138, 0, 0.8);
+    box-shadow: 2px 1px rgba(255, 137, 0,1);
+}
+.delivery-body .row .col h1{
+    margin-top: 10px;
+    margin-left: 0;
+}
+#Ongoing-Deliveries tbody tr .far{
+   color: black;
+   font-size: 20px;
+}
+/* .delivery-history{
+    display: flex;
+    margin-left: 20%;
+} */
+
+.delivery-history .table-history{
+    margin-top: 10vh;
+    margin-left: 50%;
+} 
+.delivery-body .date-selection{
+    margin-left: 20%;
+    margin-top: 20px;
+}

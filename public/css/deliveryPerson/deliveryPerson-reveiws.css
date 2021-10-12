@@ -2,12 +2,37 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; 
 }
-h3{
-    margin-left: 42%;
-    font-size: 40px;
-    font-weight: 900;
+.reviews-body h1{
+    margin-top: 20px;
+    margin-left: 20%;
 }
+
+.reviews-body .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 150px;
+    margin-left: 20%;
+}
+.reviews-body .row .col{
+    min-height: 1px;
+    padding: 1.25rem;
+    /* flex-grow: 1; */
+    margin-right: 2%;
+    width: 15%;
+    height: 15vh;
+    justify-items: center; 
+    font-size: 11px;
+    border: 2px solid rgba(255, 138, 0, 0.8);
+    box-shadow: 2px 1px rgba(255, 137, 0,1);
+}
+.reviews-body .row .col h1{
+    margin-top: 10px;
+    margin-left: 0;
+}
+
 #reviews-table{
     margin-left: 20%;
 }

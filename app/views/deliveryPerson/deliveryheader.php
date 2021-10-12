@@ -15,21 +15,21 @@
                 </a>
             </li>
             <li>
-                <a href="availability.php" class="hrf">
-                    <span class="icon"> <i class="fas fa-check-circle"></i></span>
-                    <span class="title">Availability</span>
-                </a>
-            </li>
-            <li>
                 <a href="deliveries.php" class="hrf">
                     <span class="icon"><i class="fas fa-motorcycle"></i></span>
                     <span class="title">Deliveries</span>
                 </a>
             </li>
             <li>
-                <a href="reviews.php" class="hrf">
-                    <span class="icon"><i class="fas fa-star"></i></span>
-                    <span class="title">Reviews</span>
+                <a href="ongoingDeliveries.php" class="hrf">
+                    <span class="icon"><i class="fas fa-tasks"></i></span>
+                    <span class="title">Ongoing-Deliveries</span>
+                </a>
+            </li>
+            <li>
+                <a href="deliveryHistory.php" class="hrf">
+                    <span class="icon"><i class="fas fa-bookmark"></i></span>
+                    <span class="title">History</span>
                 </a>
             </li>
         </ul>

@@ -1,5 +1,3 @@
-//  console.log("hii");
-// alert('yo');
 
 // function openOngoing(){
 //     document.getElementById('Ongoing-Deliveries').
@@ -23,22 +21,19 @@
 // }
 // }
 
-function openOngoing(){
-    document.getElementById('table-caption1').style.display ="block";
-    document.getElementById('Ongoing-Deliveries').style.display ="block";
-    document.getElementById('table-caption2').style.display ="none";
-    document.getElementById('Delivery-History').style.display ="none"; 
-}
-function openHistory(){
-    document.getElementById('table-caption1').style.display ="none";
-    document.getElementById('Ongoing-Deliveries').style.display ="none";
-    document.getElementById('table-caption2').style.display ="block";
-    document.getElementById('Delivery-History').style.display ="block";
-}
 //  var btn= document.getElementById('order1');
 //  btn.addEventListener('onclick', pickOrder(),{
 //     document,location,href = '<?php echo $Deliveries2.php; ?>',
 //   });
 
 
- 
+function pickOrder(){
+    window.location.href = "deliveries2.php";
+    window.location.href = "dashboardDP.php";
+}
+function reject(){
+    alert("Do you want to reject the order?");
+}
+function complete(){
+    alert("You completed order successfully");
+}

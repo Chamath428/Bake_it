@@ -11,43 +11,44 @@
     </head>
     <body>
        <section class="header">
-          <?php include('header.php'); ?>
+          <?php include('deliveryheader.php'); ?>
        </section>
-       <h1>Your Ongoing Delivery</h1>
+       <h1 class="deliverypg-topic">Delivery details</h1>
        <div class="delivery-container">
            
            <div class="map">
-               <div>Location</div>
+               <span>Location</span>
                <div id="Location-track"></div>
            </div>
            <div class="sub-container1">
-                <div class="order-no">
-                    Order No
-                    <div class="answer"></div>
+                <div class="sub-container2">
+                    <span class="feild">Order Id</span>
+                    <span class="answer">001</span>
                 </div>
-                <div class="contact-person">
-                    Contact Person
-                    <div class="answer"></div>
+                <div class="sub-container2">
+                    <span class="feild">Contact Person</span>
+                    <span class="answer">Nimal Perera</span>
                 </div>
-                <div class="contact-num">
-                    Contact Number
-                    <div class="answer"></div>
+                <div class="sub-container2">
+                    <span class="feild">Contact Number</span>
+                    <span class="answer">077224432</span>
                 </div>
-                <div class="Address">
-                    Address
-                    <div class="answer"></div>
+                <div class="sub-container2">
+                    <span class="feild">Address</span>
+                    <span class="answer">53/3,Temple Rd,Kasbewa</span>
                 </div>
-                <div class="payment">
-                    Payement
-                    <div class="answer"></div>
+                <div class="sub-container2">
+                    <span class="feild">Payement</span>
+                    <span class="answer">450.00LKR</span>
                 </div>
            </div>
-        <div class="complete-button"><button>Completed</button></div>
+        <div><button class="reject button" onclick="reject()">Reject</button></div>
+        <div class="complete"><button class="button" onclick="complete()">Completed</button></div>
        </div>
 
 
         <section class="footer">
-            <?php include('footer.php'); ?>  
+            <?php include('footerDP.php'); ?>  
         </section>
 
     </body>

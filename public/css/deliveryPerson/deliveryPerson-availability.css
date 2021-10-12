@@ -2,25 +2,75 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
-/* .available-body h2{
-      background-color: blue;
+.available-body{
+      align-items: center;
+      margin-bottom: 10%;
+}
+.available-body a{
+      color: black;
+}
+.available-body a:hover{
+      color: #ff9900;
+}
+.available-body h2{
       padding-top: 50px;
       text-align: center;
       font-size: 30px;
-      font-family: 'Roboto', sans-serif;
       font-weight: bold;
-} */
-#availabile,#not-available{
+}
+.available-body #selection-box{
+      border: 2px solid #ff9900;
+      box-shadow: 2px 1px rgba(255, 137, 0,1);
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      margin: 5% 32%;
+      padding: 30px;
+      width: 40%;
+      height: 25vh;
+      color: black;
+}
+.question{
+      /* flex-grow: 1; */
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+}
+
+.click-available{
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+      justify-content: space-between;
+      /* border: 2px solid yellow;*/
+} 
+.click-available > div{
+      padding: 5%;
+      font-size: 20px;
       border: 2px solid rgba(255, 138, 0, 0.8);
       box-shadow: 2px 1px rgba(255, 137, 0,1);
-      padding: 45px;
-      margin: 15% 32%;
-      width: 40%;
-      height: 35vh;
-      font-size: 20px;
 }
-.confirm-btn{
+/* #available,#not-available{
+      display: none;
+      border: 2px solid #ff9900;
+      box-shadow: 2px 1px rgba(255, 137, 0,1);
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      margin: 5% 32%;
+      padding: 30px;
+      width: 40%;
+      height: 25vh;
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+} */
+/* .confirm-btn{
       border: 2px solid rgba(255, 138, 0, 0.8);
       box-shadow: 2px 1px rgba(255, 137, 0,1);
       width: 42%; 
@@ -29,7 +79,7 @@
       margin: 10px;
       text-align: center; 
       text-decoration: none;   
-}
+} */
 
 @media(max-width:787px){
       .available-body h2,.availability-selection a{
