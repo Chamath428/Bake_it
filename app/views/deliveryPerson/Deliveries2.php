@@ -40,6 +40,25 @@
                 <div class="sub-container2">
                     <span class="feild">Payement</span>
                     <span class="answer">450.00LKR</span>
+                    <!-- <div class="radio-box" id="payment-method">
+                        <div>
+                            <label onclick="getLocation(0)">
+                                <input type="radio" name="delivery-type" checked="">
+                                <div class="circle"></div>
+                                <span>Card Payment</span>
+                            </label>
+                            <label onclick="getLocation(1)">
+                                <input type="radio" name="delivery-type">
+                                <div class="circle"></div>
+                                <span>Cash Payment</span>
+                            </label>
+                        </div>
+                        </div>
+                        <div class="location-details" id="location-details">
+                            <input type="text" name="address-line1" placeholder="Address Line 1" required="">
+                            <input type="text" name="address-line2" placeholder="Address Line 2" required="">
+                            <input type="text" name="address-line3" placeholder="Address Line 3">
+                        </div> -->
                 </div>
            </div>
         <div><button class="reject button" onclick="reject()">Reject</button></div>

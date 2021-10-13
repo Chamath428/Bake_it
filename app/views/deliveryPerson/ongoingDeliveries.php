@@ -13,7 +13,7 @@
     <section class="header">
         <?php include('deliveryheader.php'); ?>
     </section> 
-    <div class="delivery-body">
+    <div class="delivery-body" id="body">
         <h1>Deliveries of the day</h1>
         <div class="row">
             <div class="col">

@@ -14,7 +14,7 @@
         <?php include('deliveryheader.php'); ?>
     </section> 
     
-    <div class="delivery-body">
+    <div class="delivery-body" id="body">
         <h1>Overview</h1>
         <div class="row">
             <div class="col">
@@ -53,6 +53,7 @@
                         <th>Order Id</th>
                         <th>Location</th>
                         <th>Payment</th>
+                        <th>More Details</th>
                     </tr>
                 </thead>
                 <tbody>

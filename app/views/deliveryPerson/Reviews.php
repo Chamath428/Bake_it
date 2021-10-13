@@ -12,7 +12,7 @@
         <?php include('headerDP.php'); ?>
        </section>
         
-         <div  class="reviews-body">
+         <div  class="reviews-body" id="body">
            <h1>Overview of Reviews</h1>
            <div class="row">
                 <div class="col">

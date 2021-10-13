@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <div class="navigation" id="mySidenav">
+<div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
         <ul>
             <li>
                 <a href="dashboardDP.php" class="active">
@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a href="deliveries.php" class="hrf">
+                <a href="ongoingDeliveries.php" class="hrf">
                     <span class="icon"><i class="fas fa-motorcycle"></i></span>
                     <span class="title">Deliveries</span>
                 </a>
@@ -34,7 +34,38 @@
             </li>
         </ul>
     </div>
-    <div class="toggle"><span onclick="leftBakeIt()"><i  id="menuBtn" class="fas fa-bars"></i></span></div>
+    <!-- <div class="toggle"><span onclick="leftBakeIt()"><i  id="menuBtn" class="fas fa-bars"></i></span></div> -->
+    <div id="arrowAnim">
+            <div class="arrowSliding">
+                <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay1">
+                <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay2">
+                <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay3">
+                <div class="arrow"></div>
+            </div>
+        </div>
+
+
+        <div id="arrowAnim-left">
+            <div class="arrowSliding-left">
+                <div class="arrow-left"></div>
+            </div>
+            <div class="arrowSliding delay1-letf">
+                <div class="arrow-left"></div>
+            </div>
+            <div class="arrowSliding delay2-left">
+                <div class="arrow-left"></div>
+            </div>
+            <div class="arrowSliding delay3-left">
+                <div class="arrow-left"></div>
+            </div>
+        </div>
+
 </div>
 
 <header class="header-container">

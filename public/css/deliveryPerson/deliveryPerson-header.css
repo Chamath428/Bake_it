@@ -156,6 +156,64 @@ a{
     height: fit-content;
     color: rgb(255 138 0);
 }
+#arrowAnim {
+    /* width: 100vw;
+    height: 100vh; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 171px;
+    width: 80px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  
+  }
+  
+  .arrow {
+    width: 10px;
+    height: 10px;
+    border: 3px solid;
+    border-color: rgb(255, 255, 255) transparent transparent rgb(255, 255, 255);
+    transform: rotate(-45deg);
+  }
+  
+  
+  .arrowSliding {
+    position: absolute;
+    -webkit-animation: slide 4s linear infinite; 
+            animation: slide 4s linear infinite;
+  }
+  
+  .delay1 {
+    -webkit-animation-delay: 1s; 
+      animation-delay: 1s;
+  }
+  .delay2 {
+    -webkit-animation-delay: 2s; 
+      animation-delay: 2s;
+  }
+  .delay3 {
+    -webkit-animation-delay: 3s; 
+      animation-delay: 3s;
+  }
+  
+  @-webkit-keyframes slide {
+      0% { opacity:0; transform: translateX(4vw); }  
+     20% { opacity:1; transform: translateX(2vw); } 
+     80% { opacity:1; transform: translateX(-2vw); }  
+    100% { opacity:0; transform: translateX(-4vw); } 
+  }
+  @keyframes slide {
+      0% { opacity:0; transform: translateX(4vw); }  
+     20% { opacity:1; transform: translateX(2vw); } 
+     80% { opacity:1; transform: translateX(-2vw); }  
+    100% { opacity:0; transform: translateX(-4vw); } 
+  }
+
+  
 /* Responsive */
 @media (max-width: 700px) {
     .header-container{
