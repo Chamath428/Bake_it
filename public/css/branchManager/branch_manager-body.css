@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.header{
+position: absolute;
+display: flex;
+justify-content: space-around;
+top: 0;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100px;
+background: rgba(24, 22, 22, 0.753);
+}
+
+.user_logo{
+    position: absolute;
+    width: 164px;
+    left: 30px;
+    top: 30px;
+    left:4%;
+}
+
+.user_logo a {
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease 0s;
+}
+
+.user_logo a:hover{
+    font-size: 50px;
+    color: rgb(255, 138, 0);
+}
+
+.bake_it{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    width: 160px;
+    height: 47px;
+    top: 20px; 
+    left: 45%;
+}
+
+.bake_it a{
+
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: white;
+    font-family: 'Merienda', cursive;
+    font-size: 45px;
+    transition: all 0.3s ease 0s;
+}
+
+.bake_it a:hover{
+    font-size: 48px;
+    color: rgb(255, 138, 0);
+}
+
+.notification_bell{
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    right: 10px;
+    top: 35px;
+    left:95%;
+}
+
+.notification_bell a i{
+    font-size: 40px;
+    /*top:20px;*/
+    color: white;
+    transition: all 0.3s ease 0s;
+}
+
+.notification_bell a i:hover{
+    font-size: 45px;
+    color: rgb(255, 138, 0);
+}
+
+
+.image-div{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80vh;
+    top: 0;
+}
+.image{
+  width: 100%;
+   height: 80vh;
+   object-fit: cover; 
+   /* opacity: 0.5; */
+}

@@ -1,0 +1,102 @@
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.header-section{
+    position: relative;
+	width: 100%;
+	height: 15vh;
+}
+
+.profile-section{
+	position: relative;
+	width: 100%;
+	height: 85vh;
+}
+
+
+.header{
+position: absolute;
+display: flex;
+justify-content: space-around;
+top: 0;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100px;
+background: rgba(24, 22, 22, 0.753);
+}
+    
+.content{
+ 
+  width: 100%;
+  height: 64vh;
+}
+
+ 
+  .profile{
+    position: absolute;
+    width: 65%;
+    height: 50vh;
+    left: 18%;
+    top: 11vh;
+    
+      
+  }
+  .profile-logo{
+    
+     height: 45vh;
+     text-align: center;
+  }
+  #user-icon{
+     margin-left: 4px;
+      margin-top: 5px;
+      color: #7c7a7a;
+      font-size: 300px;
+      cursor: pointer;
+      align-items: center;
+  }
+
+  #user-icon:hover{
+     font-size: 310px;
+  }
+
+  .button-class{
+    position: absolute;
+    left: 41%;
+    top: 53vh;
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+ .branch-name{
+   font-size: 23px;
+   font-weight:bolder;
+   margin-bottom: 25px
+ }
+#button{
+    width: 180px;
+    height:50px;  
+    background: #FFFFFF;
+    border: 1.4px solid rgb(255, 138, 0);
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+
+}
+
+#button:hover{
+    background: rgba(255, 138, 0,0.7);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.98);
+}
+  
