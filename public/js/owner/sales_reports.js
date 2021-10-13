@@ -1,10 +1,3 @@
-function openNav() {
-    document.getElementById("mySidenav").style.width = "230px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
 
   var sr = document.getElementById("sale-repo");
   var tsr = document.getElementById("total-sale-repo-aftr");
