@@ -61,8 +61,9 @@
                 
             </ul>
             <div class="user-icons">
+                <?php if (isset($_SESSION['islogged']) && $_SESSION['islogged']==1) {?>
                 <a href="<?php echo BASEURL.'/profileController' ?>"><i class="far fa-user-circle"></i></a>
-                <a href=""><i class="far fa-bell"></i></a>
+                <a href=""><i class="far fa-bell"></i></a><?php }?>
                 <a href="<?php echo BASEURL.'/cartController' ?>"><i class="fas fa-shopping-basket"></i></a>
             </div>
         </nav>

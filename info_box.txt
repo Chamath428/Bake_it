@@ -1,13 +1,13 @@
 -----User Roles-----
 0- Unregistered Customer
-1-Registered Customer
+1-Registered Customer *
 
 -----Job roles-----
-2- Owner
-3-Bakery Manager
+2- Owner *
+3-Bakery Manager * 
 4-Branch Manager
-5-Cashier
-6-Delivery Person
+5-Cashier 
+6-Delivery Person *
 
 -----Delivery persons availability-----
 1-Available

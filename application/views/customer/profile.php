@@ -8,9 +8,11 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-profile.css">
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
+	<script src="<?php echo BASEURL ?>/public/js/customer/profile.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
 	<title>Profile</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 <body>
 	<header>
@@ -21,20 +23,49 @@
 		<div class="profile-container">
 			<div class="profile-image">
 				<a href=""><img src="<?php echo BASEURL ?>/public/images/profile.jpg"></a>
-				<h2>Makawi Gunarathna</h2>
+				<span><?php if (isset($data['firstname']) && isset($data['lastname'])) {
+					echo $data['firstname']." ".$data['lastname'];
+				} ?></span>
 			</div>
-			<div class="profile-buttons">
-				<div>
-					<a href="resetpassword.php">Reset Password</a>
-					<a href="">Change Location</a>
+			<div class="profile-details">
+				<form method="post" action="#">
+				<div class="name-field">
+					<h3>Change Profile Details</h3>
+					<div>
+						<input  name="firstname" id="firstname" readonly="" value="<?php if(isset($data['firstname'])) echo $data['firstname'] ?>" placeholder="First Name">
+						<!-- <button  onclick="GFG_Fun()"></button> -->
+						<span onclick="nameFunction()"><i class="fas fa-pen-alt"></i></span>
+					</div>	
+					<input type="text" name="lastname" id="lastname" readonly="" value="<?php if(isset($data['lastname'])) echo $data['lastname'] ?>" placeholder="Last Name">
 				</div>
-				<div>
-					<a href="changemail.php">Change Email</a>
-					<a href="changemobile.php">Change Phone Number</a>
-				</div>	
+				<div class="address-field">
+					<h3>Address Fields</h3>
+					<div>
+						<input type="text" name="address1" id="address1" readonly="" value="<?php if(isset($data['address1'])) echo $data['address1'] ?>" placeholder="Address Line 1">
+						<span onclick="addressFunction()"><i class="fas fa-pen-alt"></i></span>	
+					</div>
+					<input type="text" name="address2" id="address2" readonly="" value="<?php if(isset($data['address2'])) echo $data['address2'] ?>" placeholder="Address Line 2">
+					<input type="text" name="address2" id="address3" readonly="" value="<?php if(isset($data['address3'])) echo $data['address3'] ?>" placeholder="Address Line 3">
+				</div>
+				<div class="password-field">
+					<h3>Password Feilds</h3>
+					<input type="password" name="current-password" value=""	placeholder="Current Password">
+					<input type="password" name="new-password" value="" placeholder="New Password">
+					<input type="password" name="confirm-password" value="" placeholder="Confirm Password">
+				</div>
+				<div class="phone-number-field">
+					<h3>Phone Number</h3>
+					<input type="text" name="phonenumber" id="phonenumber" readonly="" value="<?php if(isset($data['phonenumber'])) echo $data['phonenumber'] ?>">
+					<span onclick="phoneFunction()"><i class="fas fa-pen-alt"></i></span>
+				</div>
+				<div class="submit-button">
+					<input type="submit" name="update-profile" value="Update Profle">	
+				</div>
+			</form>
 			</div>
 		</div>
 	</section>
 
 	<?php require_once('footer.php'); ?>
+
 </html>

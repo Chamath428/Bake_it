@@ -8,12 +8,18 @@
 		
 		public function __construct()
 		{
-			// code...
+			$this->profileModel=$this->model("profileModel");
 		}
 		public function index()
 		{
 			$data=array();
-			$this->view("customer/profile",$data);
+			if (isset($_SESSION['islogged'])) {
+				$customer_id=$_SESSION['customer_id'];
+				$data=$this->profileModel->getCustomerData($customer_id);
+				$this->view("customer/profile",$data);
+			}
+
+			
 		}
 	}
 

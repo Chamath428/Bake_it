@@ -1,4 +1,4 @@
-section{
+/*section{
 	width: 100%;
 	height: 100vh;
 	position: relative;
@@ -42,7 +42,7 @@ section{
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-/*.profile-container .profile-buttons div button{
+.profile-container .profile-buttons div button{
 	padding: 1rem;
 	border-radius: 1rem;
 	cursor: pointer;
@@ -50,7 +50,7 @@ section{
 	font-size: 1.5rem;
 	border: 1px solid rgb(255, 137, 0);
 	transition: 0.3s ease-in-out;
-}*/
+}
 .profile-container .profile-buttons div a{
 	padding: 1rem;
 	border-radius: 1rem;
@@ -98,4 +98,150 @@ section{
 		width: 60%;
 		margin-bottom: 0.8rem;
 	}
+}*/
+
+section{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow-x: hidden;
+	font-size: 1.4rem;
+}
+
+.profile-container{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.profile-container .profile-image{
+	width: 50%;
+	height: 50vh;
+	margin: 1rem auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.profile-container .profile-image img{
+	width: 180px;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid rgb(255, 137, 0);
+	margin-bottom: 1rem;
+	transition: 0.3s ease-in-out;
+}
+.profile-container .profile-image img:hover{
+	border: 4px solid rgb(255, 137, 0);
+}
+
+.profile-container .profile-image span{
+	font-weight: bold;
+	font-size: 1.6rem;
+}
+
+.profile-container .profile-details{
+	width: 50%;
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+}
+
+.profile-container  input{
+	width: 40rem;
+	padding: 1rem 1rem;
+	border: none;
+	border-bottom: 2px solid rgb(255, 138, 0);
+	font-size: 1.4rem;
+	outline: none;
+}
+
+.profile-container  input[type="submit"]{
+	width: auto;
+	border: 2px solid rgb(255, 138, 0);
+	border-radius: 1rem;
+	background-color: transparent;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.profile-container  input[type="submit"]:hover{
+	background-color: rgb(255, 138, 0);
+	color: white;
+}
+
+.profile-container .profile-details span{
+	cursor: pointer;
+}
+
+.profile-container .profile-details .name-field{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 20vh;
+}
+
+.profile-container .profile-details .address-field{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	height: 25vh;
+	justify-content: space-between;
+}
+
+.profile-container .profile-details .password-field{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	height: 25vh;
+	justify-content: space-between;
+}
+
+.profile-container .profile-details .submit-button{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+
+@media(max-width: 1060px){
+	.profile-container  input{
+		width: 30rem;
+	}
+}
+
+@media (max-width: 900px){
+	.profile-container{
+		width: 100%;
+	}
+}
+
+@media(max-width: 750px){
+	.profile-container{
+		flex-direction: column;
+	}
+	.profile-container .profile-image{
+		height: auto;
+		width: 100%;
+	}
+	.profile-container .profile-details{
+		height: auto;
+		width: 100%;
+		align-items: center;
+	}
+	.profile-container  input{
+		width: 25rem;
+	}
+}
+
+@media(max-width: 370px){
+
 }
