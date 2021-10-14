@@ -4,16 +4,7 @@
 	{
 		function __construct()
 		{
-			// $GLOBALS['db'] = mysqli_connect($this->host,$this->user,$this->password,$this->database);
-			// if($GLOBALS['db'] === false)
-   //      {
-   //          die("ERROR: Could not connect. " . mysqli_connect_error());
-   //      }
-
 			$this->db=$this->dbcon();
-			// $sql = "INSERT INTO branch VALUES (5, 'dd','ww')";
-   //     		// $res=mysqli_query($GLOBALS['db'],$sql) or die('-1'.mysqli_error($GLOBALS['db']));
-   //     		$res=mysqli_query($this->db,$sql) or die('-1'.mysqli_error($this->db));
 		}
 
 		public function checkPHoneNumber($phonenumber){

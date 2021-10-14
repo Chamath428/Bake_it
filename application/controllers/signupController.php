@@ -17,14 +17,17 @@
 
 		public function submit(){
 			$data['error']="";
-			$firstname=$_POST['firstname'];
-			$lastname=$_POST['lastname'];
-			$phonenumber=$_POST['phonenumber'];
-			$email=$_POST['email'];
+
+			//this preg_replace will remove all whitespace (including tabs and line ends)
+
+			$firstname=preg_replace('/\s+/', '', $_POST['firstname']);
+			$lastname=preg_replace('/\s+/', '', $_POST['lastname']);
+			$phonenumber=preg_replace('/\s+/', '', $_POST['phonenumber']);
+			$email=preg_replace('/\s+/', '', $_POST['email']);
 			$password="";
-			$adl1=$_POST['adl1'];
-			$adl2=$_POST['adl2'];
-			$adl3=$_POST['adl3'];
+			$adl1=preg_replace('/\s+/', '', $_POST['adl1']);
+			$adl2=preg_replace('/\s+/', '', $_POST['adl2']);
+			$adl3=preg_replace('/\s+/', '', $_POST['adl3']);
 			if ($_POST['firstname']=="") {
 				$data['error']="First name is required!";
 			}
@@ -43,7 +46,7 @@
 			else if($_POST['password']==""){
 				$data['error']="Password is required!";
 			}
-			else if (strlen($_POST['password'])<8) {
+			else if (strlen(preg_replace('/\s+/', '', $_POST['password']))<8) {
 				$data['error']="Password length should be 8 or more!";
 			}
 			else if ($_POST['confirmpassword']=="") {
