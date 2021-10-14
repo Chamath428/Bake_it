@@ -22,7 +22,6 @@
 	<section>
 		<div class="login-image">
 			<img src="<?php echo BASEURL ?>/public/images/login-b1.jpg" class="b1">
-			<!-- <img src="<?php echo BASEURL ?>/public/images/login-b2.jpg" class="b2"> -->
 		</div>
 		<div class="content-box">
 

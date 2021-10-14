@@ -43,22 +43,23 @@
 				}
 			}
 
-			$data['username']=$username;
 			if ($data['error']=="") {
-				// $customer_id=$this->loginModel->getCustomerId($username);
 				echo $role_number;
 				if ($role_number==1) {
 					$customer_id=$this->loginModel->getCustomerId($username);
 					$this->setSession("islogged",1);
 					$this->setSession("role_number",$role_number);
+					$this->setSession("customer_id",$customer_id);
 					$this->redirect("homeController");
 				}else{
 					$staff_id=$this->loginModel->getStaffId($username);
 					$this->setSession("islogged",1);
 					$this->setSession("role_number",$role_number);
+					$this->setSession("staff_id",$staff_id);
 					$this->redirect("dashboardController");
 				}
 			}else{
+				$data['username']=$username;
 				$this->view("customer/login",$data);
 			}
 		}
