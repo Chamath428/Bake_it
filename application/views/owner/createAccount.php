@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <link rel="stylesheet" href="../../../public/css/owner/owner-createAccount.css" class="rel">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../../../public/js/owner/create_account.js" defer></script>
+    <link rel="stylesheet" href="../../../public/css/owner/owner-account.css" class="rel">
     <script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -63,7 +58,6 @@
                     <label for="Post">Post</label>
                     <div class="text-fill">
                         <select placeholder="Select Post" >
-                        <option>Owner</option>
                         <option>Bakery Manager</option>
                         <option>Delivery Person</option>
                         <option>Branch Manager</option>
@@ -75,7 +69,7 @@
                     <label for="Branch">Branch</label>
                     <div class="text-fill">
                         <select placeholder="Select Branch" >
-                            <option>Kasbewa</option>
+                            <option>Kesbawa</option>
                             <option>Baththaramulla</option>
                             <option>Piliyandala</option>
                         </select>

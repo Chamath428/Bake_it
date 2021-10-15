@@ -7,10 +7,12 @@
 }
 .content{
     /* margin-left: 100px; */
-    margin-bottom: 50px;  
+    margin-bottom: 50px;
+    height: 80vh;
 }
 .content .account-container{
     margin-left: 100px;
+    margin-bottom: 20px;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -69,4 +71,33 @@ button:hover{
 .content .createbtn{
    margin-left: 77%;
    margin-bottom: 20px;
+}
+.content .searchbtn{
+    margin-left: 81%;
+    margin-top: 30px;
+}
+.content .profile-collection{
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.content .profile-collection .profile-employee{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content .profile-collection .profile-employee > span{
+    text-align: center;
+    font-weight: 500;
+    font-size: 13px;
+}
+.content .profile-collection .profile-employee .fa-user{
+    font-size: 17vh;
+    padding: 5px 10px 5px 10px;
+    margin-left: 15px;
+}
+#view-accounts{
+    display: none;
 }

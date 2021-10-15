@@ -135,7 +135,7 @@ a{
 }
 .header-container .header-icons{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly; 
     flex-grow: 1;
     /* text-align: left; */
     color: white;
