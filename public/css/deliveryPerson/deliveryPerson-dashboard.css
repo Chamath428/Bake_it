@@ -5,6 +5,7 @@
   --light: #f1ebe8;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
 
 *{
   margin: 0;

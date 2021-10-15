@@ -7,10 +7,7 @@
 
     <script src="../../../public/js/deliveryPerson/deliveries.js"></script> 
     <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveryPerson-deliveries.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveries2.css">
 
-    <!-- <script src="../../../public/js/deliveryPerson/deliveries.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveries.css">
 
     <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/table.css">
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
