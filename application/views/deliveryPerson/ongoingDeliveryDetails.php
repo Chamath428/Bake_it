@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../../../public/js/deliveryPerson/deliveries.js"></script>
-        <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveries2.css">
+        <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveries.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-deliveries.css">
         <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
         
     </head>
@@ -40,7 +40,17 @@
                 </div>
                 <div class="sub-container2">
                     <span class="feild">Payement</span>
-                    <span class="answer">450.00LKR</span>
+                    <span class="answer-fill">
+                    <form action="">
+                          <label for="card">
+                            <input type="radio" id="card" name="fav_language" value="card">Paid
+                          </label>
+                          <label for="cash" onclick="displayBill()">
+                            <input type="radio" id="cash" name="fav_language" value="cash">To be paid
+                          </label>
+                    </form>
+                    </span>
+                    <span class="answer" id="cash-topay">450.00LKR</span>
                     <!-- <div class="radio-box" id="payment-method">
                         <div>
                             <label onclick="getLocation(0)">
@@ -72,3 +82,4 @@
         </section>
 
     </body>
+</html>

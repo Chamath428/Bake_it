@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveryPerson-footer.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-footer.css">
     <!-- <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
@@ -13,11 +13,7 @@
         <div class="footer-container">
            <div class="footer-row">
               <div class="footer-col">
-                                                                                        
                   <h4 class="Bake-it">Bake_it</h4>
-
-                  <h4 id="footer-Bake-it">Bake_it</h4>
-
                   <ul>
                       <li><a href="#">Privacy Policy</a></li>
                       <li><a href="#">Terms & Conditions</a></li>
