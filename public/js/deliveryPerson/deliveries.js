@@ -41,3 +41,6 @@ function getLocation(x){
 		document.getElementById("location-details").style.display="none";
 	}else document.getElementById("location-details").style.display="flex";
 }
+function displayBill(){
+    document.getElementById("cash-topay").style.display ="block";
+}

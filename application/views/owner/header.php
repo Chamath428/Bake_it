@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="employeeAccounts.php" class="hrf">
+                    <a href="createAccount.php" class="hrf">
                         <span class="icon"><i class="fas fa-user-cog"></i></span>
                         <span class="title">Employee Accounts</span>
                     </a>
