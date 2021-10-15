@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/calander.css">
-    <script src="../../../public/js/deliveryPerson/calander.js" defer ></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/calander.css">
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/calander.js" defer ></script>
 </head>
 
     <div class="calendar">

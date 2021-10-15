@@ -12,7 +12,6 @@
         <?php include('headerDP.php'); ?>
        </section>
         
-
          <div  class="reviews-body" id="body">
            <div class="rev-topic">Overview of Reviews</div>
            <div class="row">
@@ -31,26 +30,14 @@
                    <tr>
                        <td>Date</td>
                        <td>Order Id</td>
-
-         <div  class="reviews-body">
-           <h3>Reviews</h3>
-           <table id="reviews-table">
-               <thead>
-                   <tr>
-                       <td>Order No</td>
-
                        <td>Review Description</td>
                        <td>Rated Stars</td>
                    </tr>
                </thead>
                <tbody>
                    <tr>
-
                        <td label="Date">01/09/2021</td>
                        <td label="Order No">#001</td>
-
-                       <td label="Order No">1</td>
-
                        <td label="Review Description">You deliverd ontime.nice service</td>
                        <td label="Rated Stars">
                            <i id="fas-star" class="fas fa-star"></i>
@@ -61,12 +48,8 @@
                         </td>
                    </tr>
                    <tr>
-
                        <td label="Date">02/09/2021</td>
                        <td label="Order No">#002</td>
-
-                       <td label="Order No">2</td>
-
                        <td label="Review Description">disgusting service</td>
                        <td label="Rated Stars">
                            <i id="far-star" class="far fa-star"></i>
@@ -77,12 +60,8 @@
                         </td>
                    </tr>
                    <tr>
-
                        <td label="Date">03/09/2021</td>
                        <td label="Order No">#003</td>
-
-                       <td label="Order No">3</td>
-
                        <td label="Review Description">Good service</td>
                        <td label="Rated Stars">
                            <i id="fas-star" class="fas fa-star"></i>
@@ -92,7 +71,6 @@
                            <i id="far-star" class="far fa-star"></i>
                         </td>
                    </tr>
-
                    <tr>
                        <td label="Date">04/09/2021</td>
                        <td label="Order No">#004</td>
@@ -117,7 +95,6 @@
                            <i id="far-star" class="far fa-star"></i>
                         </td>
                    </tr>
-
                </tbody>
            </table> 
         </div>
