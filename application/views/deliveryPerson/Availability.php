@@ -13,6 +13,23 @@
         
          <section  class="available-body">
             <h2>Availability Status</h2>
+
+            <div id="selection-box">
+                <div class="question">Are you available for deliveries?</div>
+                <div class="click-available">
+                    <div class="available"><a href="#" onclick="available()"><i class="fas fa-check"></i> Yes</a></div>
+                    <div class="notavailable"><a href="#" onclick="notavailable()"><i class="fas fa-times"></i> No</a></div>
+                </div>
+            </div>
+            <!-- <div id="available">
+                <center>You are available for deliveries</center> -->
+                <!-- <a href="#" class="confirm-btn">Confirm your availability</a></center> -->
+            <!-- </div>
+            <div id="not-available">
+                    <center>You are not available for deliveries</center>  -->
+                <!-- <a href="#" class="confirm-btn">Confirm your availability</a></center> -->
+            <!-- </div> -->
+
             <div id="availabile">
                 <p><center>Now you are available for deliveries <br>
                    Wait for deliveries<br><br>
@@ -27,6 +44,7 @@
                 </p>
                 <a href="#" class="confirm-btn">Confirm your availability</a></center>
             </div>
+
          </section>
     
         <div class="footer">

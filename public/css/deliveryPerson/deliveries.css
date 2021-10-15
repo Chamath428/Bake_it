@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: 'Montserrat', sans-serif;
 }
 .header{
     top: 0%;
@@ -13,7 +13,7 @@
     /* position: absolute; */
 }
 .delivery-body{
-    margin: 10vh 70px;
+    margin: 10vh 100px;
     text-decoration: none;
     color: black;
     text-align: center;
@@ -29,7 +29,7 @@
     font-weight: 900;
 }
 #Ongoing-Deliveries,#Delivery-History{
-    margin-left: 25%;
+    margin-left: 100px;
 }
 table tbody tr td:last-of-type{
     background: rgb(255, 255, 255);
