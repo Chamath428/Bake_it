@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branch_manager-footer.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body>
-    <footer class="footer">
-        <div class="container">
+<footer class="footer">
+        <div class="container-footer">
            <div class="row">
               <div class="footer-col">
                   <h4 class="Bake-it">Bake_it</h4>
@@ -21,9 +11,9 @@
               <div class="footer-col">
                   <h4>Get help</h4>
                   <ul>
-                      <li><a href="#">Menu</a></li>
-                      <li><a href="#">Reports</a></li>
-                      <li><a href="#">Daily Requirement</a></li>
+                      <li><a href="#">Raw Materials</a></li>
+                      <li><a href="#">Orders</a></li>
+                      <li><a href="#">Daily Requirment</a></li>
                   </ul>
               </div>
               <div class="footer-col">

@@ -1,21 +1,23 @@
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    line-height: 1.5;
-}
 .footer{
-    position:static;
-    bottom: 0;
+    position: relative;/*fixed*/
+    bottom: 0px;
     padding: 25px 0;
     width: 100%;
+
     /* background-color: #000000; */
 	background-image: linear-gradient(180deg, #000000 0%, #171618 50%, #000000 100%);
 }
-.container{
+.container-footer{
    max-width: 1170px;
    margin: auto; 
 }
@@ -29,7 +31,6 @@ ul{
 .footer-col{
     width: 25%;
     padding: 0 10px;
-    /* background-color: turquoise; */
 }
 .footer-col h4{
     font-size: 18px;
@@ -118,4 +119,16 @@ footer p{
     font-weight: 100;
     color: white;
 
+}
+/*responsive*/
+@media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width: 480px){
+    .footer-col{
+        width: 100%;
+    }
 }
