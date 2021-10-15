@@ -27,9 +27,8 @@
 //   });
 
 
-function pickOrder(){
-    window.location.href = "deliveries2.php";
-    window.location.href = "dashboardDP.php";
+function accept(){
+    window.location.href = "ongoingDeliveryDetails.php";
 }
 function reject(){
     alert("Do you want to reject the order?");

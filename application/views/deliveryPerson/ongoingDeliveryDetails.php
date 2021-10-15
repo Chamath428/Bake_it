@@ -62,7 +62,7 @@
                         </div> -->
                 </div>
            </div>
-        <div><button class="reject button" onclick="reject()">Reject</button></div>
+        <!-- <div><button class="reject button" onclick="reject()">Reject</button></div> -->
         <div class="complete"><button class="button" onclick="complete()">Completed</button></div>
        </div>
 

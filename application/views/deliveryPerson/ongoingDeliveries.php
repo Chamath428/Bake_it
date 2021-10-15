@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../../public/js/deliveryPerson/deliveries.js"></script> 
     <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveryPerson-deliveries.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveries2.css">
     <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/table.css">
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 </head>
@@ -48,53 +49,57 @@
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-money-bill-alt"></i></td>
-                    <td label="More Details" class="click pick-order">
-                        <!-- <button id="order1" onclick="pickOrder()">Pick</button> -->
+                    <td label="Accept"><button class="accept button" onclick="accept()">Edit<i class="fas fa-pen"></i></button></td>
+                    <td label="Reject"><button class="reject button" onclick="reject()">Delete<i class="fas fa-times"></i></button></td>
+                    <!-- <td label="More Details" class="click pick-order">
+                         <button id="order1" onclick="pickOrder()">Pick</button> 
                         <input type="button" value="Pick" class="homebutton" id="btnHome" onClick=" window.location.href = 'deliveries2.php'" /> 
-                    </td>
+                    </td> -->
                 </tr>
                 <tr>
-                    <td label="Order No">002</td>
+                <td label="Order Id"><a href="ongoingDeliveryDetails.php">002</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
-                    <td label="More Details" class="click pick-order"><button>Pick</button></td> 
+                    <td label="Accept"><button class="accept button" onclick="accept()">Edit<i class="fas fa-pen"></i></button></td>
+                    <td label="Reject"><button class="reject button" onclick="reject()">Delete<i class="fas fa-times"></i></button></td>
                 </tr>
                 <tr>
-                    <td label="Order No">003</td>
+                <td label="Order Id"><a href="ongoingDeliveryDetails.php">003</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
-                    <td label="More Details" class="click pick-order"><button>Pick</button></td> 
+                    <td label="Accept"><button class="accept button" onclick="accept()">Edit<i class="fas fa-pen"></i></button></td>
+                    <td label="Reject"><button class="reject button" onclick="reject()">Delete<i class="fas fa-times"></i></button></td>
                 </tr>
                 <tr>
-                    <td label="Order No">004</td>
+                <td label="Order Id"><a href="ongoingDeliveryDetails.php">004</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-money-bill-alt"></i></td>
-                    <td label="More Details" class="click pick-order"><button>Pick</button></td> 
-                </tr>
+                    <td label="Accept"><button class="accept button" onclick="accept()">Edit<i class="fas fa-pen"></i></button></td>
+                    <td label="Reject"><button class="reject button" onclick="reject()">Delete<i class="fas fa-times"></i></button></td>                </tr>
                 <tr>
-                    <td label="Order No">002</td>
+                <td label="Order Id"><a href="ongoingDeliveryDetails.php">005</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
-                    <td label="More Details" class="click pick-order"><button>Pick</button></td> 
-                </tr>
+                    <td label="Accept"><button class="accept button" onclick="accept()">Edit<i class="fas fa-pen"></i></button></td>
+                    <td label="Reject"><button class="reject button" onclick="reject()">Delete<i class="fas fa-times"></i></button></td>                </tr>
                 <tr>
-                    <td label="Order No">002</td>
+                <td label="Order Id"><a href="ongoingDeliveryDetails.php">006</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
-                    <td label="More Details" class="click pick-order"><button>Pick</button></td> 
-                </tr>
+                    <td label="Accept"><button class="accept button" onclick="accept()">Edit<i class="fas fa-pen"></i></button></td>
+                    <td label="Reject"><button class="reject button" onclick="reject()">Delete<i class="fas fa-times"></i></button></td>                </tr>
                 <tr>
-                    <td label="Order No">002</td>
+                <td label="Order Id"><a href="ongoingDeliveryDetails.php">007</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
-                    <td label="More Details" class="click pick-order"><button>Pick</button></td> 
-                </tr>
+                    <td label="Accept"><button class="accept button" onclick="accept()">Edit<i class="fas fa-pen"></i></button></td>
+                    <td label="Reject"><button class="reject button" onclick="reject()">Delete<i class="fas fa-times"></i></button></td>                </tr>
             </tbody>
         </table>
     </div>    

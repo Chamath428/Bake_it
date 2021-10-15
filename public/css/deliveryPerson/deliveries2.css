@@ -62,24 +62,26 @@
 .delivery-container .sub-container1 .sub-container2 .answer{
     border-bottom: 1px solid black;
 }
-.delivery-container .button{
-    margin-top: 20px;
-    border: 1px solid black;
-    color: rgb(0, 0, 0);
-    background: white;
-    padding: 16px 32px;
+button{
+	border-radius:  10px;
+    padding :10px 15px;
+    border: 2px solid rgb(255,138,0);
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+}
+button:hover{
+	background-color: rgb(255,138,0);
+	color: white;
 }
 .delivery-container .reject:hover{
     background: red;
 }
 .delivery-container .complete{
-    margin-left: 150%;
+	justify-items: end;
+    margin-left: 285%; 
 }
 
 .radio-box{
