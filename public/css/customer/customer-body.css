@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
+/*Menu Starts*/
+.menu{
+	align-items: center;
+	position: relative;
+	padding-left:  150px;
+	padding-right: 150px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.menu-header{
+	text-align: center;
+	font-size: 60px;
+	font-family: 'Merienda', cursive;
+}
+
+
+.menu-box img{
+	width: 380px;
+	border-radius: 6px;
+}
+
+
+.menu-box{
+	position: relative;
+	text-align: center;
+	align-items: center;
+}
+
+.menu-box .h3{
+	position: absolute;
+    top: 95%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+	color: white;
+	font-size: 85px;
+	font-family: 'Montserrat', sans-serif;
+	transition: 0.3s ease-in-out; 
+	text-align: center;
+}
+
+.grid-item-8 .h3{
+	font-size: 60px;
+}
+
+.menu-box:hover .h3{
+	top: 90%;
+	color: rgb(255, 138, 0);
+}
+
+.menu-box a{
+	text-decoration: none;
+}
+
+.menu-container{
+	/*padding: 120px;*/
+	display: grid;
+	justify-content: center;
+	/*grid-template-columns: 380px 380px 380px;*/
+	grid-template-columns: repeat(auto-fit, minmax(380px,1fr));
+	grid-auto-rows: minmax(150px,auto);
+	grid-column-gap: 1px;
+	grid-row-gap: 20px;
+	justify-content: space-around;
+	/*grid-auto-rows: 480px,auto;*/
+}
+
+
+@media (max-width: 1050px){
+	/*.menu{
+		display: none;
+	}*/
+	.menu-container .menu-box a img{
+		height: auto;
+		width: 100%;
+	}
+	.menu-header{
+		font-size: 40px;
+	}
+}
+
+/*Menu Ends*/
