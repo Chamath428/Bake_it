@@ -9,7 +9,7 @@
 <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
         <ul>
             <li>
-                <a href="dashboardDP.php" class="active">
+                <a href="dashboard.php" class="active">
                     <span class="icon"><i class="fas fa-th-large"></i></span>
                     <span class="title">Dashboard</span>
                 </a>
@@ -24,6 +24,12 @@
                 <a href="ongoingDeliveries.php" class="hrf">
                     <span class="icon"><i class="fas fa-motorcycle"></i></span>
                     <span class="title">Deliveries</span>
+                </a>
+            </li>
+            <li>
+                <a href="wallet.php" class="hrf">
+                    <span class="icon"><i class="fas fa-wallet"></i></span>
+                    <span class="title">Wallet</span>
                 </a>
             </li>
             <li>

@@ -10,7 +10,7 @@ h3{
     margin-left: 100px;
     padding: 8px;
     font-size: 20px;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 table{
@@ -60,6 +60,7 @@ table tbody tr td button .fas{
         margin-top: 8%;
         padding: 8px;
         font-size: 20px;
+        margin-left: 0%;
     }
     table{
         margin-left: 0%;

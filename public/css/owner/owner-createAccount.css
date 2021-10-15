@@ -44,7 +44,7 @@
 .content .account-container #last-text{
     border-bottom: 3px solid rgb(255,138,0);
 }
-.content .account-container .text-fill input, .content .account-container .text-fill select{
+.content .account-container .text .text-fill input, .content .account-container .text .text-fill select{
    width: 100%;
    background-color: white;
    border: none;

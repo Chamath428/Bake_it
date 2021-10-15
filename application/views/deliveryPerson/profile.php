@@ -10,8 +10,7 @@
 </head>
 <body>
   
-<!-- 
-?php require_once('headerDP.php'); ?> -->
+   <?php require_once('header.php'); ?> 
   
   <div class="bgg" id="body">
       <h3>User Profile</h3>
@@ -66,4 +65,4 @@
   </div>
      
           
-<?php include('footerDP.php'); ?>
+<?php include('footer.php'); ?>

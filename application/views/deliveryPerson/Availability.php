@@ -8,10 +8,10 @@
     </head>
     <body>
        <section class="header">
-        <?php include('headerDP.php'); ?>
+        <?php include('header.php'); ?>
        </section>
         
-         <section  class="available-body">
+         <section  class="available-body" id="body">
             <h2>Availability Status</h2>
             <div id="selection-box">
                 <div class="question">Are you available for deliveries?</div>
@@ -30,9 +30,9 @@
             <!-- </div> -->
          </section>
     
-        <div class="footer">
-              <?php include('footerDP.php'); ?>   
-        </div> 
+         <div class="footer">
+        <?php include('footer.php'); ?>  
+    </div>
         
     </body>
 </html>

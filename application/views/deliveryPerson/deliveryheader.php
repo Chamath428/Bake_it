@@ -9,7 +9,7 @@
 <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
         <ul>
             <li>
-                <a href="dashboardDP.php" class="active">
+                <a href="dashboard.php" class="active">
                     <span class="icon"><i class="fas fa-th-large"></i></span>
                     <span class="title">Dashboard</span>
                 </a>

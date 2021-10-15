@@ -13,7 +13,7 @@
 <body>
    <!-- header --> 
     <div id="header">
-        <?php include('headerDP.php')?> 
+        <?php include('header.php')?> 
     </div>   
     <!-- body -->
     <div class="bgg" id="body" >
@@ -80,7 +80,7 @@
     </div>
         <!-- footer -->
         <div id="footer">
-          <?php include('footerDP.php')?>
+          <?php include('footer.php')?>
        </div>
 </body>
 </html>
