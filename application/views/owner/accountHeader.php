@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../../../public/css/owner/owner-header.css">
-    <script src="../../../public/js/owner/deliveryPerson-owner.js" defer ></script>
+    <script src="../../../public/js/owner/owner-header.js" defer ></script>
 </head>
 
 
