@@ -6,22 +6,25 @@
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
 }
 /* body id */
 #body {
-  margin-top: 20px; 
-  margin-left: 70px;
+  margin-top: 65px; 
+  margin-left: 74px;
   line-height: 1.4;
   transition: margin-left 0.5s;
+
+  /* background-color: #F47558; */
 }
 #body.active{
   margin-left: 310px;
 }
+
 img {
   max-width: 100%;
 }
@@ -34,7 +37,7 @@ img {
 /* Showcase */
 .showcase {
   min-height: 400px;
-  background: url(../../images/deliveryPerson/showcase.png);
+  background: url(../../../public/images/owner/owner1.jpg);
   background-size: cover;
   background-position: center;
   padding-left: 3rem;
@@ -64,16 +67,19 @@ img {
   grid-template-columns: auto auto auto;
   grid-gap: 10px;
   padding: 10px;
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
 }
 .box {
+  /* background-image: linear-gradient(to left,rgba(255,0,61,0.2),rgba(255,137,0,0.7)); */
   text-align: center;
   padding: 1.5rem 2rem;
   box-shadow: var(--shadow);
   box-shadow: 2px 1px rgba(255, 137, 0,1);
 }
 
-/* Info */
+/* Info start */
 .info .logo-description {
+  /* background: var(--primary); */
   display: grid;
   justify-content: space-between;
   margin-top: 15px;
@@ -91,14 +97,16 @@ img {
   font-size: 1rem;
   box-shadow: none;
   line-height: 40px;
+  /* border: 2px solid rgba(255, 137, 0,1); */
 }
 .info h1{
   margin-top: 30px;
+  /* margin-left: 17%; */
   font-size: 30px;
   text-align: center;
   font-weight: bold;
 }
-
+/*Info end*/
 
 /* Responsive */
 @media (max-width: 700px) {

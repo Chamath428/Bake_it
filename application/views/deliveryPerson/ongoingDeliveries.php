@@ -14,7 +14,7 @@
         <?php include('deliveryheader.php'); ?>
     </section> 
     <div class="delivery-body" id="body">
-        <h1>Deliveries of the day</h1>
+        <div class="del-topic">Deliveries of the day</div>
         <div class="row">
             <div class="col">
                 <h4>Total Deliveiries</h4>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <!-- table for ongoing Deliveries -->
-        <h3 id="table-caption">Ongoing Deliveries</h3>
+        <h3 id="table-caption">Delivery Details </h3>
         <table id="Ongoing-Deliveries">
             <thead>
                     <tr>
@@ -38,12 +38,13 @@
                         <th>Time</th>
                         <th>Delivery Area</th>
                         <th>Payment</th>
-                        <th>More Details</th>
+                        <th>Accept</th>
+                        <th>Reject</th>
                     </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td label="Order Id">001</td>
+                    <td label="Order Id"><a href="ongoingDeliveryDetails.php">001</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-money-bill-alt"></i></td>

@@ -10,7 +10,7 @@
         <ul>
             <li>
                 <a href="dashboardDP.php" class="active">
-                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span class="icon"><i class="fas fa-th-large"></i></span>
                     <span class="title">Dashboard</span>
                 </a>
             </li>
@@ -20,12 +20,6 @@
                     <span class="title">Deliveries</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="ongoingDeliveries.php" class="hrf">
-                    <span class="icon"><i class="fas fa-tasks"></i></span>
-                    <span class="title">Ongoing-Deliveries</span>
-                </a>
-            </li> -->
             <li>
                 <a href="deliveryHistory.php" class="hrf">
                     <span class="icon"><i class="fas fa-bookmark"></i></span>
@@ -74,9 +68,11 @@
     </div>
     <span id="available">You are available for deliveries</span>
     <div class="header-icons"> 
-        <span class="user-icon"><a href="#"><i id="user" class="fas fa-user"></i></a>You logged in as : Delivery Person</span>
+        <span class="user-icon"><a href="#"><i id="user" class="fas fa-user"></i></a></span>
+        <span class="text">You logged in as : Delivery Person</span>
         <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
-        <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></span>
+        <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i></a></span>
+        <span class="text"><a href="#">Logout</a></span>
     </div>
 </header>
 

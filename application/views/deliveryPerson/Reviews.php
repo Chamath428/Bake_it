@@ -13,7 +13,7 @@
        </section>
         
          <div  class="reviews-body" id="body">
-           <h1>Overview of Reviews</h1>
+           <div class="rev-topic">Overview of Reviews</div>
            <div class="row">
                 <div class="col">
                     <h4>Total Reviews</h4>

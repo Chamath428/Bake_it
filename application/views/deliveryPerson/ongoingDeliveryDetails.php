@@ -13,6 +13,7 @@
        <section class="header">
           <?php include('deliveryheader.php'); ?>
        </section>
+       <div id="body">
        <h1 class="deliverypg-topic">Delivery details</h1>
        <div class="delivery-container">
            
@@ -65,7 +66,7 @@
         <div class="complete"><button class="button" onclick="complete()">Completed</button></div>
        </div>
 
-
+    </div>
         <section class="footer">
             <?php include('footerDP.php'); ?>  
         </section>

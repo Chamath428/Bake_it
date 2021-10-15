@@ -1,0 +1,147 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 110%;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: #bdba04; */
+    
+}
+#body{
+    width: 78%;
+    height: 80vh;
+    display: flex;
+    font-size: 14px;
+
+}
+
+.topic{
+    position: absolute; 
+    left: 41%;
+    top: 70px;
+    font-size: 23px;
+    font-weight: bold;
+}
+.image-clz{
+    position: absolute;
+    left: 37%;
+    top: 125px;
+    width: 290px;
+    height: 170px;
+}
+.img{
+
+    width: 290px;
+    height: 170px;
+    object-fit: cover; 
+}
+section{
+    position: absolute;
+    top: 285px;
+    left: 25.5%;
+    display: grid;
+    grid-template-columns:auto auto;
+    grid-gap:10px 260px;
+    padding: 10px;
+
+}
+.input-fileds{
+    width:190px; 
+    float: left;
+    margin-bottom: 2px;
+    margin-top: 3px;
+    /* margin-right: 70px; */
+}
+.input-fileds label{
+    font-size: 18px;
+    font-weight:bold;
+    /* font-family: 'Recursive' , sans-serif; */
+}
+.input-fileds input{
+    width: 170px;
+    height: 30px;
+    float: left;
+    background-color:white;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    outline: none;
+     /* font-family: 'Recursive' , sans-serif; */
+     
+     
+}
+
+.save{
+    position: absolute;
+    bottom: 215px;
+    left: 66%;
+}
+ button{
+    width: 90px;
+    height: 30px;
+    font-weight: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(257, 138, 0);
+    background-color: white;
+    margin-bottom: 2px;
+    margin-top: 3px;
+    margin-left: 77px;
+}
+ button:hover{
+    background:rgba(134, 127, 127, 0.671);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 51, 0);
+}
+.branch-list{
+    position: absolute;
+    bottom: 320px;
+    left: 67.1%;
+    width: 240px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background:rgba(134, 127, 127, 0.671);
+    display: none;
+
+}
+.branch-list button{
+    width: 40px;
+    height: 25px;
+    /* font-size: 10px; */
+    font-weight: bold;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid rgb(257, 138, 0);
+    background-color: white;
+    /* margin-bottom: 2px;
+    margin-top: 3px;
+    margin-left: 77px; */
+}
+.branch-list button:hover{
+    background:rgba(134, 127, 127, 0.671);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 51, 0);
+}
+.branch-list input{
+    width: 15px;
+    height: 15px;
+    /* margin-left:10px ; */
+
+}
+.branch-list label{
+    margin-right: 65px;
+    font-size: 18px;
+    font-weight:bold;
+}
+.branch-list .contr{
+    margin: auto;
+}

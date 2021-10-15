@@ -15,7 +15,7 @@
     </section> 
     
     <div class="delivery-body" id="body">
-        <h1>Overview</h1>
+        <div class="del-topic">Overview</div>
         <div class="row">
             <div class="col">
                 <h4>Total Deliveiries</h4>
@@ -30,23 +30,23 @@
                 <h1>120</h1>
             </div>
         </div>
-        <h3>Select Date</h3>
-        <div class="date-selection">
+        <!-- <h3>Select Date</h3>
+        <div class="date-selection"> -->
             
-            <?php include('calander.php'); ?>
-            <!-- <select name="Select date" id="">
+            <!-- ?php include('calander.php'); ?>
+             <select name="Select date" id="">
                 <option value="">Select Date</option>
-                <option value="date"> <?php include('calander.php'); ?></option>
-            </select> -->
-        </div>
-<!-- 
+                <option value="date"> ?php include('calander.php'); ?></option>
+            </select> --> 
+        <!-- </div> -->
+        <div class="cal-table">
         <div class="delivery-calander">
-            ?php include('calander.php'); ?>
-        </div> -->
+            <?php include('calander.php'); ?>
+        </div> 
         <!--table for Delivery History-->
-        <div class="table-history">
-            <h3 id="table-caption">Delivery History</h3>
-            <table>
+        <div class="historytable">
+            <!-- <h3 id="table-caption">Details of Overview</h3> -->
+            <table id="table-history">
                 <thead>
                     <tr>
                         <th>Time</th>
@@ -88,6 +88,8 @@
                 </tbody>
             </table>
         </div>
+       
+        <div>
     </div>
     <!-- <div class="footer">
         ?php include('footerDP.php');?>  
