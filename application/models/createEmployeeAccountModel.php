@@ -55,15 +55,14 @@
 		}
 
 		public function insertToUserTable($tableName,$staffId,$branchId){
-			$sql7="INSERT INTO"
+			$sql7="INSERT INTO "
 							.$tableName."(
 											staff_id,
 											branch_id)
 							VALUES("
-									.'"'.$staffId.'"'	.","
-									.'"'.$branchId.'")';
+									.$staffId	.","
+									.$branchId.')';
 			$res7=mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
-			echo "Done";
 		}
 
 		public function addEmployee($employeeData){
@@ -96,6 +95,7 @@
 			$res6=mysqli_query($this->db,$sql6) or die('6->'.mysqli_error($this->db));
 			$row1=mysqli_fetch_assoc($res6);
 			$last_id=$row1['last_id'];
+
 
 			if ($employeeData['job_role']==4) {
 				$this->insertToUserTable("branch_manager",$last_id,$employeeData['branch_Id']);

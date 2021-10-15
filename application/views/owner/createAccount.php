@@ -26,7 +26,7 @@
                     </div>
                     <?php } ?>
 
-                    <?php if (isset($data['error'])){?>
+                    <?php if (isset($data['error']) && $data['error']!=""){?>
                     <div class="danger-alert">
                       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
                       <p><?php echo $data['error']; ?></p>
