@@ -12,7 +12,7 @@
 			$data=array();
 			switch ($_SESSION['role_number']) {
 				case '2':
-					$this->view("owner/index");
+					$this->view("owner/dashboard");
 					break;
 				case '3':
 					$this->view("bakery_manager/index");
