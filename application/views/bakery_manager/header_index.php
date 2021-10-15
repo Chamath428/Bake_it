@@ -10,7 +10,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Available_Materials.php" class="hrf">
+                    <a href="<?php echo BASEURL."/rawMaterialController" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-warehouse"></i></span>
                         <span class="title">Raw Materials</span>
                     </a>
