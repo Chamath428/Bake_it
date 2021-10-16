@@ -8,7 +8,7 @@
     </head>
     <body>
        <section class="header">
-        <?php include('header.php'); ?>
+        <?php include('headerDP.php'); ?>
        </section>
         
          <section  class="available-body" id="body">
@@ -31,7 +31,7 @@
          </section>
     
          <div class="footer">
-        <?php include('footer.php'); ?>  
+        <?php include('footerDP.php'); ?>  
     </div>
         
     </body>

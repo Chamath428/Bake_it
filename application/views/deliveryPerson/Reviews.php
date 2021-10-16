@@ -9,7 +9,7 @@
     </head>
     <body>
        <section class="header">
-        <?php include('header.php'); ?>
+        <?php include('headerDP.php'); ?>
        </section>
         
          <div  class="reviews-body" id="body">
@@ -100,7 +100,7 @@
         </div>
     
         <section class="footer">
-              <?php include('footer.php'); ?>   
+              <?php include('footerDP.php'); ?>   
         </section> 
         
     </body>

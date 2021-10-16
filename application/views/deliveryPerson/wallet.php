@@ -11,7 +11,7 @@
 </head>
 <body>
       <section class="header">
-        <?php include('header.php'); ?>
+        <?php include('headerDP.php'); ?>
        </section>
    
         <div class="wallet-container" id="body">
@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="footer">
-            <?php include('footer.php'); ?>  
+            <?php include('footerDP.php'); ?>  
         </div>
 </body>
 </html>

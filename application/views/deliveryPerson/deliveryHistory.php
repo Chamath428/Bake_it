@@ -92,7 +92,7 @@
         <div>
     </div>
     <div class="footer">
-        <?php include('footer.php');?>  
+        <?php include('footerDP.php');?>  
     </div>
      
 </body>

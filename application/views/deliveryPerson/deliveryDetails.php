@@ -18,7 +18,7 @@
 
     </div>
     <section class="footer">
-            <?php include('footer.php'); ?>  
+            <?php include('footerDP.php'); ?>  
     </section>
 </body>
 </html>
