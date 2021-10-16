@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/owner/owner-dashboard.css">
-    <link rel="stylesheet" href="../../../public/css/owner/owner-footer.css" class="rel">
-    <link rel="stylesheet" href="../../../public/css/owner/owner-header.css" class="rel">
-    <script src="../../../public/js/owner/owner-header.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/owner/owner-dashboard.css">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css" class="rel">
+    <script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     
 </head>
@@ -64,7 +64,7 @@
         <section class="info">
             <h1>Our Story</h1>
             <div class="logo-description">
-                <img src="../../../public/images/owner/logo2.png" alt="">
+                <img src="<?php echo BASEURL ?>/public/images/owner/logo2.png" alt="">
                 <div>
                 <p>
                 The founder of Bake_it pastry shops is Mr.Gunarathna , owner of WK Bakers.
