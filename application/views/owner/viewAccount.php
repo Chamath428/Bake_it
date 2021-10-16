@@ -11,7 +11,7 @@
         <div>
           <?php require_once('accountHeader.php'); ?>
        </div>
-       <div class="content" id="body">
+       <div class="content view" id="body">
             <div class="account-container" id="view">
                 <div class="topic">Search Employee Accounts</div>
                 <!-- <span>User Type</span> -->
