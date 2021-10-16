@@ -10,8 +10,7 @@
 </head>
 <body>
   
-<!-- 
-?php require_once('headerDP.php'); ?> -->
+   <?php require_once('headerDP.php'); ?> 
   
   <div class="bgg" id="body">
       <h3>User Profile</h3>

@@ -27,6 +27,12 @@
                 </a>
             </li>
             <li>
+                <a href="wallet.php" class="hrf">
+                    <span class="icon"><i class="fas fa-wallet"></i></span>
+                    <span class="title">Wallet</span>
+                </a>
+            </li>
+            <li>
                 <a href="reviews.php" class="hrf">
                     <span class="icon"><i class="fas fa-star"></i></span>
                     <span class="title">Reviews</span>

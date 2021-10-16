@@ -91,9 +91,9 @@
        
         <div>
     </div>
-    <!-- <div class="footer">
-        ?php include('footerDP.php');?>  
+    <div class="footer">
+        <?php include('footerDP.php');?>  
     </div>
-     -->
+     
 </body>
 </html>

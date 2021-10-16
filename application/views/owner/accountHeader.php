@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="menu_items.php" class="hrf">
+                    <a href="viewAccount.php" class="hrf">
                         <span class="icon"><i class="fas fa-search"></i></span>
                         <span class="title">Search</span>
                     </a>

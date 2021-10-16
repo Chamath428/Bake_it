@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-createAccount.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>//public/css/owner/owner-account.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,6 +78,7 @@
                 <div class="text">
                     <label for="Post">Post</label>
                     <div class="text-fill">
+
                         <select placeholder="Select Post" name="job_role">
                         <?php 
 
@@ -107,12 +107,14 @@
                         <?php if(!isset($data['job_role']) || (isset($data['job_role']) && $data['job_role']!=4)) {?><option value="4">Branch Manager</option><?php } ?>
                         <?php if(!isset($data['job_role']) || (isset($data['job_role']) && $data['job_role']!=5)) {?><option value="5">Cashier</option><?php } ?>
                         <?php if(!isset($data['job_role']) || (isset($data['job_role']) && $data['job_role']!=6)) {?><option value="6">Delivery Person</option><?php } ?>
+
                     </select>
                     </div>
                 </div>
                 <div class="text">
                     <label for="Branch">Branch</label>
                     <div class="text-fill">
+
                         <select placeholder="Select Branch" name="branch_Id">
 
                              <?php 
@@ -139,6 +141,7 @@
                             <?php if(!isset($data['branch_Id']) || (isset($data['branch_Id']) && $data['branch_Id']!=1)) {?><option value="1">Kasbewa</option><?php } ?>
                             <?php if(!isset($data['branch_Id']) || (isset($data['branch_Id']) && $data['branch_Id']!=2)) {?><option value="2">Baththaramulla</option><?php } ?>
                             <?php if(!isset($data['branch_Id']) || (isset($data['branch_Id']) && $data['branch_Id']!=3)) {?><option value="3">Piliyandala</option><?php } ?>
+
                         </select>
                     </div>
                 </div>
