@@ -10,6 +10,7 @@
                     </a>
                 </li>
                 <li>
+
                     <a href="availableMaterials.php" class="hrf">
                         <span class="icon"><i class="fas fa-truck-loading"></i></span>
                         <span class="title">Retrieve</span>
@@ -22,7 +23,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="summary.php" class="hrf">
+                    <a href="<?php echo BASEURL."/rawMaterialController/getSummary" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-tasks"></i></span>
                         <span class="title">Summary</span>
                     </a>
@@ -53,7 +54,7 @@
             <div class="header-icons"> 
                 <span class="user-icon"><a href="profile.php"><i id="user" class="fas fa-user"></i></a>You logged in as : Bakery Manager</span>
                 <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
-                <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></span>
+                <span class ="sign-out"><a href="<?php echo BASEURL.'/loginController/logout' ?>"><i class="fas fa-sign-out-alt"></i>Logout</a></span>
              </div>
     </header>
  

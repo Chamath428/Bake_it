@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
     <link rel="stylesheet" href="../../../public/css/bakery_manager/bakery-manager-available-materials.css" class="rel">
     <link rel="stylesheet" href="../../../public/css/bakery_manager/bakery-manager-footer.css" class="rel">
     <link rel="stylesheet" href="../../../public/css/bakery_manager/bakery-manager-header.css" class="rel">
@@ -11,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../../public/js/bakery_manager/bakery-manager-available-materials.js" defer></script>
     <script src="../../../public/js/bakery_manager/bakery-manager-header.js" defer></script>
+
     <script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
     <title>Available Materials</title>
 </head>

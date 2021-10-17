@@ -15,7 +15,6 @@ html {
     background-image: url("../images/cf.jpg");
     background-position: top;
     background-repeat: no-repeat;
-    background-size: 100% auto;
     width: 100%;
     min-height: 99vh;
     box-sizing: border-box;
@@ -81,14 +80,20 @@ html {
 /*Hero Header and Button Ends*/
 
 /*Navigation Bar Starts*/
+.after-log{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 .head{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 1);
     position: relative;
     flex-wrap: wrap;
     width: 100%;
+    z-index: 1;
 }
 
 .navbar{
@@ -111,7 +116,7 @@ html {
     color: white;
     font-size: 16px;
     transition: all 0.3s ease 0s;
-}
+}   
 .nav-items a:hover{
     color: rgb(255, 138, 0);
 }
@@ -152,6 +157,49 @@ html {
     letter-spacing: 1px;
 }
 
+.user-btn{
+    border-right: 10px;
+    margin-top: 10px;
+}
+
+.user-btn a{
+    text-decoration: none;   
+    color: white;
+    transition: all 0.3s ease 0s;
+}
+.user-btn a:hover{
+    color: rgb(255, 138, 0);
+}
+
+.cart-btn{
+    margin-top: 10px;
+}
+
+.cart-btn a{
+    text-decoration: none;   
+    color: white;
+    transition: all 0.3s ease 0s;
+}
+.cart-btn a:hover{
+    color: rgb(255, 138, 0);
+}
+
+.bell-btn{
+    margin-top: 10px;
+}
+.bell-btn a{
+    text-decoration: none;   
+    color: white;
+    transition: all 0.3s ease 0s;
+}
+.bell-btn a:hover{
+    color: rgb(255, 138, 0);
+}
+
+#fa-user-circle,#fa-shopping-bag,#fa-bell{
+    font-size: 30px;
+}
+
 .toggle-btn{
     position: absolute;
     top: .40rem;
@@ -179,6 +227,7 @@ html {
     background-color: rgba(0, 0, 0, 0.7);
     width: 100px;
     border-radius: 0px 0px 5px 5px;
+    /*left: 40%;*/
     z-index: 1;
 
 }
@@ -228,6 +277,51 @@ html {
 
 /*Media query Start*/
 @media (max-width: 1050px){
+    .cart-btn{
+    position: absolute;
+    left: 70%;
+    bottom: 1px;
+    }
+    .cart-btn a{
+    text-decoration: none;   
+    color: white;
+    transition: all 0.3s ease 0s;
+    }
+    .cart-btn a:hover{
+    color: rgb(255, 138, 0);
+    }
+    /*.bell-btn{
+    position: absolute;
+    left: 80%;
+    bottom: 1px;
+    }
+    .bell-btn a{
+    text-decoration: none;   
+    color: white;
+    transition: all 0.3s ease 0s;
+    }
+    .bell-btn a:hover{
+    color: rgb(255, 138, 0);
+    }
+    .user-btn{
+    position: absolute;
+    left: 90%;
+    bottom: 1px;
+    }
+    .user-btn a{
+    text-decoration: none;   
+    color: white;
+    transition: all 0.3s ease 0s;
+    }
+    .user-btn a:hover{
+    color: rgb(255, 138, 0);
+    }*/
+
+    #fa-user-circle,#fa-shopping-bag,#fa-bell{
+    font-size: 25px;
+    display: contents;
+    }
+
     .toggle-btn{
         display: flex;
     }
@@ -235,10 +329,29 @@ html {
         width: 100%;
         display: none;
     }
+    #menu-drop{
+    display: none;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100px;
+    border-radius: 0px 0px 5px 5px;
+    left: 35%;
+    z-index: 1;
+    }
+    #outlet-drop{
+    display: none;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 130px;
+    left: 32%;
+    border-radius: 0px 0px 5px 5px;
+    z-index: 2;
+    }
+
     .head{
         flex-direction: column;
         align-items: flex-start;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 1);
     }
     .navbar ul{
         width: 100%;
@@ -259,7 +372,6 @@ html {
     .navbar ul li a {
         padding: .5rem 1rem;
     }
-
     .navbar.active {
         display: flex;
     }
@@ -272,22 +384,15 @@ html {
     .toggle-btn.active{
         flex-direction: row;
     }
-    .hero-bottom.active{
-        display: none;
+    .hero{
+    background-image: url("../images/cf2.jpg");
     }
-     .hero-bottom{
-        display: none;
-    }
-    
 
 }
 /*Media query End*/
 
-/*@media (max-width: 810px){
-    .hero-bottom{
-        display: none;
+@media(max-width: 630px){
+    .hero-bottom .header1{
+        font-size: 40px;
     }
 }
-
-
-*/
