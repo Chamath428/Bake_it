@@ -4,21 +4,21 @@
         <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
             <ul>
                 <li>
-                     <a href="dashboard.php" class="active">
+                     <a href="<?php echo BASEURL ?>" class="active">
                         <span class="icon"><i class="fas fa-th-large"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
 
-                    <a href="availableMaterials.php" class="hrf">
+                    <a href="<?php echo BASEURL."/rawMaterialController" ?>" class="hrf">
 
                         <span class="icon"><i class="fas fa-warehouse"></i></span>
                         <span class="title">Raw Materials</span>
                     </a>
                 </li>
                 <li>
-                    <a href="completeOrder.php" class="hrf">
+                    <a href="<?php echo BASEURL."/bakeryManagerOrderController" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-truck"></i></span>
                         <span class="title">Orders</span>
                     </a>
