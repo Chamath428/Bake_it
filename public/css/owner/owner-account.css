@@ -86,9 +86,9 @@ button:hover{
     justify-content: space-evenly;
 }
 .content .profile-collection .profile-employee{
-    
     display: flex;
     flex-direction: column;
+    min-width: 30%;
     align-items: center;
 }
 .content .profile-collection .profile-employee > span{
@@ -100,7 +100,8 @@ button:hover{
     font-size: 17vh;
     padding: 5px 10px 5px 10px;
     margin-left: 15px;
+    color: black;
 }
 #view-accounts{
-    display: none;
+    /*display: none;*/
 }

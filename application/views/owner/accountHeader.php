@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="viewAccount.php" class="hrf">
+                    <a href="<?php echo BASEURL."/createEmployeeAccountController/getEmployeeAccounts" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-search"></i></span>
                         <span class="title">Search</span>
                     </a>
