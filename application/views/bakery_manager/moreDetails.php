@@ -3,8 +3,8 @@
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <link rel="stylesheet" href="../../../public/css/bakery_manager/bakery-manager-more-details-complete-order.css" class="rel">
-    <link rel="stylesheet" href="../../../public/css/bakery_manager/bakery-manager-footer.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-more-details-complete-order.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-footer.css" class="rel">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@
             </div>
      </header>
      <div class="back-arrow">
-              <a href="completeOrder.php" class="herf-hand-point">
+              <a href="complete_order.php" class="herf-hand-point">
                 <i class='fa' id="back-hand-point">&#xf0a5; </i>
               </a>
            
