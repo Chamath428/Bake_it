@@ -4,20 +4,20 @@
         <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
             <ul>
                 <li>
-                     <a href="index.php" class="active">
-                        <span class="icon"><i class="fas fa-home"></i></span>
+                     <a href="dashboard.php" class="active">
+                        <span class="icon"><i class="fas fa-th-large"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="complete_order.php" class="hrf">
-                        <span class="icon"><i class="fas fa-warehouse"></i></span>
+                    <a href="completeOrder.php" class="hrf">
+                        <span class="icon"><i class="fas fa-check-square"></i></span>
                         <span class="title">Complete Order</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pending_order.php" class="hrf">
-                        <span class="icon"><i class="fas fa-truck"></i></span>
+                    <a href="pendingOrder.php" class="hrf">
+                        <span class="icon"><i class="fas fa-spinner"></i></span>
                         <span class="title">Pending Orders</span>
                     </a>
                 </li>

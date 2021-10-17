@@ -4,25 +4,27 @@
         <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
             <ul>
                 <li>
-                     <a href="index.php" class="active">
-                        <span class="icon"><i class="fas fa-home"></i></span>
+                     <a href="dashboard.php" class="active">
+                        <span class="icon"><i class="fas fa-th-large"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo BASEURL."/rawMaterialController" ?>" class="hrf">
+
+                    <a href="availableMaterials.php" class="hrf">
+
                         <span class="icon"><i class="fas fa-warehouse"></i></span>
                         <span class="title">Raw Materials</span>
                     </a>
                 </li>
                 <li>
-                    <a href="complete_order.php" class="hrf">
+                    <a href="completeOrder.php" class="hrf">
                         <span class="icon"><i class="fas fa-truck"></i></span>
                         <span class="title">Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="daily_requirment.php" class="hrf">
+                    <a href="dailyRequirment.php" class="hrf">
                         <span class="icon"><i class="fas fa-tasks"></i></span>
                         <span class="title">Daily Requirement</span>
                     </a>
