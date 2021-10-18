@@ -5,11 +5,11 @@
 		
 		function __construct()
 		{
-			// code...
+			$this->availableMaterialsModel=$this->model("availableMaterialsModel");
 		}
 
 		public function index(){
-			$data=array();
+			$data=$this->availableMaterialsModel->getMaterials();
 			$this->view("bakery_manager/Available_Materials",$data);
 		}
 

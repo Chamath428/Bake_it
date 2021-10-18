@@ -5,7 +5,7 @@ class bakeItFramework
 
    public function view($viewName, $data = []){
 
-      if(file_exists("../application/views/" . $viewName . ".php")){
+      if(file_exists("../application/views/" . $viewName . ".php")){ 
          
          require_once "../application/views/$viewName.php";
  

@@ -1,9 +1,17 @@
+<?php 
+$count=count($data);
+$emptyMaterialCount=0;
+foreach ($data as $key => $value) {
+    if ($value['stock_amount']==0) {
+        $emptyMaterialCount++;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-available-materials.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-footer.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-header.css" class="rel">
@@ -29,15 +37,15 @@
             <div class="box-row" id="boxRow">
                 <div class="col" id="boxRowCol1">
                     <h4>Total Materials</h4>
-                    <h1>25</h1>
+                    <h1><?php echo $count; ?></h1>
                 </div>
                 <div class="col" id="boxRowCol2">
                     <h4>Expire Materials</h4>
-                    <h1>5</h1>
+                    <h1>2</h1>
                 </div>
                 <div class="col" id="boxRowCol3">
                     <h4>Empty Materials</h4>
-                    <h1>20</h1>
+                    <h1><?php echo $emptyMaterialCount; ?></h1>
                 </div>
             </div>
                 
@@ -52,27 +60,15 @@
                       </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($data as $key => $value) {?>
                       <tr>
-                          
-                          <td>1111</td>
-                          <td>Sugar</td>
-                          <td>90Kg</td>                
+                          <td><?php echo $value['rawitem_id'];?></td>
+                          <td><?php echo $value['rawitem_name']; ?></td>
+                          <td><?php echo $value['stock_amount']." ".$value['measure_unit']; ?></td>                
                           <td><h4>High</h4></td>
                       </tr>
-                      <tr>
-                          <td>1112</td>
-                          <td>Bread crumbs</td>
-                          <td>3Kg</td>                  
-                          <td><h4>Low</h4></td>
-                        
-                      </tr>
-                      <tr>
-                          <td>1113</td>
-                          <td>Margarine</td>
-                          <td>20Kg</td>               
-                          <td><h4>Normal</h4></td>
-                        
-                      </tr>
+                  <?php } ?>
+                      
                   </tbody>
               </table>
             </div>
@@ -87,13 +83,9 @@
                     <div class="item-id">
                         <label for="item-id">Item Id</label>
                         <select placeholder="Select item id">
-                            <option>00112-item 1</option>
-                            <option>00113-item 2</option>
-                            <option>00114-item 3</option>
-                            <option>00115-item 4</option>
-                            <option>00116-item 5</option>
-                            <option>00117-item 6</option>
-
+                           <?php foreach ($data as $key => $value) {?> 
+                            <option><?php echo $value['rawitem_id']." - ".$value['rawitem_name'];?></option>        
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="addbtn"> <button onclick="add_fields()">+Add</button></div>
