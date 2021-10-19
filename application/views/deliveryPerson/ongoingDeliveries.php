@@ -46,11 +46,8 @@
             </thead>
             <tbody>
                 <tr>
-<<<<<<< HEAD
                     <td label="Order Id"><a href="deliveryDetails.php">001</a></td>
-=======
                     <td label="Order Id"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>">001</a></td>
->>>>>>> e11baa60f2a0fe998d90371cbd920c7800416f61
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-money-bill-alt"></i></td>

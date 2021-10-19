@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveryPerson-wallet.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/table.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-wallet.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
 
 
 </head>
@@ -19,7 +19,7 @@
             <div class="text">
                 <label for="recv-amount">Amount Received from Shop</label>
                 <div class="text-fill">
-                    <input type="text" name="name" id="amount"  placeholder="" value="5000LKR">
+                    <input type="text" name="name" id="amount"  placeholder="" value="5000.00LKR">
                 </div>
             </div>
             <div class="wallet-table">
@@ -58,7 +58,7 @@
             <div class="text">
                 <label for="retrn-amount">Return Amount to the shop</label>
                 <div class="text-fill">
-                    <input type="text" name="name" id="amount"  placeholder="" value="8500LKR">
+                    <input type="text" name="name" id="amount"  placeholder="" value="8500.00LKR">
                 </div>
             </div>
         </div>
