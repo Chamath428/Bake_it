@@ -16,6 +16,11 @@
 			$this->view("owner/createAccount",$data);
 		}
 
+		public function getEmployeeAccounts(){
+			$data=array();
+			$this->view("owner/viewAccount",$data);
+		}
+
 		public function createAccount(){
 			$data['error']="";
 			$firstname=preg_replace('/\s+/', '', $_POST['firs_tname']);
@@ -72,14 +77,50 @@
 				$password=password_hash($password, PASSWORD_DEFAULT);
 				$data['password']=$password;
 				$this->createEmployeeAccountModel->addEmployee($data);
-				$data['confirmation']="Emplyee account created successfully!";
-				$this->view("owner/createAccount",$data);
+				$message['confirmation']="Emplyee account created successfully!";
+				$this->view("owner/createAccount",$message);
 			}
 			else{
 				
 
 				$this->view("owner/createAccount",$data);
 			}
+		}
+
+		public function searchEmployee(){
+			$jobRole=$_POST['job_role'];
+			$branchId=$_POST['branch_Id'];
+			$data['error']="";
+
+			if ($branchId==4 && ($jobRole!=3 && $jobRole!=7)) {
+				$data['error']="No such employee in the bakery!";
+				echo $data['error'];
+			}
+			else if(($branchId!=4 && $branchId!=0) && $jobRole==3){
+				$data['error']="No Such employee in the branch!";
+				echo $data['error'];
+			}
+
+			else{
+				$data['job_role']=$jobRole;
+				$data['branch_Id']=$branchId;
+				$userDetails=$this->createEmployeeAccountModel->searchEmployee($jobRole,$branchId);
+				if (empty($userDetails)) {
+					$data['error']="No Employees to show!";
+					$this->view("owner/viewAccount",$data);
+				}
+				else{
+				// 	foreach ($userDetails as $key => $value) {
+				// 		echo $value['fullName'];
+				// 		echo $value['staff_id']."---";
+				// }
+					
+					$this->view("owner/viewAccount",$userDetails);
+			}	
+			}
+			
+
+				
 		}
 	}
 

@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-index.css">
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-header-index.css" class="rel">
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-footer.css" class="rel">
-    <script src="<?php echo BASEURL ?>/public/js/bakery_manager/bakery-manager-header.js" defer></script>
-
+    <link rel="stylesheet"  href="../../../public/css/cashier/cashier-dashboard.css">
+    <link rel="stylesheet" href="../../../public/css/cashier/cashier-header.css" class="rel">
+    <link rel="stylesheet" href="../../../public/css/cashier/cashier-footer.css" class="rel">
+    <script src="../../../public/js/cashier/cashier-header.js" defer></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
-    <title>Index page</title>
+    <title>Home page</title>
     
 </head>
 <body>
   
         <div id="header">
-            <?php include('header_index.php')?> 
+            <?php include('header.php')?> 
        </div>
    
 
@@ -26,7 +24,7 @@
         <section class="top-container">
                <div class="showcase">
                    <h1>Welcome!!!!</h1>
-                   <p>It's best time for cooking</p>
+                   <p>Let's work on bake_it</p>
                </div>
         </section>
         <section class="boxes">
@@ -67,7 +65,7 @@
         <section class="info">
             <h1>Our Story</h1>
             <div class="logo-description">
-                <img src="<?php echo BASEURL ?>/public/images/bakery_manager/logo2.png" alt="">
+                <img src="../../../public/images/cashier/logo2.png" alt="">
                 <div>
                 <p>
                 The founder of Bake_it pastry shops is Mr.Gunarathna , owner of WK Bakers.

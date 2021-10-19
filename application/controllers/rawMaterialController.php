@@ -5,11 +5,11 @@
 		
 		function __construct()
 		{
-			// code...
+			$this->availableMaterialsModel=$this->model("availableMaterialsModel");
 		}
 
 		public function index(){
-			$data=array();
+			$data=$this->availableMaterialsModel->getMaterials();
 			$this->view("bakery_manager/Available_Materials",$data);
 		}
 
@@ -21,6 +21,10 @@
 		public function getSummary(){
 			$data=array();
 			$this->view("bakery_manager/summary",$data);
+		}
+
+		public function test(){
+			echo $_POST['itemId2'];
 		}
 	}
 

@@ -6,12 +6,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 .content{
-    /* margin-left: 100px; */
     margin-bottom: 50px;
 }
 .view{
     height: 90vh;
 }
+
 .content .account-container{
     margin-left: 100px;
     margin-bottom: 20px;
@@ -85,9 +85,9 @@ button:hover{
     justify-content: space-evenly;
 }
 .content .profile-collection .profile-employee{
-    
     display: flex;
     flex-direction: column;
+    min-width: 30%;
     align-items: center;
 }
 .content .profile-collection .profile-employee > span{
@@ -102,5 +102,5 @@ button:hover{
     color: black;
 }
 #view-accounts{
-    display: none;
+    /*display: none;*/
 }
