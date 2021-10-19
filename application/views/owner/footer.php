@@ -1,5 +1,6 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="../../../public/css/owner/owner-footer.css">
+
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>

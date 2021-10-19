@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../../../public/js/deliveryPerson/deliveries.js"></script> 
-    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveryPerson-deliveries.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/table.css">
+
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveries.js"></script> 
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-deliveries.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
+
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -44,7 +46,11 @@
             </thead>
             <tbody>
                 <tr>
+<<<<<<< HEAD
                     <td label="Order Id"><a href="deliveryDetails.php">001</a></td>
+=======
+                    <td label="Order Id"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>">001</a></td>
+>>>>>>> e11baa60f2a0fe998d90371cbd920c7800416f61
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-money-bill-alt"></i></td>

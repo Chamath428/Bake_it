@@ -1,7 +1,7 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="../../../public/css/deliveryPerson/deliveryPerson-header.css">
-    <script src="../../../public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
-    <script src="../../../public/js/deliveryPerson/deliveryPerson-availability.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-header.css">
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-availability.js"></script>
 </head>
 
 
@@ -9,19 +9,19 @@
 <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
         <ul>
             <li>
-                <a href="dashboardDP.php" class="active">
+                <a href="<?php echo BASEURL."/dashboardController"; ?>" class="active">
                     <span class="icon"><i class="fas fa-th-large"></i></span>
                     <span class="title">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="ongoingDeliveries.php" class="hrf">
+                <a href="<?php echo BASEURL."/deliveriesController"; ?>" class="hrf">
                     <span class="icon"><i class="fas fa-motorcycle"></i></span>
                     <span class="title">Deliveries</span>
                 </a>
             </li>
             <li>
-                <a href="deliveryHistory.php" class="hrf">
+                <a href="<?php echo BASEURL."/deliveriesController/getDeliveryOverview"; ?>" class="hrf">
                     <span class="icon"><i class="fas fa-bookmark"></i></span>
                     <span class="title">Overview</span>
                 </a>

@@ -1,0 +1,236 @@
+section{
+	width: 100%;
+	height: 100vh;
+	font-size: 1.6rem;
+}
+
+/*Basic Details Starts*/
+.order-details .basic-details{
+	width: 80%;
+	margin: 3rem auto;
+}
+.order-details .basic-details table{
+	width: 40%;
+}
+.order-details .basic-details table tr{
+	background-color: #d6d4d2;
+}
+.order-details .basic-details table tr td:first-child{
+	font-weight: bold;
+}
+.order-details .basic-details table tr td:last-child{
+	text-align: right;
+}
+.order-details .basic-details table tr td a{
+	color: rgb(255, 149, 28);
+	transition: 0.2s ease-in-out;
+}
+.order-details .basic-details table tr td a:hover{
+	color: rgb(255, 136, 0);
+	font-weight: bold;
+}
+
+@media(max-width: 1065px){
+	.order-details .basic-details table{
+		width: 60%;
+	}
+}
+@media(max-width: 720px){
+	.order-details .basic-details table{
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+@media(max-width: 511px){
+	.order-details .basic-details table{
+		width: 100%;
+	}
+}
+
+/*Basic Details Ends*/
+
+/*Food details Starts*/
+.mobile-cart{
+	display: none;
+}
+
+.cart-containter{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.cart-containter table{
+	width: 80%;
+	border-collapse: collapse;
+	margin: 60px auto;
+	border-spacing: 10px;
+}
+
+.cart-containter table th{
+	text-align: left;
+	padding: 5px;
+	background-color: rgb(255, 138, 0);
+}
+
+.cart-containter table th:last-child{
+	text-align: right;
+}
+.cart-containter table td:last-child{
+	text-align: right;
+}
+
+
+.cart-containter table tr{
+	border: 1px solid rgb(219, 217, 218);
+}
+
+.cart-containter table tr td{
+	padding: 5px;
+}
+
+.cart-containter input{
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.cart-containter .product-container{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.cart-containter .product-container img{
+	width: 60px;
+	height: 60px;
+}
+.cart-containter .product-container div{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding-left: 20px;
+}
+
+.cart-containterm{
+	width: 100%;
+}
+.cart-containterm table{
+	width: 80%;
+	border-collapse: collapse;
+	margin: 60px auto;
+	border-spacing: 10px;
+	border: 2px solid rgba(255, 138, 0,1);
+}
+
+.cart-containterm table tr{
+	border: 1px solid rgb(219, 217, 218);
+}
+.cart-containterm table tr:first-child td{
+	width: 50%;
+}
+
+.cart-containterm table tr td{
+	padding: 5px;
+	text-align: center;
+}
+.cart-containterm table tr td .product-image{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cart-containterm table tr td:first-child{
+	text-align: left;
+	font-weight: bold;
+}
+
+
+.cart-containterm table td div input{
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	border-radius: 5px;
+}
+@media(max-width: 720px){
+	.desktop-cart{
+		display: none;
+	}
+	.mobile-cart{
+	display: block;
+	}
+}
+/*Food details Ends*/
+
+/*Total container starts*/
+.total-container{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	flex-direction: column;
+	width: 80%;
+	margin: 1rem auto;
+}
+.total-container table{
+	width: 100%;
+	max-width: 300px;
+	border-collapse: collapse;
+	border-spacing: 10px;
+	/*margin-right: 150px;*/
+	border-top: 3px solid rgb(255, 138, 0);
+}
+.total-container table tr td:first-child{
+	font-weight: bold;
+}
+
+.total-container table td:last-child{
+	text-align: right;
+}
+.total-container table tr td{
+	padding-bottom: 5px;
+}
+
+/*Total container ends*/
+
+
+/*Buttons Starts*/
+
+.order-details .buttons{
+	width: 80%;
+	margin: 5rem auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.order-details .buttons button{
+	padding: 1rem;
+	background-color: transparent;
+	border-radius: 1rem;
+	border: 2px solid rgb(255, 137, 0);
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+.order-details .buttons button:hover{
+	background-color: rgb(255, 137, 0);
+	color: white;
+}
+.order-details .buttons button a{
+	color: black;
+	transition: 0.3s ease-in-out;
+}
+.order-details .buttons button:hover a{
+	color: white;
+}
+
+@media(max-width: 405px){
+	.order-details .buttons{
+		margin: 0 auto;
+	}
+}
+
+
+/*Buttons Ends*/
