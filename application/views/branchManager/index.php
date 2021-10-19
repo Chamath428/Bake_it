@@ -15,7 +15,7 @@
 <body>
   
         <div id="header">
-            <?php include('header_index.php')?> 
+            <?php include('headerIndex.php')?> 
        </div>
    
 
@@ -24,7 +24,7 @@
         <section class="top-container">
                <div class="showcase">
                    <h1>Welcome!!!!</h1>
-                   <p>It's Best Time for Managing</p>
+                   <p> It's Best Time to Visit Your Branch</p>
                </div>
         </section>
         <section class="boxes">

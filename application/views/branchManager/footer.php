@@ -11,8 +11,9 @@
               <div class="footer-col">
                   <h4>Get help</h4>
                   <ul>
-                      <li><a href="#">Raw Materials</a></li>
+                      <li><a href="#">Menu</a></li>
                       <li><a href="#">Orders</a></li>
+                      <li><a href="#">Reports</a></li>
                       <li><a href="#">Daily Requirment</a></li>
                   </ul>
               </div>

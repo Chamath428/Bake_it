@@ -5,7 +5,7 @@
             <ul>
                 <li>
                      <a href="index.php" class="active">
-                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="icon"><i class="fas fa-th-large"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="report.php" class="hrf">
+                    <a href="overview.php" class="hrf">
                         <span class="icon"><i class="fas fa-file-alt"></i></span>
                         <span class="title">Reports</span>
                     </a>
