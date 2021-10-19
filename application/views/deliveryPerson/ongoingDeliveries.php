@@ -44,7 +44,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td label="Order Id"><a href="ongoingDeliveryDetails.php">001</a></td>
+                    <td label="Order Id"><a href="deliveryDetails.php">001</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-money-bill-alt"></i></td>

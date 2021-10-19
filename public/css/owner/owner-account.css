@@ -8,6 +8,8 @@
 .content{
     /* margin-left: 100px; */
     margin-bottom: 50px;
+}
+.view{
     height: 90vh;
 }
 .content .account-container{
@@ -97,6 +99,7 @@ button:hover{
     font-size: 17vh;
     padding: 5px 10px 5px 10px;
     margin-left: 15px;
+    color: black;
 }
 #view-accounts{
     display: none;
