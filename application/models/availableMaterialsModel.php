@@ -32,6 +32,54 @@ class availableMaterialsModel extends database
 		}
 		return $materialData;
 	}
+
+	public function compareItems($itemId,$quantity){
+		$sql2="SELECT
+					stock_amount
+				FROM
+					raw_material_inventory
+				WHERE
+					rawitem_id = ".$itemId;
+		$res2=mysqli_query($this->db,$sql2) or die ('2->'.mysqli_error($this->db));
+		$row2=mysqli_fetch_assoc($res2);
+		if ($row2['stock_amount']<$quantity) {
+			return true;
+		}return false;
+	}
+
+	public function getItemName($itemId){
+		$sql3="SELECT
+					rawitem_name
+				FROM
+					raw_material_inventory
+				WHERE
+					rawitem_id = ".$itemId;
+
+		$res3=mysqli_query($this->db,$sql3) or die('3->'.mysqli_error($this->db));
+		$row3=mysqli_fetch_assoc($res3);
+		return $row3['rawitem_name'];
+	}
+
+	public function updateMaretials($itemId,$quantity,$decider){
+		$sql4="SELECT
+					stock_amount
+				FROM
+					raw_material_inventory
+				WHERE
+					rawitem_id = ".$itemId;
+		$res4=mysqli_query($this->db,$sql4) or die('4->'.mysqli_error($this->db));
+		$row4=mysqli_fetch_assoc($res4);
+		if($decider==0)$newQuantity=$row4['stock_amount']-$quantity;
+		else if($decider==1)$newQuantity=$row4['stock_amount']+$quantity;
+
+		$sql5="UPDATE
+					raw_material_inventory
+				SET
+					stock_amount =".$newQuantity.
+				" WHERE
+					rawitem_id = ".$itemId;
+		$res5=mysqli_query($this->db,$sql5) or die('5->'.mysqli_error($this->db));
+	}
 }
 
  ?>

@@ -57,7 +57,7 @@
                 <li><a href="">Order For an Event</a></li>
                 <?php if (isset($_SESSION['islogged']) && $_SESSION['islogged']==1) {?>
                 <li><a href="<?php echo BASEURL.'/loginController/logout' ?>">Logout</a></li><?php } else{ ?>
-                 <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li><?php } ?>
+                 <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li><?php }?>
                 
             </ul>
             <div class="user-icons">
