@@ -12,6 +12,8 @@ class homeController extends bakeItFramework
         if (isset($_SESSION['role_number']) && $_SESSION['role_number']>1) {
             $this->redirect("dashboardController");
         }
+
+
         $this->view("customer/home",$data);
     }
 }

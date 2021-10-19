@@ -14,17 +14,19 @@ class bakeItFramework
       }
  
     }
-   //  public function helper($helperName){
 
-   //    if(file_exists("../system/helpers/".$helperName.".php")){
+    public function viewWithMessage($viewName, $data = [],$message=[]){
 
-   //       require_once "../system/helpers/".$helperName.".php";
+      if(file_exists("../application/views/" . $viewName . ".php")){ 
+         
+         require_once "../application/views/$viewName.php";
+ 
+      } else {
+         echo "<div style='margin:0;padding: 10px;background-color:silver;'>$viewName.php file not found </div>";
+      }
+ 
+    }
 
-   //    } else {
-   //       echo "<div style='margin:0;padding: 10px;background-color:silver;'>Sorry helper $helperName file not found </div>";
-   //    }
-
-   // }
  
     public function model($modelName){
  
