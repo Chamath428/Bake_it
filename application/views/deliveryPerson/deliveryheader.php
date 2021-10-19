@@ -73,7 +73,12 @@
         <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
         <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i></a></span>
         <span class="text"><a href="#">Logout</a></span>
+        <span class="side-toggle">
+            <a href="#" class="icon" onclick="sidetoggle()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </span>
     </div>
 </header>
 
- 
+ <!-- javascript:void(0); -->

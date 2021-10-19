@@ -6,7 +6,7 @@
 
 
 <div class="container">
-<div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
+   <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
         <ul>
             <li>
                 <a href="<?php echo BASEURL."/dashboardController"; ?>" class="active">
@@ -40,7 +40,6 @@
             </li>
         </ul>
     </div>
-    <!-- <div class="toggle"><span onclick="leftBakeIt()"><i  id="menuBtn" class="fas fa-bars"></i></span></div> -->
     <div id="arrowAnim">
             <div class="arrowSliding">
                 <div class="arrow"></div>
@@ -84,7 +83,16 @@
         <span class="text">You logged in as : Delivery Person</span>
         <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
         <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i></a></span>
+<<<<<<< HEAD
+        <span class="text"><a href="#">Logout</a></span>
+        <span class="side-toggle">
+            <a href="#" class="icon" onclick="sidetoggle()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </span>
+=======
         <span class="text"><a href="<?php echo BASEURL.'/loginController/logout' ?>">Logout</a></span>
+>>>>>>> e11baa60f2a0fe998d90371cbd920c7800416f61
     </div>
 </header>
 

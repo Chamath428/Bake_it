@@ -39,8 +39,8 @@ footer > ul{
     font-weight: 500;
     position: relative;
 }
-.bake-it{
-    /* font-family: 'Merienda', cursive; */
+.bake-it-topic{
+    font-family: 'Merienda', cursive; 
     font-style: italic;
 }
 
@@ -113,11 +113,27 @@ footer > p{
 /*responsive*/
 @media(max-width: 767px){
     #footerId{
-        padding: 0%;
+        padding: 2%;
     }
     .footer-col{
         width: 50%;
         margin-bottom: 30px;
+    }
+    .footer-col h4{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .footer-col ul li{
+        font-size: 10px;
+    }
+    .footer-col .footer-social-links a {
+        margin: 0%;
+    }
+    .fab{
+        font-size: 25px;
+    }
+    .fa-phone-square-alt,.fa-envelope,.fa-map-marker-alt,.far{
+        font-size: 13px;
     }
 }
 @media(max-width: 480px){
@@ -128,15 +144,12 @@ footer > p{
         width: 100%;
     }
     .footer-col h4{
-        font-size: 15px;
-    }
-    .footer-col ul li{
-        font-size: 10px;
+        font-size: 14px;
     }
     .fab{
-        font-size: 25px;
+        font-size: 20px;
     }
     .fa-phone-square-alt,.fa-envelope,.fa-map-marker-alt,.far{
-        font-size: 13px;
+        font-size: 10px;
     }
 }

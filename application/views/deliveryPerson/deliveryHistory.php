@@ -14,7 +14,7 @@
         <?php include('deliveryheader.php'); ?>
     </section> 
     
-    <div class="delivery-body" id="body">
+    <div class="delivery-body overview-body" id="body">
         <div class="del-topic">Overview</div>
         <div class="row">
             <div class="col">
@@ -30,15 +30,6 @@
                 <h1>120</h1>
             </div>
         </div>
-        <!-- <h3>Select Date</h3>
-        <div class="date-selection"> -->
-            
-            <!-- ?php include('calander.php'); ?>
-             <select name="Select date" id="">
-                <option value="">Select Date</option>
-                <option value="date"> ?php include('calander.php'); ?></option>
-            </select> --> 
-        <!-- </div> -->
         <div class="cal-table">
         <div class="delivery-calander">
             <?php include('calander.php'); ?>
@@ -87,13 +78,13 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
-       
-        <div>
     </div>
-    <div class="footer">
-        <?php include('footerDP.php');?>  
-    </div>
+    <section>
+            <?php require_once('footerDP.php');?>  
+    </section>       
+    
      
 </body>
 </html>
