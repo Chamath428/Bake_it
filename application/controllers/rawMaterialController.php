@@ -22,6 +22,10 @@
 			$data=array();
 			$this->view("bakery_manager/summary",$data);
 		}
+
+		public function test(){
+			echo $_POST['itemId2'];
+		}
 	}
 
  ?>
