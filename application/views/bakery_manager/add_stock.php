@@ -112,7 +112,7 @@
                 <div class="row-pop1">
                     <div class="item-id">
                         <label for="item-id">Item Id</label>
-                        <select placeholder="Select item id">
+                        <select placeholder="Select item id" id="popupSelctId">
                             <option>00112-item 1</option>
                             <option>00113-item 2</option>
                             <option>00114-item 3</option>
@@ -131,12 +131,14 @@
                         <div class="item-name">Name</div>
                         <div class="item-quantity">Quantity</div>
                     </div>
-                    <div id="room_fileds">
-                    </div>
-                </div>
-                <div class="row-pop3">
-                    <button class="savebtn" onclick=" SaveFunction()" id="savebtn"> Save</button>
-                </div>
+                    <form method="POST" action="#">
+                            <div id="room_fileds">
+                            </div>
+                            </div>
+                            <div class="row-pop3">
+                                <button class="savebtn" type="submit" name="save" id="savebtn" onclick=" SaveFunction()" id="savebtn"> Save</button>
+                            </div>
+                    </form>
         </div>
     </div>
 </div>

@@ -6,7 +6,9 @@ foreach ($data as $key => $value) {
         $emptyMaterialCount++;
     }
 }
+if(isset($_POST['submit']) && $_POST['submit']=="save")$count=5;
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,9 +84,9 @@ foreach ($data as $key => $value) {
                 <div class="row-pop1">
                     <div class="item-id">
                         <label for="item-id">Item Id</label>
-                        <select placeholder="Select item id">
+                        <select placeholder="Select item id" id="popupSelctId" >
                            <?php foreach ($data as $key => $value) {?> 
-                            <option><?php echo $value['rawitem_id']." - ".$value['rawitem_name'];?></option>        
+                            <option value="<?php echo $value['rawitem_id'] ?>"><?php echo $value['rawitem_id']." - ".$value['rawitem_name'];?></option>        
                             <?php } ?>
                         </select>
                     </div>
@@ -96,12 +98,15 @@ foreach ($data as $key => $value) {
                         <div class="item-name">Name</div>
                         <div class="item-quantity">Quantity</div>
                     </div>
+	
+                 <form method="post" action="<?php echo BASEURL.'/rawMaterialController/test';?>">
                     <div id="room_fileds">
+                        </div>
                     </div>
-                </div>
-                <div class="row-pop">
-                    <button class="savebtn" onclick=" SaveFunction()" id="savebtn"> Save</button>
-                </div>
+                    <div class="row-pop">
+                        <button class="savebtn" type="submit" name="save" id="savebtn"> Save</button>
+                    </div>
+                 </form>
         </div>
       </div>
   </div>
