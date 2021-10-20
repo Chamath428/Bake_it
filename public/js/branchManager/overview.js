@@ -39,8 +39,8 @@ new Chart("myChart", {
     }
   }
 });
-var x2Values = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", ];
-var y2Values = [55, 90, 44];
+var x2Values = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+var y2Values = [55, 90, 44, 23, 43, 54, 65];
 var barColors = ["red","orange","brown"];
 
 new Chart("myChart2", {

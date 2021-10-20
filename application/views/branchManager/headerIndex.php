@@ -16,13 +16,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="complete_order.php" class="hrf">
+                    <a href="completeOrder.php" class="hrf">
                         <span class="icon"><i class="fas fa-truck"></i></span>
                         <span class="title">Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="daily_requirement.php" class="hrf">
+                    <a href="dailyRequirement.php" class="hrf">
                         <span class="icon"><i class="fas fa-tasks"></i></span>
                         <span class="title">Daily Requirement</span>
                     </a>
