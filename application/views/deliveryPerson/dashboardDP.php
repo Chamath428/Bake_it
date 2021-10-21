@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-dashboard.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-header.css">
-    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-footer.css">
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-headerDashboard.js" defer ></script>
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-availability.js"></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     
 </head>
@@ -16,7 +18,7 @@
         <?php include('headerDP.php')?> 
     </div>   
     <!-- body -->
-    <div class="bgg" id="body" >
+    <div class="bgg" id="body">
         <section class="top-container">
                <div class="showcase">
                    <h1>Welcome!!!!</h1>

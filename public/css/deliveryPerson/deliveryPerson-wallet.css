@@ -32,3 +32,8 @@
    padding: 10px 20px;
    outline: none;
 }
+@media(max-width:700px){
+    .wallet-container{
+        height: 0%;
+    }
+}
