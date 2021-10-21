@@ -21,7 +21,7 @@
 					echo "Branch Manager yet to get";
 					break;
 				case '5':
-					echo "Cashier yet to get";
+					$this->view("cashier/dashboard");
 					break;
 				case '6':
 					$this->view("deliveryPerson/dashboardDP");
