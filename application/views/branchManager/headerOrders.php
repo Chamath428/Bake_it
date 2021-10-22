@@ -13,21 +13,15 @@
                     </a>
                 </li>
                 <li>
-                     <a href="overview.php" class="active">
-                        <span class="icon"><i class="fas fa-chart-pie"></i></span>
-                        <span class="title">Overview</span>
+                     <a href="pendingOrders.php" class="active">
+                        <span class="icon"><i class="fas fa-spinner"></i></span>
+                        <span class="title">Pending Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="totalSalesReports.php" class="hrf">
-                        <span class="icon"><i class="fas fa-user-cog"></i></span>
-                        <span class="title">Total Sales Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="itemWiseSalesReports.php" class="hrf">
-                        <span class="icon"><i class="fab fa-elementor"></i></span>
-                        <span class="title">ItemWise Sales Reports</span>
+                    <a href="completeOrder.php" class="hrf">
+                        <span class="icon"><i class="fas fa-check-square"></i></span>
+                        <span class="title">Completed Orders</span>
                     </a>
                 </li>
             </ul>
