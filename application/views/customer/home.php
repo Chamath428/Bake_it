@@ -34,7 +34,7 @@
                 <li><a href="<?php BASEURL ?>">Home</a></li>
                 <li><a style="cursor: pointer;">Menu</a>
                     <ul class="sub-menu">
-                        <li><a href="">Burger</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Burger</a></li>
                         <li><a href="">Burger</a></li>
                         <li><a href="">Burger</a></li>
                         <li><a href="">Burger</a></li>
@@ -54,7 +54,7 @@
                 <li><a href="<?php echo BASEURL.'/myordersController' ?>">My Orders</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Careers</a></li>
-                <li><a href="">Order For an Event</a></li>
+                <li><a href="<?php echo BASEURL."/orderForEventController"; ?>">Order For an Event</a></li>
                 <?php if (isset($_SESSION['islogged']) && $_SESSION['islogged']==1) {?>
                 <li><a href="<?php echo BASEURL.'/loginController/logout' ?>">Logout</a></li><?php } else{ ?>
                  <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li><?php }?>
@@ -86,7 +86,7 @@
             <h2 class="menu-header">Our Menu</h2>
             <div class="menu-container">
                 <div class="menu-box grid-item-1">
-                    <a href="#">
+                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/bread.jpg">
                         <div class="h3">BREAD</div>
                     </a>
@@ -98,44 +98,44 @@
                     </a>
                 </div>
                 <div class="menu-box grid-item-6">
-                    <a href="#">
+                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
                         <img src="<?php echo BASEURL ?>/images/cake.jpg">
                         <div class="h3">CAKE</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-5">
-                    <a href="menuItems.php">
+                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
                         <img src="<?php echo BASEURL ?>/images/burger.jpg">
                         <div class="h3">BURGER</div>    
                     </a>
                 </div>
                 <div class="menu-box grid-item-9">
-                    <a href="#">
+                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
                         <img src="<?php echo BASEURL ?>/images/snacks.jpg">
                         <div class="h3">SNACKS</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-3">
-                    <a href="#">
+                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/donuts.jpg">
                         <div class="h3">DONUT</div>
                     </a>
                 </div>
 
                 <div class="menu-box grid-item-4">
-                    <a href="#">
+                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/muffins.jpg">
                         <div class="h3">MUFFIN</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-7">
-                    <a href="#">
+                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/sweets.jpg">
                         <div class="h3">SWEETS</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-8">
-                    <a href="#">
+                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/baverages.jpg">
                         <div class="h3">BAVERAGES</div>
                     </a>

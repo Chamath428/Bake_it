@@ -10,7 +10,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a style="cursor: pointer;">Menu</a>
                     <ul class="sub-menu">
-                        <li><a href="">Burger</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Burger</a></li>
                         <li><a href="">Burger</a></li>
                         <li><a href="">Burger</a></li>
                         <li><a href="">Burger</a></li>
@@ -30,7 +30,7 @@
                 <li><a href="<?php echo BASEURL.'/myordersController' ?>">My Orders</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Careers</a></li>
-                <li><a href="">Order For an Event</a></li>
+                <li><a href="<?php echo BASEURL."/orderForEventController"; ?>">Order For an Event</a></li>
                 <?php if (isset($_SESSION['islogged']) && $_SESSION['islogged']==1) {?>
                 <li><a href="<?php echo BASEURL.'/loginController/logout' ?>">Logout</a></li><?php } else{ ?>
                  <li><a href="<?php echo BASEURL.'/loginController' ?>">Login</a></li><?php } ?>

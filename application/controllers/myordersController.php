@@ -14,6 +14,11 @@
 			 $data=array();
 			 $this->view("customer/myorders",$data);
 		}
+
+		public function showOrderDetails(){
+			$data=array();
+			$this->view("customer/orderdetails",$data);
+		}
 	}
 
  ?>
