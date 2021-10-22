@@ -16,14 +16,14 @@ h3{
 table{
     width: 60%;
     border-collapse: collapse;
-    
+    text-align: left;
     margin-left: 100px;
     margin-bottom: 5%;
 }
 table td{
     padding: 12px 5px;
     
-    text-align: center;
+    
 }
 table th{
     padding: 12px 5px;

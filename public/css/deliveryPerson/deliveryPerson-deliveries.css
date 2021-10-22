@@ -131,8 +131,10 @@
     border-bottom: 1px solid black;
 }
 button{
-	border-radius:  10px;
-    padding :10px 15px;
+	padding: 1rem;
+	background-color: transparent;
+	transition: 0.3s ease-in-out;
+    border-radius:  10px;
     border: 2px solid rgb(255,138,0);
     text-align: center;
     text-decoration: none;
@@ -140,8 +142,16 @@ button{
     transition-duration: 0.4s;
     cursor: pointer;
 }
+
 button:hover{
 	background-color: rgb(255,138,0);
+	color: white;
+}
+button a{
+	color: black;
+	transition: 0.3s ease-in-out;
+}
+button:hover a{
 	color: white;
 }
 .delivery-container .reject:hover{
