@@ -35,7 +35,7 @@
 					<th>Order Status</th>
 				</tr>
 				<tr>
-					<td><a href="orderdetails.php">#Q117</a></td>
+					<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails"?>">#Q117</a></td>
 					<td>1500.00LKR</td>
 					<td>03/09/2021</td>
 					<td>Ongoing</td>
