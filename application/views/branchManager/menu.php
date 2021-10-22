@@ -11,6 +11,8 @@
     <script src="../../../public/js/branchManager/menu.js" defer ></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -23,11 +25,15 @@
             <div class="drop-down-btn-container">
                 <div class="drop-down">
                     <select name="" id="">
-                        <option value="">abc</option>
-                        <option value="">abc</option>
-                        <option value="">abc</option>
-                        <option value="">abc</option>
-                        <option value="">abc</option>
+                        <option value="">Bread</option>
+                        <option value="">Pastry</option>
+                        <option value="">Cake</option>
+                        <option value="">Burger</option>
+                        <option value="">Snacks</option>
+                        <option value="">Donut</option>
+                        <option value="">Muffin</option>
+                        <option value="">Sweets</option>
+                        <option value="">Beverages</option>
                     </select>
                 </div>
                 <div class="view-btn-container">
@@ -39,8 +45,8 @@
                 <table>
                     <thead>
                       <tr>
-                        <th>Item ID</th>
-                        <th>Item</th>
+                        <th>Item NO</th>
+                        <th>Food Item</th>
                         <th>Price</th>
                         <th>Quantity</th>
                       </tr>
@@ -48,70 +54,70 @@
                     <tbody>
                       
                       <tr>
-                        <td>#003</td>
+                        <td>#001</td>
                         <td>
                           <div class="cell">
-                            <div class="image"><img src="44.jpg" alt=""></div>
-                            <div><p>Burger</p></div>
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Chicken Burger</p></div>
+                          </div>
+                        </td>
+                        <td>450.00</td>
+                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
+                      </tr>
+                      <tr>
+                        <td>#002</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p> Chicken Burger</p></div>
                           </div>
                         </td>
                         <td>350.00</td>
-                        <td><input class="quant" name="quant"  type="number" value="10"></td>
+                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
                       </tr>
                       <tr>
                         <td>#003</td>
                         <td>
                           <div class="cell">
-                            <div class="image"><img src="44.jpg" alt=""></div>
-                            <div><p>Burger</p></div>
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Fish Burger</p></div>
                           </div>
                         </td>
-                        <td>350.00</td>
-                        <td><input class="quant" name="quant"  type="number" value="10"></td>
+                        <td>300.00</td>
+                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
                       </tr>
                       <tr>
-                        <td>#003</td>
+                        <td>#004</td>
                         <td>
                           <div class="cell">
-                            <div class="image"><img src="44.jpg" alt=""></div>
-                            <div><p>Burger</p></div>
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Ham Burger</p></div>
                           </div>
                         </td>
                         <td>350.00</td>
-                        <td><input class="quant" name="quant"  type="number" value="10"></td>
+                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
                       </tr>
                       <tr>
-                        <td>#003</td>
+                        <td>#005</td>
                         <td>
                           <div class="cell">
-                            <div class="image"><img src="44.jpg" alt=""></div>
-                            <div><p>Burger</p></div>
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Cheese Burger</p></div>
                           </div>
                         </td>
-                        <td>350.00</td>
-                        <td><input class="quant" name="quant"  type="number" value="10"></td>
+                        <td>300.00</td>
+                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
                       </tr>
                       <tr>
-                        <td>#003</td>
+                        <td>#006</td>
                         <td>
                           <div class="cell">
-                            <div class="image"><img src="44.jpg" alt=""></div>
-                            <div><p>Burger</p></div>
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Ham Burger</p></div>
                           </div>
                         </td>
-                        <td>350.00</td>
-                        <td><input class="quant" name="quant"  type="number" value="10"></td>
-                      </tr>
-                      <tr>
-                        <td>#003</td>
-                        <td>
-                          <div class="cell">
-                            <div class="image"><img src="44.jpg" alt=""></div>
-                            <div><p>Burger</p></div>
-                          </div>
-                        </td>
-                        <td>350.00</td>
-                        <td><input class="quant" name="quant"  type="number" value="10"></td>
+                        <td>250.00</td>
+                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
                       </tr>
                       
                     </tbody>
