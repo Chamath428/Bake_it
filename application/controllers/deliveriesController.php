@@ -25,7 +25,12 @@ class deliveriesController extends bakeItFramework
 
 	public function getOrderDetails(){
 		$data=array();
-		$this->view("deliveryPerson/ongoingDeliveryDetails",$data);
+		$this->view("deliveryPerson/deliveryDetails",$data);
+	}
+	
+	public function testing(){
+		$data=array();
+		$this->view("deliveryPerson/OngoingDeliveryDetails",$data);
 	}
 }
 

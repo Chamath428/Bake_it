@@ -1,12 +1,6 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>public/css/deliveryPerson/deliveryPerson-header.css">
-    <script src="<?php echo BASEURL ?>public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
-    <script src="<?php echo BASEURL ?>public/js/deliveryPerson/deliveryPerson-availability.js"></script>
-</head>
-
 
 <div class="container">
-   <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
+    <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
         <ul>
             <li>
                 <a href="<?php echo BASEURL."/dashboardController"; ?>" class="active">
@@ -15,7 +9,7 @@
                 </a>
             </li>
             <li>
-                <a href="availability.php" class="hrf">
+                <a href="<?php echo BASEURL."/availabilityController"; ?>" class="hrf">
                     <span class="icon"> <i class="fas fa-check-circle"></i></span>
                     <span class="title">Availability</span>
                 </a>
@@ -27,13 +21,13 @@
                 </a>
             </li>
             <li>
-                <a href="wallet.php" class="hrf">
+                <a href="<?php echo BASEURL."/walletController"; ?>" class="hrf">
                     <span class="icon"><i class="fas fa-wallet"></i></span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
-                <a href="reviews.php" class="hrf">
+                <a href="<?php echo BASEURL."/deliveryReviewsController"; ?>" class="hrf">
                     <span class="icon"><i class="fas fa-star"></i></span>
                     <span class="title">Reviews</span>
                 </a>
@@ -79,20 +73,17 @@
     </div>
     <span id="available">You are available for deliveries</span>
     <div class="header-icons"> 
-        <span class="user-icon"><a href="profile.php"><i id="user" class="fas fa-user"></i></a></span>
+        <span class="user-icon"><a href="<?php echo BASEURL.'/profileEmployeeController' ?>"><i id="user" class="fas fa-user"></i></a></span>
         <span class="text">You logged in as : Delivery Person</span>
         <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
         <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i></a></span>
-<<<<<<< HEAD
-        <span class="text"><a href="#">Logout</a></span>
+        <!-- <span class="text"><a href="#">Logout</a></span> -->
         <span class="side-toggle">
             <a href="#" class="icon" onclick="sidetoggle()">
                 <i class="fa fa-bars"></i>
             </a>
         </span>
-=======
         <span class="text"><a href="<?php echo BASEURL.'/loginController/logout' ?>">Logout</a></span>
->>>>>>> e11baa60f2a0fe998d90371cbd920c7800416f61
     </div>
 </header>
 

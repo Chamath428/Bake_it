@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../../../public/css/deliveryPerson/deliveryPerson-orderDetails.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-orderDetails.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-deliveries.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-footer.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-availability.js"></script>
+	<script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <section class="header">
@@ -21,20 +28,32 @@
 					<td>#Q117</td>
 				</tr>
 				<tr>
-					<td>Placed Date</td>
-					<td>03/09/2021</td>
+					<td>Customer Name</td>
+					<td>Chamath Chinthana</td>
+				</tr>
+				<tr>
+					<td>Contact Number</td>
+					<td>0712343212</td>
 				</tr>
 				<tr>
 					<td>Order Status</td>
 					<td>Ongoing</td>
 				</tr>
 				<tr>
-					<td>Reciving Method</td>
-					<td><a href="">Home Delivery</a></td>
+					<td>Location</td>
+					<td><a href="<?php echo BASEURL ?>/public/images/deliveryPerson/map.png"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td>
 				</tr>
 				<tr>
-					<td>Delivery Person</td>
-					<td><a href="">Dilantha Malagamuwa</a></td>
+					<td>Payment</td>
+					<td> <form action="">
+                          <label for="card">
+                            <input type="radio" id="card" name="fav_language" value="card">Card Payment
+                          </label>
+                          <label for="cash" onclick="displayBill()">
+                            <input type="radio" id="cash" name="fav_language" value="cash">Cash Payment
+                          </label>
+                    </form></td>
+					<!-- <td><a href="">Dilantha Malagamuwa</a></td> -->
 				</tr>
 			</table>
 		</div>
@@ -53,9 +72,9 @@
 					<tr>
 						<td>
 							<div class="product-container">
-								<img src="../../../public/images/b1.png">
+								<img src="<?php echo BASEURL ?>/public/images/b1.png">
 								<div>
-									<p>Small Burger</p>
+									<p>Chicken Burger</p>
 								</div>
 							</div>
 						</td>
@@ -74,9 +93,9 @@
 					<tr>
 						<td>
 							<div class="product-container">
-								<img src="../../../public/images/b1.png">
+								<img src="<?php echo BASEURL ?>/public/images/b1.png">
 								<div>
-									<p>ddd Burger</p>
+									<p>Cheese Burger</p>
 								</div>
 							</div>
 						</td>
@@ -102,7 +121,7 @@
  				<tr>
  					<td>
  						<div class="product-image">
- 							<img src="../../../public/images/b1.png" width="40px" height="40px">
+ 							<img src="<?php echo BASEURL ?>/public/images/b1.png" width="40px" height="40px">
  						</div>
  					</td>
  					<td></td>
@@ -140,18 +159,18 @@
 				</tr>
 				<tr>
 					<td>Delivery Tax</td>
-					<td>00.00 LKR</td>
+					<td>100.00 LKR</td>
 				</tr>
 				<tr>
 					<td>Grand Total</td>
-					<td>300.00 LKR</td>
+					<td>400.00 LKR</td>
 				</tr>
 			</table>
 		</div>
 
 		<div class="buttons">
-			<button>Rate Order</button>
-			<button><a href="">Re-Order</a></button>
+			<!-- <button>Rate Order</button> -->
+			<button><a href="">Complete</a></button>
 		</div>
 
 	</section>

@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-footer.css">
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-availability.js"></script>
     <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveries.js"></script> 
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-deliveries.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
@@ -46,15 +49,11 @@
             </thead>
             <tbody>
                 <tr>
-<<<<<<< HEAD
-                    <td label="Order Id"><a href="deliveryDetails.php">001</a></td>
-=======
                     <td label="Order Id"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>">001</a></td>
->>>>>>> e11baa60f2a0fe998d90371cbd920c7800416f61
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-money-bill-alt"></i></td>
-                    <td label="Accept"><button class="accept button" onclick="accept()">Accept<i class="fas fa-pen"></i></button></td>
+                    <td label="Accept"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button class="accept button" onclick="accept()">Accept<i class="fas fa-pen"></i></button></a></td>
                     <td label="Reject"><button class="reject button" onclick="reject()">Reject<i class="fas fa-times"></i></button></td>
                     <!-- <td label="More Details" class="click pick-order">
                          <button id="order1" onclick="pickOrder()">Pick</button> 
@@ -62,7 +61,7 @@
                     </td> -->
                 </tr>
                 <tr>
-                <td label="Order Id"><a href="ongoingDeliveryDetails.php">002</a></td>
+                <td label="Order Id"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>">002</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
@@ -70,7 +69,7 @@
                     <td label="Reject"><button class="reject button" onclick="reject()">Reject<i class="fas fa-times"></i></button></td>
                 </tr>
                 <tr>
-                <td label="Order Id"><a href="ongoingDeliveryDetails.php">003</a></td>
+                <td label="Order Id"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>">003</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
@@ -78,28 +77,28 @@
                     <td label="Reject"><button class="reject button" onclick="reject()">Reject<i class="fas fa-times"></i></button></td>
                 </tr>
                 <tr>
-                <td label="Order Id"><a href="ongoingDeliveryDetails.php">004</a></td>
+                <td label="Order Id"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>">004</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-money-bill-alt"></i></td>
                     <td label="Accept"><button class="accept button" onclick="accept()">Accept<i class="fas fa-pen"></i></button></td>
                     <td label="Reject"><button class="reject button" onclick="reject()">Reject<i class="fas fa-times"></i></button></td>                </tr>
                 <tr>
-                <td label="Order Id"><a href="ongoingDeliveryDetails.php">005</a></td>
+                <td label="Order Id"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>">005</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
                     <td label="Accept"><button class="accept button" onclick="accept()">Accept<i class="fas fa-pen"></i></button></td>
                     <td label="Reject"><button class="reject button" onclick="reject()">Reject<i class="fas fa-times"></i></button></td>                </tr>
                 <tr>
-                <td label="Order Id"><a href="ongoingDeliveryDetails.php">006</a></td>
+                <td label="Order Id"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>">006</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
                     <td label="Accept"><button class="accept button" onclick="accept()">Accept<i class="fas fa-pen"></i></button></td>
                     <td label="Reject"><button class="reject button" onclick="reject()">Reject<i class="fas fa-times"></i></button></td>                </tr>
                 <tr>
-                <td label="Order Id"><a href="ongoingDeliveryDetails.php">007</a></td>
+                <td label="Order Id"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>">007</a></td>
                     <td label="Time">10.00a.m</td>
                     <td label="Delivery Area">Kaluthara</td>
                     <td label="Payment"><i class="far fa-credit-card"></i></td>
