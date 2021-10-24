@@ -1,4 +1,4 @@
-<?php $pagename='login'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>

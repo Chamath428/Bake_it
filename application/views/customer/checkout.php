@@ -156,6 +156,9 @@
 			 	 	 <span>Card</span>
 			 	 </label>
 			</div>
+			<div>
+				<img src="<?php echo BASEURL ?>/public/images/payhere.png">
+			</div>
 			</div>
 			<div class="placeorder">
 				<input type="submit" name="placeorder" value="Place Order">
