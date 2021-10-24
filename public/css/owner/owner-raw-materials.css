@@ -22,7 +22,7 @@ body{
 .category{
     height: 80px;
     margin-top: 20px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 .category select{
     width: 64%;
@@ -81,7 +81,7 @@ body{
     min-width: 546px;
     border-radius:5px 5px 0 0 ;
     overflow:hidden ; 
-    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+    /* box-shadow: 0 0 20px rgb(0, 0,0,0.15); */
 
 }
 .inventory thead tr {
@@ -108,7 +108,7 @@ body{
     /* min-width: 546px; */
     /* border-radius:5px 5px 0 0 ; */
     overflow:hidden ; 
-    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+    /* box-shadow: 0 0 20px rgb(0, 0,0,0.15); */
     /* height: 100px; */
 }
 #dataTable tr{
@@ -126,6 +126,9 @@ body{
 }
 #dataTable tbody tr td:nth-child(1) { 
     width: 5%;
+}
+#dataTable tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
 }
 .data-content-scroll{
     /* background-color: steelblue; */

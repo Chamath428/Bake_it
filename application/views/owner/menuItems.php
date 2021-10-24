@@ -43,11 +43,11 @@
             <div class="category-list">
                 <label for="category">Category</label>
                 <select placeholder="Select category">
-                    <option>Breads</option>
-                    <option>Rolls</option>
-                    <option>Muffins</option>
-                    <option>Cakes</option>
-                    <option>Sweet goods</option>
+                    <option>Bread</option>
+                    <option>Roll</option>
+                    <option>Muffin</option>
+                    <option>Cake</option>
+                    <option>Sweet good</option>
 
                 </select>
             </div>
@@ -60,7 +60,7 @@
 
         <div class="category-table">
             <div id="category1-table">
-                <h4>Category 1</h4>
+                <h4>Bread</h4>
 
                 <table class="content-table">
                     <thead>
@@ -75,25 +75,25 @@
                     <tbody>
                         <tr>
 
-                            <td>###1</td>
-                            <td>name1</td>
-                            <td>xxx</td>
+                            <td>1</td>
+                            <td>French Bread</td>
+                            <td>Rs:50</td>
                             <td> <input type="checkbox" id="Check-box1" onclick="myFunction(this.id)"></td>
                         </tr>
                         <tr>
 
-                            <td>###2</td>
-                            <td>name2</td>
-                            <td>xxx</td>
+                            <td>2</td>
+                            <td>Kurakkn Bread</td>
+                            <td>Rs:40</td>
                             <td> <input type="checkbox" id="Check-box2" onclick="myFunction(this.id)"></td>
 
 
                         </tr>
                         <tr>
 
-                            <td>###3</td>
-                            <td>name3</td>
-                            <td>xxx</td>
+                            <td>3</td>
+                            <td>Sandwich Bread</td>
+                            <td>Rs:30</td>
                             <td> <input type="checkbox" id="Check-box3" onclick="myFunction(this.id)"></td>
 
 
@@ -102,7 +102,7 @@
                 </table>
                 <div class="btn">
                     <div class="add-item-btn">
-                       <a href="<?php echo BASEURL."/ownerMenuController/addMenuItem" ?>"> <button>Add Item</button></a>
+                        <a href="<?php echo BASEURL . "/ownerMenuController/addMenuItem" ?>"> <button>Add Item</button></a>
                     </div>
                     <div class="delete-btn" id="delbtn">
                         <button onclick="delFunction()">Delete</button>

@@ -32,13 +32,14 @@
         <section class="right-section">
 
             <div class="input-fileds">
-            <label for="branch">Select Category</label>
+                <label for="branch">Select Category</label>
                 <select placeholder="Select branch">
-                    <option>Category 1</option>
-                    <option>Category 2</option>
-                    <option>Category 3</option>
-                    <option>Category 4</option>
-                  
+                    <option>Breads</option>
+                    <option>Rolls</option>
+                    <option>Muffins</option>
+                    <option>Cakes</option>
+                    <option>Sweet goods</option>
+
 
                 </select>
                 <!-- <label for="item id">Item Id</label>
@@ -63,7 +64,7 @@
                     <option>Kasbewa</option>
                     <option>Baththaramulla</option>
                     <option>Piliyandala</option>
-                  
+
 
                 </select>
                 <!-- <button onclick="viewBranchList()">Add Branch</button> -->

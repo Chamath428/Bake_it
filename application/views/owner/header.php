@@ -29,13 +29,7 @@
                         <span class="title">Menu</span>
                     </a>
                 </li>
-                <li>
-
-                    <a href="overview.php" class="hrf">
-                        <span class="icon"><i class="fas fa-file-alt"></i></span>
-                        <span class="title">Reports</span>
-                    </a>
-                </li>
+            
                 <li>
                     <a href="<?php echo BASEURL."/rawMaterialController" ?>" class="hrf">
 
