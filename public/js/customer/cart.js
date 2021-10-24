@@ -16,7 +16,7 @@ function getQuickCart(){
 function getSpecialCart(){
 	qucikcart.style.transform="translateX(-1500px)";
 	specialcart.style.transform="translateX(-1500px)";
-	indicator.style.transform="translateX(212px)";
+	indicator.style.transform="translateX(202px)";
 }
 
 function getQuickCartm(){

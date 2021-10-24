@@ -1,4 +1,3 @@
-<?php $pagename='register'; ?>
 <!DOCTYPE html>
 <html>
 <head>

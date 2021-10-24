@@ -28,7 +28,7 @@ section{
 }
 
 .cart-containter table td button{
-	/*background-color: transparent;*/
+	background-color: transparent;
 	align-items: center;
 	border-width: 0px;
 	cursor: pointer;

@@ -18,8 +18,7 @@ function getQuickOrder(){
 function getSpecialOrder(){
 	quickorder.style.transform="translateX(-1500px)";
 	specialorder.style.transform="translateX(-1500px)";
-	indicator.style.transform="translateX(210px)";
-	// indicator.style.width = "120px"
+	indicator.style.transform="translateX(205px)";
 }
 
 function getQuickCartm(){

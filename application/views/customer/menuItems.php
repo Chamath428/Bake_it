@@ -24,13 +24,15 @@
 			<div class="side-panel">
 				<h2>Catagories</h2>
 				<ul class="catagory">
+					<li><a href="">Bread</a></li>
+					<li><a href="">Pastry</a></li>
+					<li><a href="">Cake</a></li>
 					<li><a href="">Burger</a></li>
-					<li><a href="">Burger</a></li>
-					<li><a href="">Burger</a></li>
-					<li><a href="">Burger</a></li>
-					<li><a href="">Burger</a></li>
-					<li><a href="">Burger</a></li>
-					<li><a href="">Burger</a></li>
+					<li><a href="">Snacks</a></li>
+					<li><a href="">Donut</a></li>
+					<li><a href="">Muffin</a></li>
+					<li><a href="">Sweets</a></li>
+					<li><a href="">Baverages</a></li>
 				</ul>
 			</div>
 
