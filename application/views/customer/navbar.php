@@ -7,7 +7,7 @@
             </div>
             <a href="<?php echo BASEURL ?>" class="logo">Bake_it</a>
             <ul class="nav-list">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="<?php echo BASEURL;?>">Home</a></li>
                 <li><a style="cursor: pointer;">Menu</a>
                     <ul class="sub-menu">
                         <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Bread</a></li>

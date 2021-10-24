@@ -66,10 +66,11 @@ nav{
     font-family: 'Merienda', cursive;
     color: white;
     font-size: 2.5rem;
+    transition: all 650ms ease;
 }
-/*.logo i{
-    margin: auto;
-}*/
+.logo:hover{
+    color: rgb(255, 138, 0);
+}
 
 .nav-list{
     display: flex;

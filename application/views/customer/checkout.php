@@ -145,19 +145,19 @@
 		<div class="radio-box" id="payment-method">
 			<h3>Payment Method</h3>
 			<div>
-				<label>
+				<label onclick="getPayment(0)">
 			 	 	 <input type="radio" name="payment-type" checked="">
 			 	 	 <div class="circle"></div>
 			 	 	 <span>Cash</span>
 			 	 </label>
-			 	 <label>
+			 	 <label onclick="getPayment(1)">
 			 	 	 <input type="radio" name="payment-type">
 			 	 	 <div class="circle"></div>
 			 	 	 <span>Card</span>
 			 	 </label>
 			</div>
-			<div>
-				<img src="<?php echo BASEURL ?>/public/images/payhere.png">
+			<div class="payment-image" id="payment-image">
+				<a href=""><img src="<?php echo BASEURL ?>/public/images/payhere.png"></a>
 			</div>
 			</div>
 			<div class="placeorder">

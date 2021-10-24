@@ -35,7 +35,7 @@
 					<th>Order Status</th>
 				</tr>
 				<tr>
-					<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails"?>">#Q117</a></td>
+					<td><a href="<?php echo BASEURL."/myordersController/showQuickOrderDetails"?>">#Q117</a></td>
 					<td>1500.00LKR</td>
 					<td>03/09/2021</td>
 					<td>Ongoing</td>
@@ -57,7 +57,7 @@
 					<th>Order Status</th>
 				</tr>
 				<tr>
-					<td><a href="">#SP117</a></td>
+					<td><a href="<?php echo BASEURL."/myordersController/showSpecialOrderDetails"?>">#SP117</a></td>
 					<td>1500.00LKR</td>
 					<td>03/09/2021</td>
 					<td>Ongoing</td>
@@ -82,7 +82,7 @@
 			<table>
 				<tr>
 					<td>Order ID</td>
-					<td><a href="">#117</a></td>
+					<td><a href="<?php echo BASEURL."/myordersController/showQuickOrderDetails"?>">#117</a></td>
 				</tr>
 				<tr>
 					<td>Grand Total</td>
@@ -121,7 +121,7 @@
 			<table>
 				<tr>
 					<td>Order ID</td>
-					<td><a href="">#SP117</a></td>
+					<td><a href="<?php echo BASEURL."/myordersController/showSpecialOrderDetails"?>">#SP117</a></td>
 				</tr>
 				<tr>
 					<td>Grand Total</td>
