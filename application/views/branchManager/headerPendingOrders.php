@@ -13,21 +13,15 @@
                     </a>
                 </li>
                 <li>
-                     <a href="overview.php" class="active">
-                        <span class="icon"><i class="fas fa-chart-pie"></i></span>
-                        <span class="title">Overview</span>
+                     <a href="pendingQuickOrders.php" class="active">
+                        <span class="icon"><i class="fas fa-spinner"></i></span>
+                        <span class="title">Quick Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="totalSalesReports.php" class="hrf">
-                        <span class="icon"><i class="fas fa-user-cog"></i></span>
-                        <span class="title">Total Sales Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="itemWiseSalesReports.php" class="hrf">
-                        <span class="icon"><i class="fab fa-elementor"></i></span>
-                        <span class="title">ItemWise Sales Reports</span>
+                    <a href="specialEventOrders.php" class="hrf">
+                        <span class="icon"><i class="fas fa-check-square"></i></span>
+                        <span class="title">Special Event Orders</span>
                     </a>
                 </li>
             </ul>
@@ -56,6 +50,6 @@
             <div class="header-icons"> 
                 <span class="user-icon"><a href="profile.php"><i id="user" class="fas fa-user"></i></a>You logged in as : Branch Manager</span>
                 <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
-                <span class ="sign-out"><a href="<?php echo BASEURL.'/loginController/logout' ?>"><i class="fas fa-sign-out-alt"></i>Logout</a></span>
+                <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></span>
              </div>
         </header>

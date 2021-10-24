@@ -6,7 +6,6 @@
 }
 .container-1{
     font-size: 14px;
-    min-height: 60vh;
 }
 
 .menu{
@@ -50,9 +49,13 @@ select{
     margin-top: 10px;
 }
 
+.viewBtn{
+    width: 86px;
+    height: 36px;
+}
 
 .menu-table{
-    /*visibility: hidden;*/
+    visibility: hidden;
     
 }
 .menu-table-active{
@@ -81,13 +84,13 @@ input[type="number"]:disabled {
   }
 
 table{
-    width: 60%;
+    width: 40%;
     border-collapse: collapse;
 }
 
 table td{
     padding: 12px 5px;
-    align-items: left;
+    align-items: center;
     text-align: left;
 }
 
@@ -102,10 +105,6 @@ table thead{
 tr:nth-child(even){
     background-color: #f2f2f2;
 }
-td:nth-child(2){
-    display: flex;
-    /* background-color: yellow; */
-}
 tbody tr:hover{
     border-color: #ddd;
 }
@@ -113,10 +112,10 @@ tbody tr:hover{
 .cell{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     /* border: 1px solid red; */
-    /* width: 40%;
-    margin: 0 auto; */
+    width: 40%;
+    margin: 0 auto;
     /* background-color: tomato; */
 }
 
@@ -133,7 +132,7 @@ img{
 
 .btn-container{
     height: 60px;
-    width: 60%;
+    width: 40%;
     margin-top: 40px;
     display: flex;
     justify-content: center;
@@ -147,7 +146,7 @@ img{
 }
 
 .edit-btn{
-    /*visibility: hidden;*/
+    visibility: hidden;
 }
 .save-btn-active{
     visibility: visible;
@@ -163,8 +162,7 @@ button{
     border: 2px solid rgb(255, 138, 0);
     border-radius: 10px;
     font-size: 16px;
-    padding: 10px;
-    cursor: pointer;
+    padding: 0px 15px;
 }
 
 button:hover{

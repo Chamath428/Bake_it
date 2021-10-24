@@ -15,15 +15,6 @@
     <?php include "headerReports.php"?>
     <div class="overview-container" id="body">
         <div class="topic-1">Business Overview of Branch </div>
-        <div class="topic-2">Total Sales Overview of Branch</div>
-        <div class="row-container">
-             <div class="col">
-              <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-             </div>
-             <div class="col">
-              <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
-             </div>
-        </div>
         <div class="topic-2">Menu Items Sales Overview of Branch</div>
         <div class="row-container">
              <div class="col">
@@ -31,6 +22,15 @@
              </div>
              <div class="col">
               <canvas id="myChart4" style="width:100%;max-width:700px"></canvas> 
+             </div>
+        </div>
+        <div class="topic-2">Total Sales Overview of Branch</div>
+        <div class="row-container">
+             <div class="col">
+              <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+             </div>
+             <div class="col">
+              <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
              </div>
         </div>
     </div>

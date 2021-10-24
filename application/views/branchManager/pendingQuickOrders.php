@@ -8,13 +8,13 @@
     <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/header_index.css">
     <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/footer.css">
     <script src="../../../public/js/branchManager/header.js" defer ></script>
-    <script src="../../../public/js/branchManager/completeOrder.js" defer ></script>
+    <script src="../../../public/js/branchManager/order.js" defer ></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 </head>
 <body class="bgg">
-    <?php include "headerOrders.php"?>
+    <?php include "headerPendingOrders.php"?>
     <div id="body" class="container-1">
         <div class="container-2">
             <div class="overview-container">
@@ -44,35 +44,35 @@
                     <tbody>
                       
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
+                        <td><a href="../../views/branchManager/pendingQuickOrderDetails.php" class="order-id">123</a></td>
                         <td>jhjhb</td>
                         <td>350.00</td>
                         <td>gfzc</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
+                      <td><a href="../../views/branchManager/pendingQuickOrderDetails.php" class="order-id">123</a></td>
                         <td>jhjhb</td>
                         <td>350.00</td>
                         <td>gfzc</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
+                      <td><a href="../../views/branchManager/pendingQuickOrderDetails.php" class="order-id">123</a></td>
                         <td>jhjhb</td>
                         <td>350.00</td>
                         <td>gfzc</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
+                      <td><a href="../../views/branchManager/pendingQuickOrderDetails.php" class="order-id">123</a></td>
                         <td>jhjhb</td>
                         <td>350.00</td>
                         <td>gfzc</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
+                      <td><a href="../../views/branchManager/pendingQuickOrderDetails.php" class="order-id">123</a></td>
                         <td>jhjhb</td>
                         <td>350.00</td>
                         <td>gfzc</td>

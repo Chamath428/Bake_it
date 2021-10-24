@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/owner/owner-account.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css" class="rel">
+    <script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer></script>
     <script src="<?php echo BASEURL; ?>/public/js/owner/owner-employeeAccounts.js" defer ></script>
-    <script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
