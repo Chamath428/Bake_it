@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="completeOrder.php" class="hrf">
+                    <a href="pendingQuickOrders.php" class="hrf">
                         <span class="icon"><i class="fas fa-truck"></i></span>
                         <span class="title">Orders</span>
                     </a>

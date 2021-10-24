@@ -24,6 +24,8 @@
             </div>
             <div class="drop-down-btn-container">
                 <div class="drop-down">
+                    </br>
+                    <h4>Select Category</h4> 
                     <select name="" id="">
                         <option value="">Bread</option>
                         <option value="">Pastry</option>
@@ -37,8 +39,8 @@
                     </select>
                 </div>
                 <div class="view-btn-container">
-                    <button class="viewBtn" onclick="viewTable()">View</button>
-                    <button id="edit" onclick="viewSave()" class="edit-btn">Edit</button>
+                    <button class="viewBtn" onclick="viewTable()">View Items</button>
+                    <button id="edit" onclick="viewSave()" class="edit-btn">Edit Quantity</button>
                 </div>
             </div>
             <div class="menu-table" id="table">
@@ -88,7 +90,7 @@
             </div>
 
             <div class="btn-container">
-                <button id="save" class="save-btn" onclick="alertBox()">Save</button>
+                <button id="save" class="save-btn" onclick="alertBox()">Save Changes</button>
             </div>
         </div>
     </div>

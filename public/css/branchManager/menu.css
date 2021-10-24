@@ -29,30 +29,37 @@
 }
 
 .drop-down-btn-container{
-    width: 450px;
-    height: 60px;
+    width: 60%;
+    /* height: 60px; */
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     /* background-color: brown; */
-    align-items:center;
+    align-items:left;
+    /* border:3px solid red; */
+    /* margin-bottom: 10px; */
+}
+
+.drop-down{
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
 
 select{
-    width: 200px;
+    width: 60%;
 }
 
 .view-btn-container{
-    width: 200px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: right;
     margin-top: 10px;
 }
 
-.viewBtn{
+/* .viewBtn{
     width: 86px;
     height: 36px;
-}
+} */
 
 .menu-table{
     visibility: hidden;
@@ -86,6 +93,7 @@ input[type="number"]:disabled {
 table{
     width: 60%;
     border-collapse: collapse;
+    margin-top: 30px;
 }
 
 table td{
@@ -135,43 +143,55 @@ img{
 }
 
 .btn-container{
-    height: 60px;
+    /* height: 60px; */
     width: 60%;
     margin-top: 40px;
+    margin-bottom: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     /* background-color: crimson; */
 }
 
 .edit-btn-active{
     visibility: visible;
-    width: 80px;
-    height: 36px;
+    /* width: 80px;
+    height: 36px; */
 }
 
 .edit-btn{
     visibility: hidden;
 }
-.save-btn-active{
-    visibility: visible;
-    width: 80px;
-    height: 36px;
-}
-
-.save-btn{
-    visibility: hidden;
-}
 
 button{
-    border: 2px solid rgb(255, 138, 0);
+    /* border: 2px solid rgb(255, 138, 0);
     border-radius: 10px;
     font-size: 16px;
-    padding: 0px 15px;
+    font-weight: bold; */
+    padding:10px;
+    /* background-color: white; */
+    /* padding: 0.8rem; */
+	background-color: transparent;
+	border-radius: 1rem;
+	border: 2px solid rgb(255, 137, 0);
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
 }
 
 button:hover{
     background-color: rgb(255, 138, 0);
     color: white;
+}
+.save-btn-active{
+    visibility: visible;
+    /* width: 80px;
+    height: 36px; */
+    /* padding: 10px 0px; */
+    /* padding:0px 10px; */
+}
+
+.save-btn{
+    visibility: hidden;
 }
 
 select {
@@ -184,7 +204,7 @@ select {
     font-weight: bold;
     margin-top: 10px;
     border-radius: 8px; */
-    width: 200px;
+    width: 100%;
     border: none;
     border:nth-child 1px solid rgb(255, 138, 0);
     box-shadow: 0px 1px rgb(255, 138, 0);

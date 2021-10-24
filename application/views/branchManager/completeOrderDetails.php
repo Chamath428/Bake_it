@@ -47,7 +47,7 @@
             <div class="order-details">
                
                     <div class="basic-details"> 
-                        <table> 
+                    <table> 
                             <tr> 
                                 <td>Order ID</td> 
                                 <td>#Q117</td> 
@@ -61,21 +61,25 @@
                                 <td>0712343212</td> 
                             </tr> 
                             <tr> 
-                                <td>Order Status</td> 
-                                <td>Ongoing</td> 
+                                <td>Order Type</td> 
+                                <td>Special Event Order</td> 
+                            </tr> 
+                            <tr> 
+                                <td>Needed Date</td> 
+                                <td>2021/11/01</td> 
                             </tr> 
                             <tr> 
                                 <td>Location</td> 
-                                <td><a href="<?php echo BASEURL ?>/public/images/deliveryPerson/map.png"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> 
+                                <td><a href="#"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> 
                             </tr> 
                             <tr> 
                                 <td>Payment Method</td> 
-                                <td> card</td> 
+                                <td> Card</td> 
                                 <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                             </tr>
                             <tr> 
-                              <td>delivery Person</td> 
-                              <td> saman</td> 
+                              <td>Delivery Person</td> 
+                              <td>Saman Fernando</td> 
                               <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                           </tr> 
                         </table> 
