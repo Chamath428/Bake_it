@@ -16,7 +16,7 @@
 			}
 			switch ($_SESSION['role_number']) {
 				case '2':
-					// code...
+					$this->view("owner/profile",$data);
 					break;
 				case '3':
 					// code...
@@ -25,7 +25,7 @@
 					$this->view("branchManager/profile",$data);
 					break;
 				case '5':
-					// code...
+					$this->view("cashier/profile",$data);
 					break;
 				case '6':
 					$this->view("deliveryPerson/profile",$data);

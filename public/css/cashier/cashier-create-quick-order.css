@@ -144,8 +144,9 @@ body{
 }
 .data-content-scroll{
     /* background-color: steelblue; */
-    height: 400px;
+    max-height: 400px;
     overflow-y: scroll;
+    margin-bottom: 10px;
 }
 
 #Check-box{

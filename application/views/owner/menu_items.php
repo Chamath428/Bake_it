@@ -28,12 +28,9 @@
                    <div class="branch">
                        <label for="branch">Branch</label>
                        <select placeholder="Select branch" >
-                           <option>Deniyaya</option>
-                           <option>Akuressa</option>
-                           <option>Matara</option>
-                           <option>Pitabeddara</option>
-                           <option>Morawaka</option>
-                           <option>Kotapola</option>
+                           <option>Kasbewa</option>
+                           <option>Bahtharamulla</option>
+                           <option>Piliyandala</option>
    
                        </select>
                    </div>

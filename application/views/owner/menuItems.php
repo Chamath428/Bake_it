@@ -30,12 +30,9 @@
             <div class="branch">
                 <label for="branch">Branch</label>
                 <select placeholder="Select branch">
-                    <option>Deniyaya</option>
-                    <option>Akuressa</option>
-                    <option>Matara</option>
-                    <option>Pitabeddara</option>
-                    <option>Morawaka</option>
-                    <option>Kotapola</option>
+                    <option>Kasbewa</option>
+                    <option>Bahtharamulla</option>
+                    <option>Piliyandala</option>
 
                 </select>
             </div>
@@ -60,7 +57,7 @@
 
         <div class="category-table">
             <div id="category1-table">
-                <h4>Category 1</h4>
+                <h4>Bread items</h4>
 
                 <table class="content-table">
                     <thead>
@@ -75,25 +72,25 @@
                     <tbody>
                         <tr>
 
-                            <td>###1</td>
-                            <td>name1</td>
-                            <td>xxx</td>
+                            <td>1</td>
+                            <td>White Bread</td>
+                            <td>RS.60.00</td>
                             <td> <input type="checkbox" id="Check-box1" onclick="myFunction(this.id)"></td>
                         </tr>
                         <tr>
 
-                            <td>###2</td>
-                            <td>name2</td>
-                            <td>xxx</td>
+                            <td>2</td>
+                            <td>Wheat Bread</td>
+                            <td>RS.90.00</td>
                             <td> <input type="checkbox" id="Check-box2" onclick="myFunction(this.id)"></td>
 
 
                         </tr>
                         <tr>
 
-                            <td>###3</td>
-                            <td>name3</td>
-                            <td>xxx</td>
+                            <td>3</td>
+                            <td>Whole Bread</td>
+                            <td>RS.120.00</td>
                             <td> <input type="checkbox" id="Check-box3" onclick="myFunction(this.id)"></td>
 
 

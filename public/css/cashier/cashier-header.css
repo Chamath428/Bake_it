@@ -76,8 +76,8 @@
     color: rgb(255,138,0);
     font-weight: bold;
 }
-.container .navigation ul li a .icon .fa{
-    font-size: 24px;
+.container .navigation ul li a .icon .fab{
+    font-size: 20px;
 }
 #menuBtn{
     font-size: 20px;

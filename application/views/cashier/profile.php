@@ -35,10 +35,10 @@
 
                     <div class="input-fileds">
                         <label for="password">Current Password</label>
-                        <input type="password" name="password" id="password"  value="********">
+                        <input type="password" name="password" id="password"  value="">
                     </div>
                     <div class="input-fileds">
-                        <label for="new_password">New Password(changing)</label>
+                        <label for="new_password">New Password</label>
                         <input type="password" name="password" id="password"  value require>
                     </div>
                     <div class="input-fileds">
