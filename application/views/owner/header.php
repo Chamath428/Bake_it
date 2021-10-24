@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="menuItems.php" class="hrf">
+                    <a href="<?php echo BASEURL."/ownerHomeController/menuOwner" ?>" class="hrf">
                         <span class="icon"><i class="fab fa-elementor"></i></span>
                         <span class="title">Menu</span>
                     </a>
@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="rawMaterials.php" class="hrf">
+                    <a href="<?php echo BASEURL."/ownerHomeController/rawMaterials" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-star"></i></span>
                         <span class="title">Raw Materials</span>
                     </a>

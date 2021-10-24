@@ -19,41 +19,31 @@ body{
     font-size: 14px;
 
 }
-.menu-items-topic{
-    position: absolute; 
-    left: 43%;
-    top: 80px;
-    font-size: 23px;
-    font-weight: bold;
-}
+
 .content{
     margin: 0;
-    margin-left: 16%;
-    margin-top: 4.5%;
+    margin-top: 20px;
     width: 79%;
     height: 80vh;
     display: flex;
+    flex-direction:column;
+    /* background-color: chartreuse; */
    
     
 }
+.menu-items-topic{ 
+
+    margin-left: 100px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    /* background-color: cornflowerblue; */
+}
 
 
-.category-tables{
+.category-table{
     /* display: none; */
-    margin-left: 38px;
-    position: absolute; 
-    left: 20%;
-    top: 240px;
-
-}
-#category1-table{
-    display: none;
-}
-
-
-.category-tables h4{
-    margin-left: 370px;
-    margin-bottom: 3px;
+    margin-left: 100px;
 }
 
   
@@ -61,8 +51,8 @@ body{
     
     width: 50%; 
     height: 190px;
+    margin-top: 5px;
     border-collapse: collapse;
-    margin: 25px, 0;
     min-width: 900px;
     border-radius:5px 5px 0 0 ;
     overflow:hidden ; 
@@ -103,55 +93,55 @@ body{
     width: 15px;
     height: 15px;
 }
+.btn{
+    display:flex;
+    flex-direction: row;
+}
 .delete-btn{
-    float:right;
     margin-top: 40px;
+    margin-left: 20px;
     display: none;
 }
 .delete-btn button{
     width: 80px;
     height: 30px;
-    font-weight: 3px;
+    font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid rgb(257, 138, 0);
     background-color: white;
-    margin: 5px;
+    /* margin: 5px; */
 }
 .delete-btn button:hover{
-    background:rgba(134, 127, 127, 0.671);
+    background:rgb(255, 138, 0);
     color: rgb(255, 255, 255);
-    border-color: rgb(255, 51, 0);
+   
 }
 .add-item-btn{
-    /* height: 40px; */
-    float:right;
     margin-top: 40px;
   
 }
 .add-item-btn button{
     width: 80px;
     height: 30px;
-    font-weight: 3px;
+    font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid rgb(257, 138, 0);
     background-color: white;
-    margin: 5px;
+    /* margin: 5px; */
 }
 .add-item-btn button:hover{
-    background:rgba(134, 127, 127, 0.671);
+    background:rgb(255, 138, 0);
     color: rgb(255, 255, 255);
-    border-color: rgb(255, 51, 0);
+   
 }
 
 
 .drop-down-list{
-    position: absolute;
-    top: 13vh;
-    left: 30%;
-    width:40%; 
-    height: 160px;
+   margin-left: 100px;
+    width:50%; 
+    height: 130px;
     float: left;
     margin-bottom: 2px;
     margin-top: 30px;
@@ -161,30 +151,26 @@ body{
     width:170px; 
     height: 120px;
     float: left;
-    margin-left: 2%;
-    margin-top: 15px;
+    margin-right: 70px;
 
 }
 .category-list{
     width:170px; 
     height: 120px;
     float: left;
-    margin-left: 30%;
-    margin-top: 15px;
-    
 
 }
 
 select{
     width: 170px;
     border: none;
-    border: 2px solid rgb(255, 138, 0);
-    box-shadow: 1px 1px #ff5a5a;
+    border-bottom: 2px solid rgb(255, 138, 0);
+    /* box-shadow: 1px 1px #ff5a5a; */
     padding: 10px;
     color:back;
     font-weight: bold;
     margin-top: 10px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     
     
 }
@@ -193,19 +179,20 @@ label{
     margin-left: 15px;
 
 }
-.btn button{
-    position: absolute;
-    left: 68%;
-    top: 32vh;
+.view-btn button{
+    /* margin-left: 45%; */
+    margin-top: 40px;
+    margin-left: 40px;
     width: 70px;
     height:27px;  
     background: #FFFFFF;
     border: 1px solid rgb(255, 138, 0);
     cursor: pointer;
     border-radius: 10px;
+    font-weight: bold;
 }
-.btn button:hover{
-    background:rgb(134, 127, 127);
+.view-btn button:hover{
+    background:rgb(255, 138, 0);
     color: rgb(255, 255, 255);
-    border-color: rgb(255, 51, 0);
+
 }
