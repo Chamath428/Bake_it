@@ -60,6 +60,7 @@
                     <button id="edit" onclick="viewSave()" class="edit-btn">Edit</button>
                 </div>
             </div>
+
             <form method="post" action="<?php echo BASEURL ?>/branchManagerMenuController/updateItems">
               <div class="menu-table" id="table">
                   <table>
@@ -95,6 +96,7 @@
                       <input type="hidden" name="row-count" value="<?php echo $i; ?>">
                       </tbody>
                     </table>
+
             </div>
 
             <div class="btn-container">

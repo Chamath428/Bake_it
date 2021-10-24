@@ -14,17 +14,17 @@ function addRow(tableID) {
 
         newcell.innerHTML = table.rows[0].cells[i].innerHTML;
         //alert(newcell.childNodes);
-        switch(newcell.childNodes[0].type) {
-            case "text":
-                    newcell.childNodes[0].value = "";
-                    break;
-            case "checkbox":
-                    newcell.childNodes[0].checked = false;
-                    break;
-            case "select-one":
-                    newcell.childNodes[0].selectedIndex = 0;
-                    break;
-        }
+        // switch(newcell.childNodes[0].type) {
+        //     case "text":
+        //             newcell.childNodes[0].value = "";
+        //             break;
+        //     case "checkbox":
+        //             newcell.childNodes[0].checked = false;
+        //             break;
+        //     case "select-one":
+        //             newcell.childNodes[0].selectedIndex = 0;
+        //             break;
+        // }
     }
 }
 

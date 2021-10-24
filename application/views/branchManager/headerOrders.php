@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 <li>
-                     <a href="pendingOrders.php" class="active">
+                     <a href="pendingQuickOrders.php" class="active">
                         <span class="icon"><i class="fas fa-spinner"></i></span>
                         <span class="title">Pending Orders</span>
                     </a>
