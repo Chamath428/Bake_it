@@ -19,7 +19,7 @@
 
 <body>
 
-    <?php require_once('newheader.php'); ?>
+    <?php require_once('header.php'); ?>
 
 
     <div class="content" id="body">
@@ -102,7 +102,7 @@
                 </table>
                 <div class="btn">
                     <div class="add-item-btn">
-                       <a href="<?php echo BASEURL."/menuItemOwnerController/addMenuItem" ?>"> <button>Add Item</button></a>
+                       <a href="<?php echo BASEURL."/ownerMenuController/addMenuItem" ?>"> <button>Add Item</button></a>
                     </div>
                     <div class="delete-btn" id="delbtn">
                         <button onclick="delFunction()">Delete</button>

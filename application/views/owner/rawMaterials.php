@@ -34,7 +34,10 @@
 					<option>Category 6</option>
 
 				</select>
+			<button class="get-btn">Get Item List</button>
+
 			</div>
+
 			<header class="topic">
 				<h3>Raw Materials</h3>
 			</header>

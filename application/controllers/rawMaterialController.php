@@ -9,9 +9,18 @@
 		}
 
 		public function index(){
-			$data=$this->availableMaterialsModel->getMaterials();
-			$this->view("bakery_manager/Available_Materials",$data);
+			switch ($_SESSION['role_number']) {
+				case '2':
+					$this->view("owner/rawMaterials");
+					break;
+				case '3':
+					$data=$this->availableMaterialsModel->getMaterials();
+					$this->view("bakery_manager/Available_Materials",$data);
+					break;
+				default :}
+		
 		}
+	
 
 		public function reindex($message){
 			$data=$this->availableMaterialsModel->getMaterials();
