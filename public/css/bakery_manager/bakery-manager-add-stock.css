@@ -31,7 +31,7 @@ body{
     justify-content: left;
    margin-left: 100px;
     margin-top: 30px; 
-   font-size: 22px;
+   font-size: 20px;
    font-weight: bold;
     
   }
@@ -192,9 +192,10 @@ body{
 
 }
 .savebtn{
-    position: absolute;
+    /* position: absolute;
     left: 49%;
-    top: 71%;
+    top: 71%; */
+    margin-left: 87%;
     width: 79px;
     height: 31px;
     background: #FFFFFF;

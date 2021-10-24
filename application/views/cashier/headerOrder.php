@@ -9,16 +9,17 @@
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
+                
+                <li>
+                    <a href="<?php echo BASEURL."/cashierOrderListController" ?>" class="hrf">
+                        <span class="icon"><i class="fas fa-spinner"></i></span>
+                        <span class="title">Ongoing</span>
+                    </a>
+                </li>
                 <li>
                     <a href="<?php echo BASEURL."/cashierOrderListController/completeOrderCashier" ?>" class="hrf">
                         <span class="icon"> <i class="fas fa-check-circle"></i></span>
                         <span class="title">Completed</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo BASEURL."/cashierOrderListController" ?>" class="hrf">
-                        <span class="icon"><i class="fas fa-motorcycle"></i></span>
-                        <span class="title">Ongoing</span>
                     </a>
                 </li>
              

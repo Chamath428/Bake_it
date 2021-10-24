@@ -69,7 +69,8 @@ Summary of Stock
                     </div>
 
                     <div class="get-summary-btn" id="viewTablebtn">
-                        <input type="button" id="button" value="View Summary Table" onclick="summaryViewFunction()">
+
+                        <a href="<?php echo BASEURL . "/bakeryManagerSummaryController" ?>"> <input type="button" id="button" value="View Summary Table"> </a>
                     </div>
 
                 </div>

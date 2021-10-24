@@ -16,7 +16,7 @@ function toggleSidebar() {
   } else {
     console.log("closing sidebar");
     document.getElementById("mySidebar").style.width = "70px";
-    document.getElementById("body").style.marginLeft = "0";
+    document.getElementById("body").style.marginLeft = "75px";
     document.getElementById("bakeId").style.marginLeft = "1%";
     document.getElementById("arrowAnim").style.display = "none";
     // document.getElementById("arrowAnim-left").style.display = "flex";

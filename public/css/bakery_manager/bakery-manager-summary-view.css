@@ -24,7 +24,7 @@ body{
     left: 38%; */
     width: 40%;
     height: 50px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     /* background-color: aqua; */
     margin: 0px;
@@ -52,9 +52,9 @@ body{
      border-collapse: collapse;
      margin: 25px, 0;
     min-width: 500px;
-     border-radius:5px 5px 0 0 ;
+     /* border-radius:5px 5px 0 0 ; */
     overflow:hidden ; 
-    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+    /* box-shadow: 0 0 20px rgb(0, 0,0,0.15); */
 
 }
 .content-table thead tr {
