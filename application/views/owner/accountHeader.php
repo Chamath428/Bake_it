@@ -1,9 +1,3 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css">
-    <script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer ></script>
-</head>
-
-
     <div class="container">
         <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
             <ul>

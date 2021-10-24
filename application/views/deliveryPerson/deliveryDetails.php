@@ -45,15 +45,7 @@
 				</tr>
 				<tr>
 					<td>Payment</td>
-					<td> <form action="">
-                          <label for="card">
-                            <input type="radio" id="card" name="fav_language" value="card">Card Payment
-                          </label>
-                          <label for="cash" onclick="displayBill()">
-                            <input type="radio" id="cash" name="fav_language" value="cash">Cash Payment
-                          </label>
-                    </form></td>
-					<!-- <td><a href="">Dilantha Malagamuwa</a></td> -->
+					<td>Card Payment</td>
 				</tr>
 			</table>
 		</div>

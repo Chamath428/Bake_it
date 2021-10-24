@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <link rel="stylesheet" href="<?php echo BASEURL ?>//public/css/owner/owner-account.css" class="rel">
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="<?php echo BASEURL ?>//public/css/owner/owner-account.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css" class="rel">
+    <script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 </head>
 <body>
        <div>
@@ -31,49 +34,6 @@
                       <p><?php echo $data['error']; ?></p>
                     </div>
                 <?php } ?>
-
-
-                <span>Add Profile Picture</span>
-                <div class="profile"><i id="user" class="fas fa-user"></i></div>
-                <span>User Details</span>
-                <form method="post" action="<?php echo BASEURL.'/createEmployeeAccountController/createAccount' ?>">
-                <div class="text">
-                    <label for="First-Name">First Name</label>
-                    <div class="text-fill">
-                        <input type="text" name="firs_tname" id="first_name"  placeholder="" required="" value="<?php if(isset($data['firstname']))echo $data['firstname']; ?>">
-                    </div>
-                </div>
-                <div class="text">
-                    <label for="Second-Name">Second Name</label>
-                    <div class="text-fill">
-                        <input type="text" name="last_name" id="last_name"  placeholder="" required="" value="<?php if(isset($data['lastname']))echo $data['lastname']; ?>">
-                    </div>
-                </div>
-                <div class="text">
-                    <label for="Password ">Password </label>
-                    <div class="text-fill">
-                        <input type="password" name="password" id="password"  placeholder="" required="">
-                    </div>
-                </div>
-                <div class="text">
-                    <label for="Confirm-Password">Confirm Password</label>
-                    <div class="text-fill">
-                       <input type="password" name="confirme_password" id="confirme_password"  placeholder="" required="">
-                    </div>
-                </div>
-                <div class="text">
-                    <label for="Phone-Number">Phone Number</label>
-                    <div class="text-fill">
-                       <input type="text" name="phonenumber" id="phonenumber"  placeholder="" required="" value="<?php if(isset($data['phonenumber']))echo $data['phonenumber']; ?>">
-                    </div>
-                </div>
-                <div class="text" id="last-text">
-                    <label for="Email">Email (Optional)</label>
-                    <div class="text-fill">
-                        <input type="text" name="email" id="email"  placeholder="" value="<?php if(isset($data['email']))echo $data['email']; ?>">
-                    </div>
-                </div>
-
                 <span>User Type</span>
                 <div class="text">
                     <label for="Post">Post</label>
@@ -111,7 +71,7 @@
                     </select>
                     </div>
                 </div>
-                <div class="text">
+                <div class="text" id="last-text">
                     <label for="Branch">Branch</label>
                     <div class="text-fill">
 
@@ -145,6 +105,51 @@
                         </select>
                     </div>
                 </div>
+        
+
+                <span class="userDetail-topic">Add Profile Picture</span>
+                <div class="profile"><i id="user" class="fas fa-user"></i></div>
+                <span class="userDetail-topic">User Details</span>
+                <form method="post" action="<?php echo BASEURL.'/createEmployeeAccountController/createAccount' ?>">
+                <div class="text">
+                    <label for="First-Name">First Name</label>
+                    <div class="text-fill">
+                        <input type="text" name="firs_tname" id="first_name"  placeholder="" required="" value="<?php if(isset($data['firstname']))echo $data['firstname']; ?>">
+                    </div>
+                </div>
+                <div class="text">
+                    <label for="Second-Name">Second Name</label>
+                    <div class="text-fill">
+                        <input type="text" name="last_name" id="last_name"  placeholder="" required="" value="<?php if(isset($data['lastname']))echo $data['lastname']; ?>">
+                    </div>
+                </div> 
+                <div class="text">
+                    <label for="Phone-Number">Phone Number</label>
+                    <div class="text-fill">
+                       <input type="text" name="phonenumber" id="phonenumber"  placeholder="" required="" value="<?php if(isset($data['phonenumber']))echo $data['phonenumber']; ?>">
+                    </div>
+                </div>
+                <div class="text">
+                    <label for="Email">Email (Optional)</label>
+                    <div class="text-fill">
+                        <input type="text" name="email" id="email"  placeholder="" value="<?php if(isset($data['email']))echo $data['email']; ?>">
+                    </div>
+                </div>
+                <div class="text">
+                    <label for="Password ">Password </label>
+                    <div class="text-fill">
+                        <input type="password" name="password" id="password"  placeholder="" required="">
+                    </div>
+                </div>
+                <div class="text" id="last-text">
+                    <label for="Confirm-Password">Confirm Password</label>
+                    <div class="text-fill">
+                       <input type="password" name="confirme_password" id="confirme_password"  placeholder="" required="">
+                    </div>
+                </div>
+              
+
+               
             </div>
             <div class="createbtn">
                 <a href="#"><button>Create Account</button></a>

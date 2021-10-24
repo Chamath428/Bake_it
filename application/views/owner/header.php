@@ -1,7 +1,4 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css">
-    <script src="<?php echo BASEURL ?>/public/js/owner/deliveryPerson-owner.js" defer ></script>
-</head>
+
 
     <div class="container">
         <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
@@ -13,21 +10,23 @@
                     </a>
                 </li>
                 <li>
+                    <a href="<?php echo BASEURL."/ownerReportController" ?>" class="hrf">
+                        <!-- <span class="icon"><i class="fas fa-file-alt"></i></span> -->
+                        <span class="icon">   <i class="fas fa-book"></i></span>
+                        <span class="title">Reports</span>
+                    </a>
+                </li>
+                <li>
                     <a href="<?php echo BASEURL."/createEmployeeAccountController" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-user-cog"></i></span>
                         <span class="title">Employee Accounts</span>
                     </a>
                 </li>
+             
                 <li>
                     <a href="<?php echo BASEURL."/ownerHomeController/menuOwner" ?>" class="hrf">
                         <span class="icon"><i class="fab fa-elementor"></i></span>
                         <span class="title">Menu</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="overview.php" class="hrf">
-                        <span class="icon"><i class="fas fa-file-alt"></i></span>
-                        <span class="title">Reports</span>
                     </a>
                 </li>
                 <li>
@@ -37,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="reviews.php" class="hrf">
+                    <a href="<?php echo BASEURL."/ownerReviewsController" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-star"></i></span>
                         <span class="title">Reviews</span>
                     </a>
