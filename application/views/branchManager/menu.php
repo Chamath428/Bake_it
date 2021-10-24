@@ -45,7 +45,7 @@
                 <table>
                     <thead>
                       <tr>
-                        <th>Item NO</th>
+                        <th>Item ID</th>
                         <th>Food Item</th>
                         <th>Price</th>
                         <th>Quantity</th>
