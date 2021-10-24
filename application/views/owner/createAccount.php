@@ -36,6 +36,7 @@
                 <?php } ?>
                 <span>User Type</span>
                 <div class="text">
+                    <form method="post" action="<?php echo BASEURL.'/createEmployeeAccountController/createAccount' ?>">
                     <label for="Post">Post</label>
                     <div class="text-fill">
 
@@ -110,7 +111,7 @@
                 <span class="userDetail-topic">Add Profile Picture</span>
                 <div class="profile"><i id="user" class="fas fa-user"></i></div>
                 <span class="userDetail-topic">User Details</span>
-                <form method="post" action="<?php echo BASEURL.'/createEmployeeAccountController/createAccount' ?>">
+                
                 <div class="text">
                     <label for="First-Name">First Name</label>
                     <div class="text-fill">

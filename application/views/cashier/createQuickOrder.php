@@ -62,7 +62,7 @@
 						<tbody>
 							<tr>
 								<td><input type="checkbox" id="Check-box" name="chk"></td>
-								<td><span contenteditable>###</span></td>
+								<td><span contenteditable>1</span></td>
 								<td><span contenteditable>item1</span></td>
 								<td><span contenteditable>15</span></td>
 								<td><span data-prefix>Rs:</span><span>600.00</span></td>
@@ -70,11 +70,13 @@
 
 						</tbody>
 					</table>
+					
+				</div>
+
+				<div>
 					<input class="del-row" type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
 					<a class="add" onclick="addRow('dataTable')"> +</a>
 				</div>
-
-
 
 				<div class="payment-balance">
 					<div class="payment">
