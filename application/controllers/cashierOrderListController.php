@@ -7,15 +7,22 @@
 		{
 		
 		}
-
 		public function index(){
-			$data=$this->availableMaterialsModel->getMaterials();
-			$this->view("bakery_manager/Available_Materials",$data);
+			$data=array();
+			$this->view("cashier/ongoingOrders",$data);
 		}
 
-		public function getAddStock(){
+		public function completeOrderCashier(){
 			$data=array();
-			$this->view("bakery_manager/add_stock",$data);
+			$this->view("cashier/completedOrder",$data);
+		}
+		public function createQuickOrderCashier(){
+			$data=array();
+			$this->view("cashier/createQuickOrder",$data);
+		}
+		public function createSpecialOrderCashier(){
+			$data=array();
+			$this->view("cashier/createOrderSpecial",$data);
 		}
 
 	}
