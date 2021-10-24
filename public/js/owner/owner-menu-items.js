@@ -9,9 +9,6 @@
    
   }
 
-  function addItemFunction() {
-       window.location.href="add_item.php";
- }
  function myFunction(id) {
     var checkBox = document.getElementById(id);
     var text = document.getElementById("delbtn");

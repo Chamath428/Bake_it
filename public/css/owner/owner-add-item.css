@@ -18,22 +18,31 @@ body{
 #body{
     width: 78%;
     height: 80vh;
+    margin-left: 100px;
+    margin-top: 10px;
     display: flex;
+    flex-direction: row;
     font-size: 14px;
+
+}
+.left-section{
+    width: 40%;
+}
+.right-section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
 
 }
 
 .topic{
-    position: absolute; 
-    left: 41%;
-    top: 70px;
-    font-size: 23px;
+   margin-top: 5%;
+    font-size: 20px;
     font-weight: bold;
 }
 .image-clz{
-    position: absolute;
-    left: 37%;
-    top: 125px;
+    margin-top: 25%;
     width: 290px;
     height: 170px;
 }
@@ -43,30 +52,22 @@ body{
     height: 170px;
     object-fit: cover; 
 }
-section{
-    position: absolute;
-    top: 285px;
-    left: 25.5%;
-    display: grid;
-    grid-template-columns:auto auto;
-    grid-gap:10px 260px;
-    padding: 10px;
 
-}
-.input-fileds{
+ .input-fileds{
     width:190px; 
     float: left;
     margin-bottom: 2px;
-    margin-top: 3px;
+    margin-top: 10px;
     /* margin-right: 70px; */
-}
+ }
+
 .input-fileds label{
     font-size: 18px;
     font-weight:bold;
     /* font-family: 'Recursive' , sans-serif; */
 }
 .input-fileds input{
-    width: 170px;
+    width: 500px;
     height: 30px;
     float: left;
     background-color:white;
@@ -77,11 +78,30 @@ section{
      
      
 }
+.add-btn{
+    margin-top: 30px;
+}
+.add-btn select{
+    width: 390px;
+    border: none;
+    border-bottom: 2px solid rgb(255, 138, 0);
+    padding: 10px;
+    color:back;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 20px;   
+    
+}
+.add-btn label{
+    font-weight: bold;
+    font-size: 20px;
+    /* margin-left: 20px; */
+
+}
 
 .save{
-    position: absolute;
-    bottom: 215px;
-    left: 66%;
+ margin-left: 56%;
+ margin-top: 30px;
 }
  button{
     width: 90px;
@@ -96,9 +116,9 @@ section{
     margin-left: 77px;
 }
  button:hover{
-    background:rgba(134, 127, 127, 0.671);
+    background:rgb(257, 138, 0);
     color: rgb(255, 255, 255);
-    border-color: rgb(255, 51, 0);
+ 
 }
 .branch-list{
     position: absolute;

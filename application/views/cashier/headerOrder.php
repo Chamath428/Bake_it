@@ -5,7 +5,7 @@
             <ul>
                 <li>
                      <a href="<?php echo BASEURL ?>" class="active">
-                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="icon"><i class="fas fa-th-large"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
