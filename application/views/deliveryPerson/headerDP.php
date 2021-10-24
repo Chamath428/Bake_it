@@ -75,7 +75,11 @@
     <div class="header-icons"> 
         <span class="user-icon"><a href="<?php echo BASEURL.'/profileEmployeeController' ?>"><i id="user" class="fas fa-user"></i></a></span>
         <span class="text">You logged in as : Delivery Person</span>
-        <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
+        <span class="bell-icon" onclick="toggleNotifi()">
+            <a href="">
+                <i class="fas fa-bell"><?php include "notificationPanel.php"?></i>
+            </a>
+        </span>
         <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i></a></span>
         <!-- <span class="text"><a href="#">Logout</a></span> -->
         <span class="side-toggle">

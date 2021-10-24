@@ -1,9 +1,3 @@
-<head>
-
-    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body>
     <footer id="footerId">
         <div class="footer-container">
            <div class="footer-row">
@@ -43,4 +37,3 @@
         <p><i class="far fa-copyright"></i> 2021, All rights reserved by WK Bakers Company</p>
 
     </footer>
-</body>

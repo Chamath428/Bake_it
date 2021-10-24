@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+/*reviews body css*/
+
+.reviews-body .rev-topic{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 100px;
+    font-size: 22px;
+    font-weight: bold;
+}
+/*branch selection css*/
+.reviews-body .branch-selection{
+    width: 80%;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+.reviews-body .branch-selection .text{
+    padding: 5px;
+    border-bottom: 1px solid rgb(255,138,0);
+    margin: 10px 0px;
+}
+.reviews-body .branch-selection .text .text-fill select{
+     width: 100%;
+     background-color: white;
+     border: none;
+     padding: 10px 0;
+     outline: none;
+}
+/* search button */
+.reviews-body .searchbtn{
+    margin-left: 81%;
+    margin-top: 30px;
+
+}
+.reviews-body .searchbtn button{
+    border-radius:  10px;
+    background-color: white;
+    padding :10px 15px;
+    border: 2px solid rgb(255,138,0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.reviews-body .searchbtn button:hover{
+    background-color: rgb(255,138,0);
+	color: white;
+}
+/*summary boxes css*/
+.reviews-body .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 150px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+.reviews-body .row .col{
+    min-height: 1px;
+    padding: 1.25rem;
+    /* flex-grow: 1; */
+    margin-right: 2%;
+    width: 15%;
+    height: 15vh;
+    justify-items: center;
+    font-size: 11px;
+    border: 2px solid rgba(255, 138, 0, 0.8);
+    box-shadow: 2px 1px rgba(255, 137, 0,1);
+}
+.reviews-body .row .col h1{
+    margin-top: 10px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+}
+.reviews-body  #far-star{
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+.reviews-body  #fas-star{
+    color: rgb(255, 187, 0);
+    font-size: 15px;
+}
+/*best delivery person box css*/
+.reviews-body .delivery{
+    width: 25%;
+    height: 20vh;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid rgba(255, 138, 0, 0.8);
+    box-shadow: 2px 1px rgba(255, 137, 0,1);
+}
+.reviews-body .delivery .fa-user{
+   font-size: 10vh;
+}
+.reviews-body .delivery span{
+  font-weight: 600;
+}
