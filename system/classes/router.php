@@ -53,7 +53,7 @@ class router {
             $url = rtrim($url);
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode("/", $url);
-            return $url; //returns the set of url portions as an array
+            return $url; //returns the set of url portions as an array  localhost/bakeit/controler/method/pram-->[contorller,method,param]
         }
     }
 

@@ -1,25 +1,28 @@
 <?php 
 $count=count($data);
 $emptyMaterialCount=0;
+$runningLow=0;
 foreach ($data as $key => $value) {
     if ($value['stock_amount']==0) {
         $emptyMaterialCount++;
     }
+    if($value['stock_amount']<5)$runningLow++;
 }
-if(isset($_POST['submit']) && $_POST['submit']=="save")$count=5;
+
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-available-materials.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-footer.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/bakery_manager/bakery-manager-header.css" class="rel">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css"> 
     <script src="<?php echo BASEURL ?>/public/js/bakery_manager/bakery-manager-available-materials.js" defer></script>
     <script src="<?php echo BASEURL ?>/public/js/bakery_manager/bakery-manager-header.js" defer></script>
 
@@ -34,6 +37,21 @@ if(isset($_POST['submit']) && $_POST['submit']=="save")$count=5;
 
     
     <div class="content">
+
+            <?php if (isset($message['confirmation']) && $message['confirmation']!=""){?>
+            <div class="confirm-alert">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <p><?php echo $message['confirmation']; ?></p>
+            </div>
+            <?php } ?>
+
+            <?php if (isset($message['error']) && $message['error']!=""){?>
+            <div class="danger-alert">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <p><?php echo $message['error']; ?></p>
+            </div>
+            <?php } ?>
+
             <div class="ava-mtr-topic">Availablity of Stock</div>
 
             <div class="box-row" id="boxRow">
@@ -42,8 +60,8 @@ if(isset($_POST['submit']) && $_POST['submit']=="save")$count=5;
                     <h1><?php echo $count; ?></h1>
                 </div>
                 <div class="col" id="boxRowCol2">
-                    <h4>Expire Materials</h4>
-                    <h1>2</h1>
+                    <h4>Running Low Materials</h4>
+                    <h1><?php echo $runningLow; ?></h1>
                 </div>
                 <div class="col" id="boxRowCol3">
                     <h4>Empty Materials</h4>
@@ -67,7 +85,11 @@ if(isset($_POST['submit']) && $_POST['submit']=="save")$count=5;
                           <td><?php echo $value['rawitem_id'];?></td>
                           <td><?php echo $value['rawitem_name']; ?></td>
                           <td><?php echo $value['stock_amount']." ".$value['measure_unit']; ?></td>                
-                          <td><h4>High</h4></td>
+                          <td><h4><?php 
+                                        if ($value['stock_amount']<5) echo "Low";
+                                        else if($value['stock_amount']<20) echo "Medium";
+                                        else echo "High";
+                           ?></h4></td>
                       </tr>
                   <?php } ?>
                       
@@ -99,7 +121,7 @@ if(isset($_POST['submit']) && $_POST['submit']=="save")$count=5;
                         <div class="item-quantity">Quantity</div>
                     </div>
 	
-                 <form method="post" action="<?php echo BASEURL.'/rawMaterialController/test';?>">
+                 <form method="post" action="<?php echo BASEURL.'/rawMaterialController/retreiveMaterials';?>">
                     <div id="room_fileds">
                         </div>
                     </div>

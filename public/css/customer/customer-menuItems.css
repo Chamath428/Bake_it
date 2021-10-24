@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
 
 body{
-	background-color: rgba(235, 230, 230,0.4);
+	/*background-color: rgba(235, 230, 230,0.4);*/
 }
 
 .burger-menu {
@@ -32,7 +32,6 @@ body{
 .burger-menu .burger-container .burger-item{
 	padding: 10px;
 	margin-bottom: 10px;
-	/*background: red;*/
 	position: relative;
 	overflow: hidden;
 	text-align: center;

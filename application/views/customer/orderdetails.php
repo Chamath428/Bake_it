@@ -4,10 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../../../public/css/customer-navbar.css">
-	<link rel="stylesheet" href="../../../public/css/customer-footer.css">
-	<link rel="stylesheet" href="../../../public/css/customer-orderdetails.css">
-	<script src="../../../public/js/navbar.js" defer></script>
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
+	<link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/customer/customer-orderdetails.css">
+	<script src="<?php echo BASEURL; ?>/public/js/navbar.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
 	<title>Order Details</title>
@@ -58,7 +58,7 @@
 					<tr>
 						<td>
 							<div class="product-container">
-								<img src="../../../public/images/b1.png">
+								<img src="<?php echo BASEURL ?>/public/images/b1.png">
 								<div>
 									<p>Small Burger</p>
 								</div>
@@ -79,7 +79,7 @@
 					<tr>
 						<td>
 							<div class="product-container">
-								<img src="../../../public/images/b1.png">
+								<img src="<?php echo BASEURL ?>/public/images/b1.png">
 								<div>
 									<p>ddd Burger</p>
 								</div>

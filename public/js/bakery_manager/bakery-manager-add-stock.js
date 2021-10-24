@@ -18,9 +18,8 @@
       var itemName = e.options[e.selectedIndex].text;
       var objTo = document.getElementById('room_fileds')
       var divtest = document.createElement("div");
-      
-      // divtest.innerHTML = '<div class="input-fileds"><label for="text">'+itemName+' </label><input type="number" name="itemid" id="itemid"  value require placeholder="Enter Quantity"></div> <div class="Quntity"><label for="quantity"></label><select><option>Kg</option><option>g</option><option>l</option><option>ml</option></select></div>';
-      divtest.innerHTML = '<table><tr><td class="lable"><label for="text">'+itemName+' </label></td><td class="input"><input type="number" name="quntity'+quan+'" id="itemid"  value require placeholder="Enter Quantity"><input type="hidden" name="itemId'+quan+'" value="'+itemId+'"></td> <td class="Quntity"><label for="quantity"></label><select><option>Kg</option><option>g</option><option>l</option><option>ml</option></select></td></tr></table>';
+    
+      divtest.innerHTML = '<table><tr><td class="lable"><label for="text">'+itemName+'   </label></td><td class="input"><input type="text" name="quntity'+quan+'" id="itemid"  required="" placeholder="Enter Quantity" onkeypress="javascript:return isNumber(event)">    <input type="hidden" name="itemId'+quan+'" value="'+itemId+'"><input type="hidden" name="finalCount" value="'+quan+'"></td> <td class="Quntity"><label for="quantity"></label><select><option>Kg</option><option>g</option><option>l</option><option>ml</option></select></td></tr></table>';
       quan++;
       e.remove(e.selectedIndex);
       var x = document.getElementById("savebtn");
@@ -32,3 +31,12 @@
       objTo.appendChild(divtest)
       
   }
+
+  function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+}
+

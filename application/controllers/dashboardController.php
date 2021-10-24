@@ -18,10 +18,10 @@
 					$this->view("bakery_manager/index");
 					break;
 				case '4':
-					echo "Branch Manager yet to get";
+					$this->view("branchManager/index");
 					break;
 				case '5':
-					echo "Cashier yet to get";
+					$this->view("cashier/dashboard");
 					break;
 				case '6':
 					$this->view("deliveryPerson/dashboardDP");

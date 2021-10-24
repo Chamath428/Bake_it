@@ -4,19 +4,19 @@
         <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
             <ul>
                 <li>
-                     <a href="dashboard.php" class="active">
-                        <span class="icon"><i class="fas fa-home"></i></span>
+                     <a href="<?php echo BASEURL ?>" class="active">
+                        <span class="icon"><i class="fas fa-th-large"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="completedOrder.php" class="hrf">
+                    <a href="<?php echo BASEURL."/cashierOrderListController/completeOrderCashier" ?>" class="hrf">
                         <span class="icon"> <i class="fas fa-check-circle"></i></span>
                         <span class="title">Completed</span>
                     </a>
                 </li>
                 <li>
-                    <a href="ongoingOrders.php" class="hrf">
+                    <a href="<?php echo BASEURL."/cashierOrderListController" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-motorcycle"></i></span>
                         <span class="title">Ongoing</span>
                     </a>

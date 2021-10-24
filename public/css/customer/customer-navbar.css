@@ -268,7 +268,7 @@ nav{
     margin-bottom: 10rem;
 }*/
 .shape h2{
-    color: white;
+    color: black;
     position: absolute;
     left: 100px;
     top: 100px;
@@ -296,7 +296,7 @@ nav{
 }
 
 .custom-shape-divider-top-1633458560 .shape-fill {
-    fill: rgb(0, 0, 0);
+    fill: rgb(255, 255, 255);
 }
 @media(max-width: 720px){
     .shape h2{
