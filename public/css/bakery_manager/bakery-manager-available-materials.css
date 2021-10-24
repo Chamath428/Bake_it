@@ -30,7 +30,7 @@ body{
      justify-content: left;
     margin-left: 100px;
      margin-top: 30px; 
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     
   }
@@ -53,9 +53,9 @@ body{
      border-collapse: collapse;
      margin: 25px, 0;
     min-width: 600px;
-     border-radius:5px 5px 0 0 ;
+     /* border-radius:5px 5px 0 0 ; */
     overflow:hidden ; 
-    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+    /* box-shadow: 0 0 20px rgb(0, 0,0,0.15); */
     
 
 }
@@ -213,6 +213,7 @@ body{
     cursor: pointer;
     margin-right: 1%;
     margin-top: 45px;
+    font-weight: bold;
 }
 .addbtn button:hover{
     background:rgb(255, 138, 0);
@@ -288,19 +289,20 @@ body{
 
 }
 .savebtn{
-    position: absolute;
+    /* position: absolute;
     left: 48.6%;
-    top: 126%;
+    top: 126%; */
+    margin-left: 87%;
+    margin-bottom: 5px;
     width: 79px;
     height: 31px;
     background: #FFFFFF;
     border: 1px solid rgba(255, 138, 0, 0.98);
-    /* box-sizing: border-box; */
     border-radius: 20px;
     cursor: pointer;
     display: none;
-    /* margin-left: 450px;
-    margin-top: 220px; */
+    font-weight: bold;
+    
 }
 .savebtn:hover{
     background:rgb(255, 138, 0);
