@@ -7,7 +7,7 @@
     <link rel="stylesheet"  href="<?php echo BASEURL ?>/public/css/cashier/cashier-dashboard.css">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-header.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-footer.css" class="rel">
-    <script src="<?php echo BASEURL ?>/public/js/cashier/cashier-header.js" defer></script>
+    <script src="<?php echo BASEURL ?>/public/js/cashier/cashier-dashboard-header.js" defer></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     <title>Home page</title>
     

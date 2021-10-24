@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="dailyRequirment.php" class="hrf">
+                    <a href="<?php echo BASEURL."/bakeryManagerDailyRequirementController" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-tasks"></i></span>
                         <span class="title">Daily Requirement</span>
                     </a>
