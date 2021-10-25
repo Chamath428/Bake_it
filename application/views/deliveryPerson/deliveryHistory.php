@@ -59,7 +59,7 @@
                         <td label="Order No">117</td>
                         <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><button>More details</button></td>
+                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
