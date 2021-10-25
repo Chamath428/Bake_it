@@ -17,13 +17,13 @@
                 </li>
                 <li>
                     <a href="<?php echo BASEURL."/cashierOrderListController/createQuickOrderCashier" ?>" class="hrf">
-                        <span class="icon"><i class="fas fa-motorcycle"></i></span>
+                        <span class="icon"><i class="fas fa-hamburger"></i></span>
                         <span class="title">Quick Order</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo BASEURL."/cashierOrderListController/createSpecialOrderCashier" ?>" class="hrf">
-                        <span class="icon"><i class="fas fa-star"></i></span>
+                        <span class="icon"><i class="fas fa-gift"></i></span>
                         <span class="title">Special Order</span>
                     </a>
                 </li>
