@@ -2,10 +2,11 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    margin-top: 25px;
 }
 .container-1{
     font-size: 14px;
-    min-height: 80vh;
+    min-height: 100vh;
     margin-top: 20px;
     /* background-color: aqua; */
 }
@@ -15,6 +16,11 @@
     margin-left: 100px;
     /* background-color: saddlebrown; */
 
+}
+
+.heading{
+    margin-top: 50px;
+    margin-bottom: 25px;
 }
 
 .overview-container{
@@ -28,10 +34,10 @@
     padding: 1.25rem; 
     /* flex-grow: 1; */ 
     margin-right: 2%; 
-    width: 15%; 
+    width: 20%; 
     height: 15vh; 
     justify-items: center;  
-    font-size: 11px; 
+    /* font-size: 11px; */
     border: 2px solid rgba(255, 138, 0, 0.8); 
     box-shadow: 2px 1px rgba(255, 137, 0,1); 
 }
@@ -46,7 +52,7 @@
     margin-top: 30px;
 }
 table{
-    width: 100%;
+    width: 60%;
     border-collapse: collapse;
 }
 

@@ -14,7 +14,7 @@
 
 </head>
 <body class="bgg">
-    <?php include "headerPendingOrders.php"?>
+    <?php include "headerOrders.php"?>
     <div id="body" class="container-1">
         <div class="container-2">
             <div class="heading">
@@ -23,33 +23,33 @@
             <div id="popup-1" class="popup-container">
               <div class="mid-box">
                 <h1>Assign delivery Person</h1>
-                <div class="row">
+                <div class="row1">
                   <div class="d-person">Gihan sandaruwan weerasinghe</div>
                   <button onclick="closePopup()">Assign</button>
                 </div>
-                <div class="row">
+                <div class="row1">
                   <div class="d-person">Gihan sandaruwan weerasinghe</div>
                   <button onclick="closePopup()">Assign</button>
                 </div>
-                <div class="row">
+                <div class="row1">
                   <div class="d-person">Gihan sandaruwan weerasinghe</div>
                   <button onclick="closePopup()">Assign</button>
                 </div>
-                <div class="row">
+                <div class="row1">
                   <div class="d-person">Gihan sandaruwan weerasinghe</div>
                   <button onclick="closePopup()">Assign</button>
                 </div>
-                <div class="row">
+                <div class="row1">
                   <div class="d-person">Gihan sandaruwan weerasinghe</div>
                   <button>Assign</button>
                 </div>
               </div>
             </div>
             <div id="popup-2" class="popup-container">
-              <div class="mid-box">
-                  <h1>Are you sure to decline?</h1>
+            <div class="mid-box">
+                  <h3 style="margin-bottom:15px" style="text-align: center;">Are you sure to decline?</h3>
                   <div class="yes-no">
-                    <button onclick="closePopup2()">yes decline</button>
+                    <button onclick="closePopup2()">Yes Decline</button>
                     <button onclick="closePopup2()">Cancel</button>
                   </div>
               </div>
@@ -58,7 +58,7 @@
             <div class="order-details">
                
                     <div class="basic-details"> 
-                        <table> 
+                    <table> 
                             <tr> 
                                 <td>Order ID</td> 
                                 <td>#Q117</td> 
@@ -76,17 +76,21 @@
                                 <td>Ongoing</td> 
                             </tr> 
                             <tr> 
+                                <td>Needed Date</td> 
+                                <td>2021/11/01</td> 
+                            </tr> 
+                            <tr> 
                                 <td>Location</td> 
-                                <td><a href="<?php echo BASEURL ?>/public/images/deliveryPerson/map.png"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> 
+                                <td><a href="#"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> 
                             </tr> 
                             <tr> 
                                 <td>Payment Method</td> 
-                                <td> card</td> 
+                                <td> Card</td> 
                                 <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                             </tr>
                             <tr> 
-                              <td>delivery Person</td> 
-                              <td> saman</td> 
+                              <td>Delivery Person</td> 
+                              <td>Saman Fernando</td> 
                               <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                           </tr> 
                         </table> 

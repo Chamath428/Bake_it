@@ -40,6 +40,8 @@
             </div>
             <div class="drop-down-btn-container">
                 <div class="drop-down">
+                    </br>
+                    <h4>Select Category</h4>
                   <form method="post" action="<?php echo BASEURL ?>/branchManagerMenuController/getItems">
                     <select name="categoryId" id="categoryId">
 
@@ -55,9 +57,9 @@
                     </select>
                 </div>
                 <div class="view-btn-container">
-                    <button type="submit" class="viewBtn">View</button>
+                    <button type="submit" class="viewBtn">View Items</button>
                   </form>
-                    <button id="edit" onclick="viewSave()" class="edit-btn">Edit</button>
+                    <button id="edit" onclick="viewSave()" class="edit-btn">Edit Quantity</button>
                 </div>
             </div>
 
@@ -100,7 +102,8 @@
             </div>
 
             <div class="btn-container">
-                  <button id="save" class="save-btn">Save</button>
+                  <button id="save" class="save-btn">Save Changes</button>
+
             </div>
           </form>
         </div>

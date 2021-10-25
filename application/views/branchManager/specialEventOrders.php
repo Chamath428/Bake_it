@@ -14,68 +14,68 @@
 
 </head>
 <body class="bgg">
-    <?php include "headerPendingOrders.php"?>
+    <?php include "headerOrders.php"?>
     <div id="body" class="container-1">
         <div class="container-2">
+            <div class="heading">
+              <h1>Branch Orders of the Day</h1>
+            </div>
             <div class="overview-container">
                 <div class="box">
                     <h4>Total Orders</h4>
-                    <h1>25</h1>
+                    <h1>30</h1>
                 </div>
                 <div class="box">
-                    <h4>Total Orders</h4>
-                    <h1>25</h1>
+                    <h4>Completed Orders</h4>
+                    <h1>5</h1>
                 </div>
                 <div class="box">
-                    <h4>Total Orders</h4>
+                    <h4>Uncompleted Orders</h4>
                     <h1>25</h1>
                 </div>
             </div>
+            <div class="heading">
+              <h1>Special Event Order Details</h1>
+            </div>
             <div class="orders-table">
-                <table>
+            <table>
                     <thead>
                       <tr>
-                        <th>Item ID</th>
-                        <th>Item</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
+                        <th>Order ID</th>
+                        <th>Grand Total</th>
+                        <th>Placed Date</th>
                       </tr>
                     </thead>
                     <tbody>
                       
                       <tr>
-                        <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">#001</a></td>
+                        <td>Rs 250.00</td>
+                        <td>2021/10/26</td>
                       </tr>
 
                       <tr>
-                      <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">#002</a></td>
+                        <td>Rs 1000.00</td>
+                        <td>2021/10/26</td>
                       </tr>
 
                       <tr>
-                      <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">#003</a></td>
+                        <td>Rs 500.00</td>
+                        <td>2021/10/26</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">#004</a></td>
+                        <td>Rs 1500.00</td>
+                        <td>2021/10/26</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td><a href="../../views/branchManager/specialEventOrdersDetails.php" class="order-id">#005</a></td>
+                        <td>Rs 700.00</td>
+                        <td>2021/10/26</td>
                       </tr>
                       
                       

@@ -14,7 +14,7 @@
   }
   /* body id */
   #body {
-    margin-top: 65px; 
+    margin-top: 25px; 
     margin-left: 74px;
     line-height: 1.4;
     transition: margin-left 0.5s;
@@ -30,7 +30,7 @@
   /* Top Container */
   .top-container {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 30px;
   }
   
   /* Showcase */

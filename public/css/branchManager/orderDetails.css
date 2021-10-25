@@ -5,7 +5,7 @@
 }
 .container-1{
     font-size: 14px;
-    min-height: 80vh;
+    min-height: 100vh;
     /* background-color: aqua; */
 }
 .container-2{
@@ -120,23 +120,23 @@ tbody tr:hover{
 
 
 
-button{
+/* button{
     height: 45px;
     border: 2px solid rgb(255, 138, 0);
     border-radius: 10px;
     font-size: 13px;
     padding: 0px 15px;
     margin-left: 0px;
-}
+} */
 
 .btns button{
     margin-left: 20px;
 }
-
+/* 
 button:hover{
     background-color: rgb(255, 138, 0);
     color: white;
-}
+} */
 
 .popup-container{
     visibility: hidden;
@@ -199,7 +199,7 @@ button:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(195, 195, 195);
+    background-color: rgb(243, 243, 243);
 }
 
 .star{
@@ -231,4 +231,25 @@ button:hover{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+}
+
+button{
+    /* border: 2px solid rgb(255, 138, 0);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold; */
+    padding:10px;
+    /* background-color: white; */
+    /* padding: 0.8rem; */
+	background-color: transparent;
+	border-radius: 1rem;
+	border: 2px solid rgb(255, 137, 0);
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+button:hover{
+    background-color: rgb(255, 138, 0);
+    color: white;
 }
