@@ -34,6 +34,37 @@ body{
     font-weight: bold;
     
   }
+  .category-list{
+
+    width:250px; 
+    height: 100px;
+    /* float: left; */
+    margin-left: 100px;
+    margin-top: 20px;
+    border: none;
+    /* background-color: red; */
+
+}
+.category-list select{
+    width: 730px;
+    border: none;
+    border:nth-child 1px solid rgb(255, 138, 0);
+    box-shadow: 0px 1px rgb(255, 138, 0);
+    padding: 10px;
+    color:back;
+    font-weight: bold;
+    margin-top: 10px;
+    outline: none;
+    /* border-radius: 5px; */
+    background-color:white;
+    
+    
+}
+.category-list label{
+    font-weight: bold;
+    margin-left: 15px;
+
+}
 
   .table{
    
