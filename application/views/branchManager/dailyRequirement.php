@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/dailyRequirement.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/header_index.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/footer.css">
-    <script src="../../../public/js/branchManager/header.js" defer ></script>
-    <script src="../../../public/js/branchManager/menu.js" defer ></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/dailyRequirement.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/footer.css">
+    <script src="<?php echo BASEURL; ?>/public/js/branchManager/header.js" defer ></script>
+    <script src="<?php echo BASEURL; ?>/public/js/branchManager/menu.js" defer ></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>

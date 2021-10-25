@@ -15,14 +15,14 @@
     <script src="<?php echo BASEURL ?>/public/js/owner/profile.js" defer></script>
     <script src="<?php echo BASEURL ?>/public/js/owner/header.js" defer></script>
     <script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
-    <title>Bakery manager home page</title>
+    <title>Profiile</title>
 </head>
 <body>
   
 
 <?php require_once('header.php'); ?>
   
- <div class="bgg" id="body">
+  <div class="bgg" id="body">
       <div class="profile-container">
             <div class="middle-section">
                     <div class="profile">
@@ -36,26 +36,26 @@
                         <h3 class="profile-topic">User Profile</h3>
                         <div class="input-fileds">
                                 <label for="text">First Name</label>
-                                <input type="text" name="text" id="email"  value="<?php echo $data['firstname']; ?>">
+                                <input type="text" name="text" id="email"  value="Amal">
                             </div>
                             <div class="input-fileds">
                                 <label for="text">Second Name</label>
-                                <input type="text" name="text" id="email"  value="<?php echo $data['lastname']; ?>">
+                                <input type="text" name="text" id="email"  value="Perera">
                             </div>
                         <h3>User Account Details</h3>
                         <div class="input-fileds">
                                 <label for="email">Email Address</label>
-                                <input type="email" name="email" id="email"  value="<?php echo $data['email']; ?>">
+                                <input type="email" name="email" id="email"  value="infobakeit@gmail.com">
                             </div>
                             <div class="input-fileds">
                                 <label for="number">Phone Number</label>
-                                <input type="number" name="number" id="number"  value="<?php echo $data['phonenumber'] ?>">
+                                <input type="number" name="number" id="number"  value="044118659322">
                             </div>
                         <h3>Change Password</h3>
 
                             <div class="input-fileds">
                                 <label for="password">Current Password</label>
-                                <input type="password" name="password" id="password"  value="">
+                                <input type="password" name="password" id="password"  value="********">
                             </div>
                             <div class="input-fileds">
                                 <label for="new_password">New Password(if changing)</label>
@@ -77,3 +77,4 @@
      
           
 <?php include('footer.php'); ?>
+</body>

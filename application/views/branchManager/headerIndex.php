@@ -16,19 +16,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="pendingQuickOrders.php" class="hrf">
+                    <a href="<?php echo BASEURL."/branchManagerOrderController"; ?>" class="hrf">
                         <span class="icon"><i class="fas fa-truck"></i></span>
                         <span class="title">Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="dailyRequirement.php" class="hrf">
+                    <a href="<?php echo BASEURL."/branchManagerDailyRequirmentController";?>" class="hrf">
                         <span class="icon"><i class="fas fa-tasks"></i></span>
                         <span class="title">Daily Requirement</span>
                     </a>
                 </li>
                 <li>
-                    <a href="overview.php" class="hrf">
+                    <a href="<?php echo BASEURL."./branchManagerReportController" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-file-alt"></i></span>
                         <span class="title">Reports</span>
                     </a>
