@@ -99,6 +99,19 @@
       .availability-selection{
             width: 50%;
       }
+      .available-body #selection-box{
+            width: 50%;
+            margin: 5% 32% 5% 26%;
+      }
+      .question{
+            font-size: 14px;
+      }
+      .click-available{
+            flex-direction: column;
+      }
+      .click-available > div{
+            margin-bottom: 8px;
+      }
 }
 @media(max-width:480px){
       .available-body h2,.availability-selection a{

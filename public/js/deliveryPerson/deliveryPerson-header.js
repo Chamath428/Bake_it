@@ -1,14 +1,23 @@
-var screen = screen.width;
-console.log(screen);
+
+// var win = window,
+//     doc = document,
+//     docElem = doc.documentElement,
+//     body = doc.getElementsByTagName('body')[0],
+//     x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+//     y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+//     console.log(x + ' × ' + y);
+
+var screen1 = window.innerWidth;
+var screen2 = document.documentElement.clientWidth;
+console.log(screen1);
+console.log(screen2);
+
+var screen =screen.width;
+console.log("screen width:"+ screen);
 
 if(screen > 700){
+  screen.focus();
   console.log("side nav is working");
-  // function leftBakeIt() {
-  //   if(document.getElementById("bakeId").style.marginLeft=="17%"){
-  //       document.getElementById("bakeId").style.marginLeft = "0";
-  //   }
-  //   else {document.getElementById("bakeId").style.marginLeft = "17%";}
-  // }
       var mini = true;
 
     function toggleSidebar() {
@@ -30,6 +39,7 @@ if(screen > 700){
     }
 }
 else if(screen < 700){
+  screen.focus;
   console.log("side nav is not working");
   function sidetoggle(){
     var sidenav = document.getElementById("mySidebar");
