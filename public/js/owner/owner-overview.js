@@ -1,3 +1,24 @@
+//blue-#264653
+//green-#2a9d8f
+//#e9c46a
+//#81b29a
+//#8ecae6
+//#f08080
+
+// 1st colour pallate
+// --sizzling-red: #ff595eff;
+// --sunglow: #ffca3aff;
+// --yellow-green: #8ac926ff;
+// --green-blue-crayola: #1982c4ff;
+// --royal-purple: #6a4c93ff;
+
+// 2nd colour pallate
+// --rich-black-fogra-29: #001524ff;
+// --ming: #15616dff;
+// --blanched-almond: #ffecd1ff;
+// --amber-sae-ece: #ff7d00ff;
+// --kobe: #78290fff;
+
 var xValues = ["Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
 // var xValues = Utils.months({count: 12});
 new Chart("myChart", {
@@ -82,7 +103,7 @@ new Chart("myChart2", {
 });
 var x3Values = ["Pastry", "Cakes", "Doughnuts","Muffins","Snacks","Beverages"];
 var y3Values = [55, 150, 44, 80, 75, 90];
-var barColors = ["red","orange","brown"];
+var barColors = ["red","orange","brown","#2a9d8f"];
 
 new Chart("myChart3", {
   type: "bar",

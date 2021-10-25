@@ -27,9 +27,9 @@
 //   });
 
 
-function accept(){
-    window.location.href = "ongoingDeliveryDetails.php";
-}
+// function accept(){
+//     window.location.href = "ongoingDeliveryDetails.php";
+// }
 function reject(){
     alert("Do you want to reject the order?");
 }

@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <link rel="stylesheet" href="../../../public/css/owner/reports_item.css" class="rel">
-    <link rel="stylesheet" href="../../../public/css/owner/footer.css" class="rel">
-    <link rel="stylesheet" href="../../../public/css/owner/header.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/reports_item.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css" class="rel">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css" class="rel">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../../../public/js/owner/reports_item.js" defer></script>
-    <script src="../../../public/js/owner/header.js" defer></script>
+    <script src="<?php echo BASEURL ?>/public/js/owner/reports_item.js" defer></script>
+    <script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer></script>
     <script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
     <title>Sales Reports</title>
 </head>
 <body>
    
-<?php require_once('header_reports.php'); ?>
+<?php require_once('headerReports.php'); ?>
                   
             <div class="bgg" id="body">
 

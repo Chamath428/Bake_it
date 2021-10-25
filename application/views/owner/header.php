@@ -31,7 +31,7 @@
                 </li>
                 <li>
                     <a href="<?php echo BASEURL."/ownerHomeController/rawMaterials" ?>" class="hrf">
-                        <span class="icon"><i class="fas fa-star"></i></span>
+                        <span class="icon"><i class="fas fa-warehouse"></i></span>
                         <span class="title">Raw Materials</span>
                     </a>
                 </li>

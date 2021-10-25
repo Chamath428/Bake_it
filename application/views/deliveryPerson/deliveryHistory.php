@@ -56,29 +56,29 @@
                 <tbody>
                     <tr>
                         <td label="Time">10.00 a.m</td>
-                        <td label="Order No">1</td>
-                        <td label="Location">Panadura</td>
+                        <td label="Order No">117</td>
+                        <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
                         <td class="click more-details"><button>More details</button></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
-                        <td label="Order No">2</td>
-                        <td label="Location">Panadura</td>
+                        <td label="Order No">118</td>
+                        <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
                         <td class="click more-details"><button>More details</button></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
-                        <td label="Order No">3</td>
-                        <td label="Location">Panadura</td>
+                        <td label="Order No">213</td>
+                        <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
                         <td class="click more-details"><button>More details</button></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
-                        <td label="Order No">4</td>
-                        <td label="Location">Panadura</td>
+                        <td label="Order No">214</td>
+                        <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
                         <td class="click more-details"><button>More details</button></td>
                     </tr>

@@ -3,27 +3,27 @@
         <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
             <ul>
                 <li>
-                     <a href="dashboard.php" class="active">
+                     <a href="<?php echo BASEURL."/dashboardController" ?>" class="active">
                         <span class="icon"><i class="fas fa-th-large"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                     <a href="overview.php" class="active">
+                     <a href="<?php echo BASEURL."/ownerReportController" ?>" class="active">
                         <span class="icon"><i class="fas fa-chart-pie"></i></span>
                         <span class="title">Overview</span>
                     </a>
                 </li>
                 <li>
-                    <a href="reportsTotal.php" class="hrf">
+                    <a href="<?php echo BASEURL."/ownerReportController/salesReports" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-file-pdf"></i></span>
                         <span class="title">Total Sales Report</span>
                     </a>
                 </li>
                 <li>
-                    <a href="reportsItem.php" class="hrf">
+                    <a href="<?php echo BASEURL."/ownerReportController/itemReports" ?>" class="hrf">
                         <span class="icon"><i class="fab fa-elementor"></i></span>
-                        <span class="title">ItemWise Sales Reports</span>
+                        <span class="title">Categories Sales Reports</span>
                     </a>
                 </li>
             </ul>
