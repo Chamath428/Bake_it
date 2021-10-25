@@ -6,6 +6,10 @@
     font-family: 'Montserrat', sans-serif;
 
 }
+form{
+    display: flex;
+    flex-direction: column;
+}
 .profile-container{
     margin-left: 100px;
     margin-top: 20px;
