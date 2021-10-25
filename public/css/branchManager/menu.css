@@ -6,6 +6,7 @@
 }
 .container-1{
     font-size: 14px;
+    min-height: 60vh;
 }
 
 .menu{
@@ -56,13 +57,15 @@ select{
     margin-top: 10px;
 }
 
+
 /* .viewBtn{
     width: 86px;
     height: 36px;
 } */
 
+
 .menu-table{
-    visibility: hidden;
+    /*visibility: hidden;*/
     
 }
 .menu-table-active{
@@ -159,7 +162,7 @@ img{
 }
 
 .edit-btn{
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 button{
@@ -176,6 +179,7 @@ button{
 	font-weight: bold;
 	cursor: pointer;
 	transition: 0.3s ease-in-out;
+
 }
 
 button:hover{

@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; 
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+ a:hover{
+    color: rgb(255,138,0);   
+}
+/* side-navigation css */
+.container{
+    position: absolute;
+    top: 0;
+    width: 70px;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+}
+.container .navigation{
+    position:  fixed;
+    width: 70px;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgb(0,0,0,0,2);
+    transition: 0,5px;
+
+}
+.container .navigation.active{
+    width: 300px;
+    height: 100vh;
+}
+/* .navigation.active .bgg{
+    margin-left: 320px;
+} */
+.container .navigation ul{
+    position:  relative;
+    top: 30px;
+    left: 0;
+    width:100% ;
+}
+.container .navigation ul li{
+    position:  relative;
+    list-style: none;
+    width: 100%;
+    margin-top: 19.5px;
+    transition: 0.2s ease-in-out;
+    z-index: 100;
+
+}
+.container .navigation ul li a {
+    position:  relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-weight: 500px;
+    transition: 0.2s ease-in-out;
+
+}
+.container .navigation ul li a .icon{
+    position:  relative;
+    display: block;
+    min-width:80px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+
+}
+.container .navigation ul li:hover{
+    background: rgba(37, 37, 37, 0.9);
+    color: rgb(255,138,0);
+}
+.container .navigation ul li a:hover{
+    color: rgb(255,138,0);
+    font-weight: bold;
+}
+.container .navigation ul li a .icon .fas{
+    font-size: 20px;
+}
+#menuBtn{
+    font-size: 20px;
+    transition: 0.2s ease-in-out;
+}
+#menuBtn:hover{
+    font-size: 22px;
+}
+
+.container .navigation ul li a .title{
+    position: relative; 
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+.toggle{
+    position: fixed;
+    top: 20px;
+    left: 31px;
+    width: 40px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+/*top header css*/
+.header-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    top: 0;
+    width: 100%;
+    height: 7vh;
+    background-color: rgb(0, 0, 0);
+    flex-wrap: nowrap;
+    align-content: space-around;
+    align-items: center;
+}
+.header-container .bake-it{
+    flex-grow: 8;
+    font-weight:bold;
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    padding-left: 74px;
+    transition: transform 3s;
+
+}
+.header-container .bake-it .bakeit{
+    font-family: 'Merienda', cursive;
+}
+.header-container .header-icons{
+    display: flex;
+    justify-content: space-evenly; 
+    flex-grow: 1;
+    /* text-align: left; */
+    color: white;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: nowrap;
+    
+}
+#available{
+    display: none;                                   
+    position: absolute;
+    padding-left: 10%;
+    margin-left: 151px;
+    height: fit-content;
+    color: rgb(255 138 0);
+}
+#arrowAnim {
+    /* width: 100vw;
+    height: 100vh; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 171px;
+    width: 80px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  
+  }
+  
+  .arrow {
+    width: 10px;
+    height: 10px;
+    border: 3px solid;
+    border-color: rgb(255, 255, 255) transparent transparent rgb(255, 255, 255);
+    transform: rotate(-45deg);
+  }
+  
+  
+  .arrowSliding {
+    position: absolute;
+    -webkit-animation: slide 4s linear infinite; 
+            animation: slide 4s linear infinite;
+  }
+  
+  .delay1 {
+    -webkit-animation-delay: 1s; 
+      animation-delay: 1s;
+  }
+  .delay2 {
+    -webkit-animation-delay: 2s; 
+      animation-delay: 2s;
+  }
+  .delay3 {
+    -webkit-animation-delay: 3s; 
+      animation-delay: 3s;
+  }
+  
+  @-webkit-keyframes slide {
+      0% { opacity:0; transform: translateX(4vw); }  
+     20% { opacity:1; transform: translateX(2vw); } 
+     80% { opacity:1; transform: translateX(-2vw); }  
+    100% { opacity:0; transform: translateX(-4vw); } 
+  }
+  @keyframes slide {
+      0% { opacity:0; transform: translateX(4vw); }  
+     20% { opacity:1; transform: translateX(2vw); } 
+     80% { opacity:1; transform: translateX(-2vw); }  
+    100% { opacity:0; transform: translateX(-4vw); } 
+  }
+
+  .side-toggle{
+      display: none;
+  }
+  
+/* Responsive */
+@media (max-width: 700px) {
+    .header-container{
+      width: 100%;
+      font-size: 15px;
+    }
+    .header-container .bake-it{
+      font-size: 15px;
+      padding-left: 20px;
+    }
+    .header-container .header-icons{
+        justify-content: space-between;
+        flex-grow: 1;
+        padding-right: 20px;
+    }
+    .header-container .header-icons span{
+        margin-right: 10px;
+    }
+    .header-container .header-icons .text,.header-container .header-icons .sign-out{
+        display: none;
+    }
+    .side-toggle{
+        display: block;
+    }
+    .container {
+        position: absolute;
+        top: 0; 
+        width: 0%;
+        height: 0;
+        background-color: rgb(0, 0, 0);
+    }
+    .container .navigation{
+        display: none;
+        width: 100%;
+        height: auto;
+        margin-top: 7vh;
+        background-color: rgb(10 10 10 / 76%);
+    }
+    .container .navigation ul{
+        top: 0%;
+    }
+    .container .navigation ul li{
+        margin-top: 0%;
+    }
+    
+    #body{
+        margin-left: 0%;
+    }
+    /* .side-toggle .fa-bars{
+        color: white;
+    } */
+    
+  }
+  
+  @media (max-width: 500px) {
+    .header-container{
+        width: 100%;
+      }
+  }
+
+  /*notification Panel css*/
+  .notifi-container{
+    display: none;
+    width: 300px;
+    height: 5vh;
+    opacity: 0;
+    position: absolute;
+    color: black;
+    background-color: whitesmoke;
+    border: 2px solid rgb(255,138,8);
+    transition: 1s opacity, 250ms height;
+}
+  

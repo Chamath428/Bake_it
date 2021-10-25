@@ -1,0 +1,30 @@
+-----User Roles-----
+0- Unregistered Customer
+1-Registered Customer *
+
+-----Job roles-----
+2- Owner *
+3-Bakery Manager * 
+4-Branch Manager
+5-Cashier 
+6-Delivery Person *
+
+-----Delivery persons availability-----
+1-Available
+0-Not available
+
+Hashings
+123456789 --> $2y$10$KlPRkOH7y/qVtVCOg3sy7OwgJAJkU/ORQWfylv5EWrK3Yyn4UvhIe
+
+
+---senarios to check----
+
+any branch / job role 	                good
+
+any branch / all job role				good
+
+bakery manager							good
+
+branch / job role						good
+
+branch / all job role 					good

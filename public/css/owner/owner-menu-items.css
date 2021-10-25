@@ -1,0 +1,198 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    padding: 0;
+    margin: 0%;
+    width: 100%;
+    height: 110%;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: #bdba04; */
+    
+}
+.bgg{
+    font-size: 14px;
+
+}
+
+.content{
+    margin: 0;
+    margin-top: 20px;
+    width: 79%;
+    height: 80vh;
+    display: flex;
+    flex-direction:column;
+    /* background-color: chartreuse; */
+   
+    
+}
+.menu-items-topic{ 
+
+    margin-left: 100px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    /* background-color: cornflowerblue; */
+}
+
+
+.category-table{
+    /* display: none; */
+    margin-left: 100px;
+}
+
+  
+.content-table{
+    
+    width: 50%; 
+    height: 190px;
+    margin-top: 5px;
+    border-collapse: collapse;
+    min-width: 900px;
+    /* border-radius:5px 5px 0 0 ; */
+    overflow:hidden ; 
+    /* box-shadow: 0 0 20px rgb(0, 0,0,0.15); */
+
+}
+.content-table thead tr {
+    background-color:  rgb(255, 138, 0);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bold;
+    height: 40px;
+}
+.content-table tbody tr{
+    text-align: center;
+    
+}
+.content-table th .content-table tr{
+    padding: 12px, 15px;
+}
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+    /* cursor: pointer; */
+}
+/* .content-table tbody tr:hover{
+  background-color: #ffefea;
+ height: 47px;
+ font-size: 15px;
+  
+} */
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+/* .content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #e9780e;
+} */
+#Check-box{
+    width: 15px;
+    height: 15px;
+}
+.btn{
+    display:flex;
+    flex-direction: row;
+}
+.delete-btn{
+    margin-top: 40px;
+    margin-left: 20px;
+    display: none;
+}
+.delete-btn button{
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(257, 138, 0);
+    background-color: white;
+    /* margin: 5px; */
+}
+.delete-btn button:hover{
+    background:rgb(255, 138, 0);
+    color: rgb(255, 255, 255);
+   
+}
+.add-item-btn{
+    margin-top: 40px;
+  
+}
+.add-item-btn button{
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(257, 138, 0);
+    background-color: white;
+    /* margin: 5px; */
+}
+.add-item-btn button:hover{
+    background:rgb(255, 138, 0);
+    color: rgb(255, 255, 255);
+   
+}
+
+
+.drop-down-list{
+   margin-left: 100px;
+    width:50%; 
+    height: 130px;
+    float: left;
+    margin-bottom: 2px;
+    margin-top: 30px;
+    
+}
+.branch{
+    width:170px; 
+    height: 120px;
+    float: left;
+    margin-right: 70px;
+
+}
+.category-list{
+    width:170px; 
+    height: 120px;
+    float: left;
+
+}
+
+select{
+    width: 170px;
+    border: none;
+    border-bottom: 2px solid rgb(255, 138, 0);
+    /* box-shadow: 1px 1px #ff5a5a; */
+    padding: 10px;
+    color:back;
+    font-weight: bold;
+    margin-top: 10px;
+    /* border-radius: 8px; */
+    
+    
+}
+label{
+    font-weight: bold;
+    margin-left: 15px;
+
+}
+.view-btn button{
+    /* margin-left: 45%; */
+    margin-top: 40px;
+    margin-left: 40px;
+    width: 70px;
+    height:27px;  
+    background: #FFFFFF;
+    border: 1px solid rgb(255, 138, 0);
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.view-btn button:hover{
+    background:rgb(255, 138, 0);
+    color: rgb(255, 255, 255);
+
+}

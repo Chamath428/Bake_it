@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.overview-container{
+    margin-bottom: 30px;
+}
+.overview-container .topic-1{
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 25px;
+    font-weight: 800;
+}
+.overview-container .topic-2{
+    margin-left: 100px;
+    padding: 20px 0;
+    font-weight: 700;
+}
+.overview-container .row-container{
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    
+}
+.overview-container .row-container .col{
+    flex-grow: 1;
+    width: 80%;
+    margin-right: 30px;
+    padding: 10px;
+    border: 2px solid #ff9900;
+    box-shadow: 0 1px 5px rgb(104 104 104 / 80%);
+}
