@@ -50,7 +50,7 @@
                     <table> 
                             <tr> 
                                 <td>Order ID</td> 
-                                <td>#Q117</td> 
+                                <td>#117</td> 
                             </tr> 
                             <tr> 
                                 <td>Customer Name</td> 
@@ -86,11 +86,11 @@
                     </div>
             </div>
             <div class="order-details-table">
-                <table>
+            <table id="orderDetails">
                     <thead>
                       <tr>
                         <th>Item ID</th>
-                        <th>Item</th>
+                        <th>Food Item</th>
                         <th>Price</th>
                         <th>Quantity</th>
                       </tr>
@@ -98,40 +98,60 @@
                     <tbody>
                       
                       <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td>#001</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Chicken Burger</p></div>
+                          </div>
+                        </td>
+                        <td>450.00</td>
+                        <td>10</td>
                       </tr>
-
                       <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td>#002</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Cheese Chicken Burger</p></div>
+                          </div>
+                        </td>
+                        <td>450.00</td>
+                        <td>10</td>
                       </tr>
-
                       <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td>#003</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Fish Burger</p></div>
+                          </div>
+                        </td>
+                        <td>450.00</td>
+                        <td>10</td>
                       </tr>
-
                       <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td>#004</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Ham Burger</p></div>
+                          </div>
+                        </td>
+                        <td>450.00</td>
+                        <td>10</td>
                       </tr>
-
                       <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
-                       </tr>
-                      
+                        <td>#005</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Egg Burger</p></div>
+                          </div>
+                        </td>
+                        <td>450.00</td>
+                        <td>10</td>
+                      </tr>
                       
                     </tbody>
                   </table>
@@ -140,20 +160,20 @@
               <table> 
                <tr> 
                 <td>Subtotal</td> 
-                <td>300.00 LKR</td> 
+                <td>6000.00 LKR</td> 
                </tr> 
                <tr> 
                 <td>Delivery Tax</td> 
-                <td>100.00 LKR</td> 
+                <td>200.00 LKR</td> 
                </tr> 
                <tr> 
                 <td>Grand Total</td> 
-                <td>400.00 LKR</td> 
+                <td>6200.00 LKR</td> 
                </tr> 
               </table> 
              </div>
              <div class="btn-container">
-               <button class="btn" onclick="assign()">View Costomer Rate</button>
+               <button class="btn" onclick="assign()">View Customer Rate</button>
              </div>
         </div>
     </div>

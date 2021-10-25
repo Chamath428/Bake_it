@@ -78,7 +78,7 @@
                               </div>
 
                               <div class="generate-btn">
-                                    <a href="report_view.php"><button>Generate</button></a>
+                                    <a href="#"><button>Generate</button></a>
                               </div>
                               </div>
 
@@ -129,7 +129,7 @@
                               </div>
 
                               <div class="generate-btn">
-                                    <a href="report_view.php"><button>Generate</button></a>
+                                    <a href="#"><button>Generate</button></a>
                               </div>
                               </div>
 
@@ -169,7 +169,7 @@
                               </div>
 
                               <div class="generate-btn">
-                                    <a href="report_view.php"><button>Generate</button></a>
+                                    <a href="#"><button>Generate</button></a>
                               </div>
                               </div>
 
@@ -218,7 +218,7 @@
 
 
                               <div class="generate-btn">
-                                    <a href="report_view.php"><button>Generate</button></a>
+                                    <a href="#"><button>Generate</button></a>
                               </div>
                               </div>
 
