@@ -79,6 +79,10 @@
 .container .navigation ul li a .icon .fab{
     font-size: 20px;
 }
+.container .navigation ul li a .icon .fa-elementor{
+    font-size: 20px;
+    /* font-weight: 10px; */
+}
 #menuBtn{
     font-size: 20px;
     transition: 0.2s ease-in-out;

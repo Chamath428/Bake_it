@@ -100,7 +100,7 @@ foreach ($data as $key => $value) {
 
 
             <div class="button-retrieve" id="btnretrive">
-                <input type="submit" id="submit" value="Retrieve" onclick="displayPopup()">
+                <input type="submit" id="submit" value="Issue" onclick="displayPopup()">
             </div>
             <div class="popup" id="popup">
                 <div class="row-pop1">

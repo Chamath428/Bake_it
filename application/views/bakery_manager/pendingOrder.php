@@ -35,21 +35,21 @@
                 <tr>
                     <td><a href="moreDetailsPendingOrder.php">0001</a></td>
                     <td>2021/12/03</td>
-                    <td>Deniyaya</td>  
+                    <td>Kesbewa</td>  
                     
                     
                 </tr>
                 <tr>
                     <td><a href="moreDetailsPendingOrder.php">0001</a></td>
                     <td>2021/03/04</td>
-                    <td>Matara</td>  
+                    <td>Battaramulla</td>  
                     
                     
                 </tr>
                 <tr>
                     <td><a href="moreDetailsPendingOrder.php">0001</a></td>
                     <td>2021/04/03</td>
-                    <td>Akuressa</td>    
+                    <td>Piliyandala</td>    
                 </tr>
             </tbody>
         </table>

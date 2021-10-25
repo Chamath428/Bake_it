@@ -42,22 +42,22 @@ Summary of Stock
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>DD/MM/YY</td>
-                                    <td>#111</td>
-                                    <td>Material 1</td>
+                                    <td>2021/09/05</td>
+                                    <td>1</td>
+                                    <td>Suger</td>
                                     <td>10Kg</td>
                                     <td>100Kg</td>                  
                                 </tr>
-                                    <td>DD/MM/YY</td>
-                                    <td>#112</td>
-                                    <td>Material 2</td>
+                                    <td>2021/10/13</td>
+                                    <td>2</td>
+                                    <td>Flour</td>
                                     <td>4Kg</td>
                                     <td>0</td>             
                                 </tr>
                                 <tr>
-                                    <td>DD/MM/YY</td>
-                                    <td>#113</td>
-                                    <td>Material 3</td>
+                                    <td>2021/10/22</td>
+                                    <td>3</td>
+                                    <td>Strawberry Jam</td>
                                     <td>10Kg</td>
                                     <td>100Kg</td>                 
                                 </tr>
