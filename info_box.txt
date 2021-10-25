@@ -28,3 +28,30 @@ bakery manager							good
 branch / job role						good
 
 branch / all job role 					good
+
+
+--Order type--
+
+1-Quick
+2-Special
+
+--Reciving type--
+
+1-Home delivery
+2-Pick up from shop
+
+--Payment method--
+
+1-Cash on delivery
+2-Card payment
+
+---order status---
+
+1- Order placed
+2- Accept the order
+3- Assign for delivery person
+4- Send order to the bakery
+5- Complete the order by bakery manager
+6- Complete the order by cashier or delivery person
+6- Decline the order
+7- Cancle the order

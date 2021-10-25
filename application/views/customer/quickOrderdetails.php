@@ -107,7 +107,7 @@
  				<tr>
  					<td>
  						<div class="product-image">
- 							<img src="../../../public/images/b1.png" width="40px" height="40px">
+ 							<img src="<?php echo BASEURL ?>/public/images/b1.png" width="40px" height="40px">
  						</div>
  					</td>
  					<td></td>
@@ -156,7 +156,7 @@
 
 		<div class="buttons">
 			<button>Rate Order</button>
-			<button><a href="">Re-Order</a></button>
+			<button><a href="<?php echo BASEURL."/cartController"; ?>">Re-Order</a></button>
 		</div>
 
 	</section>

@@ -10,7 +10,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hrf">
+                    <a href="<?php echo BASEURL."/branchManagerMenuController"; ?>" class="hrf">
                         <span class="icon"> <i class="fab fa-elementor"></i></span>
                         <span class="title">Menu</span>
                     </a>
