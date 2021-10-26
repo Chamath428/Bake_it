@@ -35,7 +35,7 @@
 				
 			<div class="form-box">
 				<h2>Register</h2>
-				<form method="post" action="<?php echo BASEURL.'/signupController/submit'; ?>">
+				<form method="post" action="<?php echo BASEURL.'/newSignupController/submit'; ?>">
 					<div class="input-box">
 						<input type="text" name="firstname" placeholder="First Name" required="" value="<?php if(isset($data['firstname'])){echo $data['firstname'];} ?>">
 						<input type="text" name="lastname" placeholder="Last Name" required="" value="<?php if(isset($data['lastname'])){echo $data['lastname'];} ?>">
