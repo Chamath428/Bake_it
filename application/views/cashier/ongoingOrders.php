@@ -39,7 +39,7 @@
                                 <th>Order Id</th>
                                 <th>Location</th>
                                 <th>Total Price</th>
-                                <th>Assinged Preson</th>
+                                <th>Assinged Person</th>
 
                             </tr>
                         </thead>

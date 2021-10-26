@@ -34,9 +34,9 @@
 			$data[2]=$categories;
 			$data[3]=$catrgoryItems;
 			if ($_SESSION['role_number']==4) {
-				$this->view("branchManager/menu",$data);
+				$this->viewWithMessage("branchManager/menu",$data,$message);
 			}else if ($_SESSION['role_number']==5) {
-				$this->view("cashier/menu",$data);
+				$this->viewWithMessage("cashier/menu",$data,$message);
 			}
 		}
 
