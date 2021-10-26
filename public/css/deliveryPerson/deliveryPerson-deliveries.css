@@ -131,7 +131,7 @@
     border-bottom: 1px solid black;
 }
 button{
-	padding: 1rem;
+	padding: 10px;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
     border-radius:  10px;
@@ -251,4 +251,49 @@ button:hover a{
 
 #cash-topay{
     display: none;
+}
+@media(max-width:787px){
+    .delivery-body .del-topic{
+        margin-left: 76px;
+        font-size: 18px;
+    }
+    .overview-body .del-topic{
+        margin-left: 97px;
+        text-align: center;
+    }
+    .delivery-body .row{
+        margin-top: 10px;
+        margin-left: 10px;
+        flex-wrap: nowrap;
+        /* flex-direction: column; */
+    }
+    .delivery-body .history-row{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .delivery-body .row .col{
+        width: 70%;
+        margin-bottom: 10px;
+    }
+    button{
+        padding: 7px;
+        font-size: 14px;
+    }
+    .delivery-body .cal-table {
+        margin-top: 5px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+    }
+    .overview-body{
+		height: 0%;
+	}
+    .cal-table .delivery-calander{
+        padding: 20px;
+    }
+    .overview-body .row .col{
+        /* width: 88%; */
+        margin-left: 40px;
+    }
 }

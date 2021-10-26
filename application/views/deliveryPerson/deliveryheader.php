@@ -26,6 +26,12 @@
                     <span class="title">Overview</span>
                 </a>
             </li>
+            <li class="logout">
+                <a href="<?php echo BASEURL.'/loginController/logout'; ?>" class="hrf">
+                    <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                    <span class="title">Logout</span>
+                </a>
+            </li>
         </ul>
     </div>
     <!-- <div class="toggle"><span onclick="leftBakeIt()"><i  id="menuBtn" class="fas fa-bars"></i></span></div> -->
@@ -68,11 +74,11 @@
     </div>
     <span id="available">You are available for deliveries</span>
     <div class="header-icons"> 
-        <span class="user-icon"><a href="profile.php"><i id="user" class="fas fa-user"></i></a></span>
+    <span class="user-icon"><a href="<?php echo BASEURL.'/profileEmployeeController' ?>"><i id="user" class="fas fa-user"></i></a></span>
         <span class="text">You logged in as : Delivery Person</span>
         <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
-        <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i></a></span>
-        <span class="text"><a href="#">Logout</a></span>
+        <span class ="sign-out"><a href="<?php echo BASEURL.'/loginController/logout' ?>"><i class="fas fa-sign-out-alt"></i></a></span>
+        <span class="text"><a href="<?php echo BASEURL.'/loginController/logout' ?>">Logout</a></span>
         <span class="side-toggle">
             <a href="#" class="icon" onclick="sidetoggle()">
                 <i class="fa fa-bars"></i>

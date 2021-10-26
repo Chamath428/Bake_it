@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
     <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
     <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-availability.js"></script>
+	<script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveries.js"></script>
 	<script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -25,7 +26,7 @@
 			<table>
 				<tr>
 					<td>Order ID</td>
-					<td>#Q117</td>
+					<td>117</td>
 				</tr>
 				<tr>
 					<td>Customer Name</td>
@@ -162,7 +163,7 @@
 
 		<div class="buttons">
 			<!-- <button>Rate Order</button> -->
-			<button><a href="">Complete</a></button>
+			<button onclick="complete()"><a href="">Complete</a></button>
 		</div>
 
 	</section>
