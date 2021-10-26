@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-profile.css" class="rel">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/footer.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css">
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css"> 
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/templates/employee-messageboxes.css"> 
     <script src="<?php echo BASEURL; ?>/public/js/branchManager/profile.js" defer></script>
     <script src="<?php echo BASEURL; ?>/public/js/branchManager/header.js" defer></script>
 </head>

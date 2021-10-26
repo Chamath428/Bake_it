@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-specialMenu.css">
+	<script src="<?php echo BASEURL ?>/public/js/customer/message.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/checkout.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
@@ -41,35 +42,35 @@
 					<img src="<?php echo BASEURL; ?>/public/images/b1.png">
 					<h3>Mini Cheese Burger</h3>
 					<span>RS.150.00</span><br>
-					<button><a href="#">Add to special cart</a></button>
+					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
 				</div>
 
 				<div class="burger-item">
 					<img src="<?php echo BASEURL; ?>/public/images/b2.png">
 					<h3>Mini Cheese Burger</h3>
 					<span>RS.150.00</span><br>
-					<button><a href="#">Add to special cart</a></button>
+					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
 				</div>
 
 				<div class="burger-item">
 					<img src="<?php echo BASEURL; ?>/public/images/b3.png">
 					<h3>Mini Cheese Burger</h3>
 					<span>RS.150.00</span><br>
-					<button><a href="#">Add to special cart</a></button>
+					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
 				</div>
 
 				<div class="burger-item">
 					<img src="<?php echo BASEURL; ?>/public/images/b4.png">
 					<h3>Mini Cheese Burger</h3>
 					<span>RS.150.00</span><br>
-					<button><a href="#">Add to special cart</a></button>
+					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
 				</div>
 
 				<div class="burger-item">
 					<img src="<?php echo BASEURL; ?>/public/images/b5.png">
 					<h3>Mini Cheese Burger</h3>
 					<span>RS.150.00</span><br>
-					<button><a href="#">Add to special cart</a></button>
+					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
 				</div>
 
 

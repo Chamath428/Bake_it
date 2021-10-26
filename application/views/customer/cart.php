@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-cart.css">
 	<script  src="<?php echo BASEURL ?>/public/js/customer/cart.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
+	<script src="<?php echo BASEURL ?>/public/js/customer/message.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
 	<title>Cart</title>
@@ -93,8 +94,8 @@
 				</tr>
 			</table>
 			<div class="button-container">
-				<button>Empty Cart</button>
-				<button>Update Cart</button>
+				<button onclick="showAlert('Remove All the items')">Empty Cart</button>
+				<button onclick="showAlert('Cart Updated Succesfully')">Update Cart</button>
 			</div>
 		</div>
 
@@ -185,8 +186,8 @@
 				</tr>
 			</table>
 			<div class="button-container">
-				<button>Empty Cart</button>
-				<button>Update Cart</button>
+				<button onclick="showAlert('Remove All the items')">Empty Cart</button>
+				<button onclick="showAlert('Cart Updated Succesfully')">Update Cart</button>
 			</div>
 		</div>
 

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo BASEURL ?>//public/css/owner/owner-account.css" class="rel">
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/templates/employee-messageboxes.css">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css" class="rel">
     <script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer></script>
