@@ -73,7 +73,7 @@
                 </div>
 
                 <div>
-                    <input class="del-row" type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
+                    <input class="del-row" type="button" value="Delete Item" onclick="deleteRow('dataTable')" />
                     <a class="add" onclick="addRow('dataTable')"> +</a>
                 </div>
 
