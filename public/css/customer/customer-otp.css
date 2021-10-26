@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
 section{
-	min-height: 40vh;
+	min-height: 50vh;
 	width: 50%;
 	margin:10rem auto;
 	font-family: 'Montserrat', sans-serif;
@@ -69,7 +69,13 @@ form{
 }
 
 @media(max-width: 700px){
-	form{
+	section{
+		width: 100%;
+	}
+}
+
+@media(max-width: 400px){
+	section .otp-div{
 		width: 100%;
 	}
 }
