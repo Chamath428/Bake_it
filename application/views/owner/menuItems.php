@@ -19,7 +19,7 @@
 
 <body>
 
-    <?php require_once('newheader.php'); ?>
+    <?php require_once('header.php'); ?>
 
 
     <div class="content" id="body">
@@ -30,12 +30,9 @@
             <div class="branch">
                 <label for="branch">Branch</label>
                 <select placeholder="Select branch">
-                    <option>Deniyaya</option>
-                    <option>Akuressa</option>
-                    <option>Matara</option>
-                    <option>Pitabeddara</option>
-                    <option>Morawaka</option>
-                    <option>Kotapola</option>
+                    <option>Kasbewa</option>
+                    <option>Bahtharamulla</option>
+                    <option>Piliyandala</option>
 
                 </select>
             </div>
@@ -43,11 +40,11 @@
             <div class="category-list">
                 <label for="category">Category</label>
                 <select placeholder="Select category">
-                    <option>Breads</option>
-                    <option>Rolls</option>
-                    <option>Muffins</option>
-                    <option>Cakes</option>
-                    <option>Sweet goods</option>
+                    <option>Bread</option>
+                    <option>Roll</option>
+                    <option>Muffin</option>
+                    <option>Cake</option>
+                    <option>Sweet good</option>
 
                 </select>
             </div>
@@ -60,8 +57,7 @@
 
         <div class="category-table">
             <div id="category1-table">
-                <h4>Category 1</h4>
-
+                <h4>Bread items</h4>
                 <table class="content-table">
                     <thead>
                         <tr>
@@ -75,25 +71,31 @@
                     <tbody>
                         <tr>
 
-                            <td>###1</td>
-                            <td>name1</td>
-                            <td>xxx</td>
+                            <td>1</td>
+
+                            <td>White Bread</td>
+                            <td>RS.60.00</td>
+
                             <td> <input type="checkbox" id="Check-box1" onclick="myFunction(this.id)"></td>
                         </tr>
                         <tr>
 
-                            <td>###2</td>
-                            <td>name2</td>
-                            <td>xxx</td>
+                            <td>2</td>
+
+                            <td>Sandwich Bread</td>
+                            <td>RS.65.00</td>
+
                             <td> <input type="checkbox" id="Check-box2" onclick="myFunction(this.id)"></td>
 
 
                         </tr>
                         <tr>
 
-                            <td>###3</td>
-                            <td>name3</td>
-                            <td>xxx</td>
+                            <td>3</td>
+
+                            <td>Kurakkn Bread</td>
+                            <td>RS.120.00</td>
+
                             <td> <input type="checkbox" id="Check-box3" onclick="myFunction(this.id)"></td>
 
 
@@ -102,7 +104,7 @@
                 </table>
                 <div class="btn">
                     <div class="add-item-btn">
-                       <a href="<?php echo BASEURL."/menuItemOwnerController/addMenuItem" ?>"> <button>Add Item</button></a>
+                        <a href="<?php echo BASEURL . "/ownerMenuController/addMenuItem" ?>"> <button>Add Item</button></a>
                     </div>
                     <div class="delete-btn" id="delbtn">
                         <button onclick="delFunction()">Delete</button>

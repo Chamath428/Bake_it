@@ -52,4 +52,24 @@
     #reviews-table{
         margin-left: 0%;
     }
+    .reviews-body .rev-topic {
+        margin-left: 64px;
+        font-size: 18px;
+        align-items: center;
+    }
+    .reviews-body .row{
+        flex-direction: column;
+        margin-top: 10px;
+        margin-left: 10px;
+        flex-wrap: nowrap;
+    }
+    .reviews-body .row .col{
+        width: 70%;
+        margin-bottom: 10px;
+        margin-left: 73px;
+    }
+    .reviews-body #table-caption{
+        margin-left: 22%;
+    }
 }
+

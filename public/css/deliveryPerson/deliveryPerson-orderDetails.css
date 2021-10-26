@@ -37,6 +37,7 @@ section{
 }
 
 @media(max-width: 1065px){
+	
 	.order-details .basic-details table{
 		width: 60%;
 	}
@@ -44,13 +45,31 @@ section{
 @media(max-width: 720px){
 	.order-details .basic-details table{
 		width: 80%;
-		margin: 0 auto;
+		margin: 0 auto 0 63px;
 	}
+	.order-details .basic-details table td{
+		text-align: left; 
+	    padding-left: 0%;
+		width: 0%;
+		display: inline;
+	}
+	.cart-containterm table td div input {
+		width: 39px;
+		height: 30px;
+		text-align: center;
+		border-radius: 5px;
+	}
+
 }
 @media(max-width: 511px){
-	.order-details .basic-details table{
-		width: 100%;
+	.topic{
+		margin-left: 96px;
+		font-size: 18px;
 	}
+	.order-details .basic-details table{
+		width: 80%;
+	}
+	
 }
 
 /*Basic Details Ends*/

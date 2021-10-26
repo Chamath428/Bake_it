@@ -43,6 +43,7 @@ else if(screen < 700){
 }
 
 
+
 //notification panel
 var box  = document.getElementById('notifiBox');
 var down = false;
