@@ -82,10 +82,15 @@
 
                             <td>2</td>
 
+<<<<<<< HEAD
+                            <td>Sandwich Bread</td>
+                            <td>RS.65.00</td>
+=======
 
                             <td>Sandwich Bread</td>
                             <td>RS.65.00</td>
 
+>>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
 
                             <td> <input type="checkbox" id="Check-box2" onclick="myFunction(this.id)"></td>
 
@@ -96,7 +101,10 @@
                             <td>3</td>
 
                             <td>Kurakkn Bread</td>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
                             <td>RS.120.00</td>
 
                             <td> <input type="checkbox" id="Check-box3" onclick="myFunction(this.id)"></td>

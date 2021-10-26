@@ -267,6 +267,7 @@ button:hover a{
         flex-wrap: nowrap;
         /* flex-direction: column; */
     }
+
     .delivery-body .history-row{
         flex-direction: column;
         align-items: flex-end;
