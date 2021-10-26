@@ -6,6 +6,10 @@
     font-family: 'Montserrat', sans-serif;
 
 }
+form{
+    display: flex;
+    flex-direction: column;
+}
 .profile-container{
     margin-left: 100px;
     margin-top: 20px;
@@ -94,9 +98,15 @@
   background-color: white;
 }
 .btn-update button:hover{
-  background:rgba(134, 127, 127, 0.671);
+  background:rgb(255, 138, 0);
   color: rgb(255, 255, 255);
-  border-color: rgb(255, 51, 0);
+  /* border-color: rgb(255, 51, 0); */
+}
+.fa-pen{
+    margin: 0;
+    display: flex;
+    float:right;
+
 }
 
 @media(max-width:700px){

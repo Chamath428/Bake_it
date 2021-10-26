@@ -25,7 +25,7 @@ body{
     margin-left: 100px;
     margin-top:30px ;
     padding: 0;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     
   }
@@ -48,9 +48,9 @@ body{
      border-collapse: collapse;
      margin: 25px, 0;
     min-width: 546px;
-     border-radius:5px 5px 0 0 ;
+     /* border-radius:5px 5px 0 0 ; */
     overflow:hidden ; 
-    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+    /* box-shadow: 0 0 20px rgb(0, 0,0,0.15); */
 
 }
 .content-table thead tr {
@@ -71,18 +71,18 @@ body{
     border-bottom: 1px solid #dddddd;
     /* cursor: pointer; */
 }
-.content-table tbody tr:hover{
+/* .content-table tbody tr:hover{
   background-color: #ffefea;
  height: 47px;
  font-size: 15px;
   
-}
-/* .content-table tbody tr:nth-of-type(even){
-    background-color: #f3f3f3;
 } */
-.content-table tbody tr:last-of-type{
-    border-bottom: 2px solid #e9780e;
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
 }
+/* .content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #e9780e;
+} */
 .content-table tbody tr a{
   color: rgb(255, 138, 0);
 }

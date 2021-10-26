@@ -34,21 +34,22 @@
                 <li><a href="<?php BASEURL ?>">Home</a></li>
                 <li><a style="cursor: pointer;">Menu</a>
                     <ul class="sub-menu">
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Bread</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Pastry</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Cake</a></li>
                         <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Burger</a></li>
-                        <li><a href="">Burger</a></li>
-                        <li><a href="">Burger</a></li>
-                        <li><a href="">Burger</a></li>
-                        <li><a href="">Burger</a></li>
-                        <li><a href="">Burger</a></li>
-                        <li><a href="">Burger</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Snacks</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Donut</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Muffin</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Sweets</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Baverages</a></li>
                     </ul>
                 </li>
                 <li><a style="cursor: pointer;">Outlets</a>
                     <ul class="sub-outlets">
-                        <li><a href="">Town1</a></li>
-                        <li><a href="">Town1</a></li>
-                        <li><a href="">Town1</a></li>
-                        <li><a href="">Town1</a></li>
+                        <li><a href="">Kasbewa</a></li>
+                        <li><a href="">Baththramulla</a></li>
+                        <li><a href="">Piliyandala</a></li>
                     </ul>
                 </li>
                 <li><a href="<?php echo BASEURL.'/myordersController' ?>">My Orders</a></li>

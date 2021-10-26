@@ -7,19 +7,25 @@
         <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
             <ul>
                 <li>
-                     <a href="index.php" class="active">
+                     <a href="<?php echo BASEURL; ?>" class="active">
                         <span class="icon"><i class="fas fa-th-large"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                     <a href="pendingQuickOrders.php" class="active">
-                        <span class="icon"><i class="fas fa-spinner"></i></span>
-                        <span class="title">Pending Orders</span>
+                     <a href="<?php echo BASEURL."/branchManagerOrderController"; ?>" class="active">
+                        <span class="icon"><i class="fas fa-hamburger"></i></span>
+                        <span class="title">Quick Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="completeOrder.php" class="hrf">
+                    <a href="<?php echo BASEURL."/branchManagerOrderController/getSpecialOrders"; ?>" class="hrf">
+                        <span class="icon"><i class="fas fa-gift"></i></span>
+                        <span class="title">Special Event Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo BASEURL."/branchManagerOrderController/getCompleteOrders"; ?>" class="hrf">
                         <span class="icon"><i class="fas fa-check-square"></i></span>
                         <span class="title">Completed Orders</span>
                     </a>

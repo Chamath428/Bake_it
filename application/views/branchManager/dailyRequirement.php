@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/dailyRequirement.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/header_index.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/footer.css">
-    <script src="../../../public/js/branchManager/header.js" defer ></script>
-    <script src="../../../public/js/branchManager/menu.js" defer ></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/dailyRequirement.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/footer.css">
+    <script src="<?php echo BASEURL; ?>/public/js/branchManager/header.js" defer ></script>
+    <script src="<?php echo BASEURL; ?>/public/js/branchManager/menu.js" defer ></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -24,6 +24,8 @@
             </div>
             <div class="drop-down-btn-container">
                 <div class="drop-down">
+                    </br>
+                    <h4>Select Category</h4> 
                     <select name="" id="">
                         <option value="">Bread</option>
                         <option value="">Pastry</option>
@@ -37,8 +39,8 @@
                     </select>
                 </div>
                 <div class="view-btn-container">
-                    <button class="viewBtn" onclick="viewTable()">View</button>
-                    <button id="edit" onclick="viewSave()" class="edit-btn">Edit</button>
+                    <button class="viewBtn" onclick="viewTable()">View Items</button>
+                    <button id="edit" onclick="viewSave()" class="edit-btn">Edit Quantity</button>
                 </div>
             </div>
             <div class="menu-table" id="table">
@@ -88,7 +90,7 @@
             </div>
 
             <div class="btn-container">
-                <button id="save" class="save-btn" onclick="alertBox()">Save</button>
+                <button id="save" class="save-btn" onclick="alertBox()">Save Changes</button>
             </div>
         </div>
     </div>

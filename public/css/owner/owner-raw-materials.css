@@ -15,14 +15,14 @@ body{
   
 }
 .middle-section{
-    height: 100vh;
+    height: 110vh;
     font-size: 14px;
     margin-left: 100px;
 }
 .category{
     height: 80px;
     margin-top: 20px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 .category select{
     width: 64%;
@@ -37,6 +37,7 @@ body{
 }
  .topic{
     margin: 20px;
+    margin-left: 4px;
     margin-top: 10px;
     height: auto;
     /* background-color: blue; */
@@ -80,7 +81,7 @@ body{
     min-width: 546px;
     border-radius:5px 5px 0 0 ;
     overflow:hidden ; 
-    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+    /* box-shadow: 0 0 20px rgb(0, 0,0,0.15); */
 
 }
 .inventory thead tr {
@@ -107,7 +108,7 @@ body{
     /* min-width: 546px; */
     /* border-radius:5px 5px 0 0 ; */
     overflow:hidden ; 
-    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+    /* box-shadow: 0 0 20px rgb(0, 0,0,0.15); */
     /* height: 100px; */
 }
 #dataTable tr{
@@ -126,6 +127,9 @@ body{
 #dataTable tbody tr td:nth-child(1) { 
     width: 5%;
 }
+#dataTable tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
 .data-content-scroll{
     /* background-color: steelblue; */
     height: 400px;
@@ -138,8 +142,9 @@ body{
 }
 .add
 {
-    width: 90px;
-    height: 25px;
+    /* width: 90px;
+    height: 30px; */
+    padding: 10px;
     font-weight:bold;
     border-radius: 10px;
     color: black;
@@ -156,13 +161,15 @@ body{
      color: white; 
 }
 .del-row{
-    width: 90px;
-    height: 25px;
+    /* width: 90px;
+    height: 30px; */
+    padding: 10px;
     font-weight:bold;
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid rgb(255, 138, 0);
     background-color: white;
+    margin-top: 10px;
 }
 .del-row:hover{
     color: white;
@@ -170,8 +177,12 @@ body{
 }
 .save-btn{
     margin-left: 57%;
-    width: 90px;
-    height: 30px;
+    margin-top: 50px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    /* width: 90px;
+    height: 30px; */
     font-weight:bold;
     border-radius: 10px;
     cursor: pointer;
@@ -182,4 +193,21 @@ body{
     color: white;
     background-color: rgb(255, 138, 0);
 }
+.get-btn{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    /* width: 100px;
+    height: 30px; */
+    font-weight:bold;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(255, 138, 0);
+    background-color: white;
+}
+.get-btn:hover{
+    color: white;
+    background-color: rgb(255, 138, 0);
+}
+
 

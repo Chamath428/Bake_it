@@ -25,15 +25,25 @@
             <div class="topic">Add Menu Items</div>
 
             <div class="image-clz">
-                <img src="<?php echo BASEURL ?>/public/images/owner/jr-r-90HdOlGbjck-unsplash.jpg" alt="image" class="img">
+                <i class="fas fa-hotdog"></i>
             </div>
         </section>
 
         <section class="right-section">
 
-             <div class="input-fileds">
-                <label for="item id">Item Id</label>
-                <input type="text" name="item-id" id="item-id" placeholder="Enter Item Id">
+            <div class="input-fileds">
+                <label for="branch">Select Category</label>
+                <select placeholder="Select branch">
+                    <option>Breads</option>
+                    <option>Rolls</option>
+                    <option>Muffins</option>
+                    <option>Cakes</option>
+                    <option>Sweet goods</option>
+
+
+                </select>
+                <!-- <label for="item id">Item Id</label>
+                <input type="text" name="item-id" id="item-id" placeholder="Enter Item Id"> -->
             </div>
 
             <div class="input-fileds">
@@ -48,14 +58,13 @@
                 <input type="number" name="price" id="price" placeholder="Enter Price">
             </div>
             <div class="add-btn">
-            <label for="branch">Branch</label>
+                <label for="branch">Branch</label>
                 <select placeholder="Select branch">
-                    <option>Deniyaya</option>
-                    <option>Akuressa</option>
-                    <option>Matara</option>
-                    <option>Pitabeddara</option>
-                    <option>Morawaka</option>
-                    <option>Kotapola</option>
+                    <option>All</option>
+                    <option>Kasbewa</option>
+                    <option>Baththaramulla</option>
+                    <option>Piliyandala</option>
+
 
                 </select>
                 <!-- <button onclick="viewBranchList()">Add Branch</button> -->
@@ -64,11 +73,11 @@
 
 
             <div class="save">
-               <a href="<?php echo BASEURL."/menuItemOwnerController/saveMenuItem" ?>"> <button onclick="SaveFunction()">Save</button></a>
+                <a href="<?php echo BASEURL . "/ownerMenuController/saveMenuItem" ?>"> <button onclick="SaveFunction()">Save</button></a>
             </div>
 
-            </div>
-        </section>
+    </div>
+    </section>
     </div>
 
 

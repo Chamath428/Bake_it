@@ -1,31 +1,31 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/header_index.css">
-    <script src="../../../public/js/branchManager/header.js" defer ></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css">
+    <script src="<?php echo BASEURL; ?>/public/js/branchManager/header.js" defer ></script>
 </head>
 
     <div class="container">
         <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
             <ul>
                 <li>
-                     <a href="index.php" class="active">
+                     <a href="<?php echo BASEURL; ?>" class="active">
                         <span class="icon"><i class="fas fa-th-large"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                     <a href="overview.php" class="active">
+                     <a href="<?php echo BASEURL."./branchManagerReportController" ?>" class="active">
                         <span class="icon"><i class="fas fa-chart-pie"></i></span>
                         <span class="title">Overview</span>
                     </a>
                 </li>
                 <li>
-                    <a href="totalSalesReports.php" class="hrf">
+                    <a href="<?php echo BASEURL."/branchManagerReportController/getTotalSalesReport" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-user-cog"></i></span>
                         <span class="title">Total Sales Report</span>
                     </a>
                 </li>
                 <li>
-                    <a href="itemWiseSalesReports.php" class="hrf">
+                    <a href="<?php echo BASEURL."/branchManagerReportController/getItemWiseSalesReport" ?>" class="hrf">
                         <span class="icon"><i class="fab fa-elementor"></i></span>
                         <span class="title">ItemWise Sales Reports</span>
                     </a>

@@ -1,7 +1,7 @@
 
-  function summaryViewFunction() {
-    window.location.href="summaryView.php";
-  }
+  // function summaryViewFunction() {
+  //   window.location.href="summaryView.php";
+  // }
 
   var xValues = ["id1", "id2", "id3", "id4"];
 var yValues = [20,34,45,34];

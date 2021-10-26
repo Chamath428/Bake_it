@@ -5,7 +5,7 @@
 }
 .container-1{
     font-size: 14px;
-    min-height: 80vh;
+    min-height: 100vh;
     /* background-color: aqua; */
 }
 .container-2{
@@ -57,28 +57,58 @@
     margin-top: 30px;
 }
 table{
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
 }
 
 table td{
     padding: 12px 5px;
     text-align: left;
+    align-items: left;
 }
 
 table th{
     padding: 12px 5px;
     text-align: left;
 }
-
+table th:last-child{
+    text-align: right;
+}
 table thead{
     background-color: rgb(255, 138, 0);
 }
 tr:nth-child(even){
     background-color: #f2f2f2;
 }
+#orderDetails td:nth-child(2){
+    display: flex;
+    /* background-color: yellow; */
+}
+td:last-child{
+    text-align: right;
+}
 tbody tr:hover{
     border-color: #ddd;
+}
+.cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    /* width: 40%;
+    margin: 0 auto; */
+    /* background-color: tomato; */
+}
+
+.image{
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+}
+
+img{
+    width: 50px;
+    height: 50px;
 }
 
 .total-container{ 
@@ -86,11 +116,11 @@ tbody tr:hover{
     flex-wrap: wrap; 
     align-items: flex-end; 
     flex-direction: column; 
-    width: 100%; 
+    width: 60%; 
     margin: 3rem auto; 
 } 
 .total-container table{ 
-    width: 100%; 
+    width: 80%; 
     max-width: 300px; 
     border-collapse: collapse; 
     border-spacing: 10px; 
@@ -111,8 +141,9 @@ tbody tr:hover{
 
 .btn-container{
     height: 60px;
-    width: 100%;
+    width: 80%;
     margin-top: 40px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     /* background-color: crimson; */
@@ -120,27 +151,28 @@ tbody tr:hover{
 
 
 
-button{
+/* button{
     height: 45px;
     border: 2px solid rgb(255, 138, 0);
     border-radius: 10px;
     font-size: 13px;
     padding: 0px 15px;
     margin-left: 0px;
-}
+} */
 
 .btns button{
     margin-left: 20px;
 }
-
+/* 
 button:hover{
     background-color: rgb(255, 138, 0);
     color: white;
-}
+} */
 
 .popup-container{
     visibility: hidden;
     position: absolute;
+    /* transition: 0s; */
 }
 
 .popup-container-active{
@@ -199,7 +231,7 @@ button:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(195, 195, 195);
+    background-color: rgb(243, 243, 243);
 }
 
 .star{
@@ -216,7 +248,7 @@ button:hover{
     width: 90%;
     height: fit-content;
     padding: 20px 10px;
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(238, 238, 238);
     border-radius: 10px;
 
     margin-bottom: 30px;
@@ -231,4 +263,25 @@ button:hover{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+}
+
+button{
+    /* border: 2px solid rgb(255, 138, 0);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold; */
+    padding:10px;
+    /* background-color: white; */
+    /* padding: 0.8rem; */
+	background-color: transparent;
+	border-radius: 1rem;
+	border: 2px solid rgb(255, 137, 0);
+	font-weight: bold;
+	cursor: pointer;
+	/* transition: 0.3s ease-in-out; */
+}
+
+button:hover{
+    background-color: rgb(255, 138, 0);
+    color: white;
 }

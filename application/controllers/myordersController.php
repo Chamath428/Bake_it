@@ -15,9 +15,13 @@
 			 $this->view("customer/myorders",$data);
 		}
 
-		public function showOrderDetails(){
+		public function showQuickOrderDetails(){
 			$data=array();
-			$this->view("customer/orderdetails",$data);
+			$this->view("customer/quickOrderdetails",$data);
+		}
+		public function showSpecialOrderDetails(){
+			$data=array();
+			$this->view("customer/specialOrderdetails",$data);
 		}
 	}
 

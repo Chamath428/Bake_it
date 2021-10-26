@@ -293,6 +293,16 @@ section{
 #payment-method{
 	width: 40%;
 }
+#payment-method .payment-image{
+	width: 10%;
+	display: none;
+}
+#payment-method .payment-image a img{
+	width: 100px;
+	height: 40px;
+	object-fit: fit;
+}
+
 @media(max-width: 753px){
 	#payment-method{
 		width: 100%;

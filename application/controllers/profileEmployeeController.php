@@ -16,16 +16,16 @@
 			}
 			switch ($_SESSION['role_number']) {
 				case '2':
-					// code...
+					$this->view("owner/profile",$data);
 					break;
 				case '3':
-					// code...
+					$this->view("bakery_manager/profile",$data);
 					break;
 				case '4':
-					$this->view("branchManager/profile",$data);
+					$this->view("branchManager/profile1",$data);
 					break;
 				case '5':
-					// code...
+					$this->view("cashier/profile",$data);
 					break;
 				case '6':
 					$this->view("deliveryPerson/profile",$data);
@@ -53,7 +53,7 @@
 					// code...
 					break;
 				case '4':
-					$this->viewWithMessage("branchManager/profile",$data,$message);
+					$this->viewWithMessage("branchManager/profile1",$data,$message);
 					break;
 				case '5':
 					// code...

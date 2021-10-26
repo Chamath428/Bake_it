@@ -14,13 +14,13 @@
                 </li>
                 <li>
                      <a href="pendingQuickOrders.php" class="active">
-                        <span class="icon"><i class="fas fa-spinner"></i></span>
+                        <span class="icon"><i class="fas fa-hamburger"></i></span>
                         <span class="title">Quick Orders</span>
                     </a>
                 </li>
                 <li>
                     <a href="specialEventOrders.php" class="hrf">
-                        <span class="icon"><i class="fas fa-check-square"></i></span>
+                        <span class="icon"><i class="fas fa-gift"></i></span>
                         <span class="title">Special Event Orders</span>
                     </a>
                 </li>

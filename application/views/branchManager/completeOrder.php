@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/orders.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/header_index.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/footer.css">
-    <script src="../../../public/js/branchManager/header.js" defer ></script>
-    <script src="../../../public/js/branchManager/completeOrder.js" defer ></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/orders.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/footer.css">
+    <script src="<?php echo BASEURL; ?>/public/js/branchManager/header.js" defer ></script>
+    <script src="<?php echo BASEURL; ?>/public/js/branchManager/completeOrder.js" defer ></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
@@ -17,65 +17,65 @@
     <?php include "headerOrders.php"?>
     <div id="body" class="container-1">
         <div class="container-2">
+            <div class="heading">
+              <h1>Branch Orders Overview</h1>
+            </div> 
             <div class="overview-container">
                 <div class="box">
-                    <h4>Total Orders</h4>
-                    <h1>25</h1>
+                    <h4>Total Orders of the Month</h4>
+                    <h1>250</h1>
                 </div>
                 <div class="box">
-                    <h4>Total Orders</h4>
-                    <h1>25</h1>
+                    <h4>Total Orders of the Week</h4>
+                    <h1>80</h1>
                 </div>
                 <div class="box">
-                    <h4>Total Orders</h4>
-                    <h1>25</h1>
+                    <h4>Total Orders of the Day</h4>
+                    <h1>35</h1>
                 </div>
             </div>
+            <div class="heading">
+              <h1>Completed Order Details</h1>
+            </div> 
             <div class="orders-table">
-                <table>
+            <table>
                     <thead>
                       <tr>
-                        <th>Item ID</th>
-                        <th>Item</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
+                        <th>Order ID</th>
+                        <th>Grand Total</th>
+                        <th>Placed Date</th>
                       </tr>
                     </thead>
                     <tbody>
                       
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td><a href="<?php echo BASEURL."/branchManagerOrderController/getCompleteOrderDetails" ?>" class="order-id">#001</a></td>
+                        <td>Rs 250.00</td>
+                        <td>2021/10/26</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                      <td><a href="<?php echo BASEURL."/branchManagerOrderController/getCompleteOrderDetails" ?>" class="order-id">#002</a></td>
+                        <td>Rs 1000.00</td>
+                        <td>2021/10/26</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                      <td><a href="<?php echo BASEURL."/branchManagerOrderController/getCompleteOrderDetails" ?>" class="order-id">#003</a></td>
+                        <td>Rs 500.00</td>
+                        <td>2021/10/26</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                      <td><a href="<?php echo BASEURL."/branchManagerOrderController/getCompleteOrderDetails" ?>" class="order-id">#004</a></td>
+                        <td>Rs 1500.00</td>
+                        <td>2021/10/26</td>
                       </tr>
 
                       <tr>
-                        <td><a href="../../views/branchManager/completeOrderDetails.php" class="order-id">123</a></td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                      <td><a href="<?php echo BASEURL."/branchManagerOrderController/getCompleteOrderDetails" ?>" class="order-id">#005</a></td>
+                        <td>Rs 700.00</td>
+                        <td>2021/10/26</td>
                       </tr>
                       
                       

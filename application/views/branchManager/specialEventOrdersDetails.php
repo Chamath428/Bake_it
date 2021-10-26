@@ -4,52 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/orderDetails.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/header_index.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/css/branchManager/footer.css">
-    <script src="../../../public/js/branchManager/header.js" defer ></script>
-    <script src="../../../public/js/branchManager/orderpopup.js" defer ></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/orderDetails.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/footer.css">
+    <script src="<?php echo BASEURL; ?>/public/js/branchManager/header.js" defer ></script>
+    <script src="<?php echo BASEURL; ?>/public/js/branchManager/orderpopup.js" defer ></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 </head>
 <body class="bgg">
-    <?php include "headerPendingOrders.php"?>
+    <?php include "headerOrders.php"?>
     <div id="body" class="container-1">
         <div class="container-2">
             <div class="heading">
               <h1>Order Details</h1>
             </div>
             <div id="popup-1" class="popup-container">
-              <div class="mid-box">
-                <h1>Assign delivery Person</h1>
-                <div class="row">
+            <div class="mid-box">
+                <h2 style="margin-bottom:15px" style="text-align: center;">Assign Delivery Person</h2>
+                <div class="row1">
                   <div class="d-person">Gihan sandaruwan weerasinghe</div>
                   <button onclick="closePopup()">Assign</button>
                 </div>
-                <div class="row">
-                  <div class="d-person">Gihan sandaruwan weerasinghe</div>
+                <div class="row1">
+                  <div class="d-person">Anupama Bandara</div>
                   <button onclick="closePopup()">Assign</button>
                 </div>
-                <div class="row">
-                  <div class="d-person">Gihan sandaruwan weerasinghe</div>
+                <div class="row1">
+                  <div class="d-person">Thilina Madhusanka</div>
                   <button onclick="closePopup()">Assign</button>
                 </div>
-                <div class="row">
-                  <div class="d-person">Gihan sandaruwan weerasinghe</div>
+                <div class="row1">
+                  <div class="d-person">Chamath Chinthana</div>
                   <button onclick="closePopup()">Assign</button>
                 </div>
-                <div class="row">
-                  <div class="d-person">Gihan sandaruwan weerasinghe</div>
+                <div class="row1">
+                  <div class="d-person">Dilantha Malagamuwa</div>
                   <button>Assign</button>
                 </div>
               </div>
             </div>
             <div id="popup-2" class="popup-container">
-              <div class="mid-box">
-                  <h1>Are you sure to decline?</h1>
+            <div class="mid-box">
+                  <h3 style="margin-bottom:15px" style="text-align: center;">Are you sure to decline?</h3>
                   <div class="yes-no">
-                    <button onclick="closePopup2()">yes decline</button>
+                    <button onclick="closePopup2()">Yes Decline</button>
                     <button onclick="closePopup2()">Cancel</button>
                   </div>
               </div>
@@ -58,10 +58,10 @@
             <div class="order-details">
                
                     <div class="basic-details"> 
-                        <table> 
+                    <table> 
                             <tr> 
                                 <td>Order ID</td> 
-                                <td>#Q117</td> 
+                                <td>#117</td> 
                             </tr> 
                             <tr> 
                                 <td>Customer Name</td> 
@@ -76,28 +76,32 @@
                                 <td>Ongoing</td> 
                             </tr> 
                             <tr> 
+                                <td>Needed Date</td> 
+                                <td>2021/11/01</td> 
+                            </tr> 
+                            <tr> 
                                 <td>Location</td> 
-                                <td><a href="<?php echo BASEURL ?>/public/images/deliveryPerson/map.png"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> 
+                                <td><a href="#"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> 
                             </tr> 
                             <tr> 
                                 <td>Payment Method</td> 
-                                <td> card</td> 
+                                <td> Card</td> 
                                 <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                             </tr>
                             <tr> 
-                              <td>delivery Person</td> 
-                              <td> saman</td> 
+                              <td>Delivery Person</td> 
+                              <td>Saman Fernando</td> 
                               <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                           </tr> 
                         </table> 
                     </div>
             </div>
             <div class="order-details-table">
-                <table>
+            <table id="orderDetails">
                     <thead>
                       <tr>
                         <th>Item ID</th>
-                        <th>Item</th>
+                        <th>Food Item</th>
                         <th>Price</th>
                         <th>Quantity</th>
                       </tr>
@@ -105,40 +109,49 @@
                     <tbody>
                       
                       <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
+                        <td>#001</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Chicken Burger</p></div>
+                          </div>
+                        </td>
                         <td>350.00</td>
-                        <td>gfzc</td>
+                        <td>10</td>
                       </tr>
-
                       <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td>#002</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Fish Burger</p></div>
+                          </div>
+                        </td>
+                        <td>250.00</td>
+                        <td>10</td>
                       </tr>
-
                       <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td>#003</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Ham Burger</p></div>
+                          </div>
+                        </td>
+                        <td>300.00</td>
+                        <td>10</td>
                       </tr>
-
                       <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
+                        <td>#004</td>
+                        <td>
+                          <div class="cell">
+                            <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                            <div><p>Cheese Burger</p></div>
+                          </div>
+                        </td>
+                        <td>400.00</td>
+                        <td>10</td>
                       </tr>
-
-                      <tr>
-                        <td>123</td>
-                        <td>jhjhb</td>
-                        <td>350.00</td>
-                        <td>gfzc</td>
-                       </tr>
-                      
                       
                     </tbody>
                   </table>
@@ -147,15 +160,15 @@
               <table> 
                <tr> 
                 <td>Subtotal</td> 
-                <td>300.00 LKR</td> 
+                <td>13000.00 LKR</td> 
                </tr> 
                <tr> 
                 <td>Delivery Tax</td> 
-                <td>100.00 LKR</td> 
+                <td>300.00 LKR</td> 
                </tr> 
                <tr> 
                 <td>Grand Total</td> 
-                <td>400.00 LKR</td> 
+                <td>13300.00 LKR</td> 
                </tr> 
               </table> 
              </div>

@@ -82,8 +82,10 @@
 
                             <td>2</td>
 
+
                             <td>Sandwich Bread</td>
                             <td>RS.65.00</td>
+
 
                             <td> <input type="checkbox" id="Check-box2" onclick="myFunction(this.id)"></td>
 
@@ -94,6 +96,7 @@
                             <td>3</td>
 
                             <td>Kurakkn Bread</td>
+
                             <td>RS.120.00</td>
 
                             <td> <input type="checkbox" id="Check-box3" onclick="myFunction(this.id)"></td>

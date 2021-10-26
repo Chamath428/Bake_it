@@ -26,15 +26,15 @@
 			<div class="category">
 				<h3>Select Category</h3>
 				<select placeholder="Select Category">
-					<option>Category 1</option>
-					<option>Category 2</option>
-					<option>Category 3</option>
-					<option>Category 4</option>
-					<option>Category 5</option>
-					<option>Category 6</option>
+					<option>Flour</option>
+					<option>Meat</option>
+					<option>Vegetabales</option>
 
 				</select>
+				<button class="get-btn">Get Item List</button>
+
 			</div>
+
 			<header class="topic">
 				<h3>Raw Materials</h3>
 			</header>
@@ -64,8 +64,8 @@
 						<tbody>
 							<tr>
 								<td><input type="checkbox" id="Check-box" name="chk"></td>
-								<td><span contenteditable>###</span></td>
-								<td><span contenteditable>item1</span></td>
+								<td><span contenteditable>1</span></td>
+								<td><span contenteditable>Cake </span></td>
 								<td><span contenteditable>15</span></td>
 							</tr>
 

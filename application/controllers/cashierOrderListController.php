@@ -16,14 +16,22 @@
 			$data=array();
 			$this->view("cashier/completedOrder",$data);
 		}
-		public function createQuickOrderCashier(){
+
+		public function getCompleteOrderDetails(){
 			$data=array();
-			$this->view("cashier/createQuickOrder",$data);
+			$this->view("cashier/completeOrderDetails",$data);
 		}
-		public function createSpecialOrderCashier(){
+
+		public function getQuickOrderDetails(){
 			$data=array();
-			$this->view("cashier/createOrderSpecial",$data);
+			$this->view("cashier/quickOrderdetails",$data);
 		}
+
+		public function getSpecialOrderDetails(){
+			$data=array();
+			$this->view("cashier/specialOrderdetails",$data);
+		}
+
 
 	}
 
