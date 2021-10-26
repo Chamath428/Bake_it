@@ -21,7 +21,7 @@
 
 	<?php require_once("header.php"); ?>
 
-	<div class="bgg" id="body">
+	<div class="bgg rawMaterials-body" id="body">
 		<div class="middle-section">
 			<div class="category">
 				<h3>Select Category</h3>

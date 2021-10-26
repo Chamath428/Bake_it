@@ -16,6 +16,7 @@ body{
 }
 .bgg{
   font-size: 14px;
+  /* display: none; */
 
 }
 .content{
@@ -29,23 +30,30 @@ section{
 	
 }
 h3{
-	margin-left: 100px;
+	/* margin-left: 100px; */
 	margin-top: 20px;
 
 }
 
-/*Desktop Orders Starts*/
+.desktop-orders{
+	/* display: none; */
+	margin-left: 100px;
+}
 .order-container{
 	width: 100%;
+	margin: 0;
+	/* margin-left: 100px; */
 	position: absolute;
 	transition: transform 1s;
+	
+
 }
 
 .order-container table{
 	width: 64%;
 	border-collapse: collapse;
 	/* margin: 60px auto; */
-	margin-left: 100px;
+	/* margin-left: 100px; */
 	margin-top: 20px;
 	/* border-spacing: 10px; */
 }
@@ -68,7 +76,7 @@ h3{
 .order-btn{
 	display: inline-block;
 	position: relative;
-	margin-left: 100px;
+	/* margin-left: 100px; */
 	margin-top: 20px;
 }
 .order-btn span{
@@ -182,4 +190,7 @@ h3{
 }
 .content-table tbody tr:nth-of-type(even){
     background-color: #f3f3f3;
+}
+.container{
+	z-index: 2;
 }

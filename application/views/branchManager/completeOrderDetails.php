@@ -42,7 +42,7 @@
 
         
             <div class="heading">
-              <h1>Order Details</h1>
+              <h1>Ongoing Order Details</h1>
             </div>
             <div class="order-details">
                

@@ -45,7 +45,7 @@
                             <input type="number" name="price" id="price"  placeholder="Enter Price">
                     </div>
                     <div>
-                        <button onclick="viewBranchList()">Add Branch</button>
+                        <button onclick="viewBranchList()">Add Outlet</button>
 
                     </div>
                 
@@ -61,15 +61,15 @@
                         <input type="checkbox">
                         <!-- <span class="checkmark"></span> -->
                     </label>
-                    <label class="contr">Branch 1
+                    <label class="contr">Outlet 1
                         <input type="checkbox" >
                         <!-- <span class="checkmark"></span> -->
                     </label>
-                    <label class="contr">Branch 2
+                    <label class="contr">Outlet 2
                         <input type="checkbox" >
                         <!-- <span class="checkmark"></span> -->
                     </label>
-                    <label class="contr">Branch 3
+                    <label class="contr">Outlet 3
                         <input type="checkbox">
                         <!-- <span class="checkmark"></span> -->
                     </label>
