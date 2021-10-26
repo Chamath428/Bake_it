@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-checkout.css">
+	<script src="<?php echo BASEURL ?>/public/js/customer/message.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/checkout.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
@@ -161,7 +162,7 @@
 			</div>
 			</div>
 			<div class="placeorder">
-				<input type="submit" name="placeorder" value="Place Order">
+				<input type="submit" name="placeorder" value="Place Order" onclick="showAlert('Prder Placed Succefully')">
 			</div>
 		</form>
 	</section>
