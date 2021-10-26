@@ -32,6 +32,13 @@
                     <span class="title">Reviews</span>
                 </a>
             </li>
+            <li class="logout">
+                <a href="<?php echo BASEURL.'/loginController/logout'; ?>" class="hrf">
+                    <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                    <span class="title">Logout</span>
+                </a>
+            </li>
+
         </ul>
     </div>
     <div id="arrowAnim">
@@ -80,7 +87,7 @@
                 <i class="fas fa-bell"><?php include "notificationPanel.php"?></i>
             </a>
         </span>
-        <span class ="sign-out"><a href="#"><i class="fas fa-sign-out-alt"></i></a></span>
+        <span class ="sign-out"><a href="<?php echo BASEURL.'/loginController/logout' ?>"><i class="fas fa-sign-out-alt"></i></a></span>
         <!-- <span class="text"><a href="#">Logout</a></span> -->
         <span class="side-toggle">
             <a href="#" class="icon" onclick="sidetoggle()">

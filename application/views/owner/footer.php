@@ -11,9 +11,9 @@
               <div class="footer-col">
                   <h4>Get help</h4>
                   <ul>
-                      <li><a href="#">Order Status</a></li>
-                      <li><a href="#">Delivery Location</a></li>
-                      <li><a href="#">Other Assgined Deliveries</a></li>
+                      <li><a href="#">Daily Sales Report</a></li>
+                      <li><a href="#">Menu Items</a></li>
+                      <li><a href="#">Stock Categories</a></li>
                   </ul>
               </div>
               <div class="footer-col">

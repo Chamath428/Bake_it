@@ -53,6 +53,9 @@ a{
     z-index: 100;
 
 }
+.container .navigation ul .logout{
+    display: none;
+}
 .container .navigation ul li a {
     position:  relative;
     width: 100%;
@@ -60,8 +63,7 @@ a{
     text-decoration: none;
     color: white;
     font-weight: 500px;
-    transition: 0.2s ease-in-out;
-
+    transition: 0.2s ease-in-out;  
 }
 .container .navigation ul li a .icon{
     position:  relative;
@@ -256,6 +258,9 @@ a{
     }
     .container .navigation ul li{
         margin-top: 0%;
+    }
+    .container .navigation ul .logout{
+        display: block;
     }
     
     #body{

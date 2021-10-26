@@ -1,7 +1,7 @@
 <?php 
 
-	/**
-	 * 
+	/*
+		This controller will controll both branch managers and cashiers menu as both functionalities are similler.
 	 */
 	class branchManagerMenuController extends bakeItFramework
 	{
@@ -18,7 +18,12 @@
 			$data[1]=$selectedCategory;
 			$data[2]=$categories;
 			$data[3]=$catrgoryItems;
-			$this->view("branchManager/menu",$data);
+			if ($_SESSION['role_number']==4) {
+				$this->view("branchManager/menu",$data);
+			}else if ($_SESSION['role_number']==5) {
+				$this->view("cashier/menu",$data);
+			}
+			
 		}
 
 		public function updateIndex($category_id,$message=[]){
@@ -28,7 +33,11 @@
 			$data[1]=$selectedCategory;
 			$data[2]=$categories;
 			$data[3]=$catrgoryItems;
-			$this->viewWithMessage("branchManager/menu",$data,$message);
+			if ($_SESSION['role_number']==4) {
+				$this->view("branchManager/menu",$data);
+			}else if ($_SESSION['role_number']==5) {
+				$this->view("cashier/menu",$data);
+			}
 		}
 
 		public function getItems(){

@@ -100,17 +100,32 @@
             width: 50%;
       }
       .available-body #selection-box{
+<<<<<<< HEAD
             width: 50%;
             margin: 5% 32% 5% 26%;
       }
       .question{
             font-size: 14px;
+=======
+            width: 60%;
+            margin: 5% 32% 5% 19%;
+            padding: 0;
+      }
+      .question{
+            font-size: 13px;
+            margin-bottom: 0px;
+>>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
       }
       .click-available{
             flex-direction: column;
       }
       .click-available > div{
             margin-bottom: 8px;
+<<<<<<< HEAD
+=======
+            padding: 2px;
+            font-size: 13px;
+>>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
       }
 }
 @media(max-width:480px){

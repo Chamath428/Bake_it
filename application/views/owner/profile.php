@@ -55,15 +55,15 @@
 
                             <div class="input-fileds">
                                 <label for="password">Current Password</label>
-                                <input type="password" name="password" id="password"  value="********">
+                                <input type="password" name="password" id="password"  value="">
                             </div>
                             <div class="input-fileds">
                                 <label for="new_password">New Password(if changing)</label>
-                                <input type="password" name="password" id="password"  value require>
+                                <input type="password" name="password" id="password"  value required="">
                             </div>
                             <div class="input-fileds">
                                 <label for="com_new_password">Comfirm New Password</label>
-                                <input type="password" name="password" id="password"  value require>
+                                <input type="password" name="password" id="password"  value required="">
                             </div>
                             <div class="btn-update">
                                 <button onclick="updateDetailsFunction()">Update User Account</button>

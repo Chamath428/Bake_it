@@ -39,7 +39,7 @@
                         <h3>User Account Details</h3>
                         <div class="input-fileds">
                                 <label for="email">Email Address</label>
-                                <input type="email" name="email" id="email"  value="infobakeit@gmail.com">
+                                <input type="email" name="email" id="email" readonly value="infobakeit@gmail.com">
                             </div>
                             <div class="input-fileds">
                                 <label for="number">Phone Number</label>

@@ -10,19 +10,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="hrf">
+                    <a href="<?php echo BASEURL."/branchManagerMenuController"; ?>" class="hrf">
                         <span class="icon"> <i class="fab fa-elementor"></i></span>
                         <span class="title">Menu</span>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo BASEURL."/cashierOrderListController/createQuickOrderCashier" ?>" class="hrf">
+                    <a href="<?php echo BASEURL."/cashierCreateOrderController"; ?>" class="hrf">
                         <span class="icon"><i class="fas fa-hamburger"></i></span>
                         <span class="title">Quick Order</span>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo BASEURL."/cashierOrderListController/createSpecialOrderCashier" ?>" class="hrf">
+                    <a href="<?php echo BASEURL."/cashierCreateOrderController/createSpecialOrderCashier" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-gift"></i></span>
                         <span class="title">Special Order</span>
                     </a>

@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-header.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-footer.css">
-        <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
-        <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-availability.js"></script>
-        <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-reveiws.css">
-        <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/index.js"></script>
-        <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-header.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-footer.css">
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-header.js" defer ></script>
+    <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-availability.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-reveiws.css">
+    <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 
     </head>
     <body>
@@ -16,7 +18,7 @@
         <?php include('headerDP.php'); ?>
        </section>
         
-         <div  class="reviews-body" id="body">
+         <div  class=" bgg reviews-body" id="body">
            <div class="rev-topic">Overview of Reviews</div>
            <div class="row">
                 <div class="col">
@@ -41,7 +43,7 @@
                <tbody>
                    <tr>
                        <td label="Date">01/09/2021</td>
-                       <td label="Order No">#001</td>
+                       <td label="Order No">110</td>
                        <td label="Review Description">You deliverd ontime.nice service</td>
                        <td label="Rated Stars">
                            <i id="fas-star" class="fas fa-star"></i>
@@ -53,7 +55,7 @@
                    </tr>
                    <tr>
                        <td label="Date">02/09/2021</td>
-                       <td label="Order No">#002</td>
+                       <td label="Order No">112</td>
                        <td label="Review Description">disgusting service</td>
                        <td label="Rated Stars">
                            <i id="far-star" class="far fa-star"></i>
@@ -65,7 +67,7 @@
                    </tr>
                    <tr>
                        <td label="Date">03/09/2021</td>
-                       <td label="Order No">#003</td>
+                       <td label="Order No">113</td>
                        <td label="Review Description">Good service</td>
                        <td label="Rated Stars">
                            <i id="fas-star" class="fas fa-star"></i>
@@ -77,7 +79,7 @@
                    </tr>
                    <tr>
                        <td label="Date">04/09/2021</td>
-                       <td label="Order No">#004</td>
+                       <td label="Order No">115</td>
                        <td label="Review Description">Good service</td>
                        <td label="Rated Stars">
                            <i id="fas-star" class="fas fa-star"></i>
@@ -89,7 +91,7 @@
                    </tr>
                    <tr>
                        <td label="Date">04/09/2021</td>
-                       <td label="Order No">#005</td>
+                       <td label="Order No">116</td>
                        <td label="Review Description">You deliverd ontime.nice service</td>
                        <td label="Rated Stars">
                            <i id="fas-star" class="fas fa-star"></i>

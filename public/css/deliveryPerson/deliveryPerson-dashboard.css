@@ -19,6 +19,7 @@
   margin-left: 70px;
   line-height: 1.4;
   transition: margin-left 0.5s;
+  font-size: 14px;
 }
 #body.active{
   margin-left: 310px;

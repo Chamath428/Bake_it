@@ -13,11 +13,11 @@ class ownerMenuController extends bakeItFramework
     
     public function addMenuItem(){
         $data=array();
-        $this->view("Owner/addMenuItem",$data);
+        $this->view("owner/addMenuItem",$data);
     }
     public function saveMenuItem(){
         $data=array();
-        $this->view("Owner/menuItems",$data);
+        $this->view("owner/menuItems",$data);
     }
 }
 

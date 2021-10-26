@@ -39,14 +39,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="completeOrderDetails.php">0001</a></td>
+                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails"; ?>">0001</a></td>
                                 <td>Special</td>
                                 <td>Deniyaya</td>                    
                                 <td>Completed</td>
                                 
                             </tr>
                             <tr>
-                                <td><a href="completeOrderDetails.php">0002</a></td>
+                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails"; ?>">0002</a></td>
                                 <td>Quick</td>
                                 <td>Matara</td>                    
                                 <td>Completed</td>
@@ -54,7 +54,7 @@
                             
                             </tr>
                             <tr>
-                                <td><a href="completeOrderDetails.php">0003</a></td>
+                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails"; ?>">0003</a></td>
                                 <td>Quick</td>
                                 <td>Akuressa</td>                    
                                 <td>Completed</td>

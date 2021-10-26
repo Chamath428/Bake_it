@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 // var win = window,
 //     doc = document,
@@ -14,13 +15,22 @@ console.log(screen2);
 
 var screen =screen.width;
 console.log("screen width:"+ screen);
+=======
+// var screen = screen.width;
+var screen = window.screen.availWidth;
+console.log(screen);
+>>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
 
 if(screen > 700){
   screen.focus();
   console.log("side nav is working");
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
       var mini = true;
 
-    function toggleSidebar() {
+  function toggleSidebar() {
       if (mini) {
         console.log("opening sidebar");
         document.getElementById("mySidebar").style.width = "300px";
@@ -51,6 +61,7 @@ else if(screen < 700){
     }
   }
 }
+
 
 
 //notification panel

@@ -254,15 +254,32 @@ button:hover a{
 }
 @media(max-width:787px){
     .delivery-body .del-topic{
+<<<<<<< HEAD
         margin-left: 10px;
         font-size: 18px;
     }
+=======
+        margin-left: 76px;
+        font-size: 18px;
+    }
+    .overview-body .del-topic{
+        margin-left: 97px;
+        text-align: center;
+    }
+>>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
     .delivery-body .row{
         margin-top: 10px;
         margin-left: 10px;
         flex-wrap: nowrap;
         /* flex-direction: column; */
     }
+<<<<<<< HEAD
+=======
+    .delivery-body .history-row{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+>>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
     .delivery-body .row .col{
         width: 70%;
         margin-bottom: 10px;
@@ -271,4 +288,24 @@ button:hover a{
         padding: 7px;
         font-size: 14px;
     }
+<<<<<<< HEAD
+=======
+    .delivery-body .cal-table {
+        margin-top: 5px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+    }
+    .overview-body{
+		height: 0%;
+	}
+    .cal-table .delivery-calander{
+        padding: 20px;
+    }
+    .overview-body .row .col{
+        /* width: 88%; */
+        margin-left: 40px;
+    }
+>>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
 }
