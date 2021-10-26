@@ -22,7 +22,7 @@
     
     <div class="delivery-body overview-body" id="body">
         <div class="del-topic">Overview</div>
-        <div class="row">
+        <div class="row history-row">
             <div class="col">
                 <h4>Total Deliveiries</h4>
                 <h1>125</h1>
@@ -56,40 +56,40 @@
                 <tbody>
                     <tr>
                         <td label="Time">10.00 a.m</td>
-                        <td label="Order No">1</td>
-                        <td label="Location">Panadura</td>
+                        <td label="Order No">117</td>
+                        <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><button>More details</button></td>
+                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
-                        <td label="Order No">2</td>
-                        <td label="Location">Panadura</td>
+                        <td label="Order No">118</td>
+                        <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><button>More details</button></td>
+                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
-                        <td label="Order No">3</td>
-                        <td label="Location">Panadura</td>
+                        <td label="Order No">213</td>
+                        <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><button>More details</button></td>
+                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
-                        <td label="Order No">4</td>
-                        <td label="Location">Panadura</td>
+                        <td label="Order No">214</td>
+                        <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><button>More details</button></td>
+                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
                 </tbody>
             </table>
             </div>
         </div>
     </div>
-    <section>
+    <div>
             <?php require_once('footerDP.php');?>  
-    </section>       
+    </div>       
     
      
 </body>

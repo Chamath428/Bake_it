@@ -36,4 +36,21 @@
     .wallet-container{
         height: 0%;
     }
+    .wallet-container .wallet-topic{
+        margin-left: 65px;
+        font-size: 18px;
+    }
+    .wallet-container .text{
+        padding: 0%;
+        margin: 15px 0px 15px 15px;
+        width: 95%;
+        font-size: 14px;
+    }
+    .wallet-container .text .text-fill{
+        margin-left: 40px;
+    }
+    .wallet-container .text .text-fill input {
+        width: 76%;
+        padding: 10px 5px;
+    }
 }
