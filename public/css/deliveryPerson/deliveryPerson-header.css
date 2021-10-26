@@ -258,6 +258,7 @@ a{
     }
     .container .navigation ul li{
         margin-top: 0%;
+        z-index: 10000;
     }
     .container .navigation ul .logout{
         display: block;

@@ -36,7 +36,7 @@ img {
 /* Showcase */
 .showcase {
   min-height: 400px;
-  background: url(../../images/deliveryPerson/showcase.png);
+  background: url(../../images/deliveryPerson/showcase2.jpg);
   background-size: cover;
   background-position: center;
   padding-left: 3rem;
@@ -56,7 +56,8 @@ img {
 .showcase p {
   font-size: 1.3rem;
   margin-top: 0;
-  color: var(--light);
+  /* color: var(--light); */
+  color: #fdf8f8;
 } 
 /* Boxes */
 .boxes {

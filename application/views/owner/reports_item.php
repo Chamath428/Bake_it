@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/reports_item.css" class="rel">
+    <!-- <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/reports_item.css" class="rel"> -->
+    <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/branchManager/itemWiseSalesReports.css" class="rel">
+
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css" class="rel">
     <meta charset="UTF-8">
@@ -20,7 +22,7 @@
             <div class="bgg" id="body">
 
                   
-                  <div class="sales-topic">Itemwise Sales Reports</div>
+                  <div class="sales-topic">Category Sales Reports</div>
 
                         <div class="select-raw">
                               <div class="select-raw-btn2">
@@ -88,7 +90,7 @@
                               </div>
 
                               <div class="generate-btn">
-                                    <a href="report_view.php"><button>Generate</button></a>
+                                    <a href="#"><button>Generate</button></a>
                               </div>
                               </div>
 
@@ -149,7 +151,7 @@
                               </div>
 
                               <div class="generate-btn">
-                                    <a href="report_view.php"><button>Generate</button></a>
+                                    <a href="#"><button>Generate</button></a>
                               </div>
                               </div>
 
@@ -199,7 +201,7 @@
                               </div>
 
                               <div class="generate-btn">
-                                    <a href="report_view.php"><button>Generate</button></a>
+                                    <a href="#"><button>Generate</button></a>
                               </div>
                               </div>
 
@@ -258,7 +260,7 @@
 
 
                               <div class="generate-btn">
-                                    <a href="report_view.php"><button>Generate</button></a>
+                                    <a href="#"><button>Generate</button></a>
                               </div>
                               </div>
 

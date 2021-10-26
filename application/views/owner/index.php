@@ -49,7 +49,7 @@
                 <div class="box">
                     <i class="fas fa-globe fa-4x"></i>
                     <h3>Marketing</h3>
-                    <p>Keep good customer service and expand customer base on your branch</p>
+                    <p>Keep good customer service and expand customer base on your Outlet</p>
                 </div>
                 <div class="box">
                     <i class="fas fa-store fa-4x"></i>

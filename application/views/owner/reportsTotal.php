@@ -3,7 +3,9 @@
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <link rel="stylesheet" href="../../../public/css/owner/sales_reports.css" class="rel">
+    <!-- <link rel="stylesheet" href="../../../public/css/owner/sales_reports.css" class="rel"> -->
+    <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/branchManager/totalSalesReports.css" class="rel">
+
     <link rel="stylesheet" href="../../../public/css/owner/footer.css" class="rel">
     <link rel="stylesheet" href="../../../public/css/owner/header.css" class="rel">
     <meta charset="UTF-8">
