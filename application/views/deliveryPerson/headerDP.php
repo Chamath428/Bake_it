@@ -91,6 +91,7 @@
         <!-- <span class="text"><a href="#">Logout</a></span> -->
         <span class="side-toggle">
             <a href="#" class="icon" onclick="sidetoggle()">
+            <!-- <a href="" class="icon"> -->
                 <i class="fa fa-bars"></i>
             </a>
         </span>

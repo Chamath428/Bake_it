@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.sales-report{
+    min-height: 80vh;
+}
+.topic-sales{
+    font-size: 25px;
+    font-weight: 800;
+    padding: 5px;
+    margin: 20px 0  30px 100px;
+}
+.report-selection{
+  margin-left: 100px;
+  margin-bottom: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.report-selection .condition{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-bottom: 1px solid rgb(255,138,0);
+  margin: 10px 0px;
+}
+.report-selection .time{
+  border-bottom: none;
+}
+.report-selection .condition .topic{
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.report-selection .condition select {
+    width: 100%;
+    background-color: white;
+    border: none;
+    padding: 10px 0;
+    outline: none;
+}
+
+.report-selection .condition .time-selection{
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+  align-items: flex-start;
+}
+.report-selection .condition .time-selection label{
+    font-weight: 500;
+    margin-left: 15px;
+    width: 30%;
+    display: flex;
+    border: 2px solid red;
+}
+.report-selection .condition .time-selection label span:last-child{
+    margin-left: 70px;
+    justify-content: flex-end; 
+}
+  
+.report-selection .condition .time-selection .sub-time-selection{
+     /* display: grid; */
+     display: none;
+     grid-template-columns: auto auto auto auto auto auto;
+     grid-gap: 20px;
+     padding: 10px;
+     align-items: center;
+  
+}
+.report-selection .condition .time-selection .sub-time-selection label{
+    text-align:right;
+    font-weight: 400;
+}
+  
+.report-selection .condition .time-selection  .sub-time-selection .time-dropdown{
+   border-bottom: 1px solid rgb(255,138,0);
+}
+
+.report-selection .generate-btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.report-selection .generate-btn button{
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid rgb(255,138,0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-weight: bold;
+}
+.report-selection .generate-btn button:hover{
+  color: white;
+  background-color:rgb(255,138,0);
+}
+
+/*this is done to expand the height view*/
+.category-report{
+    margin-bottom: 20px;
+}

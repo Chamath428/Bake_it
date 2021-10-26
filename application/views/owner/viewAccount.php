@@ -54,7 +54,7 @@
             </form>
 
         <div class="account-container" id="view-accounts">
-            <div class="topic">Employee Accounts</div>
+            <div class="topic" id="view-topic">Employee Accounts</div>
             <div class="profile-collection">
                 <?php foreach ($data as $key => $value) {
                  ?>
