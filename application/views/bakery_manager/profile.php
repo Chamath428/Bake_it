@@ -34,34 +34,34 @@
                         <h3 class="profile-topic">User Profile</h3>
                         <div class="input-fileds">
                                 <label for="text">First Name</label>
-                                <input type="text" name="text" id="email"  value="<?php echo $data['firstname']; ?>">
+                                <input type="text" name="text" id="email" readonly value="<?php echo $data['firstname']; ?>">
                             </div>
                             <div class="input-fileds">
                                 <label for="text">Second Name</label>
-                                <input type="text" name="text" id="email"  value="<?php echo $data['lastname']; ?>">
+                                <input type="text" name="text" id="email" readonly value="<?php echo $data['lastname']; ?>">
                             </div>
                         <h3>User Account Details</h3>
                         <div class="input-fileds">
                                 <label for="email">Email Address</label>
-                                <input type="email" name="email" id="email"  value="<?php echo $data['email']; ?>">
+                                <input type="email" name="email" id="email"  readonly value="<?php echo $data['email']; ?>">
                             </div>
                             <div class="input-fileds">
                                 <label for="number">Phone Number</label>
-                                <input type="number" name="number" id="number"  value="<?php echo $data['phonenumber']; ?>">
+                                <input type="number" name="number" id="number" readonly value="<?php echo $data['phonenumber']; ?>">
                             </div>
                         <h3>Change Password</h3>
 
                             <div class="input-fileds">
                                 <label for="password">Current Password</label>
-                                <input type="password" name="password" id="password"  value="">
+                                <input type="password" name="password" id="password"  value="" required="">
                             </div>
                             <div class="input-fileds">
                                 <label for="new_password">New Password(if changing)</label>
-                                <input type="password" name="password" id="password"  value required="">
+                                <input type="password" name="password" id="password"  value="" required="">
                             </div>
                             <div class="input-fileds">
                                 <label for="com_new_password">Comfirm New Password</label>
-                                <input type="password" name="password" id="password"  value required="">
+                                <input type="password" name="password" id="password"  value="" required="">
                             </div>
                             <div class="btn-update">
                                 <button onclick="updateDetailsFunction()">Update User Account</button>
