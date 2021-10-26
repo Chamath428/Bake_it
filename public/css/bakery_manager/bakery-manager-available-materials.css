@@ -122,6 +122,7 @@ body{
 .button-retrieve{
    text-align:left;
    margin-left: 750px;
+   margin-top: 30px;
 }
 #submit{
     width: 79px;
