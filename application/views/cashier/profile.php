@@ -75,7 +75,7 @@
                                 <input type="password" name="current-password" id="password"  value="">
                             </div>
                             <div class="input-fileds">
-                                <label for="new_password">New Password(if changing)</label>
+                                <label for="new_password">New Password</label>
                                 <input type="password" name="new-password" id="password"  value="" required="">
                             </div>
                             <div class="input-fileds">

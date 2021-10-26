@@ -41,7 +41,7 @@
 					<td>Ongoing</td>
 				</tr>
 				<tr>
-					<td><a href="orderdetails.php">#Q118</a></td>
+					<td><a href="<?php echo BASEURL."/myordersController/showQuickOrderDetails"?>">#Q118</a></td>
 					<td>1600.00LKR</td>
 					<td>01/09/2021</td>
 					<td>Completed</td>
@@ -63,7 +63,7 @@
 					<td>Ongoing</td>
 				</tr>
 				<tr>
-					<td><a href="">#SP118</a></td>
+					<td><a href="<?php echo BASEURL."/myordersController/showQuickOrderDetails"?>">#SP118</a></td>
 					<td>1600.00LKR</td>
 					<td>01/09/2021</td>
 					<td>Completed</td>

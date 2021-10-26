@@ -164,7 +164,7 @@
 
 		<div class="buttons">
 			<button>Rate Order</button>
-			<button><a href="">Re-Order</a></button>
+			<button><a href="<?php echo BASEURL."/cartController"; ?>">Re-Order</a></button>
 		</div>
 
 	</section>
