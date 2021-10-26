@@ -37,7 +37,7 @@
 			else if ($_POST['phonenumber']=="") {
 				$data['error']="Phone Number is required!";
 			}
-			else if (strlen($_POST['phonenumber'])<10) {
+			else if (strlen($_POST['phonenumber'])!=10) {
 				$data['error']="Please enter a valid phone number.";
 			}
 			else if ($_POST['email']!="" && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {

@@ -115,7 +115,7 @@ section .content-box .address-box .address-inside a button:hover{
 section .content-box .input-box input[type="submit"]{
 	width: 100%;
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: bold;
 	cursor: pointer;
 	outline: none;
 	transition: 0.3s ease-in-out;
