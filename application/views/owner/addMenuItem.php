@@ -58,7 +58,7 @@
                 <input type="number" name="price" id="price" placeholder="Enter Price">
             </div>
             <div class="add-btn">
-                <label for="branch">Branch</label>
+                <label for="Outlet">Outlet</label>
                 <select placeholder="Select branch">
                     <option>All</option>
                     <option>Kasbewa</option>

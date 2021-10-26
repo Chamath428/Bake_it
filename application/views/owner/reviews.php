@@ -81,11 +81,7 @@
                    <tbody>
                        <tr>
                            <td label="Date">01/09/2021</td>
-<<<<<<< HEAD
                            <td label="Order No">117</td>
-=======
-                           <td label="Order No">110</td>
->>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
                            <td label="Review Description">You deliverd ontime.nice service</td>
                            <td label="Rated Stars">
                                <i id="fas-star" class="fas fa-star"></i>
@@ -97,13 +93,8 @@
                        </tr>
                        <tr>
                            <td label="Date">02/09/2021</td>
-<<<<<<< HEAD
                            <td label="Order No">118</td>
                            <td label="Review Description">disgusting service</td>
-=======
-                           <td label="Order No">111</td>
-                           <td label="Review Description">Good place to buy fresh breads</td>
->>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
                            <td label="Rated Stars">
                                <i id="far-star" class="fas fa-star"></i>
                                <i id="far-star" class="fas fa-star"></i>
@@ -114,11 +105,7 @@
                        </tr>
                        <tr>
                            <td label="Date">03/09/2021</td>
-<<<<<<< HEAD
                            <td label="Order No">119</td>
-=======
-                           <td label="Order No">114</td>
->>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
                            <td label="Review Description">Good service</td>
                            <td label="Rated Stars">
                                <i id="fas-star" class="fas fa-star"></i>
@@ -130,11 +117,7 @@
                        </tr>
                        <tr>
                            <td label="Date">04/09/2021</td>
-<<<<<<< HEAD
                            <td label="Order No">120</td>
-=======
-                           <td label="Order No">115</td>
->>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
                            <td label="Review Description">Good service</td>
                            <td label="Rated Stars">
                                <i id="fas-star" class="fas fa-star"></i>
@@ -146,11 +129,7 @@
                        </tr>
                        <tr>
                            <td label="Date">04/09/2021</td>
-<<<<<<< HEAD
                            <td label="Order No">125</td>
-=======
-                           <td label="Order No">116</td>
->>>>>>> 7b54052f2b4b76186bde42f4c8ab845142862ef7
                            <td label="Review Description">You deliverd ontime.nice service</td>
                            <td label="Rated Stars">
                                <i id="fas-star" class="fas fa-star"></i>

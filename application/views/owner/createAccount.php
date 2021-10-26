@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="text" id="last-text">
-                    <label for="Branch">Branch</label>
+                    <label for="Branch">Outlet</label>
                     <div class="text-fill">
 
                         <select placeholder="Select Branch" name="branch_Id">

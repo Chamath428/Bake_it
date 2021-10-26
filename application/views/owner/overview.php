@@ -27,7 +27,7 @@
               <canvas id="myChart2" style="width:100%;max-width:700px"></canvas> 
              </div>
         </div>
-        <div class="topic-2">Menu Items Sales Overview</div>
+        <div class="topic-2">Category Sales Overview</div>
         <div class="row-container">
              <div class="col">
               <canvas id="myChart3" style="width:100%;max-width:700px"></canvas>
