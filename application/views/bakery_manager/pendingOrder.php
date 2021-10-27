@@ -33,21 +33,21 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td><a href="moreDetailsPendingOrder.php">0001</a></td>
+                    <td><a href="<?php echo BASEURL."/bakeryManagerOrderController/pendingOrderDetailsBakery" ?>">0001</a></td>
                     <td>2021/12/03</td>
                     <td>Kesbewa</td>  
                     
                     
                 </tr>
                 <tr>
-                    <td><a href="moreDetailsPendingOrder.php">0001</a></td>
+                    <td><a href="<?php echo BASEURL."/bakeryManagerOrderController/completeOrderDetailsBakery" ?>">0001</a></td>
                     <td>2021/03/04</td>
                     <td>Battaramulla</td>  
                     
                     
                 </tr>
                 <tr>
-                    <td><a href="moreDetailsPendingOrder.php">0001</a></td>
+                    <td><a href="<?php echo BASEURL."/bakeryManagerOrderController/completeOrderDetailsBakery" ?>">0001</a></td>
                     <td>2021/04/03</td>
                     <td>Piliyandala</td>    
                 </tr>

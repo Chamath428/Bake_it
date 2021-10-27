@@ -62,7 +62,7 @@
                             </tr> 
                             <tr> 
                                 <td>Order Type</td> 
-                                <td>Special Event Order</td> 
+                                <td>Special Order</td> 
                             </tr> 
                             <tr> 
                                 <td>Needed Date</td> 
