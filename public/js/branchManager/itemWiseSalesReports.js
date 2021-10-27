@@ -1,37 +1,21 @@
-var sisrd = document.getElementById("drop-down-list-daily-item-id");
-var sisrw = document.getElementById("drop-down-list-weekly-item-id");
-var sisrm = document.getElementById("drop-down-list-monthly-item-id");
-var sisro = document.getElementById("drop-down-list-outlet-item-id");
-
-function selectTotalSaleRepoDaily(){
-
-  sisrd.style.display = "flex";
-  sisrw.style.display = "none";
-  sisrm.style.display = "none";
-  sisro.style.display = "none";
+function showSelection1(){
+  document.getElementById('time1').style.display ="grid";
 }
-function selectTotalSaleRepoWeekly(){
-
-
-  sisrw.style.display = "flex";
-  sisrd.style.display = "none";
-  sisrm.style.display = "none";
-  sisro.style.display = "none";
-
-
+function showSelection2(){
+  document.getElementById('time2').style.display ="grid";
 }
-function selectTotalSaleRepoMonthly(){
-  sisrw.style.display = "none";
-  sisrd.style.display = "none";
-  sisrm.style.display = "flex";
-  sisro.style.display = "none";
-
+function showSelection3(){
+  document.getElementById('time3').style.display ="grid";
 }
-function selectTotalSaleRepoOutlet(){
-
-
-  sisrw.style.display = "none";
-  sisrd.style.display = "none";
-  sisrm.style.display = "none";
-  sisro.style.display = "flex";
+function notshowSelection1(){
+  document.getElementById('time2').style.display ="none";
+  document.getElementById('time3').style.display ="none";
+}
+function notshowSelection2(){
+  document.getElementById('time1').style.display ="none";
+  document.getElementById('time3').style.display ="none";
+}
+function notshowSelection3(){
+  document.getElementById('time1').style.display ="none";
+  document.getElementById('time2').style.display ="none";
 }

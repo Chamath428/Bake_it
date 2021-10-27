@@ -54,7 +54,7 @@
                 <span class="bakeit">Bake_it</span>
            </div>
             <div class="header-icons"> 
-                <span class="user-icon"><a href="profile.php"><i id="user" class="fas fa-user"></i></a>You logged in as : Branch Manager</span>
+                <span class="user-icon"><a href="<?php echo BASEURL."/profileEmployeeController"; ?>"><i id="user" class="fas fa-user"></i></a>You logged in as : Branch Manager</span>
                 <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
                 <span class ="sign-out"><a href="<?php echo BASEURL.'/loginController/logout' ?>"><i class="fas fa-sign-out-alt"></i>Logout</a></span>
              </div>
