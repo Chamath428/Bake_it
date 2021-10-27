@@ -33,7 +33,7 @@
 
             <div class="drop-down-list">
                 <div class="branch">
-                    <label for="branch">Branch</label>
+                    <label for="branch">Outlet</label>
                     <select placeholder="Select branch">
                         <option>Kesbewa</option>
                         <option>Battaramulla</option>

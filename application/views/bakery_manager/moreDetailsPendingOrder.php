@@ -16,72 +16,104 @@
 </head>
 <body>
 
+<?php require_once("headerOrder.php"); ?>
 
-      <header>
-                <div class="header-container">
-                      <!-- <div class="title"> -->
-                          <span class="bakeit" id="bakeId">Bake_it</span>
-                      <!-- </div> -->
-                      <!-- <div class="header-icons"> -->
-                          <span class="user-icon"><a href="profile.php"><i id="user" class="fas fa-user"></i></a></span>
-                          <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
-                      <!-- </div> -->
-                  </div>
-          </header>
-
-          <div class="back-arrow">
-              <a href="pending_order.php" class="herf-hand-point">
-                <i class='fa' id="back-hand-point">&#xf0a5; </i>
-              </a>
-           
-          </div>
-
-      </div>
-      <div class="order-no">Order - 000#</div>
-      <div class="content">
-            
-      <div class="details">
-            <table class="content-table">
-                <tbody>
-
-                <tr>
-                    <td>Order No</td>
-                    <td>.....</td>  
-                    
-                </tr>
-                <tr>
-                    <td>Date</td>
-                    <td>.....</td>  
-                    
-                </tr>
-                <tr>
-                    <td>Outlet</td>
-                    <td>.....</td>
-
-                </tr>
-                <tr>
-                    <td>.....</td>
-                    <td>.....</td>
-
-                </tr>
-                <tr>
-                    <td>.....</td>
-                    <td>.....</td>
-
-                </tr>
-                <tr>
-                    <td>.....</td>
-                    <td>.....</td>
-
-                </tr>
-            </tbody>
-        </table>
-        <div class="finishebtn">
-            <button onclick="finishedFunction()">Finished</button>
+<div class="order-details">
+               
+               <div class="basic-details"> 
+                   <table> 
+                       <tr> 
+                           <td>Order ID</td> 
+                           <td>#117</td> 
+                       </tr> 
+                       <tr> 
+                           <td>Customer Name</td> 
+                           <td>Chamath Chinthana</td> 
+                       </tr> 
+                       <tr> 
+                           <td>Contact Number</td> 
+                           <td>0712343212</td> 
+                       </tr> 
+                       <tr> 
+                           <td>Order Status</td> 
+                           <td>Ongoing</td> 
+                       </tr> 
+                       <tr> 
+                           <td>Location</td> 
+                           <td><a href="#"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> 
+                       </tr> 
+                       <tr> 
+                           <td>Payment Method</td> 
+                           <td> Card</td> 
+                           <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
+                       </tr>
+                       <tr> 
+                         <td>Delivery Person</td> 
+                         <td>Saman Fernando</td> 
+                         <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
+                     </tr> 
+                   </table> 
+               </div>
+       </div>
+       <div class="order-details-table">
+       <table id="orderDetails">
+               <thead>
+                 <tr>
+                   <th>Item ID</th>
+                   <th>Food Item</th>
+                   <th>Price</th>
+                   <th>Quantity</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 
+                 <tr>
+                   <td>#001</td>
+                   <td>
+                     <div class="cell">
+                       <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                       <div><p>Chicken Burger</p></div>
+                     </div>
+                   </td>
+                   <td>450.00</td>
+                   <td>05</td>
+                 </tr>
+                 <tr>
+                   <td>#002</td>
+                   <td>
+                     <div class="cell">
+                       <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                       <div><p>Fish Burger</p></div>
+                     </div>
+                   </td>
+                   <td>350.00</td>
+                   <td>10</td>
+                 </tr>
+                 
+               </tbody>
+             </table>
+       </div>
+       <div class="total-container"> 
+         <table> 
+          <tr> 
+           <td>Subtotal</td> 
+           <td>3000.00 LKR</td> 
+          </tr> 
+          <tr> 
+           <td>Delivery Tax</td> 
+           <td>100.00 LKR</td> 
+          </tr> 
+          <tr> 
+           <td>Grand Total</td> 
+           <td>3100.00 LKR</td> 
+          </tr> 
+         </table> 
         </div>
-   
-      </div>
-
-      </div>
+        <div class="btn-container">
+          <button class="btn" onclick="popup2()">Decline</button>
+          <button class="btn" onclick="assign()">Assigned <br> Delivery Person</button>
+        </div>
+   </div>
+</div>
 <?php include('footer.php'); ?>
      
