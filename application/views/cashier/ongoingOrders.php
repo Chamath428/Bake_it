@@ -37,33 +37,33 @@
                         <thead>
                             <tr>
                                 <th>Order Id</th>
-                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Reciving Method</th>
                                 <th>Total Price</th>
-                                <th>Assinged Preson</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="<?php echo BASEURL."/cashierOrderListController/getQuickOrderDetails" ?>">0001</a></td>
-                                <td>Deniyaya</td>
-                                <td>50.00 LKR</td>
-                                <td>Thilina</td>
+                                <td>2021/09/04</td>
+                                <td>Home Delivery</td>
+                                <td>Rs: 120.00</td>
 
                             </tr>
                             <tr>
                                 <td><a href="<?php echo BASEURL."/cashierOrderListController/getQuickOrderDetails" ?>">0002</a></td>
-                                <td>Matara</td>
-                                <td>30.00 LKR</td>
-                                <td>Chamath</td>
+                                <td>2021/10/11</td>
+                                <td>Pickup from Shop</td>
+                                <td>Rs: 340.00</td>
 
 
                             </tr>
                             <tr>
                                 <td><a href="<?php echo BASEURL."/cashierOrderListController/getQuickOrderDetails" ?>">0003</a></td>
-                                <td>Akuressa</td>
-                                <td>120.00 LKR</td>
-                                <td>Maleesha</td>
+                                <td>2021/1014</td>
+                                <td>Home Delivery</td>
+                                <td>Rs: 370.00</td>
 
 
                             </tr>
@@ -76,9 +76,9 @@
                         <thead>
                             <tr>
                                 <th>Order Id</th>
-                                <th>Date</th>
-                                <th>Location</th>
-                                <th>Price</th>
+                                <th>Require Date</th>
+                                <th>Reciving Method</th>
+                                <th>Toatal Price</th>
 
                             </tr>
                         </thead>
@@ -86,22 +86,22 @@
                             <tr>
                                 <td><a href="<?php echo BASEURL."/cashierOrderListController/getSpecialOrderDetails" ?>">0001</a></td>
                                 <td>2021/03/04</td>
-                                <td>Deniyaya</td>
-                                <td>300.00 LKR</td>
+                                <td>Home Delivery</td>
+                                <td>Rs: 300.00</td>
 
                             </tr>
                             <tr>
                                 <td><a href="<?php echo BASEURL."/cashierOrderListController/getSpecialOrderDetails" ?>">0002</a></td>
                                 <td>2021/12/03</td>
-                                <td>Akuressa</td>
-                                <td>1200.00 LKR</td>
+                                <td>Pickup from Shop</td>
+                                <td>Rs: 1200.00</td>
 
                             </tr>
                             <tr>
                                 <td><a href="<?php echo BASEURL."/cashierOrderListController/getSpecialOrderDetails" ?>">0003</a></td>
                                 <td>2021/12/09</td>
-                                <td>Matara</td>
-                                <td>1340.00 LKR</td>
+                                <td>Home Delivery</td>
+                                <td>Rs: 1340.00</td>
 
 
                             </tr>

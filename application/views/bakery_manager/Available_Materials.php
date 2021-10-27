@@ -88,7 +88,7 @@ foreach ($data as $key => $value) {
                             <th>Item Id</th>
                             <th>Item Name</th>
                             <th>Quantity</th>
-                            <th>Availablity</th>
+                            <th>Re order level</th>
                         </tr>
                     </thead>
                     <tbody>

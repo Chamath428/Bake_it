@@ -32,8 +32,8 @@
                             <tr>
                                 <th>Order Id</th>
                                 <th>Order Type</th>
-                                <th>Outlet</th>
-                                <th>Status</th>
+                                <th>Completd Date</th>
+                                <th>Total</th>
                                 
                             </tr>
                         </thead>
@@ -41,23 +41,23 @@
                             <tr>
                                 <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails"; ?>">0001</a></td>
                                 <td>Special</td>
-                                <td>Deniyaya</td>                    
-                                <td>Completed</td>
+                                <td>2021/08/09</td>                    
+                                <td>Rs: 200.00</td>
                                 
                             </tr>
                             <tr>
                                 <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails"; ?>">0002</a></td>
                                 <td>Quick</td>
-                                <td>Matara</td>                    
-                                <td>Completed</td>
+                                <td>2021/10/22</td>                    
+                                <td>Rs: 100.00</td>
                                 
                             
                             </tr>
                             <tr>
                                 <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails"; ?>">0003</a></td>
                                 <td>Quick</td>
-                                <td>Akuressa</td>                    
-                                <td>Completed</td>
+                                <td>2021/10/25</td>                    
+                                <td>Rs: 450.00</td>
                                 
                             
                             </tr>
