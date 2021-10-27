@@ -41,6 +41,7 @@
                                 <th>Reciving Method</th>
                                 <th>Total Price</th>
 
+
                             </tr>
                         </thead>
                         <tbody>

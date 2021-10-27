@@ -14,11 +14,11 @@
 		}
 		public function salesReports(){
 			$data = array();
-			$this -> view("owner/reports_total");
+			$this -> view("owner/reportsTotal");
 		}
 		public function itemReports(){
 			$data = array();
-			$this -> view("owner/reports_item");
+			$this -> view("owner/reportsItem");
 		}
 	}
 

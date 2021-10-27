@@ -21,7 +21,7 @@
       <div class="rev-topic">Overview of Reviews</div>
       <div class="branch-selection">
         <div class="text">
-                   <label for="Branch">Branch</label>
+                   <label for="Branch">Outlet</label>
                    <div class="text-fill">
                        <select placeholder="Select Branch" name="branch_Id">
                            <option value="0">Any</option>
@@ -81,7 +81,7 @@
                    <tbody>
                        <tr>
                            <td label="Date">01/09/2021</td>
-                           <td label="Order No">110</td>
+                           <td label="Order No">117</td>
                            <td label="Review Description">You deliverd ontime.nice service</td>
                            <td label="Rated Stars">
                                <i id="fas-star" class="fas fa-star"></i>
@@ -93,8 +93,8 @@
                        </tr>
                        <tr>
                            <td label="Date">02/09/2021</td>
-                           <td label="Order No">111</td>
-                           <td label="Review Description">Good place to buy fresh breads</td>
+                           <td label="Order No">118</td>
+                           <td label="Review Description">disgusting service</td>
                            <td label="Rated Stars">
                                <i id="far-star" class="fas fa-star"></i>
                                <i id="far-star" class="fas fa-star"></i>
@@ -105,7 +105,7 @@
                        </tr>
                        <tr>
                            <td label="Date">03/09/2021</td>
-                           <td label="Order No">114</td>
+                           <td label="Order No">119</td>
                            <td label="Review Description">Good service</td>
                            <td label="Rated Stars">
                                <i id="fas-star" class="fas fa-star"></i>
@@ -117,7 +117,7 @@
                        </tr>
                        <tr>
                            <td label="Date">04/09/2021</td>
-                           <td label="Order No">115</td>
+                           <td label="Order No">120</td>
                            <td label="Review Description">Good service</td>
                            <td label="Rated Stars">
                                <i id="fas-star" class="fas fa-star"></i>
@@ -129,7 +129,7 @@
                        </tr>
                        <tr>
                            <td label="Date">04/09/2021</td>
-                           <td label="Order No">116</td>
+                           <td label="Order No">125</td>
                            <td label="Review Description">You deliverd ontime.nice service</td>
                            <td label="Rated Stars">
                                <i id="fas-star" class="fas fa-star"></i>

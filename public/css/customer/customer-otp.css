@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&family=Roboto:wght@300&display=swap');
+section{
+	min-height: 50vh;
+	width: 50%;
+	margin:10rem auto;
+	font-family: 'Montserrat', sans-serif;
+}
+
+section .otp-div{
+	margin:1rem auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	border: 3px solid rgb(255, 138, 0);
+	border-radius: 1rem;
+	width: 70%;
+	align-items: center;
+	justify-content: center;
+	gap: 1.4rem;
+	height: 20rem;
+}
+
+section .otp-div input{
+	width: 60%;
+	border: 0.1px solid rgb(255, 138, 0);
+	background: transparent;
+	border-radius: 3rem;
+	font-size: 1.4rem;
+	padding: 1rem 2rem;
+	outline: none;
+	text-align: center;
+}
+section .otp-div label{
+	font-size: 1.4rem;
+}
+
+
+section .otp-div input[type="submit"]{
+	width: 30%;
+	padding: 10px;
+	background-color: transparent;
+	border: 0.1rem solid rgb(255, 138, 0);
+	border-radius: 1rem;
+	font-size: 1.6rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+section .otp-div input[type="submit"]:hover{
+	background-color: rgb(255, 138, 0);
+	color: white;
+}
+form{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: 70%;
+	align-items: center;
+	justify-content: center;
+	gap: 1.4rem;
+	height: 20rem;
+}
+
+@media(max-width: 1050px){
+	form{
+		width: 100%;
+	}
+}
+
+@media(max-width: 700px){
+	section{
+		width: 100%;
+	}
+}
+
+@media(max-width: 400px){
+	section .otp-div{
+		width: 100%;
+	}
+}

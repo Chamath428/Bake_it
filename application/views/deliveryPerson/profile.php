@@ -49,7 +49,7 @@
 
                             <div class="input-fileds">
                                 <label for="password">Current Password</label>
-                                <input type="password" name="password" id="password"  value="********">
+                                <input type="password" name="password" id="password"  value="">
                             </div>
                             <div class="input-fileds">
                                 <label for="new_password">New Password(if changing)</label>

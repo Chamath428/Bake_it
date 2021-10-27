@@ -69,6 +69,7 @@ button{
     font-size: 16px;
     transition-duration: 0.4s;
     cursor: pointer;
+    font-weight: bold;
 }
 button:hover{
 	background-color: rgb(255,138,0);
@@ -105,7 +106,7 @@ button:hover{
     margin-left: 15px;
     color: black;
 }
-.content #view-accounts{
-    /* display:none; */
-} 
+/* .content #view-accounts .topic{
+    display:none;
+}  */
 
