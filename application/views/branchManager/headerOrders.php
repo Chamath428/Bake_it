@@ -21,7 +21,7 @@
                 <li>
                     <a href="<?php echo BASEURL."/branchManagerOrderController/getSpecialOrders"; ?>" class="hrf">
                         <span class="icon"><i class="fas fa-gift"></i></span>
-                        <span class="title">Special Event Orders</span>
+                        <span class="title">Special Orders</span>
                     </a>
                 </li>
                 <li>
