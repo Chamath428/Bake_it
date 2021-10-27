@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/owner/owner-report.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css" class="rel">
     <script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer ></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="<?php echo BASEURL; ?>/public/js/owner/owner-report.js" defer></script>
     <script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
 </head>
@@ -22,10 +22,12 @@
                         <div class="condition time">
                               <span class="topic">Time Peroid</span>
                               <div class="time-selection">
-                                    <label for="time-date" onclick="showSelection1()" onmouseout="notshowSelection1()">Daily Reports</label>
-                                    <div class="sub-time-selection" id="time1">
+                                    <label for="time-date" onclick="showSelection1()" onmouseout="notshowSelection1()">
+                                      <div>Daily Reports </div>
+                                      <div><i class="fas fa-angle-down"></i></div>
+                                    </label>                                    <div class="sub-time-selection" id="time1">
                                           <div class="time-dropdown">
-                                                <label for="select-year">Year</label>
+                                                <span for="select-year">Year</span>
                                                 <select class="" name="year">
                                                 <option value="1">2021</option>
                                                 <option value="2">2020</option>
@@ -33,59 +35,63 @@
                                           </div>
 
                                           <div class="time-dropdown">
-                                                <label for="select-year">Month</label>
+                                                <span for="select-year">Month</span>
                                                 <select class="" name="year">
-                                                <option value="1">2021</option>
-                                                <option value="2">2020</option>
+                                                <option value="1">Januaray</option>
+                                                <option value="2">February</option>
                                                 </select>
                                           </div>
                                           <div class="time-dropdown">
-                                                <label for="select-year">Date</label>
+                                                <span for="select-year">Date</span>
                                                 <select class="" name="year">
-                                                <option value="1">2021</option>
-                                                <option value="2">2020</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
                                                 </select>
                                           </div>
                                     </div>
-                                    <label for="time-week" onclick="showSelection2()" onmouseout="notshowSelection2()">Weekly Reports</label>
-                                    <div class="sub-time-selection" id="time2">
+                                    <label for="time-week" onclick="showSelection2()" onmouseout="notshowSelection2()">
+                                          <div>Weekly Reports</div>
+                                          <div><i class="fas fa-angle-down"></i></div>
+                                    </label>                                    <div class="sub-time-selection" id="time2">
                                           <div class="time-dropdown">
-                                                <label for="select-year">Year</label>
+                                                <span for="select-year">Year</span>
                                                 <select class="" name="year">
                                                 <option value="1">2021</option>
                                                 <option value="2">2020</option>
                                                 </select>
                                           </div>
                                           <div class="time-dropdown">
-                                                <label for="select-year">Month</label>
+                                                <span for="select-year">Month</span>
                                                 <select class="" name="year">
-                                                <option value="1">2021</option>
-                                                <option value="2">2020</option>
+                                                <option value="1">Januaray</option>
+                                                <option value="2">February</option>
                                                 </select>
                                           </div>
                                           <div class="time-dropdown">
-                                                <label for="select-year">Week</label>
+                                                <span for="select-year">Week</span>
                                                 <select class="" name="year">
-                                                <option value="1">2021</option>
-                                                <option value="2">2020</option>
+                                                <option value="1">1st week</option>
+                                                <option value="2">2nd week</option>
                                                 </select>
                                           </div>
                                     </div>
 
-                                    <label for="time-month" onclick="showSelection3()"onmouseout="notshowSelection3()">Monthly Reports</label>
-                                    <div class="sub-time-selection" id="time3">
+                                    <label for="time-month" onclick="showSelection3()"onmouseout="notshowSelection3()">
+                                          <div>Monthly Reports</div>
+                                          <div><i class="fas fa-angle-down"></i></div>
+                                    </label>                                    <div class="sub-time-selection" id="time3">
                                           <div class="time-dropdown">
-                                                <label for="select-year">Year</label>
+                                                <span for="select-year">Year</span>
                                                 <select class="" name="year">
                                                       <option value="1">2021</option>
                                                       <option value="2">2020</option>
                                                 </select>
                                           </div>
                                           <div class="time-dropdown">
-                                                <label for="select-year">Month</label>
+                                                <span for="select-year">Month</span>
                                                 <select class="" name="year">
-                                                      <option value="1">2021</option>
-                                                      <option value="2">2020</option>
+                                                      <option value="1">Januaray</option>
+                                                      <option value="2">February</option>
                                                 </select>
                                           </div>
                                           
