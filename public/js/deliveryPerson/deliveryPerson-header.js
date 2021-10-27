@@ -44,6 +44,7 @@ else if(screen < 700){
   screen.focus;
   console.log("side nav is not working");
   function sidetoggle(){
+    // document.getElementById("mySidebar").style.display="block";
     var sidenav = document.getElementById("mySidebar");
     if (sidenav.style.display === "block") {
       sidenav.style.display = "none";

@@ -53,7 +53,7 @@
 			else if ($phonenumber=="") {
 				$data['error']="Phone Number is required!";
 			}
-			else if (strlen($phonenumber)<1) {
+			else if (strlen($phonenumber)<9) {
 				$data['error']="Please enter a valid phone number.";
 			}
 			else if ($email!="" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {

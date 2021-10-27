@@ -34,7 +34,7 @@
                 </div>
             
                 <div class="text">
-                    <label for="Branch">Branch</label>
+                    <label for="Branch">Outlet</label>
                     <div class="text-fill">
                         <select placeholder="Select Branch" name="branch_Id">
                             <option value="0">Any</option>
@@ -54,7 +54,7 @@
             </form>
 
         <div class="account-container" id="view-accounts">
-            <div class="topic">Employee Accounts</div>
+            <div class="topic" id="view-topic">Employee Accounts</div>
             <div class="profile-collection">
                 <?php foreach ($data as $key => $value) {
                  ?>

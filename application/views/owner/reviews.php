@@ -21,7 +21,7 @@
       <div class="rev-topic">Overview of Reviews</div>
       <div class="branch-selection">
         <div class="text">
-                   <label for="Branch">Branch</label>
+                   <label for="Branch">Outlet</label>
                    <div class="text-fill">
                        <select placeholder="Select Branch" name="branch_Id">
                            <option value="0">Any</option>
