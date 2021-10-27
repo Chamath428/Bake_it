@@ -41,7 +41,7 @@ new Chart("myChart", {
 });
 var x2Values = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 var y2Values = [55, 90, 44, 23, 43, 54, 65];
-var barColors = ["red","orange","brown"];
+var barColors = ["red","orange","brown","blue","green","#00aba9","pink"];
 
 new Chart("myChart2", {
   type: "bar",
@@ -74,7 +74,7 @@ new Chart("myChart2", {
 });
 var x3Values = ["Pastry", "Cakes", "Doughnuts","Muffins","Snacks","Beverages"];
 var y3Values = [55, 150, 44, 80, 75, 90];
-var barColors = ["red","orange","brown"];
+var barColors = ["red","orange","brown","	#800080","#800000","#daa520"];
 
 new Chart("myChart3", {
   type: "bar",
@@ -89,7 +89,7 @@ new Chart("myChart3", {
     legend: {display: false},
     title: {
       display: true,
-      text: "Company Sales for the month"
+      text: "Branch Sales for the month"
     },
     scales: {
         xAxes: [{
@@ -113,7 +113,9 @@ var barColors = [
   "#00aba9",
   "#2b5797",
   "#e8c3b9",
-  "#1e7145"
+  "#1e7145",
+  "#800000",
+  "#daa520"
 ];
 
 new Chart("myChart4", {

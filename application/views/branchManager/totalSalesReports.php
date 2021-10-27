@@ -18,168 +18,99 @@
    
 <?php require_once('headerReports.php'); ?>
                   
-            <div class="bgg" id="body">
-
-                  
-                  <div class="sales-topic">Total Sales Reports</div>
-                  
-
-                        <div class="select-raw">
-                              <div class="select-raw-btn2">
-                                    <button id="daily-btn" onclick="selectTotalSaleRepoDaily()">Daily</button>
-                                    <button id="weekly-btn" onclick="selectTotalSaleRepoWeekly()">Weekly</button>
-                                    <button id="monthly-btn" onclick="selectTotalSaleRepoMonthly()">Monthly</button>
-                                    
-                              </div>  
-
-                              <div class="drop-down-list-daily" id="drop-down-list-daily-id">
-                                    <div class="year">
-                                                <label for="year">Year</label>
-                                                <select placeholder="Select Year" >
-                                                <option>2021</option>
-                                                <option>2020</option>
-                                                <option>2019</option>
-                                                <option>2018</option>
-
+<div class="bgg sales-report" id="body">
+                  <div class="topic-sales">Sales Reports</div>
+                  <div class="report-selection">
+                        <div class="condition time">
+                              <span class="topic">Time Peroid</span>
+                              <div class="time-selection">
+                                    <label for="time-date" onclick="showSelection1()" onmouseout="notshowSelection1()">
+                                      <div>Daily Reports </div>
+                                      <div><i class="fas fa-angle-down"></i></div>
+                                    </label>
+                                    <div class="sub-time-selection" id="time1">
+                                          <div class="time-dropdown">
+                                                <span for="select-year">Year</span>
+                                                <select class="" name="year">
+                                                <option value="1">2021</option>
+                                                <option value="2">2020</option>
                                                 </select>
-                                    </div>
-
-
-                                    <div class="month">
-                                                <label for="month">Month</label>
-                                                <select placeholder="Select Month" >
-                                                <option>Jan</option>
-                                                <option>Feb</option>
-                                                <option>Mar</option>
-                                                <option>Apr</option>
-
-                                                </select>
-                                    </div>
-
-                                    <div class="date">
-                                          <label for="date">Date</label>
-                                          <select placeholder="Select Date" >
-                                          <option>1</option>
-                                          <option>2</option>
-                                          <option>3</option>
-                                          <option>4</option>
-
-                                          </select>
-                                    </div>
-
-                                    <div class="generate-btn">
-                                          <a href="#"><button>Generate</button></a>
-                                    </div>
-                              </div>
-
-
-                              <div class="drop-down-list-weekly" id="drop-down-list-weekly-id">
-                                    <div class="year">
-                                          <label for="year">Year</label>
-                                          <select placeholder="Select Year" >
-                                          <option>2021</option>
-                                          <option>2020</option>
-                                          <option>2019</option>
-                                          <option>2018</option>
-
-                                          </select>
-
-                                    </div>
-                                    <div class="month">
-                                          <label for="month">Month</label>
-                                          <select placeholder="Select Month" >
-                                          <option>Jan</option>
-                                          <option>Feb</option>
-                                          <option>Mar</option>
-                                          <option>Apr</option>
-
-                                          </select>
-                                    </div>
-
-                                    <div class="week">
-                                          <label for="week">Week</label>
-                                          <select placeholder="Select Week" >
-                                          <option>Week 1</option>
-                                          <option>Week 2</option>
-                                          <option>Week 3</option>
-                                          <option>Week 4</option>
-
-                                          </select>
-                                    </div>
-
-
-                                    <div class="generate-btn">
-                                          <a href="#"><button>Generate</button></a>
-                                    </div>
-                              </div>
-
-
-                              <div class="drop-down-list-monthly" id="drop-down-list-monthly-id">
-                                    <div class="year">
-                                          <label for="year">Year</label>
-                                          <select placeholder="Select Year" >
-                                          <option>2021</option>
-                                          <option>2020</option>
-                                          <option>2019</option>
-                                          <option>2018</option>
-
-                                          </select>
-                                    </div>
-
-                                    <div class="month">
-                                          <label for="month">Month</label>
-                                          <select placeholder="Select Month" >
-                                          <option>Jan</option>
-                                          <option>Feb</option>
-                                          <option>Mar</option>
-                                          <option>Apr</option>
-
-                                          </select>
-                                    </div>
-
-                                    <div class="generate-btn">
-                                                <a href="#"><button>Generate</button></a>
                                           </div>
+
+                                          <div class="time-dropdown">
+                                                <span for="select-year">Month</span>
+                                                <select class="" name="year">
+                                                <option value="1">Januaray</option>
+                                                <option value="2">February</option>
+                                                </select>
+                                          </div>
+                                          <div class="time-dropdown">
+                                                <span for="select-year">Date</span>
+                                                <select class="" name="year">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                </select>
+                                          </div>
+                                    </div>
+                                    <label for="time-week" onclick="showSelection2()" onmouseout="notshowSelection2()">
+                                          <div>Weekly Reports</div>
+                                          <div><i class="fas fa-angle-down"></i></div>
+                                    </label>
+                                    <div class="sub-time-selection" id="time2">
+                                          <div class="time-dropdown">
+                                                <span for="select-year">Year</span>
+                                                <select class="" name="year">
+                                                <option value="1">2021</option>
+                                                <option value="2">2020</option>
+                                                </select>
+                                          </div>
+                                          <div class="time-dropdown">
+                                                <span for="select-year">Month</span>
+                                                <select class="" name="year">
+                                                <option value="1">Januaray</option>
+                                                <option value="2">February</option>
+                                                </select>
+                                          </div>
+                                          <div class="time-dropdown">
+                                                <span for="select-year">Week</span>
+                                                <select class="" name="year">
+                                                <option value="1">1st week</option>
+                                                <option value="2">2nd week</option>
+                                                </select>
+                                          </div>
+                                    </div>
+
+                                    <label for="time-month" onclick="showSelection3()"onmouseout="notshowSelection3()">
+                                          <div>Monthly Reports</div>
+                                          <div><i class="fas fa-angle-down"></i></div>
+                                    </label>
+                                    <div class="sub-time-selection" id="time3">
+                                          <div class="time-dropdown">
+                                                <span for="select-year">Year</span>
+                                                <select class="" name="year">
+                                                      <option value="1">2021</option>
+                                                      <option value="2">2020</option>
+                                                </select>
+                                          </div>
+                                          <div class="time-dropdown">
+                                                <span for="select-year">Month</span>
+                                                <select class="" name="year">
+                                                      <option value="1">Januaray</option>
+                                                      <option value="2">February</option>
+                                                </select>
+                                          </div>
+                                          
+                                    </div>
+
                               </div>
-
-                              <div class="drop-down-list-outlet" id="drop-down-list-outlet-id">
-                                    <div class="year">
-                                          <label for="year">Year</label>
-                                          <select placeholder="Select Year" >
-                                          <option>2021</option>
-                                          <option>2020</option>
-                                          <option>2019</option>
-                                          <option>2018</option>
-                                          </select>
-                                    </div>
-
-                                    <div class="month">
-                                          <label for="month">Month</label>
-                                          <select placeholder="Select Month" >
-                                          <option>Jan</option>
-                                          <option>Feb</option>
-                                          <option>Mar</option>
-                                          <option>Apr</option>
-                                          </select>
-                                    </div>
-
-                                    <div class="date">
-                                          <label for="date">Date</label>
-                                          <select placeholder="Select Date" >
-                                          <option>1</option>
-                                          <option>2</option>
-                                          <option>3</option>
-                                          <option>4</option>
-
-                                          </select>
-                                    </div>
-                                    <div class="generate-btn">
-                                          <a href="#"><button>Generate</button></a>
-                                    </div>
-                              </div>
-
                         </div>
-            </div>
+                      
+                        <div class="generate-btn">
+                              <button type="button" name="button">Generate</button>
+                        </div>
+                  </div>
 
+
+            </div>
 
 <?php require_once('footer.php'); ?>
