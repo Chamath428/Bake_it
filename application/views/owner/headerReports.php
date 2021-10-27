@@ -23,7 +23,7 @@
                 <li>
                     <a href="<?php echo BASEURL."/ownerReportController/itemReports" ?>" class="hrf">
                         <span class="icon"><i class="fab fa-elementor"></i></span>
-                        <span class="title">Categories Sales Reports</span>
+                        <span class="title">Categories Sales Report</span>
                     </a>
                 </li>
             </ul>

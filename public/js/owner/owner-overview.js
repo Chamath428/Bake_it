@@ -118,7 +118,7 @@ new Chart("myChart3", {
     legend: {display: false},
     title: {
       display: true,
-      text: "Company Sales for the month"
+      text: "Category Sales for the month"
     },
     scales: {
         xAxes: [{
