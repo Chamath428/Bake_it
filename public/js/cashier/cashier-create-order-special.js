@@ -37,6 +37,8 @@ function deleteRow(tableID) {
         var row = table.rows[i];
         var chkbox = row.cells[0].childNodes[0];
         if(null != chkbox && true == chkbox.checked) {
+            alert("Do you want to delete select items.");
+
             if(rowCount <= 1) {
                 alert("Cannot delete all the rows.");
                 break;

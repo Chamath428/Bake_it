@@ -13,9 +13,17 @@
 			$this->view("bakery_manager/pendingOrder",$data);
 		}
 
-		public function pendingOrderBakery(){
+		public function completeOrderBakery(){
 			$data=array();
 			$this->view("bakery_manager/completeOrder",$data);
+		}
+		public function completeOrderDetailsBakery(){
+			$data=array();
+			$this->view("bakery_manager/moreDetails",$data);
+		}
+		public function pendingOrderDetailsBakery(){
+			$data=array();
+			$this->view("bakery_manager/moreDetailsPendingOrder",$data);
 		}
 
 	

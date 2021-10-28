@@ -38,14 +38,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="moreDetails.php">0001</a></td>
+                                <td><a href="<?php echo BASEURL."/bakeryManagerOrderController/completeOrderDetailsBakery" ?>">0001</a></td>
                                 <td>2020/03/23</td>
                                 <td>Kesbewa</td>                    
                                 <td>Completed</td>
                                 
                             </tr>
                             <tr>
-                                <td><a href="moreDetails.php">0002</a></td>
+                                <td><a href="<?php echo BASEURL."/bakeryManagerOrderController/completeOrderDetailsBakery" ?>">0002</a></td>
                                 <td>2021/07/05</td>
                                 <td>Battaramulla</td>                    
                                 <td>Completed</td>
@@ -53,7 +53,7 @@
                             
                             </tr>
                             <tr>
-                                <td><a href="moreDetails.php">0003</a></td>
+                                <td><a href="<?php echo BASEURL."/bakeryManagerOrderController/completeOrderDetailsBakery" ?>">0003</a></td>
                                 <td>2021/05/30</td>
                                 <td>Piliyandala</td>                    
                                 <td>Completed</td>

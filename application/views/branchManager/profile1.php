@@ -76,7 +76,7 @@
                                 <input type="password" name="new-password" id="password"  value="" required="">
                             </div>
                             <div class="input-fileds">
-                                <label for="com_new_password">Comfirm New Password</label>
+                                <label for="com_new_password">Confirm New Password</label>
                                 <input type="password" name="confirm-password" id="password"  value="" required="">
                             </div>
                             <div class="btn-update">

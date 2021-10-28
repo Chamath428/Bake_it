@@ -84,8 +84,10 @@
 			$otp=rand(1000,9999);
 			$_SESSION['otp']=$otp;
 			$_SESSION['otpStarts']=time();
-			$user = "94760772873";
-			$password = "1067";
+
+			$user = "94768323569";
+			$password = "1594";
+
 			$text = urlencode(nl2br("Please enter OTP:".$otp,"\nThank you. Bake_it"));
 			$to = $phonenumber;
 

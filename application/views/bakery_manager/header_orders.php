@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo BASEURL."/bakeryManagerOrderController/pendingOrderBakery" ?>" class="hrf">
+                    <a href="<?php echo BASEURL."/bakeryManagerOrderController/completeOrderBakery" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-check-square"></i></span>
                         <span class="title">Complete Order</span>
                     </a>
