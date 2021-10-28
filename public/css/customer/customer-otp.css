@@ -39,8 +39,8 @@ section .otp-div input[type="submit"]{
 	width: 30%;
 	padding: 10px;
 	background-color: transparent;
-	border: 0.1rem solid rgb(255, 138, 0);
-	border-radius: 1rem;
+	border: 0.2rem solid rgb(255, 138, 0);
+	border-radius: 0.5rem;
 	font-size: 1.6rem;
 	font-weight: bold;
 	cursor: pointer;

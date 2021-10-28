@@ -78,8 +78,8 @@ section{
 
 .burger-container .burger-item button{
 	background-color: transparent;
-	border-radius: 10px;
-	border: 1px solid rgb(255, 138, 0);
+	border-radius: 5px;
+	border: 2px solid rgb(255, 138, 0);
 	padding: 10px;
 	transition: 0.2s ease-in-out; 
 	cursor: pointer;
@@ -99,7 +99,7 @@ section{
 }
 
 .burger-container .burger-item button:hover{
-	background-color: rgba(255, 138, 0,0.7);
+	background-color: rgba(255, 138, 0,1);
 
 }
 
