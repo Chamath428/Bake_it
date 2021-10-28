@@ -109,7 +109,7 @@ section{
 	padding: 10px;
 	background-color: white;
 	border-radius: 5px;
-	border: 1px solid rgb(255, 138, 0);
+	border: 2px solid rgb(255, 138, 0);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 	font-weight: 600;
@@ -117,7 +117,7 @@ section{
 }
 
 .button-container button:hover{
-	background-color: rgba(255, 138, 0,0.7);
+	background-color: rgba(255, 138, 0,1);
 	color: white;
 }
 /*button container ends*/
@@ -156,14 +156,14 @@ section{
 	padding: 10px;
 	background-color: white;
 	border-radius: 5px;
-	border: 1px solid rgb(255, 138, 0);
+	border: 2px solid rgb(255, 138, 0);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 	font-weight: 600;
 }
 
 .total-container button:hover{
-	background-color: rgba(255, 138, 0,0.7);
+	background-color: rgba(255, 138, 0,1);
 	color: white;
 
 }

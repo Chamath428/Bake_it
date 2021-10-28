@@ -40,12 +40,11 @@
 			}
 			else if ($_POST['phonenumber']=="") {
 				$data['error']="Phone Number is required!";
+			}else if ($_POST['email']!="" && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+				$data['error']="Please enter a valid email address.";
 			}
 			else if (strlen($_POST['phonenumber'])!=10) {
 				$data['error']="Please enter a valid phone number.";
-			}
-			else if ($_POST['email']!="" && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-				$data['error']="Please enter a valid email address.";
 			}
 			else if($_POST['password']==""){
 				$data['error']="Password is required!";
@@ -85,8 +84,10 @@
 			$otp=rand(1000,9999);
 			$_SESSION['otp']=$otp;
 			$_SESSION['otpStarts']=time();
+
 			$user = "94768323569";
 			$password = "1594";
+
 			$text = urlencode(nl2br("Please enter OTP:".$otp,"\nThank you. Bake_it"));
 			$to = $phonenumber;
 

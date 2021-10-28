@@ -208,7 +208,7 @@ section{
 .order-details .buttons button{
 	padding: 1rem;
 	background-color: transparent;
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 	border: 2px solid rgb(255, 137, 0);
 	font-weight: bold;
 	cursor: pointer;

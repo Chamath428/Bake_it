@@ -67,7 +67,7 @@ section{
 .profile-container  input[type="submit"]{
 	width: auto;
 	border: 2px solid rgb(255, 138, 0);
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 	background-color: transparent;
 	font-weight: bold;
 	cursor: pointer;
