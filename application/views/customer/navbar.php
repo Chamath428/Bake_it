@@ -44,6 +44,7 @@
             </div>
         </nav>
     </div>
+
     <?php if(isset($pagename) && $pagename!=""){ ?><div class="pagename"><h2><?php echo $pagename;?></h2></div><?php } ?>
     <!-- <div class="shape">
          <h2><?php// echo $pagename;?></h2>
