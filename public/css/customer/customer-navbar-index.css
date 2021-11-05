@@ -293,6 +293,11 @@ nav{
     background-size: cover;
 }
 
+.hero h3{
+    color: white;
+    text-align: right;
+}
+
 .text{
     width: 100%;
     position: absolute;

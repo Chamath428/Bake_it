@@ -47,9 +47,9 @@
                 </li>
                 <li><a style="cursor: pointer;">Outlets</a>
                     <ul class="sub-outlets">
-                        <li><a href="">Kasbewa</a></li>
-                        <li><a href="">Baththramulla</a></li>
-                        <li><a href="">Piliyandala</a></li>
+                        <li><a href="<?php echo BASEURL."/homeController/setBranch/1" ?>">Kasbewa</a></li>
+                        <li><a href="<?php echo BASEURL."/homeController/setBranch/2" ?>">Baththramulla</a></li>
+                        <li><a href="<?php echo BASEURL."/homeController/setBranch/3" ?>">Piliyandala</a></li>
                     </ul>
                 </li>
                 <li><a href="<?php echo BASEURL.'/myordersController' ?>">My Orders</a></li>
@@ -75,6 +75,7 @@
 
 <!--Hero-->
 <section class="hero">
+    <?php if(isset($_SESSION['branch_name'])){?><h3>Selected Branch : <?php echo $_SESSION['branch_name'] ?></h3><?php } ?>
     <div class="text">
         <h1>Bake_it</h1>
         <h2>Best Taste Since 1997</h2>
