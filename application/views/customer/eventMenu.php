@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-specialMenu.css">
 	<script src="<?php echo BASEURL ?>/public/js/customer/message.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
-	<script src="<?php echo BASEURL ?>/public/js/customer/checkout.js" defer></script>
+	<script src="<?php echo BASEURL; ?>/public/js/customer/menu.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
 	<title>Order for an Event</title>
@@ -24,54 +24,36 @@
 		<div class="side-panel">
 			<h2>Catagories</h2>
 			<ul class="catagory">
-				<li><a href="">Bread</a></li>
-				<li><a href="">Pastry</a></li>
-				<li><a href="">Cake</a></li>
-				<li><a href="">Burger</a></li>
-				<li><a href="">Snacks</a></li>
-				<li><a href="">Donut</a></li>
-				<li><a href="">Muffin</a></li>
-				<li><a href="">Sweets</a></li>
-				<li><a href="">Baverages</a></li>
+				<li><a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/1"; ?>">Bread</a></li>
+				<li><a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/2"; ?>">Pastry</a></li>
+				<li><a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/3"; ?>">Cake</a></li>
+				<li><a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/4"; ?>">Burger</a></li>
+				<li><a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/5"; ?>">Snacks</a></li>
+				<li><a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/6"; ?>">Donut</a></li>
+				<li><a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/7"; ?>">Muffin</a></li>
+				<li><a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/8"; ?>">Sweets</a></li>
+				<li><a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/9"; ?>">Baverages</a></li>
 			</ul>
 		</div>
 
 		<div class="burger-container">
 
-				<div class="burger-item">
-					<img src="<?php echo BASEURL; ?>/public/images/b1.png">
-					<h3>Mini Cheese Burger</h3>
-					<span>RS.150.00</span><br>
-					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
-				</div>
-
-				<div class="burger-item">
-					<img src="<?php echo BASEURL; ?>/public/images/b2.png">
-					<h3>Mini Cheese Burger</h3>
-					<span>RS.150.00</span><br>
-					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
-				</div>
-
-				<div class="burger-item">
-					<img src="<?php echo BASEURL; ?>/public/images/b3.png">
-					<h3>Mini Cheese Burger</h3>
-					<span>RS.150.00</span><br>
-					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
-				</div>
-
-				<div class="burger-item">
-					<img src="<?php echo BASEURL; ?>/public/images/b4.png">
-					<h3>Mini Cheese Burger</h3>
-					<span>RS.150.00</span><br>
-					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
-				</div>
-
-				<div class="burger-item">
-					<img src="<?php echo BASEURL; ?>/public/images/b5.png">
-					<h3>Mini Cheese Burger</h3>
-					<span>RS.150.00</span><br>
-					<button onclick="showAlert('Item added to the special cart.')"><a>Add to special cart</a></button>
-				</div>
+				<?php 
+				if (sizeof($data)>0) {
+				foreach ($data as $key => $item) {?>
+					<div class="burger-item">
+						<img src="<?php echo BASEURL; ?>/public/images/b1.png">
+						<h3><?php echo $item['item_name']; ?></h3>
+						<span><?php echo "RS.".$item['price']; ?></span><br>
+						<button id="add-button-<?php echo $key ?>" class="add-button" onclick="buttonControl('add-button-<?php echo $key ?>','close-button-<?php echo $key ?>')"><a>Add to special cart</a></button>
+						<button id="close-button-<?php echo $key ?>" class="close-button" onclick="buttonControl('add-button-<?php echo $key ?>','close-button-<?php echo $key ?>')"><a>Remove from special cart</a></button>
+					</div>
+				<?php }
+				}else{?>
+					<div class="no-burger">
+						<span>Sorry!No itms to show</span>
+					</div>
+				<?php } ?>
 
 
 			</div>
