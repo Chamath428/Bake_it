@@ -5,6 +5,11 @@ section{
 	justify-content: space-around;
 }
 
+#confirm-alert{
+	width: 70%;
+	margin: 0 auto;
+}
+
 .side-panel{
 	width: 15%;
 	margin: 5rem 0;
@@ -113,6 +118,30 @@ section{
        -o-transform: rotate(-5deg);
       -ms-transform: rotate(-5deg);
           transform: rotate(-5deg);
+}
+
+.burger-container .burger-item .add-button{
+	display: ;
+}
+
+.burger-container .burger-item .close-button{
+	border: 2px solid rgb(232, 61, 49);
+	
+}
+
+.burger-container .burger-item .close-button:hover{
+	background-color:  rgb(232, 61, 49);
+}
+
+.burger-container .no-burger{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.burger-container .no-burger span{
+	font-size: 4rem;
 }
 
 /*Media queries starts*/

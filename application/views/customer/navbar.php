@@ -10,15 +10,15 @@
                 <li><a href="<?php echo BASEURL;?>">Home</a></li>
                 <li><a style="cursor: pointer;">Menu</a>
                     <ul class="sub-menu">
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Bread</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Pastry</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Cake</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Burger</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Snacks</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Donut</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Muffin</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Sweets</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Baverages</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/1"; ?>">Bread</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/2"; ?>">Pastry</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/3"; ?>">Cake</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/4"; ?>">Burger</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/5"; ?>">Snacks</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/6"; ?>">Donut</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/7"; ?>">Muffin</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/8"; ?>">Sweets</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/9"; ?>">Baverages</a></li>
                     </ul>
                 </li>
                 <li><a style="cursor: pointer;">Outlets</a>

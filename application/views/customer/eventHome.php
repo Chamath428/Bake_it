@@ -31,7 +31,7 @@
 			<li>Order total should be at least <span>LKR.4000.00</span></li>
 			<li>You should pay at least half of the total as the advance payment</li>
 		</ul>
-		<a href="<?php echo BASEURL."/orderForEventController/getMenu"; ?>"><button>Let's Order</button></a>
+		<a href="<?php echo BASEURL."/orderForEventController/getSpecialCategoryItems/1"; ?>"><button>Let's Order</button></a>
 		</div>
 	</section>
 

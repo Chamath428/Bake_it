@@ -34,15 +34,15 @@
                 <li><a href="<?php BASEURL ?>">Home</a></li>
                 <li><a style="cursor: pointer;">Menu</a>
                     <ul class="sub-menu">
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Bread</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Pastry</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Cake</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Burger</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Snacks</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Donut</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Muffin</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Sweets</a></li>
-                        <li><a href="<?php echo BASEURL."/customermenuController"; ?>">Baverages</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/1"; ?>">Bread</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/2"; ?>">Pastry</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/3"; ?>">Cake</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/4"; ?>">Burger</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/5"; ?>">Snacks</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/6"; ?>">Donut</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/7"; ?>">Muffin</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/8"; ?>">Sweets</a></li>
+                        <li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/9"; ?>">Baverages</a></li>
                     </ul>
                 </li>
                 <li><a style="cursor: pointer;">Outlets</a>
@@ -88,56 +88,56 @@
             <h2 class="menu-header">Our Menu</h2>
             <div class="menu-container">
                 <div class="menu-box grid-item-1">
-                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
+                    <a href="<?php echo BASEURL."/customermenuController/getCategoryItems/1"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/bread.jpg">
                         <div class="h3">BREAD</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-2">
-                    <a href="#">
+                    <a href="<?php echo BASEURL."/customermenuController/getCategoryItems/2"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/pastry.jpg">
                         <div class="h3">PASTRY</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-6">
-                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
+                    <a href="<?php echo BASEURL."/customermenuController/getCategoryItems/3"; ?>">
                         <img src="<?php echo BASEURL ?>/images/cake.jpg">
                         <div class="h3">CAKE</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-5">
-                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
+                    <a href="<?php echo BASEURL."/customermenuController/getCategoryItems/4"; ?>">
                         <img src="<?php echo BASEURL ?>/images/burger.jpg">
                         <div class="h3">BURGER</div>    
                     </a>
                 </div>
                 <div class="menu-box grid-item-9">
-                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
+                    <a href="<?php echo BASEURL."/customermenuController/getCategoryItems/5"; ?>">
                         <img src="<?php echo BASEURL ?>/images/snacks.jpg">
                         <div class="h3">SNACKS</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-3">
-                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
+                    <a href="<?php echo BASEURL."/customermenuController/getCategoryItems/6"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/donuts.jpg">
                         <div class="h3">DONUT</div>
                     </a>
                 </div>
 
                 <div class="menu-box grid-item-4">
-                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
+                    <a href="<?php echo BASEURL."/customermenuController/getCategoryItems/7"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/muffins.jpg">
                         <div class="h3">MUFFIN</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-7">
-                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
+                    <a href="<?php echo BASEURL."/customermenuController/getCategoryItems/8"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/sweets.jpg">
                         <div class="h3">SWEETS</div>
                     </a>
                 </div>
                 <div class="menu-box grid-item-8">
-                    <a href="<?php echo BASEURL."/customermenuController"; ?>">
+                    <a href="<?php echo BASEURL."/customermenuController/getCategoryItems/9"; ?>">
                         <img src="<?php echo BASEURL ?>/public/images/baverages.jpg">
                         <div class="h3">BAVERAGES</div>
                     </a>

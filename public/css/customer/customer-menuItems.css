@@ -93,6 +93,12 @@ body{
           transform: rotate(-5deg);
 }
 
+.burger-menu .burger-container .no-burger{
+	width: 100%;
+	background-color: red;
+	border: 2px solid red;
+}
+
 /*Media queries starts*/
 
 @media(max-width: 1155px){

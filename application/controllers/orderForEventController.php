@@ -8,7 +8,7 @@
 		
 		function __construct()
 		{
-			// code...
+			$this->customerMenuModel=$this->model("customerMenuModel");
 		}
 
 		public function index(){
@@ -19,6 +19,11 @@
 		public function getMenu(){
 			$data=array();
 			$this->view("customer/eventMenu",$data);
+		}
+
+		public function getSpecialCategoryItems($category_id){
+			$categoryItems=$this->customerMenuModel->getSpecialCategoryItems($category_id);
+			$this->view("customer/eventMenu",$categoryItems);
 		}
 	}
 
