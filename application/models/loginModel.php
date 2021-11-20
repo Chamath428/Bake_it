@@ -78,19 +78,40 @@
 
 		public function getCustomerId($username)
 		{
+			$customerData=array();
 			$uername=$this->db->real_escape_string($username);
 			$sql5="SELECT
-						customer_id
+						registered_customer.customer_id,
+						registered_customer.contact_number,
+						customer.first_name,
+						customer.last_name,
+						customer.address1,
+						customer.address2,
+						customer.address3
 					FROM
 						registered_customer
+					LEFT JOIN
+						customer
+					ON 
+						registered_customer.customer_id=customer.customer_id
 					WHERE
 						contact_number = ".'"'.$username.'"'."
 					OR 
 						email = "		  .'"'.$username.'"';
 			$res5=mysqli_query($this->db,$sql5) or die('5->'.mysqli_error($this->db));
-			$row5=mysqli_fetch_assoc($res5);
-			$customer_id=$row5['customer_id'];
-			return $customer_id;
+			while ($row5=mysqli_fetch_assoc($res5)) {
+				$customerData['customer_id']=$row5['customer_id'];
+				$customerData['contact_number']=$row5['contact_number'];
+				$customerData['first_name']=$row5['first_name'];
+				$customerData['last_name']=$row5['last_name'];
+				$customerData['address1']=$row5['address1'];
+				$customerData['address2']=$row5['address2'];
+				$customerData['address3']=$row5['address3'];
+			}
+			
+			// $customer_id=$row5['customer_id'];
+
+			return $customerData;
 		}
 
 		public function getStaffId($username)

@@ -189,9 +189,10 @@ nav{
     color: black;
     z-index: 1;
     text-transform: uppercase;
-    font-family: 'Italianno', cursive;
+    /*font-family: 'Italianno', cursive;*/
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.4rem;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.1rem;
     border-bottom: 3px solid rgb(255, 138, 0);
 }
 
@@ -290,31 +291,13 @@ nav{
     /*top: 100px;*/
     z-index: 1;
     text-transform: uppercase;
-    font-family: 'Italianno', cursive;
+    /*font-family: 'Italianno', cursive;*/
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.4rem;
     letter-spacing: 0.3rem;
     
 }
-/*.custom-shape-divider-top-1633458560 {
-    position: relative;
-    top: 1rem;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}*/
 
-/*.custom-shape-divider-top-1633458560 svg {
-    position: relative;
-    display: block;
-    width: calc(213% + 1.3px);
-    height: 82px;
-    transform: rotateY(180deg);
-}*/
-
-/*.custom-shape-divider-top-1633458560 .shape-fill {
-    fill: rgb(255, 255, 255);
-}*/
 @media(max-width: 720px){
     .shape h2{
         left: 1.5rem;

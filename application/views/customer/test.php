@@ -10,8 +10,8 @@
 
 		if (isset($_SESSION['quick_cart'])) {
 			foreach ($_SESSION['quick_cart'] as $key => $value) {
-				echo $key;
-			}
+				echo $value['name'];
+		}
 		}else echo "No items";
 
 	 ?>

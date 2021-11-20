@@ -46,10 +46,16 @@
 			if ($data['error']=="") {
 				echo $role_number;
 				if ($role_number==1) {
-					$customer_id=$this->loginModel->getCustomerId($username);
+					$customerData=$this->loginModel->getCustomerId($username);
 					$this->setSession("islogged",1);
 					$this->setSession("role_number",$role_number);
-					$this->setSession("customer_id",$customer_id);
+					$this->setSession("customer_id",$customerData['customer_id']);
+					$this->setSession("contact_number",$customerData['contact_number']);
+					$this->setSession("first_name",$customerData['first_name']);
+					$this->setSession("last_name",$customerData['last_name']);
+					$this->setSession("address1",$customerData['address1']);
+					$this->setSession("address2",$customerData['address2']);
+					$this->setSession("address3",$customerData['address3']);
 					$this->redirect("homeController");
 				}else{
 					$staff_id=$this->loginModel->getStaffId($username);
