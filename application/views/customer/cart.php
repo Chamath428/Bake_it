@@ -32,7 +32,9 @@
 		<div class="cart" id="quick-cart">
 			<?php if (!empty($_SESSION["quick_cart"])){ 
 				$subtotal=0;
+				$itemCount=0;
 				?>
+			<form method="post" action="<?php echo BASEURL."/cartController/updateCart" ?>">
 			<div class="cart-containter">
 			<table>
 				<tr>
@@ -43,11 +45,12 @@
 					<th>Total</th>
 				</tr>
 
-				<?php foreach ($_SESSION['quick_cart'] as $key => $value) {
-					foreach ($value as $key => $item) {?>
+				<?php foreach ($_SESSION['quick_cart'] as $key => $item) {
+					$itemCount++;
+					?>
 				<tr>
 					<td>
-						<button><i class="far fa-times-circle"></i></button>
+						<button type="button" onclick="confirmDeletion(<?php echo $key; ?>)"><i class="far fa-times-circle"></i></button>
 					</td>
 					<td>
 						<div class="product-container">
@@ -61,10 +64,11 @@
 						<p><?php echo "RS.".$item['price']; ?></p>
 					</td>
 					<td>
-						<div>
-							<button id="plus"><i class="fas fa-minus" id="fa-minus"></i></button>
- 							<input type="number" name="" value="<?php echo $item['quantity']; ?>" id="qin">
- 							<button id="minus" onclick="incrementValue()"><i class="fas fa-plus" id="fa-plus"></i></button>
+						<div class="quantity-feilds">
+							<button id="plus" type="button"><i class="fas fa-minus" id="fa-minus" onclick="decrementValue('qin-<?php echo $key ?>')"></i></button>
+							<input type="hidden" name="qin_name-<?php echo $itemCount ?>" value="<?php echo $key; ?>">
+ 							<input type="text" name="qin-<?php echo $key; ?>" value="<?php echo $item['quantity']; ?>" class="qin" id="qin-<?php echo $key; ?>" min="0">
+ 							<button id="minus" type="button"><i class="fas fa-plus" id="fa-plus" onclick="incrementValue('qin-<?php echo $key ?>')"></i></button>
  						</div>
 					</td>
 					<td>
@@ -73,13 +77,15 @@
 				</tr>
 			<?php 
 				$subtotal+=$item['price']*$item['quantity'];
-			}} ?>
+			} ?>
 			</table>
+			<input type="hidden" name="item_count" value="<?php echo $itemCount; ?>">
 			<div class="button-container">
-				<button onclick="showAlert('Remove All the items')">Empty Cart</button>
-				<button onclick="showAlert('Cart Updated Succesfully')">Update Cart</button>
+				<button type="button" onclick="emptyCart()">Empty Cart</button>
+				<input type="submit" name="Update Cart" value="Update Cart">
 			</div>
 		</div>
+		</form>
 		<div class="total-container">
 			<table>
 				<tr>
@@ -105,6 +111,13 @@
 	</div>
 	
 	<!-- Quick Cart ends here -->
+
+
+
+
+
+
+
 	<!-- Special Cart starts here -->
 
 	<div class="cart" id="special-cart">
@@ -134,7 +147,7 @@
 						<p>150.00LKR</p>
 					</td>
 					<td>
-						<div>
+						<div class="quantity-feilds">
  							<button id="plus"><i class="fas fa-minus" id="fa-minus"></i></button>
  							<input type="number" name="" value="1" id="qin">
  							<button id="minus" onclick="incrementValue()"><i class="fas fa-plus" id="fa-plus"></i></button>
@@ -144,32 +157,7 @@
 						<p>150.00LKR</p>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<button><i class="far fa-times-circle"></i></i></button>
-					</td>
-					<td>
-						<div class="product-container">
-							<img src="<?php echo BASEURL ?>/public/images/b1.png">
-							<div>
-								<p>Small Burger</p>
-							</div>
-						</div>
-					</td>
-					<td>
-						<p>150.00LKR</p>
-					</td>
-					<td>
-						<div>
- 							<button id="plus"><i class="fas fa-minus" id="fa-minus"></i></button>
- 							<input type="number" name="" value="1" id="qin">
- 							<button id="minus" onclick="incrementValue()"><i class="fas fa-plus" id="fa-plus"></i></button>
- 						</div>
-					</td>
-					<td>
-						<p>150.00LKR</p>
-					</td>
-				</tr>
+
 			</table>
 			<div class="button-container">
 				<button onclick="showAlert('Remove All the items')">Empty Cart</button>
@@ -208,15 +196,17 @@
 	</div>
  	<div class="cartm" id="quick-cartm">
 		<?php if (!empty($_SESSION["quick_cart"])){ 
-			$subtotal=0;
-		?>
+				$subtotal=0;
+				$itemCount=0;
+				?>
+			<form method="post" action="<?php echo BASEURL."/cartController/updateCart" ?>">
  		<div class="cart-containterm">
-			<?php foreach ($_SESSION['quick_cart'] as $key => $value) {
-			foreach ($value as $key => $item) {?>
+			<?php foreach ($_SESSION['quick_cart'] as $key => $item) {
+					$itemCount++; ?>
  			<table>
  				<tr>
  					<td id="remove-btnm">
-						<button><i class="far fa-times-circle"></i></button>
+						<button type="button" onclick="confirmDeletion(<?php echo $key; ?>)"><i class="far fa-times-circle"></i></button>
 					</td>
  					<td>
  						<div class="product-image">
@@ -237,9 +227,10 @@
  					<td>Quantity</td>
  					<td>
  						<div>
- 							<button id="plus"><i class="fas fa-minus" id="fa-minus"></i></button>
- 							<input type="number" name="" value="<?php echo $item['quantity']; ?>" id="qin">
- 							<button id="minus" onclick="incrementValue()"><i class="fas fa-plus" id="fa-plus"></i></button>
+ 							<button id="plus" type="button"><i class="fas fa-minus" id="fa-minus" onclick="decrementValue('qinm-<?php echo $key ?>')"></i></button>
+							<input type="hidden" name="qin_name-<?php echo $itemCount ?>" value="<?php echo $key; ?>">
+ 							<input type="text" name="qin-<?php echo $key; ?>" value="<?php echo $item['quantity']; ?>" class="qin" id="qinm-<?php echo $key; ?>" min="0">
+ 							<button id="minus" type="button"><i class="fas fa-plus" id="fa-plus" onclick="incrementValue('qinm-<?php echo $key ?>')"></i></button>
  						</div>
  					</td>
  				</tr>
@@ -250,10 +241,10 @@
  			</table>
  			<?php 
 				$subtotal+=$item['price']*$item['quantity'];
-			}} ?>
+			} ?>
  			<div class="button-container">
-				<button>Empty Cart</button>
-				<button>Update Cart</button>
+				<button type="button">Empty Cart</button>
+				<button type="button">Update Cart</button>
 			</div>
  		</div>
  		<div class="total-container">
@@ -271,7 +262,7 @@
 					<td><?php echo $subtotal.".00 LKR"; ?></td>
 				</tr>
 			</table>
-			<a href="<?php echo BASEURL.'/checkoutController' ?>"><button>Proceed to Checkout</button></a>
+			<a href="<?php echo BASEURL.'/checkoutController' ?>"><button type="button">Proceed to Checkout</button></a>
 		</div>
 		<?php } else{?>
 			<div class="no-burger">
@@ -381,6 +372,4 @@
 	<?php require_once('footer.php'); ?>
 </html>
 
-	<?php require_once('footer.php'); ?>
-</html>
 
