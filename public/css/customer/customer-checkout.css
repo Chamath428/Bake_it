@@ -325,7 +325,6 @@ section{
 	max-width: 300px;
 	border-collapse: collapse;
 	border-spacing: 10px;
-	/*margin-right: 150px;*/
 	border-top: 3px solid rgb(255, 138, 0);
 }
 .total-container table tr td:first-child{
@@ -338,6 +337,14 @@ section{
 .total-container table tr td{
 	padding-bottom: 5px;
 }
+
+.total-container table tr td input{
+	outline: none;
+	border: none;
+	text-align: right;
+	font-size: 1.4rem;
+}
+
 .total-container a{
 	padding-top: 5px;
 }

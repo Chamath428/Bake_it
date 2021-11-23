@@ -21,35 +21,35 @@
 	</header>
 
 	<section class="checkout">
-		<form>
+		<form method="post" action="<?php echo BASEURL."/checkoutController/placeOrder" ?>">
 		<div class="billing-details">
 
 			<h2>Billing Details</h2>
 			<div class="basic-details">
-				<input type="text" name="firstname" required="" placeholder="First Name" value="<?php if(isset($_SESSION['first_name']))echo $_SESSION['first_name'] ?>">
-				<input type="text" name="lastname" placeholder="Last Name" value="<?php if(isset($_SESSION['last_name']))echo $_SESSION['last_name'] ?>">
-				<input type="text" name="companyname" placeholder="Company Name (Optional)">
-				<input type="text" name="phonenumber" placeholder="Phone Number" required="" value="<?php if(isset($_SESSION['contact_number']))echo $_SESSION['contact_number'] ?>">
+				<input type="text" name="first_name" required="" placeholder="First Name" value="<?php if(isset($_SESSION['first_name']))echo $_SESSION['first_name'] ?>">
+				<input type="text" name="last_name" placeholder="Last Name" value="<?php if(isset($_SESSION['last_name']))echo $_SESSION['last_name'] ?>">
+				<input type="text" name="company_name" placeholder="Company Name (Optional)">
+				<input type="text" name="phone_number" placeholder="Phone Number" required="" value="<?php if(isset($_SESSION['contact_number']))echo $_SESSION['contact_number'] ?>">
 			</div>
 			<div class="radio-box" id="reciving-method">
 			<h3>Order Reciving Method</h3>
 			<div>
 				<label onclick="getLocation(0)">
-			 	 	 <input type="radio" name="delivery-type" checked="">
+			 	 	 <input type="radio" name="delivery_type" checked="" value="1">
 			 	 	 <div class="circle"></div>
 			 	 	 <span>Pick up From Shop</span>
 			 	 </label>
 			 	 <label onclick="getLocation(1)">
-			 	 	 <input type="radio" name="delivery-type">
+			 	 	 <input type="radio" name="delivery_type" value="2">
 			 	 	 <div class="circle"></div>
 			 	 	 <span>Home Delivery</span>
 			 	 </label>
 			</div>
 			</div>
 			<div class="location-details" id="location-details">
-				<input type="text" name="address-line1" placeholder="Address Line 1" required=""value="<?php if(isset($_SESSION['address1']))echo $_SESSION['address1'] ?>">
-				<input type="text" name="address-line2" placeholder="Address Line 2" required=""value="<?php if(isset($_SESSION['address2']))echo $_SESSION['address2'] ?>">
-				<input type="text" name="address-line3" placeholder="Address Line 3"value="<?php if(isset($_SESSION['address3']))echo $_SESSION['address3'] ?>">
+				<input type="text" name="address_line1" placeholder="Address Line 1" value="<?php if(isset($_SESSION['address1']))echo $_SESSION['address1'] ?>">
+				<input type="text" name="address_line2" placeholder="Address Line 2" value="<?php if(isset($_SESSION['address2']))echo $_SESSION['address2'] ?>">
+				<input type="text" name="address_line3" placeholder="Address Line 3"value="<?php if(isset($_SESSION['address3']))echo $_SESSION['address3'] ?>">
 			</div>
 		</div>
 
@@ -84,7 +84,7 @@
 					</td>
 					<td>
 						<div class="quantity-feilds">
- 							<input type="text" name="qin-<?php echo $key; ?>" value="<?php echo $item['quantity']; ?>" class="qin" id="qin-<?php echo $key; ?>" min="0">
+ 							<input type="text" readonly="" name="qin-<?php echo $key; ?>" value="<?php echo $item['quantity']; ?>" class="qin" id="qin-<?php echo $key; ?>" min="0">
  						</div>
 					</td>
 					<td>
@@ -98,6 +98,7 @@
 				</table>
 			</div>
 		</div>
+
 
 		<div class="mobile-cart">
 				<?php if (!empty($_SESSION["quick_cart"])){ 
@@ -128,7 +129,7 @@
  					<td>Quantity</td>
  					<td>
  						<div>
- 							<input type="text" name="qin-<?php echo $key; ?>" value="<?php echo $item['quantity']; ?>" class="qin" id="qinm-<?php echo $key; ?>" min="0">
+ 							<input type="text" readonly="" name="qin-<?php echo $key; ?>" value="<?php echo $item['quantity']; ?>" class="qin" id="qinm-<?php echo $key; ?>" min="0">
  						</div>
  					</td>
  				</tr>
@@ -148,12 +149,12 @@
 			<h3>Payment Method</h3>
 			<div>
 				<label onclick="getPayment(0)">
-			 	 	 <input type="radio" name="payment-type" checked="">
+			 	 	 <input type="radio" name="payment_type" checked="" value="1">
 			 	 	 <div class="circle"></div>
 			 	 	 <span>Cash</span>
 			 	 </label>
 			 	 <label onclick="getPayment(1)">
-			 	 	 <input type="radio" name="payment-type">
+			 	 	 <input type="radio" name="payment_type" value="2">
 			 	 	 <div class="circle"></div>
 			 	 	 <span>Card</span>
 			 	 </label>
@@ -175,7 +176,7 @@
 					</tr>
 					<tr>
 						<td>Grand Total</td>
-						<td><?php echo $subtotal.".00 LKR"; ?></td>
+						<td><input type="text" readonly="" name="subtotal" value="<?php echo $subtotal.".00 LKR"; ?>"></td>
 					</tr>
 				</table>
 			</div>
