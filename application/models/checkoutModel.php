@@ -63,9 +63,6 @@
 			 $orderDetails['payment_type']=$this->db->real_escape_string($orderDetails['payment_type']);
 			 $orderType=1;
 			 $orderStatus=1;
-			 if (isset($_SESSION['branch_Id'])) {
-			 	$menuId=$_SESSION['branch_Id'];
-			 }
 
 			 $sql4="INSERT INTO
 			 			order_details(
@@ -79,7 +76,7 @@
 						)
 					VALUES ("
 							.'"'.$orderDetails['customer_id'].'"' 	.","
-							.'"'.$menuId.'"' 						.","
+							.'"'.$orderDetails['menu_id'].'"' 						.","
 							.'"'.$orderType.'"' 					.","
 							.'"'.$orderDetails['subtotal'].'"' 		.","
 							.'"'.$orderDetails['delivery_type'].'"' .","
@@ -96,7 +93,25 @@
 		}
 
 		public function insertOrderItems($order_id,$menu_id,$items){
+			foreach ($items as $item_id => $quantity) {
+				$this->insertOrderItemsSql($order_id,$menu_id,$item_id,$quantity);
+			}
 
+		}
+		public function insertOrderItemsSql($order_id,$menu_id,$item_id,$quantity){
+			$sql6="INSERT INTO
+						order_items(
+							order_id,
+							menu_id,
+							item_id,
+							quantity
+						)
+					VALUES("
+							.'"'.$order_id.'"' .","
+							.'"'.$menu_id.'"' .","
+							.'"'.$item_id.'"' .","
+							.'"'.$quantity.'")';
+			$res6=mysqli_query($this->db,$sql6) or die('6->'.mysqli_error($this->db));
 		}
 	}
 

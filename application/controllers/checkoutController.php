@@ -60,22 +60,32 @@
 				$orderDetails['address1']=$address1;
 				$orderDetails['address2']=$address2;
 				$orderDetails['address3']=$address3;
-				if (!isset($customer_id)) {
-					$customer_id=$this->checkoutModel->createCustomer($orderDetails);
-				}
-				$orderDetails['customer_id']=$customer_id;
 				$orderDetails['delivery_type']=$delivery_type;
 				$orderDetails['payment_type']=$payment_type;
 				$orderDetails['subtotal']=$subtotal;
 
+				if (!isset($customer_id)) {
+					$customer_id=$this->checkoutModel->createCustomer($orderDetails);
+				}
+
+				if (isset($_SESSION['branch_Id'])) {
+			 	$menuId=$_SESSION['branch_Id'];
+			 	}
+
+				$orderDetails['customer_id']=$customer_id;
+				$orderDetails['menu_id']=$menuId;
+				
+
 				$order_id=$this->checkoutModel->placeOrder($orderDetails);
-				echo $order_id;
+				// echo $order_id;
 
 				if (!empty($_SESSION["quick_cart"])){
 					foreach ($_SESSION['quick_cart'] as $key => $item) {
-
+						$orderItems[$key]=$item['quantity'];
 					}
 				}
+				$this->checkoutModel->insertOrderItems($order_id,$menuId,$orderItems);
+				$this->view("customer/myorders");
 
 			}
 			else {
