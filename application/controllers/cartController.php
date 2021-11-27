@@ -40,6 +40,35 @@
 			}
 
 		$this->index();
+		}
+
+
+		public function deleteSpecialItem($itemId){
+			if(!empty($_SESSION["special_cart"])) {
+		    foreach($_SESSION["special_cart"] as $key => $value) {
+		      if($itemId == $key){
+		      unset($_SESSION["special_cart"][$key]);
+		      $message = "Item is removed from your cart!";
+		      }
+		      if(empty($_SESSION["special_cart"]))unset($_SESSION["special_cart"]);
+		    }		
+		}
+		$this->index();
+		}
+		public function emptySpecialCart(){
+			unset($_SESSION["special_cart"]);
+			$this->index();
+		}
+
+		public function updateSpecailCart(){
+			$itemCount=$_POST['item_count'];
+			for ($i=0; $i <$itemCount ; $i++) { 
+
+				$_SESSION["special_cart"][$_POST["qin_name-".$i+1]]['quantity']=$_POST["qin-".$_POST["qin_name-".$i+1]];
+
+			}
+
+		$this->index();
 	}
 }
 

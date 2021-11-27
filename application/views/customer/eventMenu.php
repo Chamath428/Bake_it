@@ -1,3 +1,43 @@
+ <?php 
+	
+	if (isset($_POST['add-to-cart'])) {
+		$item_Id=$_POST['item-id'];
+		$quantity=1;
+		$cartArray=array(
+				'item_Id'=>$item_Id,
+				'name'=>$_POST['item-name'],
+				'price'=>$_POST['item-price'],
+				'quantity'=>$quantity	
+		);
+
+		if(empty($_SESSION["special_cart"])) {
+    		$_SESSION["special_cart"] =array();
+    		$_SESSION["special_cart"][$item_Id] = $cartArray;
+    		$message="Item successfully added to the cart. You can edit the quantity from the cart";
+		}else{
+			$array_keys = array_keys($_SESSION["special_cart"]);
+			if(in_array($item_Id,$array_keys)) {
+				$message = "Product is already added to your cart!";	
+    		} else {
+			    $_SESSION["special_cart"][$item_Id] = $cartArray;
+			    $message = "Item successfully added to the cart. You can edit the quantity from the cart";
+			}
+		}
+	}
+	if (isset($_POST['remove-from-cart'])) {
+		if(!empty($_SESSION["special_cart"])) {
+		    foreach($_SESSION["special_cart"] as $key => $value) {
+		      if($_POST["item-id"] == $key){
+		      unset($_SESSION["special_cart"][$key]);
+		      $message = "Item is removed from your cart!";
+		      }
+		      if(empty($_SESSION["special_cart"]))unset($_SESSION["special_cart"]);
+		    }		
+		}
+	}
+
+ ?>
+
 <?php $pagename="Order for an Event"; ?>
 <!DOCTYPE html>
 <html>
@@ -42,11 +82,24 @@
 				if (sizeof($data)>0) {
 				foreach ($data as $key => $item) {?>
 					<div class="burger-item">
-						<img src="<?php echo BASEURL; ?>/public/images/b1.png">
-						<h3><?php echo $item['item_name']; ?></h3>
-						<span><?php echo "RS.".$item['price']; ?></span><br>
-						<button id="add-button-<?php echo $key ?>" class="add-button" onclick="buttonControl('add-button-<?php echo $key ?>','close-button-<?php echo $key ?>')"><a>Add to special cart</a></button>
-						<button id="close-button-<?php echo $key ?>" class="close-button" onclick="buttonControl('add-button-<?php echo $key ?>','close-button-<?php echo $key ?>')"><a>Remove from special cart</a></button>
+						<form  method="post" action="">
+							<img src="<?php echo BASEURL; ?>/public/images/b1.png">
+							<h3><?php echo $item['item_name']; ?></h3>
+							<span><?php echo "RS.".$item['price']; ?></span><br>
+							<input type="hidden" name="item-id" value="<?php echo $item['item_id']; ?>">
+							<input type="hidden" name="item-name" value="<?php echo $item['item_name']; ?>">
+							<input type="hidden" name="item-price" value="<?php echo $item['price']; ?>">
+							<?php if (!empty($_SESSION["special_cart"])) {
+								$array_keys = array_keys($_SESSION["special_cart"]);
+								if(in_array($item['item_id'],$array_keys)) {?>
+									<button type="submit" name="remove-from-cart" class="close-button"><a>Remove from special cart</a></button>
+					    	<?php }else if(!in_array($item['item_id'],$array_keys)){ ?>
+					    		<button type="submit" name="add-to-cart" class="add-button"><a>Add to special cart</a></button>
+					    	<?php }}else {?>
+					    		<button type="submit" name="add-to-cart" class="add-button"><a>Add to special cart</a></button>
+					    	<?php }?>
+							
+						</form>
 					</div>
 				<?php }
 				}else{?>
