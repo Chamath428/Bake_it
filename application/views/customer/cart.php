@@ -27,7 +27,7 @@
 			<hr class="indicator">
 		</div>
 
-		<!-- Qucik Cart starts here -->
+	<!-- Qucik Cart starts -->
 		
 		<div class="cart" id="quick-cart">
 			<?php if (!empty($_SESSION["quick_cart"])){ 
@@ -110,17 +110,17 @@
 		<?php } ?>
 	</div>
 	
-	<!-- Quick Cart ends here -->
+	<!-- Quick Cart ends -->
 
 
-
-
-
-
-
-	<!-- Special Cart starts here -->
+	<!-- Special Cart starts -->
 
 	<div class="cart" id="special-cart">
+				<?php if (!empty($_SESSION["special_cart"])){ 
+				$subtotal=0;
+				$itemCount=0;
+				?>
+			<form method="post" action="<?php echo BASEURL."/cartController/updateSpecailCart" ?>">
 			<div class="cart-containter">
 			<table>
 				<tr>
@@ -131,45 +131,52 @@
 					<th>Total</th>
 				</tr>
 
+				<?php foreach ($_SESSION['special_cart'] as $key => $item) {
+					$itemCount++;
+					?>
 				<tr>
 					<td>
-						<button><i class="far fa-times-circle"></i></button>
+						<button type="button" onclick="confirmSpecialDeletion(<?php echo $key; ?>)"><i class="far fa-times-circle"></i></button>
 					</td>
 					<td>
 						<div class="product-container">
 							<img src="<?php echo BASEURL ?>/public/images/b1.png">
 							<div>
-								<p>Small Burger</p>
+								<p><?php echo $item['name']; ?></p>
 							</div>
 						</div>
 					</td>
 					<td>
-						<p>150.00LKR</p>
+						<p><?php echo "RS.".$item['price']; ?></p>
 					</td>
 					<td>
 						<div class="quantity-feilds">
- 							<button id="plus"><i class="fas fa-minus" id="fa-minus"></i></button>
- 							<input type="number" name="" value="1" id="qin">
- 							<button id="minus" onclick="incrementValue()"><i class="fas fa-plus" id="fa-plus"></i></button>
+							<button id="plus" type="button"><i class="fas fa-minus" id="fa-minus" onclick="decrementValue('qins-<?php echo $key ?>')"></i></button>
+							<input type="hidden" name="qin_name-<?php echo $itemCount ?>" value="<?php echo $key; ?>">
+ 							<input type="text" name="qin-<?php echo $key; ?>" value="<?php echo $item['quantity']; ?>" class="qin" id="qins-<?php echo $key; ?>" min="0">
+ 							<button id="minus" type="button"><i class="fas fa-plus" id="fa-plus" onclick="incrementValue('qins-<?php echo $key ?>')"></i></button>
  						</div>
 					</td>
 					<td>
-						<p>150.00LKR</p>
+						<p><?php echo "RS.".$item['price']*$item['quantity']; ?></p>
 					</td>
 				</tr>
-
+			<?php 
+				$subtotal+=$item['price']*$item['quantity'];
+			} ?>
 			</table>
+			<input type="hidden" name="item_count" value="<?php echo $itemCount; ?>">
 			<div class="button-container">
-				<button onclick="showAlert('Remove All the items')">Empty Cart</button>
-				<button onclick="showAlert('Cart Updated Succesfully')">Update Cart</button>
+				<button type="button" onclick="emptySpecialCart()">Empty Cart</button>
+				<input type="submit" name="Update Cart" value="Update Cart">
 			</div>
 		</div>
-
+		</form>
 		<div class="total-container">
 			<table>
 				<tr>
 					<td>Subtotal</td>
-					<td>300.00 LKR</td>
+					<td><?php echo $subtotal.".00 LKR"; ?></td>
 				</tr>
 				<tr>
 					<td>Delivery Tax</td>
@@ -177,16 +184,26 @@
 				</tr>
 				<tr>
 					<td>Grand Total</td>
-					<td>300.00 LKR</td>
+					<td><?php echo $subtotal.".00 LKR"; ?></td>
 				</tr>
 			</table>
-			<a href="<?php echo BASEURL.'/checkoutController' ?>"><button>Proceed to Checkout</button></a>
+			<?php if($subtotal>=4000){ ?>
+			<a href="<?php echo BASEURL.'/checkoutController/specialCheckout' ?>"><button type="button">Proceed to Checkout</button></a>
+		<?php }else{ ?>
+			<p>Your grand total should be equal or grater than to RS.4000.00 to checkout a special order</p>
+		<?php } ?>
 		</div>
+		<?php } else{?>
+			<div class="no-burger">
+				<span>Your special cart is empty!</span>
+			</div>
+		<?php } ?>
 	</div>
  </section> 
+<!-- Special Cart ends -->
 
-
-<!-- Mobile cart starts here -->
+<!-- Mobile cart starts -->
+<!-- Mobile quick cart starts -->
 
  <section class="mobile-cart">
  	<div class="form-btnm">
@@ -242,9 +259,10 @@
  			<?php 
 				$subtotal+=$item['price']*$item['quantity'];
 			} ?>
+			<input type="hidden" name="item_count" value="<?php echo $itemCount; ?>">
  			<div class="button-container">
-				<button type="button">Empty Cart</button>
-				<button type="button">Update Cart</button>
+				<button type="button" onclick="emptyCart()">Empty Cart</button>
+				<input type="submit" name="Update Cart" value="Update Cart">
 			</div>
  		</div>
  		<div class="total-container">
@@ -271,12 +289,24 @@
 		<?php } ?>
  	</div>
 
+<!-- MObile quick cart ends -->
+
+
+<!-- Mobile special cart starts -->
+
  	<div class="cartm" id="special-cartm">
+ 		<?php if (!empty($_SESSION["special_cart"])){ 
+				$subtotal=0;
+				$itemCount=0;
+				?>
+			<form method="post" action="<?php echo BASEURL."/cartController/updateSpecailCart" ?>">
  		<div class="cart-containterm">
+			<?php foreach ($_SESSION['special_cart'] as $key => $item) {
+					$itemCount++; ?>
  			<table>
  				<tr>
  					<td id="remove-btnm">
-						<button><i class="far fa-times-circle"></i></button>
+						<button type="button" onclick="confirmDeletion(<?php echo $key; ?>)"><i class="far fa-times-circle"></i></button>
 					</td>
  					<td>
  						<div class="product-image">
@@ -287,72 +317,42 @@
  				</tr>
  				<tr>
  					<td>Product</td>
- 					<td>Samll Burger</td>
+ 					<td><?php echo $item['name']; ?></td>
  				</tr>
  				<tr>
  					<td>Price</td>
- 					<td>150.00LKR</td>
+ 					<td><?php echo $item['price']; ?></td>
  				</tr>
  				<tr>
  					<td>Quantity</td>
  					<td>
  						<div>
- 							<button id="plus"><i class="fas fa-minus" id="fa-minus"></i></button>
- 							<input type="number" name="" value="1" id="qin">
- 							<button id="minus" onclick="incrementValue()"><i class="fas fa-plus" id="fa-plus"></i></button>
+ 							<button id="plus" type="button"><i class="fas fa-minus" id="fa-minus" onclick="decrementValue('qinsm-<?php echo $key ?>')"></i></button>
+							<input type="hidden" name="qin_name-<?php echo $itemCount ?>" value="<?php echo $key; ?>">
+ 							<input type="text" name="qin-<?php echo $key; ?>" value="<?php echo $item['quantity']; ?>" class="qin" id="qinsm-<?php echo $key; ?>" min="0">
+ 							<button id="minus" type="button"><i class="fas fa-plus" id="fa-plus" onclick="incrementValue('qinsm-<?php echo $key ?>')"></i></button>
  						</div>
  					</td>
  				</tr>
  				<tr>
  					<td>Total</td>
- 					<td>150.00LKR</td>
+ 					<td><?php echo "RS.".$item['price']*$item['quantity']; ?></td>
  				</tr>
  			</table>
- 			<table>
- 				<tr>
- 					<td id="remove-btnm">
-						<button><i class="far fa-times-circle"></i></button>
-					</td>
- 					<td>
- 						<div class="product-image">
- 							<img src="<?php echo BASEURL ?>/public/images/b1.png" width="40px" height="40px">
-
- 						</div>
- 					</td>
- 				</tr>
- 				<tr>
- 					<td>Product</td>
- 					<td>Samll Burger</td>
- 				</tr>
- 				<tr>
- 					<td>Price</td>
- 					<td>150.00LKR</td>
- 				</tr>
- 				<tr>
- 					<td>Quantity</td>
- 					<td>
- 						<div>
- 							<button id="plus"><i class="fas fa-minus" id="fa-minus"></i></button>
- 							<input type="number" name="" value="1" id="qin">
- 							<button id="minus" onclick="incrementValue()"><i class="fas fa-plus" id="fa-plus"></i></button>
- 						</div>
- 					</td>
- 				</tr>
- 				<tr>
- 					<td>Total</td>
- 					<td>150.00LKR</td>
- 				</tr>
- 			</table>
+ 			<?php 
+				$subtotal+=$item['price']*$item['quantity'];
+			} ?>
+			<input type="hidden" name="item_count" value="<?php echo $itemCount; ?>">
  			<div class="button-container">
-				<button>Empty Cart</button>
-				<button>Update Cart</button>
+				<button type="button" onclick="emptySpecialCart()">Empty Cart</button>
+				<input type="submit" name="Update Cart" value="Update Cart">
 			</div>
  		</div>
  		<div class="total-container">
 			<table>
 				<tr>
 					<td>Subtotal</td>
-					<td>300.00 LKR</td>
+					<td><?php echo $subtotal.".00 LKR"; ?></td>
 				</tr>
 				<tr>
 					<td>Delivery Tax</td>
@@ -360,11 +360,20 @@
 				</tr>
 				<tr>
 					<td>Grand Total</td>
-					<td>300.00 LKR</td>
+					<td><?php echo $subtotal.".00 LKR"; ?></td>
 				</tr>
 			</table>
-			<a href="<?php echo BASEURL.'/checkoutController' ?>"><button>Proceed to Checkout</button></a>
+			<?php if($subtotal>=4000){ ?>
+			<a href="<?php echo BASEURL.'/checkoutController' ?>"><button type="button">Proceed to Checkout</button></a>
+		<?php }else{ ?>
+			<p>Your grand total should be equal or grater than to RS.4000.00 to checkout a special order</p>
+		<?php } ?>
 		</div>
+		<?php } else{?>
+			<div class="no-burger">
+				<span>Your special cart is empty!</span>
+			</div>
+		<?php } ?>
  	</div>
  
  </section>

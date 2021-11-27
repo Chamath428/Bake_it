@@ -29,7 +29,7 @@
 								 customer_type
 								)
 						VALUES  ("
-								.'"'.$customerData['first_name'].'"' 	.","
+								.'"'.$customerData['first_name'].'"' 		.","
 								.'"'.$customerData['last_name'].'"' 		.","
 								.'"'.$customerData['address1'].'"' 			.","
 								.'"'.$customerData['address2'].'"' 			.","
@@ -76,7 +76,7 @@
 						)
 					VALUES ("
 							.'"'.$orderDetails['customer_id'].'"' 	.","
-							.'"'.$orderDetails['menu_id'].'"' 						.","
+							.'"'.$orderDetails['menu_id'].'"' 		.","
 							.'"'.$orderType.'"' 					.","
 							.'"'.$orderDetails['subtotal'].'"' 		.","
 							.'"'.$orderDetails['delivery_type'].'"' .","
@@ -112,6 +112,46 @@
 							.'"'.$item_id.'"' .","
 							.'"'.$quantity.'")';
 			$res6=mysqli_query($this->db,$sql6) or die('6->'.mysqli_error($this->db));
+		}
+
+		public function placeSpecialOrder($orderDetails){
+			 $orderDetails['customer_id']=$this->db->real_escape_string($orderDetails['customer_id']);
+			 $orderDetails['subtotal']=$this->db->real_escape_string($orderDetails['subtotal']);
+			 $orderDetails['delivery_type']=$this->db->real_escape_string($orderDetails['delivery_type']);
+			 // $orderDetails['payment_type']=$this->db->real_escape_string($orderDetails['payment_type']);
+			 $orderDetails['date']=$this->db->real_escape_string($orderDetails['date']);
+			 $orderDetails['time']=$this->db->real_escape_string($orderDetails['time']);
+			 $orderType=2;
+			 $orderStatus=1;
+
+			 $sql7="INSERT INTO
+			 			order_details(
+							customer_id,
+							menu_id,
+							order_type,
+							total_amount,
+							reveiving_method,
+							needed_date,
+							needed_time,
+							order_status
+						)
+					VALUES ("
+							.'"'.$orderDetails['customer_id'].'"' 	.","
+							.'"'.$orderDetails['menu_id'].'"' 		.","
+							.'"'.$orderType.'"' 					.","
+							.'"'.$orderDetails['subtotal'].'"' 		.","
+							.'"'.$orderDetails['delivery_type'].'"' .","
+							.'"'.$orderDetails['date'].'"' .","
+							.'"'.$orderDetails['time'].'"' .","
+							.'"'.$orderStatus.'")';
+			$res7=mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
+
+			$sql8= "SELECT LAST_INSERT_ID() AS last_order_id";
+			$res8=mysqli_query($this->db,$sql8) or die('8->'.mysqli_error($this->db));
+			$row3=mysqli_fetch_assoc($res8);
+			$last_order_id=$row3['last_order_id'];
+
+			return $last_order_id;
 		}
 	}
 

@@ -58,10 +58,25 @@ function confirmDeletion(item_id) {
      }
 }
 
+function confirmSpecialDeletion(item_id) {
+        let confirmAction = confirm("Are you sure to delete the item from the cart?");
+        if (confirmAction) {
+          location.replace("http://localhost/bakeit/cartController/deleteSpecialItem/"+item_id);
+     }
+}
+
+
 function emptyCart(){
 	let confirmAction = confirm("Are you sure to empty the cart?");
 	if (confirmAction) {
           location.replace("http://localhost/bakeit/cartController/emptyCart/");
+     }
+}
+
+function emptySpecialCart(){
+	let confirmAction = confirm("Are you sure to empty the cart?");
+	if (confirmAction) {
+          location.replace("http://localhost/bakeit/cartController/emptySpecialCart/");
      }
 }
 

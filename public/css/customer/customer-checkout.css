@@ -37,7 +37,6 @@ section{
 
 .radio-box{
 	width: 80%;
-	/*margin-left: 15rem;*/
 	margin: 0 0 0 15rem;
 	display: flex;
 	flex-direction: column;
@@ -125,19 +124,66 @@ section{
 	font-size: 1.4rem;
 }
 
+/* Date details starts */
+
+.date-details{
+	width: 80%;
+	margin: 0 0 0 15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.date-details div{
+	width: 40%;
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem;
+}
+.date-details div input{
+	width: 60%;
+	border: 1px solid rgb(255, 138, 0);
+	background: transparent;
+	border-radius: 30px;
+	padding: 10px 20px;
+	outline: none;
+	margin-bottom: 20px;
+	font-size: 1.4rem;
+}
+.date-details h3{
+	margin-bottom: 2rem;
+}
+
+/*Date details ends*/
+
 @media(max-width: 1000px){
-	.radio-box{
+	.radio-box , .date-details{
 		margin: 0 auto;
 		align-items: center;
 	}
-	.radio-box div{
+	.radio-box div {
 		flex-direction: column;
 		align-items: center;
+	}
+	.date-details div{
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
 	}
 	.billing-details .location-details{
 		margin: 0 auto;
 	}
+	.date-details div input{
+		width: 70%;
+	}
 }
+
+@media(max-width: 750px){
+	.date-details div input{
+		width: 100%;
+	}
+}
+
 @media(max-width: 655px){
 	.billing-details .basic-details{
 		display: flex;
@@ -153,12 +199,13 @@ section{
 		flex-direction: column;
 		align-items: center;
 	}
-	.radio-box{
+	.radio-box , .date-details{
 		width: 100%;
 	}
 	.billing-details .location-details input{
 		width: 40%;
 	}
+
 }
 @media(max-width: 530px){
 	.billing-details input[type="text"]{
@@ -303,10 +350,24 @@ section{
 	object-fit: fit;
 }
 
+#unregistered-payment{
+	width: 100%;
+}
+
+#unregistered-payment .payment-image{
+	width: 10%;
+}
+#unregistered-payment .payment-image a img{
+	width: 100px;
+	height: 40px;
+	object-fit: fit;
+}
+
 @media(max-width: 753px){
 	#payment-method{
 		width: 100%;
 	}
+
 }
 
 /*Payment Method Ends*/

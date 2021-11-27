@@ -171,6 +171,10 @@ form{
 	font-weight: 600;
 }
 
+.total-container p{
+	color: red;
+}
+
 .total-container button:hover{
 	background-color: rgba(255, 138, 0,1);
 	color: white;
