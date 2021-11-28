@@ -21,26 +21,78 @@
 	<section class="order-details">
 		<div class="basic-details">
 			<table>
-				<tr>
-					<td>Order ID</td>
-					<td>#Q117</td>
-				</tr>
-				<tr>
-					<td>Placed Date</td>
-					<td>03/09/2021</td>
-				</tr>
-				<tr>
-					<td>Order Status</td>
-					<td>Ongoing</td>
-				</tr>
-				<tr>
-					<td>Reciving Method</td>
-					<td><a href="">Home Delivery</a></td>
-				</tr>
-				<tr>
-					<td>Delivery Person</td>
-					<td><a href="">Dilantha Malagamuwa</a></td>
-				</tr>
+
+					<tr>
+						<td>Order ID</td>
+						<td><?php echo $data[1]['order_id'] ?></td>
+					</tr>
+					<tr>
+						<td>Placed Date</td>
+						<td><?php echo substr($data[1]['placed_date'], 0,10); ?></td>
+					</tr>
+					<?php if ($data[1]['order_type']==2) { ?>
+
+						<tr>
+							<td>Required Date</td>
+							<td><?php echo $data[1]['needed_date']; ?></td>
+						</tr>
+						<tr>
+							<td>Required Time</td>
+							<td><?php echo $data[1]['needed_time']; ?></td>
+						</tr>
+
+					<?php } ?>
+					<tr>
+						<td>Order Status</td>
+						<td><?php switch ($data[1]['order_status']) {
+							case '1':
+								echo "Pending to accept";
+								break;
+							case '2':
+								echo "Accepted";
+								break;
+							case '3':
+								echo "On the way";
+								break;
+							case '4':
+								echo "Send order to the bakery";
+								break;
+							case '5':
+								echo "Cooking Completed";
+								break;
+							case '6':
+								echo "Declined by the shop";
+								break;
+							case '7':
+								echo "Cancled";
+								break;
+							
+							default:
+								echo "Order Status";
+								break;
+						}  ?></td>
+					</tr>
+					<tr>
+						<td>Reciving Method</td>
+						<td><a href=""><?php switch ( $data[1]['reveiving_method']) {
+							case '1':
+								echo "Home delivery";
+								break;
+							case '2':
+								echo "Pick up from shop";
+								break;
+							
+							default:
+								echo "Not specified";
+								break;
+						} ?></a></td>
+					</tr>
+					<?php if ($data[1]['reveiving_method']==1) {?>
+						<tr>
+							<td>Delivery Person</td>
+							<td><a href=""><?php echo $data[1]['delivery_person_id'] ?></a></td>
+						</tr>
+					<?php } ?>
 			</table>
 		</div>
 
@@ -54,85 +106,75 @@
 						<th>Quantity</th>
 						<th>Total</th>
 					</tr>
-
+				<?php 
+				$grandTotal=0;
+				foreach ($data[2] as $key => $items) { ?>
+		
 					<tr>
 						<td>
 							<div class="product-container">
 								<img src="<?php echo BASEURL ?>/public/images/b1.png">
 								<div>
-									<p>Small Burger</p>
+									<p><?php echo $items['item_name']; ?></p>
 								</div>
 							</div>
 						</td>
 						<td>
-							<p>150.00LKR</p>
+							<p><?php echo $items['price'].".00 LKR"; ?></p>
 						</td>
 						<td>
 							<div>
-	 							<input type="text" name="" value="1" readonly="">
+	 							<input type="text" name="" value="<?php echo $items['quantity']; ?>" readonly="">
 	 						</div>
 						</td>
 						<td>
-							<p>150.00LKR</p>
+							<p><?php echo $items['price']*$items['quantity'].".00 LKR"; ?></p>
 						</td>
 					</tr>
-					<tr>
-						<td>
-							<div class="product-container">
-								<img src="<?php echo BASEURL ?>/public/images/b1.png">
-								<div>
-									<p>ddd Burger</p>
-								</div>
-							</div>
-						</td>
-						<td>
-							<p>150.00LKR</p>
-						</td>
-						<td>
-							<div>
-	 							<input type="text" name="" value="1" readonly="">
-	 						</div>
-						</td>
-						<td>
-							<p>150.00LKR</p>
-						</td>
-					</tr>
+				<?php 
+					$grandTotal+=$items['price']*$items['quantity'];
+				}?>
 				</table>
 			</div>
 		</div>
 
+
+
 		<div class="mobile-cart">
 			<div class="cart-containterm">
- 			<table>
- 				<tr>
- 					<td>
- 						<div class="product-image">
- 							<img src="<?php echo BASEURL ?>/public/images/b1.png" width="40px" height="40px">
- 						</div>
- 					</td>
- 					<td></td>
- 				</tr>
- 				<tr>
- 					<td>Product</td>
- 					<td>aaa Burger</td>
- 				</tr>
- 				<tr>
- 					<td>Price</td>
- 					<td>150.00LKR</td>
- 				</tr>
- 				<tr>
- 					<td>Quantity</td>
- 					<td>
- 						<div>
- 							<input type="text" name="" value="1" readonly="">
- 						</div>
- 					</td>
- 				</tr>
- 				<tr>
- 					<td>Total</td>
- 					<td>150.00LKR</td>
- 				</tr>
- 			</table>
+			<?php foreach ($data[2] as $key => $items) {?>
+			
+	 			<table>
+	 				<tr>
+	 					<td>
+	 						<div class="product-image">
+	 							<img src="<?php echo BASEURL ?>/public/images/b1.png" width="40px" height="40px">
+	 						</div>
+	 					</td>
+	 					<td></td>
+	 				</tr>
+	 				<tr>
+	 					<td>Product</td>
+	 					<td><?php echo $items['item_name']; ?></td>
+	 				</tr>
+	 				<tr>
+	 					<td>Price</td>
+	 					<td><?php echo  $items['price'].".00 LKR"; ?></td>
+	 				</tr>
+	 				<tr>
+	 					<td>Quantity</td>
+	 					<td>
+	 						<div>
+	 							<input type="text" name="" value="<?php echo $items['quantity'] ?>" readonly="">
+	 						</div>
+	 					</td>
+	 				</tr>
+	 				<tr>
+	 					<td>Total</td>
+	 					<td><?php echo $items['price']*$items['quantity'].".00 LKR"; ?></td>
+	 				</tr>
+	 			</table>
+ 			<?php  } ?>
  		</div>
 		</div>
 		</div>
@@ -141,7 +183,7 @@
 			<table>
 				<tr>
 					<td>Subtotal</td>
-					<td>300.00 LKR</td>
+					<td><?php echo $grandTotal.".00 LKR" ?></td>
 				</tr>
 				<tr>
 					<td>Delivery Tax</td>
@@ -149,7 +191,7 @@
 				</tr>
 				<tr>
 					<td>Grand Total</td>
-					<td>300.00 LKR</td>
+					<td><?php echo $grandTotal.".00 LKR" ?></td>
 				</tr>
 			</table>
 		</div>

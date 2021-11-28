@@ -117,12 +117,14 @@
 		public function placeSpecialOrder($orderDetails){
 			 $orderDetails['customer_id']=$this->db->real_escape_string($orderDetails['customer_id']);
 			 $orderDetails['subtotal']=$this->db->real_escape_string($orderDetails['subtotal']);
+			 $orderDetails['paid_amount']=$this->db->real_escape_string($orderDetails['paid_amount']);
 			 $orderDetails['delivery_type']=$this->db->real_escape_string($orderDetails['delivery_type']);
-			 // $orderDetails['payment_type']=$this->db->real_escape_string($orderDetails['payment_type']);
+			 $orderDetails['payment_type']=$this->db->real_escape_string($orderDetails['payment_type']);
 			 $orderDetails['date']=$this->db->real_escape_string($orderDetails['date']);
 			 $orderDetails['time']=$this->db->real_escape_string($orderDetails['time']);
 			 $orderType=2;
 			 $orderStatus=1;
+
 
 			 $sql7="INSERT INTO
 			 			order_details(
@@ -130,6 +132,8 @@
 							menu_id,
 							order_type,
 							total_amount,
+							paid_amount,
+							is_advanced,
 							reveiving_method,
 							needed_date,
 							needed_time,
@@ -140,6 +144,8 @@
 							.'"'.$orderDetails['menu_id'].'"' 		.","
 							.'"'.$orderType.'"' 					.","
 							.'"'.$orderDetails['subtotal'].'"' 		.","
+							.'"'.$orderDetails['paid_amount'].'"' 		.","
+							.'"'.$orderDetails['is_advanced'].'"' 		.","
 							.'"'.$orderDetails['delivery_type'].'"' .","
 							.'"'.$orderDetails['date'].'"' .","
 							.'"'.$orderDetails['time'].'"' .","

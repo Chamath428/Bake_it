@@ -27,49 +27,109 @@
 		</div>
 
 		<div class="order-container" id="quick-order">
-			<table>
-				<tr>
-					<th>Order ID</th>
-					<th>Grand Total</th>
-					<th>Placed Date</th>
-					<th>Order Status</th>
-				</tr>
-				<tr>
-					<td><a href="<?php echo BASEURL."/myordersController/showQuickOrderDetails"?>">#Q117</a></td>
-					<td>1500.00LKR</td>
-					<td>03/09/2021</td>
-					<td>Ongoing</td>
-				</tr>
-				<tr>
-					<td><a href="<?php echo BASEURL."/myordersController/showQuickOrderDetails"?>">#Q118</a></td>
-					<td>1600.00LKR</td>
-					<td>01/09/2021</td>
-					<td>Completed</td>
-				</tr>
-			</table>
+			<?php if (!empty($data[1])) {?>
+				<table>
+					<tr>
+						<th>Order ID</th>
+						<th>Grand Total</th>
+						<th>Placed Date</th>
+						<th>Order Status</th>
+					</tr>
+				<?php foreach ($data[1] as $key => $order) { ?>
+					<tr>
+						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails/".$order['order_id']?>"><?php echo $order['order_id'] ?></a></td>
+						<td><?php echo $order['total_amount']; ?></td>
+						<td><?php echo substr($order['placed_date_and_time'], 0,10); ?></td>
+						<td><?php switch ($order['order_status']) {
+							case '1':
+								echo "Pending to accept";
+								break;
+							case '2':
+								echo "Accepted";
+								break;
+							case '3':
+								echo "On the way";
+								break;
+							case '4':
+								echo "Send order to the bakery";
+								break;
+							case '5':
+								echo "Cooking Completed";
+								break;
+							case '6':
+								echo "Declined by the shop";
+								break;
+							case '7':
+								echo "Cancled";
+								break;
+							
+							default:
+								echo "Order Status";
+								break;
+						} ?></td>
+					</tr>
+				<?php  } ?>
+				</table>
+			<?php  }else{ ?>
+				<div class="no-order">
+					<span>No quick orders to show!</span>
+				</div>
+			<?php } ?>
 		</div>
+
+
 		<div class="order-container" id="specia-order">
-			<table>
-				<tr>
-					<th>Order ID</th>
-					<th>Grand Total</th>
-					<th>Placed Date</th>
-					<th>Order Status</th>
-				</tr>
-				<tr>
-					<td><a href="<?php echo BASEURL."/myordersController/showSpecialOrderDetails"?>">#SP117</a></td>
-					<td>1500.00LKR</td>
-					<td>03/09/2021</td>
-					<td>Ongoing</td>
-				</tr>
-				<tr>
-					<td><a href="<?php echo BASEURL."/myordersController/showQuickOrderDetails"?>">#SP118</a></td>
-					<td>1600.00LKR</td>
-					<td>01/09/2021</td>
-					<td>Completed</td>
-				</tr>
-			</table>
+			<?php if (!empty($data[2])) {?>
+				<table>
+					<tr>
+						<th>Order ID</th>
+						<th>Grand Total</th>
+						<th>Placed Date</th>
+						<th>Order Status</th>
+					</tr>
+				<?php foreach ($data[2] as $key => $order) { ?>
+					<tr>
+						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails/".$order['order_id'];?>"><?php echo $order['order_id'] ?></a></td>
+						<td><?php echo $order['total_amount'].".00 LKR"?></td>
+						<td><?php echo substr($order['placed_date_and_time'], 0,10); ?></td>
+						<td><?php switch ($order['order_status']) {
+							case '1':
+								echo "Pending to accept";
+								break;
+							case '2':
+								echo "Accepted";
+								break;
+							case '3':
+								echo "On the way";
+								break;
+							case '4':
+								echo "Send order to the bakery";
+								break;
+							case '5':
+								echo "Cooking Completed";
+								break;
+							case '6':
+								echo "Declined by the shop";
+								break;
+							case '7':
+								echo "Cancled";
+								break;
+							
+							default:
+								echo "Order Status";
+								break;
+						} ?></td>
+					</tr>
+				<?php  } ?>
+				</table>
+			<?php  }else{ ?>
+				<div class="no-order">
+					<span>No special orders to show!</span>
+				</div>
+			<?php } ?>
 		</div>
+
+
 	</section>
 
 	<section class="mobile-orders">
@@ -79,81 +139,111 @@
 		</div>
 
 		<div class="order-container" id="quick-orderm">
-			<table>
-				<tr>
-					<td>Order ID</td>
-					<td><a href="<?php echo BASEURL."/myordersController/showQuickOrderDetails"?>">#117</a></td>
-				</tr>
-				<tr>
-					<td>Grand Total</td>
-					<td>15000.00LKR</td>
-				</tr>
-				<tr>
-					<td>Placed Date</td>
-					<td>03/09/2021</td>
-				</tr>
-				<tr>
-					<td>Order Status</td>
-					<td>Ongoing</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td>Order ID</td>
-					<td><a href="">#116</a></td>
-				</tr>
-				<tr>
-					<td>Grand Total</td>
-					<td>15000.00LKR</td>
-				</tr>
-				<tr>
-					<td>Placed Date</td>
-					<td>03/09/2021</td>
-				</tr>
-				<tr>
-					<td>Order Status</td>
-					<td>Completed</td>
-				</tr>
-			</table>
+			<?php if (!empty($data[1])) {
+				foreach ($data[1] as $key => $order) {?>
+				<table>
+					<tr>
+						<td>Order ID</td>
+						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails"?>"><?php echo $order['order_id'] ?></a></td>
+					</tr>
+					<tr>
+						<td>Grand Total</td>
+						<td><?php echo $order['total_amount'] ?></td>
+					</tr>
+					<tr>
+						<td>Placed Date</td>
+						<td><?php echo substr($order['placed_date_and_time'], 0,10); ?></td>
+					</tr>
+					<tr>
+						<td>Order Status</td>
+						<td><?php switch ($order['order_status']) {
+							case '1':
+								echo "Pending to accept";
+								break;
+							case '2':
+								echo "Accepted";
+								break;
+							case '3':
+								echo "On the way";
+								break;
+							case '4':
+								echo "Send order to the bakery";
+								break;
+							case '5':
+								echo "Cooking Completed";
+								break;
+							case '6':
+								echo "Declined by the shop";
+								break;
+							case '7':
+								echo "Cancled";
+								break;
+							
+							default:
+								echo "Order Status";
+								break;
+						} ?></td>
+					</tr>
+				</table>
+			<?php  }}else{ ?>
+				<div class="no-order">
+					<span>No quick orders to show!</span>
+				</div>
+			<?php } ?>
 		</div>
 
 		<div class="order-container" id="specia-orderm">
-			<table>
-				<tr>
-					<td>Order ID</td>
-					<td><a href="<?php echo BASEURL."/myordersController/showSpecialOrderDetails"?>">#SP117</a></td>
-				</tr>
-				<tr>
-					<td>Grand Total</td>
-					<td>15000.00LKR</td>
-				</tr>
-				<tr>
-					<td>Placed Date</td>
-					<td>03/09/2021</td>
-				</tr>
-				<tr>
-					<td>Order Status</td>
-					<td>Ongoing</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td>Order ID</td>
-					<td><a href="">#SP116</a></td>
-				</tr>
-				<tr>
-					<td>Grand Total</td>
-					<td>15000.00LKR</td>
-				</tr>
-				<tr>
-					<td>Placed Date</td>
-					<td>03/09/2021</td>
-				</tr>
-				<tr>
-					<td>Order Status</td>
-					<td>Completed</td>
-				</tr>
-			</table>
+<?php if (!empty($data[2])) {
+				foreach ($data[2] as $key => $order) {?>
+				<table>
+					<tr>
+						<td>Order ID</td>
+						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails/".$order['order_id']?>"><?php echo $order['order_id'] ?></a></td>
+					</tr>
+					<tr>
+						<td>Grand Total</td>
+						<td><?php echo $order['total_amount'] ?></td>
+					</tr>
+					<tr>
+						<td>Placed Date</td>
+						<td><?php echo substr($order['placed_date_and_time'], 0,10); ?></td>
+					</tr>
+					<tr>
+						<td>Order Status</td>
+						<td><?php switch ($order['order_status']) {
+							case '1':
+								echo "Pending to accept";
+								break;
+							case '2':
+								echo "Accepted";
+								break;
+							case '3':
+								echo "On the way";
+								break;
+							case '4':
+								echo "Send order to the bakery";
+								break;
+							case '5':
+								echo "Cooking Completed";
+								break;
+							case '6':
+								echo "Declined by the shop";
+								break;
+							case '7':
+								echo "Cancled";
+								break;
+							
+							default:
+								echo "Order Status";
+								break;
+						} ?></td>
+					</tr>
+				</table>
+			<?php  }}else{ ?>
+				<div class="no-order">
+					<span>No quick orders to show!</span>
+				</div>
+			<?php } ?>
 		</div>
 	</section>
 

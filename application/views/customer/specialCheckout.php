@@ -162,18 +162,18 @@
 
 		
 			<?php if (isset($_SESSION['islogged'])) {?>
-				<div class="radio-box" id="payment-method">
-					<h3>Payment Method</h3>
+				<div class="radio-box" id="registered-payment">
+					<h3>How much would you like to pay?</h3>
 					<div>
-						<label onclick="getPayment(0)">
-					 	 	 <input type="radio" name="payment_type" checked="" value="1">
+						<label>
+					 	 	 <input type="radio" name="registered_payment" checked="" value="1">
 					 	 	 <div class="circle"></div>
-					 	 	 <span>Cash</span>
+					 	 	 <span>Advance Payment (Half of the grand total)</span>
 					 	 </label>
-					 	 <label onclick="getPayment(1)">
-					 	 	 <input type="radio" name="payment_type" value="2">
+					 	 <label>
+					 	 	 <input type="radio" name="registered_payment" value="2">
 					 	 	 <div class="circle"></div>
-					 	 	 <span>Card</span>
+					 	 	 <span>Full payment</span>
 					 	 </label>
 					</div>
 					<div class="payment-image" id="payment-image">
@@ -184,13 +184,8 @@
 				<div class="radio-box" id="unregistered-payment">
 					<h3>How much would you like to pay?</h3>
 					<div>
-						<label>
-					 	 	 <input type="radio" name="unregistered_payment" checked="" value="1">
-					 	 	 <div class="circle"></div>
-					 	 	 <span>Advance Payment (Half of the grand total)</span>
-					 	 </label>
 					 	 <label>
-					 	 	 <input type="radio" name="unregistered_payment" value="2">
+					 	 	 <input type="radio" name="unregistered_payment" value="2" checked>
 					 	 	 <div class="circle"></div>
 					 	 	 <span>Full payment</span>
 					 	 </label>
@@ -214,7 +209,7 @@
 					</tr>
 					<tr>
 						<td>Grand Total</td>
-						<td><input type="text" readonly="" name="subtotal" value="<?php echo $subtotal.".00 LKR"; ?>"></td>
+						<td><input type="hidden" readonly="" name="subtotal" value="<?php echo $subtotal; ?>"><input type="text" readonly="" name="subtotal2" value="<?php echo $subtotal.".00 LKR"; ?>"></td>
 					</tr>
 				</table>
 			</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2021 at 04:02 AM
+-- Generation Time: Nov 28, 2021 at 07:46 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 8.0.11
 
@@ -164,7 +164,13 @@ INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `address1`, `a
 (49, 'Chamath', 'Chinthana', 'Petiwaththa', 'Wathugedara', '', '2'),
 (50, 'Chamath', 'Chinthana', 'Petiwaththa', 'Wathugedara', '', '2'),
 (51, 'Chamath', 'Chinthana', '', '', '', '2'),
-(52, 'Sahan', 'Chinthana', 'No.23/69 B', 'Pettiwaththa', '', '2');
+(52, 'Sahan', 'Chinthana', 'No.23/69 B', 'Pettiwaththa', '', '2'),
+(53, 'Sasasd', 'eeqwe', '', '', '', '2'),
+(54, 'arundd', 'vcasdasd', '', '', '', '2'),
+(55, 'errwerwerwer', 'rwerwerwerwer', '', '', '', '2'),
+(56, 'Faasd', 'fdfsdfs', '', '', '', '2'),
+(57, 'fasdfsdfsdf', 'fsdfsdffsd', '', '', '', '2'),
+(58, 'Samantga', 'Samantga', '', '', '', '2');
 
 -- --------------------------------------------------------
 
@@ -269,6 +275,8 @@ CREATE TABLE `order_details` (
   `cashier_id` int(20) DEFAULT NULL,
   `order_type` varchar(100) NOT NULL,
   `total_amount` varchar(100) NOT NULL,
+  `paid_amount` varchar(255) DEFAULT '0',
+  `is_advanced` int(5) NOT NULL DEFAULT 0,
   `reveiving_method` varchar(50) NOT NULL,
   `payment_type` varchar(50) NOT NULL,
   `order_status` varchar(40) NOT NULL,
@@ -282,11 +290,14 @@ CREATE TABLE `order_details` (
 -- Dumping data for table `order_details`
 --
 
-INSERT INTO `order_details` (`order_id`, `customer_id`, `menu_id`, `cashier_id`, `order_type`, `total_amount`, `reveiving_method`, `payment_type`, `order_status`, `placed_date_and_time`, `needed_date`, `needed_time`, `delivery_person_id`) VALUES
-(15, 49, '1', NULL, '2', '4200.00 LKR', '2', '', '1', '2021-11-27 08:12:01', NULL, NULL, NULL),
-(16, 51, '1', NULL, '2', '4200.00 LKR', '1', '', '1', '2021-11-27 08:14:19', '2021-12-01', '08:18', NULL),
-(17, 52, '1', NULL, '2', '4410.00 LKR', '2', '', '1', '2021-11-27 08:17:03', '2021-12-01', '08:22', NULL),
-(18, 14, '1', NULL, '2', '4130.00 LKR', '1', '', '1', '2021-11-27 08:21:03', '2021-12-10', '08:27', NULL);
+INSERT INTO `order_details` (`order_id`, `customer_id`, `menu_id`, `cashier_id`, `order_type`, `total_amount`, `paid_amount`, `is_advanced`, `reveiving_method`, `payment_type`, `order_status`, `placed_date_and_time`, `needed_date`, `needed_time`, `delivery_person_id`) VALUES
+(31, 14, '1', NULL, '2', '7000.00 LKR', '', 0, '1', '', '1', '2021-11-27 20:35:52', '2021-12-02', '20:39', NULL),
+(32, 14, '1', NULL, '2', '7000', '', 1, '1', '', '1', '2021-11-27 20:50:16', '2021-12-09', '20:55', NULL),
+(33, 14, '1', NULL, '2', '7000', '3500', 1, '1', '', '1', '2021-11-27 20:51:09', '2021-12-02', '20:57', NULL),
+(34, 14, '1', NULL, '2', '7000', '', 0, '2', '', '1', '2021-11-27 20:51:31', '2021-12-10', '20:55', NULL),
+(35, 14, '1', NULL, '2', '7000', '7000', 0, '2', '', '1', '2021-11-27 20:52:06', '2021-12-02', '20:57', NULL),
+(36, 58, '1', NULL, '2', '7070', '7070', 0, '1', '', '1', '2021-11-27 20:53:01', '2021-12-09', '20:57', NULL),
+(37, 14, '1', NULL, '1', '140.00 LKR', '0', 0, '1', '1', '1', '2021-11-28 22:47:52', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -306,14 +317,15 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`order_id`, `menu_id`, `item_id`, `quantity`) VALUES
-(15, '1', '1', 50),
-(15, '1', '6', 10),
-(16, '1', '1', 50),
-(16, '1', '6', 10),
-(17, '1', '1', 53),
-(17, '1', '6', 10),
-(18, '1', '1', 49),
-(18, '1', '6', 10);
+(31, '1', '1', 100),
+(32, '1', '1', 100),
+(33, '1', '1', 100),
+(34, '1', '1', 100),
+(35, '1', '1', 100),
+(36, '1', '1', 100),
+(36, '1', '6', 1),
+(37, '1', '1', 1),
+(37, '1', '6', 1);
 
 -- --------------------------------------------------------
 
@@ -469,7 +481,13 @@ INSERT INTO `unregistered_customer` (`contact_number`, `customer_id`) VALUES
 ('3121231233', 48),
 ('0765846931', 49),
 ('076584622931', 51),
-('076581146931', 52);
+('076581146931', 52),
+('22312312313', 53),
+('31232131231', 54),
+('12312341212', 55),
+('23123232312', 56),
+('07658469231231', 57),
+('342342342234', 58);
 
 --
 -- Indexes for dumped tables
@@ -658,7 +676,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `customer_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `menu_category`
@@ -670,7 +688,7 @@ ALTER TABLE `menu_category`
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `ratings_and_reviews`
