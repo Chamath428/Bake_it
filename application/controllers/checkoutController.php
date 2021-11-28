@@ -72,6 +72,7 @@
 
 				if (!isset($customer_id)) {
 					$customer_id=$this->checkoutModel->createCustomer($orderDetails);
+					$this->setSession("customer_id",$customer_id);
 				}
 
 				if (isset($_SESSION['branch_Id'])) {
@@ -91,7 +92,7 @@
 					}
 				}
 				$this->checkoutModel->insertOrderItems($order_id,$menuId,$orderItems);
-				$this->view("customer/myorders");
+				header("Location:".BASEURL."/myordersController");
 
 			}
 			else {
@@ -106,7 +107,6 @@
 			$last_name=preg_replace('/\s+/', '', $_POST['last_name']);
 			$phone_number=preg_replace('/\s+/', '', $_POST['phone_number']);
 			$delivery_type=$_POST['delivery_type'];
-			// $payment_type=$_POST['payment_type'];
 			$address1="";
 			$address2="";
 			$address3="";
@@ -131,6 +131,14 @@
 			if (isset($_SESSION['branch_Id'])) {
 			 	$menuId=$_SESSION['branch_Id'];
 			 }
+
+			if (isset($_POST['registered_payment'])) {
+				$registered_payment=$_POST['registered_payment'];
+			}
+
+			if ((isset($registered_payment) && $registered_payment==1)) {
+				$advanced_payment=$subtotal/2;
+			}
 
 			 if ($first_name=="") {
 				$data['error']="First name is required";
@@ -160,17 +168,25 @@
 				$orderDetails['address2']=$address2;
 				$orderDetails['address3']=$address3;
 				$orderDetails['delivery_type']=$delivery_type;
-				// $orderDetails['payment_type']=$payment_type;
+				$orderDetails['payment_type']=2;
 				$orderDetails['date']=$date;
 				$orderDetails['time']=$time;
 				$orderDetails['subtotal']=$subtotal;
+				$orderDetails['paid_amount']=$subtotal;
+				$orderDetails['is_advanced']=0;
+
+				if (isset($advanced_payment)) {
+					$orderDetails['paid_amount']=$advanced_payment;
+					$orderDetails['is_advanced']=1;
+				}
 
 				if (!isset($customer_id)) {
 					$customer_id=$this->checkoutModel->createCustomer($orderDetails);
+					$this->setSession("customer_id",$customer_id);
 				}
 
 				if (isset($_SESSION['branch_Id'])) {
-			 	$menuId=$_SESSION['branch_Id'];
+			 		$menuId=$_SESSION['branch_Id'];
 			 	}
 
 				$orderDetails['customer_id']=$customer_id;
@@ -178,7 +194,6 @@
 				
 
 				$order_id=$this->checkoutModel->placeSpecialOrder($orderDetails);
-				// echo $order_id;
 
 				if (!empty($_SESSION["special_cart"])){
 					foreach ($_SESSION['special_cart'] as $key => $item) {
@@ -186,7 +201,7 @@
 					}
 				}
 				$this->checkoutModel->insertOrderItems($order_id,$menuId,$orderItems);
-				$this->view("customer/myorders");
+				header("Location:".BASEURL."/myordersController");
 
 			}
 			else {

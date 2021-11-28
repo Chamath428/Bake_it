@@ -350,6 +350,19 @@ section{
 	object-fit: fit;
 }
 
+#registered-payment{
+	width: 100%;
+}
+
+#registered-payment .payment-image{
+	width: 10%;
+}
+#registered-payment .payment-image a img{
+	width: 100px;
+	height: 40px;
+	object-fit: fit;
+}
+
 #unregistered-payment{
 	width: 100%;
 }

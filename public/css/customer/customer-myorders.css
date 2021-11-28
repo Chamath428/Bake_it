@@ -88,6 +88,18 @@ section{
 	transition: transform 1s;
 }
 
+.no-order{
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 5rem auto;
+}
+.no-order span{
+	font-size: 4rem;
+}
+
 @media(max-width: 810px){
 	.desktop-orders{
 		display: none;

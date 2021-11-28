@@ -8,17 +8,30 @@
 		
 		public function __construct()
 		{
-			// code...
+			$this->customerMyOrdersModel=$this->model("customerMyOrdersModel");
 		}
 		public function index(){
-			 $data=array();
-			 $this->view("customer/myorders",$data);
+			$data=array();
+			if (isset($_SESSION['customer_id'])) {
+				$customer_id=$_SESSION['customer_id'];
+				$data=$this->customerMyOrdersModel->getMyOrders($customer_id);
+			}
+			
+			$this->view("customer/myorders",$data);
 		}
 
-		public function showQuickOrderDetails(){
-			$data=array();
+
+
+		public function showOrderDetails($order_id){
+			$data=$this->customerMyOrdersModel->getOrderDetails($order_id);
+
+			// foreach ($data[1] as $key => $value) {
+			// 	echo $data[1]['order_id'];
+			// }
 			$this->view("customer/quickOrderdetails",$data);
 		}
+
+
 		public function showSpecialOrderDetails(){
 			$data=array();
 			$this->view("customer/specialOrderdetails",$data);
