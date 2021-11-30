@@ -1,4 +1,7 @@
 <!--Nav markup goes here-->
+    <div class="hero">
+    <?php if(isset($_SESSION['branch_name'])){?><h3>Selected Branch : <?php echo $_SESSION['branch_name'] ?></h3><?php } ?>
+    </div>
     <div class="container">
         <nav>
             <div class="menu-icons">
@@ -23,9 +26,9 @@
                 </li>
                 <li><a style="cursor: pointer;">Outlets</a>
                     <ul class="sub-outlets">
-                        <li><a href="">Kasbewa</a></li>
-                        <li><a href="">Baththramulla</a></li>
-                        <li><a href="">Piliyandala</a></li>
+                        <li><a href="<?php echo BASEURL."/homeController/setBranch/1" ?>">Kasbewa</a></li>
+                        <li><a href="<?php echo BASEURL."/homeController/setBranch/2" ?>">Baththramulla</a></li>
+                        <li><a href="<?php echo BASEURL."/homeController/setBranch/3" ?>">Piliyandala</a></li>
                     </ul>
                 </li>
                 <li><a href="<?php echo BASEURL.'/myordersController' ?>">My Orders</a></li>
@@ -44,6 +47,8 @@
             </div>
         </nav>
     </div>
+
+
 
     <?php if(isset($pagename) && $pagename!=""){ ?><div class="pagename"><h2><?php echo $pagename;?></h2></div><?php } ?>
     <!-- <div class="shape">
