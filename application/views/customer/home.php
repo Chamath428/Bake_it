@@ -8,7 +8,6 @@
     <title>Welcome Bake_it</title>
     <link href="<?php echo BASEURL ?>/public/css/customer/customer-navbar-index.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-body.css">
-    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-body.css">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>

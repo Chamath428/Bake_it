@@ -17,8 +17,15 @@
 		}
 
 		public function getCategoryItems($category_id){
-			$categoryItems=$this->customerMenuModel->getCategoryItems($_SESSION['branch_Id'],$category_id);
-			$this->view("customer/menuItems",$categoryItems);
+
+			if (isset($_SESSION['branch_Id'])) {
+				$categoryItems=$this->customerMenuModel->getCategoryItems($_SESSION['branch_Id'],$category_id);
+				$this->view("customer/menuItems",$categoryItems);
+			}
+			else{
+				header("Location:".BASEURL."/customerBranchSelectController/index/".$category_id);
+			}
+			
 		}
 	}
 

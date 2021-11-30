@@ -168,7 +168,7 @@ form{
 	border: 2px solid rgb(255, 138, 0);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
-	font-weight: 600;
+	font-weight: bold;
 }
 
 .total-container p{
