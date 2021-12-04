@@ -9,7 +9,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo BASEURL."/availabilityController"; ?>" class="hrf">
+                <a href="<?php echo BASEURL."/deliveryPersonAvailabilityController"; ?>" class="hrf">
                     <span class="icon"> <i class="fas fa-check-circle"></i></span>
                     <span class="title">Availability</span>
                 </a>
