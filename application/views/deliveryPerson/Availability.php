@@ -22,18 +22,34 @@
             <div id="selection-box">
                 <div class="question">Are you available for deliveries?</div>
                 <div class="click-available">
-                    <div class="available"><a href="#" onclick="available()"><i class="fas fa-check"></i> Yes</a></div>
-                    <div class="notavailable"><a href="#" onclick="notavailable()"><i class="fas fa-times"></i> No</a></div>
+                    <div class="availablity">
+                        <form action="<?php echo BASEURL."/deliveryPersonAvailabilityController/insertAvailability";?>" method="POST">
+                            <input type="radio" class="button" name="availability" value="1">
+                            <button type="submit" name="save_radio">
+                                <label for="yes">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>Yes</span>
+                                    &nbsp;
+                                    <span></span>
+                                </label>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="availablity">
+                        <form action="<?php echo BASEURL."/deliveryPersonAvailabilityController/insertAvailability";?>" method="POST">
+                            <input type="radio" class="button" name="availability" value="0">
+                            <button type="submit" name="save_radio">
+                                <label for="no">
+                                    <i class="fas fa-thumbs-down"></i>
+                                    <span>No</span>
+                                    &nbsp;
+                                    <span></span>
+                                </label>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <!-- <div id="available">
-                <center>You are available for deliveries</center> -->
-                <!-- <a href="#" class="confirm-btn">Confirm your availability</a></center> -->
-            <!-- </div>
-            <div id="not-available">
-                    <center>You are not available for deliveries</center>  -->
-                <!-- <a href="#" class="confirm-btn">Confirm your availability</a></center> -->
-            <!-- </div> -->
          </section>
     
          <div class="footer">

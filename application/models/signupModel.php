@@ -81,7 +81,7 @@
 											.'"'.$userData['password'].'"'			.","
 												.$last_id.")";
 
-			$res5=mysqli_query($this->db,$sql5) or die('5->'.mysqli_error($thi->db));
+			$res5=mysqli_query($this->db,$sql5) or die('5->'.mysqli_error($this->db));
 		}
 
 
