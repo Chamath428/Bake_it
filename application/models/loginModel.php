@@ -125,10 +125,24 @@
 						contact_number = ".'"'.$username.'"'."
 					OR 
 						email = "		  .'"'.$username.'"';
-			$res6=mysqli_query($this->db,$sql6) or die('5->'.mysqli_error($this->db));
+			$res6=mysqli_query($this->db,$sql6) or die('6->'.mysqli_error($this->db));
 			$row6=mysqli_fetch_assoc($res6);
 			$staff_id=$row6['staff_id'];
 			return $staff_id;
+		}
+
+		public function getAvaialability($staff_id){
+			$staff_id = $this->db->real_escape_string($staff_id);
+			//$availability;
+
+			$sql7 = " SELECT
+                           availability
+                      FROM
+                           delivery_person
+                      WHERE
+                            staff_id = ".$staff_id;
+			$res7=mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
+			return $res7;
 		}
 	}
 

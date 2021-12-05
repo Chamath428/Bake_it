@@ -77,7 +77,7 @@
 				$password=password_hash($password, PASSWORD_DEFAULT);
 				$data['password']=$password;
 				$this->createEmployeeAccountModel->addEmployee($data);
-				$message['confirmation']="Emplyee account created successfully!";
+				$message['confirmation']="Employee account created successfully!";
 				$this->view("owner/createAccount",$message);
 			}
 			else{

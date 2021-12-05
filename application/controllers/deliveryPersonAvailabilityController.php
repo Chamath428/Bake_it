@@ -30,8 +30,10 @@ class deliveryPersonAvailabilityController extends bakeItFramework
             if ($data['error']=="") {
                 $this->deliveryPersonAvailabilityModel->updateAvailability($staff_id,$availability);
                 $data['confirmation']="Availability Updated Succesfully!";
+                $this->view("deliveryPerson/availability",$data);
             }
         }
+       
 
     }
 }

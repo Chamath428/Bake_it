@@ -28,7 +28,8 @@ class deliveryPersonAvailabilityModel extends database{
                    delivery_person
                  WHERE
                     staff_id = ".$staff_id;
-		$res =mysqli_query($this->db,$sql) or die('availabilityCheck->'.mysqli_error($this->db));
+		    $res =mysqli_query($this->db,$sql) or die('availabilityCheck->'.mysqli_error($this->db));
+        return $res;
     }
 }     
 

@@ -73,6 +73,28 @@
 		public function logout(){
 			session_destroy();
 			$this->redirect("homeController");
+
+		}
+		public function deliverypersonLogout($username){
+
+			$role_number=$this->loginModel->checkUserName($username);
+			// $staff_id=$this->loginModel->getStaffId($username);
+
+			if($role_number==6){
+				$staff_id=$_SESSION['staff_id'];
+				// if (!isset($_SESSION['islogged'])){
+                //       $availability = $this->loginModel->getAvaialability($staff_id);
+				// 	  if($availability == 1){
+				// 		  $availability == 0;
+				// 	  }
+				// }
+				if(session_destroy()){
+					$availability = $this->loginModel->getAvaialability($staff_id);
+					  if($availability == 1){
+						  $availability == 0;
+					  }
+				}
+			}
 		}
 	}
 
