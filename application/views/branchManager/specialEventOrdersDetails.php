@@ -167,8 +167,12 @@
                 <td>300.00 LKR</td> 
                </tr> 
                <tr> 
-                <td>Grand Total</td> 
-                <td>13300.00 LKR</td> 
+                <td>Advance Payment</td> 
+                <td>5000.00 LKR</td> 
+               </tr>
+               <tr> 
+                <td>Grand Total to Pay</td> 
+                <td>8300.00 LKR</td> 
                </tr> 
               </table> 
              </div>

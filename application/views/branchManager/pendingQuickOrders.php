@@ -23,15 +23,15 @@
             <div class="overview-container">
                 <div class="box">
                     <h4>Total Orders</h4>
-                    <h1>30</h1>
+                    <h1><?php echo $data[0]?></h1>
                 </div>
                 <div class="box">
                     <h4>Completed Orders</h4>
-                    <h1>5</h1>
+                    <h1><?php echo $data[2]?></h1>
                 </div>
                 <div class="box">
                     <h4>Uncompleted Orders</h4>
-                    <h1>25</h1>
+                    <h1><?php echo ($data[0] - $data[2])?></h1>
                 </div>
             </div>
             <div class="heading">
@@ -47,37 +47,17 @@
                       </tr>
                     </thead>
                     <tbody>
-                      
-                      <tr>
-                        <td><a href="<?php echo BASEURL."/branchManagerOrderController/getQuickOrderDetails" ?>" class="order-id">#001</a></td>
-                        <td>Rs 250.00</td>
-                        <td>2021/10/26</td>
-                      </tr>
-
-                      <tr>
-                      <td><a href="<?php echo BASEURL."/branchManagerOrderController/getQuickOrderDetails" ?>" class="order-id">#002</a></td>
-                        <td>Rs 1000.00</td>
-                        <td>2021/10/26</td>
-                      </tr>
-
-                      <tr>
-                      <td><a href="<?php echo BASEURL."/branchManagerOrderController/getQuickOrderDetails" ?>" class="order-id">#003</a></td>
-                        <td>Rs 500.00</td>
-                        <td>2021/10/26</td>
-                      </tr>
-
-                      <tr>
-                      <td><a href="<?php echo BASEURL."/branchManagerOrderController/getQuickOrderDetails" ?>" class="order-id">#004</a></td>
-                        <td>Rs 1500.00</td>
-                        <td>2021/10/26</td>
-                      </tr>
-
-                      <tr>
-                      <td><a href="<?php echo BASEURL."/branchManagerOrderController/getQuickOrderDetails" ?>" class="order-id">#005</a></td>
-                        <td>Rs 700.00</td>
-                        <td>2021/10/26</td>
-                      </tr>
-                      
+                      <?php
+                        $i=0;
+                        foreach($data[1] as $key => $quickOrder) {?>
+                          <tr>
+                            <td><a href="<?php echo BASEURL."/branchManagerOrderController/getQuickOrderDetails" ?>" class="order-id"><?php echo $quickOrder['order_id'];?></a></td>
+                            <td><?php echo $quickOrder['total_amount'];?></td>
+                            <td><?php echo $quickOrder['placed_date_and_time'];?></td>
+                          </tr>
+                        <?php
+                        $i++;
+                        }?> 
                       
                     </tbody>
                   </table>
