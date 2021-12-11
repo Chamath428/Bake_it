@@ -131,19 +131,19 @@
 			return $staff_id;
 		}
 
-		public function getAvaialability($staff_id){
-			$staff_id = $this->db->real_escape_string($staff_id);
-			//$availability;
+		public function updateAvailability($staff_id,$availability){
 
-			$sql7 = " SELECT
-                           availability
-                      FROM
-                           delivery_person
-                      WHERE
-                            staff_id = ".$staff_id;
-			$res7=mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
-			return $res7;
-		}
+			$availability=$this->db->real_escape_string($availability);
+			// $availability = $_POST['availability'];
+			 $sql7 ="UPDATE
+						delivery_person
+					SET
+						availability = $availability
+					 WHERE
+						staff_id = ".$staff_id;
+			$res7 =mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
+			  
+		 }
 	}
 
  ?>
