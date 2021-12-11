@@ -146,9 +146,9 @@ a{
     flex-wrap: nowrap;
     
 }
-#available{
-    display: none;                                   
-    position: absolute;
+.available{
+    /* display: none;                                  
+    position: absolute;  */
     padding-left: 10%;
     margin-left: 151px;
     height: fit-content;
