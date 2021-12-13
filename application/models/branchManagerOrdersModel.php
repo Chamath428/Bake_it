@@ -14,7 +14,9 @@
             $sql1="SELECT
                         order_id,
                         total_amount,
-                        placed_date_and_time
+                        placed_date_and_time,
+                        order_status,
+                        receiving_method
                     FROM
                         order_details
                     WHERE
@@ -28,6 +30,8 @@
                 $date = explode(" ",$row1['placed_date_and_time']);
                 $date = $date[0];
                 $data['placed_date_and_time']=$date;
+                $data['order_status'] = $row1['order_status'];
+                $data['receiving_method'] = $row1['receiving_method'];
                 $quickOrdersData[$i]=$data;
                 $i++;
             }
@@ -41,7 +45,10 @@
             $sql2="SELECT
                         order_id,
                         total_amount,
-                        placed_date_and_time
+                        placed_date_and_time,
+                        order_status,
+                        receiving_method,
+                        needed_date
                     FROM
                         order_details
                     WHERE
@@ -55,6 +62,9 @@
                 $date = explode(" ",$row2['placed_date_and_time']);
                 $date = $date[0];
                 $data['placed_date_and_time']=$date;
+                $data['order_status'] = $row2['order_status'];
+                $data['receiving_method'] = $row2['receiving_method'];
+                $data['needed_date'] = $row2['needed_date'];
                 $specialOrdersData[$i]=$data;
                 $i++;
             }
@@ -68,7 +78,9 @@
             $sql3="SELECT
                         order_id,
                         total_amount,
-                        placed_date_and_time
+                        placed_date_and_time,
+                        order_type,
+                        receiving_method
                     FROM
                         order_details
                     WHERE
@@ -82,6 +94,8 @@
                 $date = explode(" ",$row3['placed_date_and_time']);
                 $date = $date[0];
                 $data['placed_date_and_time']=$date;
+                $data['order_type']=$row3['order_type'];
+                $data['receiving_method']=$row3['receiving_method'];
                 $completedOrdersData[$i]=$data;
                 $i++;
             }
@@ -113,7 +127,7 @@
                     FROM 
                         order_details 
                     WHERE 
-                    menu_id= " .$_SESSION['branch_id']. " AND ((cast(placed_date_and_time as date) = curdate() AND order_type=1) OR (needed_date <= curdate() AND order_type=2)) AND order_status = 6";
+                    menu_id= " .$_SESSION['branch_id']. " AND ((cast(placed_date_and_time as date) = curdate() AND order_type=1) OR (needed_date >= curdate() AND order_type=2)) AND order_status = 6";
                         
             $res5=mysqli_query($this->db,$sql5) or die('4->'.mysqli_error($this->db));
             $row5=mysqli_fetch_assoc($res5);
@@ -153,6 +167,85 @@
             $row7=mysqli_fetch_assoc($res7);
             $totalCompletedOrdersofWeek=$row7['COUNT(*)'];   
             return  $totalCompletedOrdersofWeek;
+            
+        }
+
+
+        public function getBasicDetailsofOrder($order_id){
+            $basicOrderDetails=array();
+            $i=0;
+            $sql8="SELECT 
+                        customer_details.full_name, 
+                        customer_details.contact_number, 
+                        order_details.order_id,
+                        order_details.order_type, 
+                        order_details.order_status,
+                        cast(order_details.placed_date_and_time as date) as placed_date,
+                        order_details.needed_date,
+                        order_details.needed_time, 
+                        customer_details.address, 
+                        order_details.payment_type, 
+                        order_details.delivery_person_id,
+                        order_details.receiving_method 
+                    FROM 
+                        customer_details Join order_details ON customer_details.customer_id = order_details.customer_id
+                    WHERE
+                        order_details.menu_id= " .$_SESSION['branch_id']. " AND order_details.order_id = ".$order_id."";
+                        
+
+            $res8=mysqli_query($this->db,$sql8) or die('8->'.mysqli_error($this->db));
+            while($row8=mysqli_fetch_assoc($res8)){
+                $data['full_name']=$row8['full_name'];
+                $data['contact_number']=$row8['contact_number'];
+                $data['order_id']=$row8['order_id'];
+                $data['order_type']=$row8['order_type'];
+                $data['order_status']=$row8['order_status'];
+                $data['placed_date']=$row8['placed_date'];
+                $data['needed_date']=$row8['needed_date'];
+                $data['needed_time']=$row8['needed_time'];
+                $data['address']=$row8['address'];
+                $data['payment_type']=$row8['payment_type'];
+                $data['delivery_person_id']=$row8['delivery_person_id'];
+                $data['receiving_method']=$row8['receiving_method'];
+                $basicOrderDetails[$i]=$data;
+                $i++;
+            }
+
+            return $basicOrderDetails;
+            
+        }
+
+
+        public function getOrderItemDetails($order_id){
+            $orderItemDetails=array();
+            $i=0;
+            $sql9="SELECT 
+                        order_details.order_id, 
+                        order_items.item_id, 
+                        menu.item_name,
+                        menu.price, 
+                        order_items.quantity,
+                        order_details.receiving_method,
+                        cast(order_details.paid_amount AS int) AS paid_amount 
+                    FROM 
+                        order_details JOIN order_items ON order_details.order_id = order_items.order_id JOIN menu ON order_items.item_id = menu.item_id 
+                    WHERE
+                        order_details.menu_id= " .$_SESSION['branch_id']. " AND menu.menu_id= " .$_SESSION['branch_id']. " AND order_details.order_id = ".$order_id."";
+                        
+
+            $res9=mysqli_query($this->db,$sql9) or die('9->'.mysqli_error($this->db));
+            while($row9=mysqli_fetch_assoc($res9)){
+                $data['order_id']=$row9['order_id'];
+                $data['item_id']=$row9['item_id'];
+                $data['item_name']=$row9['item_name'];
+                $data['price']=$row9['price'];
+                $data['quantity']=$row9['quantity'];
+                $data['receiving_method']=$row9['receiving_method'];
+                $data['paid_amount']=$row9['paid_amount'];
+                $orderItemDetails[$i]=$data;
+                $i++;
+            }
+            return $orderItemDetails;
             
         }
 

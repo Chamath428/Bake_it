@@ -44,6 +44,8 @@
                         <th>Order ID</th>
                         <th>Grand Total</th>
                         <th>Placed Date</th>
+                        <th>Receiving Method</th>
+                        <th>Order Status</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -51,9 +53,17 @@
                         $i=0;
                         foreach($data[1] as $key => $quickOrder) {?>
                           <tr>
-                            <td><a href="<?php echo BASEURL."/branchManagerOrderController/getQuickOrderDetails" ?>" class="order-id"><?php echo $quickOrder['order_id'];?></a></td>
+                            <td><a href="<?php echo BASEURL."/branchManagerOrderController/getQuickOrderDetails/".$quickOrder['order_id'] ?>" class="order-id"><?php echo $quickOrder['order_id'];?></a></td>
+
                             <td><?php echo $quickOrder['total_amount'];?></td>
+
                             <td><?php echo $quickOrder['placed_date_and_time'];?></td>
+
+                            <td><?php if ($quickOrder['receiving_method'] == 1){echo "Home Delivery";} else {echo "Pick From Shop";}?></td>
+
+                            <td><?php if($quickOrder['order_status'] == 1 ){echo "Order Accepted";}
+                            if($quickOrder['order_status'] == 2 ){echo "Order Accepted";}
+                            elseif($quickOrder['order_status']== 3){echo "Assigned a Delivery Person";}?></td>
                           </tr>
                         <?php
                         $i++;

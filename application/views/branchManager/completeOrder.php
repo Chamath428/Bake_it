@@ -44,6 +44,8 @@
                         <th>Order ID</th>
                         <th>Grand Total</th>
                         <th>Placed Date</th>
+                        <th>Order Type</th>
+                        <th>Receiving Method</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -51,9 +53,13 @@
                         $i=0;
                         foreach($data[1] as $key => $completedOrder) {?>
                           <tr>
-                            <td><a href="<?php echo BASEURL."/branchManagerOrderController/getCompleteOrderDetails" ?>" class="order-id"><?php echo $completedOrder['order_id'];?></a></td>
+                            <td><a href="<?php echo BASEURL."/branchManagerOrderController/getCompleteOrderDetails/".$completedOrder['order_id'] ?>" class="order-id"><?php echo $completedOrder['order_id'];?></a></td>
                             <td><?php echo $completedOrder['total_amount'];?></td>
                             <td><?php echo $completedOrder['placed_date_and_time'];?></td>
+                            
+                            <td><?php if ($completedOrder['order_type'] == 1){echo "Quick Order";} else {echo "Special Order";}?></td>
+
+                            <td><?php if ($completedOrder['receiving_method'] == 1){echo "Home Delivery";} else {echo "Pick From Shop";}?></td>
                           </tr>
                         <?php
                         $i++;

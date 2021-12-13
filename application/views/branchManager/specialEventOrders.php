@@ -57,6 +57,9 @@
                         <th>Order ID</th>
                         <th>Grand Total</th>
                         <th>Placed Date</th>
+                        <th>Needed Date</th>
+                        <th>Receiving Method</th>
+                        <th>Order Status</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -64,9 +67,18 @@
                       $i=0;
                       foreach($data[1] as $key => $specialOrder) {?>
                         <tr>
-                          <td><a href="<?php echo BASEURL."/branchManagerOrderController/getSpecialOrderDetails" ?>" class="order-id"><?php echo $specialOrder['order_id'];?></a></td>
+                          <td><a href="<?php echo BASEURL."/branchManagerOrderController/getSpecialOrderDetails/".$specialOrder['order_id'] ?>" class="order-id"><?php echo $specialOrder['order_id'];?></a></td>
                           <td><?php echo $specialOrder['total_amount'];?></td>
                           <td><?php echo $specialOrder['placed_date_and_time'];?></td>
+                          <td><?php echo $specialOrder['needed_date'];?></td>
+                          
+                          <td><?php if ($specialOrder['receiving_method'] == 1){echo "Home Delivery";} else {echo "Pick From Shop";}?></td>
+
+                          <td><?php if($specialOrder['order_status'] == 1 ){echo "Order Accepted";}
+                          if($specialOrder['order_status'] == 2 ){echo "Order Accepted";}
+                          elseif($specialOrder['order_status']== 3){echo "Assigned a Delivery Person";}
+                          elseif($specialOrder['order_status']== 4){echo "Send to Bakery";}
+                          elseif($specialOrder['order_status']== 5){echo "Prepared the Order";}?></td>
                         </tr>
                       <?php
                       $i++;

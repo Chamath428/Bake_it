@@ -39,7 +39,7 @@
     justify-items: center;  
     /* font-size: 11px; */
     border: 2px solid rgba(255, 138, 0, 0.8); 
-    box-shadow: 2px 1px rgba(255, 137, 0,1); 
+    box-shadow: 4px 4px rgba(255, 137, 0,1); 
 }
 
 .box h1{
@@ -52,7 +52,7 @@
     margin-top: 30px;
 }
 table{
-    width: 60%;
+    width: 90%;
     border-collapse: collapse;
 }
 

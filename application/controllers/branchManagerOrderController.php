@@ -53,18 +53,32 @@
 			$this->view("branchManager/completeOrder",$data);
 		}
 
-		public function getCompleteOrderDetails(){
-			$data=array();
+		public function getCompleteOrderDetails($order_id){
+			$getBasicDetailsofOrder=$this->branchManagerOrdersModel->getBasicDetailsofOrder($order_id);
+			$data[0]=$getBasicDetailsofOrder;
+
+			$getOrderItemDetails=$this->branchManagerOrdersModel->getOrderItemDetails($order_id);
+			$data[1]=$getOrderItemDetails;
 			$this->view("branchManager/completeOrderDetails",$data);
 		}
 
-		public function getQuickOrderDetails(){
-			$data=array();
+		public function getQuickOrderDetails($order_id){
+			$getBasicDetailsofOrder=$this->branchManagerOrdersModel->getBasicDetailsofOrder($order_id);
+			$data[0]=$getBasicDetailsofOrder;
+
+			$getOrderItemDetails=$this->branchManagerOrdersModel->getOrderItemDetails($order_id);
+			$data[1]=$getOrderItemDetails;
+			
 			$this->view("branchManager/pendingQuickOrderDetails",$data);
 		}
 
-		public function getSpecialOrderDetails(){
-			$data=array();
+		public function getSpecialOrderDetails($order_id){
+			$getBasicDetailsofOrder=$this->branchManagerOrdersModel->getBasicDetailsofOrder($order_id);
+			$data[0]=$getBasicDetailsofOrder;
+
+			$getOrderItemDetails=$this->branchManagerOrdersModel->getOrderItemDetails($order_id);
+			$data[1]=$getOrderItemDetails;
+			
 			$this->view("branchManager/specialEventOrdersDetails",$data);
 		}
 	}
