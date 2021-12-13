@@ -74,9 +74,15 @@
 		}
 
 		public function logout(){
+            
+			if($_SESSION['role_number'] == 6){
+				$this->loginModel->updateAvailability($_SESSION['staff_id'],2);
+			}
 			session_destroy();
 			$this->redirect("homeController");
+
 		}
+		
 	}
 
  ?>
