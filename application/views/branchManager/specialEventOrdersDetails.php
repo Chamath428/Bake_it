@@ -59,40 +59,60 @@
                
                     <div class="basic-details"> 
                     <table> 
+                      <?php
+                      $i=0;
+                      foreach($data[0] as $key => $basicOrderDetails){?>
                             <tr> 
                                 <td>Order ID</td> 
-                                <td>#117</td> 
+                                <td><?php echo $basicOrderDetails['order_id'];?></td> 
                             </tr> 
                             <tr> 
                                 <td>Customer Name</td> 
-                                <td>Chamath Chinthana</td> 
+                                <td><?php echo $basicOrderDetails['full_name'];?></td> 
                             </tr> 
                             <tr> 
                                 <td>Contact Number</td> 
-                                <td>0712343212</td> 
+                                <td><?php echo $basicOrderDetails['contact_number'];?></td> 
                             </tr> 
                             <tr> 
                                 <td>Order Status</td> 
-                                <td>Ongoing</td> 
+                                <td><?php if($basicOrderDetails['order_status'] == 1 ){echo "Order Accepted";}
+                                elseif($basicOrderDetails['order_status'] == 2 ){echo "Order Accepted";}
+                                elseif($basicOrderDetails['order_status']== 3){echo "Assigned a Delivery Person";}
+                                elseif($basicOrderDetails['order_status']== 4){echo "Send to Bakery";}
+                                elseif($basicOrderDetails['order_status']== 5){echo "Prepared the Order";}?></td> 
                             </tr> 
                             <tr> 
                                 <td>Needed Date</td> 
-                                <td>2021/11/01</td> 
+                                <td><?php echo $basicOrderDetails['needed_date'];?></td> 
                             </tr> 
+                            <tr> 
+                                <td>Needed Date</td> 
+                                <td><?php echo $basicOrderDetails['needed_time'];?></td> 
+                            </tr>
+
+                            <?php if($basicOrderDetails['receiving_method']==1){?>
                             <tr> 
                                 <td>Location</td> 
-                                <td><a href="#"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> 
-                            </tr> 
+                                <td><a href="#"><?php echo $basicOrderDetails['address'];?></a></td> 
+                            </tr>
+                            <?php 
+                            }?>
                             <tr> 
                                 <td>Payment Method</td> 
-                                <td> Card</td> 
+                                <td><?php if ($basicOrderDetails['payment_type'] == 1) {echo "Cash Payment";} 
+                                else {echo "Card Payment";}?></td> 
                                 <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                             </tr>
                             <tr> 
                               <td>Delivery Person</td> 
-                              <td>Saman Fernando</td> 
+                              <td><?php if (isset($basicOrderDetails['delivery_person_id'])){echo $basicOrderDetails['delivery_person_id'];}
+                              else{echo "Not Assigned";}?></td> 
                               <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                           </tr> 
+                          <?php
+                          $i++;
+                          }?>
                         </table> 
                     </div>
             </div>
@@ -107,51 +127,31 @@
                       </tr>
                     </thead>
                     <tbody>
-                      
+                    <?php
+                      $i=0;
+                      $subtotal=0;
+                      $receiving_method=0;
+                      $paid_amount=0;
+                      $grand_total=0;
+
+                      foreach($data[1] as $key => $orderItemDetails){?>
                       <tr>
-                        <td>#001</td>
+                        <td><?php echo $orderItemDetails['item_id'];?></td>
                         <td>
                           <div class="cell">
                             <div class="image"><img src="<?php echo BASEURL;?>/public/images/branchManager/b1.png" alt=""></div>
-                            <div><p>Chicken Burger</p></div>
+                            <div><p><?php echo $orderItemDetails['item_name'];?></p></div>
                           </div>
                         </td>
-                        <td>350.00</td>
-                        <td>10</td>
+                        <td><?php echo $orderItemDetails['price'];?></td>
+                        <td><?php echo $orderItemDetails['quantity'];?></td>
                       </tr>
-                      <tr>
-                        <td>#002</td>
-                        <td>
-                          <div class="cell">
-                            <div class="image"><img src="<?php echo BASEURL;?>/public/images/branchManager/b1.png" alt=""></div>
-                            <div><p>Fish Burger</p></div>
-                          </div>
-                        </td>
-                        <td>250.00</td>
-                        <td>10</td>
-                      </tr>
-                      <tr>
-                        <td>#003</td>
-                        <td>
-                          <div class="cell">
-                            <div class="image"><img src="<?php echo BASEURL;?>/public/images/branchManager/b1.png" alt=""></div>
-                            <div><p>Ham Burger</p></div>
-                          </div>
-                        </td>
-                        <td>300.00</td>
-                        <td>10</td>
-                      </tr>
-                      <tr>
-                        <td>#004</td>
-                        <td>
-                          <div class="cell">
-                            <div class="image"><img src="<?php echo BASEURL;?>/public/images/branchManager/b1.png" alt=""></div>
-                            <div><p>Cheese Burger</p></div>
-                          </div>
-                        </td>
-                        <td>400.00</td>
-                        <td>10</td>
-                      </tr>
+                      <?php
+                      $i++;
+                      $subtotal+=$orderItemDetails['price']*$orderItemDetails['quantity'];
+                      $receiving_method=$orderItemDetails['receiving_method'];
+                      $paid_amount=$orderItemDetails['paid_amount'];
+                      }?>
                       
                     </tbody>
                   </table>
@@ -160,15 +160,24 @@
               <table> 
                <tr> 
                 <td>Subtotal</td> 
-                <td>13000.00 LKR</td> 
+                <td><?php echo $subtotal.".00 LKR";?></td> 
                </tr> 
                <tr> 
                 <td>Delivery Tax</td> 
-                <td>300.00 LKR</td> 
+                <td><?php if($receiving_method==1) {echo "300.00 LKR";} else {echo "0.00 LKR";}?></td> 
                </tr> 
                <tr> 
-                <td>Grand Total</td> 
-                <td>13300.00 LKR</td> 
+                <td>Advance Payment</td> 
+                <td><?php echo $paid_amount.".00 LKR";?></td> 
+               </tr>
+               <tr> 
+                <td>Grand Total to Pay</td> 
+                <td><?php if($receiving_method==1){
+                  $grand_total=($subtotal+300-($paid_amount));
+                  echo $grand_total.".00 LKR";}
+                  else{
+                    $grand_total=($subtotal-$paid_amount);
+                    echo $grand_total.".00 LKR";}?></td> 
                </tr> 
               </table> 
              </div>

@@ -131,6 +131,22 @@
 			return $staff_id;
 		}
 
+
+		public function getBranchId($role,$staff_id)
+		{			
+				$sql7="SELECT
+					branch_id
+				FROM ".
+					$role.
+				" WHERE
+				staff_id =".$staff_id;
+				
+			$res7=mysqli_query($this->db,$sql7) or die('8->'.mysqli_error($this->db));
+			$row7=mysqli_fetch_assoc($res7);
+			$branch_id=$row7['branch_id'];
+			return $branch_id;
+		}
+
 		public function updateAvailability($staff_id,$availability){
 
 			$availability=$this->db->real_escape_string($availability);
@@ -144,6 +160,7 @@
 			$res7 =mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
 			  
 		 }
+
 	}
 
  ?>

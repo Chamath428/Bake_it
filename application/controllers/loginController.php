@@ -44,7 +44,6 @@
 			}
 
 			if ($data['error']=="") {
-				echo $role_number;
 				if ($role_number==1) {
 					$customerData=$this->loginModel->getCustomerId($username);
 					$this->setSession("islogged",1);
@@ -59,9 +58,13 @@
 					$this->redirect("homeController");
 				}else{
 					$staff_id=$this->loginModel->getStaffId($username);
+					if($role_number==4)$branch_id=$this->loginModel->getBranchId("branch_manager",$staff_id);
+					else if($role_number==5)$branch_id=$this->loginModel->getBranchId("cashier",$staff_id);
+					else if($role_number==6)$branch_id=$this->loginModel->getBranchId("delivery_person",$staff_id);
 					$this->setSession("islogged",1);
 					$this->setSession("role_number",$role_number);
 					$this->setSession("staff_id",$staff_id);
+					if(isset($branch_id))$this->setSession("branch_id",$branch_id);
 					$this->redirect("dashboardController");
 				}
 			}else{

@@ -59,36 +59,50 @@
                
                     <div class="basic-details"> 
                         <table> 
+                          <?php
+                          $i=0;
+
+                          foreach($data[0] as $key => $basicOrderDetails){?>
                             <tr> 
                                 <td>Order ID</td> 
-                                <td>#117</td> 
+                                <td><?php echo $basicOrderDetails['order_id'];?></td> 
                             </tr> 
                             <tr> 
                                 <td>Customer Name</td> 
-                                <td>Chamath Chinthana</td> 
+                                <td><?php echo $basicOrderDetails['full_name'];?></td> 
                             </tr> 
                             <tr> 
                                 <td>Contact Number</td> 
-                                <td>0712343212</td> 
+                                <td><?php echo $basicOrderDetails['contact_number'];?></td> 
                             </tr> 
                             <tr> 
                                 <td>Order Status</td> 
-                                <td>Ongoing</td> 
-                            </tr> 
+                                <td><?php if($basicOrderDetails['order_status'] == 1 ){echo "Order Accepted";}
+                                if($basicOrderDetails['order_status'] == 2 ){echo "Order Accepted";}
+                                elseif($basicOrderDetails['order_status']== 3){echo "Assigned a Delivery Person";}?></td> 
+                            </tr>
+                            <?php if($basicOrderDetails['receiving_method']==1){?> 
                             <tr> 
                                 <td>Location</td> 
-                                <td><a href="#"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> 
+                                <td><a href="#"><?php echo $basicOrderDetails['address'];?></a></td> 
                             </tr> 
+                            <?php 
+                            }?>
                             <tr> 
                                 <td>Payment Method</td> 
-                                <td> Card</td> 
+                                <td> <?php if ($basicOrderDetails['payment_type'] == 1) {echo "Cash Payment";} 
+                                else {echo "Card Payment";}?></td> 
                                 <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                             </tr>
                             <tr> 
                               <td>Delivery Person</td> 
-                              <td>Saman Fernando</td> 
+                              <td><?php if (isset($basicOrderDetails['delivery_person_id'])){echo $basicOrderDetails['delivery_person_id'];}
+                              else{echo "Not Assigned";}?></td> 
                               <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                           </tr> 
+                          <?php
+                          $i++;
+                          }?>
                         </table> 
                     </div>
             </div>
@@ -103,47 +117,52 @@
                       </tr>
                     </thead>
                     <tbody>
-                      
+                    <?php
+                      $i=0;
+                      $subtotal=0;
+                      $receiving_method=0;
+                      $grand_total=0;
+
+                      foreach($data[1] as $key => $orderItemDetails){?>
                       <tr>
-                        <td>#001</td>
+                        <td><?php echo $orderItemDetails['item_id'];?></td>
                         <td>
                           <div class="cell">
                             <div class="image"><img src="<?php echo BASEURL;?>/public/images/branchManager/b1.png" alt=""></div>
-                            <div><p>Chicken Burger</p></div>
+                            <div><p><?php echo $orderItemDetails['item_name'];?></p></div>
                           </div>
                         </td>
-                        <td>450.00</td>
-                        <td>05</td>
+                        <td><?php echo $orderItemDetails['price'];?></td>
+                        <td><?php echo $orderItemDetails['quantity'];?></td>
                       </tr>
-                      <tr>
-                        <td>#002</td>
-                        <td>
-                          <div class="cell">
-                            <div class="image"><img src="<?php echo BASEURL;?>/public/images/branchManager/b1.png" alt=""></div>
-                            <div><p>Fish Burger</p></div>
-                          </div>
-                        </td>
-                        <td>350.00</td>
-                        <td>10</td>
-                      </tr>
+                      <?php
+                      $i++;
+                      $subtotal+=$orderItemDetails['price']*$orderItemDetails['quantity'];
+                      $receiving_method=$orderItemDetails['receiving_method'];
+                      }?>
                       
                     </tbody>
                   </table>
             </div>
             <div class="total-container"> 
               <table> 
-               <tr> 
+              <tr> 
                 <td>Subtotal</td> 
-                <td>3000.00 LKR</td> 
-               </tr> 
-               <tr> 
+                <td><?php echo $subtotal.".00 LKR";?></td> 
+              </tr> 
+              <tr> 
                 <td>Delivery Tax</td> 
-                <td>100.00 LKR</td> 
-               </tr> 
-               <tr> 
-                <td>Grand Total</td> 
-                <td>3100.00 LKR</td> 
-               </tr> 
+                <td><?php if($receiving_method==1) {echo "300.00 LKR";} else {echo "0.00 LKR";}?></td> 
+              </tr> 
+              <tr> 
+                <td>Grand Total to Pay</td> 
+                <td><?php if($receiving_method==1){
+                  $grand_total=($subtotal+300);
+                  echo $grand_total.".00 LKR";}
+                  else{
+                    $grand_total=($subtotal);
+                    echo $grand_total.".00 LKR";}?></td> 
+              </tr>
               </table> 
              </div>
              <div class="btn-container">
