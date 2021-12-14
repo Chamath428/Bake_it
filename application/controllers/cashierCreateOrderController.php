@@ -8,11 +8,12 @@
 		
 		function __construct()
 		{
-			// code...
+			$this->cashierCreateOrderModel=$this->model("cashierCreateOrderModel");
 		}
 
 		public function index(){
 			$data=array();
+			$data=$this->cashierCreateOrderModel->getItems(1);
 			$this->view("cashier/createQuickOrder",$data);
 		}
 

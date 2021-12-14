@@ -3,7 +3,6 @@
 
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-create-quick-order.css" class="rel">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-footer.css" class="rel">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-header.css" class="rel">
@@ -13,7 +12,13 @@
 	<script src="'https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'"></script>
 	<script src="<?php echo BASEURL ?>/public/js/cashier/cashier-create-quick-order.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/cashier/cashier-header.js" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 	<script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
+
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
 	<title>Create Quick Order</title>
 </head>
 
@@ -39,13 +44,22 @@
 					</tr>
 				</table>
 				<div class="search-container">
-					<form action="#">
-						<input type="text" placeholder="Search.." name="search">
-						<button type="submit"><i class="fas fa-search"></i></button>
-					</form>
+					<!-- <form action="#"> -->
+						<select id="items-bar">
+							<?php foreach ($data as $key => $item) {?>
+								<option value="<?php echo $item['item_id'] ?>"><?php echo $item['item_id']."-".$item['item_name'] ?></option>
+							<?php } ?>
+						</select>
+
+						<?php foreach ($data as $key => $item) {?>
+							<input type="hidden" id="<?php echo "item-price-".$item['item_id']; ?>" value="<?php echo $item['price']; ?>">
+						<?php } ?>
+						<!-- <input type="text" placeholder="Search.." name="search"> -->
+						<!-- <button type="submit"><i class="fas fa-search"></i></button> -->
+					<!-- </form> -->
 				</div>
 
-				<table class="inventory">
+<!-- 				<table class="inventory">
 					<thead>
 						<tr>
 							<th></th>
@@ -56,26 +70,32 @@
 
 						</tr>
 					</thead>
-				</table>
+				</table> -->
 				<div class="data-content-scroll">
-					<table id="dataTable">
-						<tbody>
+					<table class="inventory" >
+						<thead>
 							<tr>
-								<td><input type="checkbox" id="Check-box" name="chk"></td>
-								<td><span contenteditable>1</span></td>
-								<td><span contenteditable>item1</span></td>
-								<td><span contenteditable>15</span></td>
-								<td><span data-prefix>Rs:</span><span>600.00</span></td>
-							</tr>
+								<th></th>
+								<th>Item Id</th>
+								<th>Item Name</th>
+								<th>Quantity</th>
+								<th>Price(RS)</th>
 
+							</tr>
+						</thead>
+
+						<tbody id="item-table">
+							
 						</tbody>
+
 					</table>
 					
 				</div>
 
 				<div>
 					<input class="del-row" type="button" value="Delete Item" onclick="deleteRow('dataTable')" />
-					<a class="add" onclick="addRow('dataTable')"> +</a>
+					<!-- <a class="add" onclick="addRow('dataTable')"> +</a> -->
+					<button class="add" onclick="selectItem()"> +</button>
 				</div>
 
 				<div class="payment-balance">

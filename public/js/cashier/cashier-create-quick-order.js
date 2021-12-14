@@ -55,3 +55,105 @@ function deleteRow(tableID) {
     }
 
 }
+
+
+$("#items-bar").chosen();
+
+
+var quan=1;
+var idList=[];
+function selectItem() {
+      var itemSelector = document.getElementById("items-bar");
+      var itemId = itemSelector.value;
+      if (!idList.includes(itemId)) {
+          idList.push(itemId);
+          var itemPrice=document.getElementById("item-price-"+itemId).value;
+          var itemName = itemSelector.options[itemSelector.selectedIndex].text;
+          var array=itemName.split("-");
+          var itemName=array[1];
+
+          var table = document.getElementById('item-table')
+          var row = document.createElement("tr");
+        
+          row.innerHTML = '<td><input type="checkbox" id="Check-box" name="check"></td> <td><input readonly  name="item-id-'+quan+'" value="'+itemId+'"></ input></td> <td> <label for="text">'+itemName+'</label></td> <td class="input"><input type="number" class="quntity" name="quntity'+quan+'" id="itemid"  required=""  onkeypress="javascript:return isNumber(event)" value="1"> <input type="hidden" name="itemId'+quan+'" value="'+itemId+'"><input type="hidden" name="finalCount" value="'+quan+'"></td> <td><input class="item-price" readonly value="'+itemPrice+'"></input></td>';
+          quan++;
+          // itemSelector.remove(itemSelector.selectedIndex); 
+          table.appendChild(row)
+      }
+}
+
+$(document).ready(function() {
+
+   /* Set rates */
+   var fadeTime = 300;
+
+   /* Assign actions */
+   $('.quntity').change(function() {
+     updateQuantity(this);
+   });
+
+   // $('.remove-item button').click(function() {
+   //   removeItem(this);
+   // });
+
+
+   /* Recalculate cart */
+   // function recalculateCart() {
+   //   var subtotal = 0;
+
+   //   /* Sum up row totals */
+   //   $('.item').each(function() {
+   //     subtotal += parseFloat($(this).children('.product-line-price').text());
+   //   });
+
+   //   /* Calculate totals */
+   //   var tax = subtotal * taxRate;
+   //   var total = subtotal + tax;
+
+   //   /* Update totals display */
+   //   $('.totals-value').fadeOut(fadeTime, function() {
+   //     $('#cart-subtotal').html(subtotal.toFixed(2));
+   //     $('#cart-tax').html(tax.toFixed(2));
+   //     $('.cart-total').html(total.toFixed(2));
+   //     if (total == 0) {
+   //       $('.checkout').fadeOut(fadeTime);
+   //     } else {
+   //       $('.checkout').fadeIn(fadeTime);
+   //     }
+   //     $('.totals-value').fadeIn(fadeTime);
+   //   });
+   // }
+
+
+   /* Update quantity */
+   function updateQuantity(quantityInput) {
+     /* Calculate line price */
+     var productRow = $(quantityInput).parent().parent();
+     var price = parseFloat(productRow.children('.item-price').text());
+     console.log(price);
+     var quantity = $(quantityInput).val();
+     var linePrice = price * quantity;
+
+     /* Update line price display and recalc cart totals */
+     productRow.children('.item-price').each(function() {
+       $(this).fadeOut(fadeTime, function() {
+         $(this).text(linePrice.toFixed(2));
+         recalculateCart();
+         $(this).fadeIn(fadeTime);
+       });
+     });
+   }
+
+   /* Remove item from cart */
+   // function removeItem(removeButton) {
+   //   /* Remove row from DOM and recalc cart total */
+   //   var productRow = $(removeButton).parent().parent();
+   //   productRow.slideUp(fadeTime, function() {
+   //     productRow.remove();
+   //     recalculateCart();
+   //   });
+   // }
+
+ });
+
+
