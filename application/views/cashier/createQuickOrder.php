@@ -1,3 +1,20 @@
+<?php if (isset($_POST['preview']) && isset($_POST['finalCount'])){
+	$finalCount=$_POST['finalCount'];
+	$totalAmount=$_POST['total-amount'];
+	$paidAmount=$_POST['paid-amount'];
+	$balance=$_POST['balance'];
+	$paymentType=$_POST['Payment'];
+	$itemData=array();
+	for ($i=1; $i <=$finalCount ; $i++) { 
+				$item['item_id']=$_POST['item-id-'.$i];
+				$item['item_name']=$_POST['item-name-'.$i];
+				$item['item_qauntity']=$_POST['quntity'.$i];
+				$item['item_price']=$_POST['item-price-'.$i];
+				$itemData[$i]=$item;
+	}
+} ?>
+	
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,16 +52,11 @@
 
 				<table class="meta">
 					<tr>
-						<th><span contenteditable>Bill No</span></th>
-						<td><span contenteditable>101138</span></td>
-					</tr>
-					<tr>
 						<th><span contenteditable>Date</span></th>
-						<td><span contenteditable>January 1, 2012</span></td>
+						<td><span contenteditable><?php echo date('F j, Y'); ?></span></td>
 					</tr>
 				</table>
 				<div class="search-container">
-					<!-- <form action="#"> -->
 						<select id="items-bar">
 							<?php foreach ($data as $key => $item) {?>
 								<option value="<?php echo $item['item_id'] ?>"><?php echo $item['item_id']."-".$item['item_name'] ?></option>
@@ -54,24 +66,10 @@
 						<?php foreach ($data as $key => $item) {?>
 							<input type="hidden" id="<?php echo "item-price-".$item['item_id']; ?>" value="<?php echo $item['price']; ?>">
 						<?php } ?>
-						<!-- <input type="text" placeholder="Search.." name="search"> -->
-						<!-- <button type="submit"><i class="fas fa-search"></i></button> -->
-					<!-- </form> -->
 				</div>
 
-<!-- 				<table class="inventory">
-					<thead>
-						<tr>
-							<th></th>
-							<th>Item Id</th>
-							<th>Item Name</th>
-							<th>Quantity</th>
-							<th>Price</th>
-
-						</tr>
-					</thead>
-				</table> -->
 				<div class="data-content-scroll">
+					<form method="post" action="">
 					<table class="inventory" >
 						<thead>
 							<tr>
@@ -85,54 +83,158 @@
 						</thead>
 
 						<tbody id="item-table">
-							
+							<?php if (isset($itemData)) {
+								$quan=1;
+								foreach ($itemData as $key => $item) {?>
+									<tr>
+									<td><input type="checkbox" id="Check-box" name="check"></td>
+									<td>
+										<input readonly id="item-id-<?php echo $quan ?>" name="item-id-<?php echo $quan ?>" value="<?php echo $item['item_id'] ?>"></input>
+									</td>
+									<td> <input readonly  name="item-name-<?php echo $quan ?>" value="<?php echo $item['item_name'] ?>"></input> </td>
+									<td class="input">
+										<input type="number" class="quntity" name="quntity<?php echo $quan ?>" id="itemid"  required=""  onkeypress="javascript:return isNumber(event)" value="<?php echo $item['item_qauntity'] ?>"> 
+										<input type="hidden" name="finalCount" value="<?php echo $quan ?>">
+									</td>
+									<td><input class="item-price" name="item-price-<?php echo $quan ?>" readonly value="<?php echo $item['item_price'] ?>"></input></td>
+									</tr>
+							<?php $quan++;}}?>
 						</tbody>
 
 					</table>
 					
+					<?php if (!isset($quan)) {
+						$quan=1; ?>
+						<input type="hidden" name="tracker" id="tracker" value="1">
+					<?php }else{ ?>
+						<input type="hidden" name="tracker" id="tracker" value="2">
+					<?php } ?>
+
+					<input type="hidden" name="quan" id="quan" value="<?php echo $quan ?>">
+
 				</div>
 
 				<div>
 					<input class="del-row" type="button" value="Delete Item" onclick="deleteRow('dataTable')" />
-					<!-- <a class="add" onclick="addRow('dataTable')"> +</a> -->
-					<button class="add" onclick="selectItem()"> +</button>
+					<button class="add" type="button" onclick="selectItem()"> +</button>
 				</div>
 
 				<div class="payment-balance">
 					<div class="payment">
-						<form action="#">
+
 							<h3>Select Payment Method</h3>
-							  <input type="radio" id="Cash" name="Payment" value="cash">
+							  <input type="radio" id="Cash" name="Payment" checked required value="1">
 							  <label for="cash">Cash</label><br>
-							  <input type="radio" id="card" name="Payment" value="card">
+							  <input type="radio" id="card" name="Payment" required value="2">
 							  <label for="card">Card</label>
 
-
-						</form>
 					</div>
 					<table class="balance">
 						<tr>
-							<th><span contenteditable>Total</span></th>
-							<td><span data-prefix>Rs:</span><span>600.00</span></td>
+							<th><span contenteditable>Total(RS:)</span></th>
+							<td><input type="text" readonly name="total-amount" value="600.00"></td>
 						</tr>
 						<tr>
-							<th><span contenteditable>Amount Paid</span></th>
-							<td><span data-prefix>Rs:</span><span contenteditable>0.00</span></td>
+							<th><span contenteditable>Amount Paid(RS:)</span></th>
+							<td><input type="text" required name="paid-amount" value="<?php if(isset($_POST['paid-amount']))echo $_POST['paid-amount']; ?>"></td>
 						</tr>
 						<tr>
-							<th><span contenteditable>Balance Due</span></th>
-							<td><span data-prefix>Rs:</span><span>600.00</span></td>
+							<th><span contenteditable>Balance Due(RS:)</span></th>
+							<td><input type="text" name="balance" readonly value="20.00"></td>
 						</tr>
 					</table>
 				</div>
-				<button class="pre-bill-btn">Preview Bill</button>
+				<button name="preview" class="pre-bill-btn">Preview Bill</button>
+			</form>
 			</article>
-
-
-
 
 		</div>
 	</div>
 
 
+<?php if (isset($_POST['preview']) && isset($_POST['finalCount'])) {?>
+
+	<div class="bill active">
+		<div class="bill-header">
+			
+			<h2>Bill Previwe</h2>
+			<button data-close-button class="close-button">&times;</button>
+
+		</div>
+
+		<div class="bill-body">
+			<div class="date-details">
+				<table>
+					<tr>
+						<th><span contenteditable>Date</span></th>
+						<td><span contenteditable><?php echo date('F j, Y'); ?></span></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="food-details">
+				<table>
+					<thead>
+						<tr>
+							<th>Item Id</th>
+							<th>Item Name</th>
+							<th>Quintity</th>
+							<th>Total Price(RS:)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php if (isset($itemData)) {
+								foreach ($itemData as $key => $item) {?>
+									<tr>
+									<td><input readonly  name="item-id-<?php echo $quan ?>" value="<?php echo $item['item_id'] ?>"></input></td>
+									<td> <input readonly  name="item-name-<?php echo $quan ?>" value="<?php echo $item['item_name'] ?>"></input> </td>
+									<td class="input"><input type="number" readonly class="quntity" name="quntity<?php echo $quan ?>" id="itemid"  required=""  onkeypress="javascript:return isNumber(event)" value="<?php echo $item['item_qauntity'] ?>"> <input type="hidden" name="finalCount" value="<?php echo $quan ?>"></td>
+									<td><input class="item-price" name="item-price-<?php echo $quan ?>" readonly value="<?php echo $item['item_qauntity']*$item['item_price'] ?>"></input></td>
+									</tr>
+							<?php }}?>
+					</tbody>	
+				</table>
+			</div>
+			<div class="total-details">
+				<table>
+					<tr>
+						<th>Total Amount(RS:)</th>
+						<td><?php echo $totalAmount; ?></td>
+					</tr>
+					<tr>
+						<th>Amount Paid(RS:)</th>
+						<td><?php echo $paidAmount.".00"; ?></td>
+					</tr>
+					<tr>
+						<th>Balance Due(RS:)</th>
+						<td><?php echo $balance; ?></td>
+					</tr>
+					<tr>
+						<th>Payment Type</th>
+						<td><?php switch ($paymentType) {
+							case '1':
+								echo "Cash Payment";
+								break;
+							case '2':
+								echo "Card Payment";
+								break;
+							
+							default:
+								echo "Not specified";
+								break;
+						} ?></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="submit-button">
+				<button type="button">Place Order and Print the bill</button>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="overlay" class="overlay active"></div>
+
+<?php } ?>
 	<?php require_once("footer.php"); ?>

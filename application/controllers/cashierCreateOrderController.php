@@ -22,6 +22,18 @@
 			$this->view("cashier/createOrderSpecial",$data);
 		}
 
+		public function createQuickOrder(){
+			$data['error']="";
+			$finalCount=$_POST['finalCount'];
+			$itemData=array();
+			for ($i=1; $i <=$finalCount ; $i++) { 
+				$itemData[$_POST['item-id-'.$i]]=$_POST['quntity'.$i];
+			}
+			foreach ($itemData as $key => $value) {
+				echo $key."->".$value;
+			}
+		}
+
 	}
 
  ?>
