@@ -1,6 +1,6 @@
 <?php if (isset($_POST['preview']) && isset($_POST['finalCount'])){
 	$finalCount=$_POST['finalCount'];
-	$totalAmount=$_POST['total-amount'];
+	$totalAmount=0;
 	$paidAmount=$_POST['paid-amount'];
 	$balance=$_POST['balance'];
 	$paymentType=$_POST['Payment'];
@@ -11,7 +11,9 @@
 				$item['item_qauntity']=$_POST['quntity'.$i];
 				$item['item_price']=$_POST['item-price-'.$i];
 				$itemData[$i]=$item;
+				$totalAmount+=$_POST['item-price-'.$i];
 	}
+	$balance=$paidAmount-$totalAmount;
 } ?>
 	
 
@@ -56,6 +58,7 @@
 						<td><span contenteditable><?php echo date('F j, Y'); ?></span></td>
 					</tr>
 				</table>
+				<form action="" method="post">
 				<div class="search-container">
 						<select id="items-bar">
 							<?php foreach ($data as $key => $item) {?>
@@ -69,7 +72,6 @@
 				</div>
 
 				<div class="data-content-scroll">
-					<form method="post" action="">
 					<table class="inventory" >
 						<thead>
 							<tr>
@@ -145,7 +147,7 @@
 					</table>
 				</div>
 				<button name="preview" class="pre-bill-btn">Preview Bill</button>
-			</form>
+				</form>
 			</article>
 
 		</div>
@@ -173,6 +175,7 @@
 			</div>
 
 			<div class="food-details">
+				<form method="post" action="<?php echo BASEURL."/cashierCreateOrderController/createQuickOrder" ?>">
 				<table>
 					<thead>
 						<tr>
@@ -184,6 +187,7 @@
 					</thead>
 					<tbody>
 						<?php if (isset($itemData)) {
+								$quan=1;
 								foreach ($itemData as $key => $item) {?>
 									<tr>
 									<td><input readonly  name="item-id-<?php echo $quan ?>" value="<?php echo $item['item_id'] ?>"></input></td>
@@ -191,7 +195,7 @@
 									<td class="input"><input type="number" readonly class="quntity" name="quntity<?php echo $quan ?>" id="itemid"  required=""  onkeypress="javascript:return isNumber(event)" value="<?php echo $item['item_qauntity'] ?>"> <input type="hidden" name="finalCount" value="<?php echo $quan ?>"></td>
 									<td><input class="item-price" name="item-price-<?php echo $quan ?>" readonly value="<?php echo $item['item_qauntity']*$item['item_price'] ?>"></input></td>
 									</tr>
-							<?php }}?>
+							<?php $quan++;}}?>
 					</tbody>	
 				</table>
 			</div>
@@ -199,15 +203,24 @@
 				<table>
 					<tr>
 						<th>Total Amount(RS:)</th>
-						<td><?php echo $totalAmount; ?></td>
+						<td>
+							<?php echo $totalAmount.".00"; ?>
+							<input type="hidden" name="total-amount" value="<?php echo $totalAmount; ?>">
+						</td>
 					</tr>
 					<tr>
 						<th>Amount Paid(RS:)</th>
-						<td><?php echo $paidAmount.".00"; ?></td>
+						<td>
+							<?php echo $paidAmount.".00"; ?>
+							<input type="hidden" name="paid-amount" value="<?php echo $paidAmount;?>">
+						</td>
 					</tr>
 					<tr>
 						<th>Balance Due(RS:)</th>
-						<td><?php echo $balance; ?></td>
+						<td>
+							<?php echo $balance.".00"; ?>
+							<input type="hidden" name="balance" value="<?php echo $balance; ?>">		
+						</td>
 					</tr>
 					<tr>
 						<th>Payment Type</th>
@@ -222,15 +235,17 @@
 							default:
 								echo "Not specified";
 								break;
-						} ?></td>
+						} ?>
+						<input type="hidden" name="payment_type" value="<?php echo $paymentType; ?>">
+						</td>
 					</tr>
 				</table>
 			</div>
 
 			<div class="submit-button">
-				<button type="button">Place Order and Print the bill</button>
+				<button type="submit">Place Order and Print the bill</button>
 			</div>
-
+		</form>
 		</div>
 	</div>
 
