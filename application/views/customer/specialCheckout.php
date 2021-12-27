@@ -66,6 +66,16 @@
 				</div>
 			</div>
 
+			<div class="branches">
+				<h3>Select the neartest branch to you</h3>
+
+				<select name="branch_id">
+					<?php foreach ($data as $key => $branch) {?>
+						<option value="<?php echo $branch['branch_id']; ?>"><?php echo $branch['branch_id']; ?></option>
+					<?php  } ?>
+				</select>
+			</div>
+
 		</div>
 
 		<div class="desktop-cart">

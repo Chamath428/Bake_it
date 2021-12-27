@@ -9,6 +9,9 @@
 		public function __construct()
 		{
 			$this->checkoutModel=$this->model("checkoutModel");
+
+			//following model to get the branch details for the special checkout view
+			$this->customerBranchSelectModel=$this->model('customerBranchSelectModel');
 		}
 		public function index (){
 			if (isset($_SESSION['quick_cart'])) {
@@ -19,7 +22,8 @@
 
 		public function specialCheckout(){
 			if (isset($_SESSION['special_cart'])) {
-				$this->view("/customer/specialCheckout");
+				$data=$this->customerBranchSelectModel->getBranches();
+				$this->view("/customer/specialCheckout",$data);
 			}
 			else $this->view("customer/cart");
 		}
@@ -113,7 +117,7 @@
 			$subtotal=$_POST['subtotal'];
 			$date=$_POST['req_date'];
 			$time=$_POST['req_time'];
-
+			$menuId=$_POST['branch_id'];
 			
 
 			if (isset($_SESSION['customer_id'])) {
@@ -128,9 +132,9 @@
 					$data['error']="Address line 1 and Address 2 are required";
 				}
 			}
-			if (isset($_SESSION['branch_Id'])) {
-			 	$menuId=$_SESSION['branch_Id'];
-			 }
+			// if (isset($_SESSION['branch_Id'])) {
+			//  	$menuId=$_SESSION['branch_Id'];
+			//  }
 
 			if (isset($_POST['registered_payment'])) {
 				$registered_payment=$_POST['registered_payment'];
@@ -185,9 +189,9 @@
 					$this->setSession("customer_id",$customer_id);
 				}
 
-				if (isset($_SESSION['branch_Id'])) {
-			 		$menuId=$_SESSION['branch_Id'];
-			 	}
+				// if (isset($_SESSION['branch_Id'])) {
+			 // 		$menuId=$_SESSION['branch_Id'];
+			 // 	}
 
 				$orderDetails['customer_id']=$customer_id;
 				$orderDetails['menu_id']=$menuId;

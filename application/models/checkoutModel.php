@@ -70,7 +70,7 @@
 							menu_id,
 							order_type,
 							total_amount,
-							reveiving_method,
+							receiving_method,
 							payment_type,
 							order_status
 						)
@@ -134,7 +134,7 @@
 							total_amount,
 							paid_amount,
 							is_advanced,
-							reveiving_method,
+							receiving_method,
 							needed_date,
 							needed_time,
 							order_status

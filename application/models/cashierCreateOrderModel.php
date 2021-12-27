@@ -51,7 +51,7 @@ class cashierCreateOrderModel extends database
 							order_type,
 							total_amount,
 							paid_amount,
-							reveiving_method,
+							receiving_method,
 							payment_type,
 							order_status
 						)
