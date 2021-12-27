@@ -85,7 +85,7 @@
 						needed_date,
 						needed_time,
 						order_status,
-						reveiving_method,
+						receiving_method,
 						delivery_person_id,
 						total_amount,
 						order_type
@@ -101,7 +101,7 @@
 				$data['needed_date']=$row3['needed_date'];
 				$data['needed_time']=$row3['needed_time'];
 				$data['order_status']=$row3['order_status'];
-				$data['reveiving_method']=$row3['reveiving_method'];
+				$data['reveiving_method']=$row3['receiving_method'];
 				$data['delivery_person_id']=$row3['delivery_person_id'];
 				$data['total_amount']=$row3['total_amount'];
 				$data['order_type']=$row3['order_type'];

@@ -465,3 +465,37 @@ section input[type="submit"]:hover{
 }
 
 /*Plcae order ends*/
+
+/*Branch Select starts*/
+
+.branches{
+	width: 80%;
+	margin: 0 0 0 15rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.branches h2{
+	text-align: center;
+}
+
+.branches select{
+	width: 20%;
+	padding: 1rem;
+	cursor: pointer;
+	border: 2px solid rgb(255, 138, 0);
+	border-radius: 3rem;
+	outline: none;
+}
+
+
+
+@media(max-width: 700px){
+	.branches select{
+		width: 40%;
+	}
+}
+
+/*Branch select ends*/
