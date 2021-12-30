@@ -46,6 +46,7 @@
                         <th>Placed Date</th>
                         <th>Order Type</th>
                         <th>Receiving Method</th>
+                        <th>Order Status</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -60,6 +61,8 @@
                             <td><?php if ($completedOrder['order_type'] == 1){echo "Quick Order";} else {echo "Special Order";}?></td>
 
                             <td><?php if ($completedOrder['receiving_method'] == 1){echo "Home Delivery";} else {echo "Pick From Shop";}?></td>
+
+                            <td><?php if ($completedOrder['order_status'] == 6){echo "Completed";} elseif($completedOrder['order_status']==7) {echo "Declined";} elseif($completedOrder['order_status']==8){echo "Cancelled";}?></td>
                           </tr>
                         <?php
                         $i++;

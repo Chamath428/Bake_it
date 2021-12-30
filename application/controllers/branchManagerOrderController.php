@@ -68,6 +68,9 @@
 
 			$getOrderItemDetails=$this->branchManagerOrdersModel->getOrderItemDetails($order_id);
 			$data[1]=$getOrderItemDetails;
+
+			$getDeliveryPersonDetails = $this->branchManagerOrdersModel->getAvailableDeliveryPersonsDetails();
+			$data[2]=$getDeliveryPersonDetails;
 			
 			$this->view("branchManager/pendingQuickOrderDetails",$data);
 		}
@@ -78,9 +81,37 @@
 
 			$getOrderItemDetails=$this->branchManagerOrdersModel->getOrderItemDetails($order_id);
 			$data[1]=$getOrderItemDetails;
+
+			$getDeliveryPersonDetails = $this->branchManagerOrdersModel->getAvailableDeliveryPersonsDetails();
+			$data[2]=$getDeliveryPersonDetails;
 			
 			$this->view("branchManager/specialEventOrdersDetails",$data);
 		}
+
+		public function updateDeliveryPerson($delivery_person_id,$order_id,$order_type){
+			$this->branchManagerOrdersModel->updateDeliveryPersonId($delivery_person_id,$order_id);
+			if($order_type==1){
+				$this->redirect("branchManagerOrderController/getQuickOrderDetails/".$order_id."");
+			}
+			if($order_type==2){
+				$this->redirect("branchManagerOrderController/getSpecialOrderDetails/".$order_id."");
+			}
+		}
+
+
+		public function updateStatusSendToBakery($order_id){
+			$this->branchManagerOrdersModel->updateStatusBakerySend($order_id);
+			
+			$this->redirect("branchManagerOrderController/getSpecialOrderDetails/".$order_id."");
+			
+		}
+
+		public function updateStatusDecline($order_id,$order_type){
+			$this->branchManagerOrdersModel->updateStatusAsDecline($order_id);
+			
+			$this->redirect("branchManagerOrderController/getCompleteOrders");
+		}
+
 	}
 
  ?>
