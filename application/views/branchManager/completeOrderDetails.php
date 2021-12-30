@@ -88,12 +88,16 @@
                                 else {echo "Card Payment";}?></td> 
                                 <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                             </tr>
+
+                            <?php if($basicOrderDetails['receiving_method']==1){?>
                             <tr> 
                               <td>Delivery Person</td> 
                               <td><?php if (isset($basicOrderDetails['delivery_person_id'])){echo $basicOrderDetails['delivery_person_id'];}
                               else{echo "Not Assigned";}?></td> 
                               <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
-                          </tr> 
+                          </tr>
+                          <?php
+                            }?> 
                           <?php
                           $i++;
                           }?>

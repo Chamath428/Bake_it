@@ -21,35 +21,31 @@
               <h1>Order Details</h1>
             </div>
             <div id="popup-1" class="popup-container">
-              <div class="mid-box">
+            <div class="mid-box">
                 <h2 style="margin-bottom:15px" style="text-align: center;">Assign Delivery Person</h2>
+                <?php
+                $i=0;
+                $order_id=$data[0][0]['order_id'];
+                $order_type=$data[0][0]['order_type'];
+                foreach($data[2] as $key => $availableDeliveryPersons){?>
                 <div class="row1">
-                  <div class="d-person">Gihan sandaruwan weerasinghe</div>
+                  <div class="d-person"><?php echo $availableDeliveryPersons['full_name'];?></div>
+                <a href="<?php echo BASEURL."/branchManagerOrderController/updateDeliveryPerson/".$availableDeliveryPersons['staff_id']."/".$order_id."/".$order_type ?>">
                   <button onclick="closePopup()">Assign</button>
+                </a>
                 </div>
-                <div class="row1">
-                  <div class="d-person">Anupama Bandara</div>
-                  <button onclick="closePopup()">Assign</button>
-                </div>
-                <div class="row1">
-                  <div class="d-person">Thilina Madhusanka</div>
-                  <button onclick="closePopup()">Assign</button>
-                </div>
-                <div class="row1">
-                  <div class="d-person">Chamath Chinthana</div>
-                  <button onclick="closePopup()">Assign</button>
-                </div>
-                <div class="row1">
-                  <div class="d-person">Dilantha Malagamuwa</div>
-                  <button>Assign</button>
-                </div>
+                <?php
+                $i++;
+                }?>
               </div>
             </div>
             <div id="popup-2" class="popup-container">
               <div class="mid-box">
                   <h3 style="margin-bottom:15px" style="text-align: center;">Are you sure to decline?</h3>
                   <div class="yes-no">
+                  <a href="<?php echo BASEURL."/branchManagerOrderController/updateStatusDecline/".$order_id."/".$order_type?>"> 
                     <button onclick="closePopup2()">Yes Decline</button>
+                  </a>
                     <button onclick="closePopup2()">Cancel</button>
                   </div>
               </div>
@@ -61,6 +57,7 @@
                         <table> 
                           <?php
                           $i=0;
+                          $order_status=0;
 
                           foreach($data[0] as $key => $basicOrderDetails){?>
                             <tr> 
@@ -94,14 +91,19 @@
                                 else {echo "Card Payment";}?></td> 
                                 <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                             </tr>
+
+                            <?php if($basicOrderDetails['receiving_method']==1){?>
                             <tr> 
                               <td>Delivery Person</td> 
                               <td><?php if (isset($basicOrderDetails['delivery_person_id'])){echo $basicOrderDetails['delivery_person_id'];}
                               else{echo "Not Assigned";}?></td> 
                               <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
-                          </tr> 
+                          </tr>
+                          <?php
+                            }?> 
                           <?php
                           $i++;
+                          $order_status=$basicOrderDetails['order_status'];
                           }?>
                         </table> 
                     </div>
@@ -167,7 +169,11 @@
              </div>
              <div class="btn-container">
                <button class="btn" onclick="popup2()">Decline</button>
+               <?php if($order_status!=3 and $receiving_method=1){?>
                <button class="btn" onclick="assign()">Assigned <br> Delivery Person</button>
+               <?php
+               }
+               ?>
              </div>
         </div>
     </div>
