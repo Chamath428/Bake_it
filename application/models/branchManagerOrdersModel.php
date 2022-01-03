@@ -163,7 +163,7 @@
                     WHERE 
                     menu_id= " .$_SESSION['branch_id']. " AND cast(placed_date_and_time as date) >= date_sub(curdate(), interval 7 day)";
                         
-            $res7=mysqli_query($this->db,$sql7) or die('4->'.mysqli_error($this->db));
+            $res7=mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
             $row7=mysqli_fetch_assoc($res7);
             $totalCompletedOrdersofWeek=$row7['COUNT(*)'];   
             return  $totalCompletedOrdersofWeek;

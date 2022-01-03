@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo BASEURL . "/deliveriesController"; ?>" class="hrf">
+                <a href="<?php echo BASEURL . "/deliveryPersonDeliveriesController"; ?>" class="hrf">
                     <span class="icon"><i class="fas fa-motorcycle"></i></span>
                     <span class="title">Deliveries</span>
                 </a>

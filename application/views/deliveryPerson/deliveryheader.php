@@ -15,13 +15,13 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo BASEURL."/deliveriesController"; ?>" class="hrf">
+                <a href="<?php echo BASEURL."/deliveryPersonDeliveriesController"; ?>" class="hrf">
                     <span class="icon"><i class="fas fa-motorcycle"></i></span>
                     <span class="title">Deliveries</span>
                 </a>
             </li>
             <li>
-                <a href="<?php echo BASEURL."/deliveriesController/getDeliveryOverview"; ?>" class="hrf">
+                <a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getDeliveryOverview"; ?>" class="hrf">
                     <span class="icon"><i class="fas fa-bookmark"></i></span>
                     <span class="title">Overview</span>
                 </a>
@@ -72,7 +72,16 @@
     <div class="bake-it" id="bakeId">
         <span class="bakeit">Bake_it</span>
     </div>
-    <span id="available">You are available for deliveries</span>
+      <!-- <span id="available">You are available for deliveries</span> -->
+
+      <?php if (isset($_SESSION['availability'])) {
+        if ($_SESSION['availability'] == 1) { ?>
+            <span class="available">You are available for deliveries</span>
+        <?php } else { ?>
+            <span class="available">You are not available for deliveries</span>
+    <?php
+        }
+    } ?>
     <div class="header-icons"> 
     <span class="user-icon"><a href="<?php echo BASEURL.'/profileEmployeeController' ?>"><i id="user" class="fas fa-user"></i></a></span>
         <span class="text">You logged in as : Delivery Person</span>

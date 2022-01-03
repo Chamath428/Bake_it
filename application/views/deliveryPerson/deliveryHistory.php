@@ -21,19 +21,19 @@
     </section> 
     
     <div class="delivery-body overview-body" id="body">
-        <div class="del-topic">Overview</div>
+        <div class="del-topic">Deliveries Overview</div>
         <div class="row history-row">
             <div class="col">
                 <h4>Total Deliveiries</h4>
-                <h1>125</h1>
+                <h1><?php echo $data[0]?></h1>
             </div>
             <div class="col">
                 <h4>Deliveries for this week</h4>
-                <h1>35</h1>
+                <h1><?php echo $data[1]?></h1>
             </div>
             <div class="col">
                 <h4>Deliveries for this month</h4>
-                <h1>120</h1>
+                <h1><?php echo $data[2]?></h1>
             </div>
         </div>
         <div class="cal-table">
@@ -59,28 +59,28 @@
                         <td label="Order No">117</td>
                         <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
+                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
                         <td label="Order No">118</td>
                         <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
+                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
                         <td label="Order No">213</td>
                         <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
+                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
                     <tr>
                         <td label="Time">10.00 a.m</td>
                         <td label="Order No">214</td>
                         <td label="Location">Makandana Rd,Kesbewa</td>
                         <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
+                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
                 </tbody>
             </table>
