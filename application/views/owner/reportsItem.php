@@ -120,17 +120,7 @@
                                     <option value="6">Bevarages</option>
                               </select>
                         </div>
-                        <div class="condition item">
-                              <span class="topic">Item</span>
-                              <select placeholder="select item" name="item">
-                                    <option value="1">Pastries</option>
-                                    <option value="2">Donuts</option>
-                                    <option value="3">Sweets</option>
-                                    <option value="4">Cakes</option>
-                                    <option value="5">Muffins</option>
-                                    <option value="6">Bevarages</option>
-                              </select>
-                        </div>
+                       
                         <div class="generate-btn  category-report">
                               <button type="button" name="button">Generate</button>
                         </div>
