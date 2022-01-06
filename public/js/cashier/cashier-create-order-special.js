@@ -1,4 +1,4 @@
-$("#items-bar").chosen();
+
 function addRow(tableID) {
 
     var table = document.getElementById(tableID);
@@ -13,6 +13,18 @@ function addRow(tableID) {
         var newcell	= row.insertCell(i);
 
         newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+        //alert(newcell.childNodes);
+        // switch(newcell.childNodes[0].type) {
+        //     case "text":
+        //             newcell.childNodes[0].value = "";
+        //             break;
+        //     case "checkbox":
+        //             newcell.childNodes[0].checked = false;
+        //             break;
+        //     case "select-one":
+        //             newcell.childNodes[0].selectedIndex = 0;
+        //             break;
+        // }
     }
 }
 
@@ -43,11 +55,3 @@ function deleteRow(tableID) {
     }
 
 }
-
-function getLocation(x){
-    if (x==0) {
-        document.getElementById("location-details").style.display="none";
-    }else document.getElementById("location-details").style.display="flex";
-}
-
-

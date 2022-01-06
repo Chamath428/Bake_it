@@ -18,7 +18,7 @@
 		}
 
 		public function createSpecialOrderCashier(){
-			$data=$this->cashierCreateOrderModel->getItems(1);
+			$data=array();
 			$this->view("cashier/createOrderSpecial",$data);
 		}
 
