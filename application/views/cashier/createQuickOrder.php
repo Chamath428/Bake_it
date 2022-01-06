@@ -22,20 +22,24 @@
 
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-create-quick-order.css" class="rel">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-footer.css" class="rel">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-header.css" class="rel">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 	<script src="'https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'"></script>
+
 	<script src="<?php echo BASEURL ?>/public/js/cashier/cashier-create-quick-order.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/cashier/cashier-header.js" defer></script>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 	<script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
 
-	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 	<title>Create Quick Order</title>
