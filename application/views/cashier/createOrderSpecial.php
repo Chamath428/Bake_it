@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-create-order-special.css" class="rel">
-    <!-- <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-create-quick-order.css" class="rel"> -->
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-footer.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/cashier/cashier-header.css" class="rel">
     <meta charset="UTF-8">
@@ -35,7 +34,7 @@
             <header class="order-topic">
                 <h3>Special Order</h3>
             </header>
-            <article>
+            <!-- <article> -->
 
                 <table class="meta">
                     <tr>
@@ -56,7 +55,7 @@
                 </div>
 
                 <div class="data-content-scroll">
-                    <form>
+
                     <table class="inventory" >
                         <thead>
                             <tr>
@@ -175,11 +174,8 @@
                     </table>
                 </div>
                 <button class="pre-bill-btn">Preview Bill</button>
-                </form>
-            </article>
 
-
-
+            <!-- </article> -->
 
         </div>
     </div>
