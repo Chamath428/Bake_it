@@ -48,7 +48,7 @@ if (tracker==2) {
 
 // this function is to add items in to the item table
 function selectItem() {
-    var subTotal=document.getElementById("total-amount").value;
+      var subTotal=document.getElementById("total-amount").value;
       var itemSelector = document.getElementById("items-bar");
       var itemId = itemSelector.value;
       if (!idList.includes(itemId)) {
@@ -61,7 +61,7 @@ function selectItem() {
           var table = document.getElementById('item-table')
           var row = document.createElement("tr");
         
-          row.innerHTML = '<td><input type="checkbox" id="Check-box" name="check"></td> <td><input readonly  name="item-id-'+quan+'" value="'+itemId+'"></ input></td> <td> <input readonly  name="item-name-'+quan+'" value="'+itemName+'"></input> </td> <td class="input"><input type="number" class="quntity" name="quntity'+quan+'" id="quntity'+quan+'"  required=""  oninput="calc1(\'quntity'+quan+'\',\'priceForFunction'+quan+'\',\'itemPrice'+quan+'\')" value="1"> <input type="hidden" name="finalCount" value="'+quan+'"></td> <td><input type="text" class="item-price" readonly name="item-price-'+quan+'" id="itemPrice'+quan+'" value="'+itemPrice+'"></input> <input type="hidden" id="priceForFunction'+quan+'" value="'+itemPrice+'"></input> </td>';
+          row.innerHTML = '<td><input type="checkbox" id="Check-box" name="check"></td> <td><input readonly  name="item-id-'+quan+'" value="'+itemId+'"></ input></td> <td> <input readonly  name="item-name-'+quan+'" value="'+itemName+'"></input> </td> <td class="input"><input type="number" class="quntity" name="quntity'+quan+'" id="quntity'+quan+'"  required=""  oninput="calc1(\'quntity'+quan+'\',\'priceForFunction'+quan+'\',\'itemPrice'+quan+'\')" value="1"> <input type="hidden" name="finalCount" value="'+quan+'"></td> <td><input type="text" class="item-price" readonly name="item-price-'+quan+'" id="itemPrice'+quan+'" value="'+itemPrice+'"></input> <input type="hidden" name="priceForFunction'+quan+'" id="priceForFunction'+quan+'" value="'+itemPrice+'"></input> </td>';
           subTotal=parseFloat(subTotal)+parseFloat(itemPrice);
           quan++;
           document.getElementById("total-amount").value=subTotal;
@@ -114,6 +114,7 @@ function closeModel(bill){
 
 
 
+// Following lines for make the date selection minimum tommorow
 var today = new Date();
 var dd = today.getDate()+1;
 var mm = today.getMonth() + 1;

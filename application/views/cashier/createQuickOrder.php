@@ -10,6 +10,7 @@
 				$item['item_name']=$_POST['item-name-'.$i];
 				$item['item_qauntity']=$_POST['quntity'.$i];
 				$item['item_price']=$_POST['item-price-'.$i];
+				$item['priceForFunction']=$_POST['priceForFunction'.$i];
 				$itemData[$i]=$item;
 				$totalAmount+=$_POST['item-price-'.$i];
 	}
@@ -54,8 +55,8 @@
 
 				<table class="meta">
 					<tr>
-						<th><span contenteditable>Date</span></th>
-						<td><span contenteditable><?php echo date('F j, Y'); ?></span></td>
+						<th><span>Date</span></th>
+						<td><span><?php echo date('F j, Y'); ?></span></td>
 					</tr>
 				</table>
 				<form action="" method="post">
@@ -84,24 +85,26 @@
 							</tr>
 						</thead>
 
-						<tbody id="item-table">
-							<?php if (isset($itemData)) {
-								$quan=1;
-								foreach ($itemData as $key => $item) {?>
-									<tr>
-									<td><input type="checkbox" id="Check-box" name="check"></td>
-									<td>
-										<input readonly id="item-id-<?php echo $quan ?>" name="item-id-<?php echo $quan ?>" value="<?php echo $item['item_id'] ?>"></input>
-									</td>
-									<td> <input readonly  name="item-name-<?php echo $quan ?>" value="<?php echo $item['item_name'] ?>"></input> </td>
-									<td class="input">
-										<input type="number" class="quntity" name="quntity<?php echo $quan ?>" id="itemid"  required=""  onkeypress="javascript:return isNumber(event)" value="<?php echo $item['item_qauntity'] ?>"> 
-										<input type="hidden" name="finalCount" value="<?php echo $quan ?>">
-									</td>
-									<td><input class="item-price" name="item-price-<?php echo $quan ?>" readonly value="<?php echo $item['item_price'] ?>"></input></td>
-									</tr>
-							<?php $quan++;}}?>
-						</tbody>
+						 <tbody id="item-table">
+                            <?php if (isset($itemData)) {
+                                $quan=1;
+                                foreach ($itemData as $key => $item) {?>
+                                    <tr>
+                                    <td><input type="checkbox" id="Check-box" name="check"></td>
+                                    <td>
+                                        <input readonly id="item-id-<?php echo $quan ?>" name="item-id-<?php echo $quan ?>" value="<?php echo $item['item_id'] ?>"></input>
+                                    </td>
+                                    <td> <input readonly  name="item-name-<?php echo $quan ?>" value="<?php echo $item['item_name'] ?>"></input> </td>
+                                    <td class="input">
+                                        <input type="number" class="quntity" name="quntity<?php echo $quan ?>" id="quntity<?php echo $quan ?>"  required=""  onkeypress="javascript:return isNumber(event)" value="<?php echo $item['item_qauntity'] ?>" oninput="calc1('<?php echo "quntity".$quan ?>','<?php echo "priceForFunction".$quan; ?>','<?php echo "itemPrice".$quan;?>')"> 
+                                        <input type="hidden" name="finalCount" value="<?php echo $quan ?>">
+                                    </td>
+                                    <td><input class="item-price" name="item-price-<?php echo $quan ?>" id="itemPrice<?php echo $quan ?>" readonly value="<?php echo $item['item_price'] ?>"></input>
+                                        <input type="hidden" name="priceForFunction<?php echo $quan ?>" id="priceForFunction<?php echo $quan ?>" value="<?php echo $item['priceForFunction']; ?>"></input>
+                                    </td>
+                                    </tr>
+                            <?php $quan++;}}?>
+                        </tbody>
 
 					</table>
 					
@@ -132,18 +135,18 @@
 
 					</div>
 					<table class="balance">
-						<tr>
-							<th><span contenteditable>Total(RS:)</span></th>
-							<td><input type="text" readonly name="total-amount" value="600.00"></td>
-						</tr>
-						<tr>
-							<th><span contenteditable>Amount Paid(RS:)</span></th>
-							<td><input type="text" required name="paid-amount" value="<?php if(isset($_POST['paid-amount']))echo $_POST['paid-amount']; ?>"></td>
-						</tr>
-						<tr>
-							<th><span contenteditable>Balance Due(RS:)</span></th>
-							<td><input type="text" name="balance" readonly value="20.00"></td>
-						</tr>
+							<tr>
+                                <th><span>Total(RS:)</span></th>
+                                <td><input type="number" readonly name="total-amount" id="total-amount" value="<?php if(isset($_POST['total-amount']))echo $_POST['total-amount']; else echo 0; ?>"></td>
+                            </tr>
+                            <tr>
+                                <th><span>Amount Paid(RS:)</span></th>
+                                <td><input type="text" required name="paid-amount"  id="paid-amount" oninput="calc2()" onkeypress="javascript:return isNumber(event)" value="<?php if(isset($_POST['paid-amount']))echo $_POST['paid-amount']; ?>"></td>
+                            </tr>
+                            <tr>
+                                <th><span>Balance Due(RS:)</span></th>
+                                <td><input type="text" name="balance" id="balance" readonly  value="<?php if(isset($_POST['balance']))echo $_POST['balance']; else echo 0; ?>" onkeypress="javascript:return isNumber(event)"></td>
+                            </tr>
 					</table>
 				</div>
 				<button name="preview" class="pre-bill-btn">Preview Bill</button>
@@ -193,7 +196,7 @@
 									<td><input readonly  name="item-id-<?php echo $quan ?>" value="<?php echo $item['item_id'] ?>"></input></td>
 									<td> <input readonly  name="item-name-<?php echo $quan ?>" value="<?php echo $item['item_name'] ?>"></input> </td>
 									<td class="input"><input type="number" readonly class="quntity" name="quntity<?php echo $quan ?>" id="itemid"  required=""  onkeypress="javascript:return isNumber(event)" value="<?php echo $item['item_qauntity'] ?>"> <input type="hidden" name="finalCount" value="<?php echo $quan ?>"></td>
-									<td><input class="item-price" name="item-price-<?php echo $quan ?>" readonly value="<?php echo $item['item_qauntity']*$item['item_price'] ?>"></input></td>
+									<td><input class="item-price" name="item-price-<?php echo $quan ?>" readonly value="<?php echo $item['item_price'] ?>"></input></td>
 									</tr>
 							<?php $quan++;}}?>
 					</tbody>	
