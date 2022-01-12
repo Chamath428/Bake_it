@@ -594,3 +594,16 @@ body{
     color: red;
 }
 
+.customer-details{
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-details input{
+    width: 80%;
+    border: 2px solid rgb(255, 138, 0);
+    background: transparent;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+

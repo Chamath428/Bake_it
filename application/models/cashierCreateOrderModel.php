@@ -110,6 +110,79 @@ class cashierCreateOrderModel extends database
 
 			$res5=mysqli_query($this->db,$sql5) or die('5->'.mysqli_error($this->db));
 	}
+
+	public function getCustomerId($customerData){
+		$phonenumber=$this->db->real_escape_string($customerData['phone_number']);
+		$phonenumber=preg_replace('/\s+/', '', $phonenumber);
+		$firstname=$this->db->real_escape_string($customerData['first_name']);
+		$lastname=$this->db->real_escape_string($customerData['last_name']);
+		$address1=$this->db->real_escape_string($customerData['address1']);
+		$address2=$this->db->real_escape_string($customerData['address2']);
+		$address3=$this->db->real_escape_string($customerData['address3']);
+
+		$sql6="SELECT
+					customer_id
+				FROM
+					registered_customer
+				WHERE
+					contact_number=".'"'.$phonenumber.'"';
+
+		$res6=mysqli_query($this->db,$sql6) or die('6->'.mysqli_error($this->db));
+
+		if (mysqli_num_rows($res6)>0) {
+			$row3=mysqli_fetch_assoc($res6);
+			return $row3['customer_id'];
+		}
+
+		$sql7="SELECT
+					customer_id
+				FROM
+					unregistered_customer
+				WHERE
+					contact_number=".'"'.$phonenumber.'"';
+
+		$res7=mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
+
+		if (mysqli_num_rows($res7)>0) {
+			$row4=mysqli_fetch_assoc($res7);
+			return $row4['customer_id'];
+		}
+
+		$sql8="INSERT INTO
+					customer(
+							first_name,
+							last_name,
+							address1,
+							address2,
+							address3
+				)
+				VALUES("
+					.'"'.$firstname.'"'.","
+					.'"'.$lastname.'"'.","
+					.'"'.$address1.'"'.','
+					.'"'.$address2.'"'.','
+					.'"'.$address3.'")';
+
+		$res8=mysqli_query($this->db,$sql8) or die('8->'.mysqli_error($this->db));
+
+		$sql9= "SELECT LAST_INSERT_ID() AS last_id";
+		$res9=mysqli_query($this->db,$sql9) or die('9->'.mysqli_error($this->db));
+		$row5=mysqli_fetch_assoc($res9);
+		$customer_id=$row5['last_id'];
+
+		$sql10="INSERT INTO
+						 unregistered_customer(
+						 	contact_number,
+						 	customer_id)
+						 VALUES("
+						 	.'"'.$phonenumber.'"'.","
+						 	.'"'.$customer_id.'")';
+		$res10=mysqli_query($this->db,$sql10) or die('10->'.mysqli_error($this->db));
+		return $customer_id;
+
+
+
+	}
 }
 
  ?>

@@ -9,6 +9,8 @@
     $deliveryType=$_POST['delivery_type'];
     $phoneNumber=$_POST['phone_number'];
     $isAdvance=$_POST['is_advance'];
+    $firstname=$_POST['first_name'];
+    $lastname=$_POST['last_name'];
     $address1=$_POST['address_line1'];
     $address2=$_POST['address_line2'];
     $address3=$_POST['address_line3'];
@@ -147,10 +149,18 @@
                                     <input type="time" name="req_time" required value="<?php if(isset($_POST['req_time']))echo $_POST['req_time']; ?>">
                                 </div>
 
+                                <div class="customer-details">
+                                <h3>Customer Details</h3>
+                                      <label for="First Name">First Name </label>
+                                      <input type="text" required name="first_name" value="<?php if(isset($_POST['first_name']))echo $_POST['first_name']; ?>">
+                                      <label for="First Name">Last Name </label>
+                                      <input type="text" required name="last_name" value="<?php if(isset($_POST['last_name']))echo $_POST['last_name']; ?>">
+                                </div>
+
                                 <div>
                                 <h3>Contact Details</h3>
                                       <label for="PhoneNumber">Phone Number</label>
-                                      <input type="phonenumber" id="Phone-number" onkeypress="javascript:return isNumber(event)" name="phone_number" value="<?php if(isset($_POST['phone_number']))echo $_POST['phone_number']; ?>">
+                                      <input type="phonenumber" name="phone_number" id="Phone-number" onkeypress="javascript:return isNumber(event)" value="<?php if(isset($_POST['phone_number']))echo $_POST['phone_number']; ?>">
                                 </div>
                             </div>
 
@@ -253,7 +263,7 @@
             </div>
 
             <div class="food-details">
-                <form method="post" action="<?php echo BASEURL."/cashierCreateOrderController/createQuickOrder" ?>">
+                <form method="post" action="<?php echo BASEURL."/cashierCreateOrderController/createSpecialOrderCashier"?>">
                 <table>
                     <thead>
                         <tr>
@@ -370,7 +380,7 @@
                                 echo "Not specified";
                                 break;
                         } ?>
-                        <input type="hidden" name="payment_type" value="<?php echo $paymentType; ?>">
+                        <input type="hidden" name="delivery_type" value="<?php echo $deliveryType; ?>">
                         </td>
                     </tr>
                     <tr>
@@ -381,6 +391,13 @@
                         </td>
                     </tr>
                 </table>
+
+                <input type="hidden" name="first_name" value="<?php echo $firstname; ?>">
+                <input type="hidden" name="last_name" value="<?php echo $lastname; ?>">
+                <input type="hidden" name="address_line1" value="<?php echo $address1; ?>">
+                <input type="hidden" name="address_line2" value="<?php echo $address2; ?>">
+                <input type="hidden" name="address_line3" value="<?php echo $address3; ?>">
+
             </div>
 
             <?php if ($totalAmount>=4000) {?>
