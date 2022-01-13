@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo BASEURL."/cashierCreateOrderController/createSpecialOrderCashier" ?>" class="hrf">
+                    <a href="<?php echo BASEURL."/cashierCreateOrderController/directToSepcialOrder" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-gift"></i></span>
                         <span class="title">Special Order</span>
                     </a>
