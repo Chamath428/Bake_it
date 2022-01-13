@@ -37,7 +37,7 @@
 					</tr>
 				<?php foreach ($data[1] as $key => $order) { ?>
 					<tr>
-						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails/".$order['order_id']?>"><?php echo $order['order_id'] ?></a></td>
+						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails/".$order['order_id']."/".$order['menu_id']?>"><?php echo $order['order_id'] ?></a></td>
 						<td><?php echo $order['total_amount']; ?></td>
 						<td><?php echo substr($order['placed_date_and_time'], 0,10); ?></td>
 						<td><?php switch ($order['order_status']) {

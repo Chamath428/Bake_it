@@ -19,6 +19,7 @@
 			$sql1="SELECT
 						order_id,
 						total_amount,
+						menu_id,
 						placed_date_and_time,
 						order_status
 					FROM
@@ -33,6 +34,7 @@
 				while ($row1=mysqli_fetch_assoc($res1)) {
 				$data['order_id']=$row1['order_id'];
 				$data['total_amount']=$row1['total_amount'];
+				$data['menu_id']=$row1['menu_id'];
 				$data['placed_date_and_time']=$row1['placed_date_and_time'];
 				$data['order_status']=$row1['order_status'];
 				$quickOrder[$i]=$data;
@@ -74,7 +76,7 @@
 			return $orders;
 		}
 
-		public function getOrderDetails($order_id){
+		public function getOrderDetails($order_id,$menu_id){
 			$basicDeails=array();
 			$foodItems=array();
 			$orderDetails=array();
@@ -119,7 +121,9 @@
 					ON
 						order_items.item_id=menu.item_id
 					WHERE
-						order_items.order_id=".$order_id;
+						order_items.order_id=".$order_id.
+					" AND
+						menu.menu_id = ".$menu_id;
 
 			$res4=mysqli_query($this->db,$sql4) or die('4->'.mysqli_error($this->db));
 
