@@ -92,12 +92,10 @@
 			$orderDetails['paid_amount']=$_POST['paid-amount'];
 			
 			$orderDetails['customer_id']=$this->cashierCreateOrderModel->getCustomerId($customerDetails);
-			echo $orderDetails['customer_id'];
-
-			// $order_id=$this->cashierCreateOrderModel->placeQuickOrder($orderDetails);
-			// $this->cashierCreateOrderModel->insertOrderItems($order_id,$orderDetails['menu_id'],$orderItems);
-			// $this->cashierCreateOrderModel->createBill($order_id,$orderDetails['paid_amount'],$orderDetails['cashier_id']);
-			// $this->redirect("");
+			$order_id=$this->cashierCreateOrderModel->placeSpecialOrder($orderDetails);
+			$this->cashierCreateOrderModel->insertOrderItems($order_id,$orderDetails['menu_id'],$orderItems);
+			$this->cashierCreateOrderModel->createBill($order_id,$orderDetails['paid_amount'],$orderDetails['cashier_id']);
+			$this->redirect("");
 		}
 
 	}

@@ -125,15 +125,24 @@
 				</div>
 
 				<div class="payment-balance">
-					<div class="payment">
 
-							<h3>Select Payment Method</h3>
-							  <input type="radio" id="Cash" name="Payment" checked required value="1">
-							  <label for="cash">Cash</label><br>
-							  <input type="radio" id="card" name="Payment" required value="2">
-							  <label for="card">Card</label>
+                                <div class="radio-btn">
+                                	<h3>Select Payment Method</h3>
+                                    <div>
+                                        <label>
+                                             <input type="radio" name="Payment" checked="" value="1" <?php if(isset($_POST['Payment']) && $_POST['Payment']==1)echo "checked"; ?>>
+                                             <div class="circle"></div>
+                                             <span>Cash</span>
+                                         </label>
+                                         <label>
+                                             <input type="radio" name="Payment" value="2" <?php if(isset($_POST['Payment']) && $_POST['Payment']==2)echo "checked"; ?>>
+                                             <div class="circle"></div>
+                                             <span>Card</span>
+                                         </label>
+                                    </div>
+                                </div>
 
-					</div>
+                    <div class="total-container">
 					<table class="balance">
 							<tr>
                                 <th><span>Total(RS:)</span></th>
@@ -141,13 +150,14 @@
                             </tr>
                             <tr>
                                 <th><span>Amount Paid(RS:)</span></th>
-                                <td><input type="text" required name="paid-amount"  id="paid-amount" oninput="calc2()" onkeypress="javascript:return isNumber(event)" value="<?php if(isset($_POST['paid-amount']))echo $_POST['paid-amount']; ?>"></td>
+                                <td><input type="number" required name="paid-amount"  id="paid-amount" oninput="calc2()" onkeypress="javascript:return isNumber(event)" value="<?php if(isset($_POST['paid-amount']))echo $_POST['paid-amount']; ?>"></td>
                             </tr>
                             <tr>
                                 <th><span>Balance Due(RS:)</span></th>
-                                <td><input type="text" name="balance" id="balance" readonly  value="<?php if(isset($_POST['balance']))echo $_POST['balance']; else echo 0; ?>" onkeypress="javascript:return isNumber(event)"></td>
+                                <td><input type="number" name="balance" id="balance" readonly  value="<?php if(isset($_POST['balance']))echo $_POST['balance']; else echo 0; ?>" onkeypress="javascript:return isNumber(event)"></td>
                             </tr>
 					</table>
+				</div>
 				</div>
 				<button name="preview" class="pre-bill-btn">Preview Bill</button>
 				</form>

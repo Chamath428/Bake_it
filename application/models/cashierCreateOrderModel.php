@@ -180,9 +180,66 @@ class cashierCreateOrderModel extends database
 		$res10=mysqli_query($this->db,$sql10) or die('10->'.mysqli_error($this->db));
 		return $customer_id;
 
-
-
 	}
+
+
+	public function placeSpecialOrder($orderDetails){
+			$orderDetails['menu_id']=$this->db->real_escape_string($orderDetails['menu_id']);
+			$orderDetails['cashier_id']=$this->db->real_escape_string($orderDetails['cashier_id']);
+			$orderDetails['customer_id']=$this->db->real_escape_string($orderDetails['customer_id']);
+			$orderDetails['order_type']=$this->db->real_escape_string($orderDetails['order_type']);
+			 $orderDetails['total_amount']=$this->db->real_escape_string($orderDetails['total_amount']);
+			 $orderDetails['paid_amount']=$this->db->real_escape_string($orderDetails['paid_amount']);
+			 $orderDetails['delivery_type']=$this->db->real_escape_string($orderDetails['delivery_type']);
+			 $orderDetails['payment_type']=$this->db->real_escape_string($orderDetails['payment_type']);
+			 $orderDetails['is_advance']=$this->db->real_escape_string($orderDetails['is_advance']);
+			 $orderDetails['order_status']=$this->db->real_escape_string($orderDetails['order_status']);
+			 $orderDetails['req_date']=$this->db->real_escape_string($orderDetails['req_date']);
+			 $orderDetails['req_time']=$this->db->real_escape_string($orderDetails['req_time']);
+
+
+
+
+			 $sql11="INSERT INTO
+			 			order_details(
+			 				customer_id,
+							menu_id,
+							cashier_id,
+							order_type,
+							total_amount,
+							paid_amount,
+							is_advanced,
+							receiving_method,
+							payment_type,
+							order_status,
+							needed_date,
+							needed_time
+						)
+					VALUES ("
+							.'"'.$orderDetails['customer_id'].'"' 	.","
+							.'"'.$orderDetails['menu_id'].'"' 		.","
+							.'"'.$orderDetails['cashier_id'].'"' 	.","
+							.'"'.$orderDetails['order_type'].'"' 	.","
+							.'"'.$orderDetails['total_amount'].'"' 	.","
+							.'"'.$orderDetails['paid_amount'].'"' 	.","
+							.'"'.$orderDetails['is_advance'].'"' 	.","
+							.'"'.$orderDetails['delivery_type'].'"' .","
+							.'"'.$orderDetails['payment_type'].'"' 	.","
+							.'"'.$orderDetails['order_status'].'"' 	.","
+							.'"'.$orderDetails['req_date'].'"' 	.","
+							.'"'.$orderDetails['req_time'].'")';
+			$res11=mysqli_query($this->db,$sql11) or die('11->'.mysqli_error($this->db));
+
+			$sql12= "SELECT LAST_INSERT_ID() AS last_order_id";
+			$res12=mysqli_query($this->db,$sql12) or die('12->'.mysqli_error($this->db));
+			$row6=mysqli_fetch_assoc($res12);
+			$last_order_id=$row6['last_order_id'];
+
+			return $last_order_id;
+	}
+
+
+
 }
 
  ?>

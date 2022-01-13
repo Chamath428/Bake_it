@@ -43,9 +43,14 @@ body{
      height: 90px;
      margin-top: 40px;
  }
- .meta, .balance {
+ .meta{
     margin-bottom: 20px;
     width: 30%;
+     
+}
+
+.balance {
+    width: 40%;
      
 }
 
@@ -69,8 +74,8 @@ body{
     float: left;
 }
 .balance tr td input{
-    outline: none;
-    border: none;
+    text-align: right;
+    border: 2px solid rgb(255, 130, 0);
     width: 100%;
 }
 
@@ -90,13 +95,13 @@ body{
     border: 2px solid rgb(255, 138, 0);
   }
   
-  input[type=text] {
+/*  input[type=text] {
     padding: 4px;
     padding-right: 70px;
     border-radius: 10px;
     border: none;
     outline: none;
-  }
+  }*/
   
   .data-content-scroll{
       /* background-color: steelblue; */
@@ -607,3 +612,9 @@ body{
     margin-bottom: 20px;
 }
 
+
+.balance input::-webkit-outer-spin-button,
+.balance input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 5px;
+}

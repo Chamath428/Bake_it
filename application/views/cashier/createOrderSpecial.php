@@ -208,7 +208,7 @@
                                          <span>Advance Payment (Half of the grand total)</span>
                                      </label>
                                      <label>
-                                         <input type="radio" name="is_advance" value="2" <?php if(isset($_POST['is_advance']) && $_POST['is_advance']==2)echo "checked"; ?>>
+                                         <input type="radio" name="is_advance" value="0" <?php if(isset($_POST['is_advance']) && $_POST['is_advance']==0)echo "checked"; ?>>
                                          <div class="circle"></div>
                                          <span>Full payment</span>
                                      </label>
@@ -225,11 +225,11 @@
                             </tr>
                             <tr>
                                 <th><span>Amount Paid(RS:)</span></th>
-                                <td><input type="text" required name="paid-amount"  id="paid-amount" oninput="calc2()" onkeypress="javascript:return isNumber(event)" value="<?php if(isset($_POST['paid-amount']))echo $_POST['paid-amount']; ?>"></td>
+                                <td><input type="number" required name="paid-amount"  id="paid-amount" oninput="calc2()" onkeypress="javascript:return isNumber(event)" value="<?php if(isset($_POST['paid-amount']))echo $_POST['paid-amount']; ?>"></td>
                             </tr>
                             <tr>
                                 <th><span>Balance Due(RS:)</span></th>
-                                <td><input type="text" name="balance" id="balance" readonly  value="<?php if(isset($_POST['balance']))echo $_POST['balance']; else echo 0; ?>" onkeypress="javascript:return isNumber(event)"></td>
+                                <td><input type="number" name="balance" id="balance" readonly  value="<?php if(isset($_POST['balance']))echo $_POST['balance']; else echo 0; ?>" onkeypress="javascript:return isNumber(event)"></td>
                             </tr>
                         </table>
                     </div>
@@ -323,7 +323,7 @@
                             case '1':
                                 echo "Advance Payment";
                                 break;
-                            case '2':
+                            case '0':
                                 echo "Full Payment";
                                 break;
                             
