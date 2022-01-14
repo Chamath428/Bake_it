@@ -75,10 +75,10 @@
 					<tr>
 						<td>Reciving Method</td>
 						<td><a href=""><?php switch ( $data[1]['reveiving_method']) {
-							case '1':
+							case '2':
 								echo "Home delivery";
 								break;
-							case '2':
+							case '1':
 								echo "Pick up from shop";
 								break;
 							
@@ -87,7 +87,7 @@
 								break;
 						} ?></a></td>
 					</tr>
-					<?php if ($data[1]['reveiving_method']==1) {?>
+					<?php if ($data[1]['reveiving_method']==2) {?>
 						<tr>
 							<td>Delivery Person</td>
 							<td><a href=""><?php echo $data[1]['delivery_person_id'] ?></a></td>

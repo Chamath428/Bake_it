@@ -22,20 +22,11 @@
 
 
 
-		public function showOrderDetails($order_id){
-			$data=$this->customerMyOrdersModel->getOrderDetails($order_id);
-
-			// foreach ($data[1] as $key => $value) {
-			// 	echo $data[1]['order_id'];
-			// }
+		public function showOrderDetails($order_id,$menu_id){
+			$data=$this->customerMyOrdersModel->getOrderDetails($order_id,$menu_id);
 			$this->view("customer/quickOrderdetails",$data);
 		}
 
-
-		public function showSpecialOrderDetails(){
-			$data=array();
-			$this->view("customer/specialOrderdetails",$data);
-		}
 	}
 
  ?>

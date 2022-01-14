@@ -11,13 +11,37 @@
 			$this->db=$this->dbcon();
 		}
 
-		public function createCustomer($customerData){
+		public function getCustomerId($customerData){
 			 $customerData['first_name']=$this->db->real_escape_string($customerData['first_name']);
 			 $customerData['last_name']=$this->db->real_escape_string($customerData['last_name']);
 			 $customerData['phone_number']=$this->db->real_escape_string($customerData['phone_number']);
 			 $customerData['address1']=$this->db->real_escape_string($customerData['address1']);
 			 $customerData['address2']=$this->db->real_escape_string($customerData['address2']);
 			 $customerData['address3']=$this->db->real_escape_string($customerData['address3']);
+
+			 $sqla="SELECT
+			 				customer_id
+			 			FROM
+			 				registered_customer
+			 			WHERE
+			 				contact_number=".'"'.$customerData['phone_number'].'"';
+			 $resa=mysqli_query($this->db,$sqla) or die('a->'.mysqli_error($this->db));
+			 if (mysqli_num_rows($resa)>0) {
+			 	$rowa=mysqli_fetch_assoc($resa);
+				return $rowa['customer_id'];
+			 }
+
+			 $sqlb="SELECT
+			 				customer_id
+			 			FROM
+			 				unregistered_customer
+			 			WHERE
+			 				contact_number=".'"'.$customerData['phone_number'].'"';
+			 $resb=mysqli_query($this->db,$sqlb) or die('b->'.mysqli_error($this->db));
+			 if (mysqli_num_rows($resb)>0) {
+			 	$rowb=mysqli_fetch_assoc($resa);
+				return $rowb['customer_id'];
+			 }
 
 			 $sql1="	INSERT INTO
 						customer(

@@ -22,7 +22,7 @@
 
 		public function specialCheckout(){
 			if (isset($_SESSION['special_cart'])) {
-				$data=$this->customerBranchSelectModel->getBranches();
+				$data['branches']=$this->customerBranchSelectModel->getBranches();
 				$this->view("/customer/specialCheckout",$data);
 			}
 			else $this->view("customer/cart");
@@ -75,7 +75,7 @@
 				$orderDetails['subtotal']=$subtotal;
 
 				if (!isset($customer_id)) {
-					$customer_id=$this->checkoutModel->createCustomer($orderDetails);
+					$customer_id=$this->checkoutModel->getCustomerId($orderDetails);
 					$this->setSession("customer_id",$customer_id);
 				}
 
@@ -132,9 +132,6 @@
 					$data['error']="Address line 1 and Address 2 are required";
 				}
 			}
-			// if (isset($_SESSION['branch_Id'])) {
-			//  	$menuId=$_SESSION['branch_Id'];
-			//  }
 
 			if (isset($_POST['registered_payment'])) {
 				$registered_payment=$_POST['registered_payment'];
@@ -158,7 +155,7 @@
 					$data['error']="Please enter required time";
 			}
 
-			else if ($date<=date("Y-n-j")) {
+			else if (new DateTime($date)<=date("Y-n-j")) {
 					$data['error']="Required date should be greater than today";
 			}
 
@@ -185,13 +182,9 @@
 				}
 
 				if (!isset($customer_id)) {
-					$customer_id=$this->checkoutModel->createCustomer($orderDetails);
+					$customer_id=$this->checkoutModel->getCustomerId($orderDetails);
 					$this->setSession("customer_id",$customer_id);
 				}
-
-				// if (isset($_SESSION['branch_Id'])) {
-			 // 		$menuId=$_SESSION['branch_Id'];
-			 // 	}
 
 				$orderDetails['customer_id']=$customer_id;
 				$orderDetails['menu_id']=$menuId;
@@ -209,7 +202,8 @@
 
 			}
 			else {
-				$this->index();
+				$data['branches']=$this->customerBranchSelectModel->getBranches();
+				$this->view("/customer/specialCheckout",$data);
 			}
 			
 		}

@@ -47,7 +47,8 @@
 					FROM
 						menu
 					WHERE
-						category_id = ".$category_id;
+						category_id = ".$category_id."
+						 AND menu_id=1";
 
 			$res2=mysqli_query($this->db,$sql2) or die('2->'.mysqli_error($this->db));
 			while ($row2=mysqli_fetch_assoc($res2)) {
