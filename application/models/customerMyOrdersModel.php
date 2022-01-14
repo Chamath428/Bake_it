@@ -47,6 +47,7 @@
 			$sql2="SELECT
 						order_id,
 						total_amount,
+						menu_id,
 						placed_date_and_time,
 						order_status
 					FROM
@@ -62,6 +63,7 @@
 				while ($row2=mysqli_fetch_assoc($res2)) {
 				$data['order_id']=$row2['order_id'];
 				$data['total_amount']=$row2['total_amount'];
+				$data['menu_id']=$row2['menu_id'];
 				$data['placed_date_and_time']=$row2['placed_date_and_time'];
 				$data['order_status']=$row2['order_status'];
 				$specialOrder[$i]=$data;
