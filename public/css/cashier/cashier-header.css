@@ -217,3 +217,17 @@ a{
      80% { opacity:1; transform: translateX(-2vw); }  
     100% { opacity:0; transform: translateX(-4vw); } 
   }
+  @media (min-device-width:1000px) {
+   
+    #mySidebar {width: 300px;} 
+    #body {margin-left: 305px;}
+   #bakeId {margin-left: 23%;}
+   /* #logo-name__icon_left{display: block;} */
+   #logo-name__icon{display: none;}
+  }
+  @media (min-device-width:1100px) {
+   
+  
+  #bakeId {margin-left: 15%;}
+  
+  }

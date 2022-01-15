@@ -76,7 +76,7 @@
                             <td>#001</td>
                             <td>
                                 <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                                    <div class="image"><img src="<?php echo BASEURL; ?>/public/images/branchManager/b1.png" alt=""></div>
                                     <div>
                                         <p>Chicken Burger</p>
                                     </div>
@@ -89,7 +89,7 @@
                             <td>#002</td>
                             <td>
                                 <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                                    <div class="image"><img src="<?php echo BASEURL; ?>/public/images/branchManager/b1.png" alt=""></div>
                                     <div>
                                         <p>Fish Burger</p>
                                     </div>
