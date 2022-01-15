@@ -103,7 +103,7 @@
                             <td>#001</td>
                             <td>
                                 <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                                    <div class="image"><img src="<?php echo BASEURL; ?>/public/images/branchManager/b1.png" alt=""></div>
                                     <div>
                                         <p>Chicken Burger</p>
                                     </div>
@@ -116,7 +116,7 @@
                             <td>#002</td>
                             <td>
                                 <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                                    <div class="image"><img src="<?php echo BASEURL; ?>/public/images/branchManager/b1.png" alt=""></div>
                                     <div>
                                         <p>Cheese Chicken Burger</p>
                                     </div>
@@ -129,7 +129,7 @@
                             <td>#003</td>
                             <td>
                                 <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                                    <div class="image"><img src="<?php echo BASEURL; ?>/public/images/branchManager/b1.png" alt=""></div>
                                     <div>
                                         <p>Fish Burger</p>
                                     </div>
@@ -142,7 +142,7 @@
                             <td>#004</td>
                             <td>
                                 <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                                    <div class="image"><img src="<?php echo BASEURL; ?>/public/images/branchManager/b1.png" alt=""></div>
                                     <div>
                                         <p>Ham Burger</p>
                                     </div>
@@ -155,7 +155,7 @@
                             <td>#005</td>
                             <td>
                                 <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
+                                    <div class="image"><img src="<?php echo BASEURL; ?>/public/images/branchManager/b1.png" alt=""></div>
                                     <div>
                                         <p>Egg Burger</p>
                                     </div>

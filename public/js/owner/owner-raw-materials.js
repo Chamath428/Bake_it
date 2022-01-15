@@ -8,51 +8,69 @@ function addRow(tableID) {
 
     var colCount = table.rows[0].cells.length;
 
-    for(var i=0; i<colCount; i++) {
+    for (var i = 0; i < colCount; i++) {
 
-        var newcell	= row.insertCell(i);
+        var newcell = row.insertCell(i);
 
         newcell.innerHTML = table.rows[0].cells[i].innerHTML;
         //alert(newcell.childNodes);
-        switch(newcell.childNodes[0].type) {
+        switch (newcell.childNodes[0].type) {
             case "text":
-                    newcell.childNodes[0].value = "";
-                    break;
-            case "checkbox":
-                    newcell.childNodes[0].checked = false;
-                    break;
-            case "select-one":
-                    newcell.childNodes[0].selectedIndex = 0;
-                    break;
-        }
-    }
-}
-
-function deleteRow(tableID) {
-    try {
-    var table = document.getElementById(tableID);
-    var rowCount = table.rows.length;
-
-    for(var i=0; i<rowCount; i++) {
-        var row = table.rows[i];
-        var chkbox = row.cells[0].childNodes[0];
-        if(null != chkbox && true == chkbox.checked) {
-            if(rowCount <= 1) {
-                alert("Cannot delete all the rows.");
+                newcell.childNodes[0].value = "";
                 break;
+            case "checkbox":
+                newcell.childNodes[0].checked = false;
+                break;
+            case "select-one":
+                newcell.childNodes[0].selectedIndex = 0;
+                break;
+        }
+    }
+}
+
+
+function itemSave() {
+    alert("Save Successfull..");
+}
+
+
+
+function search_item() {
+
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("dataTable");
+
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+
+        td = tr[i].getElementsByTagName("td")[2];
+
+
+
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
-            table.deleteRow(i);
-            rowCount--;
-            i--;
         }
 
-
     }
-    }catch(e) {
-        alert(e);
-    }
+}
 
-}
-function itemSave(){
- alert("Save Successfull..");
-}
+// function delFunction() {
+
+//     if (confirm("Do you want to Delete?  click ok")) {
+//       alert("Delete successfull");
+//       window.location.href="rawMaterials.php";
+//       }
+//     else{
+//       window.location.href="rawMaterials.php";
+
+//     }
+//   }
+

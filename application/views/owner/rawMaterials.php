@@ -14,6 +14,7 @@
 	<script src="<?php echo BASEURL ?>/public/js/owner/owner-raw-materials.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer></script>
 	<script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<title>Raw Materials</title>
 </head>
 
@@ -43,7 +44,7 @@
 
 				<div class="search-container">
 					<form action="#">
-						<input type="text" placeholder="Search.." name="search">
+						<input type="text" placeholder="Search.." name="search" id="search" onkeyup="search_item();">
 						<button type="submit"><i class="fas fa-search"></i></button>
 					</form>
 				</div>
@@ -60,25 +61,43 @@
 					</thead>
 				</table>
 				<div class="data-content-scroll">
-					<table id="dataTable">
-						<tbody>
-							<tr>
-								<td><input type="checkbox" id="Check-box" name="chk"></td>
-								<td><span contenteditable>1</span></td>
-								<td><span contenteditable>Cake </span></td>
-								<td><span contenteditable>15</span></td>
-							</tr>
+					<form method="post" action="<?php echo BASEURL . '/rawMaterialController/deleteRawMaterials'; ?>">
 
-						</tbody>
-					</table>
-					<input class="del-row" type="button" value="Delete Item" onclick="deleteRow('dataTable')" />
+						<table id="dataTable">
+							<tbody>
+
+								<?php foreach ($data as $key => $value) { ?>
+									<tr>
+
+
+										<!-- <td><input type="checkbox" id="Check-box" name='check-name[]'></td> -->
+										<td><input name="chk_id[]" type="checkbox" class='chkbox' value="<?php echo $value['rawitem_id']; ?>" /></td>
+
+										<td><?php echo $value['rawitem_id']; ?></td>
+										<td><?php echo $value['rawitem_name']; ?></td>
+										<td><?php echo $value['stock_amount'] . " " . $value['measure_unit']; ?></td>
+
+									</tr>
+								<?php } ?>
+							</tbody>
+						</table>
+
+
+
+						<!-- <input class="del-row" type="submit" value="Delete Item" name="delete-row"/> -->
+						<input id="submit" name="submit" type="submit" class="del-row" value="Delete" onclick="delFunction()" />
+
+
+
+					</form>
+
 					<input class="add" type="button" onclick="addRow('dataTable')" value="Add Item">
 				</div>
 
-				<button class="save-btn" onclick="itemSave()">Save</button>
+
+
+				<!-- <button class="save-btn" onclick="itemSave()">Save</button> -->
 			</article>
-
-
 
 
 		</div>
@@ -86,3 +105,5 @@
 
 
 	<?php require_once("footer.php"); ?>
+
+	<!-- isset($_POST['thilina']) -->
