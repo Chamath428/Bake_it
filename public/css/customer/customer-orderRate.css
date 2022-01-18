@@ -98,6 +98,7 @@ input:checked ~ .form{
   font-size: 17px;
   resize: none;
 }
+
 .textarea textarea:focus{
   /*border-color: #444;*/
 }

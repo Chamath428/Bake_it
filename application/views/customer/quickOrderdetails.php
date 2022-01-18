@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/customer/customer-orderdetails.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
 	<script src="<?php echo BASEURL ?>/public/js/customer/orderDetails.js" defer></script>
 	<script src="<?php echo BASEURL; ?>/public/js/navbar.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
@@ -25,6 +26,14 @@
 	</header>
 
 	<section class="order-details">
+
+		<?php if (isset($data['confirmation'])){?>
+			<div class="confirm-alert">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+			  <p><?php echo $data['confirmation']; ?></p>
+			</div>
+			<?php } ?>
+
 		<div class="basic-details">
 			<table>
 
@@ -224,22 +233,22 @@
         <div class="text">Thanks for rating us!</div>
         <div class="edit">EDIT</div>
       </div>
-      <form action="<?php echo BASEURL."/testController/test" ?>">
+      <form method="post" action="<?php echo BASEURL."/myordersController/rateOrder/".$data[1]['order_id']."/".$data[1]['menu_id']."/".$data[1]['customer_id'] ?>">
       <div class="star-widget">
-        <input type="radio" name="rate" id="rate-5">
+        <input type="radio" name="rate" id="rate-5" value="5">
         <label for="rate-5" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-4">
+        <input type="radio" name="rate" id="rate-4" value="4">
         <label for="rate-4" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-3">
+        <input type="radio" name="rate" id="rate-3" value="3">
         <label for="rate-3" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-2">
+        <input type="radio" name="rate" id="rate-2" value="2">
         <label for="rate-2" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-1">
+        <input type="radio" name="rate" id="rate-1" value="1">
         <label for="rate-1" class="fas fa-star"></label>
         <div class="form">
           <header></header>
           <div class="textarea">
-            <textarea cols="30" placeholder="Share your experience with all.."></textarea>
+            <textarea name="review" cols="30" placeholder="Share your experience with all.."></textarea>
           </div>
           <div class="sub-btn">
             <button class="submit-rate" type="submit">Post</button>
