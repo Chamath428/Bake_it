@@ -27,6 +27,10 @@
 			$this->view("customer/quickOrderdetails",$data);
 		}
 
+		public function rateOrder($order_id){
+
+		}
+
 	}
 
  ?>
