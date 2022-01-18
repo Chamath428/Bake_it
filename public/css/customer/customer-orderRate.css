@@ -1,0 +1,127 @@
+
+.rate-container{
+  position: relative;
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.rate-container .post{
+  display: none;
+}
+.rate-container .text{
+  font-size: 25px;
+  color: #666;
+  font-weight: 500;
+}
+.rate-container .edit{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+.rate-container .edit:hover{
+  text-decoration: underline;
+}
+.rate-container .star-widget input{
+  display: none;
+}
+.star-widget label{
+  font-size: 40px;
+  color: #c9c9bf;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: #ffcd57;
+}
+input:checked ~ label{
+  color: #ffcd57;
+}
+input#rate-5:checked ~ label{
+  color: #ff8000;
+  text-shadow: 0 0 20px #952;
+}
+#rate-1:checked ~ .form header:before{
+  content: "Hate It";
+}
+#rate-2:checked ~ .form header:before{
+  content: "Don't like it ";
+}
+#rate-3:checked ~ .form header:before{
+  content: "Like it ";
+}
+#rate-4:checked ~ .form header:before{
+  content: "Awesome  ";
+}
+#rate-5:checked ~ .form header:before{
+  content: "Love it ";
+}
+.rate-container .form{
+  display: none;
+}
+input:checked ~ .form{
+  display: block;
+}
+.form header{
+  width: 100%;
+  font-size: 25px;
+  color: #ff8800;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.form .textarea{
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+.form .textarea textarea{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #000000;
+  border: 1px solid rgba(255, 138, 0, 0.5);
+  border-radius: 0.5rem;
+  background: #fffff;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+
+.textarea textarea:focus{
+  /*border-color: #444;*/
+}
+.form .sub-btn{
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+.form .sub-btn button{
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(255, 137, 0);
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-trans.form: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.form .sub-btn button:hover{
+  background-color: rgb(255, 137, 0);
+  color: white;
+}
