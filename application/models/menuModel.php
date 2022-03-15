@@ -31,6 +31,7 @@
 		}
 
 		public function getCategoryItems($category_id=1){
+			$menuId=$_SESSION['branch_id'];
 			$itemData=array();
 			$i=0;
 			$sql2="SELECT
@@ -41,7 +42,8 @@
 					FROM
 						menu
 					WHERE
-						category_id =".'"'.$category_id.'"';
+						category_id =".'"'.$category_id.'"'." AND 
+						menu_id = ".'"'.$menuId.'"';
 			$res2=mysqli_query($this->db,$sql2) or die('2->'.mysqli_error($this->db));
 			while ($row2=mysqli_fetch_assoc($res2)) {
 				$data['item_id']=$row2['item_id'];
@@ -55,13 +57,15 @@
 		}
 
 		public function updateQuantity($updateData=[]){
+			$branch_id=$_SESSION['branch_id'];
 			foreach ($updateData as $key => $value) {
 				$sql3="UPDATE
 							menu
 						SET
 							quantity=".$value['quantity']."
 						WHERE
-							item_id=".$value['item_id'];
+							item_id=".$value['item_id']." AND
+							branch_id=".$branch_id;
 				$res3=mysqli_query($this->db,$sql3) or die('3->'.mysqli_error($this->db));
 			}
 		}
