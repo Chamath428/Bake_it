@@ -94,18 +94,22 @@
 							menu_id,
 							order_type,
 							total_amount,
+							paid_amount,
 							receiving_method,
 							payment_type,
-							order_status
+							order_status,
+							needed_date
 						)
 					VALUES ("
 							.'"'.$orderDetails['customer_id'].'"' 	.","
 							.'"'.$orderDetails['menu_id'].'"' 		.","
 							.'"'.$orderType.'"' 					.","
 							.'"'.$orderDetails['subtotal'].'"' 		.","
+							.'"'.$orderDetails['paid_amount'].'"' 		.","
 							.'"'.$orderDetails['delivery_type'].'"' .","
 							.'"'.$orderDetails['payment_type'].'"' 	.","
-							.'"'.$orderStatus.'")';
+							.'"'.$orderStatus.'"'					.","
+							.'"'.date("Y-m-d").'")';
 			$res4=mysqli_query($this->db,$sql4) or die('4->'.mysqli_error($this->db));
 
 			$sql5= "SELECT LAST_INSERT_ID() AS last_order_id";
