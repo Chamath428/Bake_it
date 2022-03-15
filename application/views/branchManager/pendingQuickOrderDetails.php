@@ -169,7 +169,7 @@
              </div>
              <div class="btn-container">
                <button class="btn" onclick="popup2()">Decline</button>
-               <?php if($order_status!=3 and $receiving_method=1){?>
+               <?php if($order_status!=3 and $receiving_method==1){?>
                <button class="btn" onclick="assign()">Assigned <br> Delivery Person</button>
                <?php
                }
