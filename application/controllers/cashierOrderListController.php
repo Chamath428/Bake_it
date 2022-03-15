@@ -5,11 +5,16 @@
 		
 		function __construct()
 		{
-		
+			$this->cashierOrderListModel=$this->model("cashierOrderListModel");
 		}
 		public function index(){
-			$data=array();
+			$data=$this->cashierOrderListModel->getOngoingOrderDetails();
 			$this->view("cashier/ongoingOrders",$data);
+		}
+
+		public function getOngoingOrderDetails($order_id){
+			$data=$this->cashierOrderListModel->getOrderDetails($order_id,$_SESSION['branch_id']);
+			$this->view("cashier/quickOrderDetails",$data);
 		}
 
 		public function completeOrderCashier(){
@@ -22,16 +27,13 @@
 			$this->view("cashier/completeOrderDetails",$data);
 		}
 
-		public function getQuickOrderDetails(){
-			$data=array();
-			$this->view("cashier/quickOrderdetails",$data);
+		public function completeQuickOrder($order_id){
+			$paidAmount=$_POST['paid-amount'];
+			$this->cashierOrderListModel->completeQuickOrder($order_id,$paidAmount);
+			$this->index();
 		}
 
-		public function getSpecialOrderDetails(){
-			$data=array();
-			$this->view("cashier/specialOrderdetails",$data);
-		}
-
+		
 
 	}
 

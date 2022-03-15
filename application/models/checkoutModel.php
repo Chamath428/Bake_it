@@ -163,6 +163,7 @@
 							paid_amount,
 							is_advanced,
 							receiving_method,
+							payment_type,
 							needed_date,
 							needed_time,
 							order_status
@@ -175,6 +176,7 @@
 							.'"'.$orderDetails['paid_amount'].'"' 		.","
 							.'"'.$orderDetails['is_advanced'].'"' 		.","
 							.'"'.$orderDetails['delivery_type'].'"' .","
+							.'"'.$orderDetails['payment_type'].'"' .","
 							.'"'.$orderDetails['date'].'"' .","
 							.'"'.$orderDetails['time'].'"' .","
 							.'"'.$orderStatus.'")';
