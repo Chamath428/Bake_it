@@ -73,6 +73,10 @@
 				$orderDetails['delivery_type']=$delivery_type;
 				$orderDetails['payment_type']=$payment_type;
 				$orderDetails['subtotal']=$subtotal;
+				$orderDetails['paid_amount']=0;
+				if ($payment_type==2) {
+					$orderDetails['paid_amount']=$subtotal;
+				}
 
 				if (!isset($customer_id)) {
 					$customer_id=$this->checkoutModel->getCustomerId($orderDetails);

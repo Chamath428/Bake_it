@@ -53,7 +53,8 @@ class cashierCreateOrderModel extends database
 							paid_amount,
 							receiving_method,
 							payment_type,
-							order_status
+							order_status,
+							needed_date
 						)
 					VALUES ("
 							.'"'.$orderDetails['menu_id'].'"' 		.","
@@ -63,7 +64,8 @@ class cashierCreateOrderModel extends database
 							.'"'.$orderDetails['paid_amount'].'"' 	.","
 							.'"'.$orderDetails['delivery_type'].'"' .","
 							.'"'.$orderDetails['payment_type'].'"' 	.","
-							.'"'.$orderDetails['order_status'].'")';
+							.'"'.$orderDetails['order_status'].'"'	.","
+							.'"'.date("Y-m-d").'")';
 			$res2=mysqli_query($this->db,$sql2) or die('2->'.mysqli_error($this->db));
 
 			$sql3= "SELECT LAST_INSERT_ID() AS last_order_id";
