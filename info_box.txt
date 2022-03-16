@@ -37,8 +37,8 @@ branch / all job role 					good
 
 --Reciving type--
 
-1-Home delivery
-2-Pick up from shop
+1-Pick up from shop
+2-Home delivery
 
 --Payment method--
 
@@ -53,5 +53,5 @@ branch / all job role 					good
 4- Send order to the bakery
 5- Complete the order by bakery manager
 6- Complete the order by cashier or delivery person
-6- Decline the order
-7- Cancle the order
+7- Decline the order
+8- Cancle the order

@@ -22,6 +22,7 @@
       <div class="branch-selection">
         <div class="text">
                    <label for="Branch">Outlet</label>
+                   <form method="post" action="<?php echo BASEURL."/ownerReviewsController/getReviewsTabel" ?>">
                    <div class="text-fill">
                        <select placeholder="Select Branch" name="branch_Id">
                            <option value="0">Any</option>
@@ -40,7 +41,7 @@
                <div class="row">
                     <div class="col">
                         <h4>Total Reviews</h4>
-                        <h1>25</h1>
+                        <h1><?php echo $data[0]?></h1>
                     </div>
                     <div class="col">
                         <h4>Total Ratings</h4>
@@ -63,12 +64,6 @@
 
                     </div>
                 </div>
-<!--                 
-                <div class="delivery">
-                     <h4>Best Delivery Person Form Ratings</h4>
-                     <i class="fas fa-user"></i>
-                     <span>Amal Perera</span>
-                </div> -->
                <table id="reviews-table">
                    <thead>
                        <tr>
@@ -79,66 +74,31 @@
                        </tr>
                    </thead>
                    <tbody>
-                       <tr>
-                           <td label="Date">01/09/2021</td>
-                           <td label="Order No">117</td>
-                           <td label="Review Description">You deliverd ontime.nice service</td>
-                           <td label="Rated Stars">
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                            </td>
-                       </tr>
-                       <tr>
-                           <td label="Date">02/09/2021</td>
-                           <td label="Order No">118</td>
-                           <td label="Review Description">disgusting service</td>
-                           <td label="Rated Stars">
-                               <i id="far-star" class="fas fa-star"></i>
-                               <i id="far-star" class="fas fa-star"></i>
-                               <i id="far-star" class="fas fa-star"></i>
-                               <i id="far-star" class="fas fa-star"></i>
-                               <i id="far-star" class="fas fa-star"></i>
-                            </td>
-                       </tr>
-                       <tr>
-                           <td label="Date">03/09/2021</td>
-                           <td label="Order No">119</td>
-                           <td label="Review Description">Good service</td>
-                           <td label="Rated Stars">
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                            </td>
-                       </tr>
-                       <tr>
-                           <td label="Date">04/09/2021</td>
-                           <td label="Order No">120</td>
-                           <td label="Review Description">Good service</td>
-                           <td label="Rated Stars">
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                            </td>
-                       </tr>
-                       <tr>
-                           <td label="Date">04/09/2021</td>
-                           <td label="Order No">125</td>
-                           <td label="Review Description">You deliverd ontime.nice service</td>
-                           <td label="Rated Stars">
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="fas-star" class="fas fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                               <i id="far-star" class="far fa-star"></i>
-                            </td>
-                       </tr>
+                        <?php
+                                $i =0;
+                                foreach($data as $key => $review) {?>
+                        <tr>
+                            <td label="Date"><?php echo $review['needed_date'];?></td>
+                            <td label="Order No"><?php echo $review['order_id'];?></td>
+                            <td label="Review Description"><?php echo $review['review'];?></td>
+                            <td label="Rated Stars">
+                            <?php
+                                $j = 0;
+                                for ($i=0; $i <$review['rating'] ; $i++){?> 
+                                    <i id="fas-star" class="fas fa-star"></i>
+                                <?php
+                                }?> 
+                                <?php
+                                $blankStars = 5 - $review['rating'];
+                                for ($i=0; $i <$blankStars ; $i++) {?> 
+                                    <i id="far-star" class="far fa-star"></i>
+                                <?php
+                                }?>
+                                </td>
+                        </tr>
+                        <?php
+                                $i++;
+                            }?> 
                    </tbody>
                </table>
             </div>

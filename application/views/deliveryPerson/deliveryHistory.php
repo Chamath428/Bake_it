@@ -22,7 +22,7 @@
     
     <div class="delivery-body overview-body" id="body">
         <div class="del-topic">Deliveries Overview</div>
-        <div class="row history-row">
+        <div class="row">
             <div class="col">
                 <h4>Total Deliveiries</h4>
                 <h1><?php echo $data[0]?></h1>

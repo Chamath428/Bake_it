@@ -19,55 +19,141 @@
 // --amber-sae-ece: #ff7d00ff;
 // --kobe: #78290fff;
 
-var xValues = ["Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
-// var xValues = Utils.months({count: 12});
-new Chart("myChart", {
-  type: "line",
-  data: {
-    labels: xValues,
-    datasets: [{ 
-      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-      borderColor: "red",
-      fill: false
-    }, { 
-      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
-      borderColor: "orange",
-      fill: false
-    }, { 
-      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
-      borderColor: "brown",
-      fill: false
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-        display: true,
-        text: "Company Sales for the year"
-    },
-    scales: {
-        xAxes: [{
-           gridLines: {
-              display: false
-           }
-        }],
-        yAxes: [{
-           gridLines: {
-              display: true
-           }
-        }]
-    },
-    animations: {
-        tension: {
-          duration: 1000,
-          easing: 'linear',
-          from: 1,
-          to: 0,
-          loop: true
-        }
-    }
-  }
-});
+// var xValues = ["Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+var jan = document.getElementById("jan").value;
+var feb = document.getElementById("feb").value;
+var march = document.getElementById("march").value;
+var april = document.getElementById("april").value;
+var may = document.getElementById("may").value;
+var june = document.getElementById("june").value;
+var july = document.getElementById("july").value;
+var aug = document.getElementById("august").value;
+var sep = document.getElementById("september").value;
+var oct = document.getElementById("october").value;
+var nov = document.getElementById("november").value;
+var dec = document.getElementById("december").value;
+window.onload = function()
+    {
+        var randomScalingFactor = function() {
+            return Math.round(Math.random() * 100);
+        };
+        var config = {
+            type: 'line',
+            data: {
+                borderColor : "#fffff",
+                datasets: [{
+                    data: [jan,feb,march,april,may,june,july,aug,sep,oct,nov,dec],
+                    borderColor : "#fff",
+                    borderWidth : "3",
+                    hoverBorderColor : "#000",
+ 
+                    // label: 'Monthly Sales Report',
+ 
+                    backgroundColor: [
+                        "#0190ff",
+                        "#56d798",
+                        "#ff8397",
+                        "#6970d5",
+                        "#f312cb",
+                        "#ff0060",
+                        "#ffe400"
+ 
+                    ],
+                    hoverBackgroundColor: [
+                        "#f38b4a",
+                        "#56d798",
+                        "#ff8397",
+                        "#6970d5",
+                        "#ffe400"
+                    ]
+                }],
+ 
+                labels: ['Jan','Feb','March','April','May','June','July','Aug','Sep','Oct','Nov','Dec']
+            },
+ 
+            options: {
+                responsive: true,
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: "Company Sales for the year"
+                },
+                scales: {
+                    xAxes: [{
+                       gridLines: {
+                          display: false
+                       }
+                    }],
+                    yAxes: [{
+                       gridLines: {
+                          display: true
+                       }
+                    }]
+                },
+                animations: {
+                    tension: {
+                      duration: 1000,
+                      easing: 'linear',
+                      from: 1,
+                      to: 0,
+                      loop: true
+                    }
+                }
+ 
+            }
+        };
+        var ctx = document.getElementById('myChart').getContext('2d');
+        window.myPie = new Chart(ctx, config);
+ 
+ 
+    };
+// new Chart("myChart", {
+//   type: "line",
+//   data: {
+//     labels: xValues,
+//     datasets: [{ 
+//       data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+//       borderColor: "red",
+//       fill: false
+//     }, { 
+//       data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+//       borderColor: "orange",
+//       fill: false
+//     }, { 
+//       data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+//       borderColor: "brown",
+//       fill: false
+//     }]
+//   },
+//   options: {
+//     legend: {display: false},
+//     title: {
+//         display: true,
+//         text: "Company Sales for the year"
+//     },
+//     scales: {
+//         xAxes: [{
+//            gridLines: {
+//               display: false
+//            }
+//         }],
+//         yAxes: [{
+//            gridLines: {
+//               display: true
+//            }
+//         }]
+//     },
+//     animations: {
+//         tension: {
+//           duration: 1000,
+//           easing: 'linear',
+//           from: 1,
+//           to: 0,
+//           loop: true
+//         }
+//     }
+//   }
+// });
 var x2Values = ["Kasbewa", "Maharagama", "Piliyandala"];
 var y2Values = [55, 90, 44];
 var barColors = ["red","orange","brown"];

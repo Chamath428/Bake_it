@@ -24,21 +24,26 @@
         <section class="order-details">
 		<div class="basic-details">
 			<table>
+			        
+                    <!-- $i =0;
+                    foreach($data[0] as $key => $deliveryDetails) { php echo $deliveryDetails['order_id'];?>-->
+						
 				<tr>
 					<td>Order ID</td>
-					<td>117</td>
+					<td><?php echo $data[0]['order_id'] ?> </td>
 				</tr>
 				<tr>
 					<td>Customer Name</td>
-					<td>Chamath Chinthana</td>
+					<td><?php echo $data[0]['first_name'];
+					          echo $data[0]['last_name'];?></td>
 				</tr>
 				<tr>
 					<td>Contact Number</td>
-					<td>0712343212</td>
+					<td><?php echo $data[1]?></td>
 				</tr>
 				<tr>
 					<td>Order Status</td>
-					<td>Ongoing</td>
+					<td><?php echo $data[0]['order_status'] ?></td>
 				</tr>
 				<tr>
 					<td>Location</td>
@@ -46,7 +51,7 @@
 				</tr>
 				<tr>
 					<td>Payment</td>
-					<td>Card Payment</td>
+					<td><?php echo $data[0]['payment_type'] ?></td>
 				</tr>
 			</table>
 		</div>
