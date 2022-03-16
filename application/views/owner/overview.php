@@ -29,18 +29,18 @@
              <div class="col">
               <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
               <?php
-                // echo "<input type='hidden' id= 'jan' value = '$jan' >";
-                // echo "<input type='hidden' id= 'feb' value = '$feb' >";
-                // echo "<input type='hidden' id= 'march' value = '$march' >";
-                // echo "<input type='hidden' id= 'april' value = '$april' >";
-                // echo "<input type='hidden' id= 'may' value = '$may' >";
-                // echo "<input type='hidden' id= 'june' value = '$june' >";
-                // echo "<input type='hidden' id= 'july' value = '$july' >";
-                // echo "<input type='hidden' id= 'aug' value = '$aug' >";
-                // echo "<input type='hidden' id= 'sep' value = '$sep' >";
-                // echo "<input type='hidden' id= 'oct' value = '$oct' >";
-                // echo "<input type='hidden' id= 'nov' value = '$nov' >";
-                // echo "<input type='hidden' id= 'dec' value = '$dec' >";
+                echo "<input type='hidden' id= 'jan' value = $data[0]['jan'] >";
+                echo "<input type='hidden' id= 'feb' value = $data[0]['feb'] >";
+                echo "<input type='hidden' id= 'march' value = $data[0]['march'] >";
+                echo "<input type='hidden' id= 'april' value = $data[0]['april'] >";
+                echo "<input type='hidden' id= 'may' value = $data[0]['may'] >";
+                echo "<input type='hidden' id= 'june' value = $data[0]['june'] >";
+                echo "<input type='hidden' id= 'july' value = $data[0]['july'] >";
+                echo "<input type='hidden' id= 'aug' value = $data[0]['aug'] >";
+                echo "<input type='hidden' id= 'sep' value = $data[0]['sep'] >";
+                echo "<input type='hidden' id= 'oct' value = $data[0]['oct'] >";
+                echo "<input type='hidden' id= 'nov' value = $data[0]['nov'] >";
+                echo "<input type='hidden' id= 'dec' value = $data[0]['dec'] >";
 
 
                 ?>
