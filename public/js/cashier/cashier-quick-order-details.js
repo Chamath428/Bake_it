@@ -61,3 +61,16 @@ function calc2(){
      document.getElementById("balance").value=balance;
     }
 }
+
+
+function calc3(){
+     var subTotal=document.getElementById("left-amount").value;
+     var paidAmount=document.getElementById("paid-amount").value;
+     var balance=parseFloat(paidAmount)-parseFloat(subTotal);
+     if (document.getElementById("paid-amount").value=="") {
+        document.getElementById("balance").value=0;
+     }
+     if (!isNaN(balance)){
+     document.getElementById("balance").value=balance;
+    }
+}

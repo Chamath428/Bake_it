@@ -40,7 +40,7 @@
 			$orderDetails['total_amount']=$_POST['total-amount'];
 			$orderDetails['paid_amount']=$_POST['paid-amount'];
 			$orderDetails['menu_id']=1;
-			$orderDetails['cashier_id']=37;
+			$orderDetails['cashier_id']=$_SESSION['staff_id'];
 			$orderDetails['order_type']=1;
 			$orderDetails['delivery_type']=2;
 			$orderDetails['payment_type']=$_POST['payment_type'];

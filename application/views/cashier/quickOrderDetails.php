@@ -177,10 +177,23 @@
                 </table>
             </div>
             <div class="btn-container">
-                <?php if ($data[1]['reveiving_method']==1 && $data[1]['payment_type']==1) { ?>
-                    <button class="btn" data-modal-target="#modal" >Complete Order</button>
-                <?php } else{?>
-                <button class="btn" >Completed</button>
+                <?php if ($data[1]['order_type']==1 && $data[1]['reveiving_method']==1 && $data[1]['payment_type']==1) { ?>
+                    <button class="btn" data-modal-target="#modal" >Complete Payment</button>
+
+                <?php } else if($data[1]['order_type']==1 && $data[1]['reveiving_method']==1 && $data[1]['payment_type']==2){?>
+                <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completePickupFromShopCard/".$data[1]['order_id']."/".$data[1]['total_amount'] ?>">
+                    <button class="btn" >Complete Order and Print the Bill</button>
+                </form>
+
+            <?php } else if($data[1]['order_type']==1 && $data[1]['reveiving_method']==2 && $data[1]['payment_type']==1){ ?>
+                <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completeQuickHomeDelivery/".$data[1]['order_id']."/0" ?>">
+                    <button class="btn" >Print the Bill</button>
+                </form>
+
+            <?php }else if($data[1]['order_type']==1){ ?>
+                <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completeQuickHomeDelivery/".$data[1]['order_id']."/".$data[1]['total_amount'] ?>">
+                    <button class="btn" >Print the Bill</button>
+                </form>
             <?php } ?>
             </div>
         </div>
@@ -196,7 +209,7 @@
 
     <div class="modal-body">
 
-      <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completeQuickOrder/".$data[1]['order_id'] ?>">
+      <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completePickupFromShopCash/".$data[1]['order_id'] ?>">
             <table class="balance">
                             <tr>
                                 <th><span>Total(RS:)</span></th>

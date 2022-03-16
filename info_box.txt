@@ -37,8 +37,8 @@ branch / all job role 					good
 
 --Reciving type--
 
-1-Home delivery
-2-Pick up from shop
+1-Pick up from shop
+2-Home delivery
 
 --Payment method--
 

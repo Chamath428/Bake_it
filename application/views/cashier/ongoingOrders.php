@@ -84,7 +84,7 @@
 
                             <?php foreach ($data[2] as $key => $specialOrder) {?>
                              <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getOngoingOrderDetails/".$specialOrder['order_id'] ?>"><?php echo $specialOrder['order_id'] ?></a></td>
+                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getOngoingSpecilOrderDetails/".$specialOrder['order_id'] ?>"><?php echo $specialOrder['order_id'] ?></a></td>
                                 <td><?php echo $specialOrder['needed_date'] ?></td>
                                 <td><?php switch ($specialOrder['receiving_method']) {
                                     case '2':

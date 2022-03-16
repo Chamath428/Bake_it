@@ -87,6 +87,8 @@ class cashierOrderListModel extends database
 						receiving_method,
 						delivery_person_id,
 						total_amount,
+						paid_amount,
+						is_advanced,
 						order_type,
 						payment_type
 					FROM
@@ -105,6 +107,8 @@ class cashierOrderListModel extends database
 				$data['reveiving_method']=$row3['receiving_method'];
 				$data['delivery_person_id']=$row3['delivery_person_id'];
 				$data['total_amount']=$row3['total_amount'];
+				$data['paid_amount']=$row3['paid_amount'];
+				$data['is_advanced']=$row3['is_advanced'];
 				$data['order_type']=$row3['order_type'];
 				$data['payment_type']=$row3['payment_type'];
 				$data['menu_id']=$menu_id;
@@ -188,7 +192,32 @@ class cashierOrderListModel extends database
 						order_id=".$order_id;
 			$res7=mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
 
-			$sql8="INSERT INTO
+			$this->insertQuickBillDetails($order_id,$paidAmount);
+		}
+
+		public function updateQuickOrderDetails($order_id){
+			$sql9="UPDATE
+						order_details
+					SET
+						order_status=6
+					WHERE
+						order_id=".$order_id;
+
+			$res9=mysqli_query($this->db,$sql9) or die('9->'.mysqli_error($this->db));
+		}
+
+		public function insertQuickBillDetails($order_id,$paidAmount){
+			$cashier_id=$_SESSION['staff_id'];
+
+			$sql10="SELECT
+						bill_id
+					FROM
+						bill
+					WHERE
+						order_id=".$order_id;
+			$res10=mysqli_query($this->db,$sql10) or die('10->'.mysqli_error($this->db));
+			if (mysqli_num_rows($res10)==0) {
+				$sql11="INSERT INTO
 						bill(
 							order_id,
 							paid_amount,
@@ -197,7 +226,20 @@ class cashierOrderListModel extends database
 								.$paidAmount.","
 								.$cashier_id.")";
 
-			$res8=mysqli_query($this->db,$sql8) or die('8->'.mysqli_error($this->db));
+			$res11=mysqli_query($this->db,$sql11) or die('11->'.mysqli_error($this->db));
+			}else{
+				$sql12="UPDATE
+							bill
+						SET
+							paid_amount=".$paidAmount.",
+							cashier_id=".$cashier_id." 
+						WHERE
+							order_id=".$order_id;
+
+				$res12=mysqli_query($this->db,$sql12) or die('12->'.mysqli_error($this->db));
+			}
+
+			
 		}
 }
 
