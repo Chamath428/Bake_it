@@ -32,35 +32,32 @@
                             <tr>
                                 <th>Order Id</th>
                                 <th>Order Type</th>
-                                <th>Completd Date</th>
+                                <th>Placed Date</th>
                                 <th>Total</th>
                                 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails"; ?>">0001</a></td>
-                                <td>Special</td>
-                                <td>2021/08/09</td>                    
-                                <td>Rs: 200.00</td>
-                                
-                            </tr>
-                            <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails"; ?>">0002</a></td>
-                                <td>Quick</td>
-                                <td>2021/10/22</td>                    
-                                <td>Rs: 100.00</td>
-                                
-                            
-                            </tr>
-                            <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails"; ?>">0003</a></td>
-                                <td>Quick</td>
-                                <td>2021/10/25</td>                    
-                                <td>Rs: 450.00</td>
-                                
-                            
-                            </tr>
+
+                            <?php foreach ($data as $key => $orders) {?>
+                                <tr>
+                                    <td><a href="<?php echo BASEURL."/cashierOrderListController/getCompleteOrderDetails/".$orders['order_id']; ?>"><?php echo $orders['order_id'] ?></a></td>
+                                    <td><?php switch ($orders['order_type']) {
+                                    case '1':
+                                        echo "Quick Order";
+                                        break;
+                                    case '2':
+                                        echo "Special Order";
+                                        break;
+                                    
+                                    default:
+                                        echo "Not specified";
+                                        break;
+                                } ?></td>
+                                    <td><?php echo $orders['placed_date_and_time'] ?></td>                    
+                                    <td><?php echo $orders['total_amount'] ?></td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 

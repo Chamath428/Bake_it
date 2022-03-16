@@ -186,12 +186,12 @@
                 </form>
 
             <?php } else if($data[1]['order_type']==1 && $data[1]['reveiving_method']==2 && $data[1]['payment_type']==1){ ?>
-                <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completeQuickHomeDelivery/".$data[1]['order_id']."/0" ?>">
+                <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completeHomeDelivery/".$data[1]['order_id']."/0" ?>">
                     <button class="btn" >Print the Bill</button>
                 </form>
 
             <?php }else if($data[1]['order_type']==1){ ?>
-                <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completeQuickHomeDelivery/".$data[1]['order_id']."/".$data[1]['total_amount'] ?>">
+                <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completeHomeDelivery/".$data[1]['order_id']."/".$data[1]['total_amount'] ?>">
                     <button class="btn" >Print the Bill</button>
                 </form>
             <?php } ?>

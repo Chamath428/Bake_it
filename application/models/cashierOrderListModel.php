@@ -1,8 +1,5 @@
 <?php 
 
-/**
- * 
- */
 class cashierOrderListModel extends database
 {
 	
@@ -187,7 +184,8 @@ class cashierOrderListModel extends database
 						order_details
 					SET
 						paid_amount=".$paidAmount.",
-						order_status=6  
+						order_status=6,
+						cashier_id=".$cashier_id."   
 					WHERE
 						order_id=".$order_id;
 			$res7=mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
@@ -196,15 +194,18 @@ class cashierOrderListModel extends database
 		}
 
 		public function updateQuickOrderDetails($order_id){
+			$cashier_id=$_SESSION['staff_id'];
 			$sql9="UPDATE
 						order_details
 					SET
-						order_status=6
+						order_status=6,
+						cashier_id=".$cashier_id."
 					WHERE
 						order_id=".$order_id;
 
 			$res9=mysqli_query($this->db,$sql9) or die('9->'.mysqli_error($this->db));
 		}
+
 
 		public function insertQuickBillDetails($order_id,$paidAmount){
 			$cashier_id=$_SESSION['staff_id'];
@@ -240,6 +241,48 @@ class cashierOrderListModel extends database
 			}
 
 			
+		}
+
+		public function updateOrderDetailsCashierId($order_id){
+			$cashier_id=$_SESSION['staff_id'];
+			$sql13="UPDATE
+						order_details
+					SET
+						cashier_id=".$cashier_id." 
+						WHERE
+						order_id=".$order_id;
+
+			$res13=mysqli_query($this->db,$sql13) or die('13->'.mysqli_error($this->db));
+		}
+
+
+		public function getCompleteOrderDetails(){
+			$cashier_id=$_SESSION['staff_id'];
+			$completeOrders=array();
+			$i=0;
+			$sql14="SELECT
+						order_id,
+						order_type,
+						placed_date_and_time,
+						total_amount
+					FROM
+						order_details
+					WHERE
+						cashier_id=".$cashier_id." AND
+						order_status=6";
+
+			$res14=mysqli_query($this->db,$sql14) or die('14->'.mysqli_error($this->db));
+
+			while ($row7=mysqli_fetch_assoc($res14)) {
+				$data['order_id']=$row7['order_id'];
+				$data['order_type']=$row7['order_type'];
+				$data['placed_date_and_time']=$row7['placed_date_and_time'];
+				$data['total_amount']=$row7['total_amount'];
+				$completeOrders[$i]=$data;
+				$i++;
+			}
+			return $completeOrders;;
+
 		}
 }
 
