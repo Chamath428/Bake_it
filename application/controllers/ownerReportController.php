@@ -12,9 +12,9 @@
 		public function index(){
 			$data=array();
 
-	        $branch_id=$_POST['branch_id'];          
-			$branchSalesOfYear = $this -> ownerReportsModel -> branchSalesOfYearOverview($branch_id);
-			$data[0] = $branchSalesOfYear;
+	        // $branch_id=$_POST['branch_id'];          
+			// $branchSalesOfYear = $this -> ownerReportsModel -> branchSalesOfYearOverview($branch_id);
+			// $data[0] = $branchSalesOfYear;
 
             $this->view("owner/overview",$data);			
 		}

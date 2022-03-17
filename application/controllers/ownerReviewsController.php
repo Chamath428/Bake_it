@@ -21,6 +21,8 @@
 			  
 	        $branch_id=$_POST['branch_id'];
 			$data['branch_id']=$branch_id;
+			
+
             $reviewsTable=$this->ownerReviewsModel -> getReviewsTable($branch_id);
 			if (empty($reviewsTable)) {
 				$data['error']="No Reviews to show!";

@@ -201,6 +201,10 @@ a{
     -webkit-animation-delay: 3s; 
       animation-delay: 3s;
   }
+
+  .side-toggle{
+    display: none;
+}
   
   @-webkit-keyframes slide {
       0% { opacity:0; transform: translateX(4vw); }  

@@ -58,7 +58,7 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		    $data[1] =  $unregisterdCustomerContactDetails;
 		 }
 
-		 $menuDetails = $this->deliveryPersonDeliveriesModel ->getMenuDetails();
+		 $menuDetails = $this->deliveryPersonDeliveriesModel ->getMenuDetails($order_id);
 		 $data[2] = $menuDetails;
          
 		

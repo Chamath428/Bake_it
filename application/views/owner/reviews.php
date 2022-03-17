@@ -24,7 +24,7 @@
                    <label for="Branch">Outlet</label>
                    <form method="post" action="<?php echo BASEURL."/ownerReviewsController/getReviewsTabel" ?>">
                    <div class="text-fill">
-                       <select placeholder="Select Branch" name="branch_Id">
+                       <select placeholder="Select Branch" name="branch_id">
                            <option value="0">Any</option>
                            <option value="1">Kesbawa</option>
                            <option value="2">Baththaramulla</option>

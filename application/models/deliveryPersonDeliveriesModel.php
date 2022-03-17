@@ -220,6 +220,7 @@ class deliveryPersonDeliveriesModel extends database{
           $data['menu_id']=$row14['menu_id'];
           $data['item_id']=$row14['item_id'];
           $data['item_name']=$row14['item_name'];
+          $data['quantity']=$row14['quantity'];
           $data['price']=$row14['price'];
           $menuItemDetails[$i]=$data;
           $i++;

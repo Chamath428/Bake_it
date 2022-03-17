@@ -72,26 +72,26 @@
 							<div class="product-container">
 								<img src="<?php echo BASEURL ?>/public/images/b1.png">
 								<div>
-									<p>Chicken Burger</p>
+									<p><?php echo $data[2]['item_name'] ?></p>
 								</div>
 							</div>
 						</td>
 						<td>
-							<p>150.00LKR</p>
+							<p><?php echo $data[2]['price'] ?></p>
 						</td>
 						<td>
 							<div>
-	 							<input type="text" name="" value="1" readonly="">
+	 							<input type="text" name="" value="<?php echo $data[2]['quantity'] ?>" readonly="">
 	 						</div>
 						</td>
 						<td>
-							<p>150.00LKR</p>
+							<p><?php echo $data[2]['price']*$data[2]['quantity'] ?></p>
 						</td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>
 							<div class="product-container">
-								<img src="<?php echo BASEURL ?>/public/images/b1.png">
+								<img src="?php echo BASEURL ?>/public/images/b1.png">
 								<div>
 									<p>Cheese Burger</p>
 								</div>
@@ -108,7 +108,7 @@
 						<td>
 							<p>150.00LKR</p>
 						</td>
-					</tr>
+					</tr> -->
 				</table>
 			</div>
 		</div>
@@ -126,23 +126,23 @@
  				</tr>
  				<tr>
  					<td>Product</td>
- 					<td>aaa Burger</td>
+ 					<td><?php echo $data[2]['item_name'] ?></td>
  				</tr>
  				<tr>
  					<td>Price</td>
- 					<td>150.00LKR</td>
+ 					<td><?php echo $data[2]['price'] ?></td>
  				</tr>
  				<tr>
  					<td>Quantity</td>
  					<td>
  						<div>
- 							<input type="text" name="" value="1" readonly="">
+ 							<input type="text" name="" value="<?php echo $data[2]['quantity'] ?>" readonly="">
  						</div>
  					</td>
  				</tr>
  				<tr>
  					<td>Total</td>
- 					<td>150.00LKR</td>
+ 					<td><?php echo $data[2]['price']*$data[2]['quantity'] ?></td>
  				</tr>
  			</table>
  		</div>
