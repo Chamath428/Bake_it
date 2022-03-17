@@ -37,8 +37,8 @@ branch / all job role 					good
 
 --Reciving type--
 
-1-Home delivery
-2-Pick up from shop
+1-Pick up from shop
+2-Home delivery
 
 --Payment method--
 
@@ -55,3 +55,10 @@ branch / all job role 					good
 6- Complete the order by cashier or delivery person
 7- Decline the order
 8- Cancel the order
+
+
+---Order list details of cashier---
+
+In ongoing order section cashier can see all the ongoing orders of the branch.
+
+In completed order section cashier can only see the orders that he completed.
