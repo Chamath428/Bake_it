@@ -31,7 +31,11 @@ function deleteRow(tableID) {
 function getLocation(x){
     if (x==0) {
         document.getElementById("location-details").style.display="none";
-    }else if(x==1) document.getElementById("location-details").style.display="flex";
+        document.getElementById("delivery-tax").value="00";
+    }else if(x==1) {
+        document.getElementById("location-details").style.display="flex";
+        document.getElementById("delivery-tax").value="200"
+    }
 }
 
 
@@ -140,4 +144,7 @@ function isNumber(evt) {
 
         return true;
 }
+
+
+
 

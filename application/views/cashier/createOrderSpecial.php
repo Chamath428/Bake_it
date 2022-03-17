@@ -3,6 +3,7 @@
     $totalAmount=0;
     $paidAmount=$_POST['paid-amount'];
     $balance=$_POST['balance'];
+    $deliveryTax=$_POST['delivery-tax'];
     $paymentType=$_POST['Payment'];
     $requiredDate=$_POST['req_date'];
     $requiredTime=$_POST['req_time'];
@@ -24,7 +25,8 @@
                 $itemData[$i]=$item;
                 $totalAmount+=$_POST['item-price-'.$i];
     }
-    $balance=$paidAmount-$totalAmount;
+    $grandTotal=$totalAmount+$_POST['delivery-tax'];
+    $balance=$paidAmount-$grandTotal;
 } ?>
 
 <!DOCTYPE html>
@@ -220,15 +222,21 @@
                     <div class="total-container">
                         <table class="balance">
                             <tr>
-                                <th><span>Total(RS:)</span></th>
+                                <th><span>Total(LKR:)</span></th>
                                 <td><input type="number" readonly name="total-amount" id="total-amount" value="<?php if(isset($_POST['total-amount']))echo $_POST['total-amount']; else echo 0; ?>"></td>
                             </tr>
+
                             <tr>
-                                <th><span>Amount Paid(RS:)</span></th>
+                                <th><span>Delivery Tax(LKR:)</span></th>
+                                <td><input type="number" readonly name="delivery-tax" id="delivery-tax" value="00"></td>    
+                            </tr>
+
+                            <tr>
+                                <th><span>Amount Paid(LKR:)</span></th>
                                 <td><input type="number" required name="paid-amount"  id="paid-amount" oninput="calc2()" onkeypress="javascript:return isNumber(event)" value="<?php if(isset($_POST['paid-amount']))echo $_POST['paid-amount']; ?>"></td>
                             </tr>
                             <tr>
-                                <th><span>Balance Due(RS:)</span></th>
+                                <th><span>Balance Due(LKR:)</span></th>
                                 <td><input type="number" name="balance" id="balance" readonly  value="<?php if(isset($_POST['balance']))echo $_POST['balance']; else echo 0; ?>" onkeypress="javascript:return isNumber(event)"></td>
                             </tr>
                         </table>
@@ -290,21 +298,39 @@
             <div class="total-details">
                 <table>
                     <tr>
-                        <th>Total Amount(RS:)</th>
+                        <th>Total Amount (LKR:)</th>
                         <td>
                             <?php echo $totalAmount.".00"; ?>
                             <input type="hidden" name="total-amount" value="<?php echo $totalAmount; ?>">
                         </td>
                     </tr>
+
                     <tr>
-                        <th>Amount Paid(RS:)</th>
+                        <th>Delivery Tax (LKR:)</th>
+                        <td>
+                             <?php if ($deliveryType==2) {
+                                   echo $deliveryTax.".00";
+                               }else echo 0; ?>
+                         </td>
+                    </tr>
+
+                    <tr>
+                        <th>Grand Total (LKR:)</th>
+                        <td>
+                            <input type="hidden" name="grand-amount" value="<?php echo $grandTotal; ?>">
+                            <?php echo $grandTotal.".00"; ?>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>Amount Paid (LKR:)</th>
                         <td>
                             <?php echo $paidAmount.".00"; ?>
                             <input type="hidden" name="paid-amount" value="<?php echo $paidAmount;?>">
                         </td>
                     </tr>
                     <tr>
-                        <th>Balance Due(RS:)</th>
+                        <th>Balance Due (LKR:)</th>
                         <td>
                             <?php echo $balance.".00"; ?>
                             <input type="hidden" name="balance" value="<?php echo $balance; ?>">        

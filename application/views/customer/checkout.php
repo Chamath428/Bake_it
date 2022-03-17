@@ -167,16 +167,16 @@
 			<div class="total-container">
 				<table>
 					<tr>
-						<td>Subtotal</td>
-						<td><?php echo $subtotal.".00 LKR"; ?></td>
+						<td>Subtotal (LKR)</td>
+						<td><input id="subtotal" type="text" readonly="" value="<?php echo $subtotal ?>"></td>
 					</tr>
 					<tr>
-						<td>Delivery Tax</td>
-						<td>00.00 LKR</td>
+						<td>Delivery Tax (LKR)</td>
+						<td><input id="delivery-tax" type="text" readonly="" name="delivery-tax" value="00"></td>
 					</tr>
 					<tr>
-						<td>Grand Total</td>
-						<td><input type="hidden" readonly="" name="subtotal" value="<?php echo $subtotal; ?>"><input type="text" readonly="" name="subtotal2" value="<?php echo $subtotal.".00 LKR"; ?>"></td>
+						<td>Grand Total (LKR)</td>
+						<td><input type="hidden" id="grandtotal" readonly="" name="subtotal" value="<?php echo $subtotal; ?>"><input type="text" readonly="" id="grandtotal2" name="subtotal2" value="<?php echo $subtotal; ?>"></td>
 					</tr>
 				</table>
 			</div>
