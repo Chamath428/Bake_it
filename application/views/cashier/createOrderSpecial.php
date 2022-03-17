@@ -228,7 +228,7 @@
 
                             <tr>
                                 <th><span>Delivery Tax(LKR:)</span></th>
-                                <td><input type="number" readonly name="delivery-tax" id="delivery-tax" value="00"></td>    
+                                <td><input type="number" readonly name="delivery-tax" id="delivery-tax" value="0"></td>    
                             </tr>
 
                             <tr>
