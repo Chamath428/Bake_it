@@ -266,7 +266,7 @@ button:hover a{
 }
 @media(max-width:787px){
     .delivery-body .del-topic{
-        margin-left: 76px;
+        margin-left: 15px;
         font-size: 18px;
     }
     .overview-body .del-topic{
@@ -305,8 +305,8 @@ button:hover a{
     .cal-table .delivery-calander{
         padding: 20px;
     }
-    .overview-body .row .col{
-        /* width: 88%; */
+    /* .overview-body .row .col{
+        /* width: 88%; 
         margin-left: 40px;
-    }
+    } */
 }

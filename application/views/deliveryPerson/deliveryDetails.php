@@ -24,21 +24,26 @@
         <section class="order-details">
 		<div class="basic-details">
 			<table>
+			        
+                    <!-- $i =0;
+                    foreach($data[0] as $key => $deliveryDetails) { php echo $deliveryDetails['order_id'];?>-->
+						
 				<tr>
 					<td>Order ID</td>
-					<td>117</td>
+					<td><?php echo $data[0]['order_id'] ?> </td>
 				</tr>
 				<tr>
 					<td>Customer Name</td>
-					<td>Chamath Chinthana</td>
+					<td><?php echo $data[0]['first_name'];
+					          echo $data[0]['last_name'];?></td>
 				</tr>
 				<tr>
 					<td>Contact Number</td>
-					<td>0712343212</td>
+					<td><?php echo $data[1]?></td>
 				</tr>
 				<tr>
 					<td>Order Status</td>
-					<td>Ongoing</td>
+					<td><?php echo $data[0]['order_status'] ?></td>
 				</tr>
 				<tr>
 					<td>Location</td>
@@ -46,7 +51,7 @@
 				</tr>
 				<tr>
 					<td>Payment</td>
-					<td>Card Payment</td>
+					<td><?php echo $data[0]['payment_type'] ?></td>
 				</tr>
 			</table>
 		</div>
@@ -67,26 +72,26 @@
 							<div class="product-container">
 								<img src="<?php echo BASEURL ?>/public/images/b1.png">
 								<div>
-									<p>Chicken Burger</p>
+									<p><?php echo $data[2]['item_name'] ?></p>
 								</div>
 							</div>
 						</td>
 						<td>
-							<p>150.00LKR</p>
+							<p><?php echo $data[2]['price'] ?></p>
 						</td>
 						<td>
 							<div>
-	 							<input type="text" name="" value="1" readonly="">
+	 							<input type="text" name="" value="<?php echo $data[2]['quantity'] ?>" readonly="">
 	 						</div>
 						</td>
 						<td>
-							<p>150.00LKR</p>
+							<p><?php echo $data[2]['price']*$data[2]['quantity'] ?></p>
 						</td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>
 							<div class="product-container">
-								<img src="<?php echo BASEURL ?>/public/images/b1.png">
+								<img src="?php echo BASEURL ?>/public/images/b1.png">
 								<div>
 									<p>Cheese Burger</p>
 								</div>
@@ -103,7 +108,7 @@
 						<td>
 							<p>150.00LKR</p>
 						</td>
-					</tr>
+					</tr> -->
 				</table>
 			</div>
 		</div>
@@ -121,23 +126,23 @@
  				</tr>
  				<tr>
  					<td>Product</td>
- 					<td>aaa Burger</td>
+ 					<td><?php echo $data[2]['item_name'] ?></td>
  				</tr>
  				<tr>
  					<td>Price</td>
- 					<td>150.00LKR</td>
+ 					<td><?php echo $data[2]['price'] ?></td>
  				</tr>
  				<tr>
  					<td>Quantity</td>
  					<td>
  						<div>
- 							<input type="text" name="" value="1" readonly="">
+ 							<input type="text" name="" value="<?php echo $data[2]['quantity'] ?>" readonly="">
  						</div>
  					</td>
  				</tr>
  				<tr>
  					<td>Total</td>
- 					<td>150.00LKR</td>
+ 					<td><?php echo $data[2]['price']*$data[2]['quantity'] ?></td>
  				</tr>
  			</table>
  		</div>
