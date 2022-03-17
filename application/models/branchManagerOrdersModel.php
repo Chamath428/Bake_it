@@ -20,7 +20,7 @@
                     FROM
                         order_details
                     WHERE
-                       menu_id= " .$_SESSION['branch_id']. " AND order_type = '1' AND order_status != '6'";
+                       menu_id= " .$_SESSION['branch_id']. " AND order_type = '1' AND order_status != 6 and order_status != 7 and order_status != 8";
                         
 
             $res1=mysqli_query($this->db,$sql1) or die('1->'.mysqli_error($this->db));
@@ -52,7 +52,7 @@
                     FROM
                         order_details
                     WHERE
-                    menu_id= " .$_SESSION['branch_id']. " AND order_type = '2' AND order_status != '6'";
+                    menu_id= " .$_SESSION['branch_id']. " AND order_type = '2' AND order_status != 6 and order_status != 7 and order_status != 8";
                         
 
             $res2=mysqli_query($this->db,$sql2) or die('2->'.mysqli_error($this->db));
@@ -80,11 +80,12 @@
                         total_amount,
                         placed_date_and_time,
                         order_type,
+                        order_status,
                         receiving_method
                     FROM
                         order_details
                     WHERE
-                    menu_id= " .$_SESSION['branch_id']. " AND order_status = '6'";
+                    menu_id= " .$_SESSION['branch_id']. " AND (order_status = 6 or order_status = 7 or order_status = 8)";
                         
 
             $res3=mysqli_query($this->db,$sql3) or die('3->'.mysqli_error($this->db));
@@ -95,6 +96,7 @@
                 $date = $date[0];
                 $data['placed_date_and_time']=$date;
                 $data['order_type']=$row3['order_type'];
+                $data['order_status']=$row3['order_status'];
                 $data['receiving_method']=$row3['receiving_method'];
                 $completedOrdersData[$i]=$data;
                 $i++;
@@ -249,7 +251,68 @@
             
         }
 
-        
+		public function getAvailableDeliveryPersonsDetails(){
+            $availableDeliveryPersonsDetails=array();
+            $i=0;
+            $sql10="SELECT 
+                        staff.staff_id, 
+                        concat(staff.first_name, ' ', staff.last_name) AS full_name, delivery_person.availability
+                    FROM 
+                        staff inner join delivery_person on staff.staff_id = delivery_person.staff_id 
+                    WHERE
+                    delivery_person.availability = 1 AND delivery_person.branch_id= " .$_SESSION['branch_id']. "";
+                        
+
+            $res10=mysqli_query($this->db,$sql10) or die('10->'.mysqli_error($this->db));
+            while($row10=mysqli_fetch_assoc($res10)){
+                $data['staff_id']=$row10['staff_id'];
+                $data['full_name']=$row10['full_name'];
+                $data['availability']=$row10['availability'];
+                $availableDeliveryPersonsDetails[$i]=$data;
+                $i++;
+            }
+            return $availableDeliveryPersonsDetails;
+
+        }
+
+
+        public function updateDeliveryPersonId($delivery_person_id,$order_id){
+            $sql11 = "UPDATE 
+                        order_details 
+                    SET
+                        delivery_person_id = ".$delivery_person_id." 
+                    WHERE 
+                        order_id= " .$order_id. "";
+                        
+            $res11=mysqli_query($this->db,$sql11) or die('11->'.mysqli_error($this->db));
+            
+            
+        }
+
+
+        public function updateStatusBakerySend($order_id){
+            $sql12 = "UPDATE 
+                        order_details 
+                    SET
+                        order_status = 4 
+                     WHERE 
+                        order_id= " .$order_id. "";
+            
+            $res12=mysqli_query($this->db,$sql12) or die('12->'.mysqli_error($this->db));
+
+        }
+
+        public function updateStatusAsDecline($order_id){
+            $sql13 = "UPDATE 
+                        order_details 
+                    SET
+                        order_status = 7 
+                     WHERE 
+                        order_id= " .$order_id. "";
+            
+            $res13=mysqli_query($this->db,$sql13) or die('13->'.mysqli_error($this->db));
+
+        }
 
 }
 

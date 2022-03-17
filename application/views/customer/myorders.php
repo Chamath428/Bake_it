@@ -37,8 +37,8 @@
 					</tr>
 				<?php foreach ($data[1] as $key => $order) { ?>
 					<tr>
-						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails/".$order['order_id']?>"><?php echo $order['order_id'] ?></a></td>
-						<td><?php echo $order['total_amount']; ?></td>
+						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails/".$order['order_id']."/".$order['menu_id']?>"><?php echo $order['order_id'] ?></a></td>
+						<td><?php echo $order['total_amount'].".00 LKR"; ?></td>
 						<td><?php echo substr($order['placed_date_and_time'], 0,10); ?></td>
 						<td><?php switch ($order['order_status']) {
 							case '1':
@@ -89,7 +89,7 @@
 					</tr>
 				<?php foreach ($data[2] as $key => $order) { ?>
 					<tr>
-						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails/".$order['order_id'];?>"><?php echo $order['order_id'] ?></a></td>
+						<td><a href="<?php echo BASEURL."/myordersController/showOrderDetails/".$order['order_id']."/".$order['menu_id']?>"><?php echo $order['order_id'] ?></a></td>
 						<td><?php echo $order['total_amount'].".00 LKR"?></td>
 						<td><?php echo substr($order['placed_date_and_time'], 0,10); ?></td>
 						<td><?php switch ($order['order_status']) {
@@ -148,7 +148,7 @@
 					</tr>
 					<tr>
 						<td>Grand Total</td>
-						<td><?php echo $order['total_amount'] ?></td>
+						<td><?php echo $order['total_amount'].".00 LKR" ?></td>
 					</tr>
 					<tr>
 						<td>Placed Date</td>
@@ -202,7 +202,7 @@
 					</tr>
 					<tr>
 						<td>Grand Total</td>
-						<td><?php echo $order['total_amount'] ?></td>
+						<td><?php echo $order['total_amount'].".00 LKR" ?></td>
 					</tr>
 					<tr>
 						<td>Placed Date</td>

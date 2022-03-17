@@ -7,9 +7,16 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/customer/customer-orderdetails.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
+	<script src="<?php echo BASEURL ?>/public/js/customer/orderDetails.js" defer></script>
 	<script src="<?php echo BASEURL; ?>/public/js/navbar.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="<?php echo BASEURL?>/public/css/customer/customer-orderRate.css">
+    <script src="<?php echo BASEURL ?>/public/js/customer/orderRate.js" defer></script>
+
+
 	<title>Order Details</title>
 </head>
 <body>
@@ -19,6 +26,14 @@
 	</header>
 
 	<section class="order-details">
+
+		<?php if (isset($data['confirmation'])){?>
+			<div class="confirm-alert">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+			  <p><?php echo $data['confirmation']; ?></p>
+			</div>
+			<?php } ?>
+
 		<div class="basic-details">
 			<table>
 
@@ -75,10 +90,10 @@
 					<tr>
 						<td>Reciving Method</td>
 						<td><a href=""><?php switch ( $data[1]['reveiving_method']) {
-							case '1':
+							case '2':
 								echo "Home delivery";
 								break;
-							case '2':
+							case '1':
 								echo "Pick up from shop";
 								break;
 							
@@ -87,7 +102,7 @@
 								break;
 						} ?></a></td>
 					</tr>
-					<?php if ($data[1]['reveiving_method']==1) {?>
+					<?php if ($data[1]['reveiving_method']==2) {?>
 						<tr>
 							<td>Delivery Person</td>
 							<td><a href=""><?php echo $data[1]['delivery_person_id'] ?></a></td>
@@ -197,11 +212,57 @@
 		</div>
 
 		<div class="buttons">
-			<button>Rate Order</button>
+			<button data-modal-target="#modal">Rate Order</button>
 			<button><a href="<?php echo BASEURL."/cartController"; ?>">Re-Order</a></button>
 		</div>
 
 	</section>
+
+
+	<div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Rate the order</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+
+	<!--  -->
+
+	<div class="rate-container">
+      <div class="post">
+        <div class="text">Thanks for rating us!</div>
+        <div class="edit">EDIT</div>
+      </div>
+      <form method="post" action="<?php echo BASEURL."/myordersController/rateOrder/".$data[1]['order_id']."/".$data[1]['menu_id']."/".$data[1]['customer_id'] ?>">
+      <div class="star-widget">
+        <input type="radio" name="rate" id="rate-5" value="5">
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-4" value="4">
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-3" value="3">
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-2" value="2">
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-1" value="1">
+        <label for="rate-1" class="fas fa-star"></label>
+        <div class="form">
+          <header></header>
+          <div class="textarea">
+            <textarea name="review" cols="30" placeholder="Share your experience with all.."></textarea>
+          </div>
+          <div class="sub-btn">
+            <button class="submit-rate" type="submit">Post</button>
+          </div>
+        </div>
+        </form>
+      </div>
+<!--  -->
+
+    </div>
+
+    </div>
+  </div>
+  <div id="overlay"></div>
 
 	<?php require_once('footer.php'); ?>
 </html>

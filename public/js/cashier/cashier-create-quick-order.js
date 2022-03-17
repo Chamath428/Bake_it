@@ -42,6 +42,7 @@ if (tracker==2) {
 }
 
 function selectItem() {
+    var subTotal=document.getElementById("total-amount").value;
       var itemSelector = document.getElementById("items-bar");
       var itemId = itemSelector.value;
       if (!idList.includes(itemId)) {
@@ -54,8 +55,10 @@ function selectItem() {
           var table = document.getElementById('item-table')
           var row = document.createElement("tr");
         
-          row.innerHTML = '<td><input type="checkbox" id="Check-box" name="check"></td> <td><input readonly  name="item-id-'+quan+'" value="'+itemId+'"></ input></td> <td> <input readonly  name="item-name-'+quan+'" value="'+itemName+'"></input> </td> <td class="input"><input type="number" class="quntity" name="quntity'+quan+'" id="itemid"  required=""  onkeypress="javascript:return isNumber(event)" value="1"> <input type="hidden" name="finalCount" value="'+quan+'"></td> <td><input class="item-price" name="item-price-'+quan+'" readonly value="'+itemPrice+'"></input></td>';
+          row.innerHTML = '<td><input type="checkbox" id="Check-box" name="check"></td> <td><input readonly  name="item-id-'+quan+'" value="'+itemId+'"></ input></td> <td> <input readonly  name="item-name-'+quan+'" value="'+itemName+'"></input> </td> <td class="input"><input type="number" class="quntity" name="quntity'+quan+'" id="quntity'+quan+'"  required=""  oninput="calc1(\'quntity'+quan+'\',\'priceForFunction'+quan+'\',\'itemPrice'+quan+'\')" value="1"> <input type="hidden" name="finalCount" value="'+quan+'"></td> <td><input type="text" class="item-price" readonly name="item-price-'+quan+'" id="itemPrice'+quan+'" value="'+itemPrice+'"></input> <input type="hidden" name="priceForFunction'+quan+'" id="priceForFunction'+quan+'" value="'+itemPrice+'"></input> </td>';
+          subTotal=parseFloat(subTotal)+parseFloat(itemPrice);
           quan++;
+          document.getElementById("total-amount").value=subTotal;
           table.appendChild(row)
       }
 }
@@ -76,77 +79,28 @@ function closeModel(bill){
     overlay.classList.remove('active');
 }
 
-// $(document).ready(function() {
+function calc1(noOfItemsP,priceP,itemPriceP) 
+{
+  var price = document.getElementById(priceP).value;
+  var noOfItems = document.getElementById(noOfItemsP).value;
+  var total = parseFloat(price) * noOfItems
+  if (!isNaN(total)){
+    // following line will change the subtotal. First it takes the current subtotal and then it substract the current items subtotal and then it will add the new subtotal of the item
+    document.getElementById("total-amount").value=parseFloat(document.getElementById("total-amount").value)-parseFloat(document.getElementById(itemPriceP).value)+total;
+    document.getElementById(itemPriceP).value = total
+    }
+}
 
-//    /* Set rates */
-//    var fadeTime = 300;
-
-//    /* Assign actions */
-//    $('.quntity').change(function() {
-//      updateQuantity(this);
-//    });
-
-//    // $('.remove-item button').click(function() {
-//    //   removeItem(this);
-//    // });
-
-
-//    /* Recalculate cart */
-//    // function recalculateCart() {
-//    //   var subtotal = 0;
-
-//    //   /* Sum up row totals */
-//    //   $('.item').each(function() {
-//    //     subtotal += parseFloat($(this).children('.product-line-price').text());
-//    //   });
-
-//    //   /* Calculate totals */
-//    //   var tax = subtotal * taxRate;
-//    //   var total = subtotal + tax;
-
-//    //   /* Update totals display */
-//    //   $('.totals-value').fadeOut(fadeTime, function() {
-//    //     $('#cart-subtotal').html(subtotal.toFixed(2));
-//    //     $('#cart-tax').html(tax.toFixed(2));
-//    //     $('.cart-total').html(total.toFixed(2));
-//    //     if (total == 0) {
-//    //       $('.checkout').fadeOut(fadeTime);
-//    //     } else {
-//    //       $('.checkout').fadeIn(fadeTime);
-//    //     }
-//    //     $('.totals-value').fadeIn(fadeTime);
-//    //   });
-//    // }
-
-
-//    /* Update quantity */
-//    function updateQuantity(quantityInput) {
-//      /* Calculate line price */
-//      var productRow = $(quantityInput).parent().parent();
-//      var price = parseFloat(productRow.children('.item-price').text());
-//      var quantity = $(quantityInput).val();
-//      var linePrice = price * quantity;
-
-//      /* Update line price display and recalc cart totals */
-//      productRow.children('.item-price').each(function() {
-//        $(this).fadeOut(fadeTime, function() {
-//          $(this).text(linePrice.toFixed(2));
-//          recalculateCart();
-//          $(this).fadeIn(fadeTime);
-//        });
-//      });
-//    }
-
-//    /* Remove item from cart */
-//    // function removeItem(removeButton) {
-//    //   /* Remove row from DOM and recalc cart total */
-//    //   var productRow = $(removeButton).parent().parent();
-//    //   productRow.slideUp(fadeTime, function() {
-//    //     productRow.remove();
-//    //     recalculateCart();
-//    //   });
-//    // }
-
-//  });
+function calc2(){
+     var subTotal=document.getElementById("total-amount").value;
+     var paidAmount=document.getElementById("paid-amount").value;
+     var balance=parseFloat(paidAmount)-parseFloat(subTotal);
+     if (document.getElementById("paid-amount").value=="") {
+        document.getElementById("balance").value=0;
+     }
+     if (!isNaN(balance)){
+     document.getElementById("balance").value=balance;
+    }
+}
 
 

@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/cashier/cashier-complete-details.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/cashier/cashier-quick-order-details.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/cashier/cashier-header.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/cashier/cashier-footer.css">
+    <script src="<?php echo BASEURL ?>/public/js/cashier/cashier-quick-order-details.js" defer></script>
     <script src="<?php echo BASEURL; ?>/public/js/cashier/cashier-header.js" defer></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -19,173 +20,188 @@
 
     <div id="body" class="container-1">
         <div class="container-2">
-            <!-- <div class="heading">
-            <h1>Order Details</h1>
-          </div> -->
-            <!-- <div id="popup-1" class="popup-container">
-                <div class="mid-box-2">
-
-                    <h1>Ratings</h1>
-                    <div class="star">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <h1>Review</h1>
-                    <div class="col">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </div>
-                    <button onclick="closePopup()">Back</button>
-                </div>
-
-            </div> -->
-
-
             <div class="heading">
-                <h3>Completed Order Details</h3>
+                <h3>Quick Order Details</h3>
             </div>
+
             <div class="order-details">
 
                 <div class="basic-details">
                     <table>
                         <tr>
                             <td>Order ID</td>
-                            <td>#117</td>
+                            <td><?php echo $data[1]['order_id'] ?></td>
                         </tr>
+                        <?php if (!empty($data[2])) {?>
                         <tr>
                             <td>Customer Name</td>
-                            <td>Chamath Chinthana</td>
+                            <td><?php echo $data[2]['full_name'] ?></td>
                         </tr>
                         <tr>
                             <td>Contact Number</td>
-                            <td>0712343212</td>
+                            <td><?php echo $data[2]['contact_number'] ?></td>
                         </tr>
+                    <?php } ?>
                         <tr>
-                            <td>Order Type</td>
-                            <td>Special Event Order</td>
+                            <td>Order Status</td>
+                            <td><?php switch ($data[1]['order_status']) {
+                                case '1':
+                                    echo "Pending to accept";
+                                    break;
+                                case '2':
+                                    echo "Accepted";
+                                    break;
+                                case '3':
+                                    echo "On the way";
+                                    break;
+                                case '4':
+                                    echo "Send order to the bakery";
+                                    break;
+                                case '5':
+                                    echo "Cooking Completed";
+                                    break;
+                                case '6':
+                                    echo "Declined by the shop";
+                                    break;
+                                case '7':
+                                    echo "Cancled";
+                                    break;
+                                
+                                default:
+                                    echo "Order Status";
+                                    break;
+                            }  ?></td>
                         </tr>
+
                         <tr>
-                            <td>Needed Date</td>
-                            <td>2021/11/01</td>
+                        <td>Reciving Method</td>
+                            <td><a href=""><?php switch ($data[1]['reveiving_method']) {
+                                case '2':
+                                    echo "Home delivery";
+                                    break;
+                                case '1':
+                                    echo "Pick up from shop";
+                                    break;
+                                
+                                default:
+                                    echo "Not specified";
+                                    break;
+                            } ?></a></td>
                         </tr>
-                        <tr>
-                            <td>Location</td>
-                            <td><a href="#"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td>
-                        </tr>
+
                         <tr>
                             <td>Payment Method</td>
-                            <td> Card</td>
-                            <!-- <td><a href="">Dilantha Malagamuwa</a></td> -->
+                            <td><?php switch ($data[1]['payment_type']) {
+                                case '1':
+                                    echo "Cash";
+                                    break;
+                                case '2':
+                                    echo "Card";
+                                    break;
+                                
+                                default:
+                                    echo "Not specified";
+                                    break;
+                            } ?></td>
                         </tr>
+
+                        <tr>
+                            <td>Payment Method</td>
+                            <td><?php switch ($data[1]['order_type']) {
+                                case '1':
+                                    echo "Quick Order";
+                                    break;
+                                case '2':
+                                    echo "Special Order";
+                                    break;
+                                
+                                default:
+                                    echo "Not specified";
+                                    break;
+                            } ?></td>
+                        </tr>
+
+                        <?php if ($data[1]['reveiving_method']==2) {?>
                         <tr>
                             <td>Delivery Person</td>
-                            <td>Saman Fernando</td>
-                            <!-- <td><a href="">Dilantha Malagamuwa</a></td> -->
+                            <td><a href=""><?php echo $data[1]['delivery_person_id'] ?></a></td>
                         </tr>
+                    <?php } ?>
                     </table>
                 </div>
             </div>
             <div class="order-details-table">
+                <div class="cart-containter">
                 <table id="orderDetails">
                     <thead>
                         <tr>
-                            <th>Item ID</th>
-                            <th>Food Item</th>
+                            <th>Product</th>
                             <th>Price</th>
                             <th>Quantity</th>
+                            <th>Total</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <td>#001</td>
-                            <td>
-                                <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
-                                    <div>
-                                        <p>Chicken Burger</p>
-                                    </div>
+                        <?php 
+                $grandTotal=0;
+                foreach ($data[3] as $key => $items) { ?>
+        
+                    <tr>
+                        <td>
+                            <div class="product-container">
+                                <img src="<?php echo BASEURL ?>/public/images/b1.png">
+                                <div>
+                                    <p><?php echo $items['item_name']; ?></p>
                                 </div>
-                            </td>
-                            <td>450.00</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>#002</td>
-                            <td>
-                                <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
-                                    <div>
-                                        <p>Cheese Chicken Burger</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>450.00</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>#003</td>
-                            <td>
-                                <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
-                                    <div>
-                                        <p>Fish Burger</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>450.00</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>#004</td>
-                            <td>
-                                <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
-                                    <div>
-                                        <p>Ham Burger</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>450.00</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>#005</td>
-                            <td>
-                                <div class="cell">
-                                    <div class="image"><img src="../../../public/images/branchManager/b1.png" alt=""></div>
-                                    <div>
-                                        <p>Egg Burger</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>450.00</td>
-                            <td>10</td>
-                        </tr>
+                            </div>
+                        </td>
+                        <td>
+                            <p><?php echo $items['price'].".00 LKR"; ?></p>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text" name="" value="<?php echo $items['quantity']; ?>" readonly="">
+                            </div>
+                        </td>
+                        <td>
+                            <p><?php echo $items['price']*$items['quantity'].".00 LKR"; ?></p>
+                        </td>
+                    </tr>
+                <?php 
+                    $grandTotal+=$items['price']*$items['quantity'];
+                }?>
 
                     </tbody>
                 </table>
+                </div>
             </div>
             <div class="total-container">
                 <table>
                     <tr>
                         <td>Subtotal</td>
-                        <td>6000.00 LKR</td>
+                        <td><?php echo $grandTotal.".00 LKR" ?></td>
                     </tr>
                     <tr>
                         <td>Delivery Tax</td>
-                        <td>200.00 LKR</td>
+                        <td>00.00 LKR</td>
                     </tr>
                     <tr>
                         <td>Grand Total</td>
-                        <td>6200.00 LKR</td>
+                        <td><?php echo $grandTotal.".00 LKR" ?></td>
+                    </tr>
+                    <tr>
+                        <td>Paid Amount</td>
+                        <td><?php echo $data[1]['paid_amount'].".00 LKR" ?></td>
                     </tr>
                 </table>
             </div>
+
         </div>
     </div>
+
+
     <?php include "footer.php" ?>
-    <!-- </body>
-</html> -->
+</body>
+
+</html>

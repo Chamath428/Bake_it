@@ -219,6 +219,7 @@ a{
     100% { opacity:0; transform: translateX(-4vw); } 
   }
 
+
   /* Responsive */
 @media (max-width: 700px) {
     .header-container{
@@ -296,3 +297,20 @@ a{
     transition: 1s opacity, 250ms height;
 }
   
+
+  
+@media (min-device-width:1000px) {
+   
+    #mySidebar {width: 300px;} 
+    #body {margin-left: 305px;}
+   #bakeId {margin-left: 23%;}
+   /* #logo-name__icon_left{display: block;} */
+   #logo-name__icon{display: none;}
+  }
+  @media (min-device-width:1100px) {
+   
+  
+  #bakeId {margin-left: 15%;}
+  
+  }
+

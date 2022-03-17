@@ -11,13 +11,37 @@
 			$this->db=$this->dbcon();
 		}
 
-		public function createCustomer($customerData){
+		public function getCustomerId($customerData){
 			 $customerData['first_name']=$this->db->real_escape_string($customerData['first_name']);
 			 $customerData['last_name']=$this->db->real_escape_string($customerData['last_name']);
 			 $customerData['phone_number']=$this->db->real_escape_string($customerData['phone_number']);
 			 $customerData['address1']=$this->db->real_escape_string($customerData['address1']);
 			 $customerData['address2']=$this->db->real_escape_string($customerData['address2']);
 			 $customerData['address3']=$this->db->real_escape_string($customerData['address3']);
+
+			 $sqla="SELECT
+			 				customer_id
+			 			FROM
+			 				registered_customer
+			 			WHERE
+			 				contact_number=".'"'.$customerData['phone_number'].'"';
+			 $resa=mysqli_query($this->db,$sqla) or die('a->'.mysqli_error($this->db));
+			 if (mysqli_num_rows($resa)>0) {
+			 	$rowa=mysqli_fetch_assoc($resa);
+				return $rowa['customer_id'];
+			 }
+
+			 $sqlb="SELECT
+			 				customer_id
+			 			FROM
+			 				unregistered_customer
+			 			WHERE
+			 				contact_number=".'"'.$customerData['phone_number'].'"';
+			 $resb=mysqli_query($this->db,$sqlb) or die('b->'.mysqli_error($this->db));
+			 if (mysqli_num_rows($resb)>0) {
+			 	$rowb=mysqli_fetch_assoc($resa);
+				return $rowb['customer_id'];
+			 }
 
 			 $sql1="	INSERT INTO
 						customer(
@@ -70,18 +94,22 @@
 							menu_id,
 							order_type,
 							total_amount,
-							reveiving_method,
+							paid_amount,
+							receiving_method,
 							payment_type,
-							order_status
+							order_status,
+							needed_date
 						)
 					VALUES ("
 							.'"'.$orderDetails['customer_id'].'"' 	.","
 							.'"'.$orderDetails['menu_id'].'"' 		.","
 							.'"'.$orderType.'"' 					.","
 							.'"'.$orderDetails['subtotal'].'"' 		.","
+							.'"'.$orderDetails['paid_amount'].'"' 		.","
 							.'"'.$orderDetails['delivery_type'].'"' .","
 							.'"'.$orderDetails['payment_type'].'"' 	.","
-							.'"'.$orderStatus.'")';
+							.'"'.$orderStatus.'"'					.","
+							.'"'.date("Y-m-d").'")';
 			$res4=mysqli_query($this->db,$sql4) or die('4->'.mysqli_error($this->db));
 
 			$sql5= "SELECT LAST_INSERT_ID() AS last_order_id";
@@ -134,7 +162,8 @@
 							total_amount,
 							paid_amount,
 							is_advanced,
-							reveiving_method,
+							receiving_method,
+							payment_type,
 							needed_date,
 							needed_time,
 							order_status
@@ -147,6 +176,7 @@
 							.'"'.$orderDetails['paid_amount'].'"' 		.","
 							.'"'.$orderDetails['is_advanced'].'"' 		.","
 							.'"'.$orderDetails['delivery_type'].'"' .","
+							.'"'.$orderDetails['payment_type'].'"' .","
 							.'"'.$orderDetails['date'].'"' .","
 							.'"'.$orderDetails['time'].'"' .","
 							.'"'.$orderStatus.'")';

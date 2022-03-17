@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-checkout.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
 	<script src="<?php echo BASEURL ?>/public/js/customer/message.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/checkout.js" defer></script>
@@ -27,6 +28,14 @@
 	</header>
 
 	<section class="checkout">
+
+		<?php if (isset($data['error'])){?>
+			<div class="danger-alert">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+			  <p><?php echo $data['error']; ?></p>
+			</div>
+			<?php } ?>
+
 		<form method="post" action="<?php echo BASEURL."/checkoutController/placSpecialeOrder" ?>">
 		<div class="billing-details">
 
@@ -64,6 +73,32 @@
 					<input type="date" name="req_date" id="req-date" onkeydown="return false" required>
 					<input type="time" name="req_time" required>
 				</div>
+			</div>
+
+			<div class="branches">
+				<h3>Select the neartest branch to you</h3>
+
+				<select name="branch_id">
+					<?php foreach ($data['branches'] as $key => $branch) {?>
+						<option value="<?php echo $branch['branch_id']; ?>"><?php 
+							switch ($branch['branch_id']) {
+								case '1':
+									echo "Kasbewa";
+									break;
+								case '2':
+									echo "Baththaramulla";
+									break;
+								case '3':
+									echo "Piliyandala";
+									break;
+								
+								default:
+									echo "Not specified";
+									break;
+							}
+						 ?></option>
+					<?php  } ?>
+				</select>
 			</div>
 
 		</div>

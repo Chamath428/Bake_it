@@ -176,7 +176,7 @@
 					</tr>
 					<tr>
 						<td>Grand Total</td>
-						<td><input type="text" readonly="" name="subtotal" value="<?php echo $subtotal.".00 LKR"; ?>"></td>
+						<td><input type="hidden" readonly="" name="subtotal" value="<?php echo $subtotal; ?>"><input type="text" readonly="" name="subtotal2" value="<?php echo $subtotal.".00 LKR"; ?>"></td>
 					</tr>
 				</table>
 			</div>

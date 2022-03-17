@@ -1,5 +1,6 @@
 var screen = screen.width;
 console.log(screen);
+var w = window.innerWidth;
 
 if(screen > 700){
   console.log("side nav is working");
@@ -12,21 +13,25 @@ if(screen > 700){
       var mini = true;
 
     function toggleSidebar() {
-      if (mini) {
-        console.log("opening sidebar");
-        document.getElementById("mySidebar").style.width = "300px";
-        document.getElementById("body").style.marginLeft = "305px";
-        document.getElementById("bakeId").style.marginLeft = "24%";
-        document.getElementById("arrowAnim").style.display = "flex";
-        this.mini = false;
-      } else {
-        console.log("closing sidebar");
-        document.getElementById("mySidebar").style.width = "70px";
-        document.getElementById("body").style.marginLeft = "0px";
-        document.getElementById("bakeId").style.marginLeft = "2%";
-        document.getElementById("arrowAnim").style.display = "none";
-        this.mini = true;
+      if(w<1000)
+      {
+        if (mini) {
+          console.log("opening sidebar");
+          document.getElementById("mySidebar").style.width = "300px";
+          document.getElementById("body").style.marginLeft = "305px";
+          document.getElementById("bakeId").style.marginLeft = "24%";
+          document.getElementById("arrowAnim").style.display = "flex";
+          this.mini = false;
+        } else {
+          console.log("closing sidebar");
+          document.getElementById("mySidebar").style.width = "70px";
+          document.getElementById("body").style.marginLeft = "0px";
+          document.getElementById("bakeId").style.marginLeft = "2%";
+          document.getElementById("arrowAnim").style.display = "none";
+          this.mini = true;
+        }
       }
+     
     }
 }
 else if(screen < 700){

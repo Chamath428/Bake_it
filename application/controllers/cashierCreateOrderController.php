@@ -17,8 +17,14 @@
 			$this->view("cashier/createQuickOrder",$data);
 		}
 
-		public function createSpecialOrderCashier(){
-			$data=array();
+		// this function is just to direct to the crete special order page
+		// public function createSpecialOrderCashier(){
+		// 	$data=$this->cashierCreateOrderModel->getItems(1);
+		// 	$this->view("cashier/createOrderSpecial",$data);
+		// }
+
+		public function directToSepcialOrder(){
+			$data=$this->cashierCreateOrderModel->getItems(1);
 			$this->view("cashier/createOrderSpecial",$data);
 		}
 
@@ -30,14 +36,11 @@
 			for ($i=1; $i <=$finalCount ; $i++) { 
 				$orderItems[$_POST['item-id-'.$i]]=$_POST['quntity'.$i];
 			}
-			// foreach ($orderItems as $key => $value) {
-			// 	echo $key."->".$value;
-			// }
 
 			$orderDetails['total_amount']=$_POST['total-amount'];
 			$orderDetails['paid_amount']=$_POST['paid-amount'];
 			$orderDetails['menu_id']=1;
-			$orderDetails['cashier_id']=37;
+			$orderDetails['cashier_id']=$_SESSION['staff_id'];
 			$orderDetails['order_type']=1;
 			$orderDetails['delivery_type']=2;
 			$orderDetails['payment_type']=$_POST['payment_type'];
@@ -49,6 +52,51 @@
 			$this->redirect("");
 
 		} 
+
+		public function createSpecialOrderCashier(){
+			$data['error']="";
+			$orderDetails=array();
+			$customerDetails=array();
+			$finalCount=$_POST['finalCount'];
+			$orderItems=array();
+			for ($i=1; $i <=$finalCount ; $i++) { 
+				$orderItems[$_POST['item-id-'.$i]]=$_POST['quntity'.$i];
+			}
+			
+			$orderDetails['req_date']=$_POST['required_date'];
+			$orderDetails['req_time']=$_POST['required_time'];
+
+			$customerDetails['first_name']=$_POST['first_name'];
+			$customerDetails['last_name']=$_POST['last_name'];
+			$customerDetails['phone_number']=$_POST['phone_number'];
+
+			$orderDetails['menu_id']=$_SESSION['branch_id'];
+			$orderDetails['cashier_id']=$_SESSION['staff_id'];
+			$orderDetails['order_type']=2;
+			$orderDetails['delivery_type']=$_POST['delivery_type'];
+
+			$customerDetails['address1']="";
+			$customerDetails['address2']="";
+			$customerDetails['address3']="";
+
+			if ($orderDetails['delivery_type']==2) {
+				$customerDetails['address1']=$_POST['address_line1'];
+				$customerDetails['address2']=$_POST['address_line2'];
+				$customerDetails['address3']=$_POST['address_line3'];
+			}
+
+			$orderDetails['payment_type']=$_POST['payment_type'];
+			$orderDetails['order_status']=2;
+			$orderDetails['is_advance']=$_POST['is_advance'];
+			$orderDetails['total_amount']=$_POST['total-amount'];
+			$orderDetails['paid_amount']=$_POST['paid-amount'];
+			
+			$orderDetails['customer_id']=$this->cashierCreateOrderModel->getCustomerId($customerDetails);
+			$order_id=$this->cashierCreateOrderModel->placeSpecialOrder($orderDetails);
+			$this->cashierCreateOrderModel->insertOrderItems($order_id,$orderDetails['menu_id'],$orderItems);
+			$this->cashierCreateOrderModel->createBill($order_id,$orderDetails['paid_amount'],$orderDetails['cashier_id']);
+			$this->redirect("");
+		}
 
 	}
 

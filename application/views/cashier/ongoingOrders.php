@@ -37,7 +37,7 @@
                         <thead>
                             <tr>
                                 <th>Order Id</th>
-                                <th>Date</th>
+                                <th>Placed Date</th>
                                 <th>Reciving Method</th>
                                 <th>Total Price</th>
 
@@ -45,29 +45,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getQuickOrderDetails" ?>">0001</a></td>
-                                <td>2021/09/04</td>
-                                <td>Home Delivery</td>
-                                <td>Rs: 120.00</td>
+                          
+                            <?php foreach ($data[1] as $key => $quickOrder) {?>
+                             <tr>
+                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getOngoingOrderDetails/".$quickOrder['order_id'] ?>"><?php echo $quickOrder['order_id'] ?></a></td>
+                                <td><?php echo $quickOrder['placed_date_and_time']; ?></td>
+                                <td><?php switch ($quickOrder['receiving_method']) {
+                                    case '2':
+                                        echo "Home delivery";
+                                        break;
+                                    case '1':
+                                        echo "Pick up from shop";
+                                        break;
+                                    
+                                    default:
+                                        echo "Not specified";
+                                        break;
+                                } ?></td>
+                                <td><?php echo $quickOrder['total_amount'].".00 LKR"; ?></td>
+                            </tr><?php } ?>
 
-                            </tr>
-                            <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getQuickOrderDetails" ?>">0002</a></td>
-                                <td>2021/10/11</td>
-                                <td>Pickup from Shop</td>
-                                <td>Rs: 340.00</td>
-
-
-                            </tr>
-                            <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getQuickOrderDetails" ?>">0003</a></td>
-                                <td>2021/1014</td>
-                                <td>Home Delivery</td>
-                                <td>Rs: 370.00</td>
-
-
-                            </tr>
                         </tbody>
                     </table>
 
@@ -84,28 +81,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getSpecialOrderDetails" ?>">0001</a></td>
-                                <td>2021/03/04</td>
-                                <td>Home Delivery</td>
-                                <td>Rs: 300.00</td>
 
-                            </tr>
-                            <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getSpecialOrderDetails" ?>">0002</a></td>
-                                <td>2021/12/03</td>
-                                <td>Pickup from Shop</td>
-                                <td>Rs: 1200.00</td>
+                            <?php foreach ($data[2] as $key => $specialOrder) {?>
+                             <tr>
+                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getOngoingSpecilOrderDetails/".$specialOrder['order_id'] ?>"><?php echo $specialOrder['order_id'] ?></a></td>
+                                <td><?php echo $specialOrder['needed_date'] ?></td>
+                                <td><?php switch ($specialOrder['receiving_method']) {
+                                    case '2':
+                                        echo "Home delivery";
+                                        break;
+                                    case '1':
+                                        echo "Pick up from shop";
+                                        break;
+                                    
+                                    default:
+                                        echo "Not specified";
+                                        break;
+                                } ?></td>
+                                <td><?php echo $specialOrder['total_amount'].".00 LKR" ?></td>
+                            </tr><?php } ?>
 
-                            </tr>
-                            <tr>
-                                <td><a href="<?php echo BASEURL."/cashierOrderListController/getSpecialOrderDetails" ?>">0003</a></td>
-                                <td>2021/12/09</td>
-                                <td>Home Delivery</td>
-                                <td>Rs: 1340.00</td>
-
-
-                            </tr>
                         </tbody>
                     </table>
 

@@ -56,12 +56,12 @@ foreach ($data as $key => $value) {
 
             <div class="ava-mtr-topic">Availablity of Stock</div>
             <div class="category-list">
-                <label for="category">category</label>
+                <label for="category">Category</label>
                 <select placeholder="Select category">
-                    <option>category 1</option>
-                    <option>category 2</option>
-                    <option>category 3</option>
-                    <option>category 4</option>
+                    <option>Flour</option>
+                    <option>Vegitables</option>
+                    <option>Meet</option>
+                    <!-- <option>category 4</option> -->
 
                 </select>
             </div>
@@ -99,9 +99,9 @@ foreach ($data as $key => $value) {
                                 <td><?php echo $value['stock_amount'] . " " . $value['measure_unit']; ?></td>
                                 <td>
                                     <h4><?php
-                                        if ($value['stock_amount'] < 5) echo "Low";
+                                        if ($value['stock_amount'] < 5) echo "Below";
                                         else if ($value['stock_amount'] < 20) echo "Medium";
-                                        else echo "High";
+                                        else echo "Above";
                                         ?></h4>
                                 </td>
                             </tr>
