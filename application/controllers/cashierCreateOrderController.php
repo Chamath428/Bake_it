@@ -88,7 +88,7 @@
 			$orderDetails['payment_type']=$_POST['payment_type'];
 			$orderDetails['order_status']=2;
 			$orderDetails['is_advance']=$_POST['is_advance'];
-			$orderDetails['total_amount']=$_POST['total-amount'];
+			$orderDetails['total_amount']=$_POST['grand-amount'];
 			$orderDetails['paid_amount']=$_POST['paid-amount'];
 			
 			$orderDetails['customer_id']=$this->cashierCreateOrderModel->getCustomerId($customerDetails);

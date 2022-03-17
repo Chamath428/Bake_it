@@ -61,10 +61,13 @@
                                     echo "Cooking Completed";
                                     break;
                                 case '6':
-                                    echo "Declined by the shop";
+                                    echo "Order Completed";
                                     break;
                                 case '7':
-                                    echo "Cancled";
+                                    echo "Declined by the Shop";
+                                    break;
+                                case '8':
+                                    echo "Order Canceled";
                                     break;
                                 
                                 default:
@@ -168,11 +171,13 @@
                     </tr>
                     <tr>
                         <td>Delivery Tax</td>
-                        <td>00.00 LKR</td>
+                        <td><?php if ($data[1]['reveiving_method']==2) {
+                            echo "200.00 LKR";
+                        }else echo "00.00 LKR"; ?></td>
                     </tr>
                     <tr>
                         <td>Grand Total</td>
-                        <td><?php echo $grandTotal.".00 LKR" ?></td>
+                        <td><?php echo $data[1]['total_amount'].".00 LKR" ?></td>
                     </tr>
                 </table>
             </div>
@@ -213,7 +218,7 @@
             <table class="balance">
                             <tr>
                                 <th><span>Total(RS:)</span></th>
-                                <td><input type="number" readonly name="total-amount" id="total-amount" value="<?php echo $grandTotal?>"></td>
+                                <td><input type="number" readonly name="total-amount" id="total-amount" value="<?php echo $data[1]["total_amount"]?>"></td>
                             </tr>
                             <tr>
                                 <th><span>Amount Paid(RS:)</span></th>
