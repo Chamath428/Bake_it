@@ -1,0 +1,144 @@
+/*pop up model starts*/
+
+.bill{
+    position: fixed;
+    width: 60%;
+    background-color: white;
+    z-index: 200;
+    transition: 0.3s ease-in-out; 
+}
+
+/*bill header starts*/
+.bill .bill-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid rgb(255, 138, 0);
+    flex-wrap: wrap;
+}
+
+.bill .bill-header button{
+    padding: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.bill .bill-header button:hover{
+    color: red;
+}
+
+/*bill header ends*/
+
+/*date starts*/
+.bill .bill-body .date-details{
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+
+.bill .bill-body .date-details table{
+     margin-bottom: 10px;
+     box-shadow: 0 0 10px rgb(0, 0,0,0.15); 
+     height: 20px;
+     width: 30%;
+
+ }
+
+.bill .bill-body .date-details table tr th{ 
+    background-color:  rgb(255, 138, 0);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bold;
+    overflow:hidden ; 
+    width: 50%;
+    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+
+}
+.bill .bill-body .date-details table tr td{
+   text-align: right;
+   border-bottom: 1px solid #dddddd;
+
+}
+/*date ends*/
+
+/*food details starts*/
+ .bill .bill-body .food-details table{
+    width: 70%; 
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-radius:5px 5px 0 0 ;
+    overflow:hidden ; 
+    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+
+}
+.bill .bill-body .food-details table thead tr {
+    background-color:  rgb(255, 138, 0);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    height: 40px;
+}
+.bill .bill-body .food-details table thead tr th{
+    text-align: center;
+    width: auto;
+
+}
+
+.bill .bill-body .food-details table tbody tr td input{
+    outline: none;
+    border: none;
+    text-align: center;
+    padding: 5px;
+}
+
+.bill .bill-body .food-details table tbody tr{
+    border-bottom: 1px solid rgba(0, 0, 0,0.2);
+}
+
+.bill .bill-body .food-details table tbody tr td{
+    text-align: center;
+    align-items: center;
+}
+/*food details ends*/
+
+/*total details starts*/
+
+.bill .bill-body .total-details{
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.bill .bill-body .total-details table{
+     box-shadow: 0 0 10px rgb(0, 0,0,0.15); 
+     height: 90px;
+     width: 30%;
+ }
+
+.bill .bill-body .total-details table tr th { 
+    background-color:  rgb(255, 138, 0);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bold;
+    overflow:hidden ; 
+    width: 50%;
+    box-shadow: 0 0 20px rgb(0, 0,0,0.15);
+
+}
+.bill .bill-body .total-details table tr td{
+   text-align: right;
+   border-bottom: 1px solid #dddddd;
+
+}
+
+/*total details ends*/
+
+
+/*pop up model ends*/

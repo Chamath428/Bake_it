@@ -169,6 +169,7 @@
 
 <?php if (isset($_POST['preview']) && isset($_POST['finalCount'])) {?>
 
+
 	<div class="bill active">
 		<div class="bill-header">
 			
