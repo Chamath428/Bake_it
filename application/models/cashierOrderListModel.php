@@ -98,14 +98,14 @@ class cashierOrderListModel extends database
 				$data['order_id']=$order_id;
 				$data['customer_id']=$row3['customer_id'];
 				$data['placed_date']=$row3['placed_date_and_time'];
-				$data['needed_date']=$row3['needed_date'];
-				$data['needed_time']=$row3['needed_time'];
+				$data['req_date']=$row3['needed_date'];
+				$data['req_time']=$row3['needed_time'];
 				$data['order_status']=$row3['order_status'];
-				$data['reveiving_method']=$row3['receiving_method'];
+				$data['delivery_type']=$row3['receiving_method'];
 				$data['delivery_person_id']=$row3['delivery_person_id'];
 				$data['total_amount']=$row3['total_amount'];
 				$data['paid_amount']=$row3['paid_amount'];
-				$data['is_advanced']=$row3['is_advanced'];
+				$data['is_advance']=$row3['is_advanced'];
 				$data['order_type']=$row3['order_type'];
 				$data['payment_type']=$row3['payment_type'];
 				$data['menu_id']=$menu_id;
@@ -113,6 +113,7 @@ class cashierOrderListModel extends database
 			}
 
 			$sql4="SELECT
+						menu.item_id,
 						menu.item_name,
 						menu.price,
 						order_items.quantity
@@ -130,6 +131,7 @@ class cashierOrderListModel extends database
 			$res4=mysqli_query($this->db,$sql4) or die('4->'.mysqli_error($this->db));
 
 			while ($row4=mysqli_fetch_assoc($res4)) {
+				$data['item_id']=$row4['item_id'];
 				$data['item_name']=$row4['item_name'];
 				$data['price']=$row4['price'];
 				$data['quantity']=$row4['quantity'];

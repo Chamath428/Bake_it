@@ -55,8 +55,7 @@
 			$forwardData[2]=$this->cashierCreateOrderModel->getFoodInfo($orderItems);
 
 			$this->view("cashier/quickInvoice",$forwardData);
-			 $this->redirect("");
-
+			 
 		} 
 
 		public function createSpecialOrderCashier(){

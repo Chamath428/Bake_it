@@ -1,6 +1,10 @@
+
+
 <?php 
 require_once($_SERVER['DOCUMENT_ROOT'].'/bakeit/vendor/autoload.php');
 use Dompdf\Dompdf;
+
+$hh="ss";
 
 
 $html='<!DOCTYPE html>
@@ -320,13 +324,3 @@ $domepdf->stream($data[1]['order_id'].'.pdf',['Attachment'=>0]); //this line to 
  ?>
 
 
- <?php if ($data[1]['order_id']>0) {?>
-
-
-<script type="text/javascript">
-
-window.open('<?php echo BASEURL ?>', '_blank');
-
-</script>
-
-<?php } ?>

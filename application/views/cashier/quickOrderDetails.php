@@ -78,7 +78,7 @@
 
                         <tr>
                         <td>Reciving Method</td>
-                            <td><a href=""><?php switch ($data[1]['reveiving_method']) {
+                            <td><a href=""><?php switch ($data[1]['delivery_type']) {
                                 case '2':
                                     echo "Home delivery";
                                     break;
@@ -108,7 +108,7 @@
                             } ?></td>
                         </tr>
 
-                        <?php if ($data[1]['reveiving_method']==2) {?>
+                        <?php if ($data[1]['delivery_type']==2) {?>
                         <tr>
                             <td>Delivery Person</td>
                             <td><a href=""><?php echo $data[1]['delivery_person_id'] ?></a></td>
@@ -171,7 +171,7 @@
                     </tr>
                     <tr>
                         <td>Delivery Tax</td>
-                        <td><?php if ($data[1]['reveiving_method']==2) {
+                        <td><?php if ($data[1]['delivery_type']==2) {
                             echo "200.00 LKR";
                         }else echo "00.00 LKR"; ?></td>
                     </tr>
@@ -182,15 +182,15 @@
                 </table>
             </div>
             <div class="btn-container">
-                <?php if ($data[1]['order_type']==1 && $data[1]['reveiving_method']==1 && $data[1]['payment_type']==1) { ?>
+                <?php if ($data[1]['order_type']==1 && $data[1]['delivery_type']==1 && $data[1]['payment_type']==1) { ?>
                     <button class="btn" data-modal-target="#modal" >Complete Payment</button>
 
-                <?php } else if($data[1]['order_type']==1 && $data[1]['reveiving_method']==1 && $data[1]['payment_type']==2){?>
+                <?php } else if($data[1]['order_type']==1 && $data[1]['delivery_type']==1 && $data[1]['payment_type']==2){?>
                 <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completePickupFromShopCard/".$data[1]['order_id']."/".$data[1]['total_amount'] ?>">
                     <button class="btn" >Complete Order and Print the Bill</button>
                 </form>
 
-            <?php } else if($data[1]['order_type']==1 && $data[1]['reveiving_method']==2 && $data[1]['payment_type']==1){ ?>
+            <?php } else if($data[1]['order_type']==1 && $data[1]['delivery_type']==2 && $data[1]['payment_type']==1){ ?>
                 <form method="post" action="<?php echo BASEURL."/cashierOrderListController/completeHomeDelivery/".$data[1]['order_id']."/0" ?>">
                     <button class="btn" >Print the Bill</button>
                 </form>
