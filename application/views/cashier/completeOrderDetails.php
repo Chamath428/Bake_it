@@ -78,7 +78,7 @@
 
                         <tr>
                         <td>Reciving Method</td>
-                            <td><a href=""><?php switch ($data[1]['reveiving_method']) {
+                            <td><a href=""><?php switch ($data[1]['delivery_type']) {
                                 case '2':
                                     echo "Home delivery";
                                     break;
@@ -124,7 +124,7 @@
                             } ?></td>
                         </tr>
 
-                        <?php if ($data[1]['reveiving_method']==2) {?>
+                        <?php if ($data[1]['delivery_type']==2) {?>
                         <tr>
                             <td>Delivery Person</td>
                             <td><a href=""><?php echo $data[1]['delivery_person_id'] ?></a></td>
@@ -187,7 +187,7 @@
                     </tr>
                     <tr>
                         <td>Delivery Tax</td>
-                        <td><?php if ($data[1]['reveiving_method']==2) {
+                        <td><?php if ($data[1]['delivery_type']==2) {
                             echo "200.00 LKR";
                         }else echo "00.00 LKR"; ?></td>
                     </tr>

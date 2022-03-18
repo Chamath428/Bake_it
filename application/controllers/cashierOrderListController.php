@@ -40,14 +40,17 @@
 		public function completePickupFromShopCash($order_id){
 			$paidAmount=$_POST['paid-amount'];
 			$this->cashierOrderListModel->completeQuickOrder($order_id,$paidAmount);
-			$this->index();
+			$this->getBill($order_id);
+			// $this->index();
+
 		}
 
 		// following function for complete pick up from shop paid by card of both quick and special
 		public function completePickupFromShopCard($order_id,$paidAmount){
 			$this->cashierOrderListModel->updateQuickOrderDetails($order_id);
 			$this->cashierOrderListModel->insertQuickBillDetails($order_id,$paidAmount);
-			$this->index();
+			$this->getBill($order_id);
+			// $this->index();
 		}
 
 
@@ -55,15 +58,27 @@
 		public function completeHomeDelivery($order_id,$paidAmount){
 			$this->cashierOrderListModel->updateOrderDetailsCashierId($order_id);
 			$this->cashierOrderListModel->insertQuickBillDetails($order_id,$paidAmount);
-			$this->index();
+			$this->getBill($order_id);
+			// $this->index();
+
 		}
 
 		// following function is to complete pick up from shop special orders 
 		public function completePickupFromShopSpecial($order_id){
 			$paidAmount=$_POST['paid-amount']+$_POST['advanced-amount'];
 			$this->cashierOrderListModel->completeQuickOrder($order_id,$paidAmount);
-			$this->index();
+			$this->getBill($order_id);
+			// $this->index();
+		}
 
+		public function getBill($order_id){
+
+			$forwardData=$this->cashierOrderListModel->getOrderDetails($order_id,$_SESSION['branch_id']);
+			$customerDetails=$forwardData['2'];
+			$foodItems=$forwardData['3'];
+			$forwardData['2']=$foodItems;
+			$forwardData['3']=$customerDetails;
+			$this->view("cashier/quickInvoice",$forwardData);
 		}
 
 	}
