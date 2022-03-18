@@ -49,12 +49,13 @@
 			$order_id=$this->cashierCreateOrderModel->placeQuickOrder($orderDetails);
 			$this->cashierCreateOrderModel->insertOrderItems($order_id,$orderDetails['menu_id'],$orderItems);
 			$this->cashierCreateOrderModel->createBill($order_id,$orderDetails['paid_amount'],$orderDetails['cashier_id']);
-			// $this->redirect("");
+
 			$orderDetails['order_id']=$order_id;
 			$forwardData[1]=$orderDetails;
 			$forwardData[2]=$this->cashierCreateOrderModel->getFoodInfo($orderItems);
 
 			$this->view("cashier/quickInvoice",$forwardData);
+			 $this->redirect("");
 
 		} 
 

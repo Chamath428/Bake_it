@@ -257,7 +257,7 @@
 			</div>
 
 			<div class="submit-button">
-				<button type="submit">Place Order and Print the bill</button>
+				<button type="submit" target="blank">Place Order and Print the bill</button>
 			</div>
 		</form>
 		</div>
