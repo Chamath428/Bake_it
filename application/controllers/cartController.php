@@ -18,15 +18,32 @@
 		    foreach($_SESSION["quick_cart"] as $key => $value) {
 		      if($itemId == $key){
 		      unset($_SESSION["quick_cart"][$key]);
+
+		      if (isset($_SESSION['cart_count'])) {
+		      	$_SESSION['cart_count']=$_SESSION['cart_count']-1;
+		      }
+		      if (isset($_SESSION['cart_count']) && $_SESSION['cart_count']==0) {
+		      	unset($_SESSION['cart_count']);
+		      }
+
 		      $message = "Item is removed from your cart!";
 		      }
 		      if(empty($_SESSION["quick_cart"]))unset($_SESSION["quick_cart"]);
+
 		    }		
 		}
 		$this->index();
 		}
 
 		public function emptyCart(){
+			foreach($_SESSION["quick_cart"] as $key => $value){
+			if (isset($_SESSION['cart_count'])) {
+		      	$_SESSION['cart_count']=$_SESSION['cart_count']-1;
+		      }
+			}
+			if (isset($_SESSION['cart_count']) && $_SESSION['cart_count']==0) {
+		      	unset($_SESSION['cart_count']);
+		      }
 			unset($_SESSION["quick_cart"]);
 			$this->index();
 		}
@@ -48,6 +65,12 @@
 		    foreach($_SESSION["special_cart"] as $key => $value) {
 		      if($itemId == $key){
 		      unset($_SESSION["special_cart"][$key]);
+		      if (isset($_SESSION['cart_count'])) {
+		      	$_SESSION['cart_count']=$_SESSION['cart_count']-1;
+		      }
+		      if (isset($_SESSION['cart_count']) && $_SESSION['cart_count']==0) {
+		      	unset($_SESSION['cart_count']);
+		      }
 		      $message = "Item is removed from your cart!";
 		      }
 		      if(empty($_SESSION["special_cart"]))unset($_SESSION["special_cart"]);
@@ -56,6 +79,14 @@
 		$this->index();
 		}
 		public function emptySpecialCart(){
+			foreach($_SESSION["special_cart"] as $key => $value){
+			if (isset($_SESSION['cart_count'])) {
+		      	$_SESSION['cart_count']=$_SESSION['cart_count']-1;
+		      }
+			}
+			if (isset($_SESSION['cart_count']) && $_SESSION['cart_count']==0) {
+		      	unset($_SESSION['cart_count']);
+		      }
 			unset($_SESSION["special_cart"]);
 			$this->index();
 		}
