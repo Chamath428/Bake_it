@@ -161,6 +161,49 @@
 			  
 		 }
 
+		 // following two functions are for search for the user when changing the password. As it could be both customer and staff member we have to search them separately
+
+		 public function checkRegisteredCustomer($phonenumber){
+		 	$phonenumber=$this->db->real_escape_string($phonenumber);
+			$sql8="SELECT
+						customer_id
+					FROM
+						registered_customer
+					WHERE
+						contact_number = ".'"'.$phonenumber.'"';
+			$res8=mysqli_query($this->db,$sql8) or die('8->'.mysqli_error($this->db));
+			if (mysqli_num_rows($res8)>0) {
+				$row8=mysqli_fetch_assoc($res8);
+				return $row8['customer_id'];
+			}
+			return 0;
+		 }
+
+		 public function checkStaff($phonenumber){
+		 	$phonenumber=$this->db->real_escape_string($phonenumber);
+		 	$sql9="SELECT
+						staff_id
+					FROM
+						staff
+					WHERE
+						contact_number = ".'"'.$phonenumber.'"';
+			$res9=mysqli_query($this->db,$sql9) or die('9->'.mysqli_error($this->db));
+			if (mysqli_num_rows($res9)>0) {
+				$row9=mysqli_fetch_assoc($res9);
+				return $row9['staff_id'];
+			}
+			return 0;
+		}
+
+		public function changePassword($tableName,$columnName,$password,$id){
+			$sql10="UPDATE ".$tableName." 
+					SET
+						password=".'"'.$password.'"'."  
+					WHERE ".$columnName."=".$id;
+
+			$res10=mysqli_query($this->db,$sql10) or die('10->'.mysqli_error($this->db));
+		}
+		
 	}
 
  ?>
