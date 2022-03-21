@@ -1,4 +1,4 @@
-
+<?php $pagename="Change Password"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
-	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-login.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-forgetPassword.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
+	<!-- The js that used for the signup and this are same -->
+	<script src="<?php echo BASEURL ?>/public/js/customer/signup.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
 	<title>Login to Bake_it</title>
@@ -20,10 +22,8 @@
 	</header>
 
 	<section>
-		<div class="login-image">
-			<img src="<?php echo BASEURL ?>/public/images/login-b1.jpg" class="b1">
-		</div>
-		<div class="content-box">
+		
+		<div class="detail-section">
 
 			<?php if (isset($data['confirmation'])){?>
 			<div class="confirm-alert">
@@ -39,31 +39,17 @@
 			</div>
 			<?php } ?>
 
+			<form method="post" action="<?php echo BASEURL.'/loginController/sendOTP'; ?>">
+				<div class="input-box">
+				<span>Mobile Number</span>
+				<input type="text" name="phonenumber" required placeholder="Enter Your Mobile Number" value="<?php if(isset($data['phonenumber']))echo $data['phonenumber']; ?>" onkeypress="javascript:return isNumber(event)">
+				</div>
 
-			<div class="form-box">
-			<h2>Login</h2>
-			<form method="post" action="<?php echo BASEURL.'/loginController/submit'; ?>">
-				<div class="input-box">
-					<span>Email or Mobile Number</span>
-					<input type="text" name="username" required=""  placeholder="Email or Mobile Number" value="<?php 
-						if(isset($data['username']))echo $data['username'];
-					 ?>">
-				</div>
-				<div class="input-box">
-					<span>Password</span>
-					<input type="password" name="password" required=""  placeholder="Password">
-				</div>
-				<div class="input-box">
-					<input type="submit" name="signin" value="Log-in" required="" >
-				</div>
-				<div class="input-box">
-					<p>Don't Have an Account? <a href="<?php echo BASEURL.'/signupController' ?>">Sign Up</a></p>
-				</div>
-				<div class="input-box">
-					<a href="<?php echo BASEURL."/loginController/getOtpPage" ?>">Forget Password</a>
-				</div>
+				<div class="input-box" id="submit-btn">
+				<input type="submit" name="submit">	
+				</div>		
+
 			</form>
-			</div>
 		</div>
 		
 	</section>
