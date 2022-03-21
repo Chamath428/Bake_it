@@ -38,8 +38,13 @@
         </div>
         <div class="cal-table">
         <div class="delivery-calander">
-            <?php include('calander.php'); ?>
+            <!-- ?php include('calander.php'); ?> -->
+            <form action="" method="POST">
+                 <label for="selectdate">Select Date</label>
+                 <input type="date" id="selectdate" name="selectdate">
+            </form>
         </div> 
+      
         <!--table for Delivery History-->
         <div class="historytable">
             <!-- <h3 id="table-caption">Details of Overview</h3> -->

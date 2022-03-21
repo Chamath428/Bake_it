@@ -79,8 +79,8 @@ document.querySelector('#prev-year').onclick = () => {
     generateCalendar(curr_month.value, curr_year.value)
 }
 
-document.querySelector('#next-year').onclick = () => {
-    ++curr_year.value
-    generateCalendar(curr_month.value, curr_year.value)
-}
+// document.querySelector('#next-year').onclick = () => {
+//     ++curr_year.value
+//     generateCalendar(curr_month.value, curr_year.value)
+// }
 

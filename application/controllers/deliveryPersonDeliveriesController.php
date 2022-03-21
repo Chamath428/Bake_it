@@ -84,6 +84,15 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$CompletedDeliveriesTable=$this->deliveryPersonDeliveriesModel -> getCompletedDeliveriesTable($order_id);
 		$data[0]=$CompletedDeliveriesTable;
 
+		$year = $_POST['year'];
+		echo $year;
+
+		$month_picker = $_POST['month-picker'];
+		echo $month_picker;
+
+		$selected_date = $_POST['selected-date'];
+		echo $selected_date;
+
 		$this->view("deliveryPerson/deliveryHistory",$data);
 	}
 
