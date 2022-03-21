@@ -14,7 +14,7 @@
 		}
 		public function reindex(){
 			$data=array();
-			$data['confirmation']="Acount Created Succesfully. Please Login.";
+			$data['confirmation']="Account Created Succesfully. Please Login.";
 			$this->view("customer/login",$data);
 		}
 

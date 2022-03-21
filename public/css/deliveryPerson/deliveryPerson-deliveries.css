@@ -56,10 +56,18 @@
     margin-top: 50px;
     margin-left: 100px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
 }
+
+.delivery-body .cal-table .delivery-calander{
+    width: 100%;
+    background-color: white;
+    border: none;
+    padding: 10px 0;
+    outline: none;
+  }
 #Ongoing-Deliveries tbody tr .far{
    color: black;
    font-size: 20px;
@@ -264,6 +272,8 @@ button:hover a{
 #cash-topay{
     display: none;
 }
+
+
 @media(max-width:787px){
     .delivery-body .del-topic{
         margin-left: 15px;
