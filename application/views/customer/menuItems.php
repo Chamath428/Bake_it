@@ -14,6 +14,9 @@
 		if(empty($_SESSION["quick_cart"])) {
     		$_SESSION["quick_cart"] =array();
     		$_SESSION["quick_cart"][$item_Id] = $cartArray;
+    		if (!isset($_SESSION['cart_count'])) {
+    			$_SESSION['cart_count']=1;
+    		}else {$_SESSION['cart_count']=$_SESSION['cart_count']+1;}
     		$message="Item successfully added to the cart. You can edit the quantity from the cart";
 		}else{
 			$array_keys = array_keys($_SESSION["quick_cart"]);
@@ -21,6 +24,9 @@
 				$message = "Product is already added to your cart!";	
     		} else {
 			    $_SESSION["quick_cart"][$item_Id] = $cartArray;
+			    if (isset($_SESSION['cart_count'])) {
+		      	$_SESSION['cart_count']=$_SESSION['cart_count']+1;
+		      }
 			    $message = "Item successfully added to the cart. You can edit the quantity from the cart";
 			}
 		}
@@ -30,9 +36,18 @@
 		    foreach($_SESSION["quick_cart"] as $key => $value) {
 		      if($_POST["item-id"] == $key){
 		      unset($_SESSION["quick_cart"][$key]);
+		      if (isset($_SESSION['cart_count'])) {
+		      	$_SESSION['cart_count']=$_SESSION['cart_count']-1;
+		      }
 		      $message = "Item is removed from your cart!";
 		      }
-		      if(empty($_SESSION["quick_cart"]))unset($_SESSION["quick_cart"]);
+		      if(empty($_SESSION["quick_cart"])){
+		      	unset($_SESSION["quick_cart"]);
+		      	if (isset($_SESSION['cart_count']) && $_SESSION['cart_count']==0) {
+		      	unset($_SESSION['cart_count']);
+		      }
+		      	
+		      }
 		    }		
 		}
 	}
