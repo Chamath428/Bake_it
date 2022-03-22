@@ -268,7 +268,7 @@ class deliveryPersonDeliveriesModel extends database{
       $subTotal=$row16['total_amount'];   
       return  $subTotal;     
    }
-   public function getPaidAmount($order_id){
+   public function getAdvancedAmount($order_id){
       $sql17 = "SELECT 
                    paid_amount
                 FROM 
@@ -287,7 +287,10 @@ class deliveryPersonDeliveriesModel extends database{
                     order_status = 6 
                WHERE 
                     order_id = ".$order_id."";
-      $res18=mysqli_query($this->db,$sql18) or die('18->'.mysqli_error($this->db));
+      $res18=mysqli_query($this->db,$sql18) or die('18->'.mysqli_error($this->db)); 
+   }
+   public function updatePaidAmount(){
+      
    }
 
 
