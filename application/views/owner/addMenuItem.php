@@ -21,63 +21,69 @@
 
 
     <div class="bgg" id="body">
-        <section class="left-section">
-            <div class="topic">Add Menu Items</div>
 
-            <div class="image-clz">
-                <i class="fas fa-hotdog"></i>
-            </div>
-        </section>
+        <form method="post" action="<?php echo BASEURL . '/ownerMenuController/selectOutletCategory'; ?>">
+            <section class="main-section">
+                <section class="left-section">
+                    <div class="topic">Add Menu Items</div>
 
-        <section class="right-section">
+                    <div class="image-clz">
+                        <i class="fas fa-hotdog"></i>
+                    </div>
+                </section>
+                <section class="right-section">
 
-            <div class="input-fileds">
-                <label for="branch">Select Category</label>
-                <select placeholder="Select branch">
-                    <option>Breads</option>
-                    <option>Rolls</option>
-                    <option>Muffins</option>
-                    <option>Cakes</option>
-                    <option>Sweet goods</option>
+                    <div class="input-fileds">
+                        <label for="branch">Select Category</label>
+                        <select placeholder="Select Category" name="category">
 
+                            <?php foreach ($data[1] as $key => $value) { ?>
 
-                </select>
-                <!-- <label for="item id">Item Id</label>
+                                <option value="<?php echo  $value['category_id']; ?>"><?php echo  $value['category_name']; ?></option>
+
+                            <?php } ?>
+
+                        </select>
+                        <!-- <label for="item id">Item Id</label>
                 <input type="text" name="item-id" id="item-id" placeholder="Enter Item Id"> -->
-            </div>
+                    </div>
 
-            <div class="input-fileds">
-                <label for="name"> Name</label>
-                <input type="text" name="name" id="name" placeholder="Enter Name">
-            </div>
-
-
-
-            <div class="input-fileds">
-                <label for="price">Price</label>
-                <input type="number" name="price" id="price" placeholder="Enter Price">
-            </div>
-            <div class="add-btn">
-                <label for="Outlet">Outlet</label>
-                <select placeholder="Select branch">
-                    <option>All</option>
-                    <option>Kasbewa</option>
-                    <option>Baththaramulla</option>
-                    <option>Piliyandala</option>
+                    <div class="input-fileds">
+                        <label for="name"> Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter Name">
+                    </div>
 
 
-                </select>
-                <!-- <button onclick="viewBranchList()">Add Branch</button> -->
 
-            </div>
+                    <div class="input-fileds">
+                        <label for="price">Price</label>
+                        <input type="number" name="price" id="price" placeholder="Enter Price">
+                    </div>
+                    <div class="add-btn">
+                        <label for="Outlet">Outlet</label>
+                        <select placeholder="Select branch" name="outlet">
+                            <option value="all-branch">All</option>
+                            <?php foreach ($data[0] as $key => $value) { ?>
+
+                                <option value="<?php echo  $value['branch_id']; ?>"><?php echo  $value['branch_name']; ?></option>
+
+                            <?php } ?>
+
+                        </select>
+                        <!-- <button onclick="viewBranchList()">Add Branch</button> -->
+
+                    </div>
 
 
-            <div class="save">
-                <a href="<?php echo BASEURL . "/ownerMenuController/saveMenuItem" ?>"> <button onclick="SaveFunction()">Save</button></a>
-            </div>
-
+                    <div class="save">
+                        <a href="<?php echo BASEURL . "/ownerMenuController/saveMenuItem" ?>"> <button onclick="SaveFunction()">Save</button></a>
+                    </div>
     </div>
     </section>
+    </section>
+
+    </form>
+
     </div>
 
 
