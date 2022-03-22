@@ -28,7 +28,7 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 	}
 
 	public function getDeliveryOverview(){
-		$data=array();
+	    $data=array();
 
 		$totalDeliveries = $this->deliveryPersonDeliveriesModel ->countTotalDeliveries();
 		$data[0] = $totalDeliveries;
@@ -38,6 +38,10 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 
 		$totalDeliveriesofMonth = $this -> deliveryPersonDeliveriesModel -> countTotalDeliveriesofMonth();
 		$data[2] = $totalDeliveriesofMonth;
+
+		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
+		$completedDeliveriesTable = $this -> deliveryPersonDeliveriesModel ->getCompletedDeliveriesTable($data['date']);
+		$data[3] = $completedDeliveriesTable;
 		
 		$this->view("deliveryPerson/deliveryHistory",$data);
 	}
@@ -61,8 +65,17 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		 $menuDetails = $this->deliveryPersonDeliveriesModel ->getMenuDetails($order_id);
 		 $data[2] = $menuDetails;
          
-		
+		 $subTotal = $this->deliveryPersonDeliveriesModel ->getSubTotal($order_id);
+		 $data[3] = $subTotal;
 		  
+		 $paidAmount = $this->deliveryPersonDeliveriesModel ->getPaidAmount($order_id);
+		 $data[4] = $paidAmount;
+         
+		 $tax = 100.00;
+		 $data['paid_amount'] = $_POST['paid_amount'];
+		 $balanceAmount = $data[3] +$tax - $data['paid_amount'];
+		 $data[5] = $balanceAmount;
+
 		$this->view("deliveryPerson/deliveryDetails",$data);
 	}
     public function acceptDeliveries($order_id){
@@ -77,26 +90,21 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$reject_accepted_delivery = $this -> deliveryPersonDeliveriesModel -> updateAcceptedOrderStatus($order_id);
         $this->index();
 	}
-	public function getCompletedDeliveriesTable($order_id){
-
-		$data=array();
-
-		$CompletedDeliveriesTable=$this->deliveryPersonDeliveriesModel -> getCompletedDeliveriesTable($order_id);
-		$data[0]=$CompletedDeliveriesTable;
-
-		$year = $_POST['year'];
-		echo $year;
-
-		$month_picker = $_POST['month-picker'];
-		echo $month_picker;
-
-		$selected_date = $_POST['selected-date'];
-		echo $selected_date;
+	 public function getCompletedDeliveriesTable(){
+          
+		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
+		$completedDeliveriesTable = $this -> deliveryPersonDeliveriesModel ->getCompletedDeliveriesTable($data['date']);
+		$data[3] = $completedDeliveriesTable;
 
 		$this->view("deliveryPerson/deliveryHistory",$data);
-	}
+	 }
+	 public function completeDelivery($order_id){
 
-		
+		// $data['order_status'] = $_POST['complete_delivery'];
+		$this -> deliveryPersonDeliveriesModel -> updateOrderStatusAsCompleted($order_id);
+
+	 }
+	
 	
 }
 

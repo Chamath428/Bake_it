@@ -11,7 +11,10 @@ class deliveryPersonReviewsController extends bakeItFramework
         $data=array();
         $totalReviews = $this -> deliveryPersonReviewsModel -> countOfReviews();
         $data[0] = $totalReviews;
-//$data[1]???
+        
+        $totalRatings = $this -> deliveryPersonReviewsModel -> countOfRatings();
+        $data[1] = $totalRatings;
+
         $reviewsTable=$this->deliveryPersonReviewsModel -> getDeliveryReviewsTable();
 		$data[2]=$reviewsTable;
 
