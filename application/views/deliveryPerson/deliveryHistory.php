@@ -38,7 +38,7 @@
         </div>
         <div class="cal-table">
             <div class="delivery-calander">
-                <form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/getDeliveryOverview'; ?>" method="POST">
+                <form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/getDeliveryHistoryDate/' . $data[3]['order_id']; ?>" method="POST">
                 <div class="selectDate">Select Date
                     <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" />
                 </div>                 

@@ -50,7 +50,6 @@ class ownerReportController extends bakeItFramework
 		} else {
 			//selected branch daily sales report
 			$salesReportDetails = $this->ownerReportsModel->dailyBranchSalesReport($data['date'], $data['branch_id']);
-			echo $salesReportDetails[1]['category_name'];
 			$data[1] = $salesReportDetails;
 			$this -> view("owner/reportsTotalView",$data);
 		}
