@@ -27,32 +27,52 @@
         <div class="menu-items-topic">Menu Items</div>
 
         <div class="drop-down-list">
-            <div class="branch">
-                <label for="branch">Outlet</label>
-                <select placeholder="Select branch">
-                    <option>Kasbewa</option>
-                    <option>Bahtharamulla</option>
-                    <option>Piliyandala</option>
+            <form method="post" action="<?php echo BASEURL . '/ownerMenuController/getMenuItems'; ?>">
+                <div class="branch">
+                    <label for="branch">Outlet</label>
+                    <select name="outletId" id="outletId">
 
-                </select>
-            </div>
+                        <?php foreach ($data[0] as $key => $value) {
+                            if ($value['branch_id'] == $data[3]) { ?>
+                                <option value="<?php echo  $value['branch_id']; ?>"><?php echo  $value['branch_name']; ?></option>
+                        <?php  }
+                        } ?>
 
-            <div class="category-list">
-                <label for="category">Category</label>
-                <select placeholder="Select category">
-                    <option>Bread</option>
-                    <option>Roll</option>
-                    <option>Muffin</option>
-                    <option>Cake</option>
-                    <option>Sweet good</option>
+                        <?php foreach ($data[0] as $key => $value) {
+                            if ($value['branch_id'] != $data[3]) { ?>
+                                <option value="<?php echo  $value['branch_id']; ?>"><?php echo  $value['branch_name']; ?></option>
+                        <?php  }
+                        } ?>
 
-                </select>
-            </div>
-            <div class="view-btn">
-                <button onclick="category1()">View</button>
-            </div>
+                    </select>
+                </div>
+
+                <div class="category-list">
+                    <label for="category">Category</label>
+                    <select name="categoryId" id="categoryId">
+
+
+                        <?php foreach ($data[1] as $key => $value) {
+                            if ($value['category_id'] == $data[4]) { ?>
+                                <option value="<?php echo  $value['category_id']; ?>"><?php echo  $value['category_name']; ?></option>
+                        <?php  }
+                        } ?>
+
+                        <?php foreach ($data[1] as $key => $value) {
+                            if ($value['category_id'] != $data[4]) { ?>
+                                <option value="<?php echo  $value['category_id']; ?>"><?php echo  $value['category_name']; ?></option>
+                        <?php  }
+                        } ?>
+
+                    </select>
+                </div>
+                <div class="view-btn">
+                    <button>View</button>
+                </div>
+
 
         </div>
+
 
 
         <div class="category-table">
@@ -68,49 +88,43 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-
-                            <td>1</td>
-
-                            <td>White Bread</td>
-                            <td>RS.60.00</td>
-
-                            <td> <input type="checkbox" id="Check-box1" onclick="myFunction(this.id)"></td>
-                        </tr>
-                        <tr>
-
-                            <td>2</td>
-
-                            <td>Sandwich Bread</td>
-                            <td>RS.65.00</td>
-
-                            <td> <input type="checkbox" id="Check-box2" onclick="myFunction(this.id)"></td>
-
-
-                        </tr>
-                        <tr>
-
-                            <td>3</td>
-
-                            <td>Kurakkn Bread</td>
-                            <td>RS.120.00</td>
-
-                            <td> <input type="checkbox" id="Check-box3" onclick="myFunction(this.id)"></td>
-
-
-                        </tr>
-                    </tbody>
                 </table>
+                <div class="scroll-of-table">
+                    <table class="content-table">
+                        <tbody>
+                            <?php foreach ($data[2] as $key => $value) { ?>
+                                <tr>
+
+
+                                    <td><?php echo $value['item_id']; ?></td>
+                                    <td><?php echo $value['item_name']; ?></td>
+                                    <td><?php echo $value['price']; ?></td>
+                                    <!-- <td><input name="chk_id[]" type="checkbox" class='chkbox' id="1"  onclick="myFunction(this.id)"></td> -->
+                                    <td> <input type="checkbox" id="<?php echo $value['item_id']; ?>" name="checkid[]" onclick="myFunction(this.id)"></td>
+
+                                </tr>
+                            <?php } ?>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+                    <div class="delete-btn" id="delbtn">
+                        <button type="button" onclick="delFunction()">Delete</button>
+
+                    </div>
+                </form>
+
+
                 <div class="btn">
                     <div class="add-item-btn">
                         <a href="<?php echo BASEURL . "/ownerMenuController/addMenuItem" ?>"> <button>Add Item</button></a>
                     </div>
-                    <div class="delete-btn" id="delbtn">
-                        <button onclick="delFunction()">Delete</button>
-                    </div>
 
                 </div>
+
+
 
             </div>
 

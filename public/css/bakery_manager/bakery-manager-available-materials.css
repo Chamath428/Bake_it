@@ -43,6 +43,7 @@ body{
     margin-top: 20px;
     border: none;
     /* background-color: red; */
+  
 
 }
 .category-list select{
@@ -99,6 +100,8 @@ body{
 }
 .content-table tbody tr{
     text-align: center;
+    height: 30px;
+
     
 }
 .content-table th .content-table tr{
@@ -134,6 +137,7 @@ body{
     cursor: pointer;
     margin-right: 10px;
     font-weight: bold;
+    text-align: center;
 }
 #submit:hover{
   background:rgb(255, 138, 0);
@@ -343,4 +347,22 @@ body{
 #room_fileds{
     height: 230px;
     overflow-y: scroll;
+}
+.get-btn{
+    position: absolute;
+    top: 20vh;
+    margin-left: 56%;
+    /* margin-top: 2px; */
+    /* margin-bottom: 5px; */
+    width: 120px;
+    height: 31px;
+    background: #FFFFFF;
+    border: 1px solid rgba(255, 138, 0, 0.98);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.get-btn:hover{
+    background:rgb(255, 138, 0);
+    color: rgb(255, 255, 255);
 }
