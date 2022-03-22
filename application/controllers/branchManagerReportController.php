@@ -8,12 +8,21 @@ class branchManagerReportController extends bakeItFramework
 	
 	function __construct()
 	{
-		// code...
+		$this->branchManagerReportModel=$this->model("branchManagerReportModel");
 	}
 
 	public function index(){
-		$data=array();
-		$this->view("branchManager/overview",$data);
+		// $branchSalesoftheMonth =$this->branchManagerReportModel->getBranchSalesoftheMonth();
+		// $data[0]=$branchSalesoftheMonth;
+		$this->view("branchManager/overview");
+		// echo json_encode($data);
+	}
+
+	public function getdetails(){
+		$branchSalesoftheMonth =$this->branchManagerReportModel->getBranchSalesoftheMonth();
+		$data[0]=$branchSalesoftheMonth;
+		echo json_encode($branchSalesoftheMonth);
+		
 	}
 
 	public function getTotalSalesReport(){

@@ -134,3 +134,23 @@ new Chart("myChart4", {
     }
   }
 });
+
+
+function getDetails(){
+  let httprequest =new XMLHttpRequest();
+  httprequest.onreadystatechange = function(){
+      if (httprequest.readyState===4 && httprequest.status===200){
+        console.log(httprequest.responseText)
+        const obj = JSON.parse(httprequest.responseText);
+          console.log(obj)
+          //obj[0].order_id
+          //data
+      }
+  }
+  
+  var url="http://localhost/bakeit/branchManagerReportController/getdetails";
+  httprequest.open("POST",url,true)
+  httprequest.send()
+  
+}
+getDetails()
