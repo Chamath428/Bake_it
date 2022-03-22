@@ -212,8 +212,10 @@
 		</div>
 
 		<div class="buttons">
+			<?php if ($data[1]['order_status']==6) {?>
 			<button data-modal-target="#modal">Rate Order</button>
 			<button><a href="<?php echo BASEURL."/cartController"; ?>">Re-Order</a></button>
+		<?php } ?>
 		</div>
 
 	</section>
@@ -221,8 +223,10 @@
 
 	<div class="modal" id="modal">
     <div class="modal-header">
+    	<?php if ($data[1]['order_status']==6) {?>
       <div class="title">Rate the order</div>
       <button data-close-button class="close-button">&times;</button>
+      <?php } ?>
     </div>
     <div class="modal-body">
 

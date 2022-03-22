@@ -212,9 +212,7 @@
 					 	 </label>
 					 	 
 					</div>
-					<div class="payment-image" id="payment-image">
-						<a href=""><img src="<?php echo BASEURL ?>/public/images/payhere.png"></a>
-					</div>
+
 				</div>
 			<?php  }else{ ?>
 				<div class="radio-box" id="unregistered-payment">
@@ -226,9 +224,7 @@
 					 	 	 <span>Full payment</span>
 					 	 </label>
 					</div>
-					<!-- <div class="payment-image" id="payment-image">
-						<a href=""><img src="<?php echo BASEURL ?>/public/images/payhere.png"></a>
-					</div> -->
+
 				</div>
 			<?php } ?>
 		
