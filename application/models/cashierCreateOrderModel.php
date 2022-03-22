@@ -53,7 +53,8 @@ class cashierCreateOrderModel extends database
 							paid_amount,
 							receiving_method,
 							payment_type,
-							order_status
+							order_status,
+							needed_date
 						)
 					VALUES ("
 							.'"'.$orderDetails['menu_id'].'"' 		.","
@@ -63,7 +64,8 @@ class cashierCreateOrderModel extends database
 							.'"'.$orderDetails['paid_amount'].'"' 	.","
 							.'"'.$orderDetails['delivery_type'].'"' .","
 							.'"'.$orderDetails['payment_type'].'"' 	.","
-							.'"'.$orderDetails['order_status'].'")';
+							.'"'.$orderDetails['order_status'].'"'	.","
+							.'"'.date("Y-m-d").'")';
 			$res2=mysqli_query($this->db,$sql2) or die('2->'.mysqli_error($this->db));
 
 			$sql3= "SELECT LAST_INSERT_ID() AS last_order_id";
@@ -238,7 +240,43 @@ class cashierCreateOrderModel extends database
 			return $last_order_id;
 	}
 
+	public function getFoodInfo($items){
+		$returnData=array();
+		$menu_id=$_SESSION['branch_id'];
+		$i=0;
+		foreach ($items as $item_id => $quantity) {
+				$getInfo=$this->getFoodInfoSql($item_id,$menu_id);
+				$data['item_id']=$item_id;
+				$data['quantity']=$quantity;
+				$data['item_name']=$getInfo['item_name'];
+				$data['price']=$getInfo['price'];
+				$returnData[$i]=$data;
+				$i++;
+			}
+			return $returnData;
+	}
 
+
+	public function getFoodInfoSql($item_id,$menu_id){
+		$returnData=array();
+		$sql13="SELECT
+					item_name,
+					price
+				FROM
+					menu
+				WHERE
+					item_id=".$item_id." AND
+					menu_id=".$menu_id;
+
+		$res13=mysqli_query($this->db,$sql13) or die('13->'.mysqli_error($this->db));
+		while ($row7=mysqli_fetch_assoc($res13)) {
+			$returnData['item_name']=$row7['item_name'];
+			$returnData['price']=$row7['price'];
+		}
+
+		return $returnData;
+
+	}
 
 }
 

@@ -85,6 +85,7 @@
 			$i=0;
 
 			$sql3="SELECT
+						customer_id,
 						placed_date_and_time,
 						needed_date,
 						needed_time,
@@ -101,6 +102,7 @@
 			$res3=mysqli_query($this->db,$sql3) or die('3->'.mysqli_error($this->db));
 			while ($row3=mysqli_fetch_assoc($res3)) {
 				$data['order_id']=$order_id;
+				$data['customer_id']=$row3['customer_id'];
 				$data['placed_date']=$row3['placed_date_and_time'];
 				$data['needed_date']=$row3['needed_date'];
 				$data['needed_time']=$row3['needed_time'];
@@ -109,6 +111,7 @@
 				$data['delivery_person_id']=$row3['delivery_person_id'];
 				$data['total_amount']=$row3['total_amount'];
 				$data['order_type']=$row3['order_type'];
+				$data['menu_id']=$menu_id;
 				$basicDeails=$data;
 			}
 
@@ -140,6 +143,25 @@
 			$orderDetails[1]=$basicDeails;
 			$orderDetails[2]=$foodItems;
 			return $orderDetails;
+		}
+
+		public function rateOrder($customer_id,$order_id,$rate,$review){
+			$review=$this->db->real_escape_string($review);
+			$sql5="INSERT INTO
+						ratings_and_reviews(
+							customer_id,
+							order_id,
+							rating,
+							review,
+							review_type)
+						VALUES("
+							.'"'.$customer_id.'"'	.","
+							.'"'.$order_id.'"'		.","
+							.'"'.$rate.'"'			.","
+							.'"'.$review.'"'		.","
+							."1)";
+
+			$res5=mysqli_query($this->db,$sql5) or die('5->'.mysqli_error($this->db));
 		}
 	}
 

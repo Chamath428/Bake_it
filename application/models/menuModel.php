@@ -31,11 +31,14 @@ class menuModel extends database
 		return $categoryData;
 	}
 
+
 	public function getCategoryItems($category_id = 1)
 	{
 		$itemData = array();
 		$i = 0;
 		$sql2 = "SELECT
+
+
 						item_id,
 						item_name,
 						quantity,
@@ -43,6 +46,7 @@ class menuModel extends database
 					FROM
 						menu
 					WHERE
+
 						category_id =" . '"' . $category_id . '"';
 		$res2 = mysqli_query($this->db, $sql2) or die('2->' . mysqli_error($this->db));
 		while ($row2 = mysqli_fetch_assoc($res2)) {
@@ -52,20 +56,25 @@ class menuModel extends database
 			$data['price'] = $row2['price'];
 			$itemData[$i] = $data;
 			$i++;
+
 		}
 		return $itemData;
 	}
+
 
 	public function updateQuantity($updateData = [])
 	{
 		foreach ($updateData as $key => $value) {
 			$sql3 = "UPDATE
+
 							menu
 						SET
 							quantity=" . $value['quantity'] . "
 						WHERE
+
 							item_id=" . $value['item_id'];
 			$res3 = mysqli_query($this->db, $sql3) or die('3->' . mysqli_error($this->db));
+
 		}
 	}
 

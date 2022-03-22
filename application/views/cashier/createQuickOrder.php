@@ -169,6 +169,7 @@
 
 <?php if (isset($_POST['preview']) && isset($_POST['finalCount'])) {?>
 
+
 	<div class="bill active">
 		<div class="bill-header">
 			
@@ -256,7 +257,7 @@
 			</div>
 
 			<div class="submit-button">
-				<button type="submit">Place Order and Print the bill</button>
+				<button type="submit" target="blank">Place Order and Print the bill</button>
 			</div>
 		</form>
 		</div>

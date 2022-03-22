@@ -59,7 +59,7 @@
                         $i =0;
                         foreach($data[2] as $key => $delivery) {?>
                           <tr>
-                            <td label="Order Id"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController".$delivery['order_id'] ?>" class="order-id"><?php echo $delivery['order_id'];?></a></td>
+                            <td label="Order Id"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails/".$delivery['order_id'] ?>" class="order-id"><?php echo $delivery['order_id'];?></a></td>
 
                             <td label="Time"><?php echo $delivery['needed_time'];?></td>
 

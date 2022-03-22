@@ -41,10 +41,10 @@
 
 			<h2>Billing Details</h2>
 			<div class="basic-details">
-				<input type="text" name="first_name" required="" placeholder="First Name" value="<?php if(isset($_SESSION['first_name']))echo $_SESSION['first_name'] ?>">
-				<input type="text" name="last_name" placeholder="Last Name" value="<?php if(isset($_SESSION['last_name']))echo $_SESSION['last_name'] ?>">
+				<input type="text" id="first_name" name="first_name" required="" placeholder="First Name" value="<?php if(isset($_SESSION['first_name']))echo $_SESSION['first_name'] ?>" oninput="changeValues('first_name','first_name_payhere')">
+				<input type="text" id="last_name"  name="last_name" placeholder="Last Name" value="<?php if(isset($_SESSION['last_name']))echo $_SESSION['last_name'] ?>" oninput="changeValues('last_name','last_name_payhere')">
 				<input type="text" name="company_name" placeholder="Company Name (Optional)">
-				<input type="text" name="phone_number" placeholder="Phone Number" required="" value="<?php if(isset($_SESSION['contact_number']))echo $_SESSION['contact_number'] ?>">
+				<input type="text" id="phone_number" name="phone_number" placeholder="Phone Number" required="" value="<?php if(isset($_SESSION['contact_number']))echo $_SESSION['contact_number'] ?>"  oninput="changeValues('phone_number','phone_payhere')">
 			</div>
 			<div class="radio-box" id="reciving-method">
 			<h3>Order Reciving Method</h3>
@@ -200,16 +200,17 @@
 				<div class="radio-box" id="registered-payment">
 					<h3>How much would you like to pay?</h3>
 					<div>
-						<label>
-					 	 	 <input type="radio" name="registered_payment" checked="" value="1">
-					 	 	 <div class="circle"></div>
-					 	 	 <span>Advance Payment (Half of the grand total)</span>
-					 	 </label>
-					 	 <label>
-					 	 	 <input type="radio" name="registered_payment" value="2">
+						<label onclick="changePayherePrice(0)">
+					 	 	 <input type="radio" name="registered_payment" checked="" value="2">
 					 	 	 <div class="circle"></div>
 					 	 	 <span>Full payment</span>
 					 	 </label>
+						<label onclick="changePayherePrice(1)">
+					 	 	 <input type="radio" name="registered_payment"  value="1">
+					 	 	 <div class="circle"></div>
+					 	 	 <span>Advance Payment (Half of the grand total)</span>
+					 	 </label>
+					 	 
 					</div>
 					<div class="payment-image" id="payment-image">
 						<a href=""><img src="<?php echo BASEURL ?>/public/images/payhere.png"></a>
@@ -225,9 +226,9 @@
 					 	 	 <span>Full payment</span>
 					 	 </label>
 					</div>
-					<div class="payment-image" id="payment-image">
+					<!-- <div class="payment-image" id="payment-image">
 						<a href=""><img src="<?php echo BASEURL ?>/public/images/payhere.png"></a>
-					</div>
+					</div> -->
 				</div>
 			<?php } ?>
 		
@@ -235,24 +236,52 @@
 		<div class="total-container">
 				<table>
 					<tr>
-						<td>Subtotal</td>
-						<td><?php echo $subtotal.".00 LKR"; ?></td>
+						<td>Subtotal (LKR)</td>
+						<td><input id="subtotal" type="text" readonly=""  value="<?php echo $subtotal ?>"></td>
 					</tr>
 					<tr>
-						<td>Delivery Tax</td>
-						<td>00.00 LKR</td>
+						<td>Delivery Tax (LKR)</td>
+						<td><input id="delivery-tax" type="text" readonly="" name="delivery-tax" value="00"></td>
 					</tr>
 					<tr>
-						<td>Grand Total</td>
-						<td><input type="hidden" readonly="" name="subtotal" value="<?php echo $subtotal; ?>"><input type="text" readonly="" name="subtotal2" value="<?php echo $subtotal.".00 LKR"; ?>"></td>
+						<td>Grand Total (LKR)</td>
+						<td><input type="hidden" id="grandtotal" readonly="" name="subtotal" value="<?php echo $subtotal; ?>"><input type="text" readonly="" id="grandtotal2" name="subtotal2" value="<?php echo $subtotal; ?>"></td>
 					</tr>
 				</table>
 			</div>
 
 			<div class="placeorder">
-				<input type="submit" name="placeorder" value="Place Order" >
+				<input type="submit" class="placeorder-submit" id="placeorder-special" name="placeorder" value="Place Order" >
+				</form>
+
+				<div class="payhere" id="payhere-specail">
+
+					<form method="post" target="_blank" action="https://sandbox.payhere.lk/pay/checkout">   
+					    <input type="hidden" name="merchant_id" value="1219951"> 
+					    <input type="hidden" name="return_url" value="http://sample.com/return">
+					    <input type="hidden" name="cancel_url" value="http://sample.com/cancel">
+					    <input type="hidden" name="notify_url" value="http://sample.com/notify">  
+
+					    <input type="hidden" name="order_id" value="ItemNo12345">
+					    <input type="hidden" name="items" value="Special Order">
+					    <input type="hidden" name="currency" value="LKR">
+					    <input type="hidden" id="amount" name="amount" value="<?php echo $subtotal; ?>">  
+
+					    <input type="hidden" id="first_name_payhere" name="first_name" value="<?php if(isset($_SESSION['first_name']))echo $_SESSION['first_name'] ?>">
+					    <input type="hidden" id="last_name_payhere" name="last_name" value="<?php if(isset($_SESSION['last_name']))echo $_SESSION['last_name'] ?>">
+					    <input type="hidden" name="email" value="samanp@gmail.com">
+					    <input type="hidden" id="phone_payhere" name="phone" value="<?php if(isset($_SESSION['contact_number']))echo $_SESSION['contact_number'] ?>">
+					    <input type="hidden" id="address_payhere" name="address" value="<?php if(isset($_SESSION['address1']))echo $_SESSION['address1'] ?>">
+					    <input type="hidden" id="city_payhere" name="city" value="<?php if(isset($_SESSION['address2']))echo $_SESSION['address2'] ?>">
+					    <input type="hidden" name="country" value="Sri Lanka">
+
+						<button type="submit" onclick="showSubmit()"><img src="<?php echo BASEURL ?>/public/images/payhere.png"></button> 
+
+					</form> 
+				</div>
+
 			</div>
-		</form>
+		
 	</section>
 
 	<?php require_once('footer.php'); ?>

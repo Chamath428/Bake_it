@@ -21,14 +21,14 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$totalCompletedDeliveriesofDay=$this->deliveryPersonDeliveriesModel->countCompletedDeliveriesofDay();
 		$data[1]=$totalCompletedDeliveriesofDay;
 
-		$DeliveriesTable=$this->deliveryPersonDeliveriesModel -> getOngoingDeliveriesTable();
-		$data[2]=$DeliveriesTable;
+		$deliveriesTable=$this->deliveryPersonDeliveriesModel -> getOngoingDeliveriesTable();
+		$data[2]=$deliveriesTable;
 
 		$this->view("deliveryPerson/ongoingDeliveries",$data);
 	}
 
 	public function getDeliveryOverview(){
-		$data=array();
+	    $data=array();
 
 		$totalDeliveries = $this->deliveryPersonDeliveriesModel ->countTotalDeliveries();
 		$data[0] = $totalDeliveries;
@@ -38,16 +38,43 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 
 		$totalDeliveriesofMonth = $this -> deliveryPersonDeliveriesModel -> countTotalDeliveriesofMonth();
 		$data[2] = $totalDeliveriesofMonth;
+
+		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
+		$completedDeliveriesTable = $this -> deliveryPersonDeliveriesModel ->getCompletedDeliveriesTable($data['date']);
+		$data[3] = $completedDeliveriesTable;
 		
 		$this->view("deliveryPerson/deliveryHistory",$data);
 	}
 
-	public function getOrderDetails(){
-		$data=array();
+	public function getOrderDetails($order_id){
+		 $data=array();
 
-		$DeliverryDetails=$this->deliveryPersonDeliveriesModel ->getDeliverryDetails();
-		$data[0]=$DeliverryDetails;
-		
+	     $deliveryDetails=$this->deliveryPersonDeliveriesModel ->getDeliverryDetails($order_id);
+		 $data[0]=$deliveryDetails;
+
+		 if($deliveryDetails['customer_type']==1){
+
+			$registerdCustomerContactDetails = $this->deliveryPersonDeliveriesModel ->getRegisterdCustomerContactDetails($order_id);
+			$data[1] = $registerdCustomerContactDetails;
+		 }
+         else{
+            $unregisterdCustomerContactDetails = $this->deliveryPersonDeliveriesModel ->getUnregisterdCustomerContactDetails($order_id);
+		    $data[1] =  $unregisterdCustomerContactDetails;
+		 }
+
+		 $menuDetails = $this->deliveryPersonDeliveriesModel ->getMenuDetails($order_id);
+		 $data[2] = $menuDetails;
+         
+		 $subTotal = $this->deliveryPersonDeliveriesModel ->getSubTotal($order_id);
+		 $data[3] = $subTotal;
+		  
+		 $paidAmount = $this->deliveryPersonDeliveriesModel ->getPaidAmount($order_id);
+		 $data[4] = $paidAmount;
+         
+		 $tax = 100.00;
+		 $data['paid_amount'] = $_POST['paid_amount'];
+		 $balanceAmount = $data[3] +$tax - $data['paid_amount'];
+		 $data[5] = $balanceAmount;
 
 		$this->view("deliveryPerson/deliveryDetails",$data);
 	}
@@ -63,17 +90,21 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$reject_accepted_delivery = $this -> deliveryPersonDeliveriesModel -> updateAcceptedOrderStatus($order_id);
         $this->index();
 	}
-	public function getCompletedDeliveriesTable($order_id){
-
-		$data=array();
-
-		$CompletedDeliveriesTable=$this->deliveryPersonDeliveriesModel -> getCompletedDeliveriesTable($order_id);
-		$data[0]=$CompletedDeliveriesTable;
+	 public function getCompletedDeliveriesTable(){
+          
+		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
+		$completedDeliveriesTable = $this -> deliveryPersonDeliveriesModel ->getCompletedDeliveriesTable($data['date']);
+		$data[3] = $completedDeliveriesTable;
 
 		$this->view("deliveryPerson/deliveryHistory",$data);
-	}
+	 }
+	 public function completeDelivery($order_id){
 
-		
+		// $data['order_status'] = $_POST['complete_delivery'];
+		$this -> deliveryPersonDeliveriesModel -> updateOrderStatusAsCompleted($order_id);
+
+	 }
+	
 	
 }
 

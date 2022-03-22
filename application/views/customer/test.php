@@ -1,35 +1,26 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-</head>
-<body>
-	<form id="confirmInfo" action="bookingsuccess.html">
-  <p>Number of tickets :<input id="num" type="number" oninput="calc('ticket-price')" /> </p>
-  <p>Price Per ticket : $<input type="hidden" name="" id="ticket-price" value="7">7</span></p>
-  <p>Booking fee : $2</p>
-  <p>Subtotal : <b><input type="text" name="" id="total"></input></b></p>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Star Rating Form | CodingNepal</title>
+    <link rel="stylesheet" href="<?php echo BASEURL?>/public/css/customer/customer-orderRate.css">
+    <script src="<?php echo BASEURL ?>/public/js/customer/orderRate.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
 
-
-  <form name="myform" action="bookingsuccess.php" method="post">
-    <button>Book</button>
-  </form>
-  <button>Cancel</button>
-</form>
-</body>
-
-<script type="text/javascript">
-	function calc(name) 
-{
-  var price = document.getElementById('ticket-price').value;
-  var noTickets = document.getElementById("num").value;
-  var total = parseFloat(price) * noTickets
-  if (!isNaN(total))
-    document.getElementById("total").value = total
+ <script type="text/javascript">
+    
+    function changeValues() {
+  documentValue=document.getElementById("input1").value;
+  document.getElementById("input2").value=documentValue;
 }
 
-</script>
+ </script>
 
+  <body>
+    
+    <input type="text" id="input1" name="input1" value="" oninput="changeValues('input1')">
+    <input type="text" id="input2" name="input2" value="">
+
+  </body>
 </html>
