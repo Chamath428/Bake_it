@@ -43,5 +43,18 @@ class deliveryPersonReviewsModel extends database{
       }
       return $deliveryReviewsTable;
    }
+   public function countOfRatings(){
+    $sql3 = "SELECT 
+               SUM(rating)
+             FROM
+               ratings_and_reviews
+             WHERE 
+               delivery_person_id = ".$_SESSION['staff_id'];
+    $res3=mysqli_query($this->db,$sql3) or die('3->'.mysqli_error($this->db)); 
+    $row3=mysqli_fetch_assoc($res3);
+    $totalRatings=$row3['SUM(rating)'];   
+    return  $totalRatings;
+}
+
 }
 ?>

@@ -28,7 +28,7 @@
         <div class="row-container">
              <div class="col">
               <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-              <?php
+              <!-- ?php
                 echo "<input type='hidden' id= 'jan' value = $data[0]['jan'] >";
                 echo "<input type='hidden' id= 'feb' value = $data[0]['feb'] >";
                 echo "<input type='hidden' id= 'march' value = $data[0]['march'] >";
@@ -43,7 +43,7 @@
                 echo "<input type='hidden' id= 'dec' value = $data[0]['dec'] >";
 
 
-                ?>
+                ?> -->
              </div>
              <div class="col">
               <canvas id="myChart2" style="width:100%;max-width:700px"></canvas> 

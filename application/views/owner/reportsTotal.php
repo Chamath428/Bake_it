@@ -48,7 +48,6 @@
                                                 <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" />
                                           </div>
                                           <input type="submit" name="dailyReport" value="Generate" required="">
-                                          <p id="demo"></p>
                                     </form>
                               </div>
 

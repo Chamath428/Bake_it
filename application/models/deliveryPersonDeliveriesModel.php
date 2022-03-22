@@ -84,8 +84,8 @@ class deliveryPersonDeliveriesModel extends database{
                FROM 
                   order_details JOIN customer ON order_details.customer_id = customer.customer_id 
                WHERE 
-                  order_details.delivery_person_id= ".$_SESSION['staff_id']."  AND (order_status = 2 OR order_status = 3) "; //AND needed_date = curdate()
-
+                  order_details.delivery_person_id= ".$_SESSION['staff_id']."  AND (order_status = 2 OR order_status = 3)  AND needed_date = curdate()"; 
+               //is needed availability in WHERE closure
       $res6=mysqli_query($this->db,$sql6) or die('6->'.mysqli_error($this->db));
       while($row6=mysqli_fetch_assoc($res6)){
           $data['order_id']=$row6['order_id'];
@@ -210,7 +210,7 @@ class deliveryPersonDeliveriesModel extends database{
                      order_items.item_id,
                      order_items.quantity,
                      menu.item_name,
-                     menu.price
+                     menu.price*order_items.quantity
                 FROM 
                      order_details JOIN order_items ON order_details.order_id = order_items.order_id JOIN menu ON (order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id) 
                 WHERE 
@@ -221,14 +221,76 @@ class deliveryPersonDeliveriesModel extends database{
           $data['item_id']=$row14['item_id'];
           $data['item_name']=$row14['item_name'];
           $data['quantity']=$row14['quantity'];
-          $data['price']=$row14['price'];
+          $data['price']=$row14['menu.price*order_items.quantity'];
           $menuItemDetails[$i]=$data;
           $i++;
       }
       return $menuItemDetails;     
    }
 
-   public function getCompletedDeliveriesTable($order_id){}
+   public function getCompletedDeliveriesTable($date){
+      $completedDeliveryDetailsTable=array();
+      $i=0;
+      $sql15 ="SELECT 
+                  order_details.order_id, 
+                  order_details.needed_time,  
+                  customer.address1, 
+                  customer.address2, 
+                  customer.address3, 
+                  order_details.total_amount
+               FROM 
+                  order_details JOIN customer ON order_details.customer_id = customer.customer_id 
+               WHERE 
+                  order_details.delivery_person_id= ".$_SESSION['staff_id']."  AND order_status = 6 AND order_details.needed_date = "."$date"." "; 
+
+      $res15=mysqli_query($this->db,$sql15) or die('15->'.mysqli_error($this->db));
+      while($row15=mysqli_fetch_assoc($res15)){
+          $data['order_id']=$row15['order_id'];
+          $data['needed_time']=$row15['needed_time'];
+          $data['address1']=$row15['address1'];
+          $data['address2']=$row15['address2'];
+          $data['address3']=$row15['address3'];
+          $data['total_amount']=$row15['total_amount'];
+          $completedDeliveryDetailsTable[$i]=$data;
+          $i++;
+      }
+      return $completedDeliveryDetailsTable;
+   }
+   public function getSubTotal($order_id){
+      $sql16 = "SELECT 
+                   total_amount
+                FROM 
+                   order_details  
+                WHERE 
+                   order_id = ".$order_id."";
+      $res16=mysqli_query($this->db,$sql16) or die('16->'.mysqli_error($this->db)); 
+      $row16=mysqli_fetch_assoc($res16);
+      $subTotal=$row16['total_amount'];   
+      return  $subTotal;     
+   }
+   public function getPaidAmount($order_id){
+      $sql17 = "SELECT 
+                   paid_amount
+                FROM 
+                   order_details  
+                WHERE 
+                   order_id = ".$order_id."";
+      $res17=mysqli_query($this->db,$sql17) or die('17->'.mysqli_error($this->db)); 
+      $row17=mysqli_fetch_assoc($res17);
+      $paidAmount=$row17['paid_amount'];   
+      return  $paidAmount;     
+   }
+   public function updateOrderStatusAsCompleted($order_id){
+      $sql18 = "UPDATE  
+                    order_details 
+               SET
+                    order_status = 6 
+               WHERE 
+                    order_id = ".$order_id."";
+      $res18=mysqli_query($this->db,$sql18) or die('18->'.mysqli_error($this->db));
+   }
+
+
 }    
 
 

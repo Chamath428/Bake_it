@@ -43,7 +43,13 @@
 				</tr>
 				<tr>
 					<td>Order Status</td>
-					<td><?php echo $data[0]['order_status'] ?></td>
+					<td>
+					    <?php if($data[0]['order_status']==3){
+							echo " Accepted the order";
+						}elseif($data[0]['order_status']==6){
+							echo "Completed the order";
+						}?> 
+					</td>
 				</tr>
 				<tr>
 					<td>Location</td>
@@ -51,7 +57,13 @@
 				</tr>
 				<tr>
 					<td>Payment</td>
-					<td><?php echo $data[0]['payment_type'] ?></td>
+					<td>
+						<?php if($data[0]['payment_type']==2){
+							echo "Card Payment";
+						}else{
+							echo "Cash Payment";
+						}?>
+					</td>
 				</tr>
 			</table>
 		</div>
@@ -60,55 +72,43 @@
 			<div class="desktop-cart">
 			<div class="cart-containter">
 				<table>
-					<tr>
-						<th>Product</th>
-						<th>Price</th>
-						<th>Quantity</th>
-						<th>Total</th>
-					</tr>
-
-					<tr>
+					<thead>
+						<tr>
+							<th>Product</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+				    <tbody>
+					<?php
+                        $i=0;
+                        foreach($data[2] as $key => $delivery) {?>
+						<tr>
 						<td>
 							<div class="product-container">
 								<img src="<?php echo BASEURL ?>/public/images/b1.png">
 								<div>
-									<p><?php echo $data[2]['item_name'] ?></p>
+									<p><?php echo $delivery['item_name'] ?></p>
 								</div>
 							</div>
 						</td>
 						<td>
-							<p><?php echo $data[2]['price'] ?></p>
+							<p><?php echo $delivery['price'] ?></p>
 						</td>
 						<td>
 							<div>
-	 							<input type="text" name="" value="<?php echo $data[2]['quantity'] ?>" readonly="">
+	 							<input type="text" name="" value="<?php echo $delivery['quantity'] ?>" readonly="">
 	 						</div>
 						</td>
 						<td>
-							<p><?php echo $data[2]['price']*$data[2]['quantity'] ?></p>
+							<p><?php echo $delivery['price']?></p>
 						</td>
 					</tr>
-					<!-- <tr>
-						<td>
-							<div class="product-container">
-								<img src="?php echo BASEURL ?>/public/images/b1.png">
-								<div>
-									<p>Cheese Burger</p>
-								</div>
-							</div>
-						</td>
-						<td>
-							<p>150.00LKR</p>
-						</td>
-						<td>
-							<div>
-	 							<input type="text" name="" value="1" readonly="">
-	 						</div>
-						</td>
-						<td>
-							<p>150.00LKR</p>
-						</td>
-					</tr> -->
+					<?php
+                        $i++;
+                    }?> 
+					</tbody>
 				</table>
 			</div>
 		</div>
@@ -116,34 +116,39 @@
 		<div class="mobile-cart">
 			<div class="cart-containterm">
  			<table>
+			 <?php
+                        $i=0;
+                        foreach($data[2] as $key => $delivery) {?>
  				<tr>
  					<td>
  						<div class="product-image">
  							<img src="<?php echo BASEURL ?>/public/images/b1.png" width="40px" height="40px">
  						</div>
  					</td>
- 					<td></td>
  				</tr>
  				<tr>
  					<td>Product</td>
- 					<td><?php echo $data[2]['item_name'] ?></td>
+ 					<td><?php echo $delivery['item_name'] ?></td>
  				</tr>
  				<tr>
  					<td>Price</td>
- 					<td><?php echo $data[2]['price'] ?></td>
+ 					<td><?php echo $delivery['price'] ?></td>
  				</tr>
  				<tr>
  					<td>Quantity</td>
  					<td>
  						<div>
- 							<input type="text" name="" value="<?php echo $data[2]['quantity'] ?>" readonly="">
+						    <input type="text" name="" value="<?php echo $delivery['quantity'] ?>" readonly="">
  						</div>
  					</td>
  				</tr>
  				<tr>
  					<td>Total</td>
- 					<td><?php echo $data[2]['price']*$data[2]['quantity'] ?></td>
+ 					<td><?php echo $delivery['price']?></td>
  				</tr>
+				 <?php
+                        $i++;
+                }?> 
  			</table>
  		</div>
 		</div>
@@ -152,23 +157,44 @@
 		<div class="total-container">
 			<table>
 				<tr>
-					<td>Subtotal</td>
-					<td>300.00 LKR</td>
+					<td>Sub Total</td>
+					<td><?php echo $data[3]?>LKR</td>
+				</tr>
+				<tr>
+					<td>Advanced Payment</td>
+					<td><?php echo $data[4]?>LKR</td>
 				</tr>
 				<tr>
 					<td>Delivery Tax</td>
-					<td>100.00 LKR</td>
+					<td>100LKR</td>
 				</tr>
+				<?php $tax = 100.00?>
 				<tr>
 					<td>Grand Total</td>
-					<td>400.00 LKR</td>
+					<td><?php echo $data[3]+$data[4] + $tax?>LKR</td>
 				</tr>
 			</table>
 		</div>
+		<div class="paid-container">
+		        <form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/getOrderDetails'; ?>" method="POST">
+					<table>
+						<tr>
+							<td>Paid Amount</td>
+							<td><input type="number" name="paid_amount" min="0.00"></td>
+						</tr>
+						<input type="submit" name="paid_amount" value="Enter paid amount">
+						<tr>
+							<td>Balance</td>
+							<td><?php echo $data[5]?>LKR</td>
+						</tr>
+					</table>
+				</form>
+		</div>
 
 		<div class="buttons">
-			<!-- <button>Rate Order</button> -->
-			<button onclick="complete()"><a href="">Complete</a></button>
+		    <form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/completeDelivery'; ?>" method="POST">
+				<button type="submit" name="availability" value="6">Complete Delivery</button>
+			</form>
 		</div>
 
 	</section>
