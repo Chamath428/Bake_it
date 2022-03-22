@@ -280,7 +280,8 @@
             $sql11 = "UPDATE 
                         order_details 
                     SET
-                        delivery_person_id = ".$delivery_person_id." 
+                        delivery_person_id = ".$delivery_person_id.",
+                        order_status = 2 
                     WHERE 
                         order_id= " .$order_id. "";
                         
