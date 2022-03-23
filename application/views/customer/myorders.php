@@ -57,9 +57,12 @@
 								echo "Cooking Completed";
 								break;
 							case '6':
-								echo "Declined by the shop";
+								echo "Completed";
 								break;
 							case '7':
+								echo "Declined by the shop";
+								break;
+							case '8':
 								echo "Cancled";
 								break;
 							
@@ -97,7 +100,7 @@
 								echo "Pending to accept";
 								break;
 							case '2':
-								echo "Accepted";
+								echo "Cooking Completed";
 								break;
 							case '3':
 								echo "On the way";
@@ -109,9 +112,12 @@
 								echo "Cooking Completed";
 								break;
 							case '6':
-								echo "Declined by the shop";
+								echo "Completed";
 								break;
 							case '7':
+								echo "Declined by the shop";
+								break;
+							case '8':
 								echo "Cancled";
 								break;
 							
