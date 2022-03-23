@@ -14,7 +14,7 @@ class deliveryPersonDeliveriesModel extends database
                  FROM
                     order_details
                  WHERE 
-                    delivery_person_id = " . $_SESSION['staff_id'] . " AND (needed_date = curdate() AND order_status = 3) OR (needed_date = curdate() AND order_status = 6) ";
+                    delivery_person_id = " . $_SESSION['staff_id'] . " AND (order_status = 2 OR order_status = 3) ";
       $res1 = mysqli_query($this->db, $sql1) or die('1->' . mysqli_error($this->db));
       $row1 = mysqli_fetch_assoc($res1);
       $totalDeliveriesofDay = $row1['COUNT(delivery_person_id)'];
@@ -90,7 +90,7 @@ class deliveryPersonDeliveriesModel extends database
                FROM 
                   order_details JOIN customer ON order_details.customer_id = customer.customer_id 
                WHERE 
-                  order_details.delivery_person_id= " . $_SESSION['staff_id'] . "  AND (order_status = 2 OR order_status = 3)  AND needed_date = curdate()";
+                  order_details.delivery_person_id= " . $_SESSION['staff_id'] . "  AND (order_status = 2 OR order_status = 3)";
       //is needed availability in WHERE closure
       $res6 = mysqli_query($this->db, $sql6) or die('6->' . mysqli_error($this->db));
       while ($row6 = mysqli_fetch_assoc($res6)) {
