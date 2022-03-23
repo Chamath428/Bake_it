@@ -45,7 +45,7 @@
                     </div>
                     <div class="col">
                         <h4>Total Ratings</h4>
-                        <h1>35</h1>
+                        <h1><?php echo $data[1]?></h1>
                     </div>
                     <div class="col">
                         <h4>Total Ratings</h4>

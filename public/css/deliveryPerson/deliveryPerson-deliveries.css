@@ -102,6 +102,19 @@ input[type="submit"] {
     cursor: pointer;
     font-weight: bold;
 }
+input[type="number"] {
+    /* width:min-content; */
+    /* margin-left: 60%; */
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid rgb(255,138,0);
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    font-weight: bold;
+}
+
 #Ongoing-Deliveries tbody tr .far{
    color: black;
    font-size: 20px;
@@ -215,7 +228,9 @@ button:hover a{
 	justify-items: end;
     margin-left: 285%; 
 }
-
+.accept_button_after_checking{
+    margin-left: 30px;
+}
 .radio-box{
 	width: 80%;
 	/*margin-left: 15rem;*/

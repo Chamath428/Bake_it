@@ -60,7 +60,7 @@
                     <th>Price per item</th>
                     <th>No of Saled Items</th>
                     <th>Total Income</th>
-                    <th>Percentage</th>
+                    <!-- <th>Percentage</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -73,7 +73,7 @@
                         <td><?php echo $salesReport['price'];?></td>
                         <td><?php echo $salesReport['quantity'];?></td>
                         <td><?php echo $salesReport['income'];?></td>
-                        <td><?php echo $salesReport['income'];?></td>
+                        <!-- <td>?php echo $salesReport['income'];?></td> -->
                     </tr>
                     <?php
                         $i++;
