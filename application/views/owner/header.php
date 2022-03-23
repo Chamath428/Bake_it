@@ -66,11 +66,26 @@
             <div class="bake-it" id="bakeId">
                 <span class="bakeit">Bake_it</span>
            </div>
-            <div class="header-icons"> 
-                <span class="user-icon"><a href="<?php echo BASEURL."/profileEmployeeController"; ?>"><i id="user" class="fas fa-user"></i></a>You logged in as : Owner</span>
-                <span class="bell-icon"><a href="#"><i class="fas fa-bell"></i></a></span>
-                <span class ="sign-out"><a href="<?php echo BASEURL.'/loginController/logout' ?>"><i class="fas fa-sign-out-alt"></i>Logout</a></span>
-             </div>
+           <div class="header-icons">
+        <span class="user-icon"><a href="<?php echo BASEURL . '/profileEmployeeController' ?>"><i id="user" class="fas fa-user"></i></a></span>
+        <span class="text">You logged in as : Owner</span>
+        <span class="bell-icon" onclick="toggleNotifi()">
+            <a href="">
+                <i class="fas fa-bell">
+                    <!-- ?php include "notificationPanel.php" ?> -->
+                </i> 
+            </a>
+        </span>
+        <span class="sign-out"><a href="<?php echo BASEURL . '/loginController/logout' ?>"><i class="fas fa-sign-out-alt"></i></a></span>
+        <!-- <span class="text"><a href="#">Logout</a></span> -->
+        <span class="side-toggle">
+            <a href="#" class="icon" onclick="sidetoggle()">
+                <!-- <a href="" class="icon"> -->
+                <i class="fa fa-bars"></i>
+            </a>
+        </span>
+        <span class="text"><a href="<?php echo BASEURL . '/loginController/logout' ?>">Logout</a></span>
+    </div>
         </header>
 
  

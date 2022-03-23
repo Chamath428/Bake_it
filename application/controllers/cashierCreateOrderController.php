@@ -40,17 +40,22 @@
 			$orderDetails['total_amount']=$_POST['total-amount'];
 			$orderDetails['paid_amount']=$_POST['paid-amount'];
 			$orderDetails['menu_id']=1;
-			$orderDetails['cashier_id']=37;
+			$orderDetails['cashier_id']=$_SESSION['staff_id'];
 			$orderDetails['order_type']=1;
-			$orderDetails['delivery_type']=2;
+			$orderDetails['delivery_type']=1;
 			$orderDetails['payment_type']=$_POST['payment_type'];
 			$orderDetails['order_status']=6;
 
 			$order_id=$this->cashierCreateOrderModel->placeQuickOrder($orderDetails);
 			$this->cashierCreateOrderModel->insertOrderItems($order_id,$orderDetails['menu_id'],$orderItems);
 			$this->cashierCreateOrderModel->createBill($order_id,$orderDetails['paid_amount'],$orderDetails['cashier_id']);
-			$this->redirect("");
 
+			$orderDetails['order_id']=$order_id;
+			$forwardData[1]=$orderDetails;
+			$forwardData[2]=$this->cashierCreateOrderModel->getFoodInfo($orderItems);
+
+			$this->view("cashier/quickInvoice",$forwardData);
+			 
 		} 
 
 		public function createSpecialOrderCashier(){
@@ -88,14 +93,20 @@
 			$orderDetails['payment_type']=$_POST['payment_type'];
 			$orderDetails['order_status']=2;
 			$orderDetails['is_advance']=$_POST['is_advance'];
-			$orderDetails['total_amount']=$_POST['total-amount'];
+			$orderDetails['total_amount']=$_POST['grand-amount'];
 			$orderDetails['paid_amount']=$_POST['paid-amount'];
 			
 			$orderDetails['customer_id']=$this->cashierCreateOrderModel->getCustomerId($customerDetails);
 			$order_id=$this->cashierCreateOrderModel->placeSpecialOrder($orderDetails);
 			$this->cashierCreateOrderModel->insertOrderItems($order_id,$orderDetails['menu_id'],$orderItems);
 			$this->cashierCreateOrderModel->createBill($order_id,$orderDetails['paid_amount'],$orderDetails['cashier_id']);
-			$this->redirect("");
+			// $this->redirect("");
+
+			$orderDetails['order_id']=$order_id;
+			$forwardData[1]=$orderDetails;
+			$forwardData[2]=$this->cashierCreateOrderModel->getFoodInfo($orderItems);
+
+			$this->view("cashier/quickInvoice",$forwardData);
 		}
 
 	}

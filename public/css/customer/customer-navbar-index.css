@@ -180,6 +180,22 @@ nav{
     color: rgb(255, 137, 0);
 }
 
+.user-icons a span {
+    font-size: 12px;
+    line-height: 14px;
+    background: transparent;
+    padding: 2px;
+    border: 2px solid rgb(256, 138, 0);
+    border-radius: 50%;
+    /*position: absolute;*/
+    /*top: -1px;*/
+    /*left: 13px;*/
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    }
+
 @media(max-width: 1440px){
     nav{
         width: 90%;

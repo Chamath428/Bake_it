@@ -60,7 +60,7 @@
 					<p>Don't Have an Account? <a href="<?php echo BASEURL.'/signupController' ?>">Sign Up</a></p>
 				</div>
 				<div class="input-box">
-					<a href="">Forget Password</a>
+					<a href="<?php echo BASEURL."/loginController/getOtpPage" ?>">Forget Password</a>
 				</div>
 			</form>
 			</div>

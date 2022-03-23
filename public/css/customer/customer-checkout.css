@@ -340,7 +340,7 @@ section{
 #payment-method{
 	width: 40%;
 }
-#payment-method .payment-image{
+/*#payment-method .payment-image{
 	width: 10%;
 	display: none;
 }
@@ -349,6 +349,8 @@ section{
 	height: 40px;
 	object-fit: fit;
 }
+*/
+
 
 #registered-payment{
 	width: 100%;
@@ -437,6 +439,8 @@ section{
 	color: white;
 
 }
+
+
 /*Total container ends*/
 
 /*Place order starts*/
@@ -447,6 +451,38 @@ section{
 	justify-content: flex-end;
 	margin-bottom: 2rem;
 }
+
+.placeorder .payhere{
+	width: 10%;
+	display: none;
+	float: right;
+	justify-content: flex-end;
+}
+
+
+.placeorder .payhere button img{
+	width: 80px;
+	height: 20px;
+	object-fit: fit;
+
+}
+
+button[type="submit"]{
+	font-size: 1.4rem;
+	font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	transition: 0.3s ease-in-out;
+	background-color: transparent;
+	border: 2px solid rgb(255, 138, 0);
+}
+
+button[type="submit"]:hover{
+	border: 3px solid rgb(255, 138, 0);
+}
+
 
 section input[type="submit"]{
 	font-size: 1.4rem;
@@ -499,3 +535,16 @@ section input[type="submit"]:hover{
 }
 
 /*Branch select ends*/
+
+
+/*Late css fot specail cehckout starts*/
+
+#placeorder-special{
+	display: none;
+}
+
+#payhere-specail{
+	display: flex;
+}
+
+/*Late css for special checkout ends*/

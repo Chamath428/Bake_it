@@ -53,13 +53,68 @@
     color: #000000;
 }
 .delivery-body .cal-table{
-    margin-top: 50px;
+    /* margin-top: 50px;
     margin-left: 100px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: flex-start; */
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 150px;
+    margin-left: 100px;
 }
+
+.delivery-body .cal-table .delivery-calander{
+    display: flex;
+    flex-direction: row;
+    /* width: 50%; */
+    background-color: white;
+    border: none;
+    padding: 10px 0;
+    outline: none;
+}
+.delivery-body .cal-table .delivery-calander .selectDate{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border-bottom: 1px solid rgb(255,138,0);
+    font-weight: 500;
+    color: rgb(103, 107, 107);
+}
+input {
+    width: 100%;
+    background-color: white;
+    border: none;
+    padding: 10px 0;
+    outline: none;
+}
+input[type="submit"] {
+    width: fit-content;
+    margin-left: 60%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid rgb(255,138,0);
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-weight: bold;
+}
+input[type="number"] {
+    /* width:min-content; */
+    /* margin-left: 60%; */
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid rgb(255,138,0);
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    font-weight: bold;
+}
+
 #Ongoing-Deliveries tbody tr .far{
    color: black;
    font-size: 20px;
@@ -173,7 +228,9 @@ button:hover a{
 	justify-items: end;
     margin-left: 285%; 
 }
-
+.accept_button_after_checking{
+    margin-left: 30px;
+}
 .radio-box{
 	width: 80%;
 	/*margin-left: 15rem;*/
@@ -264,9 +321,11 @@ button:hover a{
 #cash-topay{
     display: none;
 }
+
+
 @media(max-width:787px){
     .delivery-body .del-topic{
-        margin-left: 76px;
+        margin-left: 15px;
         font-size: 18px;
     }
     .overview-body .del-topic{
@@ -305,8 +364,8 @@ button:hover a{
     .cal-table .delivery-calander{
         padding: 20px;
     }
-    .overview-body .row .col{
-        /* width: 88%; */
+    /* .overview-body .row .col{
+        /* width: 88%; 
         margin-left: 40px;
-    }
+    } */
 }

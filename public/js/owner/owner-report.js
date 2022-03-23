@@ -1,21 +1,15 @@
-function showSelection1(){
-    document.getElementById('time1').style.display ="grid";
-}
-function showSelection2(){
-    document.getElementById('time2').style.display ="grid";
-}
-function showSelection3(){
-    document.getElementById('time3').style.display ="grid";
-}
-function notshowSelection1(){
-    document.getElementById('time2').style.display ="none";
-    document.getElementById('time3').style.display ="none";
-}
-function notshowSelection2(){
-    document.getElementById('time1').style.display ="none";
-    document.getElementById('time3').style.display ="none";
-}
-function notshowSelection3(){
-    document.getElementById('time1').style.display ="none";
-    document.getElementById('time2').style.display ="none";
-}
+function getBranchId() {
+  var branchid=parseFloat(document.getElementById("branchId").value);
+    document.getElementById("branchId1").value=branchid;
+    // document.getElementById("demo").innerHTML = daily;
+    document.getElementById("branchId2").value=branchid;
+    document.getElementById("branchId3").value=branchid;
+
+  }
+  
+  function getCategoryId() {
+    var categoryid=parseFloat(document.getElementById("categoryId").value);
+      document.getElementById("categoryId1").value=categoryid;
+      document.getElementById("categoryId2").value=categoryid;
+      document.getElementById("categoryId3").value=categoryid;
+  }

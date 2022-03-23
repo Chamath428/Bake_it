@@ -7,34 +7,20 @@
     <script src="<?php echo BASEURL ?>/public/js/customer/orderRate.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
-  <body>
-    <div class="rate-container">
-      <div class="post">
-        <div class="text">Thanks for rating us!</div>
-        <div class="edit">EDIT</div>
-      </div>
-      <div class="star-widget">
-        <input type="radio" name="rate" id="rate-5">
-        <label for="rate-5" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-4">
-        <label for="rate-4" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-3">
-        <label for="rate-3" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-2">
-        <label for="rate-2" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-1">
-        <label for="rate-1" class="fas fa-star"></label>
-        <form>
-          <header></header>
-          <div class="textarea">
-            <textarea cols="30" placeholder="Describe your experience.."></textarea>
-          </div>
-          <div class="btn">
-            <button type="submit">Post</button>
-          </div>
-        </form>
-      </div>
-    </div>
 
-<!--   </body>
-</html> -->
+ <script type="text/javascript">
+    
+    function changeValues() {
+  documentValue=document.getElementById("input1").value;
+  document.getElementById("input2").value=documentValue;
+}
+
+ </script>
+
+  <body>
+    
+    <input type="text" id="input1" name="input1" value="" oninput="changeValues('input1')">
+    <input type="text" id="input2" name="input2" value="">
+
+  </body>
+</html>

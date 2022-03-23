@@ -11,7 +11,7 @@
             <li>
                 <a href="<?php echo BASEURL . "/bakeryManagerOrderController" ?>" class="hrf">
                     <span class="icon"><i class="fas fa-spinner"></i></span>
-                    <span class="title">Pending Orders</span>
+                    <span class="title">Ongoing Orders</span>
                 </a>
             </li>
             <li>

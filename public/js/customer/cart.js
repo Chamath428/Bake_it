@@ -1,3 +1,4 @@
+
 var qucikcart = document.getElementById("quick-cart");
 var specialcart=document.getElementById("special-cart");
 var indicator=document.getElementsByClassName("indicator")[0];
@@ -47,6 +48,12 @@ function decrementValue(qin){
         value = isNaN(value) ? 0 : value;
         if (value>1) value--;
         document.getElementById(qin).value = value;
+
+        
+
+        
+
+
 }
 
 

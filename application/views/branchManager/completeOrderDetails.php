@@ -50,6 +50,7 @@
                     <table>
                       <?php
                       $i=0;
+                      $order_status = 0;
 
                       foreach($data[0] as $key => $basicOrderDetails){?> 
                             <tr> 
@@ -100,6 +101,7 @@
                             }?> 
                           <?php
                           $i++;
+                          $order_status=$basicOrderDetails['order_status'];
                           }?>
                         </table> 
                     </div>
@@ -163,7 +165,11 @@
               </table> 
              </div>
              <div class="btn-container">
+             <?php if($order_status!=7 and $receiving_method=1){?>
                <button class="btn" onclick="assign()">View Customer Rate</button>
+               <?php
+               }
+               ?>
              </div>
         </div>
     </div>

@@ -23,11 +23,11 @@
            <div class="row">
                 <div class="col">
                     <h4>Total Reviews</h4>
-                    <h1>25</h1>
+                    <h1><?php echo $data[0]?></h1>
                 </div>
                 <div class="col">
                     <h4>Total Ratings</h4>
-                    <h1>35</h1>
+                    <h1><?php echo $data[1]?></h1>
                 </div>
             </div>
             <h3 id="table-caption">Reviews Details</h3>
@@ -41,66 +41,33 @@
                    </tr>
                </thead>
                <tbody>
+                    <?php
+                        $i =0;
+                        foreach($data[2] as $key => $review) {?>
                    <tr>
-                       <td label="Date">01/09/2021</td>
-                       <td label="Order No">110</td>
-                       <td label="Review Description">You deliverd ontime.nice service</td>
+                       <td label="Date"><?php echo $review['needed_date'];?></td>
+                       <td label="Order No"><?php echo $review['order_id'];?></td>
+                       <td label="Review Description"><?php echo $review['review'];?></td>
                        <td label="Rated Stars">
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
+                       <?php
+                           $j = 0;
+                           for ($i=0; $i <$review['rating'] ; $i++){?> 
+                              <i id="fas-star" class="fas fa-star"></i>
+                           <?php
+                           }?> 
+                           <?php
+                           $blankStars = 5 - $review['rating'];
+                           for ($i=0; $i <$blankStars ; $i++) {?> 
+                              <i id="far-star" class="far fa-star"></i>
+                           <?php
+                           }?>
                         </td>
                    </tr>
-                   <tr>
-                       <td label="Date">02/09/2021</td>
-                       <td label="Order No">112</td>
-                       <td label="Review Description">disgusting service</td>
-                       <td label="Rated Stars">
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                        </td>
-                   </tr>
-                   <tr>
-                       <td label="Date">03/09/2021</td>
-                       <td label="Order No">113</td>
-                       <td label="Review Description">Good service</td>
-                       <td label="Rated Stars">
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                        </td>
-                   </tr>
-                   <tr>
-                       <td label="Date">04/09/2021</td>
-                       <td label="Order No">115</td>
-                       <td label="Review Description">Good service</td>
-                       <td label="Rated Stars">
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                        </td>
-                   </tr>
-                   <tr>
-                       <td label="Date">04/09/2021</td>
-                       <td label="Order No">116</td>
-                       <td label="Review Description">You deliverd ontime.nice service</td>
-                       <td label="Rated Stars">
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="fas-star" class="fas fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                           <i id="far-star" class="far fa-star"></i>
-                        </td>
-                   </tr>
+                   <?php
+                        $i++;
+                    }?> 
+               
+                 
                </tbody>
            </table> 
         </div>

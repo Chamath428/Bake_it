@@ -22,33 +22,39 @@
 
 	<?php require_once("header.php"); ?>
 
-	<div class="bgg rawMaterials-body" id="body">
+	<div class="bgg rawMaterials-body" id="body" onclick="defaultColse()">
 		<div class="middle-section">
-			<div class="category">
-				<h3>Select Category</h3>
-				<select placeholder="Select Category">
-					<option>Flour</option>
-					<option>Meat</option>
-					<option>Vegetabales</option>
 
-				</select>
-				<button class="get-btn">Get Item List</button>
+			<h3>Select Category</h3>
+			<form method="post" action="<?php echo BASEURL . '/rawMaterialController/getItemsRawMaterials'; ?>">
+				<div class="category">
+					<select name="categoryId" id="categoryId">
 
-			</div>
+						<?php foreach ($data[0] as $key => $value) {
+							if ($value['raw_category_id'] == $data[2]) { ?>
+								<option value="<?php echo  $value['raw_category_id']; ?>"><?php echo  $value['raw_category_name']; ?></option>
+						<?php  }
+						} ?>
 
-			<header class="topic">
-				<h3>Raw Materials</h3>
-			</header>
-			<article>
+						<?php foreach ($data[0] as $key => $value) {
+							if ($value['raw_category_id'] != $data[2]) { ?>
+								<option value="<?php echo  $value['raw_category_id']; ?>"><?php echo  $value['raw_category_name']; ?></option>
+						<?php  }
+						} ?>
 
 
-				<div class="search-container">
-					<form action="#">
-						<input type="text" placeholder="Search.." name="search" id="search" onkeyup="search_item();">
-						<button type="submit"><i class="fas fa-search"></i></button>
-					</form>
+					</select>
+					<button type="submit" class="get-btn">Get Item List</button>
 				</div>
+				<header class="topic">
+					<h3>Raw Materials</h3>
+				</header>
+				<div class="search-container">
 
+					<input type="text" placeholder="Search.." name="search" id="search" onkeyup="search_item();">
+					<button type="submit"><i class="fas fa-search"></i></button>
+
+				</div>
 				<table class="inventory">
 					<thead>
 						<tr>
@@ -61,49 +67,66 @@
 					</thead>
 				</table>
 				<div class="data-content-scroll">
-					<form method="post" action="<?php echo BASEURL . '/rawMaterialController/deleteRawMaterials'; ?>">
 
-						<table id="dataTable">
-							<tbody>
+					<table id="dataTable">
+						<tbody>
 
-								<?php foreach ($data as $key => $value) { ?>
-									<tr>
-
-
-										<!-- <td><input type="checkbox" id="Check-box" name='check-name[]'></td> -->
-										<td><input name="chk_id[]" type="checkbox" class='chkbox' value="<?php echo $value['rawitem_id']; ?>" /></td>
-
-										<td><?php echo $value['rawitem_id']; ?></td>
-										<td><?php echo $value['rawitem_name']; ?></td>
-										<td><?php echo $value['stock_amount'] . " " . $value['measure_unit']; ?></td>
-
-									</tr>
-								<?php } ?>
-							</tbody>
-						</table>
+							<?php foreach ($data[1] as $key => $value) { ?>
+								<tr>
 
 
 
-						<!-- <input class="del-row" type="submit" value="Delete Item" name="delete-row"/> -->
-						<input id="submit" name="submit" type="submit" class="del-row" value="Delete" onclick="delFunction()" />
+									<td><input name="chk_id[]" type="checkbox" class='chkbox' value="<?php echo $value['rawitem_id']; ?>" onclick="myFunction(this.id)"  id="<?php echo $value['rawitem_id']; ?>"/></td>
 
+									<td><?php echo $value['rawitem_id']; ?></td>
+									<td><?php echo $value['rawitem_name']; ?></td>
+									<td><?php echo $value['stock_amount'] . " " . $value['measure_unit']; ?></td>
 
-
-					</form>
-
-					<input class="add" type="button" onclick="addRow('dataTable')" value="Add Item">
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
 				</div>
 
+			</form>
+
+			<article>
 
 
-				<!-- <button class="save-btn" onclick="itemSave()">Save</button> -->
+				<!-- <input class="del-row" type="submit" value="Delete Item" name="delete-row"/> -->
+				<input id="submit" name="submit" class="del-row" onclick="delFunction()"  value="Delete">
+
+				<!-- <input class="add" type="button" onclick="addRow('dataTable')" value="Add Item"> -->
+				<input class="add" type="button" onclick="popup()" value="Add Item">
+
+
 			</article>
 
 
 		</div>
 	</div>
 
+	<form method="post" action="<?php echo BASEURL . '/rawMaterialController/insertRawMaterials'; ?>">
+		<div class="addDatafrom" id="addDatafrom">
+			<div class="input-fileds">
+				<!-- <label for="itemId">Item Id</label>
+				<input type="number" name="itemId" id="itemId" placeholder="Enter Id"> -->
+
+				<label for="itemName">Item Name</label>
+				<input type="text" name="itemName" id="itemName" placeholder="Enter Name">
+				<label for="quantity">Measure</label>
+				<input type="number" name="quantity" id="quantity" placeholder="Enter Quantity">
+				<label for="measure_unit">Measure Unit</label>
+				<select name="measure_unit" id="measure_unit">
+					<option>Kg</option>
+					<option>l</option>
+					<option>Unit</option>
+				</select>
+				<a href="<?php echo BASEURL . "/rawMaterialController" ?>"><button class="save-btn-popup" onclick="closePopup()">Save</button>
+			</div>
+
+		</div>
+	</form>
+
 
 	<?php require_once("footer.php"); ?>
-
-	<!-- isset($_POST['thilina']) -->

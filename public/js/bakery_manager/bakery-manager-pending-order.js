@@ -1,7 +1,10 @@
+var checkBox_id;
+  function moreDetails(id) {
+    checkBox_id.push(id);
 
-  // function openNav() {
-  //   document.getElementById("mySidenav").style.width = "230px";
-  // }
+  location.replace("http://localhost/bakeit/bakeryManagerOrderController/pendingOrderDetailsBakery/" + id);
+
+  }
   
   // function closeNav() {
   //   document.getElementById("mySidenav").style.width = "0";

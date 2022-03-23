@@ -22,7 +22,7 @@
     
     <div class="delivery-body overview-body" id="body">
         <div class="del-topic">Deliveries Overview</div>
-        <div class="row history-row">
+        <div class="row">
             <div class="col">
                 <h4>Total Deliveiries</h4>
                 <h1><?php echo $data[0]?></h1>
@@ -37,9 +37,16 @@
             </div>
         </div>
         <div class="cal-table">
-        <div class="delivery-calander">
-            <?php include('calander.php'); ?>
+            <div class="delivery-calander">
+                <form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/getDeliveryHistoryDate/' . $data[3]['order_id']; ?>" method="POST">
+                <div class="selectDate">Select Date
+                    <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" />
+                </div>                 
+                <input type="submit" name="deliveryHistory" value="Get Delivery List" required="">
+                </form>
+            </div>
         </div> 
+      
         <!--table for Delivery History-->
         <div class="historytable">
             <!-- <h3 id="table-caption">Details of Overview</h3> -->
@@ -54,34 +61,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        $i=0;
+                        foreach($data[3] as $key => $delivery) {?>
                     <tr>
-                        <td label="Time">10.00 a.m</td>
-                        <td label="Order No">117</td>
-                        <td label="Location">Makandana Rd,Kesbewa</td>
-                        <td label="Payment">Rs.1450.00</td>
+                        <td label="Time"><?php echo $delivery['needed_time'];?></td>
+                        <td label="Order No"><?php echo $delivery['order_id'];?></td>
+                        <td label="Location">
+                            <?php echo $delivery['address1'];?>
+                            <?php echo $delivery['address2'];?>
+                            <?php echo $delivery['address3'];?>
+                        </td>
+                        <td label="Payment"><?php echo $delivery['total_amount'];?></td>
                         <td class="click more-details"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
                     </tr>
-                    <tr>
-                        <td label="Time">10.00 a.m</td>
-                        <td label="Order No">118</td>
-                        <td label="Location">Makandana Rd,Kesbewa</td>
-                        <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
-                    </tr>
-                    <tr>
-                        <td label="Time">10.00 a.m</td>
-                        <td label="Order No">213</td>
-                        <td label="Location">Makandana Rd,Kesbewa</td>
-                        <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
-                    </tr>
-                    <tr>
-                        <td label="Time">10.00 a.m</td>
-                        <td label="Order No">214</td>
-                        <td label="Location">Makandana Rd,Kesbewa</td>
-                        <td label="Payment">Rs.1450.00</td>
-                        <td class="click more-details"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>"><button>More details</button></a></td>
-                    </tr>
+                    <?php
+                        $i++;
+                    }?> 
+                   
                 </tbody>
             </table>
             </div>

@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo BASEURL . "/deliveryReviewsController"; ?>" class="hrf">
+                <a href="<?php echo BASEURL . "/deliveryPersonReviewsController"; ?>" class="hrf">
                     <span class="icon"><i class="fas fa-star"></i></span>
                     <span class="title">Reviews</span>
                 </a>
