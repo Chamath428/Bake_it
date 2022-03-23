@@ -72,39 +72,7 @@ new Chart("myChart2", {
    }
   }
 });
-var x3Values = ["Pastry", "Cakes", "Doughnuts","Muffins","Snacks","Beverages"];
-var y3Values = [55, 150, 44, 80, 75, 90];
-var barColors = ["red","orange","brown","	#800080","#800000","#daa520"];
 
-new Chart("myChart3", {
-  type: "bar",
-  data: {
-    labels: x3Values,
-    datasets: [{
-      backgroundColor: barColors,
-      data: y3Values
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "Branch Sales for the month"
-    },
-    scales: {
-        xAxes: [{
-           gridLines: {
-              display: false
-           }
-        }],
-        yAxes: [{
-           gridLines: {
-              display: false
-           }
-        }]
-   }
-  }
-});
 
 var x4Values = ["Choclate Cakes", "Butter Cakes", "Ribbon Cakes","Birthday Cakes","Coffee Cakes","Marbel Cakes","Fruit Cakes"];
 var y4Values = [55, 90, 44, 30, 16, 32, 70];
@@ -145,6 +113,47 @@ function getDetails(){
           console.log(obj)
           //obj[0].order_id
           //data
+          var categoryName = [];
+          var totalQuantity =[];  
+          for(i=0; i<obj[1].length; i++){
+            categoryName.push(obj[1][i].category_name);
+            totalQuantity.push(obj[1][i].total_quantity);
+          }
+          alert(categoryName)
+    
+          var x3Values = categoryName;
+          var y3Values = totalQuantity;
+          var barColors = ["red","orange","brown","	#800080","#800000","#daa520"];
+
+          new Chart("myChart3", {
+            type: "bar",
+            data: {
+              labels: x3Values,
+              datasets: [{
+                backgroundColor: barColors,
+                data: y3Values
+              }]
+            },
+            options: {
+              legend: {display: false},
+              title: {
+                display: true,
+                text: "Branch Sales for the month"
+              },
+              scales: {
+                  xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                  }],
+                  yAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                  }]
+            }
+            }
+          });
       }
   }
   

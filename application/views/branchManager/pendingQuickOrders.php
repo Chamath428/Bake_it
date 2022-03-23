@@ -59,7 +59,7 @@
 
                             <td><?php echo $quickOrder['placed_date_and_time'];?></td>
 
-                            <td><?php if ($quickOrder['receiving_method'] == 1){echo "Home Delivery";} else {echo "Pick From Shop";}?></td>
+                            <td><?php if ($quickOrder['receiving_method'] == 2){echo "Home Delivery";} else {echo "Pick From Shop";}?></td>
 
                             <td><?php if($quickOrder['order_status'] == 1 ){echo "Order Accepted";}
                             if($quickOrder['order_status'] == 2 ){echo "Order Accepted";}

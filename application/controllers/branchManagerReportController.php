@@ -19,9 +19,11 @@ class branchManagerReportController extends bakeItFramework
 	}
 
 	public function getdetails(){
+		$categorylist=$this->branchManagerReportModel->getCategories();
+		$data[0]=$categorylist;
 		$branchSalesoftheMonth =$this->branchManagerReportModel->getBranchSalesoftheMonth();
-		$data[0]=$branchSalesoftheMonth;
-		echo json_encode($branchSalesoftheMonth);
+		$data[1]=$branchSalesoftheMonth;
+		echo json_encode($data);
 		
 	}
 
