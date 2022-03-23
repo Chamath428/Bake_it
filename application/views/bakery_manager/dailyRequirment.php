@@ -30,73 +30,94 @@
 
 
         <div class="content">
+            <form method="post" action="<?php echo BASEURL . '/bakeryManagerDailyRequirementController/getMenuItems'; ?>">
+                <div class="drop-down-list">
 
-            <div class="drop-down-list">
-                <div class="branch">
-                    <label for="branch">Outlet</label>
-                    <select placeholder="Select branch">
-                        <option>Kesbewa</option>
-                        <option>Battaramulla</option>
-                        <option>Piliyandala</option>
+                    <div class="branch">
+                        <label for="branch">Outlet</label>
+                        <select name="outletId" id="outletId">
 
-                    </select>
-                </div>
+                            <?php foreach ($data[0] as $key => $value) {
+                                if ($value['branch_id'] == $data[3]) { ?>
+                                    <option value="<?php echo  $value['branch_id']; ?>"><?php echo  $value['branch_name']; ?></option>
+                            <?php  }
+                            } ?>
 
-                <div class="category-list">
-                    <label for="category">Category</label>
-                    <select placeholder="Select category">
-                        <option>Bread</option>
-                        <option>Roll</option>
-                        <option>Muffin</option>
-                        <option>Cake</option>
-                        <option>Sweet good</option>
+                            <?php foreach ($data[0] as $key => $value) {
+                                if ($value['branch_id'] != $data[3]) { ?>
+                                    <option value="<?php echo  $value['branch_id']; ?>"><?php echo  $value['branch_name']; ?></option>
+                            <?php  }
+                            } ?>
 
-                    </select>
-                </div>
+                        </select>
+                    </div>
 
-            </div>
-            <div class="btn">
-                <button onclick="category1()">View</button>
-            </div>
-
-            <div class="category-tables">
-                <div id="category1-table">
-
-                    <table class="content-table">
-                        <thead>
-                            <tr>
-                                <th>Item Id</th>
-                                <th>Name</th>
-                                <th>Quantity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>chocolate cake</td>
-                                <td>14Kg</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>cheesecakes</td>
-                                <td>30Kg</td>
+                    <div class="category-list">
+                        <label for="category">Category</label>
+                        <select name="categoryId" id="categoryId">
 
 
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>coffee cake</td>
-                                <td>2Kg</td>
+                            <?php foreach ($data[1] as $key => $value) {
+                                if ($value['category_id'] == $data[4]) { ?>
+                                    <option value="<?php echo  $value['category_id']; ?>"><?php echo  $value['category_name']; ?></option>
+                            <?php  }
+                            } ?>
 
+                            <?php foreach ($data[1] as $key => $value) {
+                                if ($value['category_id'] != $data[4]) { ?>
+                                    <option value="<?php echo  $value['category_id']; ?>"><?php echo  $value['category_name']; ?></option>
+                            <?php  }
+                            } ?>
 
-                            </tr>
-                        </tbody>
-                    </table>
+                        </select>
+                    </div>
+                    <div class="btn">
+                        <button  type="submit">View</button>
+                    </div>
+
 
                 </div>
+                <div class="category-tables">
+                    <div id="category1-table">
+
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                
+                                    <th>Item Id</th>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <div class="scroll-of-table"> -->
+                                <!-- <table class="content-table"> -->
+                                <!-- <tbody> -->
+                                <?php foreach ($data[2] as $key => $value) { ?>
+                                    <tr>
 
 
-            </div>
+                                        <td><?php echo $value['item_id']; ?></td>
+                                        <td><?php echo $value['item_name']; ?></td>
+                                        <td><?php echo $value['daily_requirement']; ?></td>
+
+
+
+                                    </tr>
+                                <?php } ?>
+
+
+                                <!-- </tbody> -->
+                                <!-- </table> -->
+                                <!-- </div> -->
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                </div>
+            </form>
 
 
         </div>
