@@ -104,7 +104,7 @@
                                 <td><?php echo $basicOrderDetails['needed_time'];?></td> 
                             </tr>
 
-                            <?php if($basicOrderDetails['receiving_method']==1){?>
+                            <?php if($basicOrderDetails['receiving_method']==2){?>
                             <tr> 
                                 <td>Location</td> 
                                 <td><a href="#"><?php echo $basicOrderDetails['address'];?></a></td> 
@@ -183,7 +183,7 @@
                </tr> 
                <tr> 
                 <td>Delivery Tax</td> 
-                <td><?php if($receiving_method==1) {echo "300.00 LKR";} else {echo "0.00 LKR";}?></td> 
+                <td><?php if($receiving_method==2) {echo "300.00 LKR";} else {echo "0.00 LKR";}?></td> 
                </tr> 
                <tr> 
                 <td>Advance Payment</td> 
@@ -191,7 +191,7 @@
                </tr>
                <tr> 
                 <td>Grand Total to Pay</td> 
-                <td><?php if($receiving_method==1){
+                <td><?php if($receiving_method==2){
                   $grand_total=($subtotal+300-($paid_amount));
                   echo $grand_total.".00 LKR";}
                   else{
@@ -203,7 +203,7 @@
              <div class="btn-container">
                <button class="btn" onclick="popup2()">Decline</button>
                <div class="btns">
-                 <?php if($order_status!=3 and $receiving_method==1){?>
+                 <?php if($order_status!=3 and $receiving_method==2){?>
                  <button class="btn" onclick="assign()">Assigned <br> Delivery Person</button>
                  <?php
                  }?>

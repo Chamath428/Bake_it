@@ -76,7 +76,7 @@
                                 else {echo $basicOrderDetails['needed_date'];}?></td> 
                             </tr> 
 
-                            <?php if($basicOrderDetails['receiving_method']==1){?>
+                            <?php if($basicOrderDetails['receiving_method']==2){?>
                             <tr> 
                                 <td>Location</td> 
                                 <td><a href="#"><?php if($basicOrderDetails['address'] == ", ,"){echo "No Address";} else {echo $basicOrderDetails['address'];}?></a></td> 
@@ -90,7 +90,7 @@
                                 <!-- <td><a href="">Dilantha Malagamuwa</a></td> --> 
                             </tr>
 
-                            <?php if($basicOrderDetails['receiving_method']==1){?>
+                            <?php if($basicOrderDetails['receiving_method']==2){?>
                             <tr> 
                               <td>Delivery Person</td> 
                               <td><?php if (isset($basicOrderDetails['delivery_person_id'])){echo $basicOrderDetails['delivery_person_id'];}
@@ -151,11 +151,11 @@
               </tr> 
               <tr> 
                 <td>Delivery Tax</td> 
-                <td><?php if($receiving_method==1) {echo "300.00 LKR";} else {echo "0.00 LKR";}?></td> 
+                <td><?php if($receiving_method==2) {echo "300.00 LKR";} else {echo "0.00 LKR";}?></td> 
               </tr> 
               <tr> 
                 <td>Grand Total to Pay</td> 
-                <td><?php if($receiving_method==1){
+                <td><?php if($receiving_method==2){
                   $grand_total=($subtotal+300);
                   echo $grand_total.".00 LKR";}
                   else{

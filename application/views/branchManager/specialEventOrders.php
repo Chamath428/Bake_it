@@ -72,7 +72,7 @@
                           <td><?php echo $specialOrder['placed_date_and_time'];?></td>
                           <td><?php echo $specialOrder['needed_date'];?></td>
                           
-                          <td><?php if ($specialOrder['receiving_method'] == 1){echo "Home Delivery";} else {echo "Pick From Shop";}?></td>
+                          <td><?php if ($specialOrder['receiving_method'] == 2){echo "Home Delivery";} else {echo "Pick From Shop";}?></td>
 
                           <td><?php if($specialOrder['order_status'] == 1 ){echo "Order Accepted";}
                           if($specialOrder['order_status'] == 2 ){echo "Order Accepted";}

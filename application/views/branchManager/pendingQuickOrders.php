@@ -62,11 +62,12 @@
                   <tr>
                     <td><a href="<?php echo BASEURL . "/branchManagerOrderController/getQuickOrderDetails/" . $quickOrder['order_id'] ?>" class="order-id"><?php echo $quickOrder['order_id']; ?></a></td>
 
+
                     <td><?php echo $quickOrder['total_amount']; ?></td>
 
                     <td><?php echo $quickOrder['placed_date_and_time']; ?></td>
 
-                    <td><?php if ($quickOrder['receiving_method'] == 1) {
+                    <td><?php if ($quickOrder['receiving_method'] == 2) {
                           echo "Home Delivery";
                         } else {
                           echo "Pick From Shop";
