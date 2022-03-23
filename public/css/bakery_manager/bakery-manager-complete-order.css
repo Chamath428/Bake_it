@@ -30,18 +30,18 @@ body{
     
   }
   .table{
-    width: 100%;
+    width: 90%;
     height: 80vh;
     margin-left: 100px;
     margin-top:30px ;
     padding: 0;
-    /* background-color: red; */
+ 
   }
   
 .content-table{
     
     /* position: absolute; */
-    width: 64%; 
+    width: 70%; 
     height: 190px;
     /* left: 20%;
     top: 170px; */

@@ -17,7 +17,7 @@ class rawMaterialController extends bakeItFramework
 				$categories = $this->availableMaterialsModel->getCategories();
 				$categoryItems = $this->availableMaterialsModel->getItems($category_id);
 				$data[0] = $categories;
-				// $data[1] = $categoryItems;
+				$data[1] = $categoryItems;
 				$data[2] = $category_id;
 				$this->view("owner/rawMaterials", $data);
 
@@ -35,9 +35,16 @@ class rawMaterialController extends bakeItFramework
 	}
 
 
-	public function reindex($message)
+	public function reindex($message, $categories)
 	{
-		$data = $this->availableMaterialsModel->getMaterials();
+
+
+		$category = $this->availableMaterialsModel->getCategories();
+		$categoryItems = $this->availableMaterialsModel->getItems($categories);
+		$data[0] = $category;
+		$data[1] = $categoryItems;
+		$data[2] = $categories;
+		// $data = $this->availableMaterialsModel->getMaterials();
 		$this->viewWithMessage("bakery_manager/Available_Materials", $data, $message);
 	}
 
@@ -59,13 +66,18 @@ class rawMaterialController extends bakeItFramework
 	public function getSummary()
 	{
 		$data = array();
+
 		$this->view("bakery_manager/summary", $data);
 	}
 
 	public function retreiveMaterials()
 	{
+
+
 		$data['error'] = "";
 		$finalCount = $_POST['finalCount'];
+		$categories = $_POST['category'];
+		// echo $categories;
 		$materialData = array();
 		for ($i = 1; $i <= $finalCount; $i++) {
 			$materialData[$_POST['itemId' . $i]] = $_POST['quntity' . $i];
@@ -86,9 +98,14 @@ class rawMaterialController extends bakeItFramework
 				$this->availableMaterialsModel->updateMaretials($itemId, $quantity, 0);
 			}
 			$data['confirmation'] = "Stock updated Successfully.";
-			$this->reindex($data);
+
+			$this->reindex($data, $categories);
+			// $this->index($categories);
 		} else {
-			$this->reindex($data);
+			$this->reindex($data, $categories);
+
+
+			// $this->index($categories);
 		}
 	}
 
@@ -145,39 +162,34 @@ class rawMaterialController extends bakeItFramework
 
 	public function insertRawMaterials()
 	{
-        $insertData = array();
-		$item_id = $_POST['itemId'];
+		$insertData = array();
+		// $item_id = $_POST['itemId'];
 		$item_name = $_POST['itemName'];
 		$item_quantity = $_POST['quantity'];
 		$measure_unit = $_POST['measure_unit'];
 
 
 		// $insertData['rawitem_id'] =$item_id;
-		$insertData['rawitem_name'] =$item_name;
-		$insertData['stock_amount'] =$item_quantity;
-		$insertData['raw_category_id'] =2;
-		$insertData['measure_unit'] =$measure_unit;
+		$insertData['rawitem_name'] = $item_name;
+		$insertData['stock_amount'] = $item_quantity;
+		$insertData['raw_category_id'] = 2;
+		$insertData['measure_unit'] = $measure_unit;
 
 
 		$this->availableMaterialsModel->insertRawMaterials($insertData);
 		$this->index();
-
-		
 	}
 
 	public function deleteRawMaterialsInventory($ids)
-    {
-      
-    //    echo $ids;
-        // $check_id = array();
-        // $urlIds= $_GET['deleteIds'];
+	{
 
-        $check_id = explode('.',$ids);
-        // echo $check_id[1]; 
-        $this->availableMaterialsModel->deleteMenuRawMaterial( $check_id );
-        $this->index("owner/rawMaterials");
+		//    echo $ids;
+		// $check_id = array();
+		// $urlIds= $_GET['deleteIds'];
 
-
-
-    }
+		$check_id = explode('.', $ids);
+		// echo $check_id[1]; 
+		$this->availableMaterialsModel->deleteMenuRawMaterial($check_id);
+		$this->index("owner/rawMaterials");
+	}
 }

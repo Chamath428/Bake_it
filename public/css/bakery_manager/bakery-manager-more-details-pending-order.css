@@ -6,14 +6,16 @@
   box-sizing: border-box;
 }
 .container-1{
+  margin: 0;
   font-size: 14px;
   min-height: 100vh;
   /* background-color: aqua; */
 }
 .container-2{
+  margin-left: 20px;
   width: 70%;
   /* height: 400px; */
-  margin-left: 100px;
+  /* margin-left: 100px; */
   /* background-color: saddlebrown; */
 
 }
@@ -59,7 +61,7 @@ font-weight: bold;
   margin-top: 30px;
 }
 table{
-  width: 80%;
+  width: 100%;
   border-collapse: collapse;
 }
 

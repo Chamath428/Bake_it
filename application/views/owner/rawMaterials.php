@@ -109,8 +109,8 @@
 	<form method="post" action="<?php echo BASEURL . '/rawMaterialController/insertRawMaterials'; ?>">
 		<div class="addDatafrom" id="addDatafrom">
 			<div class="input-fileds">
-				<label for="itemId">Item Id</label>
-				<input type="number" name="itemId" id="itemId" placeholder="Enter Id">
+				<!-- <label for="itemId">Item Id</label>
+				<input type="number" name="itemId" id="itemId" placeholder="Enter Id"> -->
 
 				<label for="itemName">Item Name</label>
 				<input type="text" name="itemName" id="itemName" placeholder="Enter Name">

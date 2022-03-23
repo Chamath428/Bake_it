@@ -123,12 +123,12 @@ foreach ($data[1] as $key => $value) {
                         </tbody>
                     </table>
                 </div>
-            
 
+            </form>
             <div class="button-retrieve" id="btnretrive">
-                <input  id="submit" value="Issue" onclick="displayPopup()">
+                <input id="submit" value="Issue" onclick="displayPopup()">
             </div>
-            
+
             <div class="popup" id="popup">
                 <div class="row-pop1">
                     <div class="item-id">
@@ -148,7 +148,8 @@ foreach ($data[1] as $key => $value) {
                         <div class="item-quantity">Quantity</div>
                     </div>
 
-                    <form method="post" action="<?php echo BASEURL . '/rawMaterialController/retreiveMaterials'; ?>">
+                    <form  method="post" action="<?php echo BASEURL . '/rawMaterialController/retreiveMaterials' ?>">
+                    <input type="hidden" id="category" name="category" value="<?php echo $data[2] ?>">
                         <div id="room_fileds">
                         </div>
                 </div>

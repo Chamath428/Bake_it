@@ -35,51 +35,54 @@ Summary of Stock
             <div class="chart-body">
                 <div class="chart">
 
-                    <canvas id="myChart" style="width:100%"></canvas>
+                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
                 </div>
 
-                <div class="drop-down-btn-div">
-                    <div class="year">
-                        <label for="year">Year</label>
-                        <select placeholder="Select Year">
-                            <option>2021</option>
-                            <option>2020</option>
-                            <option>2019</option>
-                            <option>2018</option>
-                            <option>2017</option>
-                            <option>2016</option>
+                <div class="select-chart">
+                    <div class="drop-down-btn-div">
+                        <div class="year">
+                            <label for="year">Year</label>
+                            <select placeholder="Select Year">
+                                <option>2021</option>
+                                <option>2020</option>
+                                <option>2019</option>
+                                <option>2018</option>
+                                <option>2017</option>
+                                <option>2016</option>
 
-                        </select>
+                            </select>
+                        </div>
+
+                        <div class="month">
+                            <label for="month">Month</label>
+                            <select placeholder="Select Month">
+                                <option>Jan</option>
+                                <option>Feb</option>
+                                <option>Mar</option>
+                                <option>Apr</option>
+                                <option>May</option>
+                                <option>June</option>
+
+                            </select>
+                        </div>
+                        <div class="get-view-btn">
+                            <input type="button" id="button-show" value="Show" onclick="dropTableFunction()">
+                        </div>
+
+
                     </div>
+                    <div class="chart2" id="chart2">
 
-                    <div class="month">
-                        <label for="month">Month</label>
-                        <select placeholder="Select Month">
-                            <option>Jan</option>
-                            <option>Feb</option>
-                            <option>Mar</option>
-                            <option>Apr</option>
-                            <option>May</option>
-                            <option>June</option>
-
-                        </select>
+                        <canvas id="myChart2" style="width:100%"></canvas>
                     </div>
-                    <div class="get-view-btn">
-                        <input type="button" id="button-show" value="Show" onclick="dropTableFunction()">
-                    </div>
-
                     <div class="get-summary-btn" id="viewTablebtn">
 
                         <a href="<?php echo BASEURL . "/bakeryManagerSummaryController" ?>"> <input type="button" id="button" value="View Summary Table"> </a>
                     </div>
-
                 </div>
 
             </div>
-            <div class="chart2" id="chart2">
 
-                <canvas id="myChart2" style="width:100%"></canvas>
-            </div>
             <!-- <div>
                     <canvas id="myChart2" ></canvas>
              </div> -->
@@ -92,3 +95,29 @@ Summary of Stock
 
 
     <?php require_once('footer.php'); ?>
+
+    <script>
+        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: "World Wine Production 2018"
+                }
+            }
+        });
+    </script>
