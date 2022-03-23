@@ -117,8 +117,8 @@ class ownerReportController extends bakeItFramework
 		$data['category_id'] = $_POST['category_id'];
 		$categorySalesReportDetails = array();
 
-		if($data['date'] == "0-0-0") {
-			$data['error'] = "Please enter valid time period";
+		if($data['date'] == "0-0-0" || $data['branch_id']==0 || $data['category_id']==0 ) {
+			$data['error'] = "Please select branch/category and valid time period";
 			$this->view("owner/reportsItem", $data);
 
 	    }elseif($data['date'] != 0 && $data['branch_id'] != 0 && $data['category_id'] == 0){
@@ -153,8 +153,8 @@ class ownerReportController extends bakeItFramework
 		$data['category_id'] = $_POST['category_id'];
 		$categorySalesReportDetails = array();
 
-		if($data['week'] == 0 && $data['month'] == 0 && $data['year'] == 0){
-			$data['error'] = "Please enter valid time period";
+		if($data['week'] == 0 && $data['month'] == 0 && $data['year'] == 0 || $data['branch_id']==0 || $data['category_id']==0){
+			$data['error'] = "Please select branch/category and valid time period";
 			$this->view("owner/reportsItem", $data);
 
 		}elseif($data['week'] != 0 && $data['month'] != 0 && $data['year'] != 0 && $data['branch_id'] != 0 && $data['category_id'] == 0){
@@ -187,8 +187,8 @@ class ownerReportController extends bakeItFramework
 		$data['category_id'] = $_POST['category_id'];
 		$categorySalesReportDetails = array();
 
-		if($data['month'] == 0 && $data['year'] == 0){
-			$data['error'] = "Please enter valid time period";
+		if($data['month'] == 0 && $data['year'] == 0 || $data['branch_id']==0 || $data['category_id']==0){
+			$data['error'] = "Please select branch/category and valid time period";
 			$this->view("owner/reportsItem", $data);
 
 		}elseif($data['month'] != 0 && $data['year'] != 0 && $data['branch_id'] != 0 && $data['category_id'] == 0){
