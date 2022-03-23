@@ -46,9 +46,11 @@
 						<tr>
 							<td>Order Status</td>
 							<td>
-								<?php if ($data[0]['order_status'] == 3) {
-									echo " Accepted the order";
-								} elseif ($data[0]['order_status'] == 6) {
+								<?php if ($data[0]['order_status'] == 2) {
+									echo " Order assgin to you";
+								}elseif($data[0]['order_status'] == 3) {
+									echo "Accepted the order";
+								}elseif ($data[0]['order_status'] == 6) {
 									echo "Completed the order";
 								} ?>
 							</td>
@@ -166,30 +168,46 @@
 							<td>Advanced Payment(LKR)</td>
 							<td><?php echo $data[4] ?></td>
 						</tr>
+						<tr>
+							<td>Rest Payment(LKR)</td>
+							<td><?php echo $data[5] ?></td>
+						</tr>
 					</table>
 				</div>
+				<?php if($data[0]['order_status']==3){?>
 				<div class="total-container">
-					<form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/getPaidAmountAtDelivery/' . $data[0]['order_id']; ?>" method="POST">
+					<form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/getBalanceAmountAtDelivery/' . $data[0]['order_id']; ?>" method="POST">
 						<table>
 							<tr>
 								<td>Paid Amount(LKR)</td>
 								<td><input type="number" name="paid_amount"></td>
 							</tr>
 							<tr>
-								<td><input type="submit" name="paid_amount" value="Enter paid amount"></td>
+								<td><input type="submit" name="submit_paid_amount" value="Enter paid amount"></td>
 							</tr>
 							<tr>
 								<td>Balance(LKR)</td>
-								<td><?php echo $data[5] ?></td>
+								<td><?php echo $data[7] ?></td>
 							</tr>
 						</table>
 					</form>
 				</div>
+				<?php } ?>
+                    
+				
 
 				<div class="buttons">
+					<?php if($data[0]['order_status']==3){?>
 					<form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/completeDelivery/' . $data[0]['order_id']; ?>" method="POST">
 						<button type="submit" name="orderStatus" value="6">Complete Delivery</button>
 					</form>
+					<?php } elseif($data[0]['order_status']==2){?>
+					<form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/acceptDeliveriesAfterCheckingDetials/' . $data[0]['order_id']; ?>" method="POST">
+                        <button class="accept_button">
+                            Accept Order
+                        </button>
+					</form>        
+				<?php } ?>
 				</div>
 
 			</section>
