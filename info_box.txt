@@ -62,3 +62,9 @@ branch / all job role 					good
 In ongoing order section cashier can see all the ongoing orders of the branch.
 
 In completed order section cashier can only see the orders that he completed.
+
+
+---Notification---
+
+Unread - 1
+Read - 0

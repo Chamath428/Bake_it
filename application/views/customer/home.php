@@ -9,6 +9,7 @@
     <link href="<?php echo BASEURL ?>/public/css/customer/customer-navbar-index.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-body.css">
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-notification.css">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
     <script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
@@ -58,8 +59,11 @@
             <div class="user-icons">
                 <?php if (isset($_SESSION['islogged']) && $_SESSION['islogged']==1) {?>
                 <a href="<?php echo BASEURL.'/profileController' ?>"><i class="far fa-user-circle"></i></a>
-                <a href=""><i class="far fa-bell"></i></a><?php }?>
-                <a href="<?php echo BASEURL.'/cartController' ?>"><i class="fas fa-shopping-basket"><?php if(isset($_SESSION['cart_count'])){ ?><span><?php echo $_SESSION['cart_count']; ?></span><?php } ?></i></a>
+                <!-- <a href=""><i class="far fa-bell"></i></a> -->
+                <a><i data-modal-target="#modal" class="far fa-bell" id=""></i></a>
+                <?php if(!empty($data['notifiactions'])){?><span class="notification-count"><?php echo count($data['notifiactions']) ?></span><?php  }?>
+                <?php }?>
+                <a href="<?php echo BASEURL.'/cartController' ?>"><i class="fas fa-shopping-basket"><?php if(isset($_SESSION['cart_count'])){ ?><span class="cart-count"><?php echo $_SESSION['cart_count']; ?></span><?php } ?></i></a>
             </div>
         </nav>
     </div>
@@ -139,3 +143,5 @@
             </div>
         </section>
  <?php require_once('footer.php'); ?>
+
+ <?php require_once('notification.php'); ?>

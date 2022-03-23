@@ -1,26 +1,23 @@
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Star Rating Form | CodingNepal</title>
-    <link rel="stylesheet" href="<?php echo BASEURL?>/public/css/customer/customer-orderRate.css">
-    <script src="<?php echo BASEURL ?>/public/js/customer/orderRate.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-  </head>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
+  <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
+  <script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
+  
+  
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
+  <title>Login to Bake_it</title>
+</head>
+<body>
 
- <script type="text/javascript">
-    
-    function changeValues() {
-  documentValue=document.getElementById("input1").value;
-  document.getElementById("input2").value=documentValue;
-}
+  <header>
+    <?php require_once('navbar.php'); ?>
+  </header>
 
- </script>
-
-  <body>
-    
-    <input type="text" id="input1" name="input1" value="" oninput="changeValues('input1')">
-    <input type="text" id="input2" name="input2" value="">
-
-  </body>
+    <?php require_once('footer.php'); ?>
 </html>

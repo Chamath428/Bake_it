@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-myorders.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-notification.css">
 	<script  src="<?php echo BASEURL ?>/public/js/customer/myorder.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
@@ -254,4 +255,5 @@
 	</section>
 
 	<?php require_once('footer.php'); ?>
+	<?php require_once('notification.php'); ?>
 </html>

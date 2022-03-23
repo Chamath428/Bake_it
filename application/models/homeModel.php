@@ -21,6 +21,8 @@
 			$row1=mysqli_fetch_assoc($res1);
 			return $row1['branch_name'];
 		}
+
+		
 	}
 
  ?>

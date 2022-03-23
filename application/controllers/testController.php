@@ -8,11 +8,12 @@ class testController extends bakeItFramework
 	
 	function __construct()
 	{
-		// code...
+		$this->testModel=$this->model("testModel");
 	}
 
 	public function index(){
-		$this->view("customer/test");
+		$data['notifiactions']=$this->testModel->gteNotification();
+		$this->view("customer/test",$data);
 	}
 
 	public function test(){
