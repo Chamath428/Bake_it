@@ -67,6 +67,11 @@ class rawMaterialController extends bakeItFramework
 	{
 		$data = array();
 
+		$categories = $this->availableMaterialsModel->getCategories();
+		$retriveData = $this->availableMaterialsModel->retriveMaterialCount();
+		$data[0] = $categories;
+		$data[1] = $retriveData;
+		
 		$this->view("bakery_manager/summary", $data);
 	}
 
@@ -95,7 +100,12 @@ class rawMaterialController extends bakeItFramework
 
 		if ($data['error'] == "") {
 			foreach ($materialData as $itemId => $quantity) {
+
+				$this->availableMaterialsModel->insertRetrieveMaretials($itemId,$quantity,date("Y-m-d "),1);
+
 				$this->availableMaterialsModel->updateMaretials($itemId, $quantity, 0);
+	
+
 			}
 			$data['confirmation'] = "Stock updated Successfully.";
 
@@ -129,6 +139,8 @@ class rawMaterialController extends bakeItFramework
 		if ($data['error'] == "") {
 			foreach ($materialData as $itemId => $quantity) {
 				$this->availableMaterialsModel->updateMaretials($itemId, $quantity, 1);
+				$this->availableMaterialsModel->insertStockMaretials($itemId, $quantity, 3,date("Y-m-d "));
+
 			}
 			$data['confirmation'] = "Stock updated Successfully.";
 			$this->regetAddStock($data);

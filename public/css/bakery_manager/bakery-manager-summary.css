@@ -44,7 +44,7 @@ body{
     margin: 0;
     margin-left: 80%;
     /* margin-top: 430px; */
-    display: none;
+    /* display: none; */
     /* background-color: rgb(36, 107, 168); */
     
 }
@@ -135,18 +135,12 @@ label{
 .chart-body{
     display: flex;
     flex-direction: row;
-    margin-left: 100px;
-    height: 400px;
+    margin-left: 9px;
+    height: 450px;
     /* background-color: red; */
 }
-.chart {
-    width: 40%;
-    height: 400px;
-     margin-top: 60px;
-     margin-left: -40px;
-     
-}
-.select-chart{
+
+/* .select-chart{
     width: 50%;
     height: 450px;
     display: flex;
@@ -154,15 +148,11 @@ label{
     margin-top: 35px;
     margin-left: 40px;
 
-}
-.chart2 {
-    width: 30%;
-    height: 250px;
+} */
+.chart1 {
+    width: 48%;
+    height: 440px;
      /* background-color: aquamarine; */
-     /* position: absolute; */
-     margin-top:15vh;
-     margin-left: 200px;
-     /* right: 320px; */
      display: block;
      /* display: none; */
      

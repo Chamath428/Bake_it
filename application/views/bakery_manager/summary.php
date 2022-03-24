@@ -24,7 +24,16 @@
     <?php require_once('header_raw_materials.php'); ?>
 
     <div class="bgg" id="body">
+
         <div class="content">
+
+        <?php foreach ($data[1] as $key => $value) { ?>
+               
+
+                            <?php echo $value; ?>
+                           
+
+                    <?php } ?>
 
             <div class="summary-topic">
                 <pre>
@@ -32,10 +41,12 @@ Summary of Stock
 
                 </pre>
             </div>
-            <div class="chart-body">
-                <div class="chart">
 
-                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+            <div class="chart-body">
+                <div class="chart1">
+
+                    <canvas id="myChart" class="first-chart"></canvas>
                 </div>
 
                 <div class="select-chart">
@@ -43,6 +54,7 @@ Summary of Stock
                         <div class="year">
                             <label for="year">Year</label>
                             <select placeholder="Select Year">
+                                <option>2022</option>
                                 <option>2021</option>
                                 <option>2020</option>
                                 <option>2019</option>
@@ -56,12 +68,20 @@ Summary of Stock
                         <div class="month">
                             <label for="month">Month</label>
                             <select placeholder="Select Month">
-                                <option>Jan</option>
-                                <option>Feb</option>
-                                <option>Mar</option>
-                                <option>Apr</option>
-                                <option>May</option>
-                                <option>June</option>
+
+                                <option selected value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+
 
                             </select>
                         </div>
@@ -86,7 +106,14 @@ Summary of Stock
             <!-- <div>
                     <canvas id="myChart2" ></canvas>
              </div> -->
-
+            <?php
+            $category = [];
+            for ($i = 0; $i < count($data[0]); $i++) {
+                $category[$i] = $data[0][$i]['raw_category_name'];
+               
+            }
+            
+            ?>
 
 
         </div>
@@ -94,12 +121,17 @@ Summary of Stock
     </div>
 
 
+
+
     <?php require_once('footer.php'); ?>
 
     <script>
-        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-        var yValues = [55, 49, 44, 24, 15];
-        var barColors = ["red", "green", "blue", "orange", "brown"];
+        
+        const categories = <?php echo json_encode($category); ?>;
+        console.log(categories);
+        var xValues = categories;
+        var yValues = [55, 49, 44, 24];
+        var barColors = ["red", "green", "blue", "orange"];
 
         new Chart("myChart", {
             type: "bar",
@@ -116,7 +148,7 @@ Summary of Stock
                 },
                 title: {
                     display: true,
-                    text: "World Wine Production 2018"
+                    text: "Usage of category"
                 }
             }
         });

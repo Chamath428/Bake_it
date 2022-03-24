@@ -200,7 +200,7 @@ class availableMaterialsModel extends database
 		
 				)
 		VALUES  ("
-		
+
 			. '"' . $insertData['rawitem_name'] . '"' 			. ","
 			. '"' . $insertData['raw_category_id'] . '"' 	. ","
 			. '"' . $insertData['stock_amount'] . '"' 	. ","
@@ -212,11 +212,117 @@ class availableMaterialsModel extends database
 	}
 
 
-	public function deleteMenuRawMaterial( $check_id){
+	public function deleteMenuRawMaterial($check_id)
+	{
 		foreach ($check_id as $key => $value) {
-		$sql10 ="DELETE FROM `raw_material_inventory` WHERE `rawitem_id` = ".$value;
+			$sql10 = "DELETE FROM `raw_material_inventory` WHERE `rawitem_id` = " . $value;
 		}
 		$res9 = mysqli_query($this->db, $sql10) or die('1->' . mysqli_error($this->db));
+	}
+
+	public function insertStockMaretials($itemId, $quantity, $managerId, $date)
+	{
+
+		$sql11 = "INSERT INTO
+		stocks(
+			
+			rawitem_id,
+			quantity,
+			date_and_time,
+			bakery_manager_id 
+		
+				)
+		VALUES  ("
+
+			. '"' . $itemId . '"' 			. ","
+			. '"' . $quantity . '"' 	. ","
+			. '"' . $date . '"' 	. ","
+			. '"' . $managerId . '"' 			. "
+				 )";
+
+
+		$res8 = mysqli_query($this->db, $sql11) or die('1->' . mysqli_error($this->db));
+	}
+
+	public function insertRetrieveMaretials($rawitem_id, $quantity, $date, $managerId)
+	{
+
+		$sql12 = "INSERT INTO
+		retrieve_materials(
+			rawitem_id,
+			quantity,
+			date_and_time,
+			bakery_manager_id
+		
+				)
+		VALUES  ("
+
+			. '"' . $rawitem_id . '"' 			. ","
+			. '"' . $quantity . '"' 	. ","
+			. '"' . $date . '"' 	. ","
+			. '"' . $managerId . '"' 			. "
+				 )";
+
+
+		$res9 = mysqli_query($this->db, $sql12) or die('1->' . mysqli_error($this->db));
+	}
+
+
+	public function retriveMaterialCount()
+	{
+		$itemData = array();
+		$i = 0;
+		$j = 0;
+		$sql13 = "SELECT
+					raw_category_id 
+				FROM
+					raw_material_category";
+
+
+		$res10 = mysqli_query($this->db, $sql13) or die('1->' . mysqli_error($this->db));
+		while ($row4 = mysqli_fetch_assoc($res10)) {
+			$data['raw_category_id'] = $row4['raw_category_id'];
+			$selectCategory[$i] = $data;
+			$i++;
+		}
+
+
+		foreach ($selectCategory as $key => $value) {
+			$sql14 = "SELECT
+							rawitem_id
+						FROM
+						raw_material_inventory
+						WHERE
+						raw_category_id=".$value['raw_category_id'];
+
+			$res11 = mysqli_query($this->db, $sql14) or die('2->' . mysqli_error($this->db));
+			while ($row4 = mysqli_fetch_assoc($res11)) {
+				$data['rawitem_id'] = $row4['rawitem_id'];
+				$rawId[$i][$j] = $data;
+				$j++;
+			}
+			$i++;
+		}
+
+		foreach ($selectCategory as $key => $valueCategory) {
+			$count[$i]=0;
+			foreach ($rawId as $key => $valueRawId) {
+
+				$sql15 = "SELECT SUM(quantity) AS quantity
+						FROM retrieve_materials
+						WHERE rawitem_id=".$valueRawId[0][1]."";
+
+				$res12 = mysqli_query($this->db, $sql15) or die('2->' . mysqli_error($this->db));
+				while ($row4 = mysqli_fetch_assoc($res12)) {
+					$data['quantity'] = $row4['quantity'];
+					$count[$i] = $count[$i] + $data['quantity'];
+				
+				}
+			}
+			
+			$i++;
+		}
+		return $count;
 
 	}
 }
