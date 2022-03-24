@@ -5,10 +5,10 @@
 		
 		public function __construct()
 		{
-			// code...
+			$this->customerNotificationModel=$this->model("customerNotificationModel");
 		}
 		public function index(){
-			$data=array();
+			$data['notifiactions'] = $this->customerNotificationModel->gteNotification();
 			$data['pagename']="cart";
 			$this->view("customer/cart",$data);
 		}

@@ -14,7 +14,7 @@
 		public function markAsRead($notification_id){
 			$this->customerNotificationModel->markAsRead($notification_id);
 			$data['notifiactions']=$this->customerNotificationModel->gteNotification();
-			$this->view("customer/myorders");
+			$this->redirect("/myordersController");
 		}
 	}
 

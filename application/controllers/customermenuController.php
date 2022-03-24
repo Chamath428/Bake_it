@@ -9,6 +9,7 @@
 		function __construct()
 		{
 			$this->customerMenuModel=$this->model("customerMenuModel");
+			$this->customerNotificationModel=$this->model("customerNotificationModel");
 		}
 
 		public function index(){
@@ -19,8 +20,9 @@
 		public function getCategoryItems($category_id){
 
 			if (isset($_SESSION['branch_Id'])) {
-				$categoryItems=$this->customerMenuModel->getCategoryItems($_SESSION['branch_Id'],$category_id);
-				$this->view("customer/menuItems",$categoryItems);
+				$data[1]=$this->customerMenuModel->getCategoryItems($_SESSION['branch_Id'],$category_id);
+				$data['notifiactions'] = $this->customerNotificationModel->gteNotification();
+				$this->view("customer/menuItems",$data);
 			}
 			else{
 				header("Location:".BASEURL."/customerBranchSelectController/index/".$category_id);

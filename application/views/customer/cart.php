@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-cart.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-notification.css">
 	<script  src="<?php echo BASEURL ?>/public/js/customer/cart.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/message.js" defer></script>
@@ -379,6 +380,7 @@
  </section>
 
 	<?php require_once('footer.php'); ?>
+	 <?php require_once('notification.php'); ?>
 </html>
 
 

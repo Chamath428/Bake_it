@@ -8,6 +8,8 @@ class homeController extends bakeItFramework
         $this->homeModel=$this->model("homeModel");
         $this->customerNotificationModel=$this->model("customerNotificationModel");
     }
+
+    
     public function index(){
         $data['notifiactions'] = $this->customerNotificationModel->gteNotification();
         if (isset($_SESSION['role_number']) && $_SESSION['role_number']>1) {

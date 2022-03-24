@@ -9,12 +9,14 @@
 		public function __construct()
 		{
 			$this->customerMyOrdersModel=$this->model("customerMyOrdersModel");
+			$this->customerNotificationModel=$this->model("customerNotificationModel");
 		}
 		public function index(){
 			$data=array();
 			if (isset($_SESSION['customer_id'])) {
 				$customer_id=$_SESSION['customer_id'];
 				$data=$this->customerMyOrdersModel->getMyOrders($customer_id);
+				$data['notifiactions'] = $this->customerNotificationModel->gteNotification();
 			}
 			
 			$this->view("customer/myorders",$data);

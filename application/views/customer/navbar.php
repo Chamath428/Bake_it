@@ -43,7 +43,8 @@
                 <?php if (isset($_SESSION['islogged']) && $_SESSION['islogged']==1) {?>
                 <a href="<?php echo BASEURL.'/profileController' ?>"><i class="far fa-user-circle"></i></a>
                 <!-- <a href=""><i class="far fa-bell"></i></a> -->
-                <a><i data-modal-target="#modal" class="far fa-bell" id="<?php if(!empty($data['notifiactions']))echo "red-not" ?>"></i></a>
+                <a><i data-modal-target="#modal" class="far fa-bell" id=""></i></a>
+                <?php if(!empty($data['notifiactions'])){?><span class="notification-count"><?php echo count($data['notifiactions']) ?></span><?php  }?>
                 <?php }?>
 
                     <!-- <a><i data-modal-target="#modal" class="far fa-bell" id="<?php if(!empty($data['notifiactions']))echo "red-not" ?>"></i></a> -->
