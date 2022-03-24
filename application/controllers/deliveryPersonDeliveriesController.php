@@ -41,7 +41,11 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$totalDeliveriesofMonth = $this->deliveryPersonDeliveriesModel->countTotalDeliveriesofMonth();
 		$data[2] = $totalDeliveriesofMonth;
 
-		
+		// $data['date'] = date('Y-m-d', strtotime($_POST['date']));
+	 	// $completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
+	 	$data[3] = array();
+		// echo $data['date'];
+ 
 		$this->view("deliveryPerson/deliveryHistory", $data);
 	}
 
@@ -66,10 +70,10 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$data[2] = $menuDetails;
 
 		$subTotal = $this->deliveryPersonDeliveriesModel->getSubTotal($order_id);
-		$data[3] = $subTotal;
+		$data[3] = intval($subTotal);
 
 		$advancedAmount = $this->deliveryPersonDeliveriesModel->getAdvancedAmount($order_id);
-		$data[4] = $advancedAmount;
+		$data[4] = intval($advancedAmount);
 		
 		$data[5] = $data[3] - $data[4];
         $data[7] = $data[4] - $data[3] ;
@@ -95,18 +99,40 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$this->index();
 	}
 	public function getCompletedDeliveriesTable()
-	{
+	{    
+		$totalDeliveries = $this->deliveryPersonDeliveriesModel->countTotalDeliveries();
+		$data[0] = $totalDeliveries;
+
+		$totalDeliveriesofWeek = $this->deliveryPersonDeliveriesModel->countTotalDeliveriesofWeek();
+		$data[1] = $totalDeliveriesofWeek;
+
+		$totalDeliveriesofMonth = $this->deliveryPersonDeliveriesModel->countTotalDeliveriesofMonth();
+		$data[2] = $totalDeliveriesofMonth;
+
+	 	$data[3] = array();
 
 		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
 		$completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
 		$data[3] = $completedDeliveriesTable;
+		// echo $data[3]['order_id'];
+
 
 		$this->view("deliveryPerson/deliveryHistory", $data);
 	}
 	public function completeDelivery($order_id)
 	{
+		
+		$subTotal = $this->deliveryPersonDeliveriesModel->getSubTotal($order_id);
+		$data[3] = intval($subTotal);
+
+		$advancedAmount = $this-> deliveryPersonDeliveriesModel->getAdvancedAmount($order_id);
+		$data[4] = intval($advancedAmount);
+
+		if($data[4] >= $data[3]){
 			$this->deliveryPersonDeliveriesModel->updateOrderStatusAsCompleted($order_id);
 			$this->index();	
+		}
+			
 	}
 	public function getBalanceAmountAtDelivery($order_id){
         
@@ -133,9 +159,10 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 	public function getDeliveryHistoryDate($order_id){
 
 		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
-		$completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
-		$data[3] = $completedDeliveriesTable;
+		echo $data['date'];
+	// 	$completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
+	// 	$data[3] = $completedDeliveriesTable;
 
-       $this -> getDeliveryOverview();
+    //    $this -> getDeliveryOverview();
 	}
 }

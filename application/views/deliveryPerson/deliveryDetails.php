@@ -169,12 +169,14 @@
 							<td><?php echo $data[4] ?></td>
 						</tr>
 						<tr>
+						<?php if($data[0]['order_status'] != 6 && $data[4] < $data[3]){?>
 							<td>Rest Payment(LKR)</td>
 							<td><?php echo $data[5] ?></td>
+						<?php } ?>
 						</tr>
 					</table>
 				</div>
-				<?php if($data[0]['order_status']==3){?>
+				<?php if($data[0]['order_status']==3 &&  $data[4] < $data[3]){?>
 				<div class="total-container">
 					<form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/getBalanceAmountAtDelivery/' . $data[0]['order_id']; ?>" method="POST">
 						<table>
@@ -183,7 +185,9 @@
 								<td><input type="number" name="paid_amount"></td>
 							</tr>
 							<tr>
-								<td><input type="submit" name="submit_paid_amount" value="Enter paid amount"></td>
+								<td><input type="submit" name="submit_paid_amount" value="Enter "></td>
+								<!-- <td><button type="submit" name="submit_paid_amount" value="Enter paid amount">Enter paid amount</button></td> -->
+
 							</tr>
 							<tr>
 								<td>Balance(LKR)</td>
@@ -197,7 +201,7 @@
 				
 
 				<div class="buttons">
-					<?php if($data[0]['order_status']==3){?>
+					<?php if($data[0]['order_status']==3 && $data[4] >= $data[3]){?>
 					<form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/completeDelivery/' . $data[0]['order_id']; ?>" method="POST">
 						<button type="submit" name="orderStatus" value="6">Complete Delivery</button>
 					</form>
