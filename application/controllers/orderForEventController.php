@@ -9,10 +9,11 @@
 		function __construct()
 		{
 			$this->customerMenuModel=$this->model("customerMenuModel");
+			$this->customerNotificationModel=$this->model("customerNotificationModel");
 		}
 
 		public function index(){
-			$data=array();
+			$data['notifiactions'] = $this->customerNotificationModel->gteNotification();
 			$this->view("customer/eventHome",$data);
 		}
 
@@ -22,8 +23,9 @@
 		}
 
 		public function getSpecialCategoryItems($category_id){
-			$categoryItems=$this->customerMenuModel->getSpecialCategoryItems($category_id);
-			$this->view("customer/eventMenu",$categoryItems);
+			$data[1]=$this->customerMenuModel->getSpecialCategoryItems($category_id);
+			$data['notifiactions'] = $this->customerNotificationModel->gteNotification();
+			$this->view("customer/eventMenu",$data);
 		}
 	}
 

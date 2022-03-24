@@ -62,6 +62,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-specialMenu.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-notification.css">
 	<script src="<?php echo BASEURL ?>/public/js/customer/message.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
 	<script src="<?php echo BASEURL; ?>/public/js/customer/menu.js" defer></script>
@@ -94,8 +95,8 @@
 		<div class="burger-container">
 
 				<?php 
-				if (sizeof($data)>0) {
-				foreach ($data as $key => $item) {?>
+				if (sizeof($data[1])>0) {
+				foreach ($data[1] as $key => $item) {?>
 					<div class="burger-item">
 						<form  method="post" action="">
 							<img src="<?php echo BASEURL; ?>/public/images/b1.png">
@@ -129,4 +130,5 @@
 	</section>
 
 	<?php require_once('footer.php'); ?>
+	<?php require_once('notification.php'); ?>
 </html>

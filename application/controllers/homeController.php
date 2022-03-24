@@ -6,9 +6,12 @@ class homeController extends bakeItFramework
     public function __construct()
     {
         $this->homeModel=$this->model("homeModel");
+        $this->customerNotificationModel=$this->model("customerNotificationModel");
     }
+
+    
     public function index(){
-        $data = array();
+        $data['notifiactions'] = $this->customerNotificationModel->gteNotification();
         if (isset($_SESSION['role_number']) && $_SESSION['role_number']>1) {
             $this->redirect("dashboardController");
         }

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2021 at 08:17 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Mar 24, 2022 at 08:58 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,16 @@ CREATE TABLE `bill` (
   `date_and_time` varchar(100) NOT NULL DEFAULT current_timestamp(),
   `cashier_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bill`
+--
+
+INSERT INTO `bill` (`bill_id`, `order_id`, `paid_amount`, `date_and_time`, `cashier_id`) VALUES
+(285, 415, '1400', '2022-03-23 15:12:11', 38),
+(286, 416, '0', '2022-03-23 15:19:07', 38),
+(287, 417, '1560', '2022-03-23 15:29:23', 38),
+(288, 421, '122140', '2022-03-23 16:16:52', 38);
 
 -- --------------------------------------------------------
 
@@ -133,9 +143,9 @@ CREATE TABLE `cashier` (
 
 INSERT INTO `cashier` (`staff_id`, `branch_id`) VALUES
 (20, 1),
-(32, 1),
+(38, 1),
 (23, 2),
-(24, 3);
+(41, 2);
 
 -- --------------------------------------------------------
 
@@ -165,7 +175,7 @@ INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `address1`, `a
 (49, 'Chamath', 'Chinthana', 'Petiwaththa', 'Wathugedara', '', '2'),
 (50, 'Chamath', 'Chinthana', 'Petiwaththa', 'Wathugedara', '', '2'),
 (51, 'Chamath', 'Chinthana', '', '', '', '2'),
-(52, 'Sahan', 'Chinthana', 'No.23/69 B', 'Pettiwaththa', '', '2'),
+(52, 'Sahan', 'Chinthana', 'Pettiwaththa', 'Wathugedara', 'Ambalangoda', '2'),
 (53, 'Sasasd', 'eeqwe', '', '', '', '2'),
 (54, 'arundd', 'vcasdasd', '', '', '', '2'),
 (55, 'errwerwerwer', 'rwerwerwerwer', '', '', '', '2'),
@@ -176,7 +186,25 @@ INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `address1`, `a
 (60, 'Akila', 'Maithripala', '', '', '', '2'),
 (61, 'Akila', 'Maithripala', '', '', '', '2'),
 (62, 'Anupama', 'Bandara', '118/2,', 'Illukwatta road, ', 'Pilimathalawa', '2'),
-(63, 'Anupama', 'Bandara', '118/2,', 'Illukwatta road, ', 'Pilimathalawa', '2');
+(63, 'Anupama', 'Bandara', '118/2,', 'Illukwatta road, ', 'Pilimathalawa', '2'),
+(64, 'Chamath', 'Chinthana', '', '', '', '2'),
+(65, 'Chamath', 'Chinthana', '', '', '', '2'),
+(66, 'Chamath', 'Chinthana', '', '', '', '2'),
+(69, 'Karol', 'Masnayaka', '', '', '', ''),
+(70, 'Prassnna', 'Ranathunga', 'Wathugedara', 'Pettiwaththa', 'Malabe', ''),
+(71, 'Ajith', 'Manihara', '', '', '', ''),
+(72, 'Asanka', 'Perera', 'Wathugedara', 'Pettiwaththa', 'Malabe', '2'),
+(73, 'Chamath', 'Chinthana', '', '', '', '2'),
+(74, 'Chamath', 'Chinthana', '', '', '', '2'),
+(75, 'Chamath', 'Chinthana', '', '', '', '2'),
+(76, 'Tarusha', 'Vithanage', '147 Botanic Avenue', 'Pettiwaththa', 'Malabe', '2'),
+(77, 'Sajith', 'Perera', '', '', '', '2'),
+(78, 'Chamath', 'Chinthana', '', '', '', '2'),
+(79, 'Virath', 'Kholi', '', '', '', ''),
+(80, 'ABD', 'Villiers', '', '', '', ''),
+(81, 'cdsa', 'Perera', '', '', '', '2'),
+(82, 'weera', 'rathna', 'Wathugedara', 'Pettiwaththa', '', '2'),
+(83, 'Virath', 'Kholi', '', '', '', '2');
 
 -- --------------------------------------------------------
 
@@ -190,6 +218,30 @@ CREATE TABLE `customer_details` (
 ,`contact_number` varchar(30)
 ,`address` varchar(404)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_notification`
+--
+
+CREATE TABLE `customer_notification` (
+  `notification_id` int(5) NOT NULL,
+  `customer_id` int(5) NOT NULL,
+  `order_id` int(5) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT 1,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer_notification`
+--
+
+INSERT INTO `customer_notification` (`notification_id`, `customer_id`, `order_id`, `message`, `link`, `status`, `date`) VALUES
+(1, 14, 415, 'Order Status has been updated', NULL, 0, '2022-03-23 20:29:49'),
+(2, 14, 414, 'Order Status has been updated2', NULL, 1, '2022-03-24 06:51:38');
 
 -- --------------------------------------------------------
 
@@ -208,10 +260,8 @@ CREATE TABLE `delivery_person` (
 --
 
 INSERT INTO `delivery_person` (`staff_id`, `availability`, `branch_id`) VALUES
-(19, '', 1),
+(19, '1', 1),
 (25, '', 2),
-(26, '', 3),
-(33, '', 1),
 (35, '', 1);
 
 -- --------------------------------------------------------
@@ -317,18 +367,15 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`order_id`, `customer_id`, `menu_id`, `cashier_id`, `order_type`, `total_amount`, `paid_amount`, `is_advanced`, `receiving_method`, `payment_type`, `order_status`, `placed_date_and_time`, `needed_date`, `needed_time`, `delivery_person_id`) VALUES
-(31, 14, '1', NULL, '2', '7000.00 LKR', '', 0, '1', '2', '6', '2021-11-27 20:35:52', '2021-12-02', '20:39', 19),
-(32, 14, '1', NULL, '2', '7000.00 LKR', '', 1, '1', '2', '1', '2021-11-27 20:50:16', '2021-12-09', '20:55', 33),
-(33, 14, '1', NULL, '2', '7000.00 LKR', '3500.00 LKR', 1, '1', '2', '6', '2021-11-27 20:51:09', '2021-12-07', '20:57', NULL),
-(34, 14, '1', NULL, '2', '7000.00 LKR', '', 0, '2', '2', '4', '2021-11-27 20:51:31', '2021-12-10', '20:55', NULL),
-(35, 14, '1', NULL, '2', '7000.00 LKR', '3000.00 LKR', 0, '2', '2', '5', '2021-11-27 20:52:06', '2021-12-08', '20:57', NULL),
-(36, 35, '1', NULL, '2', '7070.00 LKR', '4000.00 LKR', 0, '1', '2', '3', '2021-11-27 20:53:01', '2021-12-09', '20:57', NULL),
-(37, 14, '1', NULL, '1', '140.00 LKR', '0', 0, '1', '1', '3', '2021-11-28 22:47:52', NULL, NULL, 19),
-(40, 59, '1', NULL, '1', '1290.00 LKR', '0', 0, '1', '1', '6', '2021-12-02 22:20:48', NULL, NULL, NULL),
-(41, 52, '1', NULL, '1', '1360.00 LKR', '0', 0, '2', '1', '2', '2021-12-06 22:22:49', NULL, NULL, NULL),
-(42, 60, '2', NULL, '1', '1360.00 LKR', '0', 0, '1', '1', '1', '2021-12-05 11:22:00', NULL, NULL, NULL),
-(43, 61, '1', NULL, '1', '1360.00 LKR', '0', 0, '1', '1', '6', '2021-12-08 17:01:49', NULL, NULL, NULL),
-(46, 63, '1', NULL, '1', '1980.00 LKR', '0', 0, '1', '1', '3', '2021-12-08 16:19:00', NULL, NULL, NULL);
+(414, 14, '1', NULL, '1', '1360', '0', 0, '1', '1', '6', '2022-03-23 15:06:22', '2022-03-23', NULL, NULL),
+(415, 14, '1', 38, '1', '1360', '1400', 0, '1', '1', '6', '2022-03-23 15:11:30', '2022-03-23', NULL, NULL),
+(416, 14, '1', 38, '1', '1560', '2000', 0, '2', '1', '6', '2022-03-23 15:14:37', '2022-03-23', NULL, 19),
+(417, 14, '1', 38, '1', '1560', '1560', 0, '2', '2', '6', '2022-03-23 15:23:50', '2022-03-23', NULL, 19),
+(418, 14, '1', NULL, '2', '122140', '61070', 1, '1', '2', '7', '2022-03-23 15:33:17', '2022-04-09', '15:39', NULL),
+(419, 14, '1', NULL, '2', '122140', '61070', 1, '1', '2', '2', '2022-03-23 15:36:27', '2022-04-07', '15:41', 19),
+(420, 14, '1', NULL, '2', '122140', '61070', 1, '1', '2', '6', '2022-03-23 15:50:16', '2022-04-08', '15:55', 19),
+(421, 14, '1', 38, '2', '122140', '122140', 0, '1', '2', '6', '2022-03-23 16:15:07', '2022-04-07', '16:15', NULL),
+(422, 14, '1', NULL, '2', '122340', '61170', 1, '2', '2', '7', '2022-03-23 16:19:12', '2022-04-09', '16:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -348,30 +395,52 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`order_id`, `menu_id`, `item_id`, `quantity`) VALUES
-(31, '1', '1', 100),
-(32, '1', '1', 100),
-(33, '1', '1', 100),
-(34, '1', '1', 100),
-(35, '1', '1', 100),
-(36, '1', '1', 100),
-(36, '1', '6', 1),
-(37, '1', '1', 1),
-(37, '1', '6', 1),
-(40, '1', '1', 1),
-(40, '1', '7', 1),
-(41, '1', '1', 1),
-(41, '1', '6', 1),
-(41, '1', '7', 1),
-(42, '2', '1', 1),
-(42, '2', '6', 1),
-(42, '2', '7', 1),
-(43, '1', '1', 1),
-(43, '1', '6', 1),
-(43, '1', '7', 1),
-(46, '1', '2', 1),
-(46, '1', '5', 1),
-(46, '1', '6', 1),
-(46, '1', '8', 1);
+(414, '1', '1', 1),
+(414, '1', '6', 1),
+(414, '1', '7', 1),
+(415, '1', '1', 1),
+(415, '1', '6', 1),
+(415, '1', '7', 1),
+(416, '1', '1', 1),
+(416, '1', '6', 1),
+(416, '1', '7', 1),
+(417, '1', '1', 1),
+(417, '1', '6', 1),
+(417, '1', '7', 1),
+(418, '1', '1', 1),
+(418, '1', '6', 1),
+(418, '1', '7', 100),
+(419, '1', '1', 1),
+(419, '1', '6', 1),
+(419, '1', '7', 100),
+(420, '1', '1', 1),
+(420, '1', '6', 1),
+(420, '1', '7', 100),
+(421, '1', '1', 1),
+(421, '1', '6', 1),
+(421, '1', '7', 100),
+(422, '1', '1', 1),
+(422, '1', '6', 1),
+(422, '1', '7', 100);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `overview_details`
+-- (See below for the actual view)
+--
+CREATE TABLE `overview_details` (
+`order_id` int(100)
+,`menu_id` varchar(30)
+,`needed_date` varchar(50)
+,`item_id` varchar(40)
+,`item_name` varchar(100)
+,`price` varchar(30)
+,`quantity` int(150)
+,`category_id` int(5)
+,`category_name` varchar(100)
+,`order_status` varchar(40)
+);
 
 -- --------------------------------------------------------
 
@@ -386,7 +455,7 @@ CREATE TABLE `ratings_and_reviews` (
   `rating` varchar(100) DEFAULT NULL,
   `review` varchar(1000) DEFAULT NULL,
   `review_type` varchar(100) NOT NULL,
-  `delivery_person_id` int(20) NOT NULL
+  `delivery_person_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -437,9 +506,9 @@ CREATE TABLE `registered_customer` (
 --
 
 INSERT INTO `registered_customer` (`contact_number`, `email`, `password`, `customer_id`) VALUES
-('07619975866', 'pubudu@gmail.com', '$2y$10$xPi91rr9vcNIYwzekVTxKuIZmSZ1yoHW.RUXjzsvd0JvuGdO507vm', 14),
+('07619975866', 'pubudu@gmail.com', '$2y$10$kdUVwNM5o8kJv11UcASZLOAwmVCmTNUoKSZrhS3GqjG7iEQon61rC', 14),
 ('0765844236933', 'nimalda@gg.com', '$2y$10$aEGU4eYmPjDX60T6Gm.22e4xivDEQSvyT8mUBkt1/8MoZZi5qEuZy', 15),
-('0765846931', 'chamath428@gmail.com', '$2y$10$VlROS4FB5XQhXZYQ1Qf4n.lasSEYPMr60j1Cdl3RdqeJDCyGpIwmO', 35);
+('0765846931', 'chamath428@gmail.com', '$2y$10$zMoncMn6JBLML3d4xXQ.ge1OPpcWzJysEgba0nduxe/maSzVsZ8BG', 35);
 
 -- --------------------------------------------------------
 
@@ -482,17 +551,12 @@ INSERT INTO `staff` (`staff_id`, `first_name`, `last_name`, `email`, `contact_nu
 (21, 'Thilina', 'Madusamka', 'reman@gmail.com', '044', '$2y$10$8G6u3x1Gdwt7JdivkBft4.DjgYXZdGuSRCo5ndkIpoS3abSHjAHjG', '4'),
 (22, 'Anupama', 'Bamdara', 'Bamdara@gmail.com', '033', '$2y$10$3VpNXEagZOeMBtxoKgSg2eA0R5qzrlDSBAwJKLpIQrI6V1Yy5ZeQy', '3'),
 (23, 'Chamath', 'Chinthana', 'chamath0662@gmail.com', '0552', '$2y$10$j5GgKyO72jHZVggQ7ynkn.AIIwRcp7xRmsLRtdNm7GytngRmF8HEG', '5'),
-(24, 'Madusha', 'Mihiran', 'Mihiran@g.com', '0053', '$2y$10$SmlanBXtO3nBEmrGHB9MhOddjVAqsicyrdA.TurrvehGAPzmyu1U2', '5'),
 (25, 'Pubudu', 'MIhiranga', 'MIhiranga@g.com', '0662', '$2y$10$03EcO1WAm3ZHujWatCZ42.8LMAhsfVntHu0cpfThFcSkpquwXn2M.', '6'),
-(26, 'Nipun', 'Widusara', 'Nipun@g.com', '0663', '$2y$10$ac.pzGpMCsK3IByiKX1aKelml2yWMJUOb/ez2tq.zCXPLxOiyl6wi', '6'),
-(29, 'fdsfsdf', 'fsdfsdfwdfwefw', '', '654654654654654', '$2y$10$Ingyo3ybbdDqGpQkAxMNyOTjtyArN4ZdNUkp9XT6dET5eFe1j76uu', '3'),
-(30, 'Yalla', 'Habibi', '', '7895263546546', '$2y$10$X7BNDQHxrKvUsmINKhfP4ulbB55R0ZlvnPjIcV3hLvLYaKu6vJxGq', ''),
-(31, 'Misba', 'ulhak', 'chamsadsd8@gmail.com', '076584693132132', '$2y$10$wnE77oiROL.jbnqXalTwlOAP5Y7Q1WDeYlzQJSKy0vjrzIYc8sYwS', '3'),
-(32, 'kesbawe', 'eka', '', '5435466546546', '$2y$10$tHCtWSYz9s4Y.NihWIq2WOurwuaH3WNgyYaflIog2wdr4fgfH5xY6', '5'),
-(33, 'dlvry', 'ekaaaaaaaaaaaaaaaaa', '', '23434554646546', '$2y$10$3o9cso6Fv7IzEOJIR51uqOLtwhjf5F0AST0To7YDN4/PCaRgtUsl6', '6'),
 (34, 'dsadasasddas', 'asdadddasasd', '', '4234234234234234', '$2y$10$tAAai9viBr3CbIFDrFxF1.GyGbRvq.H1n8JlK6guzir40065Yhz7G', '4'),
 (35, 'dasdasasdadas', 'dasdasasdadas', '', '2334534534654', '$2y$10$C4Xoh8i.LAGsH2JJON/abebR6MxwDE41XxqHdi6yDz9W8OkAYsMZS', '6'),
-(37, 'B.A.A.D.Bandara', 'Bandara', 'bmanager@gmail.com', '0702834766', '$2y$10$KY1cZ1L3dMp/8O2v73ZF5OIaDDj/xIOAeKwXOtoOcWWkgy5mBUDcO', '4');
+(37, 'B.A.A.D.Bandara', 'Bandara', 'bmanager@gmail.com', '0702834766', '$2y$10$KY1cZ1L3dMp/8O2v73ZF5OIaDDj/xIOAeKwXOtoOcWWkgy5mBUDcO', '4'),
+(38, 'Anuthrara', 'Frigarare', 'cashier1@g.com', '323213123123', '$2y$10$kHtNgdZwodv6RgJWuMDkauy2bgukQ4PpRJS7WN6AWv91Hbyih2ZfG', '5'),
+(41, 'Sajith', 'Perera', 'sajiya@g.com', '3213434234', '$2y$10$.KAAvQ8yW.PFzI8OGzyXweTy438Yw5F2QZpGOkaC3sifl.sCwPQgq', '5');
 
 -- --------------------------------------------------------
 
@@ -537,7 +601,21 @@ INSERT INTO `unregistered_customer` (`contact_number`, `customer_id`) VALUES
 ('332423', 59),
 ('53523523', 60),
 ('0702834766', 61),
-('0702834767', 63);
+('0702834767', 63),
+('076584693754641', 65),
+('07643242345846931', 66),
+('0768955896', 69),
+('0765559998', 70),
+('0778966321', 71),
+('0765588996', 72),
+('0785896985', 76),
+('3213434234', 77),
+('0762533931', 78),
+('07899969', 79),
+('0765996365', 80),
+('32134342234', 81),
+('0987766543', 82),
+('078999691', 83);
 
 -- --------------------------------------------------------
 
@@ -546,7 +624,16 @@ INSERT INTO `unregistered_customer` (`contact_number`, `customer_id`) VALUES
 --
 DROP TABLE IF EXISTS `customer_details`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `customer_details`  AS  (select `customer`.`customer_id` AS `customer_id`,concat(`customer`.`first_name`,' ',`customer`.`last_name`) AS `full_name`,`registered_customer`.`contact_number` AS `contact_number`,concat(`customer`.`address1`,', ',`customer`.`address2`,', ',`customer`.`address3`) AS `address` from (`customer` join `registered_customer` on(`customer`.`customer_id` = `registered_customer`.`customer_id`))) union (select `customer`.`customer_id` AS `customer_id`,concat(`customer`.`first_name`,' ',`customer`.`last_name`) AS `full_name`,`unregistered_customer`.`contact_number` AS `contact_number`,concat(`customer`.`address1`,', ',`customer`.`address2`,', ',`customer`.`address3`) AS `address` from (`customer` join `unregistered_customer` on(`customer`.`customer_id` = `unregistered_customer`.`customer_id`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `customer_details`  AS   (select `customer`.`customer_id` AS `customer_id`,concat(`customer`.`first_name`,' ',`customer`.`last_name`) AS `full_name`,`registered_customer`.`contact_number` AS `contact_number`,concat(`customer`.`address1`,', ',`customer`.`address2`,', ',`customer`.`address3`) AS `address` from (`customer` join `registered_customer` on(`customer`.`customer_id` = `registered_customer`.`customer_id`))) union (select `customer`.`customer_id` AS `customer_id`,concat(`customer`.`first_name`,' ',`customer`.`last_name`) AS `full_name`,`unregistered_customer`.`contact_number` AS `contact_number`,concat(`customer`.`address1`,', ',`customer`.`address2`,', ',`customer`.`address3`) AS `address` from (`customer` join `unregistered_customer` on(`customer`.`customer_id` = `unregistered_customer`.`customer_id`)))  ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `overview_details`
+--
+DROP TABLE IF EXISTS `overview_details`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `overview_details`  AS SELECT `order_details`.`order_id` AS `order_id`, `order_details`.`menu_id` AS `menu_id`, `order_details`.`needed_date` AS `needed_date`, `order_items`.`item_id` AS `item_id`, `menu`.`item_name` AS `item_name`, `menu`.`price` AS `price`, `order_items`.`quantity` AS `quantity`, `menu`.`category_id` AS `category_id`, `menu_category`.`category_name` AS `category_name`, `order_details`.`order_status` AS `order_status` FROM (((`order_details` join `order_items` on(`order_details`.`order_id` = `order_items`.`order_id`)) join `menu` on(`menu`.`menu_id` = `order_items`.`menu_id` and `menu`.`item_id` = `order_items`.`item_id`)) join `menu_category` on(`menu_category`.`category_id` = `menu`.`category_id`)) ;
 
 --
 -- Indexes for dumped tables
@@ -609,6 +696,12 @@ ALTER TABLE `cashier`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`customer_id`);
+
+--
+-- Indexes for table `customer_notification`
+--
+ALTER TABLE `customer_notification`
+  ADD PRIMARY KEY (`notification_id`);
 
 --
 -- Indexes for table `delivery_person`
@@ -717,7 +810,7 @@ ALTER TABLE `unregistered_customer`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `bill_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=289;
 
 --
 -- AUTO_INCREMENT for table `branch`
@@ -735,7 +828,13 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `customer_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+
+--
+-- AUTO_INCREMENT for table `customer_notification`
+--
+ALTER TABLE `customer_notification`
+  MODIFY `notification_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `menu_category`
@@ -747,13 +846,13 @@ ALTER TABLE `menu_category`
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=423;
 
 --
 -- AUTO_INCREMENT for table `ratings_and_reviews`
 --
 ALTER TABLE `ratings_and_reviews`
-  MODIFY `rate_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `rate_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `raw_material_inventory`
@@ -771,7 +870,7 @@ ALTER TABLE `retrieve_materials`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `staff_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `stocks`

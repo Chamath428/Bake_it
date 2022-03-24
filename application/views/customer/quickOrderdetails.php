@@ -76,9 +76,12 @@
 								echo "Cooking Completed";
 								break;
 							case '6':
-								echo "Declined by the shop";
+								echo "Completed";
 								break;
 							case '7':
+								echo "Declined by the shop";
+								break;
+							case '8':
 								echo "Cancled";
 								break;
 							
@@ -211,11 +214,12 @@
 			</table>
 		</div>
 
+<?php if ($data[1]['order_status']==6) {?>
 		<div class="buttons">
-			<?php if ($data[1]['order_status']==6) {?>
+			
 			<button data-modal-target="#modal">Rate Order</button>
 			<button><a href="<?php echo BASEURL."/cartController"; ?>">Re-Order</a></button>
-		<?php } ?>
+
 		</div>
 
 	</section>
@@ -268,5 +272,8 @@
   </div>
   <div id="overlay"></div>
 
+  		<?php } ?>
+
 	<?php require_once('footer.php'); ?>
+
 </html>
