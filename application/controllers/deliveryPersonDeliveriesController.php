@@ -66,10 +66,10 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$data[2] = $menuDetails;
 
 		$subTotal = $this->deliveryPersonDeliveriesModel->getSubTotal($order_id);
-		$data[3] = $subTotal;
+		$data[3] = intval($subTotal);
 
 		$advancedAmount = $this->deliveryPersonDeliveriesModel->getAdvancedAmount($order_id);
-		$data[4] = $advancedAmount;
+		$data[4] = intval($advancedAmount);
 		
 		$data[5] = $data[3] - $data[4];
         $data[7] = $data[4] - $data[3] ;
@@ -105,8 +105,18 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 	}
 	public function completeDelivery($order_id)
 	{
+		
+		$subTotal = $this->deliveryPersonDeliveriesModel->getSubTotal($order_id);
+		$data[3] = intval($subTotal);
+
+		$advancedAmount = $this-> deliveryPersonDeliveriesModel->getAdvancedAmount($order_id);
+		$data[4] = intval($advancedAmount);
+
+		if($data[4] >= $data[3]){
 			$this->deliveryPersonDeliveriesModel->updateOrderStatusAsCompleted($order_id);
 			$this->index();	
+		}
+			
 	}
 	public function getBalanceAmountAtDelivery($order_id){
         

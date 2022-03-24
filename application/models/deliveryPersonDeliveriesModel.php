@@ -311,7 +311,7 @@ class deliveryPersonDeliveriesModel extends database
       $sql19 = "UPDATE  
                      order_details 
                SET
-                     paid_amount=".$paid_amount."  
+                     paid_amount=".$paid_amount.", order_status = 6 
                WHERE 
                      order_id = " . $order_id;
       $res19 = mysqli_query($this->db, $sql19) or die('19->' . mysqli_error($this->db));
