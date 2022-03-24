@@ -49,11 +49,13 @@
                         menu_category.category_name, 
                         menu.price,  
                         sum(order_items.quantity),
-                        menu.price * sum(order_items.quantity)
+                        menu.price * sum(order_items.quantity),
+                        branch.branch_name
                     FROM
                         order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                         JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                         JOIN menu_category ON menu.category_id = menu_category.category_id
+                                        JOIN branch ON menu.branch_id = branch.branch_id 
                     WHERE
                         order_details.needed_date = ".'"'.$date.'"'." AND menu.branch_id = ".$branch_id." AND order_details.order_status = 6
                     GROUP BY 
@@ -64,6 +66,7 @@
                  $data['category_name']=$row3['category_name'];
                  $data['quantity']=$row3['sum(order_items.quantity)'];  
                  $data['income']=$row3['menu.price * sum(order_items.quantity)'];
+                 $data['branch_name'] = $row3['branch_name'];
                  $dailySalesData[$i]=$data;
                  $i++;
              }
@@ -77,11 +80,13 @@
                      menu_category.category_name, 
                      menu.price,  
                      sum(order_items.quantity),
-                     menu.price * sum(order_items.quantity)
+                     menu.price * sum(order_items.quantity),
+                     branch.branch_name
                  FROM
                      order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE
                      order_details.needed_date = ".'"'.$date.'"'." AND order_details.order_status = 6
                  GROUP BY 
@@ -93,7 +98,8 @@
               $data['price']=$row4['price'];
               $data['quantity']=$row4['sum(order_items.quantity)'];  
               $data['income']=$row4['menu.price * sum(order_items.quantity)'];
-           $dailyTotalSalesData[$i]=$data;
+              $data['branch_name'] = $row4['branch_name'];
+              $dailyTotalSalesData[$i]=$data;
               $i++;
           }
           return  $dailyTotalSalesData;
@@ -107,10 +113,12 @@
                        menu.price,
                        sum(order_items.quantity),
                        menu.price * sum(order_items.quantity),
+                       branch.branch_name
                     FROM 
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id 
-                                     JOIN menu_category ON menu.category_id = menu_category.category_id 
+                                     JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id  
                     WHERE 
                        menu.branch_id = ".$branch_id."  AND WEEK(needed_date, 5) - WEEK(DATE_SUB(needed_date, INTERVAL DAYOFMONTH(needed_date) - 1 DAY), 5) + 1=".$week." AND month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND order_details.order_status = 6
                     GROUP BY menu.category_id";
@@ -120,6 +128,7 @@
                  $data['category_name']=$row5['category_name'];
                  $data['quantity']=$row5['quantity'];  
                  $data['income']=$row5['menu.price * sum(order_items.quantity)'];
+                 $data['branch_name'] = $row5['branch_name'];
                  $salesWeeklyList[$i]=$data;
                  $i++;
             }
@@ -134,10 +143,12 @@
                     menu.price,
                     sum(order_items.quantity),
                     menu.price * sum(order_items.quantity),
+                    branch.branch_name
                  FROM 
                     order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                   JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id 
                                   JOIN menu_category ON menu.category_id = menu_category.category_id 
+                                  JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                     WEEK(needed_date, 5) - WEEK(DATE_SUB(needed_date, INTERVAL DAYOFMONTH(needed_date) - 1 DAY), 5) + 1=".$week." AND month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND order_details.order_status = 6
                  GROUP BY menu.category_id";
@@ -147,6 +158,7 @@
               $data['category_name']=$row6['category_name'];
               $data['quantity']=$row6['sum(order_items.quantity)'];  
               $data['income']=$row6['menu.price * sum(order_items.quantity)'];
+              $data['branch_name'] = $row6['branch_name'];
               $salesTotalWeeklyList[$i]=$data;
               $i++;
          }
@@ -161,13 +173,12 @@
                     menu.price,
                     sum(order_items.quantity),
                     menu.price * sum(order_items.quantity),
-                    order_details.needed_date,
-                    year(order_details.needed_date),
-                    month(order_details.needed_date) 
+                    branch.branch_name 
                  FROM 
                     order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                   JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id 
                                   JOIN menu_category ON menu.category_id = menu_category.category_id 
+                                  JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                     menu.branch_id = ".$branch_id."  AND month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND order_details.order_status = 6
                  GROUP BY menu.category_id";
@@ -177,6 +188,7 @@
               $data['category_name']=$row7['category_name'];
               $data['quantity']=$row7['sum(order_items.quantity)'];  
               $data['income']=$row7['menu.price * sum(order_items.quantity)'];
+              $data['branch_name'] = $row7['branch_name'];
               $salesMonthlyList[$i]=$data;
               $i++;
          }
@@ -191,13 +203,12 @@
                     menu.price,
                     sum(order_items.quantity),
                     menu.price * sum(order_items.quantity),
-                    order_details.needed_date,
-                    year(order_details.needed_date),
-                    month(order_details.needed_date) 
+                    branch.branch_name
                  FROM 
                     order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                   JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id 
                                   JOIN menu_category ON menu.category_id = menu_category.category_id 
+                                  JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                     month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND order_details.order_status = 6
                  GROUP BY menu.category_id";
@@ -207,6 +218,7 @@
               $data['category_name']=$row8['category_name'];
               $data['quantity']=$row8['sum(order_items.quantity)'];  
               $data['income']=$row8['menu.price * sum(order_items.quantity)'];
+              $data['branch_name'] = $row8['branch_name'];
               $salesTotalMonthlyList[$i]=$data;
               $i++;
          }
@@ -237,11 +249,14 @@
                        menu.item_name,
                        menu.price,  
                        sum(order_items.quantity),
-                       menu.price * sum(order_items.quantity)
+                       menu.price * sum(order_items.quantity),
+                       branch.branch_name,
+                       menu_category.category_name
                  FROM
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                         order_details.needed_date = ".'"'.$date.'"'." AND menu.branch_id = ".$branch_id." AND menu_category.category_id=".$category_id." AND order_details.order_status = 6
                  GROUP BY 
@@ -253,6 +268,8 @@
               $data['price'] = $row10['price'];
               $data['quantity']=$row10['sum(order_items.quantity)'];  
               $data['income']=$row10['menu.price * sum(order_items.quantity)'];
+              $data['branch_name']=$row10['branch_name'];
+              $data['category_name'] = $row10['category_name'];
               $dailyCategorySalesData[$i]=$data;
               $i++;
           }
@@ -266,11 +283,14 @@
                        menu.item_name,
                        menu.price,  
                        sum(order_items.quantity),
-                       menu.price * sum(order_items.quantity)
+                       menu.price * sum(order_items.quantity),
+                       branch.branch_name,
+                       menu_category.category_name
                  FROM
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                         order_details.needed_date = ".'"'.$date.'"'." AND menu.branch_id = ".$branch_id."  AND order_details.order_status = 6
                  GROUP BY 
@@ -282,6 +302,8 @@
               $data['price'] = $row11['price'];
               $data['quantity']=$row11['sum(order_items.quantity)'];  
               $data['income']=$row11['menu.price * sum(order_items.quantity)'];
+              $data['branch_name']=$row11['branch_name'];
+              $data['category_name'] = $row11['category_name'];
               $dailyTotalCategorySalesData[$i]=$data;
               $i++;
           }
@@ -295,11 +317,14 @@
                        menu.item_name,
                        menu.price,  
                        sum(order_items.quantity),
-                       menu.price * sum(order_items.quantity)
+                       menu.price * sum(order_items.quantity),
+                       branch.branch_name,
+                       menu_category.category_name
                  FROM
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                         order_details.needed_date = ".'"'.$date.'"'."  AND menu_category.category_id=".$category_id." AND order_details.order_status = 6
                  GROUP BY 
@@ -311,6 +336,8 @@
               $data['price'] = $row12['price'];
               $data['quantity']=$row12['sum(order_items.quantity)'];  
               $data['income']=$row12['menu.price * sum(order_items.quantity)'];
+              $data['branch_name']=$row12['branch_name'];
+              $data['category_name'] = $row12['category_name'];
               $dailyAllBranchCategorySalesData[$i]=$data;
               $i++;
           }
@@ -324,11 +351,14 @@
                        menu.item_name,
                        menu.price,  
                        sum(order_items.quantity),
-                       menu.price * sum(order_items.quantity)
+                       menu.price * sum(order_items.quantity),
+                       branch.branch_name,
+                       menu_category.category_name
                  FROM
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                        WEEK(needed_date, 5) - WEEK(DATE_SUB(needed_date, INTERVAL DAYOFMONTH(needed_date) - 1 DAY), 5) + 1=".$week." AND month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu.branch_id = ".$branch_id." AND menu_category.category_id=".$category_id." AND order_details.order_status = 6
                  GROUP BY 
@@ -340,6 +370,8 @@
               $data['price'] = $row13['price'];
               $data['quantity']=$row13['sum(order_items.quantity)'];  
               $data['income']=$row13['menu.price * sum(order_items.quantity)'];
+              $data['branch_name']=$row13['branch_name'];
+              $data['category_name'] = $row13['category_name'];
               $weeklyCategorySalesData[$i]=$data;
               $i++;
           }
@@ -353,11 +385,14 @@
                        menu.item_name,
                        menu.price,  
                        sum(order_items.quantity),
-                       menu.price * sum(order_items.quantity)
+                       menu.price * sum(order_items.quantity),
+                       branch.branch_name,
+                       menu_category.category_name
                  FROM
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                         WEEK(needed_date, 5) - WEEK(DATE_SUB(needed_date, INTERVAL DAYOFMONTH(needed_date) - 1 DAY), 5) + 1 = ".$week." AND month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu.branch_id = ".$branch_id." AND menu.branch_id = ".$branch_id."  AND order_details.order_status = 6
                  GROUP BY 
@@ -369,6 +404,8 @@
               $data['price'] = $row14['price'];
               $data['quantity']=$row14['sum(order_items.quantity)'];  
               $data['income']=$row14['menu.price * sum(order_items.quantity)'];
+              $data['branch_name']=$row14['branch_name'];
+              $data['category_name'] = $row14['category_name'];
               $weeklyTotalCategorySalesData[$i]=$data;
               $i++;
           }
@@ -382,11 +419,14 @@
                        menu.item_name,
                        menu.price,  
                        sum(order_items.quantity),
-                       menu.price * sum(order_items.quantity)
+                       menu.price * sum(order_items.quantity),
+                       branch.branch_name,
+                       menu_category.category_name
                  FROM
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                         WEEK(needed_date, 5) - WEEK(DATE_SUB(needed_date, INTERVAL DAYOFMONTH(needed_date) - 1 DAY), 5) + 1 = ".$week." AND month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu_category.category_id=".$category_id."  AND order_details.order_status = 6
                  GROUP BY 
@@ -398,6 +438,8 @@
               $data['price'] = $row15['price'];
               $data['quantity']=$row15['sum(order_items.quantity)'];  
               $data['income']=$row15['menu.price * sum(order_items.quantity)'];
+              $data['branch_name']=$row15['branch_name'];
+              $data['category_name'] = $row15['category_name'];
               $weeklyAllBranchCategorySalesData[$i]=$data;
               $i++;
           }
@@ -411,11 +453,14 @@
                        menu.item_name,
                        menu.price,  
                        sum(order_items.quantity),
-                       menu.price * sum(order_items.quantity)
+                       menu.price * sum(order_items.quantity),
+                       branch.branch_name,
+                       menu_category.category_name
                  FROM
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                        month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu.branch_id = ".$branch_id." AND menu_category.category_id=".$category_id." AND order_details.order_status = 6
                  GROUP BY 
@@ -427,6 +472,8 @@
               $data['price'] = $row16['price'];
               $data['quantity']=$row16['sum(order_items.quantity)'];  
               $data['income']=$row16['menu.price * sum(order_items.quantity)'];
+              $data['branch_name']=$row16['branch_name'];
+              $data['category_name'] = $row16['category_name'];
               $monthlyCategorySalesData[$i]=$data;
               $i++;
           }
@@ -440,11 +487,14 @@
                        menu.item_name,
                        menu.price,  
                        sum(order_items.quantity),
-                       menu.price * sum(order_items.quantity)
+                       menu.price * sum(order_items.quantity),
+                       branch.branch_name,
+                       menu_category.category_name
                  FROM
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                        month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu.branch_id = ".$branch_id." AND menu.branch_id = ".$branch_id."  AND order_details.order_status = 6
                  GROUP BY 
@@ -456,6 +506,8 @@
               $data['price'] = $row17['price'];
               $data['quantity']=$row17['sum(order_items.quantity)'];  
               $data['income']=$row17['menu.price * sum(order_items.quantity)'];
+              $data['branch_name']=$row17['branch_name'];
+              $data['category_name'] = $row17['category_name'];
               $monthlyTotalCategorySalesData[$i]=$data;
               $i++;
           }
@@ -469,11 +521,14 @@
                        menu.item_name,
                        menu.price,  
                        sum(order_items.quantity),
-                       menu.price * sum(order_items.quantity)
+                       menu.price * sum(order_items.quantity),
+                       branch.branch_name,
+                       menu_category.category_name
                  FROM
                        order_details JOIN order_items ON order_details.order_id=order_items.order_id 
                                      JOIN menu ON order_items.menu_id = menu.menu_id AND order_items.item_id = menu.item_id
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
+                                     JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
                       month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu_category.category_id=".$category_id."  AND order_details.order_status = 6
                  GROUP BY 
@@ -485,6 +540,8 @@
               $data['price'] = $row18['price'];
               $data['quantity']=$row18['sum(order_items.quantity)'];  
               $data['income']=$row18['menu.price * sum(order_items.quantity)'];
+              $data['branch_name']=$row18['branch_name'];
+              $data['category_name'] = $row18['category_name'];
               $monthlyAllBranchCategorySalesData[$i]=$data;
               $i++;
           }

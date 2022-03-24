@@ -85,7 +85,7 @@ input {
   padding: 10px;
 
 }
-.reportTopic .selectedTimePeriod{
+.reportTopic .selectedTimePeriod , .reportTopic .selectedBranch,.reportTopic .selectedCategory{
   display: flex;
   flex-direction: row;
   padding: 10px;

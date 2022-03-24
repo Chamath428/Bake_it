@@ -41,10 +41,10 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$totalDeliveriesofMonth = $this->deliveryPersonDeliveriesModel->countTotalDeliveriesofMonth();
 		$data[2] = $totalDeliveriesofMonth;
 
-		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
-		echo $data['date'];
-	 	$completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
-	 	$data[3] = $completedDeliveriesTable;
+		// $data['date'] = date('Y-m-d', strtotime($_POST['date']));
+	 	// $completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
+	 	$data[3] = array();
+		// echo $data['date'];
  
 		$this->view("deliveryPerson/deliveryHistory", $data);
 	}
@@ -99,11 +99,23 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$this->index();
 	}
 	public function getCompletedDeliveriesTable()
-	{
+	{    
+		$totalDeliveries = $this->deliveryPersonDeliveriesModel->countTotalDeliveries();
+		$data[0] = $totalDeliveries;
+
+		$totalDeliveriesofWeek = $this->deliveryPersonDeliveriesModel->countTotalDeliveriesofWeek();
+		$data[1] = $totalDeliveriesofWeek;
+
+		$totalDeliveriesofMonth = $this->deliveryPersonDeliveriesModel->countTotalDeliveriesofMonth();
+		$data[2] = $totalDeliveriesofMonth;
+
+	 	$data[3] = array();
 
 		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
 		$completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
 		$data[3] = $completedDeliveriesTable;
+		// echo $data[3]['order_id'];
+
 
 		$this->view("deliveryPerson/deliveryHistory", $data);
 	}

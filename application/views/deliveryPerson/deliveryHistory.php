@@ -38,7 +38,7 @@
         </div>
         <div class="cal-table">
             <div class="delivery-calander">
-                <form action="<?php echo BASEURL."/deliveryPersonDeliveriesController/getDeliveryOverview"; ?>" method="POST">
+                <form action="<?php echo BASEURL."/deliveryPersonDeliveriesController/getCompletedDeliveriesTable"; ?>" method="POST">
                 <div class="selectDate">Select Date
                     <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" />
                 </div>                 
@@ -50,6 +50,7 @@
         <!--table for Delivery History-->
         <div class="historytable">
             <!-- <h3 id="table-caption">Details of Overview</h3> -->
+            <?php if(!empty($data[3])){?>
             <table id="table-history">
                 <thead>
                     <tr>
@@ -78,7 +79,8 @@
                     </tr>
                     <?php
                         $i++;
-                    }?> 
+                    } 
+            }?> 
                    
                 </tbody>
             </table>

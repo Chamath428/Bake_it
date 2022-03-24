@@ -51,6 +51,27 @@
                     </div>
                     <?php }?>
                 </div>
+                <div class="selectedBranch">
+                       <span>Selected Branch</span>
+                       <span>
+                           <?php if($data['branch_id']==0){?>
+                            All branches
+                            <?php } else{
+                                echo $data[1]['branch_name'];
+                            }?>
+                       </span>
+                </div>
+                <div class="selectedCategory">
+                       <span>Selected Category</span>
+                       <span>
+                           <?php if($data['category_id']==0){?>
+                            All categories
+                            <?php } else{
+                                echo $data[1]['category_name'];
+                            }?>
+                       </span>
+                </div>
+
             </div>
             <table>
                 <thead>
