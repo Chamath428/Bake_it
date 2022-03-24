@@ -104,7 +104,7 @@
           foreach ($data[0] as $key => $basicOrderDetails) { ?>
             <a href="<?php echo BASEURL . "/bakeryManagerOrderController/completeOngoingOrderStatus/" . $basicOrderDetails['order_id'] ?>"><button class="btn">Complete</button></a>
 
-            <?php } ?>
+          <?php } ?>
 
         </div>
       </div>
