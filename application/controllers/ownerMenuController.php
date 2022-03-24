@@ -106,7 +106,7 @@ class ownerMenuController extends bakeItFramework
         $check_id = explode('.',$ids);
         // echo $check_id[1]; 
         $this->menuModel->deleteMenuItems( $check_id );
-        $this->index("owner/menuItems");
+        $this->index();
 
 
 
