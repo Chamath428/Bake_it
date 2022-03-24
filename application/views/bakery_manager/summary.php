@@ -96,13 +96,7 @@ Summary of Stock
             <!-- <div>
                     <canvas id="myChart2" ></canvas>
              </div> -->
-            <?php
-            $category = [];
-            for ($i = 0; $i < count($data[0]); $i++) {
-                $category[$i] = $data[0][$i]['raw_category_name'];
-            }
-
-            ?>
+         
 
 
         </div>
@@ -114,51 +108,4 @@ Summary of Stock
 
     <?php require_once('footer.php'); ?>
 
-    <script>
-        const categories = <?php echo json_encode($category); ?>;
-        console.log(categories);
-        var xValues = categories;
-        var yValues = [55, 49, 44, 24];
-        var barColors = ["red", "green", "blue", "orange"];
-
-        new Chart("myChart", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: "Usage of category"
-                }
-            }
-        });
-
-        new Chart("myChart2", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: "Usage of category"
-                }
-            }
-        });
-
-    </script>
+   
