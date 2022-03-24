@@ -27,13 +27,6 @@
 
         <div class="content">
 
-        <?php foreach ($data[1] as $key => $value) { ?>
-               
-
-                            <?php echo $value; ?>
-                           
-
-                    <?php } ?>
 
             <div class="summary-topic">
                 <pre>
@@ -91,10 +84,7 @@ Summary of Stock
 
 
                     </div>
-                    <div class="chart2" id="chart2">
-
-                        <canvas id="myChart2" style="width:100%"></canvas>
-                    </div>
+             
                     <div class="get-summary-btn" id="viewTablebtn">
 
                         <a href="<?php echo BASEURL . "/bakeryManagerSummaryController" ?>"> <input type="button" id="button" value="View Summary Table"> </a>
@@ -110,9 +100,8 @@ Summary of Stock
             $category = [];
             for ($i = 0; $i < count($data[0]); $i++) {
                 $category[$i] = $data[0][$i]['raw_category_name'];
-               
             }
-            
+
             ?>
 
 
@@ -126,7 +115,6 @@ Summary of Stock
     <?php require_once('footer.php'); ?>
 
     <script>
-        
         const categories = <?php echo json_encode($category); ?>;
         console.log(categories);
         var xValues = categories;
@@ -152,4 +140,25 @@ Summary of Stock
                 }
             }
         });
+
+        new Chart("myChart2", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: "Usage of category"
+                }
+            }
+        });
+
     </script>
