@@ -89,13 +89,15 @@ Summary of Stock
 
                         <a href="<?php echo BASEURL . "/bakeryManagerSummaryController" ?>"> <input type="button" id="button" value="View Summary Table"> </a>
                     </div>
+
+                    <div>
+                    <canvas id="myChart2" ></canvas>
+             </div>
                 </div>
 
             </div>
 
-            <!-- <div>
-                    <canvas id="myChart2" ></canvas>
-             </div> -->
+         
          
 
 

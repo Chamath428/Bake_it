@@ -144,7 +144,7 @@ class menuModel extends database
 
 
 
-		$res7 = mysqli_query($this->db, $sql7) or die('1->' . mysqli_error($this->db));
+		$res7 = mysqli_query($this->db, $sql7) or die('7->' . mysqli_error($this->db));
 		while ($row5 = mysqli_fetch_assoc($res7)) {
 			$data['item_id'] = $row5['item_id'];
 			$data['item_name'] = $row5['item_name'];
@@ -188,14 +188,14 @@ class menuModel extends database
 				 )";
 
 
-		$res7 = mysqli_query($this->db, $sql8) or die('1->' . mysqli_error($this->db));
+		$res7 = mysqli_query($this->db, $sql8) or die('8->' . mysqli_error($this->db));
 	}
 
 	public function deleteMenuItems( $check_id){
 		foreach ($check_id as $key => $value) {
 		$sql9 ="DELETE FROM `menu` WHERE `item_id` = ".$value;
 		}
-		$res8 = mysqli_query($this->db, $sql9) or die('1->' . mysqli_error($this->db));
+		$res9 = mysqli_query($this->db, $sql9) or die('9->' . mysqli_error($this->db));
 
 	}
 }
