@@ -52,6 +52,7 @@ class bakeryManagerOrderModel extends database
 					FROM
 					order_details
                     WHERE
+                    
                     order_id=" . '"' . $id . '"';
 
         $res2 = mysqli_query($this->db, $sql2) or die('1->' . mysqli_error($this->db));
