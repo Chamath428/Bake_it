@@ -45,9 +45,7 @@ class menuModel extends database
 						price
 					FROM
 						menu
-					WHERE
-
-						category_id =" . '"' . $category_id . '"';
+					WHERE menu_id = " .$_SESSION['branch_id']. " AND category_id =" . '"' . $category_id . '"';
 		$res2 = mysqli_query($this->db, $sql2) or die('2->' . mysqli_error($this->db));
 		while ($row2 = mysqli_fetch_assoc($res2)) {
 			$data['item_id'] = $row2['item_id'];
