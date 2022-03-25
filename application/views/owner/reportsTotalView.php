@@ -24,42 +24,42 @@
             <div class="selectedTimePeriod">
                 <?php if ($data['reportType'] == 1) { ?>
                     <div class="subReportTopic">
-                        <span>Date :</span>
+                        <span>Date : </span>
                         <span><?php echo $data['date'] ?></span>
                     </div>
                 <?php } ?>
                 <?php if ($data['reportType'] == 2) { ?>
                     <div class="subReportTopic">
-                        <span>Year :</span>
+                        <span>Year : </span>
                         <span><?php echo $data['year'] ?></span>
                     </div>
                     <div class="subReportTopic">
-                        <span>Month :</span>
+                        <span>Month : </span>
                         <span><?php echo $data['month'] ?></span>
                     </div>
                     <div class="subReportTopic">
-                        <span>Week :</span>
+                        <span>Week : </span>
                         <span><?php echo $data['week'] ?></span>
                     </div>
                 <?php } ?>
                 <?php if ($data['reportType'] == 3) { ?>
                     <div class="subReportTopic">
-                        <span>Year :</span>
+                        <span>Year : </span>
                         <span><?php echo $data['year'] ?></span>
                     </div>
                     <div class="subReportTopic">
-                        <span>Month :</span>
+                        <span>Month : </span>
                         <span><?php echo $data['month'] ?></span>
                     </div>
                 <?php } ?>
             </div>
             <div class="selectedBranch">
-                <span>Selected Branch</span>
+                <span>Selected Branch : </span>
                 <span>
                     <?php if ($data['branch_id'] == 0) { ?>
                         All branches
                     <?php } else {
-                        echo $data[1]['branch_name'];
+                        echo $data['branch_name'];
                     } ?>
                 </span>
             </div>

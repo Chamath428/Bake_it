@@ -15,8 +15,10 @@
 
 			$totalRatings = $this -> ownerReviewsModel -> countOfRatings();
             $data[1] = $totalRatings;
-	//$data[1]???
-	      
+	        
+	        $bestDeliveryPerson = $this -> ownerReviewsModel -> getBsetDeliveryPerson();
+			$data[2] = $bestDeliveryPerson;
+
 			$this->view("owner/reviews",$data);	
 		}
 		public function getReviewsTabel(){
@@ -26,10 +28,12 @@
 			$data['branch_id']=$branch_id;
 			
             if($data['branch_id']==0){
-
+                $reviewsTable=$this->ownerReviewsModel -> getAllBranchReviewsTable();
+				$data[3] = $reviewsTable;
 			}
 			else{
-				
+				$reviewsTable=$this->ownerReviewsModel -> getSelectedBranchReviewsTable($branch_id);
+				$data[3] = $reviewsTable;
 			}
             $reviewsTable=$this->ownerReviewsModel -> getReviewsTable($branch_id);
 			if (empty($reviewsTable)) {

@@ -19,12 +19,12 @@
         <?php include('deliveryheader.php'); ?>
     </section> 
     <div class="delivery-body" id="body">
-        <div class="del-topic">Deliveries of the day <br>
+        <div class="del-topic">Ongoing Deliveries<br>
         
-        <?php
+        <!-- ?php
         date_default_timezone_set("Asia/Calcutta");
-        echo date('l jS \of F Y h:i:s A');
-        ?> 
+        echo date('l jS \of F Y h:i A');
+        ?>  -->
         
         </div> <br>
         <div class="row">
@@ -79,16 +79,17 @@
                             </td>
                             <td label="Accept">
                                 <?php if($delivery['order_status'] == 3) {?>
-                                <button id="accepted_button">
-                                    Accepted<i class="fas fa-check"></i>
-                                </button>
+                                <a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails/".$delivery['order_id'] ?>">
+                                    <button id="accepted_button">
+                                            Accepted<i class="fas fa-check"></i>
+                                    </button>
+                                </a>
                                 <?php }
                                  else{?> 
                                 <a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/acceptDeliveries/".$delivery['order_id'] ?>">
-                                
-                                <button class="accept_button">
-                                    Accept<i class="fas fa-pen"></i>
-                                </button>
+                                    <button class="accept_button">
+                                        Accept<i class="fas fa-pen"></i>
+                                    </button>
                                 </a>
                                <?php }?>
                             </td>

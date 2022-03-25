@@ -126,7 +126,7 @@
             while($row5=mysqli_fetch_assoc($res5)){
                  $data['category_id']=$row5['category_id'];
                  $data['category_name']=$row5['category_name'];
-                 $data['quantity']=$row5['quantity'];  
+                 $data['quantity']=$row5['sum(order_items.quantity)'];  
                  $data['income']=$row5['menu.price * sum(order_items.quantity)'];
                  $data['branch_name'] = $row5['branch_name'];
                  $salesWeeklyList[$i]=$data;
@@ -547,7 +547,31 @@
           }
           return  $monthlyAllBranchCategorySalesData;
     }
-
+    public function getBranchName($branch_id){
+        $sql19 = "SELECT 
+                       branch_name 
+                  FROM 
+                       branch 
+                  WHERE 
+                       branch_id = ".$branch_id."";
+        $res19 = mysqli_query($this->db, $sql19) or die('19->' . mysqli_error($this->db));
+        $row19 = mysqli_fetch_assoc($res19);
+        $branchName = $row19['branch_name'];
+        return  $branchName;
+    }
+    public function getCategoryName($category_id){
+        $sql20 = "SELECT 
+                       category_name 
+                  FROM 
+                       menu_category 
+                  WHERE 
+                       category_id = ".$category_id."";
+        $res20 = mysqli_query($this->db, $sql20) or die('20->' . mysqli_error($this->db));
+        $row20 = mysqli_fetch_assoc($res20);
+        $categoryName = $row20['category_name'];
+        return  $categoryName;
+    }
+    
     
 
 

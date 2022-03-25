@@ -34,7 +34,7 @@
                 </div>
             
                 <div class="text">
-                    <label for="Branch">Outlet</label>
+                    <label for="Branch">Branch</label>
                     <div class="text-fill">
                         <select placeholder="Select Branch" name="branch_Id">
                             <option value="0">Any</option>

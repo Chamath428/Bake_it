@@ -79,11 +79,12 @@
                     </tr>
                     <?php
                         $i++;
-                    } 
-            }?> 
-                   
-                </tbody>
+                    } ?>
+                 </tbody>
             </table>
+            <?php }?> 
+                   
+          
             </div>
         </div>
     </div>
