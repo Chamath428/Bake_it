@@ -82,6 +82,8 @@
 
 		public function sendOTP($phonenumber){
 			$otp=rand(1000,9999);
+			// delete thefollowing line
+			$otp=7788;
 			$_SESSION['otp']=$otp;
 			$_SESSION['otpStarts']=time();
 
@@ -96,6 +98,9 @@
 			$ret = file($url);
 
 			$res= explode(":",$ret[0]);
+
+			// delete thefollowing line
+			$res[0]="OK";
 
 			if (trim($res[0])=="OK"){
 				if (isset($_SESSION['otp']) && isset($_SESSION['otpStarts']) && (time()-$_SESSION['otpStarts']) < 120) {

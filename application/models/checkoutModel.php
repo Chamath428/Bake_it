@@ -189,6 +189,17 @@
 
 			return $last_order_id;
 		}
+
+		public function updateCustomerMobile($customer_id,$phonenumber){
+			$sql9="UPDATE
+						registered_customer
+					SET
+						contact_number=".'"'.$phonenumber.'"'."
+					WHERE
+						customer_id=".$customer_id;
+
+			$res9=mysqli_query($this->db,$sql9) or die('9->'.mysqli_error($this->db));
+		}
 	}
 
  ?>

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-navbar.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-footer.css">
 	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-checkout.css">
+	<link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/customer/customer-messageboxes.css">
 	<script src="<?php echo BASEURL ?>/public/js/customer/message.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/navbar.js" defer></script>
 	<script src="<?php echo BASEURL ?>/public/js/customer/checkout.js" defer></script>
@@ -21,6 +22,14 @@
 	</header>
 
 	<section class="checkout">
+
+		<?php if (isset($data['error'])){?>
+			<div class="danger-alert">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+			  <p><?php echo $data['error']; ?></p>
+			</div>
+			<?php } ?>
+
 		<form method="post" action="<?php echo BASEURL."/checkoutController/placeOrder" ?>">
 		<div class="billing-details">
 
