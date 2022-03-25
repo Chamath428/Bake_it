@@ -25,7 +25,12 @@
 	<div class="bgg rawMaterials-body" id="body" onclick="defaultColse()">
 		<div class="middle-section">
 
-			<h3>Select Category</h3>
+			<header class="topic">
+				<h2>Raw Materials</h2><br>
+				<h4>Select Category</h4>
+
+			</header>
+
 			<form method="post" action="<?php echo BASEURL . '/rawMaterialController/getItemsRawMaterials'; ?>">
 				<div class="category">
 					<select name="categoryId" id="categoryId">
@@ -46,12 +51,10 @@
 					</select>
 					<button type="submit" class="get-btn">Get Item List</button>
 				</div>
-				<header class="topic">
-					<h3>Raw Materials</h3>
-				</header>
+
 				<div class="search-container">
 
-					<input type="text" placeholder="Search.." name="search" id="search" onkeyup="search_item();">
+					<input type="text" placeholder="Search by item name...." name="search" id="search" onkeyup="search_item();">
 					<button type="submit"><i class="fas fa-search"></i></button>
 
 				</div>
@@ -76,7 +79,7 @@
 
 
 
-									<td><input name="chk_id[]" type="checkbox" class='chkbox' value="<?php echo $value['rawitem_id']; ?>" onclick="myFunction(this.id)"  id="<?php echo $value['rawitem_id']; ?>"/></td>
+									<td><input name="chk_id[]" type="checkbox" class='chkbox' value="<?php echo $value['rawitem_id']; ?>" onclick="myFunction(this.id)" id="<?php echo $value['rawitem_id']; ?>" /></td>
 
 									<td><?php echo $value['rawitem_id']; ?></td>
 									<td><?php echo $value['rawitem_name']; ?></td>
@@ -94,7 +97,7 @@
 
 
 				<!-- <input class="del-row" type="submit" value="Delete Item" name="delete-row"/> -->
-				<input id="submit" name="submit" class="del-row" onclick="delFunction()"  value="Delete">
+				<input id="submit" name="submit" class="del-row" onclick="delFunction()" value="Delete">
 
 				<!-- <input class="add" type="button" onclick="addRow('dataTable')" value="Add Item"> -->
 				<input class="add" type="button" onclick="popup()" value="Add Item">
@@ -108,6 +111,8 @@
 
 	<form method="post" action="<?php echo BASEURL . '/rawMaterialController/insertRawMaterials'; ?>">
 		<div class="addDatafrom" id="addDatafrom">
+			
+			<a onclick="closePopUpUseCancel()"> <i class="fas fa-times"></i></a>
 			<div class="input-fileds">
 				<!-- <label for="itemId">Item Id</label>
 				<input type="number" name="itemId" id="itemId" placeholder="Enter Id"> -->
@@ -115,7 +120,7 @@
 				<label for="itemName">Item Name</label>
 				<input type="text" name="itemName" id="itemName" placeholder="Enter Name">
 				<label for="quantity">Measure</label>
-				<input type="number" name="quantity" id="quantity" placeholder="Enter Quantity">
+				<input type="number" name="quantity" id="quantity" min=0 placeholder="Enter Quantity">
 				<label for="measure_unit">Measure Unit</label>
 				<select name="measure_unit" id="measure_unit">
 					<option>Kg</option>

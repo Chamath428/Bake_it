@@ -140,15 +140,14 @@ label{
     /* background-color: red; */
 }
 
-/* .select-chart{
+.select-chart{
     width: 50%;
     height: 450px;
     display: flex;
     flex-direction: column;
-    margin-top: 35px;
-    margin-left: 40px;
 
-} */
+
+} 
 .chart1 {
     width: 48%;
     height: 440px;

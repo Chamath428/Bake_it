@@ -6,6 +6,8 @@ class rawMaterialController extends bakeItFramework
 	function __construct()
 	{
 		$this->availableMaterialsModel = $this->model("availableMaterialsModel");
+		$this->bakeryManagerSummaryModel = $this->model("bakeryManagerSummaryModel");
+
 	}
 
 	public function index($category_id = 1)
@@ -67,10 +69,14 @@ class rawMaterialController extends bakeItFramework
 	{
 		$data = array();
 
-		$categories = $this->availableMaterialsModel->getCategories();
-		// $retriveData = $this->availableMaterialsModel->retriveMaterialCount();
+		$categories = $this->bakeryManagerSummaryModel->getCategories();
+		
+		$retriveData = $this->bakeryManagerSummaryModel->selectRawId($categories);
+		
+		// var_dump($retriveData[0]);
+
 		$data[0] = $categories;
-		// $data[1] = $retriveData;
+		$data[1] = $retriveData;
 		
 		$this->view("bakery_manager/summary", $data);
 	}

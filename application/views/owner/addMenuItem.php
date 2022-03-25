@@ -57,7 +57,7 @@
 
                     <div class="input-fileds">
                         <label for="price">Price</label>
-                        <input type="number" name="price" id="price" placeholder="Enter Price">
+                        <input type="number" min=0 name="price" id="price" placeholder="Enter Price">
                     </div>
                     <div class="add-btn">
                         <label for="Outlet">Outlet</label>
@@ -76,7 +76,7 @@
 
 
                     <div class="save">
-                        <a href="<?php echo BASEURL . "/ownerMenuController/saveMenuItem" ?>"> <button onclick="SaveFunction()">Save</button></a>
+                    <button type="submit" >Save</button>
                     </div>
     </div>
     </section>

@@ -11,13 +11,14 @@ class homeController extends bakeItFramework
 
     
     public function index(){
-        $data['notifiactions'] = $this->customerNotificationModel->gteNotification();
+        
         if (isset($_SESSION['role_number']) && $_SESSION['role_number']>1) {
             $this->redirect("dashboardController");
         }
-
-
+        else{
+        $data['notifiactions'] = $this->customerNotificationModel->gteNotification();
         $this->view("customer/home",$data);
+        }
     }
 
     public function setBranch($branch_id){

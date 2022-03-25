@@ -45,6 +45,13 @@ function closePopup() {
 
 }
 
+function closePopUpUseCancel() {
+  document.getElementById("addDatafrom").style.display = "none";
+  document.getElementById("body").style.opacity = "1";
+  // window.location.href="rawMaterials.php";
+
+}
+
 
 
 function defaultColse() {

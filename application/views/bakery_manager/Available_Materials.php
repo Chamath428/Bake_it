@@ -1,5 +1,5 @@
 <?php
-$count = count($data);
+$count = count($data[1]);
 $emptyMaterialCount = 0;
 $runningLow = 0;
 foreach ($data[1] as $key => $value) {
