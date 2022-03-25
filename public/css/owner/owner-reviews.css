@@ -25,35 +25,49 @@
     border-bottom: 1px solid rgb(255,138,0);
     margin: 10px 0px;
 }
-.reviews-body .branch-selection .text .text-fill select{
+.reviews-body .branch-selection .text select{
      width: 100%;
      background-color: white;
      border: none;
      padding: 10px 0;
      outline: none;
 }
-/* search button */
-.reviews-body .searchbtn{
-    margin-left: 81%;
-    margin-top: 30px;
-
-}
-.reviews-body .searchbtn button{
-    border-radius:  10px;
+select{
+    width: 100%;
     background-color: white;
-    padding :10px 15px;
+    border: none;
+    padding: 10px 0;
+    outline: none;
+}
+/* submit button */
+input {
+    width: 100%;
+    background-color: white;
+    border: none;
+    padding: 10px 0;
+    outline: none;
+}
+input[type="submit"]{
+    width: fit-content;
+    margin-left: 90%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 15px;
     border: 2px solid rgb(255,138,0);
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    font-weight: bold;
     transition-duration: 0.4s;
     cursor: pointer;
+    font-weight: bold;
+
 }
-.reviews-body .searchbtn button:hover{
-    background-color: rgb(255,138,0);
+input[type="submit"]:hover{
+	background-color: rgba(255, 138, 0,0.7);
 	color: white;
 }
+
+
 /*summary boxes css*/
 .reviews-body .row{
     display: flex;
