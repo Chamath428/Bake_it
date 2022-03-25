@@ -42,7 +42,7 @@ class ownerMenuController extends bakeItFramework
     }
     public function selectOutletCategory()
     {
-
+// echo "hell";
         $data = array();
         $outlet = $this->menuModel->selectOutlet();
         $categories = $this->menuModel->selectCategory();
@@ -60,6 +60,7 @@ class ownerMenuController extends bakeItFramework
         $maxId = $this->menuModel->selectMaxItemId($category);
 
         if ($outlet == 1 || $outlet == 2 || $outlet == 3) {
+            // echo "if";
             $newMenuData['menu_id'] = $outlet;
             $newMenuData['item_id'] = $maxId + 1;
 
@@ -72,15 +73,16 @@ class ownerMenuController extends bakeItFramework
             $newMenuData['branch_id'] = $outlet;
 
             $this->menuModel->insertMenuItems($newMenuData);
+            // echo "after if";
             $this->index();
             // $this->view("owner/menuItems", $data);
 
         } else {
 
-
+            // echo "else";
             for ($x = 1; $x <= 3; $x++) {
                 $newMenuData['menu_id'] = $x;
-                $newMenuData['item_id'] = $maxId;
+                $newMenuData['item_id'] = $maxId+$x;
                 //  $newMenuData['item_id']= $name;
                 $newMenuData['item_name'] = $name;
                 $newMenuData['category_id'] = $category;
@@ -90,6 +92,7 @@ class ownerMenuController extends bakeItFramework
                 $newMenuData['branch_id'] = $x;
 
                 $this->menuModel->insertMenuItems($newMenuData);
+                // echo "after else";
                 $this->index();
                 // $this->view("owner/menuItems", $data);
             }
