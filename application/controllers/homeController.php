@@ -16,10 +16,12 @@ class homeController extends bakeItFramework
             $this->redirect("dashboardController");
         }
         else{
+
             $data['notifiactions'] = $this->customerNotificationModel->gteNotification();
             $this->view("customer/home",$data);
         }
         
+
     }
 
     public function setBranch($branch_id){

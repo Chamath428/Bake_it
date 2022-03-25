@@ -39,7 +39,7 @@ Summary of Stock
             <div class="chart-body">
                 <div class="chart1">
 
-                    <canvas id="myChart" class="first-chart"></canvas>
+                    <canvas id="myChart1" class="first-chart"></canvas>
                 </div>
 
                 <div class="select-chart">
@@ -84,21 +84,21 @@ Summary of Stock
 
 
                     </div>
-             
+
                     <div class="get-summary-btn" id="viewTablebtn">
 
                         <a href="<?php echo BASEURL . "/bakeryManagerSummaryController" ?>"> <input type="button" id="button" value="View Summary Table"> </a>
                     </div>
 
                     <div>
-                    <canvas id="myChart2" ></canvas>
-             </div>
+                        <canvas id="myChart2"></canvas>
+                    </div>
                 </div>
 
             </div>
 
-         
-         
+
+
 
 
         </div>
@@ -110,4 +110,70 @@ Summary of Stock
 
     <?php require_once('footer.php'); ?>
 
-   
+
+    <?php
+    $category = [];
+    for ($i = 0; $i < count($data[0]); $i++) {
+        $category[$i] = $data[0][$i]['raw_category_name'];
+    }
+
+    ?>
+    <?php require_once('footer.php'); ?>
+
+
+    <?php
+    $retriveData = [];
+    for ($i = 0; $i < count($data[1]); $i++) {
+        $retriveData[$i] = $data[1];
+    }
+
+    ?>
+    <script>
+        const categories = <?php echo json_encode($category); ?>;
+        console.log(categories);
+        const retriveData = <?php echo json_encode($retriveData); ?>;
+        console.log(retriveData);
+        var xValues = categories;
+        var yValues = retriveData;
+        var barColors = ["red", "green", "blue", "orange"];
+
+        new Chart("myChart1", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: "Usage of category"
+                }
+            }
+        });
+
+        new Chart("myChart2", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: "Usage of category"
+                }
+            }
+        });
+    </script>

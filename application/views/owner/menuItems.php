@@ -77,7 +77,7 @@
 
         <div class="category-table">
             <div id="category1-table">
-                <h4>Bread items</h4>
+                <h4><?php echo  $data[5]; ?> items</h4>
                 <table class="content-table">
                     <thead>
                         <tr>
