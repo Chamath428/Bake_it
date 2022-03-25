@@ -27,7 +27,7 @@
                 <li>
                     <a href="<?php echo BASEURL."/branchManagerReportController/getItemWiseSalesReport" ?>" class="hrf">
                         <span class="icon"><i class="fab fa-elementor"></i></span>
-                        <span class="title">ItemWise Sales Reports</span>
+                        <span class="title">Category Sales Reports</span>
                     </a>
                 </li>
             </ul>
