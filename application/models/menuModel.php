@@ -190,7 +190,7 @@ class menuModel extends database
 				 )";
 
 
-		// $res7 = mysqli_query($this->db, $sql8) or die('8->' . mysqli_error($this->db));
+		$res7 = mysqli_query($this->db, $sql8) or die('8->' . mysqli_error($this->db));
 	}
 
 	public function deleteMenuItems( $check_id){
