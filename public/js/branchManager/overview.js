@@ -79,7 +79,7 @@ function getDetails(){
             for(i=0; i<obj[6].length;i++){
               // categoryName.push(obj[1][i].category_name);
               if(obj[6][j].item_id==obj[7][i].item_id){
-                totalQuantityItems.push(obj[1][i].total_quantity);
+                totalQuantityItems.push(obj[6][i].total_quantity);
                 j++
               }
               // else{
