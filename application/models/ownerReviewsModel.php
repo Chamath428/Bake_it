@@ -28,7 +28,7 @@ class ownerReviewsModel extends database{
             FROM
                 ratings_and_reviews JOIN order_details ON ratings_and_reviews.order_id = order_details.order_id
             WHERE
-                ratings_and_reviews.branch_id=".$branch_id;
+                order_details.menu_id=".$branch_id;
 
         $res2=mysqli_query($this->db,$sql2) or die('2->'.mysqli_error($this->db));
         while($row2=mysqli_fetch_assoc($res2)){
@@ -97,8 +97,25 @@ class ownerReviewsModel extends database{
         $reviewsTable[$i]=$data;
         $i++;
         }
-        return $reviewsTable;
-         
+        return $reviewsTable;     
+   }
+   public function getBranchList(){
+    $branchData=array();
+    $i=0;
+    $sql7="SELECT
+                branch_id,
+                branch_name
+            FROM
+                branch";
+
+    $res7=mysqli_query($this->db,$sql7) or die('7->'.mysqli_error($this->db));
+    while ($row7=mysqli_fetch_assoc($res7)) {
+        $data['branch_id']=$row7['branch_id'];
+        $data['branch_name']=$row7['branch_name'];
+        $branchData[$i]=$data;
+        $i++;
+    }
+    return $branchData;
    }
 }
 ?>

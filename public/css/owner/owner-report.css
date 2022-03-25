@@ -96,68 +96,9 @@ input {
   margin: 15px;
 } 
 .reportTopic .selectedTimePeriod .subReportTopic span{
-  font-weight: 200;
-  
-}
-/* .report-selection .condition select {
-  select{
-    width: 100%;
-    background-color: white;
-    border: none;
-    padding: 10px 0;
-    outline: none;
+  font-weight: 200;  
 }
 
-.report-selection .condition .time-selection{
-  display: flex;
-  flex-direction: column; 
-  gap: 10px;
-  align-items: flex-start;
-}
-.report-selection .condition .time-selection label{
-    font-weight: 500;
-    margin-left: 15px;
-    width: 28%;
-    display: flex;
-}
-.report-selection .condition .time-selection label div:first-child{
-  width: 70%;
-  
-}
-
-.report-selection .condition .time-selection label div:last-child{
-    /* margin-left: 70px; 
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center;
-    width: 12%;
-
-}
-  
-.report-selection .condition .time-selection .sub-time-selection{
-     /* display: grid; 
-     display: none;
-     grid-template-columns: 100px 150px 120px auto;  
-     grid-gap: 40px;
-     padding: 10px;
-     align-items: center;
-  
-}
-.report-selection .condition .time-selection .sub-time-selection label{
-   
-    font-weight: 400;
-}
-  
-.report-selection .condition .time-selection  .sub-time-selection .time-dropdown{
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  border-bottom: 1px solid rgb(255,138,0);
-  margin: 10px 0px;
-}
-.report-selection .condition .time-selection  .sub-time-selection .time-dropdown select{
-
-} */
 input[type="submit"]{
     width: fit-content;
     margin-left: 60%;

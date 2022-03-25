@@ -10,6 +10,8 @@
 		public function index(){
 	
 			$data=array();
+			$data['branches'] = $this->ownerReviewsModel->getBranchList(); 
+
 			$totalReviews = $this -> ownerReviewsModel -> countOfReviews();
 			$data[0] = $totalReviews;
 
@@ -19,23 +21,30 @@
 	        $bestDeliveryPerson = $this -> ownerReviewsModel -> getBsetDeliveryPerson();
 			$data[2] = $bestDeliveryPerson;
 
-			$reviewsTable=$this->ownerReviewsModel -> getAllBranchReviewsTable();
-			$data[3] = $reviewsTable;
-
-			$this->view("owner/reviews",$data);	
-		}
-		public function getReviewsTabel(){
-
-			  
-	        $branch_id=$_POST['branch_id'];
-			$data['branch_id']=$branch_id;
+			// $data[3] = array();
+			$data['branch_id'] = $_POST['branch_id'];
 			
             if($data['branch_id']==0){
                 $reviewsTable=$this->ownerReviewsModel -> getAllBranchReviewsTable();
 				$data[3] = $reviewsTable;
 			}
 			else{
-				$reviewsTable=$this->ownerReviewsModel -> getSelectedBranchReviewsTable($branch_id);
+				$reviewsTable=$this->ownerReviewsModel -> getSelectedBranchReviewsTable($data['branch_id']);
+				$data[3] = $reviewsTable;
+			}
+
+			$this->view("owner/reviews",$data);	
+		}
+		public function getReviewsTabel(){
+
+			$data['branch_id'] = $_POST['branch_id'];
+			
+            if($data['branch_id']==0){
+                $reviewsTable=$this->ownerReviewsModel -> getAllBranchReviewsTable();
+				$data[3] = $reviewsTable;
+			}
+			else{
+				$reviewsTable=$this->ownerReviewsModel -> getSelectedBranchReviewsTable($data['branch_id']);
 				$data[3] = $reviewsTable;
 			}
 			$this -> index();
