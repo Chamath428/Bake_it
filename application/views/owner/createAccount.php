@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="text" id="last-text">
-                    <label for="Branch">Outlet</label>
+                    <label for="Branch">Branch</label>
                     <div class="text-fill">
 
                         <select placeholder="Select Branch" name="branch_Id">
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="text">
-                    <label for="Email">Email (Optional)</label>
+                    <label for="Email">Email</label>
                     <div class="text-fill">
                         <input type="text" name="email" id="email"  placeholder="" value="<?php if(isset($data['email']))echo $data['email']; ?>">
                     </div>

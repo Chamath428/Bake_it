@@ -10,7 +10,6 @@ class ownerReportController extends bakeItFramework
 	public function index()
 	{
 		$data = array();
-
 		$this->view("owner/overview");
 	}
 
@@ -35,9 +34,10 @@ class ownerReportController extends bakeItFramework
 		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
 		$data['reportType'] = $_POST['reportType'];
 		$data['branch_id'] = $_POST['branch_id'];
+		$data['branch_name'] = $this->ownerReportsModel->getBranchName($data['branch_id']); 
 		$salesReportDetails = array();
 
-		if ($data['date'] == "0 -0-0") {
+		if ($data['date'] == "0-0-0") {
 			$data['error'] = "Please enter valid time period";
 			$this->view("owner/reportsTotal", $data);
 
@@ -63,6 +63,7 @@ class ownerReportController extends bakeItFramework
 		$data['year'] = $_POST['year'];
 		$data['reportType'] = $_POST['reportType'];
 		$data['branch_id'] = $_POST['branch_id'];
+		$data['branch_name'] = $this->ownerReportsModel->getBranchName($data['branch_id']); 
 
 		if ($data['week'] == 0 && $data['month'] == 0 && $data['year'] == 0) {
 			$data['error'] = "Please enter valid time period";
@@ -89,6 +90,7 @@ class ownerReportController extends bakeItFramework
 		$data['year'] = $_POST['year'];
 		$data['reportType'] = $_POST['reportType'];
 		$data['branch_id'] = $_POST['branch_id'];
+		$data['branch_name'] = $this->ownerReportsModel->getBranchName($data['branch_id']); 
 
 		if ($data['month'] == 0 && $data['year'] == 0) {
 			$data['error'] = "Please enter valid time period";
@@ -115,6 +117,8 @@ class ownerReportController extends bakeItFramework
 		$data['reportType'] = $_POST['reportType'];
 		$data['branch_id'] = $_POST['branch_id'];
 		$data['category_id'] = $_POST['category_id'];
+		$data['branch_name'] = $this->ownerReportsModel->getBranchName($data['branch_id']); 
+		$data['category_name'] = $this->ownerReportsModel->getCategoryName($data['category_id']);
 		$categorySalesReportDetails = array();
 
 		if($data['date'] == "0-0-0" || $data['branch_id']==0 || $data['category_id']==0 ) {
@@ -151,6 +155,7 @@ class ownerReportController extends bakeItFramework
 		$data['reportType'] = $_POST['reportType'];
 		$data['branch_id'] = $_POST['branch_id'];
 		$data['category_id'] = $_POST['category_id'];
+		$data['branch_name'] = $this->ownerReportsModel->getBranchName($data['branch_id']); 
 		$categorySalesReportDetails = array();
 
 		if($data['week'] == 0 && $data['month'] == 0 && $data['year'] == 0 || $data['branch_id']==0 || $data['category_id']==0){
@@ -185,6 +190,7 @@ class ownerReportController extends bakeItFramework
 		$data['reportType'] = $_POST['reportType'];
 		$data['branch_id'] = $_POST['branch_id'];
 		$data['category_id'] = $_POST['category_id'];
+		$data['branch_name'] = $this->ownerReportsModel->getBranchName($data['branch_id']); 
 		$categorySalesReportDetails = array();
 
 		if($data['month'] == 0 && $data['year'] == 0 || $data['branch_id']==0 || $data['category_id']==0){

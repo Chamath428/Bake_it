@@ -42,10 +42,10 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$data[2] = $totalDeliveriesofMonth;
 
 		// $data['date'] = date('Y-m-d', strtotime($_POST['date']));
-	 	// $completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
-	 	$data[3] = array();
+		// $completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
+		$data[3] = array();
 		// echo $data['date'];
- 
+
 		$this->view("deliveryPerson/deliveryHistory", $data);
 	}
 
@@ -60,7 +60,6 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 
 			$registerdCustomerContactDetails = $this->deliveryPersonDeliveriesModel->getRegisterdCustomerContactDetails($order_id);
 			$data[1] = $registerdCustomerContactDetails;
-
 		} else {
 			$unregisterdCustomerContactDetails = $this->deliveryPersonDeliveriesModel->getUnregisterdCustomerContactDetails($order_id);
 			$data[1] =  $unregisterdCustomerContactDetails;
@@ -74,9 +73,9 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 
 		$advancedAmount = $this->deliveryPersonDeliveriesModel->getAdvancedAmount($order_id);
 		$data[4] = intval($advancedAmount);
-		
+
 		$data[5] = $data[3] - $data[4];
-        $data[7] = $data[4] - $data[3] ;
+		$data[7] = $data[4] - $data[3];
 		$this->view("deliveryPerson/deliveryDetails", $data);
 	}
 	public function acceptDeliveries($order_id)
@@ -99,7 +98,8 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$this->index();
 	}
 	public function getCompletedDeliveriesTable()
-	{    
+	{
+		$data = array();
 		$totalDeliveries = $this->deliveryPersonDeliveriesModel->countTotalDeliveries();
 		$data[0] = $totalDeliveries;
 
@@ -109,60 +109,57 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$totalDeliveriesofMonth = $this->deliveryPersonDeliveriesModel->countTotalDeliveriesofMonth();
 		$data[2] = $totalDeliveriesofMonth;
 
-	 	$data[3] = array();
-
 		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
+		// echo $data['date'];
 		$completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
 		$data[3] = $completedDeliveriesTable;
-		// echo $data[3]['order_id'];
-
 
 		$this->view("deliveryPerson/deliveryHistory", $data);
 	}
 	public function completeDelivery($order_id)
 	{
-		
+
 		$subTotal = $this->deliveryPersonDeliveriesModel->getSubTotal($order_id);
 		$data[3] = intval($subTotal);
 
-		$advancedAmount = $this-> deliveryPersonDeliveriesModel->getAdvancedAmount($order_id);
+		$advancedAmount = $this->deliveryPersonDeliveriesModel->getAdvancedAmount($order_id);
 		$data[4] = intval($advancedAmount);
 
-		if($data[4] >= $data[3]){
+		if ($data[4] >= $data[3]) {
 			$this->deliveryPersonDeliveriesModel->updateOrderStatusAsCompleted($order_id);
-			$this->index();	
+			$this->index();
 		}
-			
 	}
-	public function getBalanceAmountAtDelivery($order_id){
-        
+	public function getBalanceAmountAtDelivery($order_id)
+	{
+
 		$data['paid_amount'] = $_POST['paid_amount'];
 
 		$subTotal = $this->deliveryPersonDeliveriesModel->getSubTotal($order_id);
 		$data[3] = intval($subTotal);
 
-		$advancedAmount = $this-> deliveryPersonDeliveriesModel->getAdvancedAmount($order_id);
+		$advancedAmount = $this->deliveryPersonDeliveriesModel->getAdvancedAmount($order_id);
 		$data[4] = intval($advancedAmount);
-        
-		$restAmountToPaid = $data[3] -$data[4];
+
+		$restAmountToPaid = $data[3] - $data[4];
 		$data[5] =  $restAmountToPaid;
-		
-		$updatePaidAmount = $this ->  deliveryPersonDeliveriesModel->updatePaidAmount($data['paid_amount'],$order_id);
+
+		$updatePaidAmount = $this->deliveryPersonDeliveriesModel->updatePaidAmount($data['paid_amount'], $order_id);
 		$data[4] = $updatePaidAmount;
 
 		$balanceAmount = $data[4] - $data[3];
 		$data[7] = $balanceAmount;
 
-		$this -> getOrderDetails($order_id);
-
+		$this->getOrderDetails($order_id);
 	}
-	public function getDeliveryHistoryDate($order_id){
+	public function getDeliveryHistoryDate($order_id)
+	{
 
 		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
 		echo $data['date'];
-	// 	$completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
-	// 	$data[3] = $completedDeliveriesTable;
+		// 	$completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
+		// 	$data[3] = $completedDeliveriesTable;
 
-    //    $this -> getDeliveryOverview();
+		//    $this -> getDeliveryOverview();
 	}
 }

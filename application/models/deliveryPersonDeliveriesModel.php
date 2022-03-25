@@ -255,7 +255,7 @@ class deliveryPersonDeliveriesModel extends database
                FROM 
                   order_details JOIN customer ON order_details.customer_id = customer.customer_id 
                WHERE 
-                  order_details.delivery_person_id= " . $_SESSION['staff_id'] . "  AND order_details.order_status = 6 AND order_details.needed_date = ". "$date" ."";
+                  order_details.delivery_person_id= " . $_SESSION['staff_id'] . "  AND order_details.order_status = 6 AND order_details.needed_date = " . '"' . $date . '"';
 
       $res15 = mysqli_query($this->db, $sql15) or die('15->' . mysqli_error($this->db));
       while ($row15 = mysqli_fetch_assoc($res15)) {
@@ -311,7 +311,7 @@ class deliveryPersonDeliveriesModel extends database
       $sql19 = "UPDATE  
                      order_details 
                SET
-                     paid_amount=".$paid_amount.", order_status = 6 
+                     paid_amount=" . $paid_amount . ", order_status = 6 
                WHERE 
                      order_id = " . $order_id;
       $res19 = mysqli_query($this->db, $sql19) or die('19->' . mysqli_error($this->db));

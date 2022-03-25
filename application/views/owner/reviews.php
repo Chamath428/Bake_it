@@ -50,17 +50,28 @@
                     <div class="col">
                         <h4>Total Ratings</h4>
                         <h1>
-                          <i id="fas-star" class="fas fa-star"></i>
-                          <i id="fas-star" class="fas fa-star"></i>
-                          <i id="fas-star" class="fas fa-star"></i>
-                          <i id="far-star" class="far fa-star"></i>
-                          <i id="far-star" class="far fa-star"></i>
+                        <?php
+                           $j = 0;
+                           $review['total_rating'] = intdiv(intval($data[1]), intval($data[0]));
+                           for ($i=0; $i <$review['total_rating'] ; $i++){?> 
+                              <i id="fas-star" class="fas fa-star"></i>
+                           <?php
+                           }?> 
+                           <?php
+                           $blankStars = 5 - $review['total_rating'];
+                           for ($i=0; $i <$blankStars ; $i++) {?> 
+                              <i id="far-star" class="far fa-star"></i>
+                           <?php
+                           }?> 
                         </h1>
                     </div>
                     <div class="col">
                         <h4>Best Delivery Person Form Ratings</h4>
                         <h1><i class="fas fa-user"></i></h1>
-                        <span>Amal Perera</span>
+                        <span>
+                            <?php echo $data[2]['first_name']?>
+                            <?php echo $data[2]['last_name']?>
+                        </span>
 
                     </div>
                 </div>
