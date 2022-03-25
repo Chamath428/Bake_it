@@ -18,6 +18,21 @@
 <body>
     <?php include "headerIndex.php"?>
     <div id="body" class="container-1">
+
+    <?php if (isset($message['confirmation']) && $message['confirmation']!=""){?>
+            <div class="confirm-alert">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <p><?php echo $message['confirmation']; ?></p>
+            </div>
+            <?php } ?>
+
+            <?php if (isset($message['error']) && $message['error']!=""){?>
+            <div class="danger-alert">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <p><?php echo $message['error']; ?></p>
+            </div>
+        <?php } ?>
+        
         <div class="menu">
             <div class="heading">
                 <h2>Daily Requirement</h2>
@@ -26,20 +41,24 @@
                 <div class="drop-down">
                     </br>
                     <h4>Select Category</h4> 
-                    <select name="" id="">
-                        <option value="">Bread</option>
-                        <option value="">Pastry</option>
-                        <option value="">Cake</option>
-                        <option value="">Burger</option>
-                        <option value="">Snacks</option>
-                        <option value="">Donut</option>
-                        <option value="">Muffin</option>
-                        <option value="">Sweets</option>
-                        <option value="">Beverages</option>
+                    
+                    <form method="post" action="<?php echo BASEURL ?>/branchManagerDailyRequirment   Controller/getItems">
+                    <select name="categoryId" id="categoryId">
+
+                        <?php 
+                          foreach ($data[2] as $key => $category) { 
+                            if($category['category_id']==$data[1]){?><option value="<?php echo $category['category_id'];?>"><?php echo $category['category_name']; ?></option>
+                          <?php }} ?>
+
+                        <?php 
+                          foreach ($data[2] as $key => $category) { 
+                            if($category['category_id']!=$data[1]){?><option value="<?php echo $category['category_id'];?>"><?php echo $category['category_name']; ?></option>
+                          <?php }} ?>
                     </select>
                 </div>
                 <div class="view-btn-container">
-                    <button class="viewBtn" onclick="viewTable()">View Items</button>
+                    <button type="submit" class="viewBtn">View Items</button>
+                  </form>
                     <button id="edit" onclick="viewSave()" class="edit-btn">Edit Quantity</button>
                 </div>
             </div>
