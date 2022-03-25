@@ -204,20 +204,20 @@ class menuModel extends database
 	public function selectMaxItemId($categories)
 	{
 		$maxItemId=array();
+		$maxId=0;
 		$itemListData = [];
 		$i = 0;
 		$sql10= "SELECT
 					item_id 
 
 				FROM
-				menu
-				WHERE
-				category_id =" . $categories ;
+				menu";
 
 
 
 		$res10 = mysqli_query($this->db, $sql10) or die('10->' . mysqli_error($this->db));
-		while ($row10 = mysqli_fetch_assoc($res10)) {
+		if (mysqli_num_rows($res10)>0) {
+			while ($row10 = mysqli_fetch_assoc($res10)) {
 			// $data['item_id'] = intval($row10['item_id']);
 			// $maxItemId[$i] = $data;
 			// $maxItemId[$i] = intval($row10['item_id']);
@@ -225,6 +225,8 @@ class menuModel extends database
 			// $i++;
 		}
 		$maxId=max($maxItemId);
+		}
+		
 		return $maxId;
 	}
 
