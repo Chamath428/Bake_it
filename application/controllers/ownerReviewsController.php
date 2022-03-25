@@ -19,6 +19,9 @@
 	        $bestDeliveryPerson = $this -> ownerReviewsModel -> getBsetDeliveryPerson();
 			$data[2] = $bestDeliveryPerson;
 
+			$reviewsTable=$this->ownerReviewsModel -> getAllBranchReviewsTable();
+			$data[3] = $reviewsTable;
+
 			$this->view("owner/reviews",$data);	
 		}
 		public function getReviewsTabel(){
@@ -35,14 +38,7 @@
 				$reviewsTable=$this->ownerReviewsModel -> getSelectedBranchReviewsTable($branch_id);
 				$data[3] = $reviewsTable;
 			}
-            $reviewsTable=$this->ownerReviewsModel -> getReviewsTable($branch_id);
-			if (empty($reviewsTable)) {
-				$data['error']="No Reviews to show!";
-				$this->view("owner/reviews",$data);
-			}
-			else{
-				$this->view("owner/reviews",$reviewsTable);
-		    }	
+			$this -> index();
 		
 		}
 

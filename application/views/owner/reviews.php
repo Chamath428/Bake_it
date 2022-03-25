@@ -75,6 +75,7 @@
 
                     </div>
                 </div>
+                
                <table id="reviews-table">
                    <thead>
                        <tr>
@@ -85,9 +86,9 @@
                        </tr>
                    </thead>
                    <tbody>
-                        <?php
+                        <?php   
                                 $i =0;
-                                foreach($data as $key => $review) {?>
+                                foreach($data[3] as $key => $review) {?>
                         <tr>
                             <td label="Date"><?php echo $review['needed_date'];?></td>
                             <td label="Order No"><?php echo $review['order_id'];?></td>
