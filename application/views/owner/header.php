@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo BASEURL."/ownerReviewsController" ?>" class="hrf">
+                    <a href="<?php echo BASEURL."/ownerReviewsController/0" ?>" class="hrf">
                         <span class="icon"><i class="fas fa-star"></i></span>
                         <span class="title">Reviews</span>
                     </a>
