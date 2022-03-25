@@ -20,6 +20,7 @@
 			else $this->view("customer/cart");
 		}
 
+
 		public function specialCheckout(){
 			if (isset($_SESSION['special_cart'])) {
 				$data['branches']=$this->customerBranchSelectModel->getBranches();
@@ -43,13 +44,18 @@
 			if (isset($_SESSION['customer_id'])) {
 				$customer_id=$_SESSION['customer_id'];
 			}
+
+			if (isset($_SESSION['islogged']) && ($_SESSION['contact_number'] != $phone_number)) {
+				$this->checkoutModel->updateCustomerMobile($_SESSION['customer_id'],$phone_number);
+			}
+
 			if ($delivery_type==2) {
 				$address1=$_POST['address_line1'];
 				$address2=$_POST['address_line2'];
 				$address3=$_POST['address_line3'];
 
 				if ($address1=="" || $address2=="") {
-					$data['error']="Address line 1 and Address 2 are required";
+					$data['error']="Address line 1 and Address line 2 are required";
 				}
 			}
 
@@ -80,6 +86,9 @@
 
 				if (!isset($customer_id)) {
 					$customer_id=$this->checkoutModel->getCustomerId($orderDetails);
+
+					// we set a session here becasue we want to show the order details for an unregistered customer
+
 					$this->setSession("customer_id",$customer_id);
 				}
 
@@ -104,7 +113,7 @@
 
 			}
 			else {
-				$this->index();
+				$this->view("/customer/checkout",$data);
 			}
 
 		}
@@ -127,13 +136,18 @@
 			if (isset($_SESSION['customer_id'])) {
 				$customer_id=$_SESSION['customer_id'];
 			}
+
+			if (isset($_SESSION['islogged']) && ($_SESSION['contact_number'] != $phone_number)) {
+				$this->checkoutModel->updateCustomerMobile($_SESSION['customer_id'],$phone_number);
+			}
+
 			if ($delivery_type==2) {
 				$address1=$_POST['address_line1'];
 				$address2=$_POST['address_line2'];
 				$address3=$_POST['address_line3'];
 
 				if ($address1=="" || $address2=="") {
-					$data['error']="Address line 1 and Address 2 are required";
+					$data['error']="Address line 1 and Address line 2 are required";
 				}
 			}
 
