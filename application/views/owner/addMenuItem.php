@@ -57,7 +57,8 @@
 
                     <div class="input-fileds">
                         <label for="price">Price</label>
-                        <input type="number" min=0 name="price" id="price" placeholder="Enter Price">
+                        <!-- <input type="number" min=0 name="price" id="price" placeholder="Enter Price"> -->
+                        <input type="number" name="price" id="price" min="0" placeholder="Enter Price" oninput="validity.valid||(value='');">
                     </div>
                     <div class="add-btn">
                         <label for="Outlet">Outlet</label>

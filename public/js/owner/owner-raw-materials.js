@@ -66,6 +66,7 @@ function search_item() {
 
     input = document.getElementById("search");
     filter = input.value.toUpperCase();
+
     table = document.getElementById("dataTable");
 
     tr = table.getElementsByTagName("tr");

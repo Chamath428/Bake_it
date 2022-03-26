@@ -72,51 +72,52 @@
                         </select>
                     </div>
                     <div class="btn">
-                        <button  type="submit">View</button>
+                        <button type="submit">View</button>
                     </div>
 
 
                 </div>
-                <div class="category-tables">
-                    <div id="category1-table">
 
-                        <table class="content-table">
-                            <thead>
+                <div id="category1-table">
+
+
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+
+                                <th>Item Id</th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <div class="scroll-of-table"> -->
+                            <!-- <table class="content-table"> -->
+                            <!-- <tbody> -->
+                            <?php foreach ($data[2] as $key => $value) { ?>
                                 <tr>
-                                
-                                    <th>Item Id</th>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
+
+
+                                    <td><?php echo $value['item_id']; ?></td>
+                                    <td><?php echo $value['item_name']; ?></td>
+                                    <td><?php echo $value['daily_requirement']; ?></td>
+
+
+
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <!-- <div class="scroll-of-table"> -->
-                                <!-- <table class="content-table"> -->
-                                <!-- <tbody> -->
-                                <?php foreach ($data[2] as $key => $value) { ?>
-                                    <tr>
+                            <?php } ?>
 
 
-                                        <td><?php echo $value['item_id']; ?></td>
-                                        <td><?php echo $value['item_name']; ?></td>
-                                        <td><?php echo $value['daily_requirement']; ?></td>
-
-
-
-                                    </tr>
-                                <?php } ?>
-
-
-                                <!-- </tbody> -->
-                                <!-- </table> -->
-                                <!-- </div> -->
-                            </tbody>
-                        </table>
-
-                    </div>
-
+                            <!-- </tbody> -->
+                            <!-- </table> -->
+                            <!-- </div> -->
+                        </tbody>
+                    </table>
 
                 </div>
+
+
+
             </form>
 
 
