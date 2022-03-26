@@ -11,6 +11,7 @@
 .menu{
     margin-top: 75px;
     width: 90%;
+    height: 100vh;
     /* background-color: aqua; */
     display: flex;
     flex-direction: column;
@@ -147,10 +148,9 @@ img{
 
 .btn-container{
     /* height: 60px; */
-    width: 90%;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    display: flex;
+    margin-top: 20px;
+ position: absolute;
+ right: 8%;
     justify-content: right;
     /* background-color: crimson; */
 }
@@ -219,4 +219,39 @@ select {
     /* border-radius: 5px; */
     background-color:white;
     
+}
+.pop_up-view{
+   position: absolute;
+   top: 30vh;
+   left:25%;
+    width: 70%;
+    height: 400px;
+    display: none;
+    background-color: rgb(235, 235, 235);
+
+}
+.view-chart-btn{
+    width: 100px;
+    height: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.view-btn{
+    padding: 10px;
+    /* width:60px; */
+    /* height: 10px; */
+     /* align-items: center; */
+    float: left;
+}
+.save-btn{
+    float: right;
+}
+.fa-times{
+    color: black;
+    margin-left: 98%;
+    margin-top: 2vh;
+}
+.fa-times:hover{
+ color: rgb(255, 138, 0);
 }
