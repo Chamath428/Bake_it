@@ -96,6 +96,27 @@ class cashierCreateOrderModel extends database
 							.'"'.$item_id.'"' .","
 							.'"'.$quantity.'")';
 			$res4=mysqli_query($this->db,$sql4) or die('4->'.mysqli_error($this->db));
+
+			$sql4b="SELECT
+						quantity
+					FROM
+						menu
+					WHERE
+						item_id=".'"'.$item_id.'"'." AND
+						menu_id=".'"'.$menu_id.'"';
+			$res4b=mysqli_query($this->db,$sql4b) or die('4b->'.mysqli_error($this->db));
+			$row4b=mysqli_fetch_assoc($res4b);
+			$newQuantity=$row4b['quantity']-$quantity;
+			if($newQuantity<0)$newQuantity=0;
+
+			$sql4c="UPDATE
+						menu
+					SET
+						quantity=".$newQuantity." 
+					WHERE
+						item_id=".'"'.$item_id.'"'." AND
+						menu_id=".'"'.$menu_id.'"';
+			$res4c=mysqli_query($this->db,$sql4c) or die('4c->'.mysqli_error($this->db));
 		}
 
 	public function createBill($order_id,$paidAmount,$cashier_id){
