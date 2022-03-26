@@ -173,6 +173,10 @@
 							<td>Rest Payment(LKR)</td>
 							<td><?php echo $data[5] ?></td>
 						<?php } ?>
+						<?php if($data[0]['order_status'] == 6 && $data[3] < $data[4]){?>
+							<td>Balance Payment(LKR)</td>
+							<td><?php echo $data[7] ?></td>
+						<?php } ?>
 						</tr>
 					</table>
 				</div>
@@ -201,7 +205,7 @@
 				
 
 				<div class="buttons">
-					<?php if($data[0]['order_status']==3 && $data[4] >= $data[3]){?>
+					<?php if(($data[0]['order_status']==3 || $data[0]['order_status']==6)  && $data[4] >= $data[3]){?>
 					<form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/completeDelivery/' . $data[0]['order_id']; ?>" method="POST">
 						<button type="submit" name="orderStatus" value="6">Complete Delivery</button>
 					</form>

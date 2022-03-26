@@ -159,7 +159,7 @@ class deliveryPersonDeliveriesModel extends database
                FROM  
                    order_details JOIN order_items ON order_details.order_id = order_items.order_id JOIN customer ON order_details.customer_id = customer.customer_id 
                WHERE 
-                   order_details.order_id = " . $order_id . " AND (order_status = 2 OR order_status = 3)";
+                   order_details.order_id = " . $order_id ;
 
       $res11 = mysqli_query($this->db, $sql11) or die('11->' . mysqli_error($this->db));
       while ($row11 = mysqli_fetch_assoc($res11)) {
