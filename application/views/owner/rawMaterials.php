@@ -38,7 +38,9 @@
 						<?php foreach ($data[0] as $key => $value) {
 							if ($value['raw_category_id'] == $data[2]) { ?>
 								<option value="<?php echo  $value['raw_category_id']; ?>"><?php echo  $value['raw_category_name']; ?></option>
-						<?php  }
+						<?php 
+						$selectedCategory=$value['raw_category_name'];
+						}
 						} ?>
 
 						<?php foreach ($data[0] as $key => $value) {
@@ -112,10 +114,16 @@
 	<form method="post" action="<?php echo BASEURL . '/rawMaterialController/insertRawMaterials'; ?>">
 		<div class="addDatafrom" id="addDatafrom">
 			
-			<a onclick="closePopUpUseCancel()"> <i class="fas fa-times"></i></a>
+			<h4 class="display-header">Add New item to <?php echo $selectedCategory; ?></h4>
+			
+			<div class="cancel-icon"><a onclick="closePopUpUseCancel()"> <i class="fas fa-times"></i></a></div>
+			
+			
 			<div class="input-fileds">
 				<!-- <label for="itemId">Item Id</label>
 				<input type="number" name="itemId" id="itemId" placeholder="Enter Id"> -->
+
+				<input type="hidden" name="categoryId" value="<?php echo $data[2] ?>">
 
 				<label for="itemName">Item Name</label>
 				<input type="text" name="itemName" id="itemName" placeholder="Enter Name">

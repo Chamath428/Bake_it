@@ -40,7 +40,7 @@ function closePopup() {
 
     document.getElementById("body").style.opacity = "1";
     window.location.href="rawMaterials.php";
-    alert("Save Successfull..");
+   
 
 
 }
