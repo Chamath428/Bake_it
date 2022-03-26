@@ -189,7 +189,7 @@
 								<td><input type="number" name="paid_amount"></td>
 							</tr>
 							<tr>
-								<td><input type="submit" name="submit_paid_amount" value="Enter "></td>
+								<td><input type="submit" name="submit_paid_amount" value="Enter Paid Amount "></td>
 								<!-- <td><button type="submit" name="submit_paid_amount" value="Enter paid amount">Enter paid amount</button></td> -->
 
 							</tr>

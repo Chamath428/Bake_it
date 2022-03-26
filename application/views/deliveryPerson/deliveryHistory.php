@@ -41,8 +41,10 @@
                 <form action="<?php echo BASEURL."/deliveryPersonDeliveriesController/getCompletedDeliveriesTable"; ?>" method="POST">
                 <div class="selectDate">Select Date
                     <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" />
-                </div>                 
-                <input type="submit" name="deliveryHistory" value="Get Delivery List" required="">
+                </div> 
+                <div class ="calander-submit">
+                    <input type="submit" name="deliveryHistory" value="Get Delivery List" required="">
+                </div>                
                 </form>
             </div>
         </div> 

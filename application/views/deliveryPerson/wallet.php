@@ -21,9 +21,9 @@
         <div class="wallet-container" id="body">
             <h1 class="wallet-topic">Transactions of the Day</h1>
             <div class="text">
-                <label for="recv-amount">Amount Received from Shop</label>
-                <div class="text-fill">
-                    <input type="text" name="name" id="amount"  placeholder="" value="5000.00LKR">
+                <label for="recv-amount">Amount Received from Shop(LKR)</label>
+                <div class="text-fill">5000
+                    <!-- <input type="text" name="name" id="amount"  placeholder="" value="5000.00LKR"> -->
                 </div>
             </div>
             <div class="wallet-table">
@@ -52,7 +52,7 @@
             </table>
             </div>
             <div class="text">
-                <label for="retrn-amount">Return Amount to the shop</label>
+                <label for="retrn-amount">Return Amount to the shop(LKR)</label>
                 <div class="text-fill"><?php echo (intval($data[1])+5000)?>
                     <!-- <input type="text" name="name" id="amount"  placeholder="" value="8500.00LKR"> -->
                 </div>
