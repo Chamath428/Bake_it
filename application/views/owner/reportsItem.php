@@ -58,8 +58,10 @@
                                                 <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" />
                                           </div>
                                           <input type="submit" name="dailyReport" value="Generate" required="">
-                                          <p id="demo"></p>
                                     </form>
+                                    <!-- ?php if($data['branches']['branch_id']==0 && $data['categories']['category_id']==0){ ?>
+                                       <p id="demo">?php echo $data['error']; ?></p>
+                                    ?php } ?> -->
                               </div>
 
                               <div class="subTimeSelection">

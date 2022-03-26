@@ -117,11 +117,9 @@
 					
 					$this->view("owner/viewAccount",$userDetails);
 			}	
-			}
-			
-
-				
+			}		
 		}
+		
 	}
 
  ?>

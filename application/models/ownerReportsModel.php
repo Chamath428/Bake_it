@@ -394,7 +394,7 @@
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
                                      JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
-                        WEEK(needed_date, 5) - WEEK(DATE_SUB(needed_date, INTERVAL DAYOFMONTH(needed_date) - 1 DAY), 5) + 1 = ".$week." AND month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu.branch_id = ".$branch_id." AND menu.branch_id = ".$branch_id."  AND order_details.order_status = 6
+                        WEEK(needed_date, 5) - WEEK(DATE_SUB(needed_date, INTERVAL DAYOFMONTH(needed_date) - 1 DAY), 5) + 1 = ".$week." AND month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu.branch_id = ".$branch_id."   AND order_details.order_status = 6
                  GROUP BY 
                         menu.item_id";
           $res14=mysqli_query($this->db,$sql14) or die('14->'.mysqli_error($this->db));
@@ -496,7 +496,7 @@
                                      JOIN menu_category ON menu.category_id = menu_category.category_id
                                      JOIN branch ON menu.branch_id = branch.branch_id 
                  WHERE 
-                       month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu.branch_id = ".$branch_id." AND menu.branch_id = ".$branch_id."  AND order_details.order_status = 6
+                       month(order_details.needed_date)=".$month." AND year(order_details.needed_date) = ".$year." AND menu.branch_id = ".$branch_id."   AND order_details.order_status = 6
                  GROUP BY 
                         menu.item_id";
           $res17=mysqli_query($this->db,$sql17) or die('17->'.mysqli_error($this->db));
@@ -553,7 +553,7 @@
                   FROM 
                        branch 
                   WHERE 
-                       branch_id = ".$branch_id."";
+                       branch_id =".'"'.$branch_id.'"';
         $res19 = mysqli_query($this->db, $sql19) or die('19->' . mysqli_error($this->db));
         $row19 = mysqli_fetch_assoc($res19);
         $branchName = $row19['branch_name'];
@@ -572,8 +572,190 @@
         return  $categoryName;
     }
     
-    
+    public function getCategorySalesoftheMonth(){
+        $categorySalesoftheMonth = array();
+        $i=0;
+        $sql21="SELECT 
+                    category_id, 
+                    category_name, 
+                    sum(quantity*price) AS total_quantity 
+                FROM 
+                    overview_details 
+                WHERE 
+                    extract(month from needed_date) = month(curdate())  AND order_status=6 
+                group by 
+                    category_id";
+                
 
+        $res21=mysqli_query($this->db,$sql21) or die('21->'.mysqli_error($this->db));
+        while($row21=mysqli_fetch_assoc($res21)){
+            $data['category_id']=$row21['category_id'];
+            $data['category_name']=$row21['category_name'];
+            $data['total_quantity'] = $row21['total_quantity'];
+            $categorySalesoftheMonth[$i]=$data;
+            $i++;
+        }
+
+        return $categorySalesoftheMonth;
+    } 
+    public function getBestCategoryoftheWeek(){
+        $bestcategory = array();
+        $i=0;
+        $sql22= "SELECT 
+                    category_id, 
+                    category_name,
+                    max(total_quantity) as best_category 
+                FROM 
+                    overview_category_details";
+        $res22=mysqli_query($this->db,$sql22) or die('22->'.mysqli_error($this->db));
+        while($row22=mysqli_fetch_assoc($res22)){
+            $data['category_id']=$row22['category_id'];
+            $data['category_name']=$row22['category_name'];
+            $data['best_category'] = $row22['best_category'];
+            $bestcategory[$i]=$data;
+            $i++;
+        }
+
+        return $bestcategory;
+    } 
+    public function getBestItemSalesoftheWeek($category_id){
+        $bestItemSalesoftheWeek = array();
+        $i=0;
+        $sql23="SELECT 
+                    item_id,
+                    item_name, 
+                    sum(quantity*price) as total_quantity
+                FROM
+                    overview_details 
+                WHERE 
+                    extract(WEEK FROM needed_date) = week(curdate())  AND category_id = ".$category_id." AND order_status = 6 
+                GROUP BY 
+                    item_id";
+        $res23=mysqli_query($this->db,$sql23) or die('23->'.mysqli_error($this->db));
+        while($row23=mysqli_fetch_assoc($res23)){
+            $data['item_id'] = $row23['item_id'];
+            $data['item_name']=$row23['item_name'];
+            $data['total_quantity']=$row23['total_quantity'];
+            $bestItemSalesoftheWeek [$i]=$data;
+            $i++;
+        }
+
+        return $bestItemSalesoftheWeek ;
+    }  
+    public function getBranchSalesoftheCurrentMonth(){
+        $branchSalesoftheCurrentMonth = array();
+        $i=0;
+        $sql24="SELECT 
+                    sum(quantity*price) AS total_quantity, 
+                    menu_id AS branch_id 
+                FROM 
+                    overview_details 
+                WHERE 
+                    extract(MONTH from needed_date) = month(curdate()) AND order_status = 6 
+                GROUP BY
+                    menu_id";
+        $res24=mysqli_query($this->db,$sql24) or die('24->'.mysqli_error($this->db));
+        while($row24=mysqli_fetch_assoc($res24)){
+            $data['total_quantity'] = $row24['total_quantity'];
+            $data['branch_id']=$row24['branch_id'];
+            $branchSalesoftheCurrentMonth[$i]=$data;
+            $i++;
+        }
+
+        return $branchSalesoftheCurrentMonth;
+    }
+    public function getBranch1SalesoftheYear(){
+        $branchSalesoftheYear = array();
+        $i=0;
+        $sql25="SELECT 
+                    MONTHNAME(needed_date) AS month,
+                    sum(quantity*price) AS total_quantity,
+                    menu_id AS branch_id 
+                FROM 
+                    overview_details 
+                WHERE 
+                    extract(year from needed_date) = year(curdate())  AND order_status = 6 AND menu_id = 1
+                group by 
+                    menu_id";
+        $res25=mysqli_query($this->db,$sql25) or die('25->'.mysqli_error($this->db));
+        while($row25=mysqli_fetch_assoc($res25)){
+            $data['month']=$row25['month'];
+            $data['total_quantity'] = $row25['total_quantity'];
+            $data['branch_id'] = $row25['branch_id'];
+            $branchSalesoftheYear[$i]=$data;
+            $i++;
+        }
+
+        return $branchSalesoftheYear;
+    }
+    public function getBestCategoryItemList($category_id){
+        $itemlist = array();
+        $i=0;
+        $sql26="SELECT 
+                    item_id, 
+                    item_name 
+                from 
+                    menu 
+                where 
+                    category_id = ".$category_id."";
+
+        $res26= mysqli_query($this->db,$sql26) or die('26->'.mysqli_error($this->db));
+        while($row26=mysqli_fetch_assoc($res26)){
+            $data['item_id']=$row26['item_id'];
+            $data['item_name']=$row26['item_name'];
+            $itemlist[$i]=$data;
+            $i++;
+        }
+        return $itemlist;
+    } 
+    public function getBranch2SalesoftheYear(){
+        $branchSalesoftheYear = array();
+        $i=0;
+        $sql27="SELECT 
+                    MONTHNAME(needed_date) AS month,
+                    sum(quantity*price) AS total_quantity,
+                    menu_id AS branch_id 
+                FROM 
+                    overview_details 
+                WHERE 
+                    extract(year from needed_date) = year(curdate())  AND order_status = 6 AND menu_id = 2
+                group by 
+                    menu_id";
+        $res27=mysqli_query($this->db,$sql27) or die('27->'.mysqli_error($this->db));
+        while($row27=mysqli_fetch_assoc($res27)){
+            $data['month']=$row27['month'];
+            $data['total_quantity'] = $row27['total_quantity'];
+            $data['branch_id'] = $row27['branch_id'];
+            $branchSalesoftheYear[$i]=$data;
+            $i++;
+        }
+
+        return $branchSalesoftheYear;
+    }
+    public function getBranch3SalesoftheYear(){
+        $branchSalesoftheYear = array();
+        $i=0;
+        $sql28="SELECT 
+                    MONTHNAME(needed_date) AS month,
+                    sum(quantity*price) AS total_quantity,
+                    menu_id AS branch_id 
+                FROM 
+                    overview_details 
+                WHERE 
+                    extract(year from needed_date) = year(curdate())  AND order_status = 6 AND menu_id = 3
+                group by 
+                    menu_id";
+        $res28=mysqli_query($this->db,$sql28) or die('28->'.mysqli_error($this->db));
+        while($row28=mysqli_fetch_assoc($res28)){
+            $data['month']=$row28['month'];
+            $data['total_quantity'] = $row28['total_quantity'];
+            $data['branch_id'] = $row28['branch_id'];
+            $branchSalesoftheYear[$i]=$data;
+            $i++;
+        }
+
+        return $branchSalesoftheYear;
+    }
 
   
        public function getSalesMonthList(){
