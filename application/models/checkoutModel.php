@@ -39,7 +39,8 @@
 			 				contact_number=".'"'.$customerData['phone_number'].'"';
 			 $resb=mysqli_query($this->db,$sqlb) or die('b->'.mysqli_error($this->db));
 			 if (mysqli_num_rows($resb)>0) {
-			 	$rowb=mysqli_fetch_assoc($resa);
+			 	// changed line
+			 	$rowb=mysqli_fetch_assoc($resb);
 				return $rowb['customer_id'];
 			 }
 
