@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/dailyRequirement.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/footer.css">
+    <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/templates/employee-messageboxes.css"> 
     <script src="<?php echo BASEURL; ?>/public/js/branchManager/header.js" defer ></script>
     <script src="<?php echo BASEURL; ?>/public/js/branchManager/menu.js" defer ></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
@@ -62,6 +63,7 @@
                     <button id="edit" onclick="viewSave()" class="edit-btn">Edit Quantity</button>
                 </div>
             </div>
+          <form method="post" action="<?php echo BASEURL ?>/branchManagerDailyRequirmentController/updateItems">
             <div class="menu-table" id="table">
                 <table>
                     <thead>
@@ -72,45 +74,34 @@
                       </tr>
                     </thead>
                     <tbody>
-                      
-                      <tr>
-                        <td>#001</td>
-                        <td>Chicken Burger</td>
-                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
-                      </tr>
-                      <tr>
-                        <td>#002</td>
-                        <td>Cheese Burger</td>
-                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
-                      </tr>
-                      <tr>
-                        <td>#003</td>
-                        <td>Fish Burger</td>
-                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
-                      </tr>
-                      <tr>
-                        <td>#004</td>
-                        <td>Ham Burger</td>
-                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
-                      </tr>
-                      <tr>
-                        <td>#005</td>
-                        <td>Egg Burger</td>
-                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
-                      </tr>
-                      <tr>
-                        <td>#006</td>
-                        <td>Cheese Ham Burger</td>
-                        <td><input class="quant" name="quant"  type="number" readonly="" value="10"></td>
-                      </tr>
-                      
-                    </tbody>
+                        <?php 
+                        $i=0;
+                        foreach ($data[3] as $key => $item) {?>
+                          <tr>
+                            <td>
+                              <input type="hidden" name="<?php echo "itemId-".$i; ?>" value="<?php echo $item['item_id']; ?>">
+                              <?php echo $item['item_id']; ?>
+                            </td>
+                            <td>
+                                <div class="cell">
+                                  <div class="image"><img src="<?php echo BASEURL; ?>/public/images/branchManager/b1.png" alt=""></div>
+                                  <div><p> <?php echo $item['item_name']; ?></p></div>
+                                </div>
+                            </td>
+                            <td><input class="quant" class="quant" name="<?php echo "daily_requirement-".$i; ?>"  type="number" readonly="" min="0" value="<?php echo $item['daily_requirement']; ?>"></td>
+                          </tr>
+                        <?php 
+                        $i++;
+                      } ?>
+                      <input type="hidden" name="row-count" value="<?php echo $i; ?>">
+                      </tbody>
                   </table>
             </div>
 
             <div class="btn-container">
                 <button id="save" class="save-btn" onclick="alertBox()">Save Changes</button>
             </div>
+          </form>
         </div>
     </div>
     <?php include "footer.php"?>    

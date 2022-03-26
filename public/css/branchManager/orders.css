@@ -86,7 +86,7 @@ tbody tr:hover{
     
     width: 100%;
     /* max-height: 10px; */
-    max-height: 300px;
+    max-height: 400px;
     overflow-y: scroll;
     /* background-color: aquamarine; */
 }
