@@ -78,6 +78,7 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 
 		$data[5] = $data[3] - $data[4];
 		$data[7] = $data[4] - $data[3];
+		
 		$this->view("deliveryPerson/deliveryDetails", $data);
 	}
 	public function acceptDeliveries($order_id)

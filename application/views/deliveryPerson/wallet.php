@@ -38,31 +38,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                       <?php
+                        $i =0;
+                        foreach($data[0] as $key => $delivery) {?>
                     <tr>
-                        <td label="Order Id">001</td>
-                        <td label="Order Amount">1450.00LKR</td>
-                        <td label="Amount Paid">1500.00LKR</td>
-                        <td label="Return">50.00LKR</td>
+                        <td label="Order Id"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails/".$delivery['order_id'] ?>" class="order-id"><?php echo $delivery['order_id'];?></a></td>
+                        <td label="Order Amount"><?php echo $delivery['total_amount'];?></td>
+                        <td label="Amount Paid"><?php echo $delivery['paid_amount'];?></td>
+                        <td label="Return"><?php echo ($delivery['paid_amount']-$delivery['total_amount']);?></td>
                     </tr>
-                    <tr>
-                    <td label="Order Id">002</td>
-                        <td label="Order Amount">1000.00LKR</td>
-                        <td label="Amount Paid">1000.00LKR</td>
-                        <td label="Return">0.00LKR</td>
-                    </tr>
-                    <tr>
-                        <td label="Order Id">003</td>
-                        <td label="Order Amount">1050.00LKR</td>
-                        <td label="Amount Paid">1500.00LKR</td>
-                        <td label="Return">450.00LKR</td>
-                    </tr>
+                    <?php } ?>
                 </tbody>
             </table>
             </div>
             <div class="text">
                 <label for="retrn-amount">Return Amount to the shop</label>
-                <div class="text-fill">
-                    <input type="text" name="name" id="amount"  placeholder="" value="8500.00LKR">
+                <div class="text-fill"><?php echo (intval($data[1])+5000)?>
+                    <!-- <input type="text" name="name" id="amount"  placeholder="" value="8500.00LKR"> -->
                 </div>
             </div>
         </div>

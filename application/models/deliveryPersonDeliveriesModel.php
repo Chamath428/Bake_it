@@ -326,7 +326,7 @@ class deliveryPersonDeliveriesModel extends database
                     delivery_person_id = " . $_SESSION['staff_id'] . " AND needed_date = curdate() AND order_status = 3 ";
       $res20 = mysqli_query($this->db, $sql20) or die('20->' . mysqli_error($this->db));
       $row20 = mysqli_fetch_assoc($res20);
-      $totalCompletedDeliveriesofDay = $row20['COUNT(delivery_person_id)'];
-      return  $totalCompletedDeliveriesofDay;
+      $totalUncompletedDeliveriesofDay = $row20['COUNT(delivery_person_id)'];
+      return  $totalUncompletedDeliveriesofDay;
    }
 }

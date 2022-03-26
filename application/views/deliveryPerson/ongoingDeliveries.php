@@ -107,19 +107,6 @@
                         <?php
                         $i++;
                         }?> 
-                <!-- <tr>
-                    <td label="Order Id"><a href="?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>">117</a></td>
-                    <td label="Time">10.00a.m</td>
-                    <td label="Delivery Area">05,Makandana Rd,Kesbewa</td>
-                    <td label="Payment"><i class="far fa-money-bill-alt"></i></td>
-                    <td label="Accept"><a href="?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails"; ?>"><button class="accept button" onclick="accept()">Accept<i class="fas fa-pen"></i></button></a></td>
-                    <td label="Reject"><button class="reject button" onclick="reject()">Reject<i class="fas fa-times"></i></button></td>
-                     <td label="More Details" class="click pick-order">
-                         <button id="order1" onclick="pickOrder()">Pick</button> 
-                        <input type="button" value="Pick" class="homebutton" id="btnHome" onClick=" window.location.href = 'deliveries2.php'" /> 
-                    </td> 
-                </tr> -->
-              
             </tbody>
         </table>
     </div>    
