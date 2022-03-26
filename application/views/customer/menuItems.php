@@ -54,7 +54,7 @@
 
  ?>
 
-<?php $pagename="delicious burgers" ?>
+<?php $pagename="delicious ".$data['category_name']; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,7 +70,7 @@
 	<script src="<?php echo BASEURL; ?>/public/js/customer/menu.js" defer></script>
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/84f84d587d.js" crossorigin="anonymous"></script>
-	<title>Burgers</title>
+	<title>Menu Items</title>
 </head>
 <body>
 
@@ -90,22 +90,16 @@
 			<div class="side-panel">
 				<h2>Catagories</h2>
 				<ul class="catagory">
-					<li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/1"; ?>">Bread</a></li>
-					<li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/2"; ?>">Pastry</a></li>
-					<li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/3"; ?>">Cake</a></li>
-					<li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/4"; ?>">Burger</a></li>
-					<li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/5"; ?>">Snacks</a></li>
-					<li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/6"; ?>">Donut</a></li>
-					<li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/7"; ?>">Muffin</a></li>
-					<li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/8"; ?>">Sweets</a></li>
-					<li><a href="<?php echo BASEURL."/customermenuController/getCategoryItems/9"; ?>">Baverages</a></li>
+					<?php foreach ($data[2] as $key => $category) {?>
+						<li><a class="<?php if($category['category_name']==$data['category_name'])echo "selected"; ?>" href="<?php echo BASEURL."/customermenuController/getCategoryItems/".$category['category_id']; ?>"><?php echo $category['category_name']; ?></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 
 			<div class="burger-container">
 
 				<?php 
-				if (sizeof($data)>0) {
+				if (sizeof($data[1])>0) {
 				foreach ($data[1] as $key => $item) {?>
 					<div class="burger-item">
 						<form  method="post" action="">

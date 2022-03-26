@@ -21,6 +21,8 @@
 
 			if (isset($_SESSION['branch_Id'])) {
 				$data[1]=$this->customerMenuModel->getCategoryItems($_SESSION['branch_Id'],$category_id);
+				$data[2]=$this->customerMenuModel->getCategories();
+				$data['category_name']=$this->customerMenuModel->getCategoryName($category_id);
 				$data['notifiactions'] = $this->customerNotificationModel->gteNotification();
 				$this->view("customer/menuItems",$data);
 			}

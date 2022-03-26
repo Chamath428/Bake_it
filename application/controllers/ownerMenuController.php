@@ -82,7 +82,8 @@ class ownerMenuController extends bakeItFramework
             // echo "else";
             for ($x = 1; $x <= 3; $x++) {
                 $newMenuData['menu_id'] = $x;
-                $newMenuData['item_id'] = $maxId+$x;
+                // $newMenuData['item_id'] = $maxId+$x;
+                $newMenuData['item_id'] = $maxId+1;
                 //  $newMenuData['item_id']= $name;
                 $newMenuData['item_name'] = $name;
                 $newMenuData['category_id'] = $category;

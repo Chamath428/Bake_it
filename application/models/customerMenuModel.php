@@ -60,6 +60,41 @@
 			}
 			return $categoryItems;
 		}
+
+		public function getCategories(){
+			$categoryData=array();
+			$i=0;
+			$sql3="SELECT
+						*
+					FROM
+						menu_category";
+
+			$res3=mysqli_query($this->db,$sql3) or die('3->'.mysqli_error($this->db));
+
+			while ($row3=mysqli_fetch_assoc($res3)) {
+				$data['category_id']=$row3['category_id'];
+				$data['category_name']=$row3['category_name'];
+				$categoryData[$i]=$data;
+				$i++;
+			}
+
+			return $categoryData;
+
+		}
+
+		public function getCategoryName($category_id){
+			$sql4="SELECT
+						category_name
+					FROM
+						menu_category
+					WHERE
+						category_id=".$category_id;
+
+			$res4=mysqli_query($this->db,$sql4) or die('4->'.mysqli_error($this->db));
+
+			$row4=mysqli_fetch_assoc($res4);
+			return $row4['category_name'];
+		}
 	}
 
  ?>
