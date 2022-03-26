@@ -69,18 +69,21 @@ body{
 
   .table{
    
-    width: 80%;
-    height: 35vh;
+    width: 70%;
+    max-height: 35vh;
     display: flex;
     justify-content: left;
     margin-left: 100px;
+    overflow-y: scroll;
+
     /* background-color: aqua; */
 
 
   }
+ 
   
 .content-table{
-    width:60%; 
+    width:100%; 
     height: 190px;
      border-collapse: collapse;
      margin: 25px, 0;
@@ -98,6 +101,7 @@ body{
     font-weight: bold;
     height: 40px;
 }
+
 .content-table tbody tr{
     text-align: center;
     height: 30px;
@@ -124,14 +128,16 @@ body{
 
 .button-retrieve{
    text-align:left;
-   margin-left: 750px;
+   margin-left: 72%;
    margin-top: 30px;
+   outline: none;
 }
 #submit{
     width: 79px;
     height: 31px;
     background: #FFFFFF;
     border: 1px solid rgba(255, 138, 0, 0.98);
+   outline: none;
     /* box-sizing: border-box; */
     border-radius: 20px;
     cursor: pointer;

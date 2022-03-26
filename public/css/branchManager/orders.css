@@ -91,3 +91,20 @@ tbody tr:hover{
     /* background-color: aquamarine; */
 }
 
+
+#order-date-picker {
+
+    width: 280px;
+    height: 30px;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 138, 0);
+
+  }
+  
+  #order-date-picker:hover {
+    border: 4px solid rgb(255, 138, 0);
+    opacity: 0.9;
+
+  }
+

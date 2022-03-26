@@ -15,6 +15,7 @@ body{
 }
  .bgg{
   font-size: 14px;
+  height: 90vh;
 
  }
   .pending{
@@ -31,10 +32,11 @@ body{
   
   .table{
     width: 80%;
-    height: 80vh;
+    max-height: 80vh;
     margin-left: 100px;
     margin-top:30px ;
     padding: 0;
+    overflow-y: scroll;
   
   }
 .content-table{

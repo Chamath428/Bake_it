@@ -105,6 +105,7 @@ foreach ($data[1] as $key => $value) {
                             </tr>
                         </thead>
                         <tbody>
+                           
                             <?php foreach ($data[1] as $key => $value) { ?>
                                 <tr>
                                     <td><?php echo $value['rawitem_id']; ?></td>
@@ -119,15 +120,17 @@ foreach ($data[1] as $key => $value) {
                                     </td>
                                 </tr>
                             <?php } ?>
+                    
+                            
 
                         </tbody>
                     </table>
                 </div>
-
-            </form>
-            <div class="button-retrieve" id="btnretrive">
+                <div class="button-retrieve" id="btnretrive">
                 <input id="submit" value="Issue" onclick="displayPopup()">
             </div>
+            </form>
+            
 
             <div class="popup" id="popup">
                 <div class="row-pop1">

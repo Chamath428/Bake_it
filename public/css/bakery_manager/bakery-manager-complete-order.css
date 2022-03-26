@@ -16,6 +16,7 @@ body{
 }
 .bgg{
   font-size: 14px;
+  height: 90vh;
 
 }
   .completed{
@@ -31,10 +32,12 @@ body{
   }
   .table{
     width: 90%;
-    height: 80vh;
+   max-height: 80vh;
     margin-left: 100px;
     margin-top:30px ;
     padding: 0;
+    overflow-y: scroll;
+    /* background-color: red; */
  
   }
   
@@ -48,6 +51,7 @@ body{
      border-collapse: collapse;
      margin: 25px, 0;
     min-width: 546px;
+    margin-bottom: 10px;
      /* border-radius:5px 5px 0 0 ; */
     overflow:hidden ; 
     /* box-shadow: 0 0 20px rgb(0, 0,0,0.15); */
