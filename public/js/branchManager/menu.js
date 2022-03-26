@@ -38,3 +38,16 @@ quant.forEach(onkeydown = function(e) {
     }
 })
 
+function viewTable(){
+
+    document.getElementById("menu").style.opacity= "0.1";
+    document.getElementById("popUpView").style.display= "block";
+
+    
+  
+}
+function closePopUpUseCancel(){
+    document.getElementById("menu").style.opacity= "1";
+    document.getElementById("popUpView").style.display= "none";
+
+}
