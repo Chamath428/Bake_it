@@ -214,7 +214,7 @@ function getDetails(){
           for(j=0;j<obj[7].length;j++){
             for(i=0; i<obj[6].length;i++){
               // categoryName.push(obj[1][i].category_name);
-              if(obj[6][j].item_id==obj[7][i].item_id){
+              if(obj[7][j].item_id==obj[6][i].item_id){
                 totalQuantityItems.push(obj[6][i].total_quantity);
                 j++
               }
