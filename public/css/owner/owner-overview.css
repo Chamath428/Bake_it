@@ -10,17 +10,17 @@
 }
 .overview-container .topic-1{
     margin-top: 50px;
-    margin-left: 100px;
+    margin-left: 10px;
     font-size: 25px;
     font-weight: 800;
 }
 .overview-container .topic-2{
-    margin-left: 100px;
+    margin-left: 10px;
     padding: 20px 0;
     font-weight: 700;
 }
 .overview-container .row-container{
-    margin-left: 100px;
+    margin-left: 10px;
     display: flex;
     flex-direction: row;
     

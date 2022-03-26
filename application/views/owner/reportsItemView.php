@@ -87,7 +87,9 @@
                 <tbody>
                     <?php
                         $i =0;
-                        foreach($data[1] as $key => $salesReport) {?>
+                        $total_income = 0 ;
+                        foreach ($data[1] as $key => $salesReport) { 
+                            $total_income += intval($salesReport['income'])?>
                     <tr>
                         <td><?php echo $salesReport['item_id'];?></td>
                         <td><?php echo $salesReport['item_name'];?></td>
@@ -101,6 +103,12 @@
                         }?> 
                 </tbody>
             </table>
+            <?php if($total_income != 0){ ?>
+                <div class="total_sales_income">
+                    <span>Total Sales(LKR) : </span>
+                    <span><?php echo $total_income;?></span>
+                </div>
+            <?php } ?>
      </div>
 
     <?php require_once('footer.php'); ?>
