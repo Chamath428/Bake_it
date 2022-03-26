@@ -27,7 +27,9 @@
 					WHERE
 						customer_id=".$customer_id."
 					AND
-						order_type=1";
+						order_type=1
+					ORDER BY 
+						order_id DESC";
 
 			$res1=mysqli_query($this->db,$sql1) or die('1->'.mysqli_error($this->db));
 			if (mysqli_num_rows($res1)>0) {
@@ -55,7 +57,9 @@
 					WHERE
 						customer_id=".$customer_id."
 					AND
-						order_type=2";
+						order_type=2
+					ORDER BY 
+						order_id DESC";
 
 			$res2=mysqli_query($this->db,$sql2) or die('2->'.mysqli_error($this->db));
 
@@ -162,6 +166,17 @@
 							."1)";
 
 			$res5=mysqli_query($this->db,$sql5) or die('5->'.mysqli_error($this->db));
+		}
+
+		public function cancelOrder($order_id){
+			$sql6="UPDATE
+						order_details
+					SET
+						order_status=8
+					WHERE
+						order_id=".$order_id;
+
+			$res6=mysqli_query($this->db,$sql6) or die('6->'.mysqli_error($this->db));
 		}
 	}
 

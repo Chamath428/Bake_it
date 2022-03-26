@@ -214,6 +214,16 @@
 			</table>
 		</div>
 
+		<?php if ($data[1]['order_status']==1) {?>
+
+			<div class="buttons">
+			
+			<button type="button"><a href="<?php echo BASEURL."/myordersController/cancelOrder/".$data[1]['order_id']; ?>">Cancle-Order</a></button>
+
+		</div>
+
+		<?php } ?>
+
 <?php if ($data[1]['order_status']==6) {?>
 		<div class="buttons">
 			
