@@ -114,6 +114,7 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 
 		$data['date'] = date('Y-m-d', strtotime($_POST['date']));
 		// echo $data['date'];
+		
 		$completedDeliveriesTable = $this->deliveryPersonDeliveriesModel->getCompletedDeliveriesTable($data['date']);
 		$data[3] = $completedDeliveriesTable;
 

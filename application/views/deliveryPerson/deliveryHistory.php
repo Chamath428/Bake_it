@@ -48,11 +48,13 @@
                 </form>
             </div>
         </div> 
-      
+        
         <!--table for Delivery History-->
         <div class="historytable">
             <!-- <h3 id="table-caption">Details of Overview</h3> -->
             <?php if(!empty($data[3])){?>
+            <h3 id="table-caption">Details of Overview</h3>
+            <h5 id="table-caption">Selected Date : <?php echo $data['date']?> </h5>
             <table id="table-history">
                 <thead>
                     <tr>

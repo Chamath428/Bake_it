@@ -191,7 +191,6 @@
 							<tr>
 								<td><input type="submit" name="submit_paid_amount" value="Enter Paid Amount "></td>
 								<!-- <td><button type="submit" name="submit_paid_amount" value="Enter paid amount">Enter paid amount</button></td> -->
-
 							</tr>
 							<tr>
 								<td>Balance(LKR)</td>
@@ -205,7 +204,7 @@
 				
 
 				<div class="buttons">
-					<?php if(($data[0]['order_status']==3 || $data[0]['order_status']==6)  && $data[4] >= $data[3]){?>
+					<?php if($data[0]['order_status']==3  && $data[4] >= $data[3]){?>
 					<form action="<?php echo BASEURL . '/deliveryPersonDeliveriesController/completeDelivery/' . $data[0]['order_id']; ?>" method="POST">
 						<button type="submit" name="orderStatus" value="6">Complete Delivery</button>
 					</form>
