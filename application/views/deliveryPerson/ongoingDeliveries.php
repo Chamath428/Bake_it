@@ -33,16 +33,16 @@
                 <h1><?php echo $data[0]?></h1>
             </div>
             <div class="col">
-                <h4>Completed Deliveries</h4>
+                <h4>Today Completed Deliveries</h4>
                 <h1><?php echo $data[1]?></h1>
             </div>
             <div class="col">
-                <h4>Uncompleted Deliveries</h4>
-                <h1><?php echo ($data[0] - $data[1])?></h1>
+                <h4>Today Uncompleted Deliveries</h4>
+                <h1><?php echo $data[3]?></h1>
             </div>
         </div>
         <!-- table for ongoing Deliveries -->
-        <h3 id="table-caption">Delivery Details </h3>
+        <h3 id="table-caption">Ongoing Delivery Details </h3>
         <table id="Ongoing-Deliveries">
             <thead>
                     <tr>

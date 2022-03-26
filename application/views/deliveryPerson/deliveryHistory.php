@@ -74,7 +74,11 @@
                             <?php echo $delivery['address3'];?>
                         </td>
                         <td label="Payment"><?php echo $delivery['total_amount'];?></td>
-                        <td label="" class="click more-details"><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails/".$delivery['order_id'] ?>" ></a></td>
+                        <td label="" class="click more-details">
+                            <button><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails/".$delivery['order_id'] ?>">
+                            Click for more details
+                            </a></button>
+                        </td>
 
                     </tr>
                     <?php
