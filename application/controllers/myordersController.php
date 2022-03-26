@@ -38,6 +38,11 @@
 			$this->view("customer/quickOrderdetails",$data);
 		}
 
+		public function cancelOrder($order_id){
+			$this->customerMyOrdersModel->cancelOrder($order_id);
+			$this->index();
+		}
+
 	}
 
  ?>
