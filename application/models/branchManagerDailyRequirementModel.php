@@ -40,8 +40,7 @@ class branchManagerDailyRequirementModel extends database
 
 						item_id,
 						item_name,
-						quantity,
-						price
+						daily_requirement
 					FROM
 						menu
 					WHERE menu_id = " .$_SESSION['branch_id']. " AND category_id =" . '"' . $category_id . '"';
@@ -49,13 +48,41 @@ class branchManagerDailyRequirementModel extends database
 		while ($row2 = mysqli_fetch_assoc($res2)) {
 			$data['item_id'] = $row2['item_id'];
 			$data['item_name'] = $row2['item_name'];
-			$data['quantity'] = $row2['quantity'];
-			$data['price'] = $row2['price'];
+			$data['daily_requirement'] = $row2['daily_requirement'];
 			$itemData[$i] = $data;
 			$i++;
 
 		}
 		return $itemData;
+	}
+
+	public function updateQuantity($updateData = [])
+	{
+		foreach ($updateData as $key => $value) {
+			$sql3 = "UPDATE
+
+							menu
+						SET
+							daily_requirement=" . $value['daily_requirement'] . "
+						WHERE
+
+							item_id=" . $value['item_id'];
+			$res3 = mysqli_query($this->db, $sql3) or die('3->' . mysqli_error($this->db));
+
+		}
+	}
+
+	public function getCategoryId($itemId)
+	{
+		$sql4 = "SELECT
+						category_id
+					FROM
+						menu
+					WHERE
+						item_id=" . $itemId;
+		$res4 = mysqli_query($this->db, $sql4) or die('4->' . mysqli_error($this->db));
+		$row4 = mysqli_fetch_assoc($res4);
+		return $row4['category_id'];
 	}
 
 }

@@ -11,7 +11,7 @@
 
 .menu{
     margin-top: 75px;
-    width: 100%;
+    width: 90%;
     /* background-color: aqua; */
     display: flex;
     flex-direction: column;
@@ -30,14 +30,14 @@
 }
 
 .drop-down-btn-container{
-    width: 80%;
+    width: 90%;
     /* height: 60px; */
     display: flex;
     flex-direction: column;
     /* background-color: brown; */
     align-items:left;
     /* border:3px solid red; */
-    /* margin-bottom: 10px; */
+    margin-bottom: 30px;
 }
 
 .drop-down{
@@ -66,6 +66,9 @@ select{
 
 .menu-table{
     /*visibility: hidden;*/
+    width: 90%;
+    max-height: 300px;
+    overflow-y: scroll;
     
 }
 .menu-table-active{
@@ -96,9 +99,9 @@ input[type="number"]:disabled {
   }
 
 table{
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 table td{
@@ -149,7 +152,7 @@ img{
 
 .btn-container{
     /* height: 60px; */
-    width: 60%;
+    width: 90%;
     margin-top: 40px;
     margin-bottom: 10px;
     display: flex;
