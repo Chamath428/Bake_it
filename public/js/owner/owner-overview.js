@@ -171,7 +171,7 @@ function getDetails(){
 
           var x3Values = categorylist;
           var y3Values = totalQuantity;
-          var barColors = ["#003049","#edf060","#f77f00","#06d6a0","#e09f3e","#6a4c93","#2ec4b6","#8b1e3f","#d62828"];
+          var barColors = ["#2ec4b6","#003049","#edf060","#f77f00","#06d6a0","#e09f3e","#6a4c93","#8b1e3f","#d62828"];
 
           new Chart("myChart3", {
             type: "bar",
