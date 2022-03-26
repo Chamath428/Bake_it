@@ -68,7 +68,7 @@ function getDetails(){
             legend: {display: false},
             title: {
                 display: true,
-                text: "All Branch Sales for the year"
+                text: "All Branches Sales for the year"
             },
             scales: {
                 xAxes: [{
@@ -100,10 +100,10 @@ function getDetails(){
               for(i=0; i<obj[3].length; i++){
                 branchList.push(obj[3][i].branch_name);
               }
-              for(j=0;j<obj[0].length;j++){
+              for(j=0;j<obj[3].length;j++){
                 for(i=0; i<obj[1].length;i++){
                   // categoryName.push(obj[1][i].category_name);
-                  if(obj[0][j].category_id==obj[1][i].category_id){
+                  if(obj[3][j].branch_id==obj[1][i].menu_id){
                     totalsalesofcurrentmonth.push(obj[1][i].total_quantity);
                     j++
                   }
@@ -113,7 +113,7 @@ function getDetails(){
 
               var x2Values = branchList;
               var y2Values = totalsalesofcurrentmonth;
-              var barColors = ["#f4a261","#2a9d8f","#e9c46a","#264653","#e76f51","#00aba9","pink"];
+              var barColors = ["#f4a261","#7209b7","#00aba9"];
 
               new Chart("myChart2", {
                 type: "bar",
@@ -128,7 +128,7 @@ function getDetails(){
                   legend: {display: false},
                   title: {
                     display: true,
-                    text: "Branch Sales for current month"
+                    text: "All Branches Sales for current month"
                   },
                   scales: {
                       xAxes: [{
@@ -153,10 +153,10 @@ function getDetails(){
             // totalQuantity.push(obj[0][i].total_quantity);
           }
           for(j=0;j<obj[0].length;j++){
-            for(i=0; i<obj[1].length;i++){
+            for(i=0; i<obj[10].length;i++){
               // categoryName.push(obj[1][i].category_name);
-              if(obj[0][j].category_id==obj[1][i].category_id){
-                totalQuantity.push(obj[1][i].total_quantity);
+              if(obj[0][j].category_id==obj[10][i].category_id){
+                totalQuantity.push(obj[10][i].total_quantity);
                 j++
               }
               // else{
@@ -171,7 +171,7 @@ function getDetails(){
 
           var x3Values = categorylist;
           var y3Values = totalQuantity;
-          var barColors = ["#2ec4b6","#003049","#edf060","#f77f00","#06d6a0","#e09f3e","#6a4c93","#8b1e3f","#d62828"];
+          var barColors = ["#003049","#edf060","#f77f00","#06d6a0","#e09f3e","#6a4c93","#8b1e3f","#d62828"];
 
           new Chart("myChart3", {
             type: "bar",
@@ -229,15 +229,7 @@ function getDetails(){
 
           var x4Values = itemlist;
           var y4Values = totalQuantityItems;
-          var barColors = [
-            "#b91d47",
-            "#00aba9",
-            "#2b5797",
-            "#e8c3b9",
-            "#1e7145",
-            "#800000",
-            "#daa520"
-          ];
+          var barColors = ["#43aa8b","#f7c59f","#004e89","#f06c9b","#f5d491","#43aa8b", "#6c698d", "#3c5233","#e9c46a","#264653","#e76f51"];
 
           new Chart("myChart4", {
             type: "doughnut",
