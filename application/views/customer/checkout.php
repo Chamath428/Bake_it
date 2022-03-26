@@ -38,7 +38,7 @@
 				<input type="text" id="first_name" name="first_name" required="" placeholder="First Name" value="<?php if(isset($_SESSION['first_name']))echo $_SESSION['first_name'] ?>" oninput="changeValues('first_name','first_name_payhere')" >
 				<input type="text" id="last_name" name="last_name" placeholder="Last Name" value="<?php if(isset($_SESSION['last_name']))echo $_SESSION['last_name'] ?>" oninput="changeValues('last_name','last_name_payhere')">
 				<input type="text" name="company_name" placeholder="Company Name (Optional)">
-				<input type="text" id="phone_number" name="phone_number" placeholder="Phone Number" required="" value="<?php if(isset($_SESSION['contact_number']))echo $_SESSION['contact_number'] ?>"  oninput="changeValues('phone_number','phone_payhere')">
+				<input type="text" id="phone_number" name="phone_number" placeholder="Phone Number" required="" value="<?php if(isset($_SESSION['contact_number']))echo $_SESSION['contact_number'] ?>" onkeypress="javascript:return isNumber(event)" oninput="changeValues('phone_number','phone_payhere')">
 			</div>
 			<div class="radio-box" id="reciving-method">
 			<h3>Order Reciving Method</h3>
