@@ -48,7 +48,6 @@ class ownerReportController extends bakeItFramework
 		$itemsList =$this->ownerReportsModel->getBestCategoryItemList($bestCategory);
 		$data[7]=$itemsList ;
 
-		// echo $data[2][0]['category_id'];
 		echo json_encode($data);
 		
 	}
@@ -175,10 +174,10 @@ class ownerReportController extends bakeItFramework
 		}
 		$categorySalesReportDetails = array();
 
-		if ($data['date'] == "0-0-0" || $data['branch_id'] == 0 || $data['category_id'] == 0) {
+		if ($data['date'] == "0-0-0" || ($data['branch_id'] == 0 && $data['category_id'] == 0)) {
 			$data['error'] = "Please select branch/category and valid time period";
 			$data['branches'] = $this->ownerReportsModel->getBranchList();
-			$data['years'] = $this->ownerReportsModel->getYearList();
+			$data['categories'] = $this->ownerReportsModel->getCategoryList();
 			$this->view("owner/reportsItem", $data);
 
 		} elseif ($data['date'] != 0 && $data['branch_id'] != 0 && $data['category_id'] == 0) {
@@ -218,21 +217,25 @@ class ownerReportController extends bakeItFramework
 
 		$categorySalesReportDetails = array();
 
-		if ($data['week'] == 0 && $data['month'] == 0 && $data['year'] == 0 || $data['branch_id'] == 0 || $data['category_id'] == 0) {
+		if (($data['week'] == 0 || $data['month'] == 0 || $data['year'] == 0) && $data['branch_id'] == 0 && $data['category_id'] == 0) {
 			$data['error'] = "Please select branch/category and valid time period";
 			$data['branches'] = $this->ownerReportsModel->getBranchList();
+			$data['categories'] = $this->ownerReportsModel->getCategoryList();
 			$data['years'] = $this->ownerReportsModel->getYearList();
 			$this->view("owner/reportsItem", $data);
+
 		} elseif ($data['week'] != 0 && $data['month'] != 0 && $data['year'] != 0 && $data['branch_id'] != 0 && $data['category_id'] == 0) {
 			//selected week selected branch all category sales report
 			$categorySalesReportDetails = $this->ownerReportsModel->weeklyBranchTotalCategorySalesReport($data['week'], $data['month'], $data['year'], $data['branch_id']);
 			$data[1] = $categorySalesReportDetails;
 			$this->view("owner/reportsItemView", $data);
+
 		} elseif ($data['week'] != 0 && $data['month'] != 0 && $data['year'] != 0 &&  $data['branch_id'] == 0 && $data['category_id'] != 0) {
 			//selected week selected category all branches sales report
 			$categorySalesReportDetails = $this->ownerReportsModel->weeklyAllBranchCategorySalesReport($data['week'], $data['month'], $data['year'], $data['category_id']);
 			$data[1] = $categorySalesReportDetails;
 			$this->view("owner/reportsItemView", $data);
+
 		} else {
 			//selected week selected branch selected category sales report
 			$categorySalesReportDetails = $this->ownerReportsModel->weeklyBranchCategorySalesReport($data['week'], $data['month'], $data['year'], $data['branch_id'], $data['category_id']);
@@ -258,24 +261,24 @@ class ownerReportController extends bakeItFramework
 
 		$categorySalesReportDetails = array();
 
-		if ($data['month'] == 0 && $data['year'] == 0 || $data['branch_id'] == 0 || $data['category_id'] == 0) {
+		if (($data['month'] == 0 || $data['year'] == 0) && $data['branch_id'] == 0 && $data['category_id'] == 0) {
 			$data['error'] = "Please select branch/category and valid time period";
 			$data['branches'] = $this->ownerReportsModel->getBranchList();
+			$data['categories'] = $this->ownerReportsModel->getCategoryList();
 			$data['years'] = $this->ownerReportsModel->getYearList();
 			$this->view("owner/reportsItem", $data);
+
 		} elseif ($data['month'] != 0 && $data['year'] != 0 && $data['branch_id'] != 0 && $data['category_id'] == 0) {
 			//selected month selected branch all category sales report
 			$categorySalesReportDetails = $this->ownerReportsModel->monthlyBranchTotalCategorySalesReport($data['month'], $data['year'], $data['branch_id']);
 			$data[1] = $categorySalesReportDetails;
-			echo "all category on selected branch";
-			// $this -> view("owner/reportsItemView",$data);
+			$this -> view("owner/reportsItemView",$data);
 
 		} elseif ($data['month'] != 0 && $data['year'] != 0 &&  $data['branch_id'] == 0 && $data['category_id'] != 0) {
 			//selected month selected category all branches sales report
 			$categorySalesReportDetails = $this->ownerReportsModel->monthlyAllBranchCategorySalesReport($data['month'], $data['year'], $data['category_id']);
 			$data[1] = $categorySalesReportDetails;
-			echo "all branch selected category";
-			// $this -> view("owner/reportsItemView",$data);
+			$this -> view("owner/reportsItemView",$data);
 
 		} else {
 			//selected month selected branch selected category sales report
