@@ -228,7 +228,12 @@
 
                             <tr>
                                 <th><span>Delivery Tax(LKR:)</span></th>
-                                <td><input type="number" readonly name="delivery-tax" id="delivery-tax" value="0"></td>    
+                                <td><input type="number" readonly name="delivery-tax" id="delivery-tax" value="<?php if(isset($_POST['delivery-tax'])){echo $_POST['delivery-tax'];}else echo 0; ?>"></td>    
+                            </tr>
+
+                            <tr>
+                                <th><span>Grand Total(LKR:)</span></th>
+                                <td><input type="number" readonly name="grand_total" id="grand-total" value="<?php if(isset($grandTotal)){echo $grandTotal;}else echo 0; ?>"></td>    
                             </tr>
 
                             <tr>

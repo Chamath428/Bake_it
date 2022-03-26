@@ -29,12 +29,15 @@ function deleteRow(tableID) {
 
 // this function is to expand the location details
 function getLocation(x){
+    var tot=parseFloat(document.getElementById("total-amount").value);
     if (x==0) {
         document.getElementById("location-details").style.display="none";
         document.getElementById("delivery-tax").value="00";
+        document.getElementById("grand-total").value=tot;
     }else if(x==1) {
         document.getElementById("location-details").style.display="flex";
         document.getElementById("delivery-tax").value="200"
+        document.getElementById("grand-total").value=tot+200;
     }
 }
 
@@ -53,6 +56,7 @@ if (tracker==2) {
 // this function is to add items in to the item table
 function selectItem() {
       var subTotal=document.getElementById("total-amount").value;
+      var grandTotal=document.getElementById("grand-total").value;
       var itemSelector = document.getElementById("items-bar");
       var itemId = itemSelector.value;
       if (!idList.includes(itemId)) {
@@ -67,8 +71,10 @@ function selectItem() {
         
           row.innerHTML = '<td><input type="checkbox" id="Check-box" name="check"></td> <td><input readonly  name="item-id-'+quan+'" value="'+itemId+'"></ input></td> <td> <input readonly  name="item-name-'+quan+'" value="'+itemName+'"></input> </td> <td class="input"><input type="number" class="quntity" name="quntity'+quan+'" id="quntity'+quan+'"  required=""  oninput="calc1(\'quntity'+quan+'\',\'priceForFunction'+quan+'\',\'itemPrice'+quan+'\')" value="1"> <input type="hidden" name="finalCount" value="'+quan+'"></td> <td><input type="text" class="item-price" readonly name="item-price-'+quan+'" id="itemPrice'+quan+'" value="'+itemPrice+'"></input> <input type="hidden" name="priceForFunction'+quan+'" id="priceForFunction'+quan+'" value="'+itemPrice+'"></input> </td>';
           subTotal=parseFloat(subTotal)+parseFloat(itemPrice);
+          grandTotal=parseFloat(grandTotal)+parseFloat(itemPrice);
           quan++;
           document.getElementById("total-amount").value=subTotal;
+          document.getElementById("grand-total").value=grandTotal;
           table.appendChild(row)
       }
 }
@@ -79,17 +85,20 @@ function calc1(noOfItemsP,priceP,itemPriceP)
   var price = document.getElementById(priceP).value;
   var noOfItems = document.getElementById(noOfItemsP).value;
   var total = parseFloat(price) * noOfItems
+  var previousPrice=parseFloat(document.getElementById("total-amount").value)
   if (!isNaN(total)){
     // following line will change the subtotal. First it takes the current subtotal and then it substract the current items subtotal and then it will add the new subtotal of the item
     document.getElementById("total-amount").value=parseFloat(document.getElementById("total-amount").value)-parseFloat(document.getElementById(itemPriceP).value)+total;
+    document.getElementById("grand-total").value=parseFloat(document.getElementById("grand-total").value)-previousPrice+parseFloat(document.getElementById("total-amount").value)
     document.getElementById(itemPriceP).value = total
     }
 }
 
 function calc2(){
      var subTotal=document.getElementById("total-amount").value;
+     var grandTotal=document.getElementById("grand-total").value;
      var paidAmount=document.getElementById("paid-amount").value;
-     var balance=parseFloat(paidAmount)-parseFloat(subTotal);
+     var balance=parseFloat(paidAmount)-parseFloat(grandTotal);
      if (document.getElementById("paid-amount").value=="") {
         document.getElementById("balance").value=0;
      }
