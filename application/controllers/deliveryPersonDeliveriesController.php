@@ -24,7 +24,9 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 
 		$deliveriesTable = $this->deliveryPersonDeliveriesModel->getOngoingDeliveriesTable();
 		$data[2] = $deliveriesTable;
-
+        
+		$totalUncompletedDeliveriesofDay = $this->deliveryPersonDeliveriesModel->countUncompletedDeliveriesofDay();
+		$data[3] = $totalUncompletedDeliveriesofDay;
 		$this->view("deliveryPerson/ongoingDeliveries", $data);
 	}
 
@@ -76,6 +78,7 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 
 		$data[5] = $data[3] - $data[4];
 		$data[7] = $data[4] - $data[3];
+		
 		$this->view("deliveryPerson/deliveryDetails", $data);
 	}
 	public function acceptDeliveries($order_id)

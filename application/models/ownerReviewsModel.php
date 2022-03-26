@@ -65,11 +65,12 @@ class ownerReviewsModel extends database{
     $bestDeliveryPerson['id']=$row4['MAX(delivery_person_id)']; 
     // return $bestDeliveryPerson['id']; 
     $sql5 = "SELECT 
-                first_name,last_name
+                first_name,
+                last_name
              FROM
                 staff
              WHERE 
-                staff_id = ".$bestDeliveryPerson['id']."";
+                staff_id = ".'"'.$bestDeliveryPerson['id'].'"'." ";
      $res5=mysqli_query($this->db,$sql5) or die('5->'.mysqli_error($this->db)); 
      $row5=mysqli_fetch_assoc($res5);
      $bestDeliveryPerson['first_name']=$row5['first_name']; 

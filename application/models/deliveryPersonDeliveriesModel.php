@@ -316,4 +316,17 @@ class deliveryPersonDeliveriesModel extends database
                      order_id = " . $order_id;
       $res19 = mysqli_query($this->db, $sql19) or die('19->' . mysqli_error($this->db));
    }
+   //count uncompelete deliveries of current date
+   public function countUncompletedDeliveriesofDay(){
+      $sql20 = "SELECT
+                    COUNT(delivery_person_id)
+                 FROM
+                    order_details
+                 WHERE
+                    delivery_person_id = " . $_SESSION['staff_id'] . " AND needed_date = curdate() AND order_status = 3 ";
+      $res20 = mysqli_query($this->db, $sql20) or die('20->' . mysqli_error($this->db));
+      $row20 = mysqli_fetch_assoc($res20);
+      $totalUncompletedDeliveriesofDay = $row20['COUNT(delivery_person_id)'];
+      return  $totalUncompletedDeliveriesofDay;
+   }
 }
