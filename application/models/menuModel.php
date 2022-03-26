@@ -68,9 +68,9 @@ class menuModel extends database
 							menu
 						SET
 							quantity=" . $value['quantity'] . "
-						WHERE
-
-							item_id=" . $value['item_id'];
+						WHERE 
+						
+						menu_id = " .$_SESSION['branch_id']. " AND item_id=" . $value['item_id'];
 			$res3 = mysqli_query($this->db, $sql3) or die('3->' . mysqli_error($this->db));
 
 		}
@@ -82,8 +82,8 @@ class menuModel extends database
 						category_id
 					FROM
 						menu
-					WHERE
-						item_id=" . $itemId;
+					WHERE 
+					menu_id = " .$_SESSION['branch_id']. " AND item_id=" . $itemId;
 		$res4 = mysqli_query($this->db, $sql4) or die('4->' . mysqli_error($this->db));
 		$row1 = mysqli_fetch_assoc($res4);
 		return $row1['category_id'];
