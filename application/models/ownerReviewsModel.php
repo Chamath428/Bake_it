@@ -54,8 +54,7 @@ class ownerReviewsModel extends database{
     $totalRatings=$row3['SUM(rating)'];   
     return  $totalRatings;
    }
-   public function getBsetDeliveryPerson(){
-    $bestDeliveryPerson = array();  
+   public function getBsetDeliveryPerson(){ 
     $sql4 = "SELECT 
                 MAX(delivery_person_id)
             FROM

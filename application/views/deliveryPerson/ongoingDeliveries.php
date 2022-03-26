@@ -29,7 +29,7 @@
         </div> <br>
         <div class="row">
             <div class="col">
-                <h4>Total Deliveiries</h4>
+                <h4>Assgined Total Deliveiries</h4>
                 <h1><?php echo $data[0]?></h1>
             </div>
             <div class="col">
