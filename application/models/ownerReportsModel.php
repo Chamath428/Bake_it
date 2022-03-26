@@ -572,19 +572,20 @@
         return  $categoryName;
     }
     
-    public function getCategorySalesoftheMonth(){
-        $categorySalesoftheMonth = array();
+    public function getBranchSalesoftheMonth(){
+        $branchSalesoftheMonth = array();
         $i=0;
         $sql21="SELECT 
                     category_id, 
                     category_name, 
-                    sum(quantity*price) AS total_quantity 
+                    sum(quantity*price) AS total_quantity,
+                    menu_id 
                 FROM 
                     overview_details 
                 WHERE 
                     extract(month from needed_date) = month(curdate())  AND order_status=6 
                 group by 
-                    category_id";
+                    menu_id";
                 
 
         $res21=mysqli_query($this->db,$sql21) or die('21->'.mysqli_error($this->db));
@@ -592,11 +593,12 @@
             $data['category_id']=$row21['category_id'];
             $data['category_name']=$row21['category_name'];
             $data['total_quantity'] = $row21['total_quantity'];
-            $categorySalesoftheMonth[$i]=$data;
+            $data['menu_id'] = $row21['menu_id'];
+            $branchSalesoftheMonth[$i]=$data;
             $i++;
         }
 
-        return $categorySalesoftheMonth;
+        return $branchSalesoftheMonth;
     } 
     public function getBestCategoryoftheWeek(){
         $bestcategory = array();
@@ -694,10 +696,12 @@
         $sql26="SELECT 
                     item_id, 
                     item_name 
-                from 
+                FROM 
                     menu 
-                where 
-                    category_id = ".$category_id."";
+                WHERE
+                    category_id = ".$category_id." 
+                GROUP BY
+                    item_id";
 
         $res26= mysqli_query($this->db,$sql26) or die('26->'.mysqli_error($this->db));
         while($row26=mysqli_fetch_assoc($res26)){
@@ -756,6 +760,33 @@
 
         return $branchSalesoftheYear;
     }
+    public function getCategorySalesoftheMonth(){
+        $categorySalesoftheMonth = array();
+        $i=0;
+        $sql29="SELECT 
+                    category_id, 
+                    category_name, 
+                    sum(quantity*price) AS total_quantity,
+                    menu_id 
+                FROM 
+                    overview_details 
+                WHERE 
+                    extract(month from needed_date) = month(curdate())  AND order_status=6 
+                group by 
+                    category_id";
+                
+
+        $res29=mysqli_query($this->db,$sql29) or die('29->'.mysqli_error($this->db));
+        while($row29=mysqli_fetch_assoc($res29)){
+            $data['category_id']=$row29['category_id'];
+            $data['category_name']=$row29['category_name'];
+            $data['total_quantity'] = $row29['total_quantity'];
+            $categorySalesoftheMonth[$i]=$data;
+            $i++;
+        }
+
+        return $categorySalesoftheMonth;
+    } 
 
   
        public function getSalesMonthList(){

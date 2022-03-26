@@ -18,16 +18,16 @@ class ownerReportController extends bakeItFramework
 		$branchlist=$this->ownerReportsModel->getBranchList();
 		$data[3]=$branchlist;
 
+		$branchSalesoftheMonth =$this->ownerReportsModel->getBranchSalesoftheMonth();
+		$data[1]=$branchSalesoftheMonth;
+
 		$categorySalesoftheMonth =$this->ownerReportsModel->getCategorySalesoftheMonth();
-		$data[1]=$categorySalesoftheMonth;
+		$data[10]=$categorySalesoftheMonth;
 
 		$bestCategoryoftheWeek =$this->ownerReportsModel->getBestCategoryoftheWeek();
 		$data[2]=$bestCategoryoftheWeek;
 
 		$bestCategory = $data[2][0]['category_id'];
-
-		// $bestItemsoftheWeek =$this->ownerReportsModel->getBestItemSalesoftheWeek($bestCategory);
-		// $data[3]=$bestItemsoftheWeek;
 
         //branch 1
 		$branch1SalesoftheYear =$this->ownerReportsModel->getBranch1SalesoftheYear();
