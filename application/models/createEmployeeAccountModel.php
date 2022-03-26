@@ -290,6 +290,24 @@
 			return $returnData;
 
 	}
+	public function getBranchList(){
+        $branchData=array();
+        $i=0;
+        $sql8="SELECT
+                    branch_id,
+                    branch_name
+                FROM
+                    branch";
+
+        $res8=mysqli_query($this->db,$sql8) or die('8->'.mysqli_error($this->db));
+        while ($row8=mysqli_fetch_assoc($res8)) {
+            $data['branch_id']=$row8['branch_id'];
+            $data['branch_name']=$row8['branch_name'];
+            $branchData[$i]=$data;
+            $i++;
+        }
+        return $branchData;
+    }
 }
 
  ?>

@@ -23,6 +23,7 @@
 
 		public function createAccount(){
 			$data['error']="";
+			$data['branches'] = $this->createEmployeeAccountModel->getBranchList();
 			$firstname=preg_replace('/\s+/', '', $_POST['firs_tname']);
 			$lastname=preg_replace('/\s+/', '', $_POST['last_name']);
 			$password=preg_replace('/\s+/', '', $_POST['password']);
