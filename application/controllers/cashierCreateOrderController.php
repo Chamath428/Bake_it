@@ -17,44 +17,39 @@
 			$this->view("cashier/createQuickOrder",$data);
 		}
 
-		// this function is just to direct to the crete special order page
-		// public function createSpecialOrderCashier(){
-		// 	$data=$this->cashierCreateOrderModel->getItems(1);
-		// 	$this->view("cashier/createOrderSpecial",$data);
-		// }
-
 		public function directToSepcialOrder(){
 			$data=$this->cashierCreateOrderModel->getItems(1);
 			$this->view("cashier/createOrderSpecial",$data);
 		}
 
 		public function createQuickOrder(){
-			$data['error']="";
-			$orderDetails=array();
-			$finalCount=$_POST['finalCount'];
-			$orderItems=array();
-			for ($i=1; $i <=$finalCount ; $i++) { 
-				$orderItems[$_POST['item-id-'.$i]]=$_POST['quntity'.$i];
-			}
+			echo date("Y-m-d");
+			// $data['error']="";
+			// $orderDetails=array();
+			// $finalCount=$_POST['finalCount'];
+			// $orderItems=array();
+			// for ($i=1; $i <=$finalCount ; $i++) { 
+			// 	$orderItems[$_POST['item-id-'.$i]]=$_POST['quntity'.$i];
+			// }
 
-			$orderDetails['total_amount']=$_POST['total-amount'];
-			$orderDetails['paid_amount']=$_POST['paid-amount'];
-			$orderDetails['menu_id']=1;
-			$orderDetails['cashier_id']=$_SESSION['staff_id'];
-			$orderDetails['order_type']=1;
-			$orderDetails['delivery_type']=1;
-			$orderDetails['payment_type']=$_POST['payment_type'];
-			$orderDetails['order_status']=6;
+			// $orderDetails['total_amount']=$_POST['total-amount'];
+			// $orderDetails['paid_amount']=$_POST['paid-amount'];
+			// $orderDetails['menu_id']=1;
+			// $orderDetails['cashier_id']=$_SESSION['staff_id'];
+			// $orderDetails['order_type']=1;
+			// $orderDetails['delivery_type']=1;
+			// $orderDetails['payment_type']=$_POST['payment_type'];
+			// $orderDetails['order_status']=6;
 
-			$order_id=$this->cashierCreateOrderModel->placeQuickOrder($orderDetails);
-			$this->cashierCreateOrderModel->insertOrderItems($order_id,$orderDetails['menu_id'],$orderItems);
-			$this->cashierCreateOrderModel->createBill($order_id,$orderDetails['paid_amount'],$orderDetails['cashier_id']);
+			// $order_id=$this->cashierCreateOrderModel->placeQuickOrder($orderDetails);
+			// $this->cashierCreateOrderModel->insertOrderItems($order_id,$orderDetails['menu_id'],$orderItems);
+			// $this->cashierCreateOrderModel->createBill($order_id,$orderDetails['paid_amount'],$orderDetails['cashier_id']);
 
-			$orderDetails['order_id']=$order_id;
-			$forwardData[1]=$orderDetails;
-			$forwardData[2]=$this->cashierCreateOrderModel->getFoodInfo($orderItems);
+			// $orderDetails['order_id']=$order_id;
+			// $forwardData[1]=$orderDetails;
+			// $forwardData[2]=$this->cashierCreateOrderModel->getFoodInfo($orderItems);
 
-			$this->view("cashier/quickInvoice",$forwardData);
+			// $this->view("cashier/quickInvoice",$forwardData);
 			 
 		} 
 
