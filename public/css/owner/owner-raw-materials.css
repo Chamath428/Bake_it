@@ -217,7 +217,7 @@ body{
 
 .addDatafrom{
     width: 500px;
-    height: 300px;
+    height: 350px;
     position: absolute;
     top: 40vh;
     left: 40%;
@@ -284,11 +284,22 @@ body{
     outline: none;
 }
 .fa-times{
-    margin-left: 95%;
-    margin-top: 4px;
+    width: 30px;
+    margin: auto;
     font-size: 16px;
     cursor: pointer;
     color: black;
+
+}
+.cancel-icon{
+    margin: 0;
+    width: 30px;
+    position: absolute;
+    top: 3vh;
+    right: 1%;
+    border: none;
+    align-items: center;
+    /* background-color: red; */
 
 }
 .fa-times:hover{
@@ -296,3 +307,10 @@ body{
     
 }
 
+.display-header{
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 300px;
+    /* background-color: green; */
+    
+}

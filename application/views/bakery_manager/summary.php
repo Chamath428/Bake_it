@@ -37,67 +37,105 @@ Summary of Stock
 
 
             <div class="chart-body">
+
                 <div class="chart1">
 
-                    <canvas id="myChart1" class="first-chart"></canvas>
+                    <canvas id="myChart1" class="first-chart" style="width:100%;max-width:700px"></canvas>
                 </div>
 
+
+
                 <div class="select-chart">
-                    <div class="drop-down-btn-div">
-                        <div class="year">
-                            <label for="year">Year</label>
-                            <select placeholder="Select Year">
-                                <option>2022</option>
-                                <option>2021</option>
-                                <option>2020</option>
-                                <option>2019</option>
-                                <option>2018</option>
-                                <option>2017</option>
-                                <option>2016</option>
+                    <form method="post" action="<?php echo BASEURL . '/rawMaterialController/selectedDateGetSummary'; ?>">
 
-                            </select>
+                        <div class="drop-down-btn-div">
+                            <div class="year">
+                                <label for="year">Year</label>
+                                <select placeholder="Select Year" name="year">
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+
+                                </select>
+                            </div>
+
+                            <div class="month">
+                                <label for="month">Month</label>
+                                <select placeholder="Select Month" name="month">
+
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+
+
+                                </select>
+                            </div>
+                            <div class="get-view-btn">
+                                <!-- <input type="button" id="button-show" value="Show"> -->
+                                <button id="button-show">Show</button>
+                            </div>
                         </div>
 
-                        <div class="month">
-                            <label for="month">Month</label>
-                            <select placeholder="Select Month">
-
-                                <option selected value="January">January</option>
-                                <option value="February">February</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
-                                <option value="May">May</option>
-                                <option value="June">June</option>
-                                <option value="July">July</option>
-                                <option value="August">August</option>
-                                <option value="September">September</option>
-                                <option value="October">October</option>
-                                <option value="November">November</option>
-                                <option value="December">December</option>
-
-
-                            </select>
+                        <div class="chart2">
+                            <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
                         </div>
-                        <div class="get-view-btn">
-                            <input type="button" id="button-show" value="Show" onclick="dropTableFunction()">
-                        </div>
+                    </form>
 
 
-                    </div>
 
-                    <div class="get-summary-btn" id="viewTablebtn">
 
-                        <a href="<?php echo BASEURL . "/bakeryManagerSummaryController" ?>"> <input type="button" id="button" value="View Summary Table"> </a>
-                    </div>
-
-                    <div>
-                        <canvas id="myChart2"></canvas>
-                    </div>
                 </div>
 
             </div>
 
+            <div class="get-summary-btn" id="viewTablebtn">
 
+                <a href="<?php echo BASEURL . "/bakeryManagerSummaryController" ?>"> <input type="button" id="button" value="View Summary Table"> </a>
+            </div>
+
+
+
+            <?php
+            // var_dump($data[0]);
+            $i = 0;
+            $category1 = [];
+            $retriveData1 = [];
+            foreach ($data[0] as $key => $value) {
+
+                $category1[$i] = $value['raw_category_name'];
+                $retriveData1[$i] = $value['total_quantity'];
+                $i++;
+            }
+            // var_dump($category);
+            ?>
+
+
+            <?php
+            // var_dump($data[0]);
+            $i = 0;
+            $category2 = [];
+            $retriveData2 = [];
+            foreach ($data[1] as $key => $value) {
+
+                $category2[$i] = $value['raw_category_name'];
+                $retriveData2[$i] = $value['total_quantity'];
+                $i++;
+            }
+            // var_dump($category);
+            ?>
 
 
 
@@ -108,42 +146,35 @@ Summary of Stock
 
 
 
+
     <?php require_once('footer.php'); ?>
 
 
-    <?php
-    $category = [];
-    for ($i = 0; $i < count($data[0]); $i++) {
-        $category[$i] = $data[0][$i]['raw_category_name'];
-    }
 
-    ?>
-    <?php require_once('footer.php'); ?>
-
-
-    <?php
-    $retriveData = [];
-    for ($i = 0; $i < count($data[1]); $i++) {
-        $retriveData[$i] = $data[1];
-    }
-
-    ?>
     <script>
-        const categories = <?php echo json_encode($category); ?>;
-        console.log(categories);
-        const retriveData = <?php echo json_encode($retriveData); ?>;
-        console.log(retriveData);
-        var xValues = categories;
-        var yValues = retriveData;
-        var barColors = ["red", "green", "blue", "orange"];
+        const categories1 = <?php echo json_encode($category1); ?>;
+        console.log(categories1);
+        const retriveData1 = <?php echo json_encode($retriveData1); ?>;
+        console.log(retriveData1);
+        var xValues1 = categories1;
+        var yValues1 = retriveData1;
+
+        const categories2 = <?php echo json_encode($category2); ?>;
+        console.log(categories2);
+        const retriveData2 = <?php echo json_encode($retriveData2); ?>;
+        console.log(retriveData2);
+        var xValues2 = categories2;
+        var yValues2 = retriveData2;
+        // var yValues=[2,3];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
 
         new Chart("myChart1", {
             type: "bar",
             data: {
-                labels: xValues,
+                labels: xValues1,
                 datasets: [{
                     backgroundColor: barColors,
-                    data: yValues
+                    data: yValues1
                 }]
             },
             options: {
@@ -152,18 +183,23 @@ Summary of Stock
                 },
                 title: {
                     display: true,
-                    text: "Usage of category"
-                }
-            }
-        });
+                    text: "This Month Over View"
 
+
+                }
+
+
+            }
+
+
+        });
         new Chart("myChart2", {
             type: "bar",
             data: {
-                labels: xValues,
+                labels: xValues2,
                 datasets: [{
                     backgroundColor: barColors,
-                    data: yValues
+                    data: yValues2
                 }]
             },
             options: {
@@ -172,7 +208,7 @@ Summary of Stock
                 },
                 title: {
                     display: true,
-                    text: "Usage of category"
+                    text: "Selected Month Over View"
                 }
             }
         });
