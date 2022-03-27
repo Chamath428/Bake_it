@@ -27,10 +27,16 @@
 .wallet-container .text .text-fill input{
    width: 100%;
    background-color: white; 
-   border: 1px solid rgb(255,138,0);
+   /* border: 1px solid rgb(255,138,0);
+   border-radius: 10px;
+   padding: 10px 20px; */
+   outline: none;
+   font-weight: bold;
+}
+.wallet-container .text .text-fill{
+    border: 1px solid rgb(255,138,0);
    border-radius: 10px;
    padding: 10px 20px;
-   outline: none;
    font-weight: bold;
 }
 @media(max-width:700px){
@@ -49,6 +55,8 @@
     }
     .wallet-container .text .text-fill{
         margin-left: 40px;
+        
+
     }
     .wallet-container .text .text-fill input {
         width: 76%;

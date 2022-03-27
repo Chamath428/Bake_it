@@ -41,16 +41,20 @@
                 <form action="<?php echo BASEURL."/deliveryPersonDeliveriesController/getCompletedDeliveriesTable"; ?>" method="POST">
                 <div class="selectDate">Select Date
                     <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" />
-                </div>                 
-                <input type="submit" name="deliveryHistory" value="Get Delivery List" required="">
+                </div> 
+                <div class ="calander-submit">
+                    <input type="submit" name="deliveryHistory" value="Get Delivery List" required="">
+                </div>                
                 </form>
             </div>
         </div> 
-      
+        
         <!--table for Delivery History-->
         <div class="historytable">
             <!-- <h3 id="table-caption">Details of Overview</h3> -->
             <?php if(!empty($data[3])){?>
+            <h3 id="table-caption">Details of Overview</h3>
+            <h5 id="table-caption-date">Selected Date : <?php echo $data['date']?> </h5>
             <table id="table-history">
                 <thead>
                     <tr>
@@ -74,7 +78,7 @@
                             <?php echo $delivery['address3'];?>
                         </td>
                         <td label="Payment"><?php echo $delivery['total_amount'];?></td>
-                        <td label="" class="click more-details">
+                        <td label="" class="click-more-details">
                             <button><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails/".$delivery['order_id'] ?>">
                             Click for more details
                             </a></button>

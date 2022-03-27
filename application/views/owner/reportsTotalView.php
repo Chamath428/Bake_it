@@ -95,7 +95,7 @@
         <?php if($total_income != 0){ ?>
                 <div class="total_sales_income">
                     <span>Total Sales(LKR) : </span>
-                    <span><?php echo $total_income;?></span>
+                    <span class="income-view"><?php echo $total_income;?></span>
                 </div>
         <?php } ?>
     </div>
