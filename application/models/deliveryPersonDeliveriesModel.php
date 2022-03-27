@@ -90,7 +90,7 @@ class deliveryPersonDeliveriesModel extends database
                FROM 
                   order_details JOIN customer ON order_details.customer_id = customer.customer_id 
                WHERE 
-                  order_details.delivery_person_id= " . $_SESSION['staff_id'] . "  AND (order_status = 2 OR order_status = 3)";
+                  order_details.delivery_person_id= " . $_SESSION['staff_id'] . "  AND (order_status = 2 OR order_status = 3) ORDER BY order_id DESC";
       //is needed availability in WHERE closure
       $res6 = mysqli_query($this->db, $sql6) or die('6->' . mysqli_error($this->db));
       while ($row6 = mysqli_fetch_assoc($res6)) {
@@ -255,7 +255,7 @@ class deliveryPersonDeliveriesModel extends database
                FROM 
                   order_details JOIN customer ON order_details.customer_id = customer.customer_id 
                WHERE 
-                  order_details.delivery_person_id= " . $_SESSION['staff_id'] . "  AND order_details.order_status = 6 AND order_details.needed_date = " . '"' . $date . '"';
+                  order_details.delivery_person_id= " . $_SESSION['staff_id'] . "  AND order_details.order_status = 6 AND order_details.needed_date = " . '"' . $date . '"'." ORDER BY order_id DESC";
 
       $res15 = mysqli_query($this->db, $sql15) or die('15->' . mysqli_error($this->db));
       while ($row15 = mysqli_fetch_assoc($res15)) {
