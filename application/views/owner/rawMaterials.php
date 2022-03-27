@@ -63,10 +63,11 @@
 				<table class="inventory">
 					<thead>
 						<tr>
-							<th></th>
 							<th>Item Id</th>
 							<th>Item Name</th>
 							<th>Available</th>
+							<th>Check to Delete</th>
+
 
 						</tr>
 					</thead>
@@ -81,11 +82,12 @@
 
 
 
-									<td><input name="chk_id[]" type="checkbox" class='chkbox' value="<?php echo $value['rawitem_id']; ?>" onclick="myFunction(this.id)" id="<?php echo $value['rawitem_id']; ?>" /></td>
 
 									<td><?php echo $value['rawitem_id']; ?></td>
 									<td><?php echo $value['rawitem_name']; ?></td>
 									<td><?php echo $value['stock_amount'] . " " . $value['measure_unit']; ?></td>
+									<td><input name="chk_id[]" type="checkbox" class='chkbox' value="<?php echo $value['rawitem_id']; ?>" onclick="myFunction(this.id)" id="<?php echo $value['rawitem_id']; ?>" /></td>
+
 
 								</tr>
 							<?php } ?>
@@ -98,11 +100,8 @@
 			<article>
 
 
-				<!-- <input class="del-row" type="submit" value="Delete Item" name="delete-row"/> -->
-				<input id="submit" name="submit" class="del-row" onclick="delFunction()" value="Delete">
-
-				<!-- <input class="add" type="button" onclick="addRow('dataTable')" value="Add Item"> -->
 				<input class="add" type="button" onclick="popup()" value="Add Item">
+				<input id="submit-del" name="submit" class="del-row" onclick="delFunction()" value="Delete">
 
 
 			</article>

@@ -95,17 +95,15 @@ body{
     height: 40px;
 }
 .inventory thead tr th{
-    width: 20%;
+    /* width: 20%; */
     text-align: center;
 
 }
-.inventory thead tr th:nth-child(1) { 
-    width: 5%;
-}
+
 
 #dataTable{
     text-align: center; 
-    width: 69.75%; 
+    width: 70%; 
     border-collapse: collapse;
     margin-top: 5px;
     /* min-width: 546px; */
@@ -124,11 +122,15 @@ body{
     border-bottom: 1px solid #dddddd;
 
 }
-#dataTable tbody tr td{
- width: 20%;
-}
+
 #dataTable tbody tr td:nth-child(1) { 
-    width: 5%;
+    width: 20%;
+}
+#dataTable tbody tr td:nth-child(2) { 
+    width: 20%;
+}
+#dataTable tbody tr td:nth-child(3) { 
+    width: 25%;
 }
 #dataTable tbody tr:nth-of-type(even){
     background-color: #f3f3f3;
@@ -144,6 +146,12 @@ body{
     width: 15px;
     height: 15px;
 }
+article{
+    display: flex;
+    flex-direction: row;
+    width: 69%; 
+}
+
 .add
 {
     /* width: 90px;
@@ -155,8 +163,10 @@ body{
     cursor: pointer;
     border: 1px solid rgb(255, 138, 0);
     background-color: white;
-    margin-left:40px;
+    margin-top: 10px;
+    /* margin-left:40px; */
     align-items: center;
+   
 }
 
 
@@ -174,7 +184,10 @@ body{
     border: 1px solid rgb(255, 138, 0);
     background-color: white;
     margin-top: 10px;
+    margin-left: 77%;
     text-align: center;
+    float: right;
+    display: none;
 }
 .del-row:hover{
     color: white;

@@ -85,7 +85,7 @@
                             <th>Item Id</th>
                             <th>Name</th>
                             <th>Price</th>
-                            <th></th>
+                            <th>Check to Delete</th>
                         </tr>
                     </thead>
                 </table>

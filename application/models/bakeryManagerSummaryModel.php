@@ -36,9 +36,10 @@ class bakeryManagerSummaryModel extends database
     }
 
 
-    public function getCategoriesSelectedDate($date='2022-01')
+    public function getCategoriesSelectedDate($date)
     {
-
+		
+        // echo $date;
         $categorylist = array();
         $i = 0;
         $sq2 = "SELECT
@@ -50,13 +51,28 @@ class bakeryManagerSummaryModel extends database
              FROM 
                 raw_material_inventory INNER JOIN raw_material_category ON raw_material_inventory.raw_category_id = raw_material_category.raw_category_id 
              INNER JOIN retrieve_materials ON raw_material_inventory.rawitem_id= retrieve_materials.rawitem_id 
-             WHERE DATE_FORMAT(retrieve_materials.date_and_time, '%Y-%m') = $date
+             WHERE DATE_FORMAT(retrieve_materials.date_and_time, '%Y-%m') =".'"2022-03"'."
              GROUP BY
-              raw_material_category.raw_category_id;";
-        $res2 = mysqli_query($this->db, $sq2) or die('2->' . mysqli_error($this->db));
+              raw_material_category.raw_category_id";
+
+        $sql22="SELECT
+        raw_material_inventory.rawitem_id,
+        raw_material_inventory.raw_category_id,
+        raw_material_category.raw_category_name,
+        sum(retrieve_materials.quantity) AS total_quantity,
+        retrieve_materials.date_and_time 
+     FROM 
+        raw_material_inventory INNER JOIN raw_material_category ON raw_material_inventory.raw_category_id = raw_material_category.raw_category_id 
+     INNER JOIN retrieve_materials ON raw_material_inventory.rawitem_id= retrieve_materials.rawitem_id 
+     WHERE DATE_FORMAT(retrieve_materials.date_and_time, '%Y-%m') =".'"'.$date.'"'."
+     GROUP BY
+      raw_material_category.raw_category_id";
+
+        $res2 = mysqli_query($this->db, $sql22) or die('2->' . mysqli_error($this->db));
         while ($row2 = mysqli_fetch_assoc($res2)) {
             $data['raw_category_name'] = $row2['raw_category_name'];
             $data['total_quantity'] = $row2['total_quantity'];
+            // echo $data['raw_category_name']."-";
           
             $categorylist[$i] = $data;
             $i++;
