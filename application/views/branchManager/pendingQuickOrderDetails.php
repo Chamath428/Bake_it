@@ -78,7 +78,7 @@
                                 if($basicOrderDetails['order_status'] == 2 ){echo "Order Accepted";}
                                 elseif($basicOrderDetails['order_status']== 3){echo "Assigned a Delivery Person";}?></td> 
                             </tr>
-                            <?php if($basicOrderDetails['receiving_method']==1){?> 
+                            <?php if($basicOrderDetails['receiving_method']==2){?> 
                             <tr> 
                                 <td>Location</td> 
                                 <td><a href="#"><?php echo $basicOrderDetails['address'];?></a></td> 

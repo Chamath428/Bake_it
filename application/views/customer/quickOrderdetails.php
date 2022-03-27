@@ -201,11 +201,11 @@
 			<table>
 				<tr>
 					<td>Subtotal</td>
-					<td><?php echo $grandTotal.".00 LKR" ?></td>
+					<td><?php if($data[1]['reveiving_method']==2){echo ($grandTotal-200).".00 LKR";}else {echo $grandTotal.".00 LKR";} ?></td>
 				</tr>
 				<tr>
 					<td>Delivery Tax</td>
-					<td>00.00 LKR</td>
+					<td><?php if($data[1]['reveiving_method']==2){echo "200.00 LKR";}else echo ".00 LKR"; ?></td>
 				</tr>
 				<tr>
 					<td>Grand Total</td>
