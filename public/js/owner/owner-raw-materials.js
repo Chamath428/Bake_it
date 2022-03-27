@@ -73,7 +73,7 @@ function search_item() {
 
     for (i = 0; i < tr.length; i++) {
 
-        td = tr[i].getElementsByTagName("td")[2];
+        td = tr[i].getElementsByTagName("td")[1];
 
 
 
