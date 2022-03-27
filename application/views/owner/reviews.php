@@ -121,7 +121,9 @@
             } ?>
         </div>
 
-        <div id="footer">
+       
+    </div>
+    <div id="footer">
             <?php include('footer.php') ?>
         </div>
 </body>
