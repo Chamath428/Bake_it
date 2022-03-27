@@ -36,8 +36,9 @@ class bakeryManagerSummaryModel extends database
     }
 
 
-    public function getCategoriesSelectedDate($date)
+    public function getCategoriesSelectedDate($date='2022-01')
     {
+
         $categorylist = array();
         $i = 0;
         $sq2 = "SELECT

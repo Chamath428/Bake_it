@@ -5,6 +5,10 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+.delivery-body{
+    min-height: 80vh;
+    /* background-color: #ff9800; */
+}
 .special-notice{
     display: flex;
     flex-direction: column;

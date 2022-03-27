@@ -14,7 +14,7 @@
 
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body > 
     <section class="header">
         <?php include('deliveryheader.php'); ?>
     </section> 

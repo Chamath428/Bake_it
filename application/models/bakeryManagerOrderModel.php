@@ -55,7 +55,7 @@ class bakeryManagerOrderModel extends database
                     
                     order_id=" . '"' . $id . '"';
 
-        $res2 = mysqli_query($this->db, $sql2) or die('1->' . mysqli_error($this->db));
+        $res2 = mysqli_query($this->db, $sql2) or die('2->' . mysqli_error($this->db));
         while ($row1 = mysqli_fetch_assoc($res2)) {
             $data['order_id'] = $row1['order_id'];
             $data['needed_date'] = $row1['needed_date'];
@@ -71,18 +71,18 @@ class bakeryManagerOrderModel extends database
     {
         $categoryData = array();
         $i = 0;
-        $sql2 = "SELECT
+        $sql3 = "SELECT
 					order_items.menu_id,
                     order_items.quantity,
                     menu.item_name
 					FROM
 					order_items JOIN menu ON order_items.item_id =menu.item_id
                     WHERE
-                    order_id=" . '"' . $id . '"';
+                    order_id= $id";
 
 
 
-        $res3 = mysqli_query($this->db, $sql2) or die('1->' . mysqli_error($this->db));
+        $res3 = mysqli_query($this->db, $sql3) or die('3->' . mysqli_error($this->db));
         while ($row1 = mysqli_fetch_assoc($res3)) {
             $data['menu_id'] = $row1['menu_id'];
             $data['quantity'] = $row1['quantity'];
@@ -97,14 +97,14 @@ class bakeryManagerOrderModel extends database
     public function updatePendingOrdersStatus($order_id)
     {
 
-        $sql3 = "UPDATE
+        $sql4 = "UPDATE
 						order_details
 					SET
                     order_status = 5
             WHERE
             order_id = " . $order_id;
 
-        $res4 = mysqli_query($this->db, $sql3) or die('1->' . mysqli_error($this->db));
+        $res4 = mysqli_query($this->db, $sql4) or die('4->' . mysqli_error($this->db));
 
     }
 
@@ -113,7 +113,7 @@ class bakeryManagerOrderModel extends database
 
         $categoryData = array();
         $i = 0;
-        $sql4 = "SELECT
+        $sql5 = "SELECT
 					order_id,
                     needed_date,
                     menu_id
@@ -124,10 +124,10 @@ class bakeryManagerOrderModel extends database
                     order_status=5";
         
 
-        $res2 = mysqli_query($this->db, $sql4) or die('1->' . mysqli_error($this->db));
+        $res2 = mysqli_query($this->db, $sql5) or die('5->' . mysqli_error($this->db));
         while ($row1 = mysqli_fetch_assoc($res2)) {
-            $sql5 = "SELECT branch_name FROM branch WHERE branch_id  = ".$row1['menu_id'];
-            $res3 = mysqli_query($this->db, $sql5) or die('1->' . mysqli_error($this->db));
+            $sql6 = "SELECT branch_name FROM branch WHERE branch_id  = ".$row1['menu_id'];
+            $res3 = mysqli_query($this->db, $sql6) or die('6->' . mysqli_error($this->db));
             $row2 = mysqli_fetch_assoc($res3);
             $data['order_id'] = $row1['order_id'];
             $data['needed_date'] = $row1['needed_date'];
@@ -146,7 +146,7 @@ class bakeryManagerOrderModel extends database
 
         $categoryData = array();
         $i = 0;
-        $sql2 = "SELECT
+        $sql7 = "SELECT
 					order_id,
                     needed_date
 
@@ -155,7 +155,7 @@ class bakeryManagerOrderModel extends database
                     WHERE
                     order_id=" . '"' . $id . '"';
 
-        $res2 = mysqli_query($this->db, $sql2) or die('1->' . mysqli_error($this->db));
+        $res2 = mysqli_query($this->db, $sql7) or die('7->' . mysqli_error($this->db));
         while ($row1 = mysqli_fetch_assoc($res2)) {
             $data['order_id'] = $row1['order_id'];
             $data['needed_date'] = $row1['needed_date'];
@@ -171,18 +171,18 @@ class bakeryManagerOrderModel extends database
     {
         $categoryData = array();
         $i = 0;
-        $sql2 = "SELECT
+        $sql8 = "SELECT
 					order_items.menu_id,
                     order_items.quantity,
                     menu.item_name
 					FROM
 					order_items JOIN menu ON order_items.item_id =menu.item_id
                     WHERE
-                    order_id=" . '"' . $id . '"';
+                    order_id=" . '"' . $id .'"';
 
 
 
-        $res3 = mysqli_query($this->db, $sql2) or die('1->' . mysqli_error($this->db));
+        $res3 = mysqli_query($this->db, $sql8) or die('8->' . mysqli_error($this->db));
         while ($row1 = mysqli_fetch_assoc($res3)) {
             $data['menu_id'] = $row1['menu_id'];
             $data['quantity'] = $row1['quantity'];
