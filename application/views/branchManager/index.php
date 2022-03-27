@@ -18,8 +18,6 @@
             <?php include('headerIndex.php')?> 
        </div>
    
-
-    
     <div class="bgg" id="body">
         <section class="top-container">
                <div class="showcase">
@@ -85,6 +83,9 @@
         </section>
         
     </div>
-   
+   <div>
     <?php require_once("footer.php");?>
-        
+   </div>    
+</body>
+
+</html>

@@ -13,7 +13,7 @@
     width: 70px;
     height: 100%;
     background-color: rgb(0, 0, 0);
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 .container .navigation{
     position: fixed;

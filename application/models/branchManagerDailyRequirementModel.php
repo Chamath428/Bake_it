@@ -85,4 +85,28 @@ class branchManagerDailyRequirementModel extends database
 		return $row4['category_id'];
 	}
 
+	public function getCategoryItemsForChart($category_id = 1)
+	{
+		$itemData = array();
+		$i = 0;
+		$sql2 = "SELECT
+						item_id,
+						item_name,
+						sum(quantity) AS total_quantity
+					FROM
+						overview_details
+					WHERE 
+					extract(WEEK from needed_date) = week(curdate()-7) AND menu_id = " .$_SESSION['branch_id']. " AND category_id = " .$category_id. " GROUP BY item_id";
+		$res2 = mysqli_query($this->db, $sql2) or die('2->' . mysqli_error($this->db));
+		while ($row2 = mysqli_fetch_assoc($res2)) {
+			$data['item_id'] = $row2['item_id'];
+			$data['item_name'] = $row2['item_name'];
+			$data['total_quantity'] = $row2['total_quantity'];
+			$itemData[$i] = $data;
+			$i++;
+
+		}
+		return $itemData;
+	}
+
 }
