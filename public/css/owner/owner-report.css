@@ -83,7 +83,9 @@ input {
   font-size: 20px;
   font-weight: 600;
   padding: 10px;
-
+}
+.reportTopic p{
+  border-bottom: 1px solid rgb(255,138,0);
 }
 .reportTopic .selectedTimePeriod{
   display: flex;
@@ -91,6 +93,12 @@ input {
   padding: 10px;
   margin: 15px 15px 0 15px;
   /* border: 2px solid red; */
+}
+.reportTopic .selectedTimePeriod .subReportTopic{
+  margin-right: 15px;
+}
+.reportTopic .selectedTimePeriod .subReportTopic .timeperoid ,.reportTopic .selectedBranch .branch,.reportTopic .selectedCategory .category{
+  font-weight: 600;
 }
 .reportTopic .selectedBranch,.reportTopic .selectedCategory{
   display: flex;

@@ -20,41 +20,41 @@
     <?php require_once('headerReports.php'); ?>
     <div class="bgg sales-report" id="body">
         <div class=" topic-sales reportTopic">
-            Sales Report
+            <p>Sales Report</p>
             <div class="selectedTimePeriod">
                 <?php if ($data['reportType'] == 1) { ?>
                     <div class="subReportTopic">
-                        <span>Date : </span>
+                        <span class="timeperoid">Date : </span>
                         <span><?php echo $data['date'] ?></span>
                     </div>
                 <?php } ?>
                 <?php if ($data['reportType'] == 2) { ?>
                     <div class="subReportTopic">
-                        <span>Year : </span>
+                        <span class="timeperoid">Year : </span>
                         <span><?php echo $data['year'] ?></span>
                     </div>
                     <div class="subReportTopic">
-                        <span>Month : </span>
+                        <span class="timeperoid">Month : </span>
                         <span><?php echo $data['month'] ?></span>
                     </div>
                     <div class="subReportTopic">
-                        <span>Week : </span>
+                        <span class="timeperoid">Week : </span>
                         <span><?php echo $data['week'] ?></span>
                     </div>
                 <?php } ?>
                 <?php if ($data['reportType'] == 3) { ?>
                     <div class="subReportTopic">
-                        <span>Year : </span>
+                        <span class="timeperoid">Year : </span>
                         <span><?php echo $data['year'] ?></span>
                     </div>
                     <div class="subReportTopic">
-                        <span>Month : </span>
+                        <span class="timeperoid">Month : </span>
                         <span><?php echo $data['month'] ?></span>
                     </div>
                 <?php } ?>
             </div>
             <div class="selectedBranch">
-                <span>Selected Branch : </span>
+                <span class="branch">Selected Branch : </span>
                 <span>
                     <?php if ($data['branch_id'] == 0) { ?>
                         All branches

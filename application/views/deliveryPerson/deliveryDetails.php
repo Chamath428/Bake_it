@@ -57,7 +57,8 @@
 						</tr>
 						<tr>
 							<td>Location</td>
-							<td><a href="<?php echo BASEURL ?>/public/images/deliveryPerson/map.png"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td>
+							<td><a><?php echo $data[0]['address1'].$data[0]['address2'].$data[0]['address3']?></a></td>
+							<!-- <td><a href="?php echo BASEURL ?>/public/images/deliveryPerson/map.png"><i class="fas fa-map-marker-alt"></i>Customer Location</a></td> -->
 						</tr>
 						<tr>
 							<td>Payment</td>
