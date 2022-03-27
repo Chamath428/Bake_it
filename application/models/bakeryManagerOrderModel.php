@@ -78,7 +78,8 @@ class bakeryManagerOrderModel extends database
 					FROM
 					order_items JOIN menu ON order_items.item_id =menu.item_id
                     WHERE
-                    order_id= $id";
+                    order_items.order_id=". $id." AND
+                    menu.menu_id=1";
 
 
 
@@ -178,7 +179,8 @@ class bakeryManagerOrderModel extends database
 					FROM
 					order_items JOIN menu ON order_items.item_id =menu.item_id
                     WHERE
-                    order_id=" . '"' . $id .'"';
+                    order_items.order_id=". $id." AND
+                    menu.menu_id=1";
 
 
 
