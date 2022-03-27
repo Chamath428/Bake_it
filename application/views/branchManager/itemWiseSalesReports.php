@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/branchManager/footer.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css" class="rel">
 
-    <!-- new -->
-    <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/owner/owner-report.css" class="rel">
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +25,7 @@
             <div class="report-selection">
                   <div class="condition category">
                               <span class="topic">Category</span>
-                              <form action="<?php echo BASEURL . '/ownerReportController/generateDailyCategorySalesReport'; ?>" method="POST">
+                              <form action="<?php echo BASEURL . '/branchManagerReportController/generateDailyCategorySalesReport'; ?>" method="POST">
                                     <select placeholder="Select Category" name="category_id" id="categoryId" onclick="getCategoryId()">
                                           <option value="0">All</option>
                                           <?php foreach ($data['categories'] as $key => $category) { ?>
@@ -44,7 +41,7 @@
                                     <div class="reportType">
                                           Daily Reports
                                     </div>
-                                    <form action="<?php echo BASEURL . '/ownerReportController/generateDailyCategorySalesReport'; ?>" method="POST">
+                                    <form action="<?php echo BASEURL . '/branchManagerReportController/generateDailyCategorySalesReport'; ?>" method="POST">
                                           <input type="hidden" id="reportType" name="reportType" value="1">
                                           <input type="hidden" id="branchId1" name="branch_id" value="0">
                                           <input type="hidden" id="categoryId1" name="category_id" value="0">
@@ -62,7 +59,7 @@
                                     <div class="reportType">
                                           Weekly Reports
                                     </div>
-                                    <form action="<?php echo BASEURL . '/ownerReportController/generateWeeklyCategorySalesReport'; ?>" method="POST">
+                                    <form action="<?php echo BASEURL . '/branchManagerReportController/generateWeeklyCategorySalesReport'; ?>" method="POST">
                                          <input type="hidden" id="branchId2" name="branch_id" value="0">
                                          <input type="hidden" id="reportType" name="reportType" value="2">
                                          <input type="hidden" id="categoryId2" name="category_id" value="0">
@@ -110,7 +107,7 @@
                                     <div class="reportType">
                                           Monthly Reports
                                     </div>
-                                    <form action="<?php echo BASEURL . '/ownerReportController/generateMonthlyCategorySalesReport'; ?>" method="POST">
+                                    <form action="<?php echo BASEURL . '/branchManagerReportController/generateMonthlyCategorySalesReport'; ?>" method="POST">
                                           <input type="hidden" id="reportType" name="reportType" value="3">
                                           <input type="hidden" id="branchId3" name="branch_id" value="0">
                                           <input type="hidden" id="categoryId3" name="category_id" value="0">

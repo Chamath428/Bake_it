@@ -37,71 +37,83 @@
   font-weight: 700;
   margin-bottom: 10px;
 }
-/* .report-selection .condition select { */
-  select{
-    width: 100%;
-    background-color: white;
-    border: none;
-    padding: 10px 0;
-    outline: none;
+.timeSelection{
+  margin-top: 15px;
+  margin-right: 10px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 10px;
 }
-
-.report-selection .condition .time-selection{
-  display: flex;
-  flex-direction: column; 
-  gap: 10px;
-  align-items: flex-start;
-}
-.report-selection .condition .time-selection label{
-    font-weight: 500;
-    margin-left: 15px;
-    width: 28%;
-    display: flex;
-}
-.report-selection .condition .time-selection label div:first-child{
-  width: 70%;
-  
-}
-
-.report-selection .condition .time-selection label div:last-child{
-    /* margin-left: 70px; */
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center;
-    width: 12%;
-
-}
-  
-.report-selection .condition .time-selection .sub-time-selection{
-     /* display: grid; */
-     display: none;
-     grid-template-columns: 100px 150px 120px auto;  
-     grid-gap: 40px;
-     padding: 10px;
-     align-items: center;
-  
-}
-.report-selection .condition .time-selection .sub-time-selection label{
-   
-    font-weight: 400;
-}
-  
-.report-selection .condition .time-selection  .sub-time-selection .time-dropdown{
+.timeSelection .subTimeSelection{
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  flex-grow: 10px;
+}
+.timeSelection .subTimeSelection .reportType{
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.timeSelection .subTimeSelection .selectDate,
+.timeSelection .subTimeSelection .selectWeek,
+.timeSelection .subTimeSelection .selectMonth,
+.timeSelection .subTimeSelection .selectYear{
+  margin: 5px;
   border-bottom: 1px solid rgb(255,138,0);
-  margin: 10px 0px;
+  font-weight: 500;
+  color: rgb(103, 107, 107);
 }
-.report-selection .condition .time-selection  .sub-time-selection .time-dropdown select{
-
+select{
+  width: 100%;
+  background-color: white;
+  border: none;
+  padding: 10px 0;
+  outline: none;
 }
-
-.report-selection .generate-btn{
+input {
+  width: 100%;
+  background-color: white;
+  border: none;
+  padding: 10px 0;
+  outline: none;
+}
+.reportTopic{
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
 }
-.report-selection .generate-btn button{
+.reportTopic p{
+  border-bottom: 1px solid rgb(255,138,0);
+}
+.reportTopic .selectedTimePeriod{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: 15px 15px 0 15px;
+  /* border: 2px solid red; */
+}
+.reportTopic .selectedTimePeriod .subReportTopic{
+  margin-right: 15px;
+}
+.reportTopic .selectedTimePeriod .subReportTopic .timeperoid ,.reportTopic .selectedBranch .branch,.reportTopic .selectedCategory .category{
+  font-weight: 600;
+}
+.reportTopic .selectedBranch,.reportTopic .selectedCategory{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin:  0 15px;
+  /* border: 2px solid green; */
+}
+.reportTopic .selectedTimePeriod .subReportTopic span ,.reportTopic .selectedBranch span ,.reportTopic .selectedCategory span{
+  font-weight: 300;  
+}
+
+input[type="submit"]{
+    width: fit-content;
+    margin-left: 60%;
     border-radius: 10px;
     background-color: white;
     padding: 10px 15px;
@@ -112,13 +124,28 @@
     transition-duration: 0.4s;
     cursor: pointer;
     font-weight: bold;
+
 }
-.report-selection .generate-btn button:hover{
-  color: white;
-  background-color:rgb(255,138,0);
+input[type="submit"]:hover{
+	background-color: rgba(255, 138, 0,0.7);
+	color: white;
 }
 
 /*this is done to expand the height view*/
 .category-report{
     margin-bottom: 20px;
+}
+#demo{
+  color: red;
+}
+.total_sales_income{
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  margin: 20px 0  30px 100px;
+} 
+.total_sales_income .income-view{
+  margin-left: 10px;
 }

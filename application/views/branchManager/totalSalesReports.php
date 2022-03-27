@@ -6,22 +6,11 @@
     <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/branchManager/totalSalesReports.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/branchManager/footer.css" class="rel">
     <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css" class="rel">
-
-    <!-- new -->
-    <link rel="stylesheet" href="<?php echo BASEURL; ?>/public/css/owner/owner-report.css" class="rel">
-      <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-footer.css" class="rel">
-      <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css" class="rel">
-
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="<?php echo BASEURL; ?>/public/js/branchManager/totalSalesReports.js" defer></script>
     <script src="<?php echo BASEURL; ?>/public/js/branchManager/header.js" defer></script>
-
-    <!-- new -->
-    <script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer></script>
-      <script src="<?php echo BASEURL; ?>/public/js/owner/owner-report.js" defer></script>
       
     <script src="https://kit.fontawesome.com/165f5431dc.js" crossorigin="anonymous"></script>
     <title>Sales Reports</title>
@@ -40,7 +29,7 @@
                                     <div class="reportType">
                                           Daily Reports
                                     </div>
-                                    <form action="<?php echo BASEURL . '/ownerReportController/generateDailySalesReport'; ?>" method="POST">
+                                    <form action="<?php echo BASEURL . '/branchManagerReportController/generateDailySalesReport'; ?>" method="POST">
                                           <input type="hidden" id="reportType" name="reportType" value="1">
                                           <input type="hidden" id="branchId1" name="branch_id" value="0">
                                           <div class="selectDate">Select Date
@@ -54,7 +43,7 @@
                                     <div class="reportType">
                                           Weekly Reports
                                     </div>
-                                    <form action="<?php echo BASEURL . '/ownerReportController/generateWeeklySalesReport'; ?>" method="POST">
+                                    <form action="<?php echo BASEURL . '/branchManagerReportController/generateWeeklySalesReport'; ?>" method="POST">
                                          <input type="hidden" id="branchId2" name="branch_id" value="0">
                                          <input type="hidden" id="reportType" name="reportType" value="2">
                                           <div class="selectYear">Select Year
@@ -101,7 +90,7 @@
                                     <div class="reportType">
                                           Monthly Reports
                                     </div>
-                                    <form action="<?php echo BASEURL . '/ownerReportController/generateMonthlySalesReport'; ?>" method="POST">
+                                    <form action="<?php echo BASEURL . '/branchManagerReportController/generateMonthlySalesReport'; ?>" method="POST">
                                           <input type="hidden" id="reportType" name="reportType" value="3">
                                           <input type="hidden" id="branchId3" name="branch_id" value="0">
                                           <div class="selectYear">Select Year
