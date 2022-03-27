@@ -148,7 +148,9 @@ class deliveryPersonDeliveriesController extends bakeItFramework
 		$restAmountToPaid = $data[3] - $data[4];
 		$data[5] =  $restAmountToPaid;
 
-		$updatePaidAmount = $this->deliveryPersonDeliveriesModel->updatePaidAmount($data['paid_amount'], $order_id);
+		$allPaidAmount = intval($data['paid_amount'])+$data[4];
+
+		$updatePaidAmount = $this->deliveryPersonDeliveriesModel->updatePaidAmount($allPaidAmount, $order_id);
 		$data[4] = $updatePaidAmount;
 
 		$balanceAmount = $data[4] - $data[3];

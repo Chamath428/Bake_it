@@ -48,23 +48,29 @@ function getDetails(){
           type: "line",
           data: {
             labels: xValues,
-            datasets: [{ 
+            datasets: [{
+                    label: 'Kasbewa', 
                     data: yvalues1,
+                    // borderColor: Utils.CHART_COLORS.red,
                     borderColor: "red",
                     fill: false
-                  }, { 
+                  }, {
+                    label: 'Baththaramulla',  
                     data: yvalues2,
+                    //borderColor: Utils.CHART_COLORS.green,
                     borderColor: "green",
                     fill: false
-                  }, { 
+                  }, {
+                    label: 'Piliyandala',  
                     data: yvalues3,
+                    //borderColor: Utils.CHART_COLORS.blue,
                     borderColor: "blue",
                     fill: false
                   }
               ]
           },
           options: {
-            legend: {display: false},
+            // legend: {display: false},
             title: {
                 display: true,
                 text: "All Branches Sales for the year"
@@ -213,7 +219,7 @@ function getDetails(){
 
           var x4Values = itemlist;
           var y4Values = totalQuantityItems;
-          var barColors = ["#43aa8b","#f7c59f","#004e89","#f06c9b","#f5d491","#43aa8b", "#6c698d", "#3c5233","#e9c46a","#264653","#e76f51"];
+          var barColors = ["#43aa8b","#6c698d","#f5d491","#004e89","#e9c46a","#f7c59f","#264653","#f06c9b","#43aa8b",  "#3c5233","#e76f51"];
 
           new Chart("myChart4", {
             type: "doughnut",
