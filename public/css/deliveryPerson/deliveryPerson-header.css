@@ -170,7 +170,7 @@ a{
   
   }
   
-  .arrow {
+  /* .arrow {
     width: 10px;
     height: 10px;
     border: 3px solid;
@@ -184,8 +184,8 @@ a{
     -webkit-animation: slide 4s linear infinite; 
             animation: slide 4s linear infinite;
   }
-  
-  .delay1 {
+   */
+  /* .delay1 {
     -webkit-animation-delay: 1s; 
       animation-delay: 1s;
   }
@@ -196,9 +196,9 @@ a{
   .delay3 {
     -webkit-animation-delay: 3s; 
       animation-delay: 3s;
-  }
+  } */
   
-  @-webkit-keyframes slide {
+  /* @-webkit-keyframes slide {
       0% { opacity:0; transform: translateX(4vw); }  
      20% { opacity:1; transform: translateX(2vw); } 
      80% { opacity:1; transform: translateX(-2vw); }  
@@ -209,7 +209,7 @@ a{
      20% { opacity:1; transform: translateX(2vw); } 
      80% { opacity:1; transform: translateX(-2vw); }  
     100% { opacity:0; transform: translateX(-4vw); } 
-  }
+  } */
 
   .side-toggle{
       display: none;
@@ -291,4 +291,17 @@ a{
     border: 2px solid rgb(255,138,8);
     transition: 1s opacity, 250ms height;
 }
+@media (min-device-width:1000px) {
+   
+    #mySidebar {width: 300px;} 
+    #body {margin-left: 305px;}
+   #bakeId {margin-left: 23%;}
+   /* #logo-name__icon_left{display: block;} */
+   #logo-name__icon{display: none;}
+}
+@media (min-device-width:1100px) {
+   
   
+ #bakeId {margin-left: 15%;}
+ 
+}

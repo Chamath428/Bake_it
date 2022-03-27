@@ -186,8 +186,23 @@ Summary of Stock
                     text: "This Month Over View"
 
 
-                }
+                },
 
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                        
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                        
+                    }]
+                }
+     
 
             }
 
@@ -209,6 +224,20 @@ Summary of Stock
                 title: {
                     display: true,
                     text: "Selected Month Over View"
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                        
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                        
+                    }]
                 }
             }
         });

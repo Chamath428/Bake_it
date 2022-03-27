@@ -85,7 +85,7 @@ class rawMaterialController extends bakeItFramework
 		$month = $_POST['month'];
 	
 		$date=$year."-".$month;
-
+	
 		$data = array();
 		$categories = $this->bakeryManagerSummaryModel->getCategories();
 		$data[0] = $categories;

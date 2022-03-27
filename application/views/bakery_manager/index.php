@@ -11,7 +11,7 @@
     <script src="<?php echo BASEURL ?>/public/js/bakery_manager/bakery-manager-dashboard-header.js" defer></script>
 
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
-    <title>Index page</title>
+    <title>Bakery manager page</title>
     
 </head>
 <body>

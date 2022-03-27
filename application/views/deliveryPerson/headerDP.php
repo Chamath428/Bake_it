@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="navigation" id="mySidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()" onmouseover="leftBakeIt()">
+    <div class="navigation" id="mySidebar" >
         <ul>
             <li>
                 <a href="<?php echo BASEURL . "/dashboardController"; ?>" class="active">
@@ -40,7 +40,7 @@
 
         </ul>
     </div>
-    <div id="arrowAnim">
+    <!-- <div id="arrowAnim">
         <div class="arrowSliding">
             <div class="arrow"></div>
         </div>
@@ -53,10 +53,10 @@
         <div class="arrowSliding delay3">
             <div class="arrow"></div>
         </div>
-    </div>
+    </div> -->
 
 
-    <div id="arrowAnim-left">
+    <!-- <div id="arrowAnim-left">
         <div class="arrowSliding-left">
             <div class="arrow-left"></div>
         </div>
@@ -69,7 +69,7 @@
         <div class="arrowSliding delay3-left">
             <div class="arrow-left"></div>
         </div>
-    </div>
+    </div> -->
 
 </div>
 
