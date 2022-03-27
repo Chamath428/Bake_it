@@ -125,7 +125,9 @@ input[type="number"] {
     transition-duration: 0.4s;
     font-weight: bold;
 }
-
+#Ongoing-Deliveries{
+    width: auto;
+}
 #Ongoing-Deliveries tbody tr .far{
    color: black;
    font-size: 20px;

@@ -27,6 +27,7 @@
 				$data[3] = $reviewsTable;
 			}
 			else{
+				// echo $branch_id."branch id at index";
 				$reviewsTable=$this->ownerReviewsModel -> getSelectedBranchReviewsTable($branch_id);
 				$data[3] = $reviewsTable;
 			}
@@ -46,11 +47,8 @@
 		}
 		public function getReviewsTabel(){
 		
-
 			$branch_id = $_POST['branch_id'];
-		
 			$this->index($branch_id);
-		
 		}
 
 		

@@ -79,9 +79,9 @@
                         </td>
                         <td label="Payment"><?php echo $delivery['total_amount'];?></td>
                         <td label="" class="click-more-details">
-                            <button><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails/".$delivery['order_id'] ?>">
-                            Click for more details
-                            </a></button>
+                            <a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails/".$delivery['order_id'] ?>"><button>
+                            Click for more details</button>
+                            </a>
                         </td>
 
                     </tr>

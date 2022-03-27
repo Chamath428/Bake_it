@@ -24,7 +24,8 @@ class ownerReviewsModel extends database{
                 ratings_and_reviews.order_id,
                 ratings_and_reviews.review,
                 ratings_and_reviews.rating,
-                order_details.needed_date
+                order_details.needed_date,
+                order_details.menu_id
             FROM
                 ratings_and_reviews JOIN order_details ON ratings_and_reviews.order_id = order_details.order_id
             WHERE
@@ -36,6 +37,7 @@ class ownerReviewsModel extends database{
         $data['review']=$row2['review'];
         $data['rating']=$row2['rating'];
         $data['needed_date']=$row2['needed_date'];
+        $data['menu_id']=$row2['menu_id'];
         $reviewsTable[$i]=$data;
         $i++;
         
