@@ -1,0 +1,31 @@
+section{
+	min-height: 80vh;
+	width: 100%;
+}
+
+section .main-div{
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	/*border: 1px solid red;*/
+	align-items: center;
+	margin-bottom: 1rem;
+	/*gap: 1rem;*/
+}
+
+section .main-div div{
+	/*border: 1px solid blue;*/
+	width: 50%;
+	padding: 1rem;
+}
+
+section .main-div .image-div{
+	border-right: 2px solid rgb(255, 138, 0);
+}
+
+section .main-div div p{
+	font-size: 1.5rem;
+	line-height: 2.8;
+}
