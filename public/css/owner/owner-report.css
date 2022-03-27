@@ -85,18 +85,22 @@ input {
   padding: 10px;
 
 }
-.reportTopic .selectedTimePeriod , .reportTopic .selectedBranch,.reportTopic .selectedCategory{
+.reportTopic .selectedTimePeriod{
   display: flex;
   flex-direction: row;
   padding: 10px;
-  margin: 15px;
-  
+  margin: 15px 15px 0 15px;
+  /* border: 2px solid red; */
 }
-.reportTopic .selectedTimePeriod .subReportTopic{
-  margin: 15px;
-} 
-.reportTopic .selectedTimePeriod .subReportTopic span{
-  font-weight: 200;  
+.reportTopic .selectedBranch,.reportTopic .selectedCategory{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin:  0 15px;
+  /* border: 2px solid green; */
+}
+.reportTopic .selectedTimePeriod .subReportTopic span ,.reportTopic .selectedBranch span ,.reportTopic .selectedCategory span{
+  font-weight: 300;  
 }
 
 input[type="submit"]{
@@ -125,4 +129,15 @@ input[type="submit"]:hover{
 }
 #demo{
   color: red;
+}
+.total_sales_income{
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  margin: 20px 0  30px 100px;
+} 
+.total_sales_income .income-view{
+  margin-left: 10px;
 }

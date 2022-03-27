@@ -54,7 +54,7 @@
             <!-- <h3 id="table-caption">Details of Overview</h3> -->
             <?php if(!empty($data[3])){?>
             <h3 id="table-caption">Details of Overview</h3>
-            <h5 id="table-caption">Selected Date : <?php echo $data['date']?> </h5>
+            <h5 id="table-caption-date">Selected Date : <?php echo $data['date']?> </h5>
             <table id="table-history">
                 <thead>
                     <tr>
@@ -78,7 +78,7 @@
                             <?php echo $delivery['address3'];?>
                         </td>
                         <td label="Payment"><?php echo $delivery['total_amount'];?></td>
-                        <td label="" class="click more-details">
+                        <td label="" class="click-more-details">
                             <button><a href="<?php echo BASEURL."/deliveryPersonDeliveriesController/getOrderDetails/".$delivery['order_id'] ?>">
                             Click for more details
                             </a></button>
