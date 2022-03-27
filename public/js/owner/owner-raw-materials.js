@@ -106,12 +106,15 @@ var checkBox_id = [];
 function myFunction(id) {
 
     var checkBox = document.getElementById(id);
+    var text = document.getElementById("submit-del");
     if (checkBox.checked == true) {
+    text.style.display = "block";
       checkBox_id.push(id);
       console.log(checkBox_id);
       
   
     } else {
+    text.style.display = "block";
       checkBox_id = checkBox_id.filter(i => i != id);
       console.log(checkBox_id);
   

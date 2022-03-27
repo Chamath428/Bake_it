@@ -72,7 +72,7 @@ class rawMaterialController extends bakeItFramework
 
 		$categories = $this->bakeryManagerSummaryModel->getCategories();
 		$data[0] = $categories;
-		$selectCategoryUseDate = $this->bakeryManagerSummaryModel->getCategoriesSelectedDate("2022-1");
+		$selectCategoryUseDate = $this->bakeryManagerSummaryModel->getCategoriesSelectedDate("2022-03");
 		$data[1] = $selectCategoryUseDate;
 
 		$this->view("bakery_manager/summary", $data);
@@ -83,7 +83,7 @@ class rawMaterialController extends bakeItFramework
 
 		$year = $_POST['year'];
 		$month = $_POST['month'];
-	
+
 		$date=$year."-".$month;
 	
 		$data = array();
