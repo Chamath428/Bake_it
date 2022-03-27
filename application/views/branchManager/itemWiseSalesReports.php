@@ -26,17 +26,6 @@
 <div class="bgg sales-report" id="body">
             <div class="topic-sales">Sales Reports</div>
             <div class="report-selection">
-                  <div class="condition outlet">
-                        <span class="topic">Branch</span>
-                        <form action="<?php echo BASEURL . '/ownerReportController/generateDailySalesReport'; ?>" method="POST">
-                              <select placeholder="Select Branch" name="branch_id" id="branchId" onclick="getBranchId()">
-                                    <option value="0">All</option>
-                                    <?php foreach ($data['branches'] as $key => $branch) { ?>
-                                          <option value="<?php echo $branch['branch_id']; ?>"><?php echo $branch['branch_name']; ?></option>
-                                    <?php  } ?>
-                              </select>
-                        </form>
-                  </div>
                   <div class="condition category">
                               <span class="topic">Category</span>
                               <form action="<?php echo BASEURL . '/ownerReportController/generateDailyCategorySalesReport'; ?>" method="POST">

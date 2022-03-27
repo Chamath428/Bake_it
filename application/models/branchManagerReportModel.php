@@ -107,7 +107,7 @@
                     FROM 
                         overview_details 
                     WHERE 
-                        extract(WEEK from needed_date) = week(curdate()) and menu_id = " .$_SESSION['branch_id']. " AND order_status = 6 group by DAY(needed_date)";
+                        extract(WEEK from needed_date) = week(curdate()-7) and menu_id = " .$_SESSION['branch_id']. " AND order_status = 6 group by DAY(needed_date)";
                     
 
             $res5=mysqli_query($this->db,$sql5) or die('5->'.mysqli_error($this->db));

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/overview.css">
   <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/dailyRequirement.css">
   <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/header_index.css">
   <link rel="stylesheet" type="text/css" href="<?php echo BASEURL; ?>/public/css/branchManager/footer.css">
@@ -45,7 +46,7 @@
           </br>
           <h4>Select Category</h4>
 
-          <form method="post" action="<?php echo BASEURL ?>/branchManagerDailyRequirment   Controller/getItems">
+          <form method="post" action="<?php echo BASEURL ?>/branchManagerDailyRequirmentController/getItems">
             <select name="categoryId" id="categoryId">
 
               <?php
@@ -60,6 +61,7 @@
               <?php }
               } ?>
             </select>
+            <?php $category_id = $data[1];?>
         </div>
         <div class="view-btn-container">
           <button type="submit" class="viewBtn">View Items</button>
@@ -108,28 +110,31 @@
         </div>
 
         <div class="btn-container">
-          <button id="save" class="save-btn" onclick="alertBox()">Save Changes</button>
+          <button id="save" class="save-btn">Save Changes</button>
         </div>
 
 
       </form>
       <div class="view-chart-btn">
-        <button class="view-btn" onclick="viewTable()">View</button>
+        <button class="view-btn" onclick="viewTable()">Last Week Item Sales</button>
 
       </div>
 
 
     </div>
     <div id="popUpView" class="pop_up-view">
-    <div class="cancel-icon"><a onclick="closePopUpUseCancel()"> <i class="fas fa-times"></i></a></div>
+      <div class="cancel-icon"><a onclick="closePopUpUseCancel()"> <i class="fas fa-times"></i></a></div>
+        <h3>Last Week Sales Report of the Category</h3>
+      <div class="col">
+              <canvas id="myChart3" style="width:100%;max-width:700px"></canvas>
+       </div>
 
     </div>
 
 
-
-
   </div>
   <?php include "footer.php" ?>
+  <script src="<?php echo BASEURL; ?>/public/js/branchManager/menu.js" defer></script>
 </body>
 
 </html>

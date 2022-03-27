@@ -26,7 +26,7 @@ class branchManagerDailyRequirmentController extends bakeItFramework
 		$category_id=$_POST['categoryId'];
 		// $this->index($category_id);
 		$this->redirect("branchManagerDailyRequirmentController/index/".$category_id);
-		// echo $category_id;
+		// echo $category_id; 
 	}
 
 	public function updateIndex($category_id,$message=[]){
@@ -54,7 +54,17 @@ class branchManagerDailyRequirmentController extends bakeItFramework
 		$this->updateIndex($category_id,$message);
 	}	
 
+	public function dailyRequirementCategoryChart($category_id){
+		$categoryItemList = $this->branchManagerDailyRequirementModel->getCategoryItems($category_id);
+		$data[0] = $categoryItemList;
+		
+		$categoryItemListChart = $this->branchManagerDailyRequirementModel->getCategoryItemsForChart($category_id);
+		$data[1] = $categoryItemListChart;
 
+		echo json_encode($data);
+		// $this->view("branchManager/dailyRequirement");
+
+	}
 
 }
 
