@@ -193,11 +193,13 @@ class menuModel extends database
 		$res7 = mysqli_query($this->db, $sql8) or die('8->' . mysqli_error($this->db));
 	}
 
-	public function deleteMenuItems( $check_id){
+	public function deleteMenuItems($check_id){
+		// var_dump($check_id);
 		foreach ($check_id as $key => $value) {
-		$sql9 ="DELETE FROM `menu` WHERE `item_id` = ".$value;
-		}
+		$sql9 ="DELETE FROM menu WHERE item_id = ".$value;
 		$res9 = mysqli_query($this->db, $sql9) or die('9->' . mysqli_error($this->db));
+		}
+		
 
 	}
 
