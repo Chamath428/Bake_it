@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-wallet.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
-
+    <title>Wallet</title>
 </head>
 <body>
       <section class="header">

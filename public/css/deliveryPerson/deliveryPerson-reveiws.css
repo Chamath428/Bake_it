@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif; 
 }
+.reviews-body{
+    min-height: 80vh;
+}
 .reviews-body .rev-topic{
     display: flex;
     margin-left: 100px;

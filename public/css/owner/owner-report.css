@@ -84,7 +84,7 @@ input {
   font-weight: 600;
   padding: 10px;
 }
-.reportTopic p{
+.reportTopic .main-topic{
   border-bottom: 1px solid rgb(255,138,0);
 }
 .reportTopic .selectedTimePeriod{

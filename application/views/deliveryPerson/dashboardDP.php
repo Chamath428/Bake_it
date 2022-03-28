@@ -11,7 +11,7 @@
     <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-headerDashboard.js" defer ></script>
     <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-availability.js"></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
-    
+    <title>Dashboard of Delivery Person</title>
 </head>
 <body>
    <!-- header --> 

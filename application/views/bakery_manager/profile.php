@@ -20,17 +20,34 @@
   
 <?php require_once("header_index.php"); ?>
  
-  <div class="bgg" id="body">
+<div class="bgg" id="body">
       <div class="profile-container">
             <div class="middle-section">
                     <div class="profile">
+                          <?php if (isset($message['confirmation']) && $message['confirmation']!=""){?>
+                        <div class="confirm-alert">
+                          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                          <p><?php echo $message['confirmation']; ?></p>
+                        </div>
+                        <?php } ?>
+
+                        <?php if (isset($message['error']) && $message['error']!=""){?>
+                        <div class="danger-alert">
+                          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                          <p><?php echo $message['error']; ?></p>
+                        </div>
+                        <?php } ?>
+
+
                         <div class="profile-logo">
                             <a href="#" class="herf-user-logo">
                                 <i  class='fas fa-user' id="user-icon"></i>
                             </a>
                         </div>
                     </div>
+
                     <div class="details">
+                    <form method="post" action="<?php echo BASEURL."/profileEmployeeController/updatePassword";?>">
                         <h3 class="profile-topic">User Profile</h3>
                         <div class="input-fileds">
                                 <label for="text">First Name</label>
@@ -43,36 +60,38 @@
                         <h3>User Account Details</h3>
                         <div class="input-fileds">
                                 <label for="email">Email Address</label>
-                                <input type="email" name="email" id="email"  readonly value="<?php echo $data['email']; ?>">
+                                <input type="email" name="email" id="email" readonly value="<?php echo $data['email']; ?>">
                             </div>
                             <div class="input-fileds">
                                 <label for="number">Phone Number</label>
                                 <input type="number" name="number" id="number" readonly value="<?php echo $data['phonenumber']; ?>">
                             </div>
-                        <h3>Change Password</h3>
 
+                            
+                        <h3>Change Password</h3>
+                        
                             <div class="input-fileds">
                                 <label for="password">Current Password</label>
-                                <input type="password" name="password" id="password"  value="" required="">
+                                <input type="password" name="current-password" id="password"  value="">
                             </div>
                             <div class="input-fileds">
                                 <label for="new_password">New Password(if changing)</label>
-                                <input type="password" name="password" id="password"  value="" required="">
+                                <input type="password" name="new-password" id="password"  value="" required="">
                             </div>
                             <div class="input-fileds">
-                                <label for="com_new_password">Comfirm New Password</label>
-                                <input type="password" name="password" id="password"  value="" required="">
+                                <label for="com_new_password">Confirm New Password</label>
+                                <input type="password" name="confirm-password" id="password"  value="" required="">
                             </div>
                             <div class="btn-update">
-                                <button onclick="updateDetailsFunction()">Update User Account</button>
+                                <button>Update User Account</button>
                             </div>
+                        </form>
                     </div>
 
                    
             </div>  
       </div>
   </div>
-
 
  <?php require_once("footer.php"); ?>
           

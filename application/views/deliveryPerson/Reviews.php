@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-reveiws.css">
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
-
+    <title>Delivery Person Reviews</title>
     </head>
     <body>
        <section class="header">
