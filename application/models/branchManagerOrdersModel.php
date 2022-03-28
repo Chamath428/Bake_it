@@ -20,7 +20,9 @@
                     FROM
                         order_details
                     WHERE
-                       menu_id= " .$_SESSION['branch_id']. " AND order_type = '1' AND order_status != 6 and order_status != 7 and order_status != 8";
+                       menu_id= " .$_SESSION['branch_id']. " AND order_type = '1' AND order_status != 6 and order_status != 7 and order_status != 8
+                    ORDER BY 
+                        order_id DESC";
                         
 
             $res1=mysqli_query($this->db,$sql1) or die('1->'.mysqli_error($this->db));
@@ -52,7 +54,9 @@
                     FROM
                         order_details
                     WHERE
-                    menu_id= " .$_SESSION['branch_id']. " AND order_type = '2' AND order_status != 6 and order_status != 7 and order_status != 8";
+                    menu_id= " .$_SESSION['branch_id']. " AND order_type = '2' AND order_status != 6 and order_status != 7 and order_status != 8
+                    ORDER BY 
+                        order_id DESC";
                         
 
             $res2=mysqli_query($this->db,$sql2) or die('2->'.mysqli_error($this->db));
@@ -85,7 +89,9 @@
                     FROM
                         order_details
                     WHERE
-                    menu_id= " .$_SESSION['branch_id']. " AND (order_status = 6 or order_status = 7 or order_status = 8)";
+                    menu_id= " .$_SESSION['branch_id']. " AND (order_status = 6 or order_status = 7 or order_status = 8)
+                    ORDER BY 
+                        order_id DESC";
                         
 
             $res3=mysqli_query($this->db,$sql3) or die('3->'.mysqli_error($this->db));

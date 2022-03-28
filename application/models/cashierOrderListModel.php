@@ -25,7 +25,9 @@ class cashierOrderListModel extends database
 				WHERE
 					menu_id=".'"'.$menu_id.'"'."
 					AND order_status<6 AND
-					order_type=1";
+					order_type=1
+					ORDER BY 
+						order_id DESC";
 
 		$res1=mysqli_query($this->db,$sql1) or die('1->'.mysqli_error($this->db));
 
@@ -48,7 +50,9 @@ class cashierOrderListModel extends database
 				WHERE
 					menu_id=".'"'.$menu_id.'"'."
 					AND order_status<6  AND
-					order_type=2";
+					order_type=2
+					ORDER BY 
+						order_id DESC";
 
 		$res2=mysqli_query($this->db,$sql2) or die('2->'.mysqli_error($this->db));
 
@@ -271,7 +275,9 @@ class cashierOrderListModel extends database
 						order_details
 					WHERE
 						cashier_id=".$cashier_id." AND
-						order_status=6";
+						order_status=6
+						ORDER BY 
+						order_id DESC";
 
 			$res14=mysqli_query($this->db,$sql14) or die('14->'.mysqli_error($this->db));
 
