@@ -17,7 +17,7 @@ class deliveryPersonWalletModel extends database
              FROM 
                 order_details  
              WHERE 
-                delivery_person_id= " . $_SESSION['staff_id'] . "  AND order_status = 6 AND payment_type = 1";
+                delivery_person_id= " . $_SESSION['staff_id'] . "  AND order_status = 6 AND payment_type = 1 AND needed_date=CURRENT_DATE";
     $res1 = mysqli_query($this->db, $sql1) or die('1->' . mysqli_error($this->db));
     while ($row1 = mysqli_fetch_assoc($res1)) {
        $data['order_id'] = $row1['order_id'];
@@ -34,7 +34,7 @@ class deliveryPersonWalletModel extends database
             FROM 
                 order_details 
             WHERE 
-                delivery_person_id= " . $_SESSION['staff_id'] . " AND order_status = 6 AND payment_type = 1";
+                delivery_person_id= " . $_SESSION['staff_id'] . " AND order_status = 6 AND payment_type = 1 AND needed_date=CURRENT_DATE";
     $res2 = mysqli_query($this->db, $sql2) or die('2->' . mysqli_error($this->db));
     $row2 = mysqli_fetch_assoc($res2);
     $totalAmountOfDeliveries = $row2['SUM(total_amount)'];
