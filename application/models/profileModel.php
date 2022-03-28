@@ -127,7 +127,7 @@
 				$this->updateRegisteredCustomerTable("password",$password,$customer_id);
 			}
 		}
-
+		
 	}
 
  ?>

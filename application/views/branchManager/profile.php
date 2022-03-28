@@ -44,7 +44,7 @@
                         </div>
                         <div class="input-fileds">
                             <label for="number">Phone Number</label>
-                            <input type="number" name="number" id="number"  value="<?php if (isset($data['phonenumber']))echo $data['phonenumber']; ?>" readonly="">
+                            <input type="number" name="number" id="number"  value="<?php if (isset($data['phonenumber']))echo $data['phonenumber']; ?>">
                         </div>
                         <form method="post" action="<?php echo BASEURL."/profileEmployeeController/updatePassword";?>">
                             <h3>Change Password</h3>

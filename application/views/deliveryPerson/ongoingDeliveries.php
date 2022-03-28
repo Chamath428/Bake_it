@@ -11,8 +11,8 @@
     <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveries.js"></script> 
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/deliveryPerson-deliveries.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/table.css">
-
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
+    <title>Ongoing Deliveiries</title>
 </head>
 <body > 
     <section class="header">

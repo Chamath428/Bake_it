@@ -20,7 +20,8 @@
     <?php require_once('headerReports.php'); ?>
     <div class="bgg sales-report" id="body">
         <div class=" topic-sales reportTopic">
-            <p>Sales Report</p>
+            <!-- <p>Sales Report</p> -->
+            <span class="main-topic">Sales Report</span>
             <div class="selectedTimePeriod">
                 <?php if ($data['reportType'] == 1) { ?>
                     <div class="subReportTopic">

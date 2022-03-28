@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo BASEURL ?>/public/css/owner/owner-header.css" class="rel">
     <script src="<?php echo BASEURL ?>/public/js/owner/owner-headerDashboard.js" defer></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
-    
+    <title>Owner Dashborad</title>
 </head>
 <body>
   

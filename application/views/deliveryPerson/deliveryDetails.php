@@ -14,6 +14,7 @@
 	<script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveryPerson-availability.js"></script>
 	<script src="<?php echo BASEURL ?>/public/js/deliveryPerson/deliveries.js"></script>
 	<script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
+	<title>Order Details for delivery</title>
 </head>
 
 <body>

@@ -14,7 +14,7 @@
     <script src="<?php echo BASEURL ?>/public/js/owner/owner-header.js" defer ></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
+    <title>Owner Reports Overview</title>
 
 </head>
 <body>

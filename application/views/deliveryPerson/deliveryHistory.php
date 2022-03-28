@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/deliveryPerson/calander.css">
     <script src="<?php echo BASEURL ?>/public/js/deliveryPerson/calander.js" defer ></script>
     <script src="https://kit.fontawesome.com/38f522d6fa.js" crossorigin="anonymous"></script>
+    <title>Delivery Overview</title>
 </head>
 <body>
     <section class="header">
