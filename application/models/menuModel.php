@@ -140,7 +140,9 @@ class menuModel extends database
 				FROM
 				menu
 				WHERE
-				category_id=" . $category_id . " AND branch_id=" . $branch_id;
+				category_id=" . $category_id . " AND branch_id=" . $branch_id." 
+				ORDER BY 
+						item_id ASC";
 
 
 
