@@ -125,6 +125,9 @@ input[type="number"] {
     transition-duration: 0.4s;
     font-weight: bold;
 }
+#ongoing-deliveries-row{
+    width: 90%;
+}
 #Ongoing-Deliveries{
     width: auto;
 }
@@ -325,4 +328,7 @@ table tbody tr td .click-more-details a:hover{
         /* width: 88%; 
         margin-left: 40px;
     } */
+    #ongoing-deliveries-row{
+        width: auto;
+    }
 }

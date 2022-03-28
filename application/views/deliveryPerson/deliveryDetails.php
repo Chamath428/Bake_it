@@ -167,7 +167,11 @@
 							<td><?php echo $data[3] ?></td>
 						</tr>
 						<tr>
+							<?php if($data[0]['order_status'] != 6){?>
 							<td>Advanced Payment(LKR)</td>
+							<?php }elseif($data[0]['order_status'] == 6){?>
+							<td>Paid Amount</td>
+							<?php }?>
 							<td><?php echo $data[4] ?></td>
 						</tr>
 						<tr>

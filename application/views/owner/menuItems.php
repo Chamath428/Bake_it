@@ -29,7 +29,7 @@
         <div class="drop-down-list">
             <form method="post" action="<?php echo BASEURL . '/ownerMenuController/getMenuItems'; ?>">
                 <div class="branch">
-                    <label for="branch">Outlet</label>
+                    <label for="branch">Branch</label>
                     <select name="outletId" id="outletId">
 
                         <?php foreach ($data[0] as $key => $value) {
