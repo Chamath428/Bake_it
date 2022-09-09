@@ -18,7 +18,7 @@ special orders. For customer requests, any type of order is delivered to their d
 - Cashier
 - Delivery Person
 
-## Features of the system
+## Features of bake_it
 - Allow customers to order food online
 - Branch manager can manage the branch, generate reports about the branch
 - Bakery manager can manage bakery inventory and generate reports about the bakery
