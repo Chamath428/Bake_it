@@ -3,7 +3,7 @@
 “WK Bakers” pastry shops have a good customer base around their shops. The main bakery has the capability of supplying food requirements for their shops and
 special orders. For customer requests, any type of order is delivered to their doorstep by the delivery team.
 
-“Bake_it” system consists of five sub systems;<br>
+“Bake_it” system consists of five sub systems<br>
                                              🍔Order Management System<br>
                                              🛵Delivery Management System<br>
                                              🍗Raw Material Management System<br>
